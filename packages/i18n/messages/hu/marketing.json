@@ -1,0 +1,512 @@
+{
+  "meta": {
+    "homeTitle": "Velyric – MI hangalapú ügynökök magyar, német és angol hívásokhoz",
+    "homeDescription": "A Velyric éjjel-nappal fogadja az üzleti hívásokat, időpontot foglal, a tudásbázis alapján válaszol, és szükség esetén átadja a hívást a csapatodnak."
+  },
+  "hero": {
+    "eyebrow": "MI hangalapú ügynökök egy fényesebb holnapért",
+    "titleStart": "Természetes MI hangalapú ügynökök",
+    "titleHighlight": "modern vállalkozásoknak",
+    "body": "Fogadj minden hívást, foglalj időpontot, minősítsd az érdeklődőket és segítsd az ügyfeleket magyarul, németül és angolul – egy olyan ügynökkel, amely tudja, mikor kell a csapatodhoz kapcsolni.",
+    "primary": "Kezdjük",
+    "secondary": "A termék megtekintése",
+    "visual": {
+      "greeting": "Jó napot! Miben segíthetek?",
+      "caller": "Hívó",
+      "request": "Szeretnék időpontot foglalni jövő kedd délelőttre.",
+      "booked": "Időpont lefoglalva",
+      "bookedDetail": "Kedd, 10:00 · visszaigazolás elküldve"
+    }
+  },
+  "proof": {
+    "languages": "Magyar, német és angol nyelv",
+    "always": "Éjjel-nappal elérhető",
+    "handoff": "Beépített átadás munkatársnak",
+    "calendars": "Google és Microsoft naptárak"
+  },
+  "features": {
+    "heading": "Mire képes a Velyric",
+    "multilingual": {
+      "title": "Többnyelvű beszéd",
+      "body": "Felismeri a hívó nyelvét, és hívás közben is vált magyar, német és angol között."
+    },
+    "conversation": {
+      "title": "Természetes beszélgetés",
+      "body": "Kezeli a közbevágásokat, pontosító kérdéseket és szüneteket, akár egy képzett recepciós."
+    },
+    "booking": {
+      "title": "Naptáras foglalás",
+      "body": "Valós szabad időpontokat keres munkatársak és helyiségek között, dupla foglalás nélkül."
+    },
+    "integrations": {
+      "title": "Saját API-k eszközként",
+      "body": "Rendelést keres vagy jegyet nyit biztonságos egyedi API-eszközökkel, megerősítéssel."
+    },
+    "handoff": {
+      "title": "Okos hívásátadás",
+      "body": "Rövid összefoglalóval a megfelelő munkatárshoz kapcsol, ha emberre van szükség."
+    },
+    "analytics": {
+      "title": "Hasznos elemzések",
+      "body": "Megoldási arányok, szándékok, tudáshiányok és költségek telephelyenként."
+    }
+  },
+  "command": {
+    "eyebrow": "Egységes irányítóközpont",
+    "titleStart": "Minden, amire szükséged van,",
+    "titleHighlight": "egy helyen.",
+    "body": "Állítsd be az ügynököket, kövesd élőben a hívásokat, nézd át az összefoglalókat és kapcsold az eszközeidet egyetlen vezérlőpulton.",
+    "items": {
+      "live": "Élő hívásfigyelés és -irányítás",
+      "summaries": "Átiratok és hívás-összefoglalók",
+      "languages": "Nyelvenkénti köszöntés és tájékoztatás",
+      "integrations": "Naptár- és API-integrációk",
+      "analytics": "Valós idejű elemzések"
+    }
+  },
+  "showcase": {
+    "nav": {
+      "dashboard": "Vezérlőpult",
+      "calls": "Hívások",
+      "agents": "Ügynökök",
+      "contacts": "Kapcsolatok",
+      "integrations": "Integrációk",
+      "analytics": "Elemzések",
+      "settings": "Beállítások"
+    },
+    "welcome": "Üdv újra",
+    "subtitle": "Így teljesítenek ma a hangalapú ügynökeid.",
+    "kpi": {
+      "calls": "Összes hívás",
+      "duration": "Átlagos hossz",
+      "resolution": "AI által megoldva",
+      "quality": "Minőségi pontszám"
+    },
+    "liveCalls": "Élő hívások",
+    "inProgress": "Folyamatban",
+    "tags": {
+      "booking": "Foglalás",
+      "support": "Ügyfélszolgálat",
+      "lead": "Érdeklődő"
+    },
+    "summary": "Hívás-összefoglaló",
+    "duration": "Időtartam",
+    "outcome": "Eredmény",
+    "booked": "Időpont lefoglalva",
+    "summaryText": "A hívó keddre 10:00-ra foglalt kontrollvizsgálatot, és e-mailes emlékeztetőt kért.",
+    "caption": "Szemléltető termékelőnézet mintaadatokkal."
+  },
+  "integrations": {
+    "eyebrow": "Együttműködik az eszközeiddel",
+    "title": "Ott kapcsolódik, ahol számít.",
+    "body": "Naptárak és saját rendszerek percek alatt csatlakoztathatók.",
+    "items": {
+      "google": {
+        "name": "Google Naptár",
+        "detail": "Szabad időpontok és foglalások"
+      },
+      "microsoft": {
+        "name": "Microsoft 365",
+        "detail": "Outlook naptárak"
+      },
+      "phone": {
+        "name": "Telefonszámok",
+        "detail": "Helyi számok, beüzemelve"
+      },
+      "api": {
+        "name": "Egyedi API-eszközök",
+        "detail": "A saját HTTPS-végpontjaid"
+      }
+    }
+  },
+  "pricing": {
+    "eyebrow": "Egyszerű, átlátható árazás",
+    "title": "Csomagok a vállalkozás minden szakaszához.",
+    "popular": "Legnépszerűbb",
+    "perMonth": "/ hó + ÁFA",
+    "minutes": "{minutes} beszédperc benne",
+    "concurrent": "{count, plural, one {# egyidejű hívás} other {# egyidejű hívás}}",
+    "numbers": "{count, plural, one {# telefonszám} other {# telefonszám}}",
+    "overage": "További percek: {price} / perc",
+    "cta": "Kezdjük",
+    "custom": "Egyedi",
+    "contactSales": "Kapcsolat az értékesítéssel",
+    "plans": {
+      "START": {
+        "name": "Start",
+        "description": "Egy telephelynek, amely minden hívást fogadni szeretne.",
+        "highlight": "Tudásbázis, átadás munkatársnak és minőségfigyelés"
+      },
+      "BUSINESS": {
+        "name": "Business",
+        "description": "Növekvő vállalkozásoknak foglalással és integrációkkal.",
+        "highlight": "Naptáras foglalás, egyedi API-eszközök és kísért átadás"
+      },
+      "PRO": {
+        "name": "Pro",
+        "description": "Több telephelyes csapatoknak fejlett hívásirányítással.",
+        "highlight": "Több telephely, Szimulációs Labor és kiemelt támogatás"
+      },
+      "ENTERPRISE": {
+        "name": "Enterprise",
+        "description": "Egyedi forgalmi, megfelelőségi és redundanciaigényű szervezeteknek."
+      }
+    },
+    "enterprise": {
+      "sso": "Egyszeri bejelentkezés és SCIM",
+      "sla": "Szerződéses SLA",
+      "redundancy": "Dedikált redundancia",
+      "byok": "Saját titkosítási kulcsok"
+    }
+  },
+  "trust": {
+    "eyebrow": "Biztonság és megfelelőség",
+    "title": "Megbízható az első hívástól.",
+    "link": "Bővebben a biztonságról",
+    "items": {
+      "disclosure": {
+        "title": "MI-tájékoztatás",
+        "body": "Minden hívás egyértelmű, verziózott MI-tájékoztatással indul a hívó nyelvén."
+      },
+      "gdpr": {
+        "title": "GDPR-eszközök",
+        "body": "Megőrzési beállítások, adatexport és törlési kérelmek a termékbe építve."
+      },
+      "audit": {
+        "title": "Auditnaplók",
+        "body": "Minden konfigurációs változást és érzékeny műveletet rögzítünk."
+      },
+      "eu": {
+        "title": "EU-s infrastruktúra",
+        "body": "Az alkalmazás- és hívásadatokat uniós felhőrégióban dolgozzuk fel."
+      }
+    }
+  },
+  "cta": {
+    "title": "Készen állsz, hogy hangot adj a vállalkozásodnak?",
+    "body": "Állítsd be még ma az első hangalapú ügynököt, és hagyd, hogy a csapatod azokra a beszélgetésekre figyeljen, ahol igazán szükség van rá.",
+    "button": "Kezdjük"
+  },
+  "pricingPage": {
+    "eyebrow": "Árak",
+    "title": "Csomagok, amelyek a hívásaiddal nőnek",
+    "body": "Havi csomagok benne foglalt beszédpercekkel és átlátható percdíjjal azon felül.",
+    "canceled": "A fizetést megszakítottad. Nem történt terhelés.",
+    "footnote": "Az árak a magyar piacra vonatkozó nettó összegek. Az ÁFA-t a vonatkozó szabályok szerint számítjuk fel.",
+    "faqTitle": "Gyakori kérdések",
+    "faq": {
+      "vat": {
+        "question": "Nettó vagy bruttó árak?",
+        "answer": "Minden ár nettó. A számlák az ügyfél országa és adóalanyisága szerinti ÁFA-t tartalmazzák."
+      },
+      "overage": {
+        "question": "Mi történik, ha elfogynak a benne foglalt percek?",
+        "answer": "A hívások tovább működnek, a további perceket a csomag percdíjával számlázzuk. A költségkeretek védenek a meglepetésektől."
+      },
+      "change": {
+        "question": "Később is válthatok csomagot?",
+        "answer": "Igen. A magasabb csomag azonnal, az alacsonyabb a számlázási időszak végén lép életbe."
+      },
+      "numbers": {
+        "question": "Jár telefonszám a csomaghoz?",
+        "answer": "Minden csomag legalább egy telefonszámot tartalmaz. A szolgáltató az élesítés előtt cégellenőrzést kérhet."
+      }
+    }
+  },
+  "productPage": {
+    "eyebrow": "Termék",
+    "title": "Hangalapú ügynök, amely úgy dolgozik, mint a legjobb recepciósod",
+    "body": "A Velyric a valós idejű hang-MI-t foglalással, tudásbázissal, integrációkkal és munkatársi átadással egyesíti egy kontrollált platformon.",
+    "cta": "Kezdjük",
+    "blocks": {
+      "orchestration": {
+        "title": "Specialisták összehangolása",
+        "body": "A recepciós ügynök a kéréseket foglalási, ügyfélszolgálati, értékesítési vagy számlázási specialistához irányítja, saját eszközjogosultságokkal."
+      },
+      "languages": {
+        "title": "Három nyelv, egy ügynök",
+        "body": "A köszöntés, a tájékoztatás és a tartalékszövegek nyelvenként állíthatók, az ügynök pedig a hívó nyelvét követi."
+      },
+      "booking": {
+        "title": "Megbízható foglalás",
+        "body": "Szolgáltatások, erőforrások, elérhetőségi szabályok és naptárszinkron akadályozzák meg a dupla foglalást."
+      },
+      "handoff": {
+        "title": "Átadás kontextussal",
+        "body": "A kísért átadás rövid összefoglalót ad, így a hívónak nem kell megismételnie a kérését."
+      },
+      "simulation": {
+        "title": "Szimuláció publikálás előtt",
+        "body": "Az új verziókat előre megírt forgatókönyveken teszteled, mielőtt valódi hívókhoz kerülnek."
+      },
+      "safety": {
+        "title": "Védőkorlátok",
+        "body": "Költségkeretek, eszköz-megerősítések és vészkapcsolók tartanak minden hívást kontroll alatt."
+      }
+    }
+  },
+  "solutions": {
+    "common": {
+      "cta": "Kezdés a Velyrickel",
+      "other": "Más iparágak",
+      "breadcrumb": "Morzsamenü"
+    },
+    "restaurant": {
+      "title": "Soha többé elszalasztott foglalás",
+      "body": "Asztalfoglalás, válaszok a nyitvatartásról és az étlapról, várólista a zsúfolt estéken.",
+      "points": {
+        "first": {
+          "title": "Asztalfoglalás",
+          "body": "Létszám és időpont szerint foglal, dupla foglalás nélkül."
+        },
+        "second": {
+          "title": "Étlap- és allergénkérdések",
+          "body": "A saját étlapod és GYIK-dokumentumaid alapján válaszol."
+        },
+        "third": {
+          "title": "Csúcsidős túlterhelés",
+          "body": "Visszahívást vagy várólistát ajánl, ha tele a konyha."
+        }
+      }
+    },
+    "dental-clinic": {
+      "title": "Nyugodt recepció a rendelődnek",
+      "body": "Kontrollfoglalás, időpontmódosítás és a sürgős esetek munkatárshoz irányítása, miközben a páciensek azonnal választ kapnak.",
+      "points": {
+        "first": {
+          "title": "Időpontfoglalás",
+          "body": "A kezeléshez illeszti a megfelelő fogorvost és rendelőt."
+        },
+        "second": {
+          "title": "Páciensek kérdései",
+          "body": "A tudásbázis alapján elmagyarázza a felkészülést, árakat és nyitvatartást."
+        },
+        "third": {
+          "title": "Sürgős esetek",
+          "body": "A fájdalommal vagy sürgősséggel kapcsolatos hívásokat azonnal átadja."
+        }
+      }
+    },
+    "auto-service": {
+      "title": "Teli műhelynaptár",
+      "body": "Szervizek és műszaki vizsgák ütemezése, állapotkérdések megválaszolása és adatgyűjtés az autó érkezése előtt.",
+      "points": {
+        "first": {
+          "title": "Szervizfoglalás",
+          "body": "A munka hosszához illően foglal állást és szerelőt."
+        },
+        "second": {
+          "title": "Járműadatok",
+          "body": "Rögzíti a márkát, a típust és a jelzett hibát."
+        },
+        "third": {
+          "title": "Átadás a szervizvezetőnek",
+          "body": "Az árajánlatokat és összetett kérdéseket a szervizvezetőhöz kapcsolja."
+        }
+      }
+    },
+    "car-detailing": {
+      "title": "Autókozmetika foglalás, telefonos egyeztetés nélkül",
+      "body": "Csomagok ismertetése, időpontfoglalás és kiegészítők ajánlása, miközben a csapat az autókkal foglalkozik.",
+      "points": {
+        "first": {
+          "title": "Csomagajánlás",
+          "body": "Az árlista alapján ismerteti a csomagokat és időtartamokat."
+        },
+        "second": {
+          "title": "Azonnali foglalás",
+          "body": "A csomag hosszához megfelelő idősávot foglal."
+        },
+        "third": {
+          "title": "Emlékeztetők",
+          "body": "Visszaigazolást küld, hogy az ügyfél időben érkezzen."
+        }
+      }
+    },
+    "salon": {
+      "title": "Mindig elérhető szalon",
+      "body": "Fodrászfoglalás, lemondások kezelése és árakkal kapcsolatos kérdések akkor is, amikor minden szék foglalt.",
+      "points": {
+        "first": {
+          "title": "Fodrászfoglalás",
+          "body": "A megfelelő szakembert és szolgáltatásidőt foglalja."
+        },
+        "second": {
+          "title": "Lemondások",
+          "body": "A hívó adatai alapján megkeresi és lemondja a foglalást."
+        },
+        "third": {
+          "title": "Árkérdések",
+          "body": "Következetesen válaszol a szolgáltatáslistád alapján."
+        }
+      }
+    },
+    "hotel": {
+      "title": "Vendégszolgálat éjjel-nappal",
+      "body": "Válaszok a vendégek nyelvén, kérések rögzítése és a foglalási hívások átadása a recepciónak.",
+      "points": {
+        "first": {
+          "title": "Vendégkérdések",
+          "body": "Bejelentkezés, parkolás és szolgáltatások három nyelven."
+        },
+        "second": {
+          "title": "Kérések rögzítése",
+          "body": "Éjszaka üzenetet és visszahívási kérést vesz fel."
+        },
+        "third": {
+          "title": "Átadás a recepciónak",
+          "body": "A foglalási és panaszos hívásokat munkatárshoz kapcsolja."
+        }
+      }
+    },
+    "real-estate": {
+      "title": "Minden ingatlanérdeklődő minősítve",
+      "body": "Válaszok a hirdetésekről, vevők minősítése és megtekintés foglalása a megfelelő ügynöknél.",
+      "points": {
+        "first": {
+          "title": "Érdeklődők minősítése",
+          "body": "Rögzíti a keretet, az időzítést és az igényeket."
+        },
+        "second": {
+          "title": "Megtekintések",
+          "body": "Az ügynökök naptárába foglal megtekintést."
+        },
+        "third": {
+          "title": "Válaszok a hirdetésekről",
+          "body": "A hirdetési dokumentumaid alapján válaszol."
+        }
+      }
+    },
+    "webshop": {
+      "title": "Ügyfélszolgálat, amely a rendelésekkel nő",
+      "body": "Rendelési és szállítási kérdések megválaszolása a saját API-jaidon keresztül, az összetett esetek átadása.",
+      "points": {
+        "first": {
+          "title": "Rendelés állapota",
+          "body": "Biztonságos egyedi API-eszközzel keresi meg a rendelést."
+        },
+        "second": {
+          "title": "Visszáru és szabályok",
+          "body": "A szabályzataid alapján elmagyarázza a visszaküldést és szállítást."
+        },
+        "third": {
+          "title": "Eszkaláció",
+          "body": "A vitás eseteket összefoglalóval adja át az ügyfélszolgálatnak."
+        }
+      }
+    },
+    "b2b-support": {
+      "title": "Elsővonalas támogatás üzleti ügyfeleknek",
+      "body": "Hívók azonosítása, termékkérdések megválaszolása és jegy nyitása a megfelelő mérnökhöz kapcsolás előtt.",
+      "points": {
+        "first": {
+          "title": "Hívóazonosítás",
+          "body": "Felismeri a visszatérő kapcsolattartókat és cégüket."
+        },
+        "second": {
+          "title": "Válaszok a tudásbázisból",
+          "body": "Kézikönyvek és műszaki dokumentumok alapján válaszol."
+        },
+        "third": {
+          "title": "Jegynyitás",
+          "body": "Átadás előtt jegyet nyit az API-don keresztül."
+        }
+      }
+    }
+  },
+  "integrationsPage": {
+    "eyebrow": "Integrációk",
+    "title": "Kapcsold a Velyricet a munkafolyamataidhoz",
+    "body": "Ma csak az „Elérhető” jelzésű integrációk kapcsolhatók.",
+    "available": "Elérhető",
+    "planned": "Tervezett",
+    "items": {
+      "google": {
+        "name": "Google Naptár",
+        "body": "OAuth-kapcsolat foglaltság-lekérdezéssel és eseménylétrehozással a foglalható erőforrásokhoz."
+      },
+      "microsoft": {
+        "name": "Microsoft 365",
+        "body": "Outlook naptárak elérhetősége és foglalások a Microsoft Graph-on keresztül."
+      },
+      "customApi": {
+        "name": "Egyedi API-eszközök",
+        "body": "HTTPS-végpontjaid hívása JSON-séma-ellenőrzéssel, kimenő védelemmel és megerősítési szabályokkal."
+      },
+      "telephony": {
+        "name": "Telefonszámok",
+        "body": "A helyi számokat a beüzemelés során igényeljük és ellenőriztetjük a szolgáltatóval."
+      },
+      "payments": {
+        "name": "Kártyás fizetés",
+        "body": "Az előfizetéseket és számlákat biztonságos, hosztolt fizetési oldalon kezeljük."
+      },
+      "email": {
+        "name": "E-mail-értesítések",
+        "body": "A foglalási visszaigazolások és csapatértesítések automatikusan mennek ki."
+      },
+      "webhooks": {
+        "name": "Kimenő webhookok",
+        "body": "Aláírt eseményértesítések a saját rendszereidnek."
+      }
+    }
+  },
+  "securityPage": {
+    "eyebrow": "Biztonság",
+    "title": "Tervezett biztonság és adatvédelem",
+    "body": "A Velyric úgy épül fel, hogy minden munkaterület hívásai, adatai és hitelesítő adatai elkülönítve és a te irányításod alatt maradjanak.",
+    "blocks": {
+      "isolation": {
+        "title": "Munkaterületek elkülönítése",
+        "body": "Az adatbázis sorszintű biztonsága a tárolási rétegben választja szét a munkaterületek adatait."
+      },
+      "secrets": {
+        "title": "Védett hitelesítő adatok",
+        "body": "Az API-kulcsokat és integrációs tokeneket felügyelt titoktárban tároljuk, létrehozás után soha nem jelenítjük meg újra."
+      },
+      "disclosure": {
+        "title": "Átlátható MI",
+        "body": "A hívók mindig hallják, hogy MI-asszisztenssel beszélnek."
+      },
+      "privacy": {
+        "title": "Adatvédelmi eszközök",
+        "body": "Megőrzés beállítása, átiratok kitakarása és érintetti kérelmek kezelése."
+      },
+      "audit": {
+        "title": "Auditnapló",
+        "body": "Rögzítjük a csapatod, az API-kulcsok és az ügyfélszolgálat érzékeny műveleteit."
+      },
+      "killSwitches": {
+        "title": "Vészhelyzeti vezérlés",
+        "body": "Vészkapcsolókkal azonnal szüneteltethetők az eszközök, ügynökök vagy kimenő műveletek."
+      }
+    }
+  },
+  "docsPage": {
+    "eyebrow": "Fejlesztőknek",
+    "title": "Velyric API",
+    "body": "Automatizáld az ügynököket, hívásokat, foglalásokat és a tudásbázist verziózott REST API-val.",
+    "sections": {
+      "authentication": {
+        "title": "Hitelesítés",
+        "body": "Hozz létre API-kulcsot a Biztonság menüben, és küldd bearer tokenként. A kulcsok konkrét jogosultságokra korlátozottak.",
+        "example": "curl \"$VELYRIC_API_URL/v1/calls\" -H \"Authorization: Bearer $VELYRIC_API_KEY\""
+      },
+      "conventions": {
+        "title": "Konvenciók",
+        "body": "Az író kérésekhez Idempotency-Key fejléc kell. A módosítások If-Match fejlécet használnak az erőforrás verziójával. A listák kurzoros lapozásúak.",
+        "example": "Idempotency-Key: 6f1c2a9e-4d7b-4b1f-9c1e-2b5a7d8e9f10\nIf-Match: W/\"3\""
+      },
+      "resources": {
+        "title": "Erőforrások",
+        "body": "Ügynökök, ügynökverziók, hívások, tudásforrások, szolgáltatások, erőforrások, foglalások és telefonszámok.",
+        "example": "GET /v1/agents\nGET /v1/calls?status=ACTIVE\nPOST /v1/knowledge-sources"
+      },
+      "errors": {
+        "title": "Hibák és korlátok",
+        "body": "A hibák stabil kódot és nyomkövetési azonosítót adnak vissza. A korlátokat RateLimit fejlécek jelzik.",
+        "example": "HTTP/1.1 429 Too Many Requests\nRetry-After: 12\nRateLimit: \"api-key-write\";r=0;t=12"
+      }
+    }
+  }
+}

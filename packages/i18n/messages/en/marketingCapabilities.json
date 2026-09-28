@@ -1,0 +1,784 @@
+{
+  "common": {
+    "breadcrumbLabel": "Breadcrumb",
+    "ctaPrimary": "Start with Velyric",
+    "ctaSecondary": "See pricing"
+  },
+  "receptionist": {
+    "meta": {
+      "title": "AI receptionist that answers your business number 24/7",
+      "description": "Velyric's AI receptionist answers your number 24/7 in Hungarian, German and English, discloses that it is an AI, books appointments and transfers on ###."
+    },
+    "breadcrumb": "AI receptionist",
+    "eyebrow": "AI receptionist",
+    "title": "An AI receptionist that answers your business number 24/7",
+    "body": "Velyric picks up on your own phone number, says it is an AI assistant, answers from your knowledge base, books into your calendar, and hands the call to a person the moment the caller asks.",
+    "answer": {
+      "question": "What is an AI receptionist?",
+      "body": "An AI receptionist is a voice agent that answers a company's phone line, holds a spoken conversation with the caller and completes front-desk work: answering questions, booking, rescheduling and cancelling appointments, taking messages and transferring the call to a person. Velyric answers on the tenant's own number over a Telnyx SIP carrier, states at the start of every call that the caller is speaking with an AI assistant, and answers only from that business's own knowledge base and connected tools. Callers can interrupt mid-sentence, speak Hungarian, German or English, or press ### at any point to reach a human. Every call runs through a coded state machine, so the model may propose the next action but the backend decides whether that action is allowed."
+    },
+    "context": {
+      "heading": "Who an AI receptionist is for",
+      "body": "Any business where the phone is still a real channel and an unanswered call is a lost booking.",
+      "p1": "A missed call is not a task that waits in a queue. It is a person who dials the next number on the search results page. Practices, workshops, salons, restaurants and B2B support desks all lose the same way: the phone rings while the team is with a customer, after closing time, or three times at once. An AI receptionist removes the choice between answering the phone and doing the work.",
+      "p2": "Velyric is a multi-tenant platform, not a call script. You connect a calendar, upload the documents your team already answers from, define which of your own APIs the agent may call, and decide what happens outside business hours. The agent is bound to those sources: when no source supports an answer it asks a clarifying question or transfers, instead of guessing."
+    },
+    "how": {
+      "heading": "What actually happens on a call",
+      "body": "Six stages, in the order the conversation state machine walks through them.",
+      "s1": {
+        "title": "The call arrives on your number",
+        "body": "A caller dials the number you provisioned or ported through Telnyx. The inbound leg is answered over SIP and a fresh call_id, AI session, conversation state and trace are created for that call alone. Parallel calls share nothing, so a failure on one call cannot touch another."
+      },
+      "s2": {
+        "title": "Greeting and AI disclosure",
+        "body": "The agent opens with the greeting configured for that language and discloses what it is: “Good afternoon, Nord Dental, you are speaking with an AI assistant. How can I help?” The disclosure is part of the greeting on every call, in the caller's language, not a footnote later in the conversation."
+      },
+      "s3": {
+        "title": "Discovery, with the caller in control",
+        "body": "The conversation is full duplex. If the caller cuts in with “Actually, I need to move my Thursday appointment” halfway through the greeting, the agent stops talking and follows. Hesitation, filler words and backchannel do not break the turn. The state machine moves from GREETING to DISCOVERY and records the intent."
+      },
+      "s4": {
+        "title": "Answering from your own sources",
+        "body": "For “Do you do implant consultations on Saturdays?” the agent calls search_knowledge against your tenant-filtered index: the PDFs, DOCX files, CSVs, FAQ entries and crawled website pages you uploaded. If nothing in the index supports an answer, the agent says so and asks a clarifying question or offers a colleague, instead of producing a plausible sentence."
+      },
+      "s5": {
+        "title": "Taking the action and confirming it first",
+        "body": "For a booking the agent runs list_services and check_availability against the real calendar, then previews the write: “So that is a 30-minute implant consultation, Thursday 14 May at 10:20, with Dr Kovacs. Shall I book it?” create_booking only runs after an explicit yes, protected by an idempotency key and database constraints."
+      },
+      "s6": {
+        "title": "A person, or a clean close",
+        "body": "If the caller says “Can I speak to someone?” or presses ###, the call is referred immediately to the tel: or sip: destination you configured. Two or three failed comprehension attempts, a tool timeout that survives one retry, or a sensitive request lead to a person too. Outside business hours the agent instead takes a message, records a callback request or dials your on-call number."
+      }
+    },
+    "capabilities": {
+      "heading": "What the receptionist agent can do",
+      "body": "Everything below is configured per tenant and enforced in code, not asked for in a prompt.",
+      "c1": {
+        "title": "24/7 answering on your own number",
+        "body": "Inbound calls are answered around the clock on the number you provisioned or ported through Telnyx. Every plan includes one phone number and one location; extra numbers are a paid add-on."
+      },
+      "c2": {
+        "title": "Explicit AI disclosure",
+        "body": "The agent states at the start of the call that the caller is speaking with an AI assistant. The wording is configured per language, which is how you meet the EU AI Act Article 50 transparency obligation applicable from 2 August 2026."
+      },
+      "c3": {
+        "title": "Configurable keypad shortcuts",
+        "body": "DTMF is yours to set. A typical configuration is ### for a human agent, 0 for immediate transfer and * to step back a question, so a caller who does not want to talk to an AI never has to argue with one."
+      },
+      "c4": {
+        "title": "Answers grounded in your knowledge base",
+        "body": "PDF, DOCX, TXT and Markdown, CSV, manual Q&A and website URLs are malware-scanned, parsed, chunked, embedded and indexed per tenant. Website sources are crawled sitemap-first, and schema.org JSON-LD such as address and opening hours is extracted as structured facts."
+      },
+      "c5": {
+        "title": "Actions, not only answers",
+        "body": "The built-in tool set is list_services, check_availability, create_booking, find_booking, cancel_booking and search_knowledge, plus any custom HTTPS API you define. Every tool call is validated against the current conversation state before it runs."
+      },
+      "c6": {
+        "title": "Out-of-hours behaviour you choose",
+        "body": "Outside business hours the agent follows a different policy: take a message, record a callback request, or transfer to an on-call number. The same policy covers bursts above your plan's concurrency limit."
+      }
+    },
+    "facts": {
+      "heading": "Receptionist facts worth checking",
+      "body": "Numbers you can hold us to, not adjectives.",
+      "f1": {
+        "term": "Availability",
+        "value": "Inbound calls answered 24/7 on the tenant's own number"
+      },
+      "f2": {
+        "term": "AI disclosure",
+        "value": "Stated at the start of every call, configured per language"
+      },
+      "f3": {
+        "term": "Keypad shortcuts",
+        "value": "### for a human agent, 0 for immediate transfer, * to step back — configurable"
+      },
+      "f4": {
+        "term": "Maximum call length",
+        "value": "1,800 seconds (30 minutes) on every plan"
+      },
+      "f5": {
+        "term": "Concurrent calls",
+        "value": "Start 2, Business 10, Pro 50, Enterprise 100+"
+      },
+      "f6": {
+        "term": "Languages",
+        "value": "Hungarian, German and English, switchable mid-call"
+      },
+      "f7": {
+        "term": "Call audio",
+        "value": "Not stored by default (retention 0 days); recording is a paid add-on"
+      },
+      "f8": {
+        "term": "Transcript retention",
+        "value": "90 days by default, tenant-configurable down to 1 day"
+      }
+    },
+    "limits": {
+      "heading": "What an AI receptionist does not do",
+      "body": "The honest list. Knowing these before you buy is worth more than another feature bullet.",
+      "l1": {
+        "title": "It knows nothing you have not given it",
+        "body": "The agent answers only from your knowledge base and the tools you connected. There is no open web lookup during a call. With no supporting source it asks a clarifying question or hands over to a person — it does not fill the gap with something that sounds right."
+      },
+      "l2": {
+        "title": "A caller's number is not a login",
+        "body": "Caller ID is a convenience identifier for recognising a returning contact, not authentication. Anything sensitive needs step-up verification or a human, because numbers can be spoofed and phones are shared."
+      },
+      "l3": {
+        "title": "By default there is no recording to review",
+        "body": "Raw call audio is not stored: default retention is 0 days. Transcripts and call events are kept, but if you want the audio itself you have to enable the call recording add-on before the call happens."
+      },
+      "l4": {
+        "title": "Calls end at 30 minutes",
+        "body": "Every plan caps a single call at 1,800 seconds. A conversation that genuinely needs longer belongs with a person, and the agent should transfer well before the cap rather than be cut off by it."
+      },
+      "l5": {
+        "title": "Three languages, not thirty",
+        "body": "Hungarian, German and English are supported. A caller in any other language is a handoff case, not a translation case."
+      },
+      "l6": {
+        "title": "Concurrency is a commercial limit",
+        "body": "Your plan decides how many calls can run at once: 2 on Start, 10 on Business, 50 on Pro. Calls above that follow the policy you chose — a short queue, an overflow number, a callback or voicemail."
+      }
+    },
+    "faq": {
+      "heading": "AI receptionist questions",
+      "q1": {
+        "question": "How is an AI receptionist different from an IVR menu?",
+        "answer": "An IVR asks the caller to map their problem onto a numbered menu and fails when the problem does not fit. Velyric's agent listens to a free-form sentence, asks back when something is missing, and calls a tool to actually complete the request. The keypad is still there — ### for a human, 0 for transfer — but as a shortcut, not as the only interface."
+      },
+      "q2": {
+        "question": "Does the caller know they are talking to an AI?",
+        "answer": "Yes. The agent states at the start of the call that the caller is speaking with an AI assistant, in the language of the call. This is a product default rather than a switch you have to remember, and it lines up with the EU AI Act Article 50 transparency obligation applicable from 2 August 2026."
+      },
+      "q3": {
+        "question": "What happens when the agent does not know the answer?",
+        "answer": "It does not guess. If tenant-filtered retrieval returns no supporting source, the agent asks a clarifying question or hands the call to a person. Two or three failed comprehension attempts in a row also trigger an offer to transfer."
+      },
+      "q4": {
+        "question": "Can it answer several calls at the same time?",
+        "answer": "Yes, up to your plan's concurrency limit: 2 on Start, 10 on Business, 50 on Pro and 100+ on Enterprise. Each call gets its own call_id, AI session, conversation state and trace, so one call cannot corrupt or slow another."
+      },
+      "q5": {
+        "question": "Do I need a new phone number?",
+        "answer": "Not necessarily. Every plan includes one phone number, which you can provision through Telnyx or port from your current carrier. Hungarian local numbers are available, and ordering a number can require carrier or regulatory business verification, which is part of the provisioning workflow."
+      },
+      "q6": {
+        "question": "Is our call data used to train AI models?",
+        "answer": "No. Customer call data is not used to train general-purpose models. Application and call data are processed in an EU cloud region, Frankfurt by default, and Velyric acts as processor for calls, transcripts, contacts and bookings under the GDPR Article 28 data processing agreement published on the site."
+      },
+      "q7": {
+        "question": "What does it cost?",
+        "answer": "Published prices are for the Hungarian market and net of VAT: Start is 39,900 HUF per month with 150 included voice minutes, Business 69,900 HUF with 400 minutes, Pro 129,900 HUF with 1,000 minutes, and Enterprise is by contract. Overage continues at the plan's per-minute rate of 149, 129 or 109 HUF, with spending limits."
+      }
+    },
+    "related": {
+      "heading": "Keep reading",
+      "r1": {
+        "label": "AI appointment booking by phone",
+        "description": "How the agent reads real availability and writes a booking without double-booking."
+      },
+      "r2": {
+        "label": "Multilingual AI voice agents",
+        "description": "How Hungarian, German or English is chosen, and how it switches mid-call."
+      },
+      "r3": {
+        "label": "AI call transfer to a human",
+        "description": "Every trigger that sends a call to a person, and what your colleague receives."
+      },
+      "r4": {
+        "label": "Pricing",
+        "description": "Plans, included minutes, overage rates and concurrency limits."
+      },
+      "r5": {
+        "label": "AI receptionist for dental clinics",
+        "description": "What front-desk automation looks like in a practice with a full chair."
+      },
+      "r6": {
+        "label": "Product overview",
+        "description": "The whole platform: orchestration, knowledge, integrations and guardrails."
+      }
+    }
+  },
+  "booking": {
+    "meta": {
+      "title": "AI appointment booking by phone",
+      "description": "Velyric reads real calendar availability, never invents a slot, confirms before writing, and creates conflict-safe bookings in Google Calendar or Microsoft 365."
+    },
+    "breadcrumb": "Appointment booking",
+    "eyebrow": "AI booking assistant",
+    "title": "Phone appointments booked into your real calendar",
+    "body": "The agent reads live availability, offers only slots that exist, reads the appointment back for confirmation, and writes it with an idempotency key so a retry never creates a second booking.",
+    "answer": {
+      "question": "How does AI appointment booking by phone work?",
+      "body": "An AI booking assistant turns an appointment requested out loud on the phone into a real calendar entry. Velyric does it in a fixed order: list_services resolves what the caller wants, check_availability queries the connected calendar or booking engine, the agent reads the proposed appointment back and waits for an explicit yes, and only then does create_booking write it. Availability always comes from the calendar, so the agent never invents a free slot; when nothing is free it offers the alternatives the tool returned. Writes are protected by database constraints, transactions and idempotency keys, so two callers racing for the same slot cannot both be given it."
+    },
+    "context": {
+      "heading": "Booking is the part of a call that has to be correct",
+      "body": "A wrong answer about availability costs you twice: once on the phone, once in the waiting room.",
+      "p1": "A booking bot that hallucinates a Thursday 10:00 slot does more damage than voicemail. The caller arrives, the chair is taken, and someone on your team spends the morning apologising. The hard part is not the conversation — it is the write. It has to be correct under concurrency, idempotent under retry, and honest when the calendar is full.",
+      "p2": "Velyric treats availability as something only the calendar may answer. The model proposes the next tool; the backend checks whether that tool is allowed in the current conversation state, runs it, and returns a structured result. An optimistic create that loses the race returns a conflict, not a success, and the agent immediately offers the next real alternative."
+    },
+    "how": {
+      "heading": "A booking call, step by step",
+      "body": "The same six steps run whether the caller wants a haircut, a service slot or a consultation.",
+      "s1": {
+        "title": "Identify the service",
+        "body": "list_services resolves what the caller asked for into a real service with a real duration. “A wash and a cut” becomes a 45-minute service with a named stylist when resources and staff are modelled. “The cheaper one” becomes a clarifying question, not an assumption."
+      },
+      "s2": {
+        "title": "Read real availability",
+        "body": "check_availability queries the connected calendar. Google Calendar is read through /freeBusy using the calendar.freebusy and calendar.events scopes; Microsoft 365 through Microsoft Graph getSchedule with Calendars.ReadWrite. That result is the only free time the agent is permitted to offer."
+      },
+      "s3": {
+        "title": "Offer what exists, in the location's timezone",
+        "body": "“Thursday is full. I can do Friday at 9:40, or Monday at 16:10.” Times are spoken in the timezone configured for that location, which starts to matter the moment you run a second site or take calls from abroad."
+      },
+      "s4": {
+        "title": "Collect what the booking needs",
+        "body": "The agent asks for the name and whatever the service requires, and reads back anything it heard imperfectly. It does not treat caller ID as proof of identity: the number is a hint that this may be a returning contact, nothing more."
+      },
+      "s5": {
+        "title": "Preview and confirm before any write",
+        "body": "“Hanna Nagy, wash and cut, Friday 15 May at 9:40, 45 minutes, with Eszter. Shall I book it?” The conversation sits in a confirmation gate. Nothing is written on a maybe, and the caller can still change the slot at this point."
+      },
+      "s6": {
+        "title": "Write, verify, confirm",
+        "body": "create_booking runs inside a transaction with an idempotency key. If it wins, the agent confirms the booking out loud and a confirmation email can go out. If an optimistic create loses the race, the tool returns a structured conflict, and the agent says so and offers the next free slot instead of pretending."
+      }
+    },
+    "capabilities": {
+      "heading": "What the booking agent handles",
+      "body": "Booking, rescheduling and cancelling, with the calendar as the single source of truth.",
+      "c1": {
+        "title": "Availability from the calendar, never from the model",
+        "body": "The agent has no way to offer a slot that check_availability did not return. When nothing is free it says so, and offers the alternatives the tool produced."
+      },
+      "c2": {
+        "title": "Conflict-safe, idempotent writes",
+        "body": "Database constraints, transactions and idempotency keys prevent double bookings and duplicate retries. A create that loses returns a structured conflict the agent handles inside the conversation."
+      },
+      "c3": {
+        "title": "A confirmation gate before every write",
+        "body": "The agent summarises the appointment and asks for confirmation before create_booking runs. The same gate protects cancel_booking, so nothing is released by accident either."
+      },
+      "c4": {
+        "title": "Reschedule and cancel by phone",
+        "body": "find_booking locates an existing appointment and cancel_booking releases it. Waitlist and cancellation flows exist, so a freed slot is not simply lost."
+      },
+      "c5": {
+        "title": "Services, resources, staff and locations",
+        "body": "Services, resources and staff are modelled, and timezone is explicit per tenant location, so a two-site business books each site on its own clock."
+      },
+      "c6": {
+        "title": "Google Calendar and Microsoft 365",
+        "body": "Both connect over OAuth2 with PKCE and offline access. Google requests openid, email, calendar.events and calendar.freebusy; Microsoft requests openid, email, offline_access and Calendars.ReadWrite. Egress is host-locked to the provider's own domains."
+      }
+    },
+    "facts": {
+      "heading": "Booking facts worth checking",
+      "body": "The specifics that decide whether phone booking is safe to switch on.",
+      "f1": {
+        "term": "Availability source",
+        "value": "Always the connected calendar or booking engine — the agent never invents a slot"
+      },
+      "f2": {
+        "term": "Write safety",
+        "value": "Database constraints, transactions and idempotency keys; a losing create returns a structured conflict"
+      },
+      "f3": {
+        "term": "Confirmation",
+        "value": "The agent summarises and asks for explicit confirmation before every write"
+      },
+      "f4": { "term": "Timezone", "value": "Explicit per tenant location" },
+      "f5": {
+        "term": "Confirmation email",
+        "value": "Can be sent after a successful booking; your own SMTP relay is supported"
+      },
+      "f6": {
+        "term": "Booking tools",
+        "value": "list_services, check_availability, create_booking, find_booking, cancel_booking"
+      },
+      "f7": {
+        "term": "Calendars",
+        "value": "Google Calendar (/freeBusy, create, cancel) and Microsoft 365 (getSchedule, create, delete)"
+      },
+      "f8": {
+        "term": "Booking webhooks",
+        "value": "booking.created, booking.changed, booking.canceled, waitlist.slot_released"
+      }
+    },
+    "limits": {
+      "heading": "What phone booking does not do",
+      "body": "Where the boundary sits, and what sits on the other side of it.",
+      "l1": {
+        "title": "It will not invent a slot to please the caller",
+        "body": "If the calendar has nothing, the agent says the calendar has nothing. That is the point of routing availability through a tool instead of a prompt, and it is also why some calls end without a booking."
+      },
+      "l2": {
+        "title": "It books; it does not run your CRM",
+        "body": "The action catalog is the booking and knowledge tools plus the custom HTTPS APIs you define. There is no generic workflow builder and no CRM write path — if a booking has to land somewhere else, it goes through your own API tool or a signed outbound webhook."
+      },
+      "l3": {
+        "title": "Caller ID does not prove who is calling",
+        "body": "Finding or cancelling someone else's appointment from a recognised number is exactly the case that needs step-up verification or a person. The phone number is a convenience identifier, not authentication."
+      },
+      "l4": {
+        "title": "Two calendar providers, not every calendar",
+        "body": "Google Calendar and Microsoft 365 are the connectable calendars. Anything else has to be reached through a custom API tool with its own JSON Schema, timeout, retry policy and egress allowlist."
+      },
+      "l5": {
+        "title": "Email is the only notification channel",
+        "body": "A confirmation email can be sent after a successful booking. There is no SMS, no messaging app and no push notification: other notification channels exist in the data model but do not send."
+      },
+      "l6": {
+        "title": "The call still ends at 30 minutes",
+        "body": "A booking conversation runs inside the same 1,800-second cap as any other call. A caller who wants to move eleven appointments belongs with a person."
+      }
+    },
+    "faq": {
+      "heading": "Appointment booking questions",
+      "q1": {
+        "question": "Can the agent double-book a slot?",
+        "answer": "No. Availability is read from the calendar and the write is protected by database constraints, transactions and idempotency keys. If two calls race for the same slot, the losing create returns a structured conflict and that agent offers the next real alternative."
+      },
+      "q2": {
+        "question": "What if the line drops in the middle of a booking?",
+        "answer": "Nothing is written until the caller confirms, so a call that drops before the confirmation gate leaves no appointment behind. After the confirmation, the idempotency key means a retried write cannot create a second identical booking."
+      },
+      "q3": {
+        "question": "Which calendars can I connect?",
+        "answer": "Google Calendar and Microsoft 365, which is Outlook calendar through Microsoft Graph. Both use OAuth2 with PKCE and offline access, and egress is host-locked to www.googleapis.com and oauth2.googleapis.com, or graph.microsoft.com and login.microsoftonline.com."
+      },
+      "q4": {
+        "question": "Does the caller get a confirmation?",
+        "answer": "The agent reads the appointment back on the call before writing it, and confirms out loud once the write succeeds. A confirmation email can be sent afterwards, and you can relay it through your own SMTP server."
+      },
+      "q5": {
+        "question": "Can callers cancel or move an appointment by phone?",
+        "answer": "Yes. find_booking locates the appointment and cancel_booking releases it, and waitlist and cancellation flows exist so a freed slot can be offered on. Anything sensitive about somebody else's booking needs step-up verification or a person."
+      },
+      "q6": {
+        "question": "How do our own systems learn about a new booking?",
+        "answer": "Through outbound webhooks. booking.created, booking.changed, booking.canceled and waitlist.slot_released are among the 17 event types, delivered over HTTPS with an HMAC-SHA256 signature in the velyric-signature header and retried up to 8 times with backoff from 30 seconds to 24 hours."
+      },
+      "q7": {
+        "question": "How many booking calls can run at once?",
+        "answer": "As many as your plan allows: 2 concurrent calls on Start, 10 on Business, 50 on Pro and 100+ on Enterprise. Included voice minutes are 150, 400 and 1,000, with overage at 149, 129 and 109 HUF per minute, net of VAT."
+      }
+    },
+    "related": {
+      "heading": "Keep reading",
+      "r1": {
+        "label": "AI receptionist",
+        "description": "The full front desk: answering, knowledge, keypad shortcuts and out-of-hours rules."
+      },
+      "r2": {
+        "label": "Multilingual AI voice agents",
+        "description": "Booking a slot in Hungarian and confirming it in English, on the same call."
+      },
+      "r3": {
+        "label": "AI call transfer to a human",
+        "description": "What happens when a booking needs a person after all."
+      },
+      "r4": {
+        "label": "Pricing",
+        "description": "Plans, included minutes, overage rates and concurrency limits."
+      },
+      "r5": {
+        "label": "Booking for hair and beauty salons",
+        "description": "Services, stylists and a chair that is never double-booked."
+      },
+      "r6": {
+        "label": "Product overview",
+        "description": "The whole platform: orchestration, knowledge, integrations and guardrails."
+      }
+    }
+  },
+  "multilingual": {
+    "meta": {
+      "title": "Multilingual AI voice agent: Hungarian, German, English",
+      "description": "One agent, one number, three languages. The country code is only a hint, an explicit request or a stored preference wins, and the language can switch mid-call."
+    },
+    "breadcrumb": "Multilingual voice",
+    "eyebrow": "Multilingual voice agent",
+    "title": "One number, three languages, no menu to sit through",
+    "body": "The agent picks the language from the caller's number, from what they actually say, and from what you already know about them — and follows them when they switch halfway through the call.",
+    "answer": {
+      "question": "How does a multilingual AI voice agent choose a language?",
+      "body": "A multilingual voice agent decides which language to speak without asking the caller to press a key. In Velyric the caller's E.164 country code is only an initial hint: an explicit request such as “magyarul kerem”, the detected spoken language, and a stored preferred_language on the caller profile all override it. Language can switch mid-call, so a caller who starts in German and continues in English is followed rather than corrected. Greetings, the AI disclosure and fallback phrasing are configured per language, and the supported set is Hungarian, German and English."
+    },
+    "context": {
+      "heading": "Why a language menu is the wrong answer",
+      "body": "“Press 1 for Hungarian” costs every caller time and still gets the common cases wrong.",
+      "p1": "A language menu asks the person least able to navigate it to navigate it. It also fails exactly where it matters: the Hungarian calling from a German mobile, the Austrian guest whose English is better than their German, the regular whose language you already learned on the last call.",
+      "p2": "Velyric layers the signals instead. The country code gives a starting guess so the first sentence is usually right. What the caller actually says overrides that guess immediately. A stored preference on the caller profile beats both for a returning contact, and caller memory lives per tenant and is never shared across tenants."
+    },
+    "how": {
+      "heading": "How the language is decided, in order",
+      "body": "Four signals, one conversation, no menu anywhere in it.",
+      "s1": {
+        "title": "The country code sets the opening guess",
+        "body": "An inbound leg from +36 opens in Hungarian, one from +49 or +43 in German. The E.164 country code is a hint and nothing more: it decides which greeting is spoken first, and nothing after that."
+      },
+      "s2": {
+        "title": "Greeting and disclosure are per language",
+        "body": "Each language has its own configured greeting and AI disclosure: “Jo napot kivanok, On egy AI asszisztenssel beszel.” or “Guten Tag, Sie sprechen mit einem KI-Assistenten.” The disclosure is never dropped when the language changes."
+      },
+      "s3": {
+        "title": "What the caller says wins",
+        "body": "If the caller answers “Sorry, could we do this in English?” or simply starts speaking English, the agent switches. An explicit request and the detected spoken language both override the country-code hint, with no menu and no repeated greeting."
+      },
+      "s4": {
+        "title": "A stored preference beats the guess",
+        "body": "For a returning caller, preferred_language on your own caller profile takes precedence over the country code. Someone with a German number who always calls in Hungarian is greeted in Hungarian from the first word."
+      },
+      "s5": {
+        "title": "Switching mid-call is normal",
+        "body": "A caller who starts in Hungarian and switches to English for one technical detail is followed mid-conversation. Conversation state, the details collected so far and the tool results all survive the switch: the voice changes language, the call does not restart."
+      },
+      "s6": {
+        "title": "The rest of the call follows",
+        "body": "Knowledge retrieval, the booking readback, the confirmation question and the handoff line continue in the language being spoken. Language switch accuracy is one of the quality signals measured in the dashboard, so this is something you can check rather than hope for."
+      }
+    },
+    "capabilities": {
+      "heading": "What multilingual means here",
+      "body": "One agent covering three markets, configured per language rather than translated at runtime.",
+      "c1": {
+        "title": "Hungarian, German and English",
+        "body": "Three languages on one agent and one number. There is no separate number, separate agent or language menu per market."
+      },
+      "c2": {
+        "title": "Layered language selection",
+        "body": "The E.164 country-code hint, an explicit caller request, the detected spoken language and a stored preferred_language, in that order of authority."
+      },
+      "c3": {
+        "title": "Mid-call switching",
+        "body": "The language can change at any point in the conversation without losing state, and the agent does not push the caller back to where it started."
+      },
+      "c4": {
+        "title": "Per-language greeting, disclosure and fallbacks",
+        "body": "Greetings, the AI disclosure and fallback phrasing are configured per language, so a German call sounds like it was written for that market instead of translated from Hungarian mid-sentence."
+      },
+      "c5": {
+        "title": "Per-tenant caller memory",
+        "body": "A caller's preferred language is remembered on your own caller profile under strict tenant isolation, with tenant_id on every tenant-scoped table and Postgres row level security. Nothing is shared across tenants."
+      },
+      "c6": {
+        "title": "Measured, not assumed",
+        "body": "Language switch accuracy sits alongside answer latency, barge-in success, tool success rate and first-call resolution, and the simulation surface runs scripted test calls and regression suites in each language before a version goes live."
+      }
+    },
+    "facts": {
+      "heading": "Language facts worth checking",
+      "body": "What decides the language, and what it does not.",
+      "f1": { "term": "Supported languages", "value": "Hungarian, German and English" },
+      "f2": { "term": "Initial hint", "value": "The caller's E.164 country code" },
+      "f3": {
+        "term": "Overrides the hint",
+        "value": "An explicit request, the detected spoken language, and a stored preferred_language"
+      },
+      "f4": {
+        "term": "Mid-call switching",
+        "value": "Supported; conversation state and collected details are preserved"
+      },
+      "f5": {
+        "term": "Greeting and AI disclosure",
+        "value": "Configured per language, never dropped on a switch"
+      },
+      "f6": {
+        "term": "Caller memory",
+        "value": "Stored per tenant, never shared across tenants"
+      },
+      "f7": {
+        "term": "Numbers required",
+        "value": "One — every plan includes 1 phone number and 1 location"
+      },
+      "f8": {
+        "term": "Quality signal",
+        "value": "Language switch accuracy is measured and reported"
+      }
+    },
+    "limits": {
+      "heading": "What multilingual does not mean",
+      "body": "Three languages done properly, rather than forty done badly.",
+      "l1": {
+        "title": "Three languages, and that is the list",
+        "body": "Hungarian, German and English are supported. There is no Slovak, Romanian, Polish or Ukrainian agent; a caller in another language is a transfer case, and you should configure where that transfer goes."
+      },
+      "l2": {
+        "title": "Detection is a signal, not a certainty",
+        "body": "A very short utterance, heavy background noise or two languages in one sentence can produce the wrong guess. An explicit request always wins, and the keypad shortcut to a human stays available in every language."
+      },
+      "l3": {
+        "title": "Your sources have to exist in the language",
+        "body": "The agent answers from your knowledge base. If the price list exists only in Hungarian, an English-speaking caller can be served from it only as well as retrieval allows — keeping the important documents in every language you sell in is your job, not the model's."
+      },
+      "l4": {
+        "title": "It is a voice agent, not a translator",
+        "body": "The agent speaks the caller's language. It does not interpret a conversation between two other people, and it is not a subtitling or dubbing tool."
+      },
+      "l5": {
+        "title": "One number, not a number per market",
+        "body": "Each plan includes one phone number and one location. Separate local numbers for separate markets are a paid add-on, not a language feature."
+      },
+      "l6": {
+        "title": "The same 30-minute cap applies",
+        "body": "Switching language does not restart the clock. Every call ends at 1,800 seconds no matter how many languages it used."
+      }
+    },
+    "faq": {
+      "heading": "Multilingual voice agent questions",
+      "q1": {
+        "question": "Does the caller have to choose a language?",
+        "answer": "No. There is no “press 1 for Hungarian” menu. The country code decides the first sentence, and anything the caller says — an explicit request, or simply speaking another language — overrides it immediately."
+      },
+      "q2": {
+        "question": "Which languages are supported?",
+        "answer": "Hungarian, German and English. Those three are what the agent speaks; a caller in any other language is handled as a handoff to a person rather than as a translation problem."
+      },
+      "q3": {
+        "question": "What if the caller changes language mid-sentence?",
+        "answer": "The agent follows. Language can switch mid-call, and the conversation state, collected details and tool results are preserved, so a booking started in German can be confirmed in English without starting over."
+      },
+      "q4": {
+        "question": "Can I control the wording in each language?",
+        "answer": "Yes. Greetings, the AI disclosure and fallback phrasing are configured per language. That is how a German call keeps sounding German instead of like a translated Hungarian script."
+      },
+      "q5": {
+        "question": "Does a German number mean a German call?",
+        "answer": "Only as a first guess. The E.164 country code is an initial hint that an explicit request, the detected spoken language, or a stored preferred_language on the caller profile will override."
+      },
+      "q6": {
+        "question": "How do I know the language selection actually works?",
+        "answer": "Language switch accuracy is measured as a quality signal, alongside answer latency, barge-in success and first-call resolution. The simulation surface lets you run scripted test calls and regression suites in each language before a new agent version reaches real callers."
+      },
+      "q7": {
+        "question": "Do I need one phone number per language?",
+        "answer": "No. One agent on one number covers all three languages, and every plan includes one phone number and one location. Extra numbers are a paid add-on if you want a separate local presence in another market."
+      }
+    },
+    "related": {
+      "heading": "Keep reading",
+      "r1": {
+        "label": "AI receptionist",
+        "description": "Answering, knowledge, keypad shortcuts and out-of-hours rules on your own number."
+      },
+      "r2": {
+        "label": "AI appointment booking by phone",
+        "description": "Real availability, a confirmation gate, and conflict-safe writes."
+      },
+      "r3": {
+        "label": "AI call transfer to a human",
+        "description": "Where a call in an unsupported language should go, and how to configure it."
+      },
+      "r4": {
+        "label": "Pricing",
+        "description": "Plans, included minutes, overage rates and concurrency limits."
+      },
+      "r5": {
+        "label": "Voice agents for hotels and accommodation",
+        "description": "Guests calling from three countries on one reception number."
+      },
+      "r6": {
+        "label": "Product overview",
+        "description": "The whole platform: orchestration, knowledge, integrations and guardrails."
+      }
+    }
+  },
+  "transfer": {
+    "meta": {
+      "title": "AI call transfer to a human",
+      "description": "Velyric hands a call to a person on six defined triggers, including a spoken request and ### on the keypad, and refers the SIP call to your own destination."
+    },
+    "breadcrumb": "Call transfer",
+    "eyebrow": "Human handoff",
+    "title": "The AI knows when to stop and get a person",
+    "body": "Handoff is a first-class feature here, not a failure path. Six defined triggers send a call to a human, and the call is referred to the tel: or sip: destination you configured.",
+    "answer": {
+      "question": "When does an AI voice agent transfer a call to a human?",
+      "body": "A human handoff is the moment a voice agent stops handling a call itself and passes it to a person. Velyric transfers on six defined triggers: the caller asks for a person, the caller presses ### on the keypad, two to three comprehension attempts fail in a row, a tool times out or returns a 5xx after one retry, the request is sensitive or outside what the agent may do, or the call arrives outside business hours. The SIP call is then referred to another tel: or sip: destination that you configure. A caller never has to argue their way to a human: asking once, or pressing ###, is enough."
+    },
+    "context": {
+      "heading": "Handoff is a product decision, not an error",
+      "body": "The interesting question is not whether the AI can do everything. It is what happens the moment it should not.",
+      "p1": "Most bad experiences with phone automation come from one design choice: treating “reach a human” as a failure to be minimised. Callers learn to mash 0, shout “operator”, or hang up and try the sales line instead. That is a worse outcome for you than a transfer would have been, and it is the outcome you get by default if handoff is an afterthought.",
+      "p2": "Velyric goes the other way. Transfer triggers are explicit, the keypad shortcut is stated to the caller, and the agent offers a person as soon as the conversation stops going well — after two or three failed comprehension attempts, or once a tool has failed its retry. Transfer rate is a dashboard metric next to resolution rate and average call length, not a number to hide."
+    },
+    "how": {
+      "heading": "How a handoff actually runs",
+      "body": "From the trigger to the moment your colleague is on the line.",
+      "s1": {
+        "title": "The caller asks, or presses ###",
+        "body": "“Could I speak to a colleague?” ends the agent's turn immediately — no retention attempt, no extra question, no counting how many times it has been asked. ### is the keypad shortcut for a human agent and 0 is configured for immediate transfer, so the shortcut still works while the agent is talking."
+      },
+      "s2": {
+        "title": "Or the agent decides it is not working",
+        "body": "After two or three failed comprehension attempts the agent stops trying and offers a person: “I am not getting this right. Shall I put you through to a colleague?” A sensitive or disallowed request goes the same way, as does anything needing step-up verification the phone cannot provide."
+      },
+      "s3": {
+        "title": "Or a tool fails",
+        "body": "If a connected tool times out or returns a 5xx, the backend retries once. If the retry fails too, the call moves to a fallback or to a person, rather than leaving the caller with an agent that cannot complete the action it just promised."
+      },
+      "s4": {
+        "title": "The conversation moves to HANDOFF",
+        "body": "HANDOFF is an explicit state in the coded conversation state machine, next to CONFIRMATION_GATE, TOOL_EXECUTION and SAFE_FAILURE. The agent stops proposing tools and tells the caller what is about to happen instead of going quiet."
+      },
+      "s5": {
+        "title": "The SIP call is referred to your destination",
+        "body": "The call is referred to the tel: or sip: destination you configured: a mobile, a desk phone, a PBX extension or an on-call number. Outside business hours the same mechanism reaches your on-call number, or the agent takes a message or a callback request instead."
+      },
+      "s6": {
+        "title": "What the person on the other end gets",
+        "body": "Your colleague receives the live call on the configured destination. Velyric does not whisper a spoken briefing to them before connecting: the context lives on the call record, as the transcript and summary in the dashboard where enabled, plus call.started and call.ended webhook events your own systems can consume."
+      }
+    },
+    "capabilities": {
+      "heading": "How handoff is built",
+      "body": "Six triggers, one mechanism, and a metric that tells you whether it is happening too often.",
+      "c1": {
+        "title": "Ask once and you are through",
+        "body": "“Can I talk to a person?” triggers an immediate transfer. There is no retention script, no “let me try one more thing”, and no threshold the caller has to cross first."
+      },
+      "c2": {
+        "title": "Keypad shortcuts that always work",
+        "body": "### reaches a human agent and 0 is configured for immediate transfer, while * steps back a question. DTMF is configurable per tenant, and it works even while the agent is speaking."
+      },
+      "c3": {
+        "title": "Failure-triggered handoff",
+        "body": "Two to three failed comprehension attempts, or a tool timeout or 5xx that survives its single retry, hand the call to a person instead of looping the caller through the same question again."
+      },
+      "c4": {
+        "title": "Sensitive requests go to a person",
+        "body": "A caller's phone number is not authentication. Anything needing step-up verification, and anything outside what the agent is permitted to do, is routed to a human by policy rather than attempted."
+      },
+      "c5": {
+        "title": "Out-of-hours routing",
+        "body": "Outside business hours the call reaches your on-call number, or the agent takes a message or records a callback request — whichever you configured for that time window."
+      },
+      "c6": {
+        "title": "Transfer rate as a metric",
+        "body": "Transfer rate sits on the dashboard next to calls, resolution rate, average call length, bookings and cost, so a rise in handoffs is visible before your team feels it."
+      }
+    },
+    "facts": {
+      "heading": "Every transfer trigger, and what happens",
+      "body": "The complete list, with the default behaviour for each.",
+      "f1": { "term": "Caller asks for a person", "value": "Immediate transfer" },
+      "f2": { "term": "### on the keypad", "value": "Immediate transfer to a human agent" },
+      "f3": {
+        "term": "0 and * on the keypad",
+        "value": "0 for immediate transfer, * to step back — DTMF is configurable"
+      },
+      "f4": {
+        "term": "Repeated misunderstanding",
+        "value": "After 2-3 failed comprehension attempts the agent offers a transfer"
+      },
+      "f5": {
+        "term": "Tool timeout or 5xx",
+        "value": "One retry, then transfer or fallback"
+      },
+      "f6": {
+        "term": "Sensitive or disallowed request",
+        "value": "Human handoff by policy, including anything needing step-up verification"
+      },
+      "f7": {
+        "term": "Outside business hours",
+        "value": "Message taking, callback request, or the on-call number"
+      },
+      "f8": {
+        "term": "Transfer mechanism",
+        "value": "The SIP call is referred to a configured tel: or sip: destination"
+      }
+    },
+    "limits": {
+      "heading": "What handoff does not do",
+      "body": "What your team should plan for on the receiving end.",
+      "l1": {
+        "title": "There is no whispered briefing",
+        "body": "Your colleague receives the referred call, not a spoken summary of what happened before it. The context is on the call record — transcript and summary in the dashboard where enabled — so plan for the person to open the call, or to ask one short question."
+      },
+      "l2": {
+        "title": "A transfer needs somewhere to go",
+        "body": "The destination is a tel: or sip: address you configure. If nobody answers it, the agent does not rescue the call; what happens instead is whatever you configured for that window — voicemail, a callback request, or an overflow number."
+      },
+      "l3": {
+        "title": "No recording of the AI part by default",
+        "body": "Raw audio is not stored: default retention is 0 days. Reviewing exactly how a call sounded before the transfer needs the call recording add-on enabled in advance. Otherwise the transcript, kept 90 days by default, is what you have."
+      },
+      "l4": {
+        "title": "The agent will not verify identity for you",
+        "body": "Caller ID is a convenience identifier, not authentication. If your process requires proof of identity before a sensitive action, the agent transfers rather than improvising a check of its own."
+      },
+      "l5": {
+        "title": "The 30-minute cap covers the whole call",
+        "body": "A call ends at 1,800 seconds. Time spent with the agent before a transfer counts toward that, so a long AI conversation followed by a long human one is not what the cap is designed for."
+      },
+      "l6": {
+        "title": "No SMS or chat fallback",
+        "body": "If nobody can take the call, the options are message taking, a callback request, an overflow number or an email. There is no SMS, messaging app or push notification path."
+      }
+    },
+    "faq": {
+      "heading": "Call transfer questions",
+      "q1": {
+        "question": "How does a caller reach a human?",
+        "answer": "By asking, or by pressing ###. Asking for a person triggers an immediate transfer, and ### is the keypad shortcut for a human agent, with 0 configured for immediate transfer. DTMF shortcuts are configurable per tenant, so you can match whatever your callers already expect."
+      },
+      "q2": {
+        "question": "What exactly is a warm transfer here?",
+        "answer": "The live SIP call is referred to another tel: or sip: destination you configured, so the caller stays on the line and is connected to a person. Velyric does not play a spoken briefing to the receiving colleague; the context of the call sits on the call record as a transcript and summary where enabled."
+      },
+      "q3": {
+        "question": "What happens if one of our own APIs is down?",
+        "answer": "The backend retries the tool once. If the retry also times out or returns a 5xx, the call goes to a fallback or to a person, rather than leaving the caller with an agent that cannot finish what it started."
+      },
+      "q4": {
+        "question": "What happens to calls outside business hours?",
+        "answer": "You choose: the agent can take a message, record a callback request, or transfer to an on-call number. The same kind of configuration decides what happens when your plan's concurrency limit is already fully in use."
+      },
+      "q5": {
+        "question": "Can I see how often calls get transferred?",
+        "answer": "Yes. Transfer rate is one of the dashboard metrics next to calls, resolution rate, average call length, bookings and cost. It sits alongside measured signals such as tool success rate, first-call resolution and unsupported-answer rate."
+      },
+      "q6": {
+        "question": "Is there a limit on how long a transferred call can run?",
+        "answer": "A single call ends at 1,800 seconds, or 30 minutes, on every plan, and that cap covers the whole call including the time spent with the agent beforehand. Included voice minutes are 150 on Start, 400 on Business and 1,000 on Pro, with overage at 149, 129 and 109 HUF per minute, net of VAT."
+      },
+      "q7": {
+        "question": "Can different requests go to different people?",
+        "answer": "The transfer destination is a tel: or sip: address you configure, so routing means pointing at the right number — a desk phone, a PBX extension, a mobile or an on-call line. Multi-location support with role-based, location-scoped access means a multi-site business keeps each site's destination separate."
+      }
+    },
+    "related": {
+      "heading": "Keep reading",
+      "r1": {
+        "label": "AI receptionist",
+        "description": "Everything the agent handles before a handoff becomes necessary."
+      },
+      "r2": {
+        "label": "AI appointment booking by phone",
+        "description": "Real availability, a confirmation gate, and conflict-safe writes."
+      },
+      "r3": {
+        "label": "Multilingual AI voice agents",
+        "description": "Language selection, mid-call switching, and when a language is a handoff case."
+      },
+      "r4": {
+        "label": "Pricing",
+        "description": "Plans, included minutes, overage rates and concurrency limits."
+      },
+      "r5": {
+        "label": "Voice agents for auto repair shops",
+        "description": "Simple questions answered, diagnostics handed to the mechanic."
+      },
+      "r6": {
+        "label": "Product overview",
+        "description": "The whole platform: orchestration, knowledge, integrations and guardrails."
+      }
+    }
+  }
+}

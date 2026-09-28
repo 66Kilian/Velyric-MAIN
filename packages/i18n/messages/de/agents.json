@@ -1,0 +1,254 @@
+{
+  "title": "Agenten",
+  "description": "Voice-Agenten, die deine Rufnummern und deine Website bedienen.",
+  "empty": "Noch keine Agenten",
+  "emptyDescription": "Erstelle einen Agenten und konfiguriere Stimme, Sprachen, Tools und Übergaberegeln.",
+  "notPublished": "Nicht veröffentlicht",
+  "production": "Produktion",
+  "canaryRunning": "Schrittweiser Rollout",
+  "allLocations": "Alle Standorte",
+  "columns": {
+    "name": "Name",
+    "status": "Status",
+    "release": "Release",
+    "numbers": "Rufnummern",
+    "location": "Standort",
+    "updated": "Aktualisiert"
+  },
+  "create": {
+    "button": "Neuer Agent",
+    "title": "Agent erstellen",
+    "description": "Konfiguration und Veröffentlichung folgen im nächsten Schritt.",
+    "name": "Name des Agenten",
+    "nameInvalid": "Gib einen Namen mit 1 bis 120 Zeichen ein.",
+    "location": "Standort",
+    "allLocations": "Alle Standorte"
+  },
+  "status": {
+    "pause": "Pausieren",
+    "pauseTitle": "Agent pausieren?",
+    "pauseDescription": "Der Agent nimmt keine eingehenden Anrufe an, bis du ihn fortsetzt.",
+    "resume": "Fortsetzen",
+    "archive": "Archivieren",
+    "archiveTitle": "Agent archivieren?",
+    "archiveDescription": "Archivierte Agenten nehmen keine Anrufe mehr an und können nicht mehr bearbeitet werden.",
+    "changed": {
+      "ACTIVE": "Agent fortgesetzt",
+      "PAUSED": "Agent pausiert",
+      "ARCHIVED": "Agent archiviert"
+    }
+  },
+  "detail": {
+    "back": "Alle Agenten",
+    "description": "Lege fest, wie dieser Agent spricht, welche Tools er nutzen darf und wann er an dein Team übergibt.",
+    "versions": "Versionen",
+    "release": "Release",
+    "publishedAt": "Veröffentlicht",
+    "canary": "Canary",
+    "canaryLabel": "Version {version} für {percent} % der Anrufe",
+    "latestDraft": "Neueste Version",
+    "noVersions": "Noch keine Versionen",
+    "versionLabel": "Version {version}"
+  },
+  "phones": {
+    "title": "Rufnummern",
+    "restricted": "Deine Rolle darf keine Rufnummern sehen.",
+    "none": "Dieser Workspace hat noch keine Rufnummern.",
+    "unassigned": "Nicht zugewiesen",
+    "thisAgent": "Wird von diesem Agenten angenommen",
+    "otherAgent": "Wird von {name} angenommen",
+    "bind": "Zuweisen",
+    "unbind": "Zuweisung aufheben",
+    "bound": "{number} wird jetzt von diesem Agenten angenommen",
+    "unbound": "{number} ist nicht mehr zugewiesen"
+  },
+  "versions": {
+    "title": "Agentenversionen",
+    "description": "Jede gespeicherte Konfiguration ist eine unveränderliche Version. Veröffentliche, rolle schrittweise aus oder stelle ein früheres Release wieder her.",
+    "empty": "Noch keine Versionen",
+    "emptyDescription": "Speichere die Konfiguration, um die erste Version zu erstellen.",
+    "version": "Version",
+    "summary": "Änderungsbeschreibung",
+    "created": "Erstellt",
+    "published": "Veröffentlicht",
+    "actions": "Aktionen",
+    "compare": "Änderungen",
+    "publish": "Veröffentlichen",
+    "publishTitle": "Version {version} veröffentlichen",
+    "publishDescription": "Für die Veröffentlichung ist eine bestandene Release-Simulation erforderlich. Unter 100 % läuft die Version als Canary neben der aktuellen Produktionsversion.",
+    "publishProduction": "Für alle Anrufe veröffentlichen",
+    "publishCanary": "Canary mit {percent} % starten",
+    "published": "Version {version} veröffentlicht",
+    "rollout": "Rollout-Anteil",
+    "rolloutHint": "100 für ein vollständiges Release, 1–99 für einen Canary.",
+    "rollback": "Wiederherstellen",
+    "rollbackTitle": "Version {version} wiederherstellen?",
+    "rollbackDescription": "Die aktuelle Produktions- und Canary-Version werden zurückgerollt und diese Version bedient wieder alle Anrufe.",
+    "rolledBack": "Version {version} wiederhergestellt",
+    "reason": "Begründung",
+    "diffTitle": "Änderungen von Version {base} zu {target}",
+    "noChanges": "Die Konfigurationen sind identisch.",
+    "diffKinds": {
+      "added": "Hinzugefügt",
+      "removed": "Entfernt",
+      "changed": "Geändert"
+    }
+  },
+  "editor": {
+    "title": "Konfiguration",
+    "startingPoint": "Eine empfohlene Startkonfiguration. Beim Speichern entsteht Version 1.",
+    "basedOn": "Du bearbeitest eine Kopie von Version {version}. Beim Speichern entsteht eine neue Entwurfsversion.",
+    "saved": "Version {version} gespeichert",
+    "serverIssues": "Die Konfiguration konnte nicht gespeichert werden:",
+    "tabs": {
+      "voice": "Stimme und Sprachen",
+      "behavior": "Verhalten und Tools",
+      "handoff": "Übergabe",
+      "hours": "Zeiten und Limits"
+    },
+    "voice": "Stimme",
+    "defaultLanguage": "Standardsprache",
+    "languages": "Sprachen",
+    "locales": {
+      "hu": "Ungarisch",
+      "de": "Deutsch",
+      "en": "Englisch"
+    },
+    "greeting": "Begrüßung",
+    "fallback": "Wenn der Anrufer nicht verstanden wird",
+    "closing": "Verabschiedung",
+    "disclosure": "KI-Hinweis",
+    "disclosureHint": "Wird zu Beginn jedes Anrufs gesprochen. Eine Änderung erzeugt eine neue Hinweisversion.",
+    "persona": {
+      "warmth": "Wärme",
+      "formality": "Förmlichkeit",
+      "energy": "Energie",
+      "pace": "Sprechtempo",
+      "brevity": "Kürze",
+      "empathy": "Empathie",
+      "humor": "Humor",
+      "assertiveness": "Bestimmtheit"
+    },
+    "specialists": {
+      "RECEPTION_ROUTER": {
+        "title": "Empfang",
+        "description": "Begrüßt Anrufer, beantwortet allgemeine Fragen und leitet an den passenden Spezialisten weiter. Nur lesende Tools."
+      },
+      "BOOKING": {
+        "title": "Buchung",
+        "description": "Prüft Verfügbarkeiten und erstellt, findet oder storniert Buchungen."
+      },
+      "SUPPORT": {
+        "title": "Support",
+        "description": "Beantwortet Produkt- und Servicefragen aus deiner Wissensdatenbank. Nur lesende Tools."
+      },
+      "SALES": {
+        "title": "Vertrieb",
+        "description": "Qualifiziert Interessenten und erfasst Kontaktdaten."
+      },
+      "BILLING": {
+        "title": "Abrechnung",
+        "description": "Beantwortet Fragen zu Rechnungen und Zahlungen."
+      },
+      "HANDOFF_COMPLIANCE": {
+        "title": "Übergabe und Compliance",
+        "description": "Verbindet mit deinem Team und behandelt sensible Anfragen. Nutzt keine Tools."
+      }
+    },
+    "modelTier": "Denkstufe",
+    "tiers": {
+      "ROUTINE": "Routine",
+      "COMPLEX": "Komplex",
+      "ESCALATION": "Eskalation",
+      "FRONTIER": "Spitzenmodell"
+    },
+    "maxToolExecutions": "Maximale Tool-Aufrufe",
+    "tools": "Erlaubte Tools",
+    "unknownTool": "Das Tool {name} existiert nicht mehr und wird abgelehnt.",
+    "complexEscalation": "Eskalation zu komplexem Denken erlauben",
+    "premiumReasoning": "Premium-Denkmodelle erlauben",
+    "recording": "Anrufe aufzeichnen",
+    "destinations": "Weiterleitungsziele",
+    "addDestination": "Ziel hinzufügen",
+    "noDestinations": "Ohne Ziele kann der Agent keine Anrufe an dein Team weiterleiten.",
+    "destinationLabel": "Kennung",
+    "destinationPhone": "Rufnummer",
+    "destinationDescription": "Beschreibung",
+    "removeDestination": "Ziel entfernen",
+    "defaultDestination": "Standardziel",
+    "none": "Keines",
+    "failedUnderstandings": "Nach so vielen Missverständnissen einen Menschen anbieten",
+    "noAnswer": "Wenn niemand die Weiterleitung annimmt",
+    "noAnswerOptions": {
+      "RETURN_TO_AI": "Zurück zum Assistenten",
+      "CALLBACK_REQUEST": "Rückrufwunsch aufnehmen",
+      "ALTERNATE_QUEUE": "Alternative Warteschlange versuchen"
+    },
+    "warmTransfer": "Begleitete Weiterleitung mit Übergabe",
+    "overloadPolicy": "Wenn alle Leitungen belegt sind",
+    "overloadOptions": {
+      "SHORT_QUEUE": "Kurze Warteschlange",
+      "HUMAN_OVERFLOW": "Überlauf an einen Menschen",
+      "CALLBACK_REQUEST": "Rückruf anbieten",
+      "VOICEMAIL": "Mailbox",
+      "PAID_BURST": "Kostenpflichtige Zusatzkapazität",
+      "DEGRADED_MESSAGE": "Besetztansage"
+    },
+    "maxWait": "Maximale Wartezeit (Sekunden)",
+    "overflowDestination": "Überlaufziel",
+    "timezone": "Zeitzone",
+    "businessHours": "Geschäftszeiten",
+    "addHours": "Öffnungszeit hinzufügen",
+    "alwaysClosed": "Keine Öffnungszeiten: Es gilt immer das Verhalten außerhalb der Geschäftszeiten.",
+    "weekday": "Tag",
+    "weekdays": {
+      "1": "Montag",
+      "2": "Dienstag",
+      "3": "Mittwoch",
+      "4": "Donnerstag",
+      "5": "Freitag",
+      "6": "Samstag",
+      "7": "Sonntag"
+    },
+    "opens": "Öffnet",
+    "closes": "Schließt",
+    "removeHours": "Öffnungszeit entfernen",
+    "afterHours": "Außerhalb der Geschäftszeiten",
+    "afterHoursOptions": {
+      "TAKE_MESSAGE": "Nachricht aufnehmen",
+      "CALLBACK_REQUEST": "Rückruf anbieten",
+      "TRANSFER_ON_CALL": "An Bereitschaft weiterleiten"
+    },
+    "onCallDestination": "Bereitschaftsziel",
+    "maxDuration": "Maximale Anrufdauer (Sekunden)",
+    "silenceTimeout": "Stille-Timeout (Sekunden)",
+    "maxToolsPerCall": "Maximale Tool-Aufrufe pro Anruf",
+    "maxSpend": "Maximale Anbieterkosten pro Anruf (USD)",
+    "maxSpendHint": "Bei Erreichen dieser Kosten wird der Anruf höflich beendet.",
+    "changeSummary": "Änderungsbeschreibung",
+    "saveDraft": "Als neue Version speichern",
+    "rules": {
+      "invalid": "Bitte prüfe diesen Wert.",
+      "schema": "Die Konfiguration entspricht nicht dem erwarteten Format.",
+      "unique_locale": "Jede Sprache kann nur einmal hinzugefügt werden.",
+      "unique_kind": "Jeder Spezialist kann nur einmal hinzugefügt werden.",
+      "must_be_configured_language": "Die Standardsprache muss eine der konfigurierten Sprachen sein.",
+      "required_for_configured_language": "Für jede konfigurierte Sprache ist ein KI-Hinweis erforderlich.",
+      "reception_router_required": "Der Empfangsspezialist ist erforderlich.",
+      "unique_label": "Zielkennungen müssen eindeutig sein.",
+      "unknown_destination": "Wähle ein vorhandenes Ziel.",
+      "queue_requires_wait": "Eine kurze Warteschlange benötigt eine maximale Wartezeit über null.",
+      "exceeds_call_limit": "Das überschreitet die maximalen Tool-Aufrufe pro Anruf.",
+      "closes_after_opens": "Die Schließzeit muss nach der Öffnungszeit liegen.",
+      "unknown_tool": "Dieses Tool existiert nicht.",
+      "tool_not_active": "Dieses Tool ist nicht aktiv.",
+      "router_read_only": "Der Empfang darf nur lesende Tools verwenden.",
+      "support_read_only": "Der Support darf nur lesende Tools verwenden.",
+      "handoff_specialist_is_transfer_only": "Der Übergabespezialist darf keine Tools verwenden.",
+      "complex_escalation_disabled": "Aktiviere zuerst die Eskalation zu komplexem Denken.",
+      "premium_reasoning_disabled": "Aktiviere zuerst die Premium-Denkmodelle.",
+      "iana_time_zone": "Wähle eine gültige Zeitzone.",
+      "unique_sequence": "Tastenfolgen müssen eindeutig sein."
+    }
+  }
+}

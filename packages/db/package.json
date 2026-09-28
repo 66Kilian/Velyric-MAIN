@@ -1,0 +1,61 @@
+{
+  "name": "@velyric/db",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "sideEffects": false,
+  "bin": {
+    "velyric-migrate": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "@velyric/source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./testing": {
+      "@velyric/source": "./src/testing.ts",
+      "types": "./dist/testing.d.ts",
+      "default": "./dist/testing.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run --project unit",
+    "test:db": "vitest run --project db",
+    "test-server": "tsx scripts/test-server.ts",
+    "migrate": "tsx src/cli.ts migrate",
+    "migrate:status": "tsx src/cli.ts status",
+    "manifest:update": "tsx scripts/update-manifest.ts",
+    "seed:local": "tsx src/cli.ts seed",
+    "types:generate": "tsx scripts/generate-types.ts",
+    "types:check": "tsx scripts/generate-types.ts --check",
+    "enums:migration": "tsx scripts/generate-enum-migration.ts",
+    "enums:check": "tsx scripts/generate-enum-migration.ts --check",
+    "manifest:check": "tsx scripts/update-manifest.ts --check"
+  },
+  "dependencies": {
+    "@velyric/contracts": "workspace:*",
+    "@velyric/testkit": "workspace:*",
+    "kysely": "catalog:",
+    "pg": "catalog:",
+    "uuid": "catalog:"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "@types/pg": "catalog:",
+    "embedded-postgres": "catalog:",
+    "fast-check": "catalog:",
+    "get-port": "catalog:",
+    "tsx": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vitest": "catalog:",
+    "kysely-codegen": "catalog:"
+  }
+}

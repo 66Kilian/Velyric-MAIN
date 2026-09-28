@@ -1,0 +1,15 @@
+{
+  "return": {
+    "waiting": "Fizetés visszaigazolása",
+    "waitingTitle": "A fizetés visszaigazolása folyamatban",
+    "waitingBody": "Az oldal automatikusan frissül, amint a fizetési szolgáltató visszaigazolja a fizetést.",
+    "slowBody": "A visszaigazolás a szokásosnál tovább tart. E-mailt küldünk, amint elkészült; nyugodtan elhagyhatod az oldalt.",
+    "paidTitle": "Fizetés sikeres",
+    "paidBody": "Köszönjük! A számlát hamarosan küldjük, és már állítjuk be a munkaterületed.",
+    "failedTitle": "A fizetés nem teljesült",
+    "failedBody": "A fizetés sikertelen volt vagy lejárt. Nem történt terhelés. Próbáld újra.",
+    "total": "{plan} csomag · összesen {amount}",
+    "continue": "Beállítás folytatása",
+    "retry": "Újrapróbálás"
+  }
+}

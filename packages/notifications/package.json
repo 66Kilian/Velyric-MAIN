@@ -1,0 +1,46 @@
+{
+  "name": "@velyric/notifications",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "@velyric/source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./smtp": {
+      "@velyric/source": "./src/smtp.ts",
+      "types": "./dist/smtp.d.ts",
+      "default": "./dist/smtp.js"
+    },
+    "./caller": {
+      "@velyric/source": "./src/caller.ts",
+      "types": "./dist/caller.d.ts",
+      "default": "./dist/caller.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@velyric/contracts": "workspace:*",
+    "@velyric/security": "workspace:*",
+    "nodemailer": "catalog:"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "@types/nodemailer": "catalog:",
+    "@vitest/coverage-v8": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vitest": "catalog:"
+  }
+}

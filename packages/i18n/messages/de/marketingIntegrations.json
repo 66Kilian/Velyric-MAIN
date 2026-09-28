@@ -1,0 +1,682 @@
+{
+  "common": {
+    "breadcrumbLabel": "Brotkrümelnavigation",
+    "factsHeading": "Auf einen Blick",
+    "setupHeading": "Einrichtung",
+    "actionsHeading": "Was der Agent kann",
+    "securityHeading": "Wie es abgesichert ist",
+    "limitsHeading": "Grenzen, die du kennen solltest",
+    "faqHeading": "Häufige Fragen",
+    "relatedHeading": "Passend dazu",
+    "labels": {
+      "auth": "Authentifizierung",
+      "direction": "Datenfluss",
+      "operations": "Operationen",
+      "surface": "Eingerichtet in"
+    }
+  },
+  "hub": {
+    "heading": "Alle Integrationen, die Velyric heute unterstützt",
+    "body": "Das ist die vollständige Liste. Was hier nicht steht, gibt es nicht als eingebauten Connector. Die meisten Systeme lassen sich trotzdem über eigene API-Tools oder ausgehende Webhooks anbinden.",
+    "readMore": "Integrationsleitfaden öffnen",
+    "scope": {
+      "heading": "Was als Integration zählt",
+      "body": "Velyric trennt Connectoren, die eine Kundin oder ein Kunde selbst autorisiert, von Plattformdiensten, die Velyric im Auftrag betreibt.",
+      "detail": "Google Kalender, Microsoft 365, eigene API-Tools, ausgehende Webhooks und ein eigener SMTP-Relay werden von dir verbunden. Rufnummern, Echtzeit-Sprache, Zahlungen und Rechnungsstellung betreibt Velyric als Teil des Dienstes, dort gibt es für dich nichts zu verbinden. Es gibt keinen CRM-Connector, keinen Shop- oder Lieferplattform-Connector und keinen Chat- oder SMS-Kanal: Solche Systeme sind ausschließlich über eigene API-Tools oder Webhooks erreichbar."
+    }
+  },
+  "google-calendar": {
+    "meta": {
+      "title": "Google Kalender Integration für KI-Terminbuchung am Telefon",
+      "description": "Verbinde Google Kalender, damit der Velyric Voice-Agent im Anruf echte Verfügbarkeiten liest und Termine anlegt oder absagt – mit minimal nötigen OAuth-Berechtigungen."
+    },
+    "eyebrow": "Integration",
+    "title": "Google Kalender",
+    "body": "Der Agent sieht echte freie Zeiten und schreibt Termine direkt in den Kalender, den dein Team ohnehin nutzt.",
+    "answer": {
+      "question": "Was macht die Google Kalender Integration?",
+      "body": "Sie erlaubt dem Velyric Voice-Agenten, belegte Zeiten aus einem verbundenen Google Kalender zu lesen und während eines laufenden Anrufs Termine anzulegen oder abzusagen. Die Verbindung wird pro Workspace mit OAuth 2.0 und PKCE autorisiert, und Velyric speichert nur das Refresh-Token, versiegelt mit AES-256-GCM. Verfügbarkeiten werden immer im Moment des Anrufs bei Google gelesen, deshalb bietet der Agent nie einen bereits vergebenen Termin an."
+    },
+    "facts": {
+      "auth": "OAuth 2.0 Authorization Code mit PKCE (S256) und Offline-Zugriff",
+      "direction": "Beidseitig: belegte Zeiten lesen, Termine schreiben und absagen",
+      "operations": "freeBusy lesen, Termin anlegen, Termin absagen",
+      "surface": "Dashboard, Bereich Integrationen"
+    },
+    "setup": {
+      "heading": "Einrichtung",
+      "body": "Das Verbinden dauert wenige Minuten und braucht nur ein Google-Konto, das den Zielkalender sieht.",
+      "steps": {
+        "s1": {
+          "title": "Verbindung starten",
+          "body": "Öffne im Dashboard den Bereich Integrationen und starte die Google-Kalender-Verbindung. Velyric erzeugt eine PKCE-Challenge und leitet dich zum Zustimmungsbildschirm von Google."
+        },
+        "s2": {
+          "title": "Berechtigungen erteilen",
+          "body": "Google fragt openid, email, calendar.events und calendar.freebusy ab. Offline-Zugriff wird angefragt, damit der Agent auch ohne deine Anmeldung arbeiten kann; liefert Google kein Refresh-Token, wird die Verbindung abgelehnt statt halb eingerichtet zu bleiben."
+        },
+        "s3": {
+          "title": "Kalender und Zeitzone wählen",
+          "body": "Lege fest, welchen Kalender der Agent für den Standort nutzt, und bestätige die Zeitzone des Standorts, damit gesprochene Zeiten das bedeuten, was die anrufende Person erwartet."
+        },
+        "s4": {
+          "title": "Mit einem Anruf testen",
+          "body": "Mach einen Testanruf und frag nach einem Termin. Prüfe, ob der Eintrag mit richtiger Zeit, Bezeichnung und Dauer im Kalender erscheint, bevor du echten Verkehr auf die Nummer leitest."
+        }
+      }
+    },
+    "actions": {
+      "heading": "Was der Agent kann",
+      "body": "Der Agent hat drei Kalenderoperationen und nichts darüber hinaus.",
+      "items": {
+        "a1": {
+          "title": "Verfügbarkeit prüfen",
+          "body": "Liest belegte Zeiträume über den freeBusy-Endpunkt von Google und bietet nur Zeiten an, die in diesem Moment wirklich frei sind."
+        },
+        "a2": {
+          "title": "Termin anlegen",
+          "body": "Schreibt den Termin erst, nachdem die anrufende Person die Zusammenfassung bestätigt hat, mit einem Idempotenzschlüssel, damit ein erneuter Versuch keinen doppelten Eintrag erzeugt."
+        },
+        "a3": {
+          "title": "Termin absagen",
+          "body": "Findet eine bestehende Buchung, sagt sie ab und bestätigt die Absage im Gespräch."
+        }
+      }
+    },
+    "security": {
+      "heading": "Wie es abgesichert ist",
+      "body": "Der Kalenderzugriff ist bewusst eng und auf Google-Hosts beschränkt.",
+      "items": {
+        "i1": "Angefragt werden nur calendar.events und calendar.freebusy. Velyric kann weder deine Mails noch Dateien oder Kontakte lesen.",
+        "i2": "Refresh-Tokens werden mit AES-256-GCM versiegelt in einem Secret Store abgelegt und nie geloggt.",
+        "i3": "Ausgehende Aufrufe sind per Allowlist auf www.googleapis.com und oauth2.googleapis.com beschränkt, ausschließlich über HTTPS.",
+        "i4": "Läuft die Autorisierung ab oder wird sie widerrufen, wird ein integration.auth_expired Webhook-Event ausgelöst, damit du neu verbinden kannst, bevor Buchungen fehlschlagen."
+      }
+    },
+    "limits": {
+      "heading": "Grenzen, die du kennen solltest",
+      "items": {
+        "l1": "Pro Standort wird ein Kalender genutzt. Komplexes Routing über mehrere Kalender lässt sich nicht aus dem Voice-Agenten heraus konfigurieren.",
+        "l2": "Der Agent legt Termine an, sagt sie ab und findet sie wieder. Er bearbeitet keine beliebigen Terminfelder und verwaltet keine Freigaben oder Berechtigungen.",
+        "l3": "Ist Google nicht erreichbar, rät der Agent nicht: Er bietet einen Rückruf an oder übergibt an einen Menschen, statt einen Termin zu erfinden."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Kann der Agent einen Termin doppelt vergeben?",
+        "answer": "Er sollte es nicht können. Die Verfügbarkeit wird unmittelbar vor dem Schreiben erneut geprüft, die Buchung erhält einen Idempotenzschlüssel, und die Buchungslogik erzwingt Konflikte auf Datenbankebene. Verliert eine Buchung das Rennen, bekommt der Agent eine strukturierte Konfliktantwort und bietet die nächste echte Alternative an."
+      },
+      "q2": {
+        "question": "Welche Google-Berechtigungen fragt ihr genau an?",
+        "answer": "openid, email, https://www.googleapis.com/auth/calendar.events und https://www.googleapis.com/auth/calendar.freebusy, mit Offline-Zugriff. Mehr wird nicht angefragt, und kein anderes Google-Produkt wird angesprochen."
+      },
+      "q3": {
+        "question": "Was passiert, wenn jemand den Zugriff in Google widerruft?",
+        "answer": "Kalenderaufrufe schlagen fehl und Velyric löst ein integration.auth_expired Webhook-Event aus. Der Agent bietet keine Buchung mehr an, die er nicht abschließen kann, und nimmt stattdessen einen Rückruf auf oder übergibt an einen Menschen."
+      },
+      "q4": {
+        "question": "Kann ich einen gemeinsamen Teamkalender nutzen?",
+        "answer": "Ja, solange das autorisierende Google-Konto diesen Kalender sehen und beschreiben darf. Der Kalender wird nach dem Verbinden pro Standort ausgewählt."
+      },
+      "q5": {
+        "question": "In welcher Zeitzone werden Termine angelegt?",
+        "answer": "In der Zeitzone, die am Velyric-Standort konfiguriert ist. Sie wird ausdrücklich gesetzt und nicht aus der anrufenden Person abgeleitet. Genau das hält gesprochene Zeit und Kalendereintrag konsistent."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "KI-Terminbuchung",
+        "description": "Wie ein Buchungsgespräch von der Absicht bis zur Bestätigung abläuft."
+      },
+      "r2": {
+        "label": "Microsoft 365",
+        "description": "Derselbe Buchungsablauf mit Outlook-Kalendern über Microsoft Graph."
+      }
+    }
+  },
+  "microsoft-365": {
+    "meta": {
+      "title": "Microsoft 365 und Outlook Kalender Integration",
+      "description": "Verbinde Microsoft 365, damit der Velyric Voice-Agent im Anruf Outlook-Verfügbarkeiten liest und Termine anlegt oder löscht – über Calendars.ReadWrite mit Microsoft Graph."
+    },
+    "eyebrow": "Integration",
+    "title": "Microsoft 365",
+    "body": "Buche über Microsoft Graph in Outlook-Kalender, mit demselben konfliktsicheren Ablauf wie bei Google Kalender.",
+    "answer": {
+      "question": "Was macht die Microsoft 365 Integration?",
+      "body": "Sie verbindet einen Outlook-Kalender über Microsoft Graph, damit der Voice-Agent mit getSchedule Verfügbarkeiten liest und im Anruf Termine anlegt oder löscht. Die Autorisierung läuft über OAuth 2.0 mit PKCE und offline_access, und nur das Refresh-Token bleibt gespeichert, versiegelt mit AES-256-GCM. Die Buchungslogik ist identisch zu Google Kalender, ein Anbieterwechsel verändert also nicht, wie ein Anruf klingt."
+    },
+    "facts": {
+      "auth": "OAuth 2.0 Authorization Code mit PKCE (S256) und offline_access",
+      "direction": "Beidseitig: Kalender lesen, Termine schreiben und löschen",
+      "operations": "getSchedule, Termin anlegen, Termin löschen",
+      "surface": "Dashboard, Bereich Integrationen"
+    },
+    "setup": {
+      "heading": "Einrichtung",
+      "body": "Du brauchst ein Microsoft 365 Konto mit Zugriff auf den Kalender, den der Agent verwalten soll.",
+      "steps": {
+        "s1": {
+          "title": "Verbindung starten",
+          "body": "Öffne im Dashboard den Bereich Integrationen und starte die Microsoft-365-Verbindung. Velyric erzwingt die Kontoauswahl, damit du bewusst das richtige Organisationskonto wählst."
+        },
+        "s2": {
+          "title": "Calendars.ReadWrite erteilen",
+          "body": "Microsoft bittet um Zustimmung zu openid, email, offline_access und Calendars.ReadWrite. Offline-Zugriff ist nötig, damit der Agent zwischen Anmeldungen handeln kann."
+        },
+        "s3": {
+          "title": "Kalender und Zeitzone auswählen",
+          "body": "Wähle den Kalender für den Standort und bestätige die Zeitzone, in der der Agent Zeiten ausspricht und Termine schreibt."
+        },
+        "s4": {
+          "title": "Mit einem Testanruf prüfen",
+          "body": "Ruf an, buche einen Termin, kontrolliere den Eintrag in Outlook und sag ihn über den Agenten wieder ab, um beide Richtungen zu prüfen."
+        }
+      }
+    },
+    "actions": {
+      "heading": "Was der Agent kann",
+      "body": "Microsoft Graph wird für genau drei Operationen genutzt.",
+      "items": {
+        "a1": {
+          "title": "Verfügbarkeit lesen",
+          "body": "Ruft getSchedule auf, um belegte Zeiträume zu finden, bevor überhaupt eine Zeit vorgeschlagen wird."
+        },
+        "a2": {
+          "title": "Termin anlegen",
+          "body": "Schreibt den Termin nach ausdrücklicher Bestätigung im Gespräch, abgesichert durch einen Idempotenzschlüssel."
+        },
+        "a3": {
+          "title": "Termin löschen",
+          "body": "Entfernt eine zuvor angelegte Buchung bei einer Absage und bestätigt das Ergebnis hörbar."
+        }
+      }
+    },
+    "security": {
+      "heading": "Wie es abgesichert ist",
+      "body": "Der Graph-Zugriff ist auf Kalender begrenzt und auf Microsoft-Hosts festgelegt.",
+      "items": {
+        "i1": "Angefragt wird nur Calendars.ReadWrite. Mail, Teams, Dateien und Verzeichnisdaten liegen außerhalb des Berechtigungsumfangs.",
+        "i2": "Refresh-Tokens werden mit AES-256-GCM versiegelt und niemals geloggt.",
+        "i3": "Ausgehender Verkehr ist per Allowlist auf graph.microsoft.com und login.microsoftonline.com beschränkt, ausschließlich über HTTPS.",
+        "i4": "Abgelaufene oder widerrufene Zustimmung löst ein integration.auth_expired Webhook-Event aus, damit du bewusst neu verbinden kannst."
+      }
+    },
+    "limits": {
+      "heading": "Grenzen, die du kennen solltest",
+      "items": {
+        "l1": "Ein Kalender pro Standort, genau wie bei Google Kalender.",
+        "l2": "Die Buchung von Räumen und Ressourcen jenseits des gewählten Kalenders wird nicht vom Voice-Agenten gesteuert.",
+        "l3": "Ist Graph nicht verfügbar, bietet der Agent einen Rückruf oder eine Übergabe an, statt eine Zeit zuzusagen, die er nicht schreiben kann."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Funktioniert das mit einem privaten Microsoft-Konto?",
+        "answer": "Die Integration ist für Microsoft 365 Geschäftskonten über Microsoft Graph gebaut. Die Kontoauswahl wird bei der Zustimmung erzwungen, damit du das richtige Organisationskonto wählst."
+      },
+      "q2": {
+        "question": "Welche Berechtigungen werden angefragt?",
+        "answer": "openid, email, offline_access und https://graph.microsoft.com/Calendars.ReadWrite. Mail- oder Verzeichnisberechtigungen werden nicht angefragt."
+      },
+      "q3": {
+        "question": "Kann ich Google Kalender und Microsoft 365 gleichzeitig verbinden?",
+        "answer": "Beide Connector-Typen existieren, und ein Standort nutzt einen Kalender für Buchungen. Richte sie pro Standort ein, statt zu erwarten, dass der Agent zwei Kalender zu einer Verfügbarkeitsansicht zusammenführt."
+      },
+      "q4": {
+        "question": "Was passiert mit Buchungen, wenn ich die Verbindung trenne?",
+        "answer": "Bereits geschriebene Termine bleiben in Outlook, denn es sind echte Kalendereinträge. Der Agent kann lediglich keine Verfügbarkeit mehr lesen und keine neuen Buchungen mehr schreiben."
+      },
+      "q5": {
+        "question": "Landen die Daten der anrufenden Person im Termin?",
+        "answer": "Nur das, was die Buchung braucht, etwa Name und Zeit. Velyric wendet Datenminimierung an und schreibt keine unnötigen personenbezogenen Daten in Kalendereinträge."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Google Kalender",
+        "description": "Derselbe Buchungsablauf mit Google Kalender und freeBusy."
+      },
+      "r2": {
+        "label": "KI-Terminbuchung",
+        "description": "Was die anrufende Person hört, während Verfügbarkeit geprüft und bestätigt wird."
+      }
+    }
+  },
+  "custom-api-tools": {
+    "meta": {
+      "title": "Eigene API-Tools für KI-Telefonassistenten",
+      "description": "Stelle eigene HTTPS-Endpunkte als Tools bereit, die der Velyric Voice-Agent im Gespräch aufrufen kann – mit JSON-Schema-Validierung, HMAC- oder Bearer-Auth und SSRF-Schutz."
+    },
+    "eyebrow": "Integration",
+    "title": "Eigene API-Tools",
+    "body": "Gib dem Agenten eine sichere, typisierte Tür zu Systemen, für die Velyric keinen eigenen Connector hat.",
+    "answer": {
+      "question": "Was ist ein eigenes API-Tool?",
+      "body": "Ein eigenes API-Tool ist ein HTTPS-Endpunkt, den du im Dashboard definierst und den der Voice-Agent im Gespräch aufrufen darf, etwa um eine Bestellung nachzuschlagen oder eine Mitgliedschaft zu prüfen. Du legst Methode, URL, Authentifizierung und JSON-Schema für Anfrage und Antwort fest, damit das Modell niemals eine beliebige Anfrage senden kann. So werden Systeme ohne eingebauten Connector erreicht, einschließlich CRMs und interner Backoffice-Systeme."
+    },
+    "facts": {
+      "auth": "Keine, Bearer-Token oder HMAC-SHA256 über Zeitstempel und Body",
+      "direction": "Ausgehend von Velyric zu deinem Endpunkt, mit validierter Antwort",
+      "operations": "GET, POST, PUT, PATCH, DELETE mit Pfadvorlagen",
+      "surface": "Dashboard, Integrationen, eigene Tools"
+    },
+    "setup": {
+      "heading": "Einrichtung",
+      "body": "Ein Tool zu definieren ist Konfiguration, keine Codeänderung auf Velyric-Seite.",
+      "steps": {
+        "s1": {
+          "title": "Endpunkt beschreiben",
+          "body": "Lege HTTP-Methode, Basis-URL und Pfadvorlage fest. Es wird ausschließlich HTTPS akzeptiert, und Path Traversal wird abgelehnt."
+        },
+        "s2": {
+          "title": "Authentifizierung wählen",
+          "body": "Wähle keine, ein Bearer-Token oder HMAC-SHA256. Zugangsdaten werden als Workspace-Secrets gespeichert und lassen sich rotieren, ohne das Tool zu bearbeiten."
+        },
+        "s3": {
+          "title": "Schemata definieren",
+          "body": "Hinterlege JSON Schema 2020-12 für die Eingabe, die der Agent senden darf, und für die Antwort, die du zurückgibst. Was nicht validiert, wird abgelehnt, bevor es dein System oder die anrufende Person erreicht."
+        },
+        "s4": {
+          "title": "Sicherheitsregel setzen",
+          "body": "Gib die Nebenwirkungsklasse an und ob im Gespräch bestätigt werden muss, und setze Timeout, Anzahl der Wiederholungen und die maximale Antwortgröße."
+        }
+      }
+    },
+    "actions": {
+      "heading": "Was der Agent kann",
+      "body": "Der Agent wählt ein Tool, das Backend prüft die Zulässigkeit, und das strukturierte Ergebnis wird zurückgesprochen.",
+      "items": {
+        "a1": {
+          "title": "Etwas nachschlagen",
+          "body": "Lesende Tools lassen den Agenten Fragen aus Livesystemen beantworten, etwa den Status einer Bestellung, ohne deine Datenbank offenzulegen."
+        },
+        "a2": {
+          "title": "Eine Aktion ausführen",
+          "body": "Schreibende Tools können Datensätze anlegen oder ändern. Alles mit Nebenwirkung kann vorab eine ausdrückliche gesprochene Bestätigung verlangen."
+        },
+        "a3": {
+          "title": "Sauber scheitern",
+          "body": "Bei Timeout oder Serverfehler wiederholt der Agent einmal gemäß Regel und übergibt dann an einen Menschen, statt ein Ergebnis zu raten."
+        }
+      }
+    },
+    "security": {
+      "heading": "Wie es abgesichert ist",
+      "body": "Das Modell bekommt nie einen allgemeinen HTTP-Client.",
+      "items": {
+        "i1": "Jede Anfrage und Antwort wird gegen dein JSON-Schema validiert, damit fehlerhafte Modellausgaben deine API nicht erreichen.",
+        "i2": "Ausgehender Verkehr ist per Allowlist beschränkt; localhost, Link-Local, private Bereiche und Cloud-Metadaten-Endpunkte sind blockiert, um SSRF zu verhindern.",
+        "i3": "Zugangsdaten liegen in einem Secret Store, werden nie geloggt und lassen sich rotieren.",
+        "i4": "Schreibende Operationen tragen einen Idempotenzschlüssel, und risikoreiche Operationen lassen sich hinter eine Bestätigungsregel legen."
+      }
+    },
+    "limits": {
+      "heading": "Grenzen, die du kennen solltest",
+      "items": {
+        "l1": "Endpunkte müssen über öffentliches HTTPS erreichbar sein. Es gibt kein VPN und keinen Tunnel ins private Netz.",
+        "l2": "Jedes Tool hat ein hartes Timeout und eine maximale Antwortgröße, lang laufende Jobs brauchen also ein asynchrones Design.",
+        "l3": "Tools sind typisierte Einzeloperationen, keine Workflow-Engine. Mehrstufige Abläufe setzt du aus mehreren Tools zusammen."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Kann ich so mein CRM anbinden?",
+        "answer": "Ja, wenn dein CRM eine HTTPS-API hat. Velyric hat keinen eingebauten CRM-Connector, deshalb ist ein eigenes API-Tool der vorgesehene Weg für CRM-Abfragen oder -Schreibvorgänge."
+      },
+      "q2": {
+        "question": "Wie prüfe ich, dass eine Anfrage wirklich von Velyric kam?",
+        "answer": "Nutze die HMAC-SHA256-Option. Velyric signiert Zeitstempel und Body mit deinem gemeinsamen Secret, sodass dein Endpunkt die Echtheit prüfen und Replays ablehnen kann."
+      },
+      "q3": {
+        "question": "Was hindert die KI daran, den falschen Endpunkt aufzurufen?",
+        "answer": "Tool-Berechtigungen liegen im Code, nicht im Prompt. Das Backend prüft vor dem Senden, ob das gewählte Tool für diesen Workspace und diesen Gesprächszustand erlaubt ist."
+      },
+      "q4": {
+        "question": "Was hört die anrufende Person, während das Tool läuft?",
+        "answer": "Der Agent führt das Gespräch natürlich weiter, solange der Aufruf läuft, und bestätigt dann das strukturierte Ergebnis. Scheitert das Tool, sagt er das und bietet einen Menschen an, statt eine Antwort zu erfinden."
+      },
+      "q5": {
+        "question": "Kann ein Tool eine Karte belasten oder Zahlungen annehmen?",
+        "answer": "Entwirf keine Tools, die Kartendaten am Telefon aufnehmen. Zahlungsabwicklung ist nicht Teil des Sprachablaufs, und risikoreiche Operationen sollten bestätigt und auditiert statt blind automatisiert werden."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Ausgehende Webhooks",
+        "description": "Events von Velyric empfangen, statt von ihm aufgerufen zu werden."
+      },
+      "r2": {
+        "label": "Entwicklerdokumentation",
+        "description": "API-Konventionen, Authentifizierung und Fehlerbehandlung."
+      }
+    }
+  },
+  "webhooks": {
+    "meta": {
+      "title": "Ausgehende Webhooks für Anruf- und Buchungsevents",
+      "description": "Abonniere Velyric-Events wie call.ended und booking.created mit HMAC-signierten ausgehenden Webhooks, die mit Wiederholungen über 24 Stunden an deinen HTTPS-Endpunkt zugestellt werden."
+    },
+    "eyebrow": "Integration",
+    "title": "Ausgehende Webhooks",
+    "body": "Schiebe Anruf-, Buchungs- und Workspace-Events in deine eigenen Systeme, sobald sie passieren.",
+    "answer": {
+      "question": "Was machen die Webhooks von Velyric?",
+      "body": "Ausgehende Webhooks stellen Workspace-Events an einen HTTPS-Endpunkt zu, den du kontrollierst, damit deine Systeme ohne Polling von Anrufen, Buchungen und Konfigurationsänderungen erfahren. Jede Zustellung ist mit HMAC-SHA256 signiert, sodass du die Herkunft prüfen kannst, und fehlgeschlagene Zustellungen werden mit wachsendem Abstand über rund 24 Stunden wiederholt. Pro Workspace lassen sich bis zu zehn Endpunkte registrieren, und du wählst je Endpunkt aus, welche der siebzehn Eventtypen er erhält."
+    },
+    "facts": {
+      "auth": "HMAC-SHA256 Signatur im Header velyric-signature",
+      "direction": "Ausgehend von Velyric zu deinem Endpunkt",
+      "operations": "17 Eventtypen, bis zu 10 Endpunkte pro Workspace",
+      "surface": "Dashboard, Einstellungen, Webhooks"
+    },
+    "setup": {
+      "heading": "Einrichtung",
+      "body": "Ein Webhook-Endpunkt muss öffentlich über HTTPS erreichbar sein und schnell antworten.",
+      "steps": {
+        "s1": {
+          "title": "Endpunkt registrieren",
+          "body": "Trage die HTTPS-URL in den Einstellungen ein und wähle die Eventtypen aus, die sie erhalten soll. Es wird nur Port 443 genutzt, und Weiterleitungen werden nicht verfolgt."
+        },
+        "s2": {
+          "title": "Signaturschlüssel speichern",
+          "body": "Lege das erzeugte Secret dort ab, wo dein Server es lesen kann. Du brauchst es, um jede Zustellung zu prüfen."
+        },
+        "s3": {
+          "title": "Signatur prüfen",
+          "body": "Lies den Header velyric-signature in der Form t=Zeitstempel,v1=hex, berechne den HMAC über Zeitstempel und Rohbody neu und vergleiche mit einer laufzeitkonstanten Funktion."
+        },
+        "s4": {
+          "title": "Testevent senden",
+          "body": "Löse eine webhook.test Zustellung aus und prüfe, dass dein Endpunkt schnell mit einem 2xx-Status antwortet, bevor du Produktionsevents aktivierst."
+        }
+      }
+    },
+    "actions": {
+      "heading": "Welche Events du empfangen kannst",
+      "body": "Siebzehn Eventtypen decken den Anruflebenszyklus, Buchungen, Wissen und Workspace-Änderungen ab.",
+      "items": {
+        "a1": {
+          "title": "Anrufe und Buchungen",
+          "body": "call.started, call.ended, booking.created, booking.changed, booking.canceled und waitlist.slot_released."
+        },
+        "a2": {
+          "title": "Wissen und Agenten",
+          "body": "knowledge.ingestion_completed, knowledge.ingestion_failed, agent_version.published, agent_version.rolled_back, quality.scored und simulation.run_completed."
+        },
+        "a3": {
+          "title": "Workspace und Compliance",
+          "body": "contact.merged, privacy.request_created, integration.auth_expired, phone_number.status_changed und das webhook.test Event."
+        }
+      }
+    },
+    "security": {
+      "heading": "Wie es abgesichert ist",
+      "body": "Die Zustellung ist signiert, begrenzt und bewusst streng gegenüber Weiterleitungen.",
+      "items": {
+        "i1": "Jede Anfrage trägt eine HMAC-SHA256-Signatur über Zeitstempel und Body, damit du gefälschte oder wiederholte Zustellungen ablehnen kannst.",
+        "i2": "Es wird ausschließlich HTTPS auf Port 443 genutzt und Weiterleitungen werden nie verfolgt, damit ein Redirect deine Daten nicht woanders hinbringt.",
+        "i3": "Zustellungen laufen nach zehn Sekunden in ein Timeout, und es wird nur ein kleiner Antwortkörper gelesen, damit ein langsamer Endpunkt keine Ressourcen blockiert.",
+        "i4": "Fehlgeschlagene Zustellungen werden achtmal wiederholt: nach 30 Sekunden, 2, 10 und 30 Minuten, dann 2, 6, 12 und 24 Stunden."
+      }
+    },
+    "limits": {
+      "heading": "Grenzen, die du kennen solltest",
+      "items": {
+        "l1": "Bis zu zehn Endpunkte pro Workspace.",
+        "l2": "Die Zustellung erfolgt mindestens einmal, dein Handler muss also idempotent sein und dasselbe Event erneut vertragen.",
+        "l3": "Nach dem letzten Versuch wird eine Zustellung aufgegeben; behandle Webhooks als schnellen Pfad und gleiche über die API ab, wenn du eine Garantie brauchst."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Sind Webhooks wirklich verfügbar oder geplant?",
+        "answer": "Sie sind vollständig verfügbar und haben einen Dashboard-Bereich zur Verwaltung von Endpunkten, Eventauswahl und Zustellhistorie."
+      },
+      "q2": {
+        "question": "Wie prüfe ich eine Zustellung?",
+        "answer": "Zerlege den Header velyric-signature als t=Zeitstempel,v1=hex, berechne HMAC-SHA256 über Zeitstempel und rohen Request-Body mit deinem Endpunkt-Secret und vergleiche laufzeitkonstant. Lehne Zustellungen mit altem Zeitstempel ab."
+      },
+      "q3": {
+        "question": "Was soll mein Endpunkt zurückgeben?",
+        "answer": "Gib schnell einen 2xx-Status zurück und erledige die eigentliche Arbeit asynchron. Alles langsamer als das Zehn-Sekunden-Timeout gilt als fehlgeschlagene Zustellung und wird wiederholt."
+      },
+      "q4": {
+        "question": "Kann dasselbe Event zweimal ankommen?",
+        "answer": "Ja. Wegen der Wiederholungen ist die Zustellung mindestens einmal, dedupliziere also über die Event-Kennung und mach deinen Handler idempotent."
+      },
+      "q5": {
+        "question": "Kann ich für einen schnellen Test einfaches HTTP nutzen?",
+        "answer": "Nein. Akzeptiert wird ausschließlich HTTPS auf Port 443, auch beim Testen. Nutze einen Tunneldienst mit TLS-Terminierung, wenn du Events lokal empfangen willst."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Eigene API-Tools",
+        "description": "Lass den Agenten deine Systeme während des Gesprächs aufrufen."
+      },
+      "r2": {
+        "label": "Entwicklerdokumentation",
+        "description": "Authentifizierung, Konventionen und Fehlerbehandlung."
+      }
+    }
+  },
+  "phone-numbers": {
+    "meta": {
+      "title": "Rufnummern für KI-Telefonassistenten",
+      "description": "Wie Velyric Rufnummern über Telnyx bereitstellt, welche Geschäftsprüfung nötig ist und wie bestehende Nummern zu einem KI-Telefonassistenten portiert werden."
+    },
+    "eyebrow": "Plattform",
+    "title": "Rufnummern",
+    "body": "Jeder Workspace bekommt eine echte Rufnummer, die direkt in den Voice-Agenten führt.",
+    "answer": {
+      "question": "Wie funktionieren Rufnummern bei Velyric?",
+      "body": "Velyric stellt Nummern über Telnyx als Teil des Dienstes bereit, du verbindest also kein eigenes Carrier-Konto. Jeder Tarif enthält eine Rufnummer, und Anrufe darauf beantwortet der von dir konfigurierte Agent. Bestehende Geschäftsnummern lassen sich stattdessen portieren, und die Nummernbestellung kann je nach Land eine regulatorische oder Carrier-seitige Geschäftsprüfung erfordern."
+    },
+    "facts": {
+      "auth": "Von Velyric betrieben, kein eigenes Carrier-Konto nötig",
+      "direction": "Eingehende Anrufe aus dem öffentlichen Telefonnetz",
+      "operations": "Neue Nummer bereitstellen oder bestehende portieren",
+      "surface": "Onboarding und der Bereich Rufnummern"
+    },
+    "setup": {
+      "heading": "So geht eine Nummer live",
+      "body": "Die Bereitstellung ist Teil des Onboardings und läuft als nachvollziehbarer Workflow.",
+      "steps": {
+        "s1": {
+          "title": "Nummer wählen",
+          "body": "Wähle im Onboarding eine verfügbare Nummer in dem Land, das du bedienst, oder starte die Portierung einer Nummer, die du bereits nutzt."
+        },
+        "s2": {
+          "title": "Geschäftsprüfung abschließen",
+          "body": "Manche Länder verlangen Unterlagen, bevor eine Ortsrufnummer aktiviert werden darf. Reiche die angeforderten Geschäftsdaten ein, damit der Carrier die Bestellung freigeben kann."
+        },
+        "s3": {
+          "title": "Agenten zuordnen",
+          "body": "Verbinde die Nummer mit dem Agenten, der sie beantworten soll, inklusive Begrüßung, Hinweistext und Verhalten außerhalb der Geschäftszeiten."
+        },
+        "s4": {
+          "title": "Testanruf machen",
+          "body": "Ruf die Nummer an und prüfe, dass der Agent abnimmt, den KI-Hinweis gibt und mindestens eine echte Aufgabe abschließen kann, bevor du sie veröffentlichst."
+        }
+      }
+    },
+    "actions": {
+      "heading": "Was bei einem eingehenden Anruf passiert",
+      "body": "Die Nummer ist der Einstieg in alles Weitere.",
+      "items": {
+        "a1": {
+          "title": "Der Agent nimmt sofort ab",
+          "body": "Anrufe werden rund um die Uhr angenommen, und die anrufende Person erfährt zu Beginn, dass sie mit einem KI-Assistenten spricht."
+        },
+        "a2": {
+          "title": "Die Sprache wird erkannt",
+          "body": "Die Ländervorwahl der anrufenden Nummer ist nur ein erster Hinweis. Eine ausdrückliche Bitte oder die erkannte gesprochene Sprache übernimmt sofort."
+        },
+        "a3": {
+          "title": "Die Übergabe bleibt verfügbar",
+          "body": "Die anrufende Person kann jederzeit nach einem Menschen fragen oder die konfigurierte DTMF-Folge drücken, dann wird weitergeleitet."
+        }
+      }
+    },
+    "security": {
+      "heading": "Wie damit umgegangen wird",
+      "body": "Telefonie wird als regulierte Infrastruktur behandelt, nicht als Komfortfunktion.",
+      "items": {
+        "i1": "Nummern werden über einen Carrier-Workflow mit auditierbarem Zustandsautomaten bereitgestellt, nicht per Ad-hoc-Skript.",
+        "i2": "Regulatorische und KYC-Anforderungen werden ausdrücklich erhoben, wo das Zielland sie verlangt.",
+        "i3": "Die Rufnummer der anrufenden Person gilt als Komfortmerkmal und nie als Authentifizierung für sensible Daten.",
+        "i4": "Rohes Anrufaudio wird standardmäßig nicht gespeichert, eine Rufnummer wird also nicht zum verborgenen Sprachaufzeichnungsarchiv."
+      }
+    },
+    "limits": {
+      "heading": "Grenzen, die du kennen solltest",
+      "items": {
+        "l1": "Jeder Tarif enthält eine Rufnummer und einen Standort; zusätzliche Nummern sind ein kostenpflichtiges Add-on.",
+        "l2": "Verfügbarkeit, Preis und Vorlaufzeit hängen von Land und Carrier ab, und die Prüfung kann Tage dauern.",
+        "l3": "Die Zahl gleichzeitiger Anrufe ist je Tarif auf 2, 10 oder 50 begrenzt, Enterprise-Kapazität wird vertraglich vereinbart."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Kann ich meine bestehende Geschäftsnummer behalten?",
+        "answer": "Ja, die Portierung einer bestehenden Nummer wird unterstützt. Bis die Portierung abgeschlossen ist, kannst du den Agenten auf einer vorübergehenden Nummer betreiben, damit nichts blockiert."
+      },
+      "q2": {
+        "question": "Brauche ich ein eigenes Telnyx- oder Twilio-Konto?",
+        "answer": "Nein. Telefonie betreibt Velyric als Teil des Dienstes, es gibt also kein Carrier-Konto, das du anlegen oder verbinden müsstest."
+      },
+      "q3": {
+        "question": "Warum verlangt eine Nummernbestellung Geschäftsunterlagen?",
+        "answer": "Viele Länder regulieren Ortsrufnummern und verlangen vor der Aktivierung einen Nachweis der Geschäftsidentität oder Adresse. Das ist eine Carrier- und Regulierungsanforderung, keine Velyric-Regel."
+      },
+      "q4": {
+        "question": "Was passiert, wenn mehr Menschen anrufen, als mein Tarif erlaubt?",
+        "answer": "Das Verhalten folgt deiner gewählten Regel: kurze Warteschlange, Überlaufnummer, Rückrufwunsch oder Anrufbeantworter. Anrufe werden nie stillschweigend verworfen."
+      },
+      "q5": {
+        "question": "Wie lange darf ein einzelner Anruf dauern?",
+        "answer": "Anrufe sind in jedem Tarif auf 30 Minuten begrenzt. Gespräche, die länger brauchen, gehören besser zu einem Menschen."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "KI-Rezeptionist",
+        "description": "Was der Agent mit den Anrufen macht, die auf der Nummer eingehen."
+      },
+      "r2": {
+        "label": "Preise",
+        "description": "Inkludierte Minuten, gleichzeitige Anrufe und Überverbrauchsraten je Tarif."
+      }
+    }
+  },
+  "email-notifications": {
+    "meta": {
+      "title": "E-Mail-Bestätigungen und Benachrichtigungen",
+      "description": "Wie Velyric Buchungsbestätigungen und Workspace-Benachrichtigungen per E-Mail versendet und wie sich ein eigener SMTP-Relay für den Versand über die eigene Domain einrichten lässt."
+    },
+    "eyebrow": "Plattform",
+    "title": "E-Mail-Benachrichtigungen",
+    "body": "Bestätigungen und betriebliche Hinweise erreichen die Beteiligten auch nach dem Anruf.",
+    "answer": {
+      "question": "Was verschickt Velyric per E-Mail?",
+      "body": "Velyric versendet transaktionale E-Mails, etwa Buchungsbestätigungen an anrufende Personen, die eine Adresse angegeben haben, sowie betriebliche Benachrichtigungen an dein Team. E-Mail ist heute der einzige Benachrichtigungskanal, der tatsächlich sendet. Wenn Post über deinen eigenen Relay hinausgehen soll, wird eine eigene SMTP-Konfiguration über die Control-API unterstützt, auch wenn es dafür noch keinen Self-Service-Bereich im Dashboard gibt."
+    },
+    "facts": {
+      "auth": "Standardmäßig Plattformversand, optional eigener SMTP-Relay",
+      "direction": "Ausgehend von Velyric an die empfangende Person",
+      "operations": "Buchungsbestätigungen und Workspace-Benachrichtigungen",
+      "surface": "Plattformstandard; eigener Relay über die Control-API"
+    },
+    "setup": {
+      "heading": "Einrichtung",
+      "body": "Für das Standardverhalten ist nichts nötig; der eigene Relay ist eine bewusste Entscheidung.",
+      "steps": {
+        "s1": {
+          "title": "Festlegen, wann Bestätigungen rausgehen",
+          "body": "Aktiviere die Buchungsbestätigung per E-Mail und entscheide, ob der Agent nach einer Adresse fragen soll, wenn noch keine geprüfte vorliegt."
+        },
+        "s2": {
+          "title": "Das Zurücklesen prüfen",
+          "body": "Wenn der Agent eine Adresse am Telefon aufnimmt, liest er sie zur Bestätigung zurück. Teste das vor dem Livegang mit einer realistischen Adresse."
+        },
+        "s3": {
+          "title": "Versandweg wählen",
+          "body": "Bleib beim Plattformversand oder lass einen eigenen SMTP-Relay einrichten, damit Post über deine Domain und deine Reputation hinausgeht."
+        },
+        "s4": {
+          "title": "Zustellbarkeit prüfen",
+          "body": "Wenn du einen eigenen Relay nutzt, stelle sicher, dass SPF, DKIM und DMARC korrekt gesetzt sind, damit Bestätigungen nicht gefiltert werden."
+        }
+      }
+    },
+    "actions": {
+      "heading": "Was versendet wird",
+      "body": "Post ist transaktional und hängt immer an etwas, das tatsächlich passiert ist.",
+      "items": {
+        "a1": {
+          "title": "Buchungsbestätigungen",
+          "body": "Nach einer erfolgreichen Buchung kann die anrufende Person eine schriftliche Bestätigung von Zeit und Details erhalten."
+        },
+        "a2": {
+          "title": "Betriebliche Benachrichtigungen",
+          "body": "Dein Team erhält Hinweise zu Ereignissen, die Aufmerksamkeit brauchen, etwa wenn ein Ablauf nicht abgeschlossen werden konnte."
+        },
+        "a3": {
+          "title": "Nichts Spekulatives",
+          "body": "Es gibt keinen Marketingversand, keinen Newsletter und keine Massenkampagnen. Post folgt immer einer echten Transaktion."
+        }
+      }
+    },
+    "security": {
+      "heading": "Wie damit umgegangen wird",
+      "body": "E-Mail trägt personenbezogene Daten, deshalb gelten dieselben Minimierungsregeln wie im Rest der Plattform.",
+      "items": {
+        "i1": "Enthalten ist nur, was die Nachricht braucht; Gesprächsprotokolle werden standardmäßig nicht herumgeschickt.",
+        "i2": "SMTP-Zugangsdaten für einen eigenen Relay werden als versiegelte Secrets gespeichert und nie geloggt.",
+        "i3": "Einwilligungsmerkmale liegen am Anruferprofil, damit Bestätigungen nur dort rausgehen, wo das angemessen ist.",
+        "i4": "Aufbewahrungsregeln gelten für die zugrunde liegenden Datensätze, nicht nur für die Mail, damit Daten nicht unbegrenzt bestehen."
+      }
+    },
+    "limits": {
+      "heading": "Grenzen, die du kennen solltest",
+      "items": {
+        "l1": "Nur E-Mail versendet. SMS, In-App- und Chat-Benachrichtigungen gibt es nicht.",
+        "l2": "Der eigene SMTP-Relay wird über die Control-API eingerichtet und hat noch keinen Dashboard-Bereich.",
+        "l3": "Eine am Telefon aufgenommene Adresse ist ungeprüft, bis die empfangende Person auf die Mail reagiert; behandle sie entsprechend."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Kann Velyric SMS-Bestätigungen senden?",
+        "answer": "Nein. E-Mail ist heute der einzige Benachrichtigungskanal, der sendet. Andere Kanäle existieren im Datenmodell, sind aber nicht implementiert, und etwas anderes zu behaupten wäre falsch."
+      },
+      "q2": {
+        "question": "Kann Post von unserer eigenen Domain kommen?",
+        "answer": "Ja, über einen eigenen SMTP-Relay. Er wird über die Control-API eingerichtet statt über einen Dashboard-Bereich, frag also den Support nach der Einrichtung."
+      },
+      "q3": {
+        "question": "Wie kommt der Agent am Telefon an eine korrekte E-Mail-Adresse?",
+        "answer": "Er fragt die Adresse ab und liest sie vor der Verwendung zur Bestätigung zurück. Liegt am Anruferprofil bereits eine geprüfte Adresse vor, nutzt er diese, statt erneut zu fragen."
+      },
+      "q4": {
+        "question": "Werden uns Gesprächsprotokolle per E-Mail geschickt?",
+        "answer": "Nein. Protokolle bleiben unter ihrer Aufbewahrungsregel in der Plattform, und Benachrichtigungen enthalten nur, was die Nachricht wirklich braucht."
+      },
+      "q5": {
+        "question": "Was passiert, wenn die Mail unzustellbar ist?",
+        "answer": "Die Buchung bleibt davon unberührt, denn der Kalendereintrag ist maßgeblich. Eine fehlgeschlagene Bestätigung storniert nichts stillschweigend."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "KI-Terminbuchung",
+        "description": "Wo die Bestätigung in das Buchungsgespräch passt."
+      },
+      "r2": {
+        "label": "Sicherheit und Compliance",
+        "description": "Aufbewahrungsstandards, DSGVO-Rollen und Datenminimierung."
+      }
+    }
+  }
+}

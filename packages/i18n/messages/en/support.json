@@ -1,0 +1,42 @@
+{
+  "title": "Get help",
+  "description": "Write to us and continue the conversation here. Closed tickets are kept as a transcript.",
+  "new": "New ticket",
+  "newTitle": "Open a new ticket",
+  "newBody": "Tell us what happened. The more specific you are, the faster we can help.",
+  "subject": "Subject",
+  "category": "Area",
+  "priority": "Urgency",
+  "describe": "What is the problem?",
+  "describeHint": "If you can, include the exact time and the phone number involved.",
+  "send": "Send",
+  "empty": "You have no tickets yet.",
+  "pickTitle": "Pick a ticket",
+  "pickBody": "Switch between any of your conversations from the list on the left.",
+  "replyPlaceholder": "Write your reply…",
+  "close": "Close",
+  "reopen": "Reopen",
+  "closedNotice": "This ticket is closed. The conversation is kept; reopen it if the problem comes back.",
+  "velyric": "Velyric",
+  "you": "You",
+  "status": {
+    "OPEN": "Open",
+    "PENDING_STAFF": "With us",
+    "PENDING_CUSTOMER": "We replied",
+    "RESOLVED": "Resolved",
+    "CLOSED": "Closed"
+  },
+  "categories": {
+    "TECHNICAL": "Technical",
+    "BILLING": "Billing",
+    "PHONE_NUMBERS": "Phone number",
+    "ACCOUNT": "Account",
+    "OTHER": "Other"
+  },
+  "priorities": {
+    "LOW": "Low",
+    "NORMAL": "Normal",
+    "HIGH": "High",
+    "URGENT": "Urgent"
+  }
+}

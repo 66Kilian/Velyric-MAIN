@@ -1,0 +1,98 @@
+{
+  "brand": {
+    "name": "Velyric",
+    "tagline": "A brighter tomorrow. Together."
+  },
+  "actions": {
+    "save": "Save",
+    "saveChanges": "Save changes",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "delete": "Delete",
+    "remove": "Remove",
+    "edit": "Edit",
+    "create": "Create",
+    "add": "Add",
+    "back": "Back",
+    "next": "Next",
+    "close": "Close",
+    "retry": "Try again",
+    "refresh": "Refresh",
+    "search": "Search",
+    "filter": "Filter",
+    "clearFilters": "Clear filters",
+    "viewAll": "View all",
+    "viewDetails": "View details",
+    "copy": "Copy",
+    "copied": "Copied",
+    "loadMore": "Load more",
+    "signIn": "Sign in",
+    "signOut": "Sign out",
+    "signUp": "Get started",
+    "bookDemo": "Book a demo",
+    "contactSales": "Contact sales",
+    "upload": "Upload",
+    "download": "Download",
+    "archive": "Archive",
+    "revoke": "Revoke",
+    "invite": "Invite",
+    "connect": "Connect",
+    "disconnect": "Disconnect",
+    "publish": "Publish",
+    "rollback": "Roll back",
+    "sync": "Sync now",
+    "submit": "Submit"
+  },
+  "states": {
+    "loading": "Loading…",
+    "saving": "Saving…",
+    "empty": "Nothing here yet",
+    "noResults": "No results match your filters",
+    "comingSoon": "Not available yet",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "live": "Live",
+    "optional": "Optional",
+    "required": "Required",
+    "unsavedChanges": "You have unsaved changes"
+  },
+  "time": {
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "last7Days": "Last 7 days",
+    "last30Days": "Last 30 days",
+    "last90Days": "Last 90 days",
+    "custom": "Custom range",
+    "secondsAgo": "{count, plural, one {# second ago} other {# seconds ago}}",
+    "minutesAgo": "{count, plural, one {# minute ago} other {# minutes ago}}",
+    "durationShort": "{minutes}m {seconds}s"
+  },
+  "theme": {
+    "label": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "language": {
+    "label": "Language",
+    "hu": "Magyar",
+    "de": "Deutsch",
+    "en": "English"
+  },
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next",
+    "showing": "Showing {count} items",
+    "first": "First page"
+  },
+  "a11y": {
+    "skipToContent": "Skip to content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "loading": "Content is loading"
+  },
+  "confirmations": {
+    "deleteTitle": "Delete {name}?",
+    "irreversible": "This action cannot be undone."
+  }
+}

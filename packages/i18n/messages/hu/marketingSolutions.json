@@ -1,0 +1,724 @@
+{
+  "common": {
+    "breadcrumb": "Morzsamenü",
+    "cta": "Kezdjen a Velyrickel",
+    "other": "További iparágak",
+    "answerHeading": "A rövid válasz",
+    "factsHeading": "Mit csinál egy híváson",
+    "workflowHeading": "Hogyan zajlik egy hívás",
+    "limitsHeading": "Mit nem csinál",
+    "faqHeading": "Gyakori kérdések",
+    "relatedHeading": "Olvasson tovább"
+  },
+  "restaurant": {
+    "meta": {
+      "title": "AI telefonos ügyfélfogadás éttermeknek",
+      "description": "AI hangasszisztens, amely a nap 24 órájában felveszi az étterem vonalát magyarul, németül és angolul, asztalfoglalást vesz fel a valós naptárába, és az étlapkérdéseket a saját dokumentumaiból válaszolja meg."
+    },
+    "answer": {
+      "question": "Fel tud venni egy AI egy étterem telefonját és tud foglalni?",
+      "body": "Az ismétlődő hívásokra igen. A Velyric a saját számán veszi fel a telefont a nap minden órájában, közli, hogy AI asszisztens, és azt a három dolgot kezeli, amiből egy étterem vonala többnyire áll: egy asztalfoglalás, egy kérdés, amelynek válasza már le van írva, és egy lemondás. A szabad időpontot az összekötött Google Naptárban vagy Microsoft 365-ben ellenőrzi, mielőtt bármit felajánlana, a foglalást visszaolvassa megerősítésre, és adatbázis-megszorításokkal meg idempotenciakulccsal írja be, így két hívó nem viheti el ugyanazt az idősávot. Az étlappal, allergénekkel, nyitvatartással és parkolással kapcsolatos kérdéseket a saját feltöltött dokumentumaiból és a bejárt weboldaláról válaszolja meg. Minden más — egy nagy társaság egyeztetése, egy panasz, egy beszállító — abban a pillanatban emberhez kerül, amint a hívó ezt kéri."
+    },
+    "facts": {
+      "f1": {
+        "term": "Ide foglal",
+        "value": "Google Naptár vagy Microsoft 365, élőben ellenőrizve, mielőtt időpontot ajánlana"
+      },
+      "f2": {
+        "term": "Ebből válaszol",
+        "value": "Az étlapja, árlistája és kérdés-válasz dokumentumai, plusz a bejárt weboldala"
+      },
+      "f3": {
+        "term": "Forgalmas estéken",
+        "value": "Az egyidejűség csomaghatár: 2, 10 vagy 50 hívás egyszerre"
+      }
+    },
+    "workflow": {
+      "heading": "Hogyan zajlik egy éttermi hívás",
+      "body": "Mindig ugyanaz az útvonal, miközben a hívó bármikor közbevághat, meggondolhatja magát vagy nyelvet válthat.",
+      "steps": {
+        "s1": {
+          "title": "Felveszi és megérti",
+          "body": "Az asszisztens azonnal felveszi, közli, hogy AI asszisztens, és meghallgatja a hívó saját szavait magyarul, németül vagy angolul. Nincs menü, amin végig kellene nyomkodni."
+        },
+        "s2": {
+          "title": "Válaszol vagy naptárat ellenőriz",
+          "body": "Az étlappal, allergénekkel, nyitvatartással vagy parkolással kapcsolatos kérdést a saját indexelt dokumentumaiból válaszolja meg. Egy foglalási kérés élő szabadidőpont-ellenőrzést indít, és csak szabad időpontokat ajánl."
+        },
+        "s3": {
+          "title": "Megerősít, mielőtt írna",
+          "body": "Az asszisztens visszamondja a dátumot, az időpontot és a létszámot, és megerősítést kér a hívótól. Csak ezután írja be a foglalást, és visszaigazoló e-mail megy ki, ha a hívó megadott egy címet."
+        }
+      }
+    },
+    "limits": {
+      "heading": "Mit nem csinál",
+      "body": "Kimondva, mert ezeket szokták feltételezni, majd az első forgalmas pénteken felfedezni.",
+      "items": {
+        "l1": "Nincs asztaltérkép és nincs várólista funkció. Egy foglalás naptárbejegyzés időponttal és létszámmal, nem ülésrend, és amikor minden egyidejűségi hely foglalt, az Ön által beállított túlcsordulási szabály lép életbe: rövid sor, túlcsordulási szám, visszahívás vagy hangposta.",
+        "l2": "Nincs beépített összekötés pénztárrendszerhez vagy éttermi foglalási platformhoz. Ha használ ilyet, azt egyedi API-eszközként kell elérni a saját HTTPS végpontján keresztül.",
+        "l3": "Az asszisztens nem rögtönöz fogást, árat vagy allergénválaszt. Ha az étlapja nincs feltöltve vagy bejárva, inkább pontosító kérdést tesz fel vagy emberhez adja a hívást, ahelyett hogy találgatna."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Mi történik, ha péntek este többen hívnak egyszerre?",
+        "answer": "Minden hívás saját izolált munkamenetben fut, és hogy egyszerre hány fut, az csomaghatár: 2 a Starton, 10 a Businessen, 50 a Prón. A korlát fölött az Ön által választott szabály érvényesül — rövid sor, túlcsordulási szám, visszahívás vagy hangposta —, az egyidejűség-bővítés pedig fizetős kiegészítőként elérhető."
+      },
+      "q2": {
+        "question": "Meg tud biztonságosan válaszolni allergénkérdéseket?",
+        "answer": "A saját feltöltött étlapjából és dokumentumaiból válaszol, az Ön bérlőjére szűrve, és nem válaszol, ha semmi nem támaszt alá választ. Ettől pontosan azt mondja, amit leírt, és épp ezért egy allergénválasz csak annyira jó, amennyire a mögötte lévő dokumentum. Bármire, amit az étlap nem mond ki, az asszisztens pontosító kérdést tesz fel vagy emberhez kapcsol."
+      },
+      "q3": {
+        "question": "Működik német és angol vendégeknél is?",
+        "answer": "Igen. Egy szám kezeli a magyart, a németet és az angolt, és a nyelv hívás közben is változhat. A hívó országhívószáma csak kiindulási jelzés; egy kifejezett kérés vagy a ténylegesen beszélt nyelv felülírja."
+      },
+      "q4": {
+        "question": "Le tud mondani vagy áttenni egy vendég egy foglalást telefonon?",
+        "answer": "Igen. Az asszisztens megtalál egy meglévő foglalást és lemondja, egy módosítást pedig lemondásként plusz új foglalásként kezel az élő szabad időpontok alapján. Minden írást hangosan megerősít a hívóval, mielőtt megtörténne."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Telefonos időpontfoglalás",
+        "description": "Hogyan lesz egy hívásból megerősített időpont a valós naptárában, dupla foglalás nélkül."
+      },
+      "r2": {
+        "label": "AI recepciós vagy hangposta",
+        "description": "Mit tud a hívó a hívás alatt befejezni, és mikor elég mégis a hangposta."
+      }
+    }
+  },
+  "dental-clinic": {
+    "meta": {
+      "title": "AI telefonos ügyfélfogadás fogászatoknak és rendelőknek",
+      "description": "AI hangasszisztens, amely a nap 24 órájában felveszi a rendelő vonalát, kontrollokat foglal a valós naptárába, az előkészületi és árkérdéseket a dokumentumaiból válaszolja meg, a sürgős hívásokat pedig a csapatához kapcsolja."
+    },
+    "answer": {
+      "question": "El tud látni egy AI recepciós egy fogászat hívásait?",
+      "body": "A rutinszerű részüket igen. A Velyric a rendelő számán veszi fel a telefont a nap minden órájában magyarul, németül és angolul, időpontot foglal és tesz át az összekötött Google Naptárban vagy Microsoft 365-ben, és megválaszolja azokat a kérdéseket, amelyeket egy recepciós egész nap ismétel: nyitvatartás, mit hozzon magával, meddig tart egy kezelés, mennyibe kerül, hol lehet parkolni. Az elején közli, hogy AI asszisztens. Amit szándékosan nem csinál, az a klinikai rész: nem ad tanácsot, nem értékel, és a fájdalommal, sürgősséggel vagy bármi érzékennyel kapcsolatos hívásokat azonnal a csapatához kapcsolja, mert a hívó telefonszáma kényelmi azonosító, nem hitelesítés."
+    },
+    "facts": {
+      "f1": {
+        "term": "Ide foglal",
+        "value": "Google Naptár vagy Microsoft 365, a saját szolgáltatáslistájából vett kezeléshosszal"
+      },
+      "f2": {
+        "term": "Ebből válaszol",
+        "value": "A feltöltött előkészületi leírásai, árlistája és kérdés-válasz anyaga, a bérlőjére szűrve"
+      },
+      "f3": {
+        "term": "Sürgős hívások",
+        "value": "Azonnali átkapcsolás kérésre vagy a beállított billentyűkódra"
+      }
+    },
+    "workflow": {
+      "heading": "Hogyan zajlik egy rendelői hívás",
+      "body": "Úgy építve, hogy az unalmas hívások befejeződjenek, azok pedig, amelyekhez ember kell, gyorsan eljussanak egyhez.",
+      "steps": {
+        "s1": {
+          "title": "Felvétel és osztályozás",
+          "body": "Az asszisztens felveszi, közli, hogy AI asszisztens, és figyel. Egy emberre vonatkozó kérés vagy a beállított billentyűkód ott helyben átkapcsolja a hívást anélkül, hogy az asszisztensnek bármi mást meg kellene értenie."
+        },
+        "s2": {
+          "title": "Foglal vagy válaszol",
+          "body": "Időpontnál a megfelelő kezeléshosszra ellenőrzi a valós szabad időpontokat, és csak szabadakat ajánl. Kérdésnél a saját dokumentumaiból válaszol, és pontosító kérdést tesz fel, ha semmi nem támaszt alá választ."
+        },
+        "s3": {
+          "title": "Megerősít és rögzít",
+          "body": "A foglalást visszaolvassa és megerősítteti, mielőtt beírná, adatbázis-megszorításokkal és idempotenciakulccsal védve. A hívás megjelenik az irányítópulton átirattal és összefoglalóval ott, ahol ezt engedélyezi."
+        }
+      }
+    },
+    "limits": {
+      "heading": "Mit nem csinál",
+      "body": "Egy rendelői vonal olyan kötelezettségeket hordoz, amelyeket egy általános célú asszisztensnek nincs dolga átvennie.",
+      "items": {
+        "l1": "Nem ad klinikai tanácsot, nem végez osztályozási mérlegelést és nem értékel tüneteket. A Velyric nem orvostechnikai eszköz, és nem fogalmaz meg diagnosztikai állítást. A fájdalommal és sürgősséggel kapcsolatos hívások tervezetten átkapcsolást jelentenek.",
+        "l2": "Nem ellenőrzi, ki hív. A telefonszámot egy rekord megtalálására használja, nem arra, hogy megbízzon benne, ezért bármi, ami betegadatot érint, megerősített azonosítást vagy embert igényel. A nyers hívásaudiót alapértelmezés szerint nem tároljuk, a rögzítés fizetős kiegészítő.",
+        "l3": "Nincs beépített összekötés rendelőirányítási rendszerhez. Egy ilyen elérése egyedi API-eszköz építését jelenti a saját HTTPS végpontján, JSON Schema be- és kimenettel és megerősítési szabállyal."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Mi történik, ha egy páciens éjszaka hív fájdalommal?",
+        "answer": "Ha embert kér, a hívás azonnal átkapcsol, és ugyanígy a beállított billentyűkódra is. Nyitvatartási időn kívül helyette a beállított viselkedés érvényesül: üzenet felvétele, visszahívási kérés rögzítése vagy átkapcsolás egy ügyeleti számra. Ezt a választást érdemes tudatosan meghozni, nem alapértelmezésen hagyni."
+      },
+      "q2": {
+        "question": "Biztonságban vannak a betegadatok ezeken a hívásokon?",
+        "answer": "Minden visszakeresés a saját bérlőjére van szűrve, a hívói memória pedig soha nem kerül megosztásra bérlők között. A nyers hívásaudió megőrzése nulla nap, és nem tárolódik, hacsak nem vásárolja meg a rögzítés kiegészítőt; az átiratokat alapértelmezetten 90 napig őrizzük, és ez egy napra is állítható. A Velyric adatfeldolgozóként jár el egy közzétett 28. cikk szerinti adatfeldolgozási szerződés alapján, a feldolgozás EU-s felhőrégióban történik."
+      },
+      "q3": {
+        "question": "Be tudja foglalni a különböző kezelésekhez tartozó hosszakat?",
+        "answer": "Igen, ahol a szolgáltatásai az időtartamukkal együtt vannak definiálva. Az asszisztens listázza a szolgáltatásokat, a megfelelő hosszra ellenőrzi a szabad időpontokat, és csak olyan idősávokat ajánl, amelyek ténylegesen beleférnek. Amit nem tud, az klinikailag eldönteni, melyik kezelésre van szüksége a hívónak."
+      },
+      "q4": {
+        "question": "Tudni fogják a páciensek, hogy nem emberrel beszélnek?",
+        "answer": "Igen. Az asszisztens a hívás elején közli, hogy a hívó AI asszisztenssel beszél. Ez terméki alapértelmezés, nem beállítás, és egybevág az EU AI-rendelet 50. cikkének átláthatósági kötelezettségével, amely 2026. augusztus 2-ától alkalmazandó."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Hívásátadás a csapatának",
+        "description": "Minden kiváltó ok, amely emberhez ad egy hívást, és hogy mi történik nyitvatartás után."
+      },
+      "r2": {
+        "label": "Biztonság és adatvédelem",
+        "description": "Megőrzési alapértékek, bérlői elkülönítés, és hogyan kezeljük valójában a hívási adatokat."
+      }
+    }
+  },
+  "auto-service": {
+    "meta": {
+      "title": "AI telefonos ügyfélfogadás autószervizeknek",
+      "description": "AI hangasszisztens, amely szervizt és vizsgát foglal a valós naptárába, még az autó érkezése előtt rögzíti a jármű adatait, az árajánlat- és diagnózis-kérdéseket pedig a szervizvezetőihez kapcsolja."
+    },
+    "answer": {
+      "question": "Tud egy AI hangasszisztens szervizidőpontot foglalni?",
+      "body": "Igen, és a hasznos része az, amit közben összegyűjt. A Velyric a nap minden órájában felveszi a szerviz vonalát, szervizt és vizsgát foglal az összekötött Google Naptárba vagy Microsoft 365-be, és még telefonálás közben összeszedi a márkát, a típust és a bejelentett tünetet, így a munka nem rejtély, amikor az autó megérkezik. A nyitvatartást, a szervizidőket és azt, mit kell hozni, a saját dokumentumaiból válaszolja meg. Amit nem fog megtenni, az az, hogy javítást árazzon vagy diagnózist találgasson: ezek a szervizvezetőhöz kerülnek, a részletekkel együtt, amelyeket már rögzített."
+    },
+    "facts": {
+      "f1": {
+        "term": "Ide foglal",
+        "value": "Google Naptár vagy Microsoft 365, az Ön által megadott szervizhosszhoz illesztve"
+      },
+      "f2": {
+        "term": "Ezt rögzíti",
+        "value": "A jármű adatait és a bejelentett hibát, a hívó saját szavaival"
+      },
+      "f3": {
+        "term": "Ezt adja át",
+        "value": "Árajánlat- és diagnózis-kérdéseket, SIP-átirányítással az Ön számára"
+      }
+    },
+    "workflow": {
+      "heading": "Hogyan zajlik egy szervizhívás",
+      "body": "A cél egy lefoglalt idősáv annyi információval, hogy senkinek ne kelljen emiatt visszahívnia.",
+      "steps": {
+        "s1": {
+          "title": "Megérti a munkát",
+          "body": "A hívó a saját szavaival írja le a problémát. Az asszisztens ebből a mondatból dolgozik, nem menüből, és rákérdez a márkára, a típusra és a tünetre, ha még hiányzik."
+        },
+        "s2": {
+          "title": "Valódi idősávot keres",
+          "body": "A szabad időpontokat élőben ellenőrzi az Ön által megadott szervizhosszra, így egy vizsga és egy hosszabb javítás nem ugyanazt az ablakot kapja. Csak szabad időpontokat ajánl."
+        },
+        "s3": {
+          "title": "Megerősít vagy átad",
+          "body": "A foglalást visszaolvassa és megerősítteti, mielőtt beírná. Bármi, ami árról, diagnózisról vagy a munkáról szóló döntésről szól, helyette a szervizvezetőhöz kerül, kérésre azonnal."
+        }
+      }
+    },
+    "limits": {
+      "heading": "Mit nem csinál",
+      "body": "Érdemes ezt kimondani, mert egy szervizvonalra sok olyan kérdés érkezik, amihez valakinek meg kell néznie az autót.",
+      "items": {
+        "l1": "Nem diagnosztizál, nem becsül és nem ad árajánlatot. Az asszisztens abból válaszol, amit leírt, így egy ár, amelyet nem kapott meg, átkapcsolást jelent, nem számot.",
+        "l2": "Nincs beépített összekötés márkakereskedői rendszerhez vagy alkatrészkatalógushoz. A készlet- és munkalap-lekérdezésekhez egyedi API-eszköz kell a saját HTTPS végpontján, eszközönkénti időtúllépéssel, újrapróbálkozással és idempotenciakulccsal.",
+        "l3": "Kizárólag bejövő hívásokat fogad, a saját számán. Az ügyfelek visszahívása, amikor elkészült egy autó, nem olyasmi, amit a Velyric csinál."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Meg tudja mondani az ügyfélnek, mennyibe kerül egy javítás?",
+        "answer": "Csak akkor, ha az ár benne van a saját feltöltött dokumentumaiban, és csak azzal az összeggel, amelyet közzétett. Bármire, ami az autó megvizsgálásától függ, az asszisztens a szervizvezetőhöz kapcsol ahelyett, hogy becsülne. Kifejezetten úgy készült, hogy ne állítson elő olyan számot, amely mögött nincs forrás."
+      },
+      "q2": {
+        "question": "Meg tudja nézni, van-e raktáron egy alkatrész?",
+        "answer": "Csak egy olyan egyedi API-eszközön keresztül, amelyet a saját HTTPS végpontjára definiál. A Velyricnek nincs beépített alkatrész- vagy készletintegrációja, a beépített műveletkészlet pedig a szolgáltatásokat, a szabad időpontokat és a foglalásokat fedi le, nem a készletet."
+      },
+      "q3": {
+        "question": "Milyen adatokat gyűjt be az időpont előtt?",
+        "answer": "Amit beállít neki, tipikusan a márkát, a típust és a bejelentett hibát, a hívó saját tünetleírása mellett. A hívás átirata és összefoglalója az irányítópulton érhető el ott, ahol ezt engedélyezi."
+      },
+      "q4": {
+        "question": "Nyitvatartási időn kívül is működik?",
+        "answer": "A nap 24 órájában felveszi, és nyitvatartási időn kívül a beállított viselkedés érvényesül: üzenet felvétele, visszahívási kérés rögzítése vagy átkapcsolás egy ügyeleti számra. Az éjjel rögzített foglalások ugyanabba az élő naptárba kerülnek."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Integrációk",
+        "description": "Naptárak, egyedi API-eszközök és webhookok, és hogy melyik mit ér el valójában."
+      },
+      "r2": {
+        "label": "AI recepciós vagy call center",
+        "description": "Elérhetőség, átadás és költségszerkezet összevetve egy kiszervezett szolgáltatással."
+      }
+    }
+  },
+  "car-detailing": {
+    "meta": {
+      "title": "AI telefonos ügyfélfogadás autókozmetikáknak",
+      "description": "AI hangasszisztens, amely a saját árlistájából ismerteti a csomagjait, a valós naptárába foglalja a megfelelő hosszúságú idősávot és visszaigazoló e-mailt küld, miközben a csapata az autókkal foglalkozik."
+    },
+    "answer": {
+      "question": "El tud magyarázni egy AI asszisztens autókozmetikai csomagokat és le tudja foglalni őket?",
+      "body": "Igen, mert mindkét fele már le van írva. A Velyric a nap minden órájában felveszi a vonalát, a saját feltöltött árlistájából ismerteti a csomagjait, azt, mit tartalmaz mindegyik és meddig tart, majd a megfelelő hosszúságú idősávot foglalja le az összekötött Google Naptárban vagy Microsoft 365-ben. A foglalást hangosan visszaolvassa és megerősítteti, mielőtt bármit beírna, és visszaigazoló e-mail megy a hívónak, ha megad egy címet. Azt a munkát, amihez látni kell a fényezést — állapotfelmérés, polírozási ajánlat —, átadja, nem találgatja."
+    },
+    "facts": {
+      "f1": {
+        "term": "Ezt ismerteti",
+        "value": "Csomagok, tartalmuk és időtartamuk a saját árlistájából"
+      },
+      "f2": {
+        "term": "Ide foglal",
+        "value": "Google Naptár vagy Microsoft 365, az egyes csomagokhoz tartozó idősávhosszal"
+      },
+      "f3": {
+        "term": "Így igazol vissza",
+        "value": "E-mailben, ha a hívó megad egy címet. SMS-csatorna nincs."
+      }
+    },
+    "workflow": {
+      "heading": "Hogyan zajlik egy autókozmetikai hívás",
+      "body": "Ezeknek a hívásoknak a többsége ugyanaz a két kérdés, majd egy foglalás, és pont ezt a formát kezeli jól egy asszisztens.",
+      "steps": {
+        "s1": {
+          "title": "Ismerteti a lehetőségeket",
+          "body": "A hívó megkérdezi, mit tartalmaz egy csomag vagy mi a különbség. Az asszisztens a saját dokumentumaiból válaszol, a közzétett időtartamokkal, és nem talál ki olyan szolgáltatást, amit nem kínál."
+        },
+        "s2": {
+          "title": "A megfelelő hosszat foglalja",
+          "body": "Egy egyórás mosás és egy egész napos polírozás különböző idősávhossz. A szabad időpontokat a választott csomagra ellenőrzi élőben, így csak olyan időpontokat ajánl, amelyek valóban beleférnek."
+        },
+        "s3": {
+          "title": "Megerősít és küld",
+          "body": "Az asszisztens visszamondja a csomagot, a dátumot és az időpontot, és megerősítést kér. A foglalás megszorításokkal és idempotenciakulccsal íródik be, majd visszaigazoló e-mail következik, ha volt megadott cím."
+        }
+      }
+    },
+    "limits": {
+      "heading": "Mit nem csinál",
+      "body": "Az őszinte határok, amikor hangasszisztenst tesz egy műhely vonalára.",
+      "items": {
+        "l1": "Nem tud felmérni egy autót. A fényezés állapota, a karcok mélysége és az, hogy megéri-e a polírozás, olyasmi, amit valakinek látnia kell, ezért ezek a hívások átkapcsolássá válnak, a hívó leírásával együtt.",
+        "l2": "Az e-mail az egyetlen értesítési csatorna, amely küld. Nincs SMS, nincs alkalmazáson belüli és nincs chates értesítés, így az előző napi emlékeztető nem olyasmi, amit a Velyric magától küld.",
+        "l3": "Nem vesz át fizetést és nem kezel foglalót. A híváson nincs fizetési lépés, és minden kereskedelmi kérdés a közzétett árlistán túl emberre tartozik."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Tud kiegészítőt ajánlani a hívás közben?",
+        "answer": "Ismertetni tudja azokat a kiegészítőket, amelyek a saját árlistájában szerepelnek, és le tudja foglalni a hosszabb idősávot, ha a hívó kéri. Amit nem fog tenni: csomagot kitalálni, kedvezményt adni vagy olyat ajánlani, amit nem tett közzé, mert az árak és a szolgáltatások a dokumentumaiból jönnek, nem a modelltől."
+      },
+      "q2": {
+        "question": "Kap emlékeztetőt az ügyfél az időpont előtt?",
+        "answer": "Visszaigazoló e-mail megy ki, ha a hívó megad egy címet. Az ütemezett emlékeztető nem Velyric funkció, SMS pedig egyáltalán nem elérhető, így az emlékeztetési folyamatnak a saját rendszereiben kell laknia, amit a foglalási webhook-események vezérelhetnek."
+      },
+      "q3": {
+        "question": "Tud telefonon árat mondani egy polírozásra?",
+        "answer": "Nem. Azokat az árakat mondja, amelyeket a definiált csomagokhoz közzétett, és mindent, ami az autó állapotától függ, átkapcsol Önhöz. Az asszisztens nem állít elő olyan számot, amely mögött nincs forrás."
+      },
+      "q4": {
+        "question": "Mi történik, ha ketten foglalják ugyanazt az idősávot?",
+        "answer": "Nem tudják. Az írást adatbázis-megszorítások, tranzakciók és idempotenciakulcsok védik, így ha két hívás versenyez ugyanazért az időpontért, a vesztes értesítést kap és felajánlja neki a következő valós alternatívát, nem pedig csendben duplán foglal."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Telefonos időpontfoglalás",
+        "description": "Élő szabad időpontok, a megerősítési lépés, és hogyan előzzük meg a dupla foglalást."
+      },
+      "r2": {
+        "label": "Integrációk",
+        "description": "Naptárak, e-mail-értesítések, webhookok és egyedi API-eszközök."
+      }
+    }
+  },
+  "salon": {
+    "meta": {
+      "title": "AI telefonos ügyfélfogadás fodrászatoknak és szépségszalonoknak",
+      "description": "AI hangasszisztens, amely akkor is felveszi a szalon vonalát, amikor minden szék foglalt, a megfelelő fodrászhoz és szolgáltatáshosszhoz foglal a valós naptárában, és kezeli a lemondásokat meg az árkérdéseket."
+    },
+    "answer": {
+      "question": "El tudja látni egy AI recepciós egy szalon telefonját?",
+      "body": "Azoknál a hívásoknál, amelyek folyton megszakítanak egy kezelést, igen. A Velyric a nap minden órájában felveszi a számát magyarul, németül és angolul, szolgáltatásokat foglal az összekötött Google Naptárba vagy Microsoft 365-be, megtalálja és lemondja a meglévő foglalásokat, és a saját szolgáltatáslistájából válaszolja meg az árra és időtartamra vonatkozó kérdéseket. Ez lefedi a legtöbbet abból, ami akkor csörög, amikor a keze foglalt. A konzultációk, a panaszok és minden, amihez mérlegelés kell, abban a pillanatban emberhez kerül, amint a hívó kéri, vagy a beállított billentyűkódra."
+    },
+    "facts": {
+      "f1": {
+        "term": "Ide foglal",
+        "value": "Google Naptár vagy Microsoft 365, az Ön által megadott szolgáltatáshosszra"
+      },
+      "f2": {
+        "term": "Ezt is kezeli",
+        "value": "Meglévő foglalás megtalálását és lemondását a híváson belül"
+      },
+      "f3": {
+        "term": "Ebből válaszol",
+        "value": "A saját szolgáltatáslistájából és kérdés-válasz anyagából, sosem kitalált árból"
+      }
+    },
+    "workflow": {
+      "heading": "Hogyan zajlik egy szalonhívás",
+      "body": "Arra a tényre építve, hogy 10 és 6 között senki nem ér rá felvenni.",
+      "steps": {
+        "s1": {
+          "title": "Felveszi, amíg Ön dolgozik",
+          "body": "Az asszisztens azonnal felveszi, közli, hogy AI asszisztens, és figyel. A hívó soha nem hall olyan kicsengő telefont, amelyhez senki nem ér oda."
+        },
+        "s2": {
+          "title": "Foglal, áttesz vagy lemond",
+          "body": "Egy új foglalást élő szabad időpontok alapján ellenőriz a megfelelő szolgáltatáshosszra. Egy meglévőt megtalál és lemond, egy módosítást pedig lemondásként plusz új foglalásként kezel."
+        },
+        "s3": {
+          "title": "Hangosan megerősít",
+          "body": "A szolgáltatást, a dátumot és az időpontot visszamondja és megerősítteti, mielőtt bármit beírna. Visszaigazoló e-mail következik, ha a hívó megadott egy címet."
+        }
+      }
+    },
+    "limits": {
+      "heading": "Mit nem csinál",
+      "body": "Azok a részek, amelyeket tudatosan be kell állítani, vagy amelyek egyszerűen nincsenek.",
+      "items": {
+        "l1": "Egy konkrét fodrászhoz foglalni csak akkor működik, ha mindegyikük külön naptárral és szolgáltatásokkal van modellezve. A Velyric azokba a naptárakba foglal, amelyeket összeköt; önmagában nem ismer beosztást.",
+        "l2": "Nincs beépített összekötés szalonfoglaló platformhoz. Ha már használ ilyet, azt egyedi API-eszközként kell elérni a saját HTTPS végpontján, nem készen kapott integrációval.",
+        "l3": "Nem tudja megítélni, mire van szüksége a hívónak. Egy festéskonzultáció, egy rossz eredmény utáni korrekció vagy egy panasz emberre tartozó beszélgetés, és az asszisztens átkapcsol ahelyett, hogy tanácsot adna."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Kérhet a hívó konkrét fodrászt?",
+        "answer": "Igen, ha az adott fodrásznak saját összekötött naptára és saját definiált szolgáltatásai vannak. Az asszisztens abban a naptárban ellenőrzi a szabad időpontokat, amelyet megkapott, így ez inkább azon múlik, hogyan állítja be a naptárakat, mint azon, mit tud mondani az asszisztens."
+      },
+      "q2": {
+        "question": "Le tud mondani egy foglalást úgy, hogy utána nem kell megerősítenem?",
+        "answer": "Igen. Megtalál egy meglévő foglalást és lemondja, a hívóval megerősítve, mielőtt a módosítás beíródna. Minden írás előtt az asszisztens összefoglalja, mit készül tenni, és egyetértést kér a hívótól."
+      },
+      "q3": {
+        "question": "Mit mond az árakról?",
+        "answer": "Pontosan azt, ami a saját feltöltött szolgáltatáslistájában áll, és semmi mást. Ha egy ár nincs a dokumentumaiban, az asszisztens pontosító kérdést tesz fel vagy emberhez kapcsol ahelyett, hogy becsülne."
+      },
+      "q4": {
+        "question": "Kezeli a német vagy angol nyelvű hívásokat?",
+        "answer": "Igen, ugyanazon a számon. A magyar, a német és az angol támogatott, és a nyelv hívás közben is válthat, így egy betérő turista és egy törzsvendég ugyanarra a vonalra jut anélkül, hogy hívónként bármit be kellene állítani."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Telefonos időpontfoglalás",
+        "description": "Hogyan működik az élő szabad időpont, a megerősítés és a lemondás egy híváson."
+      },
+      "r2": {
+        "label": "Többnyelvű hívások egy számon",
+        "description": "Hogyan ismeri fel, választja ki és váltja hívás közben a magyart, a németet és az angolt."
+      }
+    }
+  },
+  "hotel": {
+    "meta": {
+      "title": "AI telefonos ügyfélfogadás szállodáknak és panzióknak",
+      "description": "AI hangasszisztens, amely a nap 24 órájában magyarul, németül és angolul válaszol a vendégek kérdéseire, éjszaka üzenetet és visszahívási kérést vesz fel, a foglalásokat és panaszokat pedig a recepcióhoz kapcsolja."
+    },
+    "answer": {
+      "question": "Fel tudja venni egy AI asszisztens éjszaka egy szálloda telefonját?",
+      "body": "Igen, és éppen ez az a műszak, ahol kiérdemli a helyét. A Velyric a saját számán veszi fel a telefont a nap 24 órájában, és magyarul, németül meg angolul válaszol a vendégek kérdéseire a saját dokumentumaiból: érkezési és távozási idő, parkolás, reggeli, nyitva van-e a medence, hogyan érhetők el. A hívás elején közli, hogy AI asszisztens. Éjszaka azt teszi, amit beállított — üzenetet vesz fel, visszahívási kérést rögzít vagy felcsörget egy ügyeleti számot —, a foglalásokat, panaszokat és minden kereskedelmi kérdést pedig a recepcióhoz kapcsol ahelyett, hogy maga kezelné."
+    },
+    "facts": {
+      "f1": {
+        "term": "Nyelvek",
+        "value": "Magyar, német és angol egyetlen számon, hívás közben váltható"
+      },
+      "f2": {
+        "term": "Ebből válaszol",
+        "value": "A saját házirendje, szolgáltatáslistája és kérdés-válasz dokumentumai"
+      },
+      "f3": {
+        "term": "Éjszaka",
+        "value": "Üzenetfelvétel, visszahívási kérés vagy átkapcsolás egy ügyeleti számra"
+      }
+    },
+    "workflow": {
+      "heading": "Hogyan zajlik egy vendéghívás",
+      "body": "Egy egyszerű kérdéssel hívó vendég választ kap; minden más úgy jut emberhez, hogy a kérdés már el van mondva.",
+      "steps": {
+        "s1": {
+          "title": "A vendég nyelvén válaszol",
+          "body": "Az országhívószám adja a kiindulási jelzést, utána a ténylegesen beszélt nyelv veszi át. A vendég mondat közben nyelvet válthat anélkül, hogy a beszélgetés újraindulna."
+        },
+        "s2": {
+          "title": "A saját anyagából válaszol",
+          "body": "A szolgáltatások, az időpontok, az útbaigazítás és a házirend a feltöltött dokumentumaiból és a bejárt weboldaláról jön. Ahol semmi nem támaszt alá választ, az asszisztens pontosító kérdést tesz fel vagy átad."
+        },
+        "s3": {
+          "title": "Rögzít vagy átkapcsol",
+          "body": "A foglalások, módosítások és panaszok napközben a recepcióhoz kerülnek. Éjszaka a beállított tartalék érvényesül, és ami eljut Önhöz, az átirat és összefoglaló, nem hangfájl."
+        }
+      }
+    },
+    "limits": {
+      "heading": "Mit nem csinál",
+      "body": "Egy szállodai vonal olyan rendszereket érint, amelyekhez a Velyric nem kapcsolódik, és ezt jobb előre tudni.",
+      "items": {
+        "l1": "Nincs beépített összekötés szállodai vendégkezelő rendszerhez vagy foglalási motorhoz. A szobakészlet, az árak és a foglalások olyan rendszerekben élnek, amelyeket a Velyric csak az Ön saját HTTPS végpontjára épített egyedi API-eszközön keresztül ér el.",
+        "l2": "Nem vesz át fizetést, nem kezel kártyát és nem erősít meg árat. Minden kereskedelmi kérdés átkapcsolás a recepcióhoz, és az asszisztens nem mond olyan árat, amely nincs benne a saját dokumentumaiban.",
+        "l3": "A hívások 30 percben korlátozottak, az egyidejűség pedig csomaghatár, így egy egyszerre érkező buszos csoportot a beállított túlcsordulási szabály kezel, nem korlátlan párhuzamos vonal."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Fel tud venni szobafoglalást?",
+        "answer": "Vendégkezelő rendszerbe nem, mert a Velyricnek nincs PMS- vagy foglalásimotor-összekötése. Össze tud kötött Google Naptárba vagy Microsoft 365-be foglalni, és fel tud venni egy foglalási kérést, amelyet átkapcsol vagy a recepciónak hagy. A PMS elérése egyedi API-eszköz építését jelenti."
+      },
+      "q2": {
+        "question": "Mi történik az éjszaka közepén érkező hívásokkal?",
+        "answer": "Felveszi őket. Amit a dokumentumai lefednek, arra azonnal válaszol; minden más a beállított nyitvatartáson kívüli viselkedést követi, ami üzenetfelvétel, visszahívási kérés vagy átkapcsolás egy ügyeleti számra. Átiratot és összefoglalót kap, nem hangposta-fájlt."
+      },
+      "q3": {
+        "question": "Hány nyelvet használhatnak a vendégek?",
+        "answer": "Hármat: magyart, németet és angolt, ugyanazon a számon, és a nyelv hívás közben is változhat. Egy kifejezett kérés vagy a ténylegesen felismert nyelv felülírja az országhívószám adta jelzést."
+      },
+      "q4": {
+        "question": "Mindig el tudnak érni a vendégek egy embert?",
+        "answer": "Igen. Ha embert kérnek, a hívás azonnal átkapcsol, és ugyanígy a beállított billentyűkódra is. Napközben ez a recepció; éjszaka az, amit nyitvatartáson kívüli útvonalnak beállított, akár egy ügyeleti szám."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Többnyelvű hívások egy számon",
+        "description": "Hogyan ismeri fel, választja ki és váltja a nyelvet a hívás közepén."
+      },
+      "r2": {
+        "label": "AI recepciós vagy hangposta",
+        "description": "Mi jut el Önhöz a hívás után, és mikor helyes válasz mégis a hangposta."
+      }
+    }
+  },
+  "real-estate": {
+    "meta": {
+      "title": "AI telefonos ügyfélfogadás ingatlanirodáknak",
+      "description": "AI hangasszisztens, amely a saját dokumentumaiból válaszolja meg az ingatlanokkal kapcsolatos kérdéseket, minden hívótól rögzíti a keretet és az időzítést, és megtekintéseket foglal az értékesítői valós naptárába."
+    },
+    "answer": {
+      "question": "Tud egy AI hangasszisztens ingatlanos érdeklődőket minősíteni?",
+      "body": "Össze tudja gyűjteni, amire a minősítéshez szükség van, és le tudja foglalni a megtekintést, vagyis pont azt a részt, amely elvész, ha senki nem veszi fel. A Velyric a saját számán veszi fel a telefont a nap minden órájában, a saját feltöltött ingatlandokumentumaiból válaszol egy hirdetéssel kapcsolatos kérdésre, a hívó saját szavaival rögzíti a keretet, az időzítést és a preferenciákat, és megtekintéseket foglal annak az értékesítőnek az összekötött Google Naptárába vagy Microsoft 365-jébe, akit megad. Minden hívás megjelenik az irányítópulton átirattal és összefoglalóval ott, ahol ezt engedélyezi. Az a mérlegelés, hogy megéri-e foglalkozni egy érdeklődővel, az értékesítőinél marad."
+    },
+    "facts": {
+      "f1": {
+        "term": "Ezt rögzíti",
+        "value": "Keretet, időzítést és preferenciákat, ahogy a hívó elmondta"
+      },
+      "f2": {
+        "term": "Ide foglal megtekintést",
+        "value": "Az összekötött Google Naptárba vagy Microsoft 365-be"
+      },
+      "f3": {
+        "term": "Ebből válaszol",
+        "value": "A saját ingatlandokumentumaiból és a bejárt weboldalaiból"
+      }
+    },
+    "workflow": {
+      "heading": "Hogyan zajlik egy ingatlanos hívás",
+      "body": "Aki 21 órakor látott meg egy hirdetést, 21 órakor kap választ, és bekerül a megtekintés a naptárba.",
+      "steps": {
+        "s1": {
+          "title": "Megválaszolja a hirdetéssel kapcsolatos kérdést",
+          "body": "Méret, elrendezés, emelet, fűtés, mi tartozik hozzá — amit a saját feltöltött dokumentumai tartalmaznak, arra közvetlenül válaszol. Ami nincs bennük, arra pontosító kérdést tesz fel vagy átad, sosem kitalált részletet."
+        },
+        "s2": {
+          "title": "Rögzíti a minősítéshez kellő adatokat",
+          "body": "Keret, időzítés, kell-e előbb eladni, melyik környék. Az asszisztens azt kérdezi meg, amit beállított, és a hívó saját szavait rögzíti, nem egy általa kitalált pontszámot."
+        },
+        "s3": {
+          "title": "Lefoglalja a megtekintést",
+          "body": "A szabad időpontokat élőben ellenőrzi az összekötött értékesítői naptárban, és csak szabadakat ajánl. Az időpontot visszaolvassa és megerősítteti, mielőtt beírná."
+        }
+      }
+    },
+    "limits": {
+      "heading": "Mit nem csinál",
+      "body": "Az ingatlanos munka CRM-en fut, és éppen ez az a rész, amelyhez a Velyric alapból nem kapcsolódik.",
+      "items": {
+        "l1": "Nincs CRM-összekötés. Egy minősített érdeklődő betolása a saját rendszerébe egyedi API-eszközt jelent a HTTPS végpontján, vagy a kimenő webhook-események egyikét, amelyekből legfeljebb tíz végpont fogadhat 17 típust HMAC-SHA256-tal aláírva.",
+        "l2": "Nem pontoz, nem rangsorol és nem dönt. Amit kap, az az, amit a hívó mondott, pontosan rögzítve, plusz egy átirat és egy összefoglaló. Az érdeklődő megítélése az értékesítői dolga.",
+        "l3": "Kizárólag bejövő hívásokat fogad. Egy érdeklődőlista visszahívása nem olyasmi, amit a Velyric csinál, a hívó telefonszáma pedig kényelmi azonosító, nem annak bizonyítéka, hogy ki ő."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Meg tud válaszolni egy konkrét ingatlanra vonatkozó kérdéseket?",
+        "answer": "Igen, ahol az ingatlan szerepel a feltöltött dokumentumaiban vagy a bejárt weboldalán. A visszakeresés a saját bérlőjére van szűrve, és ahol semmi nem támaszt alá választ, az asszisztens pontosító kérdést tesz fel vagy átkapcsol ahelyett, hogy egy otthonról kitalálna egy részletet."
+      },
+      "q2": {
+        "question": "Be tudja tenni az érdeklődőt a CRM-ünkbe?",
+        "answer": "Készen kapott integrációval nem, mert nincs CRM-összekötés. A CRM-jét egy olyan egyedi API-eszközön keresztül érheti el, amelyet a saját HTTPS végpontjára definiál, vagy feliratkoztathat egy végpontot a kimenő webhook-eseményekre, és maga írhatja be az érdeklődőt."
+      },
+      "q3": {
+        "question": "Be tud foglalni megtekintést egy konkrét értékesítő naptárába?",
+        "answer": "Igen, abba a Google Naptárba vagy Microsoft 365-be, amelyet az adott értékesítőhöz összeköt. A szabad időpontot élőben ellenőrzi, mielőtt bármit felajánlana, és az időpontot megerősítteti a hívóval, mielőtt beírná."
+      },
+      "q4": {
+        "question": "Mit kapunk a hívás után?",
+        "answer": "A hívás megjelenik az irányítópulton a rögzített adatokkal, plusz átirattal és összefoglalóval ott, ahol ezt engedélyezi. A nyers hangfelvételt alapértelmezés szerint nem tároljuk; a rögzítés fizetős kiegészítő, az átiratokat pedig alapértelmezetten 90 napig őrizzük."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Integrációk",
+        "description": "Naptárak, egyedi API-eszközök és a 17 webhook-esemény, amelyekre feliratkozhat."
+      },
+      "r2": {
+        "label": "Telefonos időpontfoglalás",
+        "description": "Élő szabad időpontok, megerősítés és védelem a dupla foglalás ellen."
+      }
+    }
+  },
+  "webshop": {
+    "meta": {
+      "title": "AI telefonos ügyfélfogadás webáruházaknak",
+      "description": "AI hangasszisztens, amely a rendeléssel és szállítással kapcsolatos kérdéseket a saját rendszereire épített egyedi API-eszközön keresztül válaszolja meg, a visszaküldési szabályzatot a dokumentumaiból ismerteti, a vitákat pedig összefoglalóval adja át."
+    },
+    "answer": {
+      "question": "Meg tud válaszolni egy AI asszisztens rendelésállapot-hívásokat?",
+      "body": "Igen, ha összekötötte a saját rendelési rendszerét. A Velyricnek nincs webáruházplatform-összekötése; ami van, azok az egyedi API-eszközök, amelyekkel az asszisztens meghívhatja a saját HTTPS végpontját JSON Schema be- és kimenettel, eszközönkénti időtúllépéssel, egy újrapróbálkozással és egy idempotenciakulccsal. Ezzel a helyén az asszisztens meg tud nézni egy rendelést és meg tudja mondani a hívónak, hol tart. A visszaküldéssel, szállítással és szabályzattal kapcsolatos kérdéseket a saját feltöltött dokumentumaiból válaszolja meg, bármilyen integráció nélkül. A vitákat és minden kereskedelmi kérdést az ügyfélszolgálatához ad át, a hívó szándékával együtt."
+    },
+    "facts": {
+      "f1": {
+        "term": "Rendeléslekérdezés így",
+        "value": "Egyedi API-eszközzel a saját HTTPS végpontján"
+      },
+      "f2": {
+        "term": "Szabályzatválaszok innen",
+        "value": "A feltöltött visszaküldési, szállítási és garanciadokumentumaiból"
+      },
+      "f3": {
+        "term": "Eszkaláció",
+        "value": "Azonnali átkapcsolás kérésre, átirattal ott, ahol engedélyezi"
+      }
+    },
+    "workflow": {
+      "heading": "Hogyan zajlik egy ügyfélszolgálati hívás",
+      "body": "Két különböző útvonal, és a különbség az, hogy a válaszhoz kell-e az Ön élő adata.",
+      "steps": {
+        "s1": {
+          "title": "Elválasztja a szabályzatot az adattól",
+          "body": "Egy visszaküldési határidőre vonatkozó kérdést azonnal megválaszol a dokumentumaiból. Egy rendelésállapot-kérdéshez az Ön rendszere kell, így az asszisztens meghívja az Ön által definiált egyedi API-eszközt."
+        },
+        "s2": {
+          "title": "Biztonságosan lekérdez",
+          "body": "Az eszközhívást a JSON Schema ellenőrzi, időtúllépés határolja, hiba esetén egyszer újrapróbálja, és idempotenciakulcsot kap. A telefonszám kényelmi azonosító, nem hitelesítés, ezért bármi érzékeny megerősített azonosítást vagy embert igényel."
+        },
+        "s3": {
+          "title": "Befejez vagy eszkalál",
+          "body": "Az egyszerű esetek a híváson belül zárulnak. Egy vita, egy visszatérítési döntés vagy bármi, amire az eszköz nem tudott választ adni, az ügyfélszolgálatához kerül, a hívás átiratával és összefoglalójával ott, ahol ezt engedélyezi."
+        }
+      }
+    },
+    "limits": {
+      "heading": "Mit nem csinál",
+      "body": "Az integrációs valóság, kimondva, mielőtt olyasmire tervez, ami nincs.",
+      "items": {
+        "l1": "Nincs készen kapott összekötés egyetlen webáruházplatformhoz vagy piactérhez sem. Minden rendeléslekérdezés egy olyan egyedi API-eszközön keresztül megy, amelyet Ön épít és üzemeltet.",
+        "l2": "Nem tudja hitelesíteni a hívót. A telefonszám kényelmi azonosító, ezért bármi érzékeny felolvasása egy rendelésről megerősített azonosítást vagy emberhez kapcsolást igényel.",
+        "l3": "Nem vesz át fizetést, nem ad vissza pénzt és nem hoz méltányossági döntést. Ezek átkapcsolások, mert az eszközjogosultságok kódban élnek, és az asszisztens nem fog rögtönözni egyet."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Integrálódnak a webáruház-platformunkkal?",
+        "answer": "Megnevezett összekötéssel nem. A Velyric a saját HTTPS végpontjaihoz kapcsolódik egyedi API-eszközként, GET, POST, PUT, PATCH és DELETE metódusokkal, sablonozott útvonalakkal, JSON Schema be- és kimeneti ellenőrzéssel, és bearer tokenes vagy az időbélyeg meg a törzs fölötti HMAC-SHA256 aláírással történő hitelesítéssel."
+      },
+      "q2": {
+        "question": "Biztonságos telefonon felolvasni a rendelés adatait?",
+        "answer": "Ez az Ön szabályzati döntése, és a platform úgy épült, hogy az óvatos változat legyen könnyű. A hívó számát kényelmi azonosítóként kezeli, nem hitelesítésként, az érzékeny kérések tervezetten emberhez kerülnek, és Ön dönti el az eszköz megerősítési szabályában, mi hangozhat el ember jelenléte nélkül."
+      },
+      "q3": {
+        "question": "Mi történik, ha az API-nk lassú vagy nem elérhető?",
+        "answer": "Minden eszköznek saját időtúllépése van. Az időtúllépést vagy az 5xx hibát egyszer újrapróbálja, és ha továbbra sem sikerül, a hívás emberhez kapcsol vagy a beállított nyitvatartáson kívüli viselkedésre esik vissza. Az asszisztens nem talál ki szállítási dátumot, hogy kitöltse a hézagot."
+      },
+      "q4": {
+        "question": "Be tud tolni eseményeket a rendszereinkbe?",
+        "answer": "Igen, kimenő webhookokon keresztül. Munkaterületenként legfeljebb tíz végpont fogadhat 17 eseménytípust, köztük a call.started, call.ended, booking.created, booking.changed és booking.canceled eseményeket, mindegyiket HMAC-SHA256-tal aláírva és nyolc kísérleten át, növekvő várakozással újrapróbálva."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Egyedi API-eszközök",
+        "description": "Sémák, hitelesítés, időtúllépések, újrapróbálkozások és megerősítési szabályok."
+      },
+      "r2": {
+        "label": "Webhookok",
+        "description": "A 17 eseménytípus, a HMAC-aláírás és az újrapróbálkozási ütemezés."
+      }
+    }
+  },
+  "b2b-support": {
+    "meta": {
+      "title": "AI telefonos ügyfélfogadás B2B ügyfélszolgálatoknak",
+      "description": "AI hangasszisztens, amely felismeri a visszatérő hívókat, a kézikönyveiből és műszaki dokumentumaiból válaszol a termékkérdésekre, és a saját API-ján keresztül hibajegyet hoz létre, mielőtt mérnökhöz adná a hívást."
+    },
+    "answer": {
+      "question": "El tud látni egy AI asszisztens első vonalas B2B ügyfélszolgálatot?",
+      "body": "Az ismétlődő kérdésekre és a bejelentések felvételére igen. A Velyric a saját számán veszi fel a telefont a nap minden órájában, a bérlőnként tárolt hívói memóriából felismeri a visszatérő hívót, és a saját kézikönyveiből, kiadási jegyzeteiből meg műszaki dokumentumaiból válaszol, minden visszakeresést a bérlőjére szűrve. Ahol egyedi API-eszközt épített, a hívás vége előtt hibajegyet is tud létrehozni, így a mérnök, aki felveszi, a részletekkel indul, nem egy hangpostaüzenettel. Minden, amihez mérnöki mérlegelés kell, átkerül, kérésre azonnal vagy a beállított billentyűkódra."
+    },
+    "facts": {
+      "f1": {
+        "term": "Ebből válaszol",
+        "value": "A kézikönyveiből és műszaki dokumentumaiból, a bérlőjére szűrve"
+      },
+      "f2": {
+        "term": "Hibajegy-létrehozás így",
+        "value": "Egyedi API-eszközzel a saját HTTPS végpontján"
+      },
+      "f3": {
+        "term": "Hívói memória",
+        "value": "Bérlőnként tárolva, 730 napig megőrizve, bérlők között soha nem megosztva"
+      }
+    },
+    "workflow": {
+      "heading": "Hogyan zajlik egy ügyfélszolgálati hívás",
+      "body": "Az első vonal azt jelenti, hogy befejezzük, ami megválaszolható, és becsomagoljuk, ami nem.",
+      "steps": {
+        "s1": {
+          "title": "Felismer és megért",
+          "body": "Egy visszatérő hívót a tárolt hívói memóriához illeszt, kényelmi okból, nem hitelesítésként. Az asszisztens a hívó saját szavaival hallgatja meg a problémát, nem menün vezeti végig."
+        },
+        "s2": {
+          "title": "A dokumentációból válaszol",
+          "body": "A kézikönyveket, kiadási jegyzeteket és belső kérdés-válasz anyagokat a bérlőjére szűrt visszakereséssel keresi. Ha semmi nem támaszt alá választ, az asszisztens pontosító kérdést tesz fel vagy átad, ahelyett hogy találgatna."
+        },
+        "s3": {
+          "title": "Hibajegyet hoz létre, aztán átad",
+          "body": "Ahol van egyedi API-eszköz, hibajegy jön létre az összegyűjtött adatokkal, az Ön által beállított megerősítési szabály szerint. Ezután a hívás átkapcsol, vagy a hibajegy a sorban marad átirattal és összefoglalóval."
+        }
+      }
+    },
+    "limits": {
+      "heading": "Mit nem csinál",
+      "body": "Az első vonal és a mérnökség közötti határ, kimondva.",
+      "items": {
+        "l1": "Nincs beépített összekötés hibajegykezelő vagy ügyfélszolgálati termékhez. Egy hibajegy létrehozása egyedi API-eszköz építését jelenti a saját HTTPS végpontján, JSON Schema ellenőrzéssel és idempotenciakulccsal.",
+        "l2": "Nem hibakeres a dokumentációján túl. Az asszisztens indexelt forrásokból válaszol, így egy probléma, amelyet a dokumentumai nem fednek le, átadás, nem pedig kísérletezés egy éles rendszeren.",
+        "l3": "Nem hitelesíti a hívót és nem ellenőrzi a jogosultságát. A telefonszám kényelmi okból azonosít egy rekordot; a szerződéssel, licenccel vagy hozzáféréssel kapcsolatos döntésekhez megerősített azonosítás vagy ember kell."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Hogyan ismer fel egy visszatérő hívót?",
+        "answer": "A bérlőnként tárolt hívói memórián keresztül, amelyet alapértelmezetten 730 napig őrzünk, és amely soha nem kerül megosztásra bérlők között. Egy rekord megtalálására és a beszélgetés személyre szabására szolgál, nem hitelesítésre: a telefonszám kényelmi azonosító, és bármi érzékeny megerősített azonosítást vagy embert igényel."
+      },
+      "q2": {
+        "question": "Létre tud hozni hibajegyet az ügyfélszolgálati rendszerünkben?",
+        "answer": "Egy olyan egyedi API-eszközön keresztül, amelyet a saját HTTPS végpontjára definiál, igen. Beépített összekötés egyetlen hibajegykezelő termékhez sincs. Az eszközhívást a JSON Schema ellenőrzi, időtúllépés határolja, egyszer újrapróbálja, és idempotenciakulcsot kap, így egy újrapróbálkozás nem hozhat létre duplikátumot."
+      },
+      "q3": {
+        "question": "Mi akadályozza meg, hogy rosszul válaszoljon egy műszaki kérdésre?",
+        "answer": "A visszakeresés a saját bérlőjére van szűrve, és az üres esetre vonatkozó szabály kimondott: alátámasztó forrás nélkül az asszisztens pontosító kérdést tesz fel vagy emberhez adja a hívást. A dokumentumokat nem megbízható bemenetként is kezeli, így egy feltöltött fájlba rejtett utasítás nem változtathatja meg, mit tehet az asszisztens."
+      },
+      "q4": {
+        "question": "Tesztelhetjük a változtatásokat, mielőtt az ügyfelek hallanák?",
+        "answer": "Igen. Az asszisztensverziók publikálhatók és visszagörgethetők, egy szimulációs felület pedig tesztelő hívásokat és regressziós készleteket futtat, mielőtt egy verzió élesbe menne. Egy dokumentum frissítése atomi módon váltja le a régi darabjait az aktív indexben, így az asszisztens soha nem válaszol a régi és az új keverékéből."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Egyedi API-eszközök",
+        "description": "Hogyan éri el az asszisztens a saját rendszereit, és mi határolja az egyes hívásokat."
+      },
+      "r2": {
+        "label": "Biztonság és adatvédelem",
+        "description": "Bérlői elkülönítés, megőrzési alapértékek és a nem megbízható bemenet kezelése."
+      }
+    }
+  }
+}

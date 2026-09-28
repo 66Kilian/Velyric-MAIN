@@ -1,0 +1,72 @@
+{
+  "marketing": {
+    "product": "Termék",
+    "solutions": "Megoldások",
+    "pricing": "Árak",
+    "integrations": "Integrációk",
+    "docs": "Dokumentáció",
+    "security": "Biztonság",
+    "privacy": "Adatvédelem",
+    "terms": "ÁSZF",
+    "dpa": "Adatfeldolgozási megállapodás",
+    "status": "Állapot",
+    "contact": "Kapcsolat",
+    "home": "Főoldal",
+    "aiReceptionist": "AI recepciós",
+    "appointmentBooking": "Időpontfoglalás",
+    "multilingual": "Többnyelvű hívások",
+    "callTransfer": "Hívásátadás",
+    "glossary": "Fogalomtár",
+    "footer": {
+      "description": "Hangalapú AI-ügynökök, amik felveszik a telefont, foglalnak és válaszolnak – éjjel-nappal, a te vállalkozásod nevében.",
+      "servicesHeading": "Szolgáltatásaink",
+      "infoHeading": "Információk",
+      "contactHeading": "Kapcsolat",
+      "registration": "Nyilvántartási szám:",
+      "rights": "Minden jog fenntartva."
+    }
+  },
+  "app": {
+    "dashboard": "Irányítópult",
+    "calls": "Hívások",
+    "agents": "Asszisztensek",
+    "contacts": "Kapcsolatok",
+    "knowledge": "Tudásbázis",
+    "bookings": "Foglalások",
+    "integrations": "Integrációk",
+    "analytics": "Elemzések",
+    "phoneNumbers": "Telefonszámok",
+    "locations": "Telephelyek",
+    "simulation": "Szimuláció",
+    "billing": "Számlázás",
+    "settings": "Beállítások",
+    "security": "Biztonság",
+    "onboarding": "Beállítás",
+    "workspaceSwitcher": "Munkaterület váltása",
+    "pendingInvitations": "Meghívások",
+    "joinWorkspace": "Csatlakozom",
+    "joining": "Csatlakozás…",
+    "createWorkspace": "Új munkaterület",
+    "account": "Fiók",
+    "sidebarQuote": "Jó dolgok történnek, ha egy vállalkozás odafigyel.",
+    "groups": {
+      "operate": "Működés",
+      "configure": "Beállítás",
+      "admin": "Adminisztráció",
+      "main": "Menü",
+      "assistant": "Asszisztens",
+      "channels": "Csatornák",
+      "account": "Fiók"
+    },
+    "support": "Segítség",
+    "adminConsole": "Admin panel",
+    "settingsGeneral": "Általános",
+    "settingsDescription": "Asszisztensek, csatornák és a fiók beállításai egy helyen.",
+    "settingsNav": "Beállítások részei"
+  },
+  "support": {
+    "console": "Ügyfélszolgálati konzol",
+    "tenants": "Munkaterületek",
+    "queue": "Ellenőrzési sor"
+  }
+}

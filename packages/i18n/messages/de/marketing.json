@@ -1,0 +1,512 @@
+{
+  "meta": {
+    "homeTitle": "Velyric – KI-Voice-Agenten für Anrufe auf Ungarisch, Deutsch und Englisch",
+    "homeDescription": "Velyric nimmt Geschäftsanrufe rund um die Uhr an, bucht Termine, beantwortet Fragen aus deinem Wissen und übergibt an dein Team, wenn es darauf ankommt."
+  },
+  "hero": {
+    "eyebrow": "KI-Voice-Agenten für eine hellere Zukunft",
+    "titleStart": "Natürliche KI-Voice-Agenten für",
+    "titleHighlight": "moderne Unternehmen",
+    "body": "Nimm jeden Anruf an, buche Termine, qualifiziere Interessenten und unterstütze Kunden auf Ungarisch, Deutsch und Englisch – mit einem Agenten, der weiß, wann er an dein Team übergibt.",
+    "primary": "Jetzt starten",
+    "secondary": "Produkt ansehen",
+    "visual": {
+      "greeting": "Guten Tag, wie kann ich Ihnen helfen?",
+      "caller": "Anrufer",
+      "request": "Ich möchte gern einen Termin für nächsten Dienstagvormittag buchen.",
+      "booked": "Termin gebucht",
+      "bookedDetail": "Dienstag, 10:00 · Bestätigung gesendet"
+    }
+  },
+  "proof": {
+    "languages": "Ungarisch, Deutsch und Englisch",
+    "always": "Rund um die Uhr erreichbar",
+    "handoff": "Übergabe an Menschen integriert",
+    "calendars": "Google- und Microsoft-Kalender"
+  },
+  "features": {
+    "heading": "Was Velyric kann",
+    "multilingual": {
+      "title": "Mehrsprachige Stimme",
+      "body": "Erkennt die Sprache des Anrufers und wechselt auch mitten im Gespräch zwischen Ungarisch, Deutsch und Englisch."
+    },
+    "conversation": {
+      "title": "Natürliche Gespräche",
+      "body": "Geht mit Unterbrechungen, Rückfragen und Pausen um wie eine geschulte Empfangskraft."
+    },
+    "booking": {
+      "title": "Kalenderbuchung",
+      "body": "Prüft echte Verfügbarkeiten von Mitarbeitenden und Räumen und bucht ohne Doppelbuchungen."
+    },
+    "integrations": {
+      "title": "Deine APIs als Tools",
+      "body": "Bestellungen nachschlagen oder Tickets anlegen über gesicherte eigene API-Tools mit Bestätigungen."
+    },
+    "handoff": {
+      "title": "Intelligente Weiterleitung",
+      "body": "Leitet mit kurzer Zusammenfassung an die richtige Person weiter, wenn ein Mensch gebraucht wird."
+    },
+    "analytics": {
+      "title": "Aussagekräftige Analysen",
+      "body": "Lösungsquoten, Anliegen, Wissenslücken und Kosten für jeden Standort."
+    }
+  },
+  "command": {
+    "eyebrow": "Eine zentrale Steuerung",
+    "titleStart": "Alles, was du brauchst,",
+    "titleHighlight": "an einem Ort.",
+    "body": "Konfiguriere Agenten, verfolge Live-Anrufe, prüfe Zusammenfassungen und verbinde deine Tools in einem Dashboard.",
+    "items": {
+      "live": "Live-Überwachung und -Steuerung von Anrufen",
+      "summaries": "Transkripte und Anrufzusammenfassungen",
+      "languages": "Begrüßungen und Hinweise je Sprache",
+      "integrations": "Kalender- und API-Integrationen",
+      "analytics": "Analysen in Echtzeit"
+    }
+  },
+  "showcase": {
+    "nav": {
+      "dashboard": "Dashboard",
+      "calls": "Anrufe",
+      "agents": "Agenten",
+      "contacts": "Kontakte",
+      "integrations": "Integrationen",
+      "analytics": "Analysen",
+      "settings": "Einstellungen"
+    },
+    "welcome": "Willkommen zurück",
+    "subtitle": "So laufen deine Voice-Agenten heute.",
+    "kpi": {
+      "calls": "Anrufe gesamt",
+      "duration": "Durchschnittliche Dauer",
+      "resolution": "Von der KI gelöst",
+      "quality": "Qualitätswert"
+    },
+    "liveCalls": "Live-Anrufe",
+    "inProgress": "Läuft",
+    "tags": {
+      "booking": "Buchung",
+      "support": "Support",
+      "lead": "Interessent"
+    },
+    "summary": "Anrufzusammenfassung",
+    "duration": "Dauer",
+    "outcome": "Ergebnis",
+    "booked": "Termin gebucht",
+    "summaryText": "Der Anrufer hat eine Kontrolluntersuchung für Dienstag um 10:00 gebucht und um eine E-Mail-Erinnerung gebeten.",
+    "caption": "Illustrative Produktvorschau mit Beispieldaten."
+  },
+  "integrations": {
+    "eyebrow": "Arbeitet mit deinen Tools",
+    "title": "Verbunden, wo es zählt.",
+    "body": "Verbinde Kalender und eigene Systeme in wenigen Minuten.",
+    "items": {
+      "google": {
+        "name": "Google Kalender",
+        "detail": "Verfügbarkeit und Buchungen"
+      },
+      "microsoft": {
+        "name": "Microsoft 365",
+        "detail": "Outlook-Kalender"
+      },
+      "phone": {
+        "name": "Rufnummern",
+        "detail": "Lokale Nummern für dich eingerichtet"
+      },
+      "api": {
+        "name": "Eigene API-Tools",
+        "detail": "Deine HTTPS-Endpunkte"
+      }
+    }
+  },
+  "pricing": {
+    "eyebrow": "Einfache, transparente Preise",
+    "title": "Tarife für jede Phase deines Unternehmens.",
+    "popular": "Am beliebtesten",
+    "perMonth": "/ Monat zzgl. USt.",
+    "minutes": "{minutes} Gesprächsminuten inklusive",
+    "concurrent": "{count, plural, one {# gleichzeitiger Anruf} other {# gleichzeitige Anrufe}}",
+    "numbers": "{count, plural, one {# Rufnummer} other {# Rufnummern}}",
+    "overage": "Zusätzliche Minuten für {price} / Minute",
+    "cta": "Jetzt starten",
+    "custom": "Individuell",
+    "contactSales": "Vertrieb kontaktieren",
+    "plans": {
+      "START": {
+        "name": "Start",
+        "description": "Für einen Standort, der jeden Anruf annehmen möchte.",
+        "highlight": "Wissensdatenbank, Übergabe an Menschen und Qualitätsüberwachung"
+      },
+      "BUSINESS": {
+        "name": "Business",
+        "description": "Für wachsende Unternehmen mit Buchungen und Integrationen.",
+        "highlight": "Kalenderbuchung, eigene API-Tools und begleitete Weiterleitungen"
+      },
+      "PRO": {
+        "name": "Pro",
+        "description": "Für Teams mit mehreren Standorten und erweitertem Routing.",
+        "highlight": "Mehrere Standorte, Simulation Lab und priorisierter Support"
+      },
+      "ENTERPRISE": {
+        "name": "Enterprise",
+        "description": "Für Organisationen mit individuellen Volumen-, Compliance- und Redundanzanforderungen."
+      }
+    },
+    "enterprise": {
+      "sso": "Single Sign-on und SCIM",
+      "sla": "Vertragliches SLA",
+      "redundancy": "Dedizierte Redundanz",
+      "byok": "Eigene Schlüssel"
+    }
+  },
+  "trust": {
+    "eyebrow": "Sicherheit und Compliance",
+    "title": "Vertrauenswürdig ab dem ersten Anruf.",
+    "link": "Mehr zur Sicherheit",
+    "items": {
+      "disclosure": {
+        "title": "KI-Hinweis",
+        "body": "Jeder Anruf beginnt mit einem klaren, versionierten KI-Hinweis in der Sprache des Anrufers."
+      },
+      "gdpr": {
+        "title": "DSGVO-Funktionen",
+        "body": "Aufbewahrungsregeln, Datenexport und Löschanfragen sind in das Produkt integriert."
+      },
+      "audit": {
+        "title": "Audit-Logs",
+        "body": "Jede Konfigurationsänderung und jede sensible Aktion wird protokolliert."
+      },
+      "eu": {
+        "title": "EU-Infrastruktur",
+        "body": "Anwendungs- und Anrufdaten werden in einer EU-Cloud-Region verarbeitet."
+      }
+    }
+  },
+  "cta": {
+    "title": "Bereit, deinem Unternehmen eine Stimme zu geben?",
+    "body": "Richte noch heute deinen ersten Voice-Agenten ein, damit sich dein Team auf die Gespräche konzentrieren kann, die es wirklich braucht.",
+    "button": "Jetzt starten"
+  },
+  "pricingPage": {
+    "eyebrow": "Preise",
+    "title": "Tarife, die mit deinen Anrufen wachsen",
+    "body": "Monatliche Tarife mit inklusiven Gesprächsminuten und transparenten Minutenpreisen darüber hinaus.",
+    "canceled": "Der Checkout wurde abgebrochen. Es wurde keine Zahlung eingezogen.",
+    "footnote": "Die Preise sind Nettobeträge für den ungarischen Markt. Die Umsatzsteuer wird nach den geltenden Regeln hinzugerechnet.",
+    "faqTitle": "Häufige Fragen",
+    "faq": {
+      "vat": {
+        "question": "Sind die Preise netto oder brutto?",
+        "answer": "Alle Preise sind netto. Rechnungen enthalten die Umsatzsteuer entsprechend Land und Steuerstatus des Kunden."
+      },
+      "overage": {
+        "question": "Was passiert, wenn die inklusiven Minuten aufgebraucht sind?",
+        "answer": "Anrufe funktionieren weiter, zusätzliche Minuten werden zum Minutenpreis des Tarifs abgerechnet. Ausgabenlimits schützen vor Überraschungen."
+      },
+      "change": {
+        "question": "Kann ich den Tarif später wechseln?",
+        "answer": "Ja. Upgrades gelten sofort, Downgrades zum Ende des Abrechnungszeitraums."
+      },
+      "numbers": {
+        "question": "Ist eine Rufnummer enthalten?",
+        "answer": "Jeder Tarif enthält mindestens eine Rufnummer. Netzbetreiber können vor der Aktivierung eine Unternehmensprüfung verlangen."
+      }
+    }
+  },
+  "productPage": {
+    "eyebrow": "Produkt",
+    "title": "Ein Voice-Agent, der arbeitet wie deine beste Empfangskraft",
+    "body": "Velyric verbindet Echtzeit-Sprach-KI mit Buchung, Wissen, Integrationen und Übergabe an Menschen auf einer kontrollierten Plattform.",
+    "cta": "Jetzt starten",
+    "blocks": {
+      "orchestration": {
+        "title": "Orchestrierte Spezialisten",
+        "body": "Ein Empfangsagent leitet jedes Anliegen an Spezialisten für Buchung, Support, Vertrieb oder Abrechnung mit eigenen Tool-Rechten weiter."
+      },
+      "languages": {
+        "title": "Drei Sprachen, ein Agent",
+        "body": "Begrüßungen, Hinweise und Rückfragen werden je Sprache konfiguriert, und der Agent folgt der Sprache des Anrufers."
+      },
+      "booking": {
+        "title": "Zuverlässige Buchung",
+        "body": "Leistungen, Ressourcen, Verfügbarkeitsregeln und Kalendersynchronisierung verhindern Doppelbuchungen."
+      },
+      "handoff": {
+        "title": "Übergabe mit Kontext",
+        "body": "Begleitete Weiterleitungen übergeben eine kurze Zusammenfassung, damit niemand sich wiederholen muss."
+      },
+      "simulation": {
+        "title": "Simulation vor der Veröffentlichung",
+        "body": "Teste neue Versionen mit Szenarien, bevor sie echte Anrufer erreichen."
+      },
+      "safety": {
+        "title": "Leitplanken",
+        "body": "Ausgabenlimits, Tool-Bestätigungen und Notschalter halten jeden Anruf unter Kontrolle."
+      }
+    }
+  },
+  "solutions": {
+    "common": {
+      "cta": "Mit Velyric starten",
+      "other": "Weitere Branchen",
+      "breadcrumb": "Brotkrümelnavigation"
+    },
+    "restaurant": {
+      "title": "Nie wieder eine Reservierung verpassen",
+      "body": "Tischreservierungen annehmen, Fragen zu Öffnungszeiten und Speisekarte beantworten und Wartelisten an vollen Abenden führen.",
+      "points": {
+        "first": {
+          "title": "Tischreservierungen",
+          "body": "Bucht Tische nach Personenzahl und Uhrzeit ohne Doppelbuchungen."
+        },
+        "second": {
+          "title": "Speisekarte und Allergene",
+          "body": "Antwortet aus deiner eigenen Speisekarte und deinen FAQ-Dokumenten."
+        },
+        "third": {
+          "title": "Stoßzeiten",
+          "body": "Bietet Rückrufe oder Wartelistenplätze an, wenn die Küche voll ist."
+        }
+      }
+    },
+    "dental-clinic": {
+      "title": "Ein ruhiger Empfang für deine Praxis",
+      "body": "Kontrolltermine buchen, Verschiebungen erledigen und dringende Fälle an das Team weiterleiten, während Patienten sofort Antworten erhalten.",
+      "points": {
+        "first": {
+          "title": "Terminbuchung",
+          "body": "Ordnet Behandlungen der richtigen Zahnärztin und dem richtigen Raum zu."
+        },
+        "second": {
+          "title": "Patientenfragen",
+          "body": "Erklärt Vorbereitung, Preise und Öffnungszeiten aus deiner Wissensdatenbank."
+        },
+        "third": {
+          "title": "Dringende Fälle",
+          "body": "Leitet Schmerz- und Notfallanrufe sofort an dein Team weiter."
+        }
+      }
+    },
+    "auto-service": {
+      "title": "Volle Werkstattplanung",
+      "body": "Services und Prüfungen planen, Statusfragen beantworten und Details erfassen, bevor das Auto kommt.",
+      "points": {
+        "first": {
+          "title": "Servicebuchung",
+          "body": "Bucht Stellplätze und Mechaniker passend zur Auftragsdauer."
+        },
+        "second": {
+          "title": "Fahrzeugdaten",
+          "body": "Erfasst Marke, Modell und das gemeldete Problem."
+        },
+        "third": {
+          "title": "Übergabe an Serviceberater",
+          "body": "Leitet Angebote und komplexe Fragen an Serviceberater weiter."
+        }
+      }
+    },
+    "car-detailing": {
+      "title": "Aufbereitung gebucht, ohne Telefon-Pingpong",
+      "body": "Pakete erklären, Termine buchen und Zusatzleistungen anbieten, während sich dein Team um die Autos kümmert.",
+      "points": {
+        "first": {
+          "title": "Paketberatung",
+          "body": "Beschreibt Pakete und Dauer anhand deiner Preisliste."
+        },
+        "second": {
+          "title": "Sofortbuchung",
+          "body": "Reserviert den passenden Slot für jede Paketdauer."
+        },
+        "third": {
+          "title": "Erinnerungen",
+          "body": "Sendet Bestätigungen, damit Kunden pünktlich kommen."
+        }
+      }
+    },
+    "salon": {
+      "title": "Dein Salon, immer erreichbar",
+      "body": "Stylisten buchen, Stornierungen bearbeiten und Preisfragen beantworten, auch wenn jeder Stuhl besetzt ist.",
+      "points": {
+        "first": {
+          "title": "Stylistenbuchung",
+          "body": "Bucht die richtige Person und die passende Leistungsdauer."
+        },
+        "second": {
+          "title": "Stornierungen",
+          "body": "Findet und storniert Buchungen anhand der Angaben des Anrufers."
+        },
+        "third": {
+          "title": "Preisfragen",
+          "body": "Antwortet einheitlich anhand deiner Leistungsliste."
+        }
+      }
+    },
+    "hotel": {
+      "title": "Gästeservice rund um die Uhr",
+      "body": "Gästefragen in ihrer Sprache beantworten, Wünsche aufnehmen und Reservierungen an die Rezeption übergeben.",
+      "points": {
+        "first": {
+          "title": "Gästefragen",
+          "body": "Check-in-Zeiten, Parken und Ausstattung in drei Sprachen."
+        },
+        "second": {
+          "title": "Wünsche aufnehmen",
+          "body": "Nimmt nachts Nachrichten und Rückrufwünsche auf."
+        },
+        "third": {
+          "title": "Übergabe an die Rezeption",
+          "body": "Verbindet Buchungs- und Beschwerdeanrufe mit dem Personal."
+        }
+      }
+    },
+    "real-estate": {
+      "title": "Jeden Immobilieninteressenten qualifizieren",
+      "body": "Fragen zu Objekten beantworten, Käufer qualifizieren und Besichtigungen beim richtigen Makler buchen.",
+      "points": {
+        "first": {
+          "title": "Qualifizierung",
+          "body": "Erfasst Budget, Zeitrahmen und Wünsche."
+        },
+        "second": {
+          "title": "Besichtigungstermine",
+          "body": "Bucht Besichtigungen in den Kalendern der Makler."
+        },
+        "third": {
+          "title": "Antworten zu Objekten",
+          "body": "Antwortet aus deinen Exposé-Dokumenten."
+        }
+      }
+    },
+    "webshop": {
+      "title": "Support, der mit deinen Bestellungen wächst",
+      "body": "Bestell- und Lieferfragen über deine eigenen APIs beantworten und komplexe Fälle an den Support übergeben.",
+      "points": {
+        "first": {
+          "title": "Bestellstatus",
+          "body": "Schlägt Bestellungen über ein gesichertes eigenes API-Tool nach."
+        },
+        "second": {
+          "title": "Retouren und Richtlinien",
+          "body": "Erklärt Rückgabe und Versand anhand deiner Richtlinien."
+        },
+        "third": {
+          "title": "Eskalation",
+          "body": "Übergibt Streitfälle mit Zusammenfassung an dein Support-Team."
+        }
+      }
+    },
+    "b2b-support": {
+      "title": "First-Level-Support für Geschäftskunden",
+      "body": "Anrufer identifizieren, Produktfragen beantworten und Tickets anlegen, bevor an den richtigen Techniker weitergeleitet wird.",
+      "points": {
+        "first": {
+          "title": "Anruferidentifikation",
+          "body": "Erkennt wiederkehrende Kontakte und ihr Unternehmen."
+        },
+        "second": {
+          "title": "Antworten aus dem Wissen",
+          "body": "Antwortet aus Handbüchern und technischen Dokumenten."
+        },
+        "third": {
+          "title": "Ticketerstellung",
+          "body": "Legt vor der Übergabe Tickets über deine API an."
+        }
+      }
+    }
+  },
+  "integrationsPage": {
+    "eyebrow": "Integrationen",
+    "title": "Verbinde Velyric mit deiner Arbeitsweise",
+    "body": "Heute können nur Integrationen mit dem Status „Verfügbar“ verbunden werden.",
+    "available": "Verfügbar",
+    "planned": "Geplant",
+    "items": {
+      "google": {
+        "name": "Google Kalender",
+        "body": "OAuth-Verbindung mit Frei/Belegt-Prüfung und Terminerstellung für buchbare Ressourcen."
+      },
+      "microsoft": {
+        "name": "Microsoft 365",
+        "body": "Verfügbarkeit und Buchungen in Outlook-Kalendern über Microsoft Graph."
+      },
+      "customApi": {
+        "name": "Eigene API-Tools",
+        "body": "Rufe deine HTTPS-Endpunkte mit JSON-Schema-Validierung, Egress-Schutz und Bestätigungsregeln auf."
+      },
+      "telephony": {
+        "name": "Rufnummern",
+        "body": "Lokale Nummern werden im Onboarding bereitgestellt und beim Netzbetreiber verifiziert."
+      },
+      "payments": {
+        "name": "Kartenzahlung",
+        "body": "Abonnements und Rechnungen laufen über einen sicheren gehosteten Checkout."
+      },
+      "email": {
+        "name": "E-Mail-Benachrichtigungen",
+        "body": "Buchungsbestätigungen und Team-Benachrichtigungen werden automatisch versendet."
+      },
+      "webhooks": {
+        "name": "Ausgehende Webhooks",
+        "body": "Signierte Ereignisbenachrichtigungen an deine Systeme."
+      }
+    }
+  },
+  "securityPage": {
+    "eyebrow": "Sicherheit",
+    "title": "Sicherheit und Datenschutz von Anfang an",
+    "body": "Velyric ist so gebaut, dass Anrufe, Daten und Zugangsdaten jedes Workspace isoliert und unter deiner Kontrolle bleiben.",
+    "blocks": {
+      "isolation": {
+        "title": "Mandantentrennung",
+        "body": "Row-Level-Security in der Datenbank trennt die Daten jedes Workspace auf Speicherebene."
+      },
+      "secrets": {
+        "title": "Geschützte Zugangsdaten",
+        "body": "API-Schlüssel und Integrations-Tokens liegen in einem verwalteten Secret Store und werden nach dem Erstellen nie wieder angezeigt."
+      },
+      "disclosure": {
+        "title": "Transparente KI",
+        "body": "Anrufer hören immer, dass sie mit einem KI-Assistenten sprechen."
+      },
+      "privacy": {
+        "title": "Datenschutzfunktionen",
+        "body": "Aufbewahrung konfigurieren, Transkripte schwärzen und Betroffenenanfragen bearbeiten."
+      },
+      "audit": {
+        "title": "Audit-Trail",
+        "body": "Sensible Aktionen deines Teams, von API-Schlüsseln und vom Support werden protokolliert."
+      },
+      "killSwitches": {
+        "title": "Notfallsteuerung",
+        "body": "Notschalter pausieren Tools, Agenten oder ausgehende Aktionen sofort."
+      }
+    }
+  },
+  "docsPage": {
+    "eyebrow": "Entwickler",
+    "title": "Velyric API",
+    "body": "Automatisiere Agenten, Anrufe, Buchungen und Wissen mit einer versionierten REST-API.",
+    "sections": {
+      "authentication": {
+        "title": "Authentifizierung",
+        "body": "Erstelle unter Sicherheit einen API-Schlüssel und sende ihn als Bearer-Token. Schlüssel sind auf bestimmte Berechtigungen beschränkt.",
+        "example": "curl \"$VELYRIC_API_URL/v1/calls\" -H \"Authorization: Bearer $VELYRIC_API_KEY\""
+      },
+      "conventions": {
+        "title": "Konventionen",
+        "body": "Schreibende Anfragen benötigen einen Idempotency-Key-Header. Änderungen verwenden If-Match mit der Ressourcenversion. Listen nutzen Cursor-Paginierung.",
+        "example": "Idempotency-Key: 6f1c2a9e-4d7b-4b1f-9c1e-2b5a7d8e9f10\nIf-Match: W/\"3\""
+      },
+      "resources": {
+        "title": "Ressourcen",
+        "body": "Agenten, Agentenversionen, Anrufe, Wissensquellen, Leistungen, Ressourcen, Buchungen und Rufnummern.",
+        "example": "GET /v1/agents\nGET /v1/calls?status=ACTIVE\nPOST /v1/knowledge-sources"
+      },
+      "errors": {
+        "title": "Fehler und Limits",
+        "body": "Fehler liefern einen stabilen Code und eine Trace-ID. Rate-Limits werden in RateLimit-Headern gemeldet.",
+        "example": "HTTP/1.1 429 Too Many Requests\nRetry-After: 12\nRateLimit: \"api-key-write\";r=0;t=12"
+      }
+    }
+  }
+}

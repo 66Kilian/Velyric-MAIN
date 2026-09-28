@@ -1,0 +1,103 @@
+{
+  "welcome": "Welcome back to {workspace}",
+  "subtitle": "Here's what's happening with your voice agents.",
+  "rangeLabel": "Date range",
+  "kpi": {
+    "label": "Key metrics",
+    "totalCalls": "Total calls",
+    "avgDuration": "Average duration",
+    "resolutionRate": "Resolved by AI",
+    "qualityScore": "Quality score",
+    "vsPrevious": "Change compared with the previous period"
+  },
+  "live": {
+    "title": "Live calls",
+    "viewAll": "View all",
+    "empty": "No calls in progress right now.",
+    "unknownCaller": "Unknown caller",
+    "webVisitor": "Website visitor"
+  },
+  "summary": {
+    "title": "Latest call summary",
+    "viewFull": "View full call",
+    "empty": "Completed calls will appear here.",
+    "duration": "Duration",
+    "timestamp": "Timestamp",
+    "outcome": "Outcome",
+    "noSummary": "No summary was generated for this call.",
+    "restricted": "Your role cannot view call summaries."
+  },
+  "volume": {
+    "title": "Calls per day",
+    "total": "All calls",
+    "resolved": "Resolved by AI",
+    "empty": "No finished calls in this period.",
+    "transferRate": "Transfer rate",
+    "abandonmentRate": "Abandonment rate",
+    "bookings": "Bookings created",
+    "minutes": "Connected minutes"
+  },
+  "intents": {
+    "title": "Top intents",
+    "empty": "No intents detected yet.",
+    "unknown": "Not classified"
+  },
+  "gaps": {
+    "title": "Knowledge gaps",
+    "manage": "Manage knowledge",
+    "empty": "No unanswered questions detected.",
+    "occurrences": "{count, plural, one {# time} other {# times}}"
+  },
+  "statusBanner": {
+    "PROVISIONING": {
+      "title": "Your workspace is being set up.",
+      "body": "Phone numbers and agents go live once setup completes.",
+      "action": "Continue setup"
+    },
+    "PAYMENT_AT_RISK": {
+      "title": "Your last payment failed.",
+      "body": "Update your payment method to avoid service interruption.",
+      "action": "Open billing"
+    },
+    "GRACE_PERIOD": {
+      "title": "Payment overdue.",
+      "body": "Calls keep running during the grace period, but new configuration changes may be limited.",
+      "action": "Resolve payment"
+    },
+    "RESTRICTED": {
+      "title": "Your workspace is restricted.",
+      "body": "Inbound calls are limited until the outstanding balance is paid.",
+      "action": "Resolve payment"
+    },
+    "SUSPENDED_BILLING": {
+      "title": "Service suspended for non-payment.",
+      "body": "Your agents do not answer calls until billing is resolved.",
+      "action": "Open billing"
+    },
+    "SUSPENDED_DISPUTE": {
+      "title": "Service suspended due to a payment dispute.",
+      "body": "Contact support to restore service.",
+      "action": "Open billing"
+    },
+    "SUSPENDED_RISK": {
+      "title": "Service suspended for a security review.",
+      "body": "Our team will contact the workspace owner.",
+      "action": "Open billing"
+    },
+    "SUSPENDED_ADMIN": {
+      "title": "Service suspended by Velyric.",
+      "body": "Contact support for details.",
+      "action": "Open billing"
+    },
+    "CANCELED_GRACE": {
+      "title": "Your subscription was canceled.",
+      "body": "You can reactivate before your numbers and data are released.",
+      "action": "Reactivate"
+    },
+    "DATA_RETENTION": {
+      "title": "This workspace is read-only.",
+      "body": "Export your data before the retention period ends.",
+      "action": "Open billing"
+    }
+  }
+}

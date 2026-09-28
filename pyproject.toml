@@ -1,0 +1,70 @@
+[tool.uv]
+required-version = ">=0.12.0,<0.13"
+
+[tool.uv.workspace]
+members = ["services/document-worker", "services/eval-runner"]
+
+[dependency-groups]
+dev = [
+    "ruff==0.16.7",
+    "mypy==2.3.1",
+    "pytest==9.1.1",
+    "pytest-asyncio==1.4.0",
+    "pytest-cov==7.1.0",
+    "hypothesis==6.168.0",
+    "moto[s3,server]==5.2.3",
+    "boto3-stubs[s3]==1.43.93",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+src = ["services/document-worker/src", "services/eval-runner/src"]
+extend-exclude = ["docs/spec", "node_modules", "target", "**/generated"]
+
+[tool.ruff.format]
+quote-style = "double"
+line-ending = "lf"
+
+[tool.ruff.lint]
+select = [
+    "E", "W", "F", "I", "N", "UP", "B", "A", "C4", "DTZ", "T10", "T20", "ISC", "PIE", "PT",
+    "RET", "SIM", "TID", "TC", "ARG", "PTH", "ERA", "PL", "TRY", "FLY", "PERF", "RUF", "S",
+    "BLE", "ANN", "ASYNC", "FBT", "LOG", "G", "FIX", "TD",
+]
+
+[tool.ruff.lint.pylint]
+max-args = 8
+max-returns = 8
+max-branches = 15
+max-statements = 60
+
+[tool.ruff.lint.per-file-ignores]
+"**/tests/**" = ["S101", "PLR2004", "E501", "PLR0911"]
+
+[tool.ruff.lint.flake8-tidy-imports]
+ban-relative-imports = "all"
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_unreachable = true
+disallow_any_explicit = true
+explicit_package_bases = true
+mypy_path = "services/document-worker/src,services/eval-runner/src"
+files = ["services/document-worker", "services/eval-runner"]
+exclude = ['(^|/)\.venv/']
+plugins = ["pydantic.mypy"]
+
+[[tool.mypy.overrides]]
+module = ["filetype", "filetype.*", "pytesseract", "pytesseract.*", "defusedxml", "defusedxml.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+minversion = "9.0"
+testpaths = ["services/document-worker/tests", "services/eval-runner/tests"]
+addopts = ["-ra", "--strict-markers", "--strict-config", "--import-mode=importlib"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+xfail_strict = true
+filterwarnings = ["error"]

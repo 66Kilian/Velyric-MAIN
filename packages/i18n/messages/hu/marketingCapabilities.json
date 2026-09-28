@@ -1,0 +1,781 @@
+{
+  "common": {
+    "breadcrumbLabel": "Morzsamenü",
+    "ctaPrimary": "Kezdés a Velyrickel",
+    "ctaSecondary": "Árak megtekintése"
+  },
+  "receptionist": {
+    "meta": {
+      "title": "AI recepciós, amely 0–24 felveszi a céges telefont",
+      "description": "A Velyric AI recepciósa 0–24 fogadja a hívásokat magyarul, németül és angolul, közli, hogy AI, időpontot foglal, és ### lenyomására munkatársat kapcsol."
+    },
+    "breadcrumb": "AI recepciós",
+    "eyebrow": "AI recepciós",
+    "title": "AI recepciós, amely 0–24 felveszi a céges telefonodat",
+    "body": "A Velyric a saját számodon veszi fel a hívást, közli, hogy AI asszisztens, a tudásbázisodból válaszol, a naptáradba foglal, és azonnal munkatársat kapcsol, amint a hívó kéri.",
+    "answer": {
+      "question": "Mi az AI recepciós?",
+      "body": "Az AI recepciós olyan hangalapú ügynök, amely felveszi a cég telefonját, élőszóban beszélget a hívóval, és elvégzi a recepciós munkát: válaszol a kérdésekre, időpontot foglal, módosít és lemond, üzenetet vesz fel, és szükség esetén munkatársnak adja át a hívást. A Velyric a te saját számodon, Telnyx SIP-szolgáltatón keresztül veszi fel a hívást, minden beszélgetés elején közli, hogy a hívó AI asszisztenssel beszél, és kizárólag az adott cég tudásbázisából és bekötött eszközeiből válaszol. A hívó bármikor közbevághat, beszélhet magyarul, németül vagy angolul, és a ### lenyomásával élő munkatársat kérhet. Minden hívás kódolt állapotgépen fut: a modell javasolhatja a következő lépést, de a backend dönti el, hogy az adott állapotban megengedett-e."
+    },
+    "context": {
+      "heading": "Kinek való az AI recepciós?",
+      "body": "Minden olyan vállalkozásnak, ahol a telefon valódi csatorna, és a fel nem vett hívás elvesztett foglalás.",
+      "p1": "A nem fogadott hívás nem feladat, amely megvár a sorban. Egy ember, aki tárcsázza a következő számot a találati listán. Rendelők, szervizek, szalonok, éttermek és B2B ügyfélszolgálatok ugyanúgy veszítenek: cseng a telefon, miközben a csapatod éppen egy vendéggel foglalkozik, zárás után, vagy egyszerre háromszor. Az AI recepciós megszünteti a választást a telefon és a munka között.",
+      "p2": "A Velyric platform, nem hívásszkript. Bekötöd a naptárad, feltöltöd azokat a dokumentumokat, amelyekből a csapatod eddig is válaszolt, megadod, melyik saját API-dat hívhatja az ügynök, és eldöntöd, mi történjen nyitvatartási időn kívül. Az ügynök ezekhez a forrásokhoz van kötve: ha egyik sem támasztja alá a választ, inkább visszakérdez vagy átad, ahelyett hogy találgatna."
+    },
+    "how": {
+      "heading": "Mi történik egy valódi híváson?",
+      "body": "Hat szakasz, abban a sorrendben, ahogy a beszélgetés állapotgépe végigmegy rajtuk.",
+      "s1": {
+        "title": "A hívás megérkezik a számodra",
+        "body": "A hívó azt a számot tárcsázza, amelyet a Telnyxen keresztül igényeltél vagy hordoztál át. A bejövő hívásszakaszt SIP-en fogadja a rendszer, és kizárólag ehhez a híváshoz jön létre új call_id, AI session, beszélgetési állapot és trace. A párhuzamos hívások semmin nem osztoznak, így az egyik hibája nem érintheti a másikat."
+      },
+      "s2": {
+        "title": "Köszöntés és AI-tájékoztatás",
+        "body": "Az ügynök az adott nyelvre beállított köszöntéssel indít, és megmondja, mi ő: „Jó napot kívánok, Nord Dental, Ön egy AI asszisztenssel beszél. Miben segíthetek?” A tájékoztatás minden hívásnál a köszöntés része, a hívó nyelvén – nem egy később elejtett félmondat."
+      },
+      "s3": {
+        "title": "Felderítés, a hívó tempójában",
+        "body": "A beszélgetés full duplex. Ha a hívó a köszöntés közepén bevág, hogy „Igazából a csütörtöki időpontomat szeretném áttenni”, az ügynök elhallgat és követi. A hezitálás, a töltelékszavak és a hümmögés nem töri meg a beszédfordulót. Az állapotgép a GREETING állapotból DISCOVERY-be lép, és rögzíti a szándékot."
+      },
+      "s4": {
+        "title": "Válasz a saját forrásaidból",
+        "body": "A „Szombaton van implantációs konzultáció?” kérdésre az ügynök a search_knowledge eszközt hívja a bérlőre szűrt indexeden: a feltöltött PDF-eken, DOCX-eken, CSV-ken, GYIK-bejegyzéseken és a bejárt weboldalakon. Ha az indexben semmi nem támasztja alá a választ, ezt kimondja, és visszakérdez vagy munkatársat ajánl – nem gyárt hihetően hangzó mondatot."
+      },
+      "s5": {
+        "title": "Művelet csak visszaolvasás után",
+        "body": "Foglalásnál az ügynök lefuttatja a list_services és a check_availability hívást a valódi naptáron, majd visszaolvassa a tervezett írást: „Tehát egy 30 perces implantációs konzultáció, május 14., csütörtök 10:20, dr. Kovácshoz. Lefoglaljam?” A create_booking csak kifejezett igen után fut le, idempotencia-kulccsal és adatbázis-megszorításokkal védve."
+      },
+      "s6": {
+        "title": "Munkatárs vagy tiszta lezárás",
+        "body": "Ha a hívó azt mondja, hogy „Beszélhetnék egy munkatárssal?”, vagy lenyomja a ### gombot, a rendszer azonnal az általad beállított tel: vagy sip: célra irányítja át a hívást. Két-három sikertelen megértési kísérlet, egy újrapróbálkozás után is hibázó eszköz vagy érzékeny kérés szintén emberhez vezet. Nyitvatartási időn kívül az ügynök üzenetet vesz fel, visszahívást rögzít, vagy az ügyeleti számot hívja."
+      }
+    },
+    "capabilities": {
+      "heading": "Mit tud a recepciós ügynök?",
+      "body": "Minden alábbi beállítás bérlőnként történik, és kódban van kikényszerítve, nem promptban kérve.",
+      "c1": {
+        "title": "0–24 hívásfogadás a saját számodon",
+        "body": "A bejövő hívásokat éjjel-nappal az a szám fogadja, amelyet a Telnyxen keresztül igényeltél vagy hordoztál át. Minden csomag tartalmaz 1 telefonszámot és 1 telephelyet; a további számok fizetős kiegészítők."
+      },
+      "c2": {
+        "title": "Kimondott AI-tájékoztatás",
+        "body": "Az ügynök a hívás elején közli, hogy a hívó AI asszisztenssel beszél. A szöveg nyelvenként állítható, és így teljesíted az EU AI Act 50. cikkének átláthatósági kötelezettségét, amely 2026. augusztus 2-től alkalmazandó."
+      },
+      "c3": {
+        "title": "Állítható gombkódok",
+        "body": "A DTMF a tiéd. Tipikus beállítás: ### élő munkatársért, 0 azonnali átadásért, * egy kérdéssel vissza – így az a hívó, aki nem akar AI-jal beszélni, nem is kényszerül rá."
+      },
+      "c4": {
+        "title": "Válaszok a saját tudásbázisodból",
+        "body": "PDF, DOCX, TXT és Markdown, CSV, kézi kérdés-válasz és weboldal-URL kerül kártevő-ellenőrzésre, feldolgozásra, darabolásra, beágyazásra és bérlőnkénti indexelésre. A weboldalakat sitemap-elsődlegű bejárás olvassa be, a schema.org JSON-LD adatokat – például cím, nyitvatartás – strukturált tényként emeli ki."
+      },
+      "c5": {
+        "title": "Nem csak válasz, cselekvés is",
+        "body": "A beépített eszközkészlet: list_services, check_availability, create_booking, find_booking, cancel_booking és search_knowledge, plusz bármilyen saját HTTPS API, amelyet definiálsz. Minden eszközhívást a backend ellenőriz az aktuális beszélgetési állapot alapján."
+      },
+      "c6": {
+        "title": "Te döntöd el, mi legyen zárás után",
+        "body": "Nyitvatartási időn kívül az ügynök más szabály szerint működik: üzenetet vesz fel, visszahívást rögzít, vagy ügyeleti számra ad át. Ugyanez a szabály kezeli a csomagod egyidejűségi korlátja feletti csúcsokat."
+      }
+    },
+    "facts": {
+      "heading": "Ellenőrizhető recepciós tények",
+      "body": "Számok, amelyeken számon kérhetsz minket, nem jelzők.",
+      "f1": { "term": "Elérhetőség", "value": "0–24 hívásfogadás a bérlő saját számán" },
+      "f2": {
+        "term": "AI-tájékoztatás",
+        "value": "Minden hívás elején elhangzik, nyelvenként beállítva"
+      },
+      "f3": {
+        "term": "Gombkódok",
+        "value": "### élő munkatárs, 0 azonnali átadás, * egy kérdéssel vissza – állítható"
+      },
+      "f4": {
+        "term": "Maximális híváshossz",
+        "value": "1800 másodperc (30 perc) minden csomagban"
+      },
+      "f5": {
+        "term": "Párhuzamos hívások",
+        "value": "Start 2, Business 10, Pro 50, Enterprise 100+"
+      },
+      "f6": {
+        "term": "Nyelvek",
+        "value": "Magyar, német és angol, hívás közben is váltható"
+      },
+      "f7": {
+        "term": "Hívásaudió",
+        "value": "Alapból nem tárolódik (0 nap megőrzés); a rögzítés fizetős kiegészítő"
+      },
+      "f8": {
+        "term": "Átirat megőrzése",
+        "value": "Alapból 90 nap, bérlőnként akár 1 napra állítható"
+      }
+    },
+    "limits": {
+      "heading": "Mit nem csinál az AI recepciós?",
+      "body": "Az őszinte lista. Ezeket vásárlás előtt tudni többet ér, mint még egy funkciópont.",
+      "l1": {
+        "title": "Semmit nem tud, amit nem adtál meg neki",
+        "body": "Az ügynök kizárólag a tudásbázisodból és a bekötött eszközökből válaszol. Hívás közben nincs internetes keresés. Ha egyetlen forrás sem támasztja alá a választ, visszakérdez vagy munkatársnak adja át a hívást – nem tölti ki a hiányt jól hangzó mondattal."
+      },
+      "l2": {
+        "title": "A hívószám nem belépés",
+        "body": "A hívószám kényelmi azonosító a visszatérő ügyfél felismeréséhez, nem hitelesítés. Az érzékeny kérés megerősített azonosítást vagy embert igényel, mert a hívószám hamisítható, a telefon pedig közös."
+      },
+      "l3": {
+        "title": "Alapból nincs mit visszahallgatni",
+        "body": "A nyers hívásaudió nem tárolódik: az alapértelmezett megőrzés 0 nap. Az átiratok és a hívásesemények megmaradnak, de ha magára a hangra van szükséged, a hívás előtt be kell kapcsolnod a hangrögzítés kiegészítőt."
+      },
+      "l4": {
+        "title": "A hívás 30 percnél véget ér",
+        "body": "Minden csomag 1800 másodpercben maximalizálja egyetlen hívás hosszát. Ami ennél tovább tart, az embert kíván, és az ügynöknek jóval a korlát előtt át kell adnia a hívást, nem a limitnek kell levágnia."
+      },
+      "l5": {
+        "title": "Három nyelv, nem harminc",
+        "body": "Magyar, német és angol támogatott. A bármely más nyelven hívó ügyfél átadási eset, nem fordítási feladat."
+      },
+      "l6": {
+        "title": "Az egyidejűség üzleti korlát",
+        "body": "A csomagod dönti el, hány hívás futhat egyszerre: Start 2, Business 10, Pro 50. Az ezen felüli hívásokra az általad választott szabály érvényes – rövid várakoztatás, túlcsordulási szám, visszahívás vagy hangposta."
+      }
+    },
+    "faq": {
+      "heading": "Gyakori kérdések az AI recepciósról",
+      "q1": {
+        "question": "Miben más az AI recepciós, mint egy IVR hangmenü?",
+        "answer": "Az IVR arra kéri a hívót, hogy a problémáját illessze egy számozott menübe, és elbukik, amint a probléma nem fér bele. A Velyric ügynöke szabad mondatot hallgat meg, visszakérdez, ha valami hiányzik, és eszközhívással el is végzi a kért műveletet. A billentyűzet megmarad – ### munkatársért, 0 azonnali átadásért –, de gyorsításként, nem egyetlen felületként."
+      },
+      "q2": {
+        "question": "Tudja a hívó, hogy AI-jal beszél?",
+        "answer": "Igen. Az ügynök a hívás elején, a hívás nyelvén közli, hogy a hívó AI asszisztenssel beszél. Ez alapértelmezett termékviselkedés, nem kapcsoló, amit be kell kapcsolnod, és megfelel az EU AI Act 50. cikkének 2026. augusztus 2-től alkalmazandó átláthatósági kötelezettségének."
+      },
+      "q3": {
+        "question": "Mi történik, ha az ügynök nem tudja a választ?",
+        "answer": "Nem találgat. Ha a bérlőre szűrt keresés nem hoz alátámasztó forrást, az ügynök visszakérdez, vagy munkatársnak adja át a hívást. Két-három egymást követő sikertelen megértési kísérlet után szintén felajánlja az átadást."
+      },
+      "q4": {
+        "question": "Egyszerre több hívást is fel tud venni?",
+        "answer": "Igen, a csomagod egyidejűségi korlátjáig: Start 2, Business 10, Pro 50, Enterprise 100+. Minden hívás saját call_id-t, AI sessiont, beszélgetési állapotot és trace-t kap, így az egyik hívás nem ronthatja el és nem lassíthatja a másikat."
+      },
+      "q5": {
+        "question": "Kell hozzá új telefonszám?",
+        "answer": "Nem feltétlenül. Minden csomag tartalmaz egy telefonszámot, amelyet a Telnyxen keresztül igényelhetsz, vagy áthordozhatod a jelenlegi szolgáltatódtól. Magyar körzetszámos számok elérhetők; a számigénylés szolgáltatói vagy hatósági cégazonosítást igényelhet, ez része a kiépítési folyamatnak."
+      },
+      "q6": {
+        "question": "A hívásaink adatait tanításra használjátok?",
+        "answer": "Nem. Az ügyfelek hívásadatait nem használjuk általános célú modellek tanítására. Az alkalmazás- és hívásadatok EU-s felhőrégióban, alapértelmezetten Frankfurtban futnak, a Velyric pedig adatfeldolgozó a hívások, átiratok, kapcsolatok és foglalások tekintetében, a honlapon közzétett, GDPR 28. cikk szerinti adatfeldolgozási megállapodás alapján."
+      },
+      "q7": {
+        "question": "Mennyibe kerül?",
+        "answer": "A közzétett árak a magyar piacra vonatkoznak, nettó értékek: a Start havi 39 900 Ft 150 beszédperccel, a Business 69 900 Ft 400 perccel, a Pro 129 900 Ft 1000 perccel, az Enterprise szerződés szerint. A kereten felüli percek a csomag percdíján futnak – 149, 129 vagy 109 Ft –, költségkerettel."
+      }
+    },
+    "related": {
+      "heading": "Olvass tovább",
+      "r1": {
+        "label": "Telefonos időpontfoglalás AI-val",
+        "description": "Hogyan olvas valódi szabad időpontot az ügynök, és hogyan ír foglalást dupla foglalás nélkül."
+      },
+      "r2": {
+        "label": "Többnyelvű AI hangasszisztens",
+        "description": "Hogyan dől el a magyar, német vagy angol nyelv, és hogyan vált hívás közben."
+      },
+      "r3": {
+        "label": "Hívás átadása munkatársnak",
+        "description": "Minden eset, amikor emberhez kerül a hívás, és mit kap a kollégád."
+      },
+      "r4": {
+        "label": "Árak",
+        "description": "Csomagok, benne foglalt percek, percdíjak és egyidejűségi korlátok."
+      },
+      "r5": {
+        "label": "AI recepciós fogászati rendelőnek",
+        "description": "Hogyan néz ki a recepciós munka automatizálása telt székek mellett."
+      },
+      "r6": {
+        "label": "Termékáttekintés",
+        "description": "A teljes platform: orchestráció, tudásbázis, integrációk és védőkorlátok."
+      }
+    }
+  },
+  "booking": {
+    "meta": {
+      "title": "Telefonos időpontfoglalás AI-val",
+      "description": "A Velyric a valódi naptáradból olvassa a szabad időpontokat, sosem talál ki sávot, írás előtt visszaolvas, és ütközésmentesen foglal Google vagy Microsoft 365 naptárba."
+    },
+    "breadcrumb": "Időpontfoglalás",
+    "eyebrow": "AI foglalási asszisztens",
+    "title": "Telefonos időpontok a valódi naptáradban",
+    "body": "Az ügynök élő szabad időpontokat olvas, csak létező sávot ajánl, visszaolvassa a foglalást megerősítésre, és idempotencia-kulccsal ír – így egy újrapróbálkozás sem hoz létre második foglalást.",
+    "answer": {
+      "question": "Hogyan működik a telefonos időpontfoglalás AI-val?",
+      "body": "Az AI foglalási asszisztens a telefonban kimondott időpontkérésből valódi naptárbejegyzést csinál. A Velyric ezt kötött sorrendben teszi: a list_services azonosítja, mit kér a hívó, a check_availability lekérdezi a bekötött naptárat vagy foglalási motort, az ügynök visszaolvassa a tervezett időpontot és megvárja a kifejezett igent, és csak ezután ír a create_booking. A szabad időpont mindig a naptárból jön, az ügynök tehát soha nem talál ki szabad sávot; ha nincs szabad hely, a kapott alternatívákat ajánlja. Az írást adatbázis-megszorítások, tranzakciók és idempotencia-kulcsok védik, így két, ugyanarra a sávra versengő hívó közül nem kaphatja meg mindkettő."
+    },
+    "context": {
+      "heading": "A foglalás az a rész, aminek pontosnak kell lennie",
+      "body": "A szabad időpontról adott rossz válasz kétszer kerül pénzbe: egyszer a telefonban, egyszer a váróban.",
+      "p1": "Az a foglalóbot, amelyik kitalál egy csütörtök 10 órás sávot, nagyobb kárt okoz, mint a hangposta. A vendég megérkezik, a szék foglalt, a kollégád pedig fél délelőttöt tölt mentegetőzéssel. A nehéz rész nem a beszélgetés, hanem az írás: helyesnek kell lennie párhuzamos terhelés alatt, idempotensnek újrapróbálkozáskor, és őszintének, amikor tele a naptár.",
+      "p2": "A Velyricnél a szabad időpontra kizárólag a naptár válaszolhat. A modell javasolja a következő eszközt; a backend ellenőrzi, hogy az adott beszélgetési állapotban megengedett-e, lefuttatja, és strukturált eredményt ad vissza. Az az optimista létrehozás, amelyik veszít a versenyben, ütközést ad vissza, nem sikert – az ügynök pedig azonnal a következő valódi alternatívát ajánlja."
+    },
+    "how": {
+      "heading": "Egy foglalási hívás lépésről lépésre",
+      "body": "Ugyanez a hat lépés fut, akár hajvágásról, akár szervizidőpontról, akár konzultációról van szó.",
+      "s1": {
+        "title": "A szolgáltatás azonosítása",
+        "body": "A list_services valódi szolgáltatássá és valódi időtartammá alakítja, amit a hívó kért. A „mosás és vágás” 45 perces szolgáltatás lesz megnevezett fodrásszal, ha az erőforrások és a munkatársak modellezve vannak. Az „az olcsóbbik” viszont visszakérdezés lesz, nem feltételezés."
+      },
+      "s2": {
+        "title": "Valódi szabad időpont lekérdezése",
+        "body": "A check_availability a bekötött naptárat kérdezi. A Google Naptárt a /freeBusy végponton, a calendar.freebusy és calendar.events jogosultságokkal; a Microsoft 365-öt a Microsoft Graph getSchedule hívásán, Calendars.ReadWrite jogosultsággal. Kizárólag az így kapott időpontokat ajánlhatja fel az ügynök."
+      },
+      "s3": {
+        "title": "Csak létező időpont, a telephely időzónájában",
+        "body": "„Csütörtök sajnos tele van. Pénteken 9:40-kor vagy hétfőn 16:10-kor tudom fogadni.” Az időpontok az adott telephelyre beállított időzónában hangzanak el – ez a második telephelynél vagy külföldi hívásoknál azonnal számít."
+      },
+      "s4": {
+        "title": "A foglaláshoz szükséges adatok felvétele",
+        "body": "Az ügynök elkéri a nevet és mindent, amit a szolgáltatás igényel, és visszaolvassa, amit nem értett tisztán. A hívószámot nem tekinti személyazonosításnak: az csak jelzés, hogy visszatérő ügyfélről lehet szó."
+      },
+      "s5": {
+        "title": "Visszaolvasás és megerősítés minden írás előtt",
+        "body": "„Nagy Hanna, mosás és vágás, május 15., péntek 9:40, 45 perc, Eszterhez. Lefoglaljam?” A beszélgetés megerősítési kapuban áll. Bizonytalan válaszra semmi nem íródik, és a hívó ezen a ponton még módosíthat."
+      },
+      "s6": {
+        "title": "Írás, ellenőrzés, visszaigazolás",
+        "body": "A create_booking tranzakcióban, idempotencia-kulccsal fut. Ha nyer, az ügynök élőszóban visszaigazolja a foglalást, és visszaigazoló e-mail is kimehet. Ha az optimista létrehozás veszít, az eszköz strukturált ütközést ad vissza: az ügynök ezt kimondja, és a következő szabad időpontot ajánlja ahelyett, hogy úgy tenne, mintha sikerült volna."
+      }
+    },
+    "capabilities": {
+      "heading": "Mit kezel a foglalási ügynök?",
+      "body": "Foglalás, módosítás és lemondás, a naptárral mint egyetlen igazságforrással.",
+      "c1": {
+        "title": "A szabad időpont a naptárból jön, nem a modellből",
+        "body": "Az ügynöknek nincs módja olyan sávot ajánlani, amelyet a check_availability nem adott vissza. Ha nincs szabad hely, ezt kimondja, és a kapott alternatívákat ajánlja."
+      },
+      "c2": {
+        "title": "Ütközésmentes, idempotens írás",
+        "body": "Adatbázis-megszorítások, tranzakciók és idempotencia-kulcsok akadályozzák meg a dupla foglalást és az ismételt kérések duplikálódását. A vesztes létrehozás strukturált ütközést ad vissza, amit az ügynök a beszélgetésen belül kezel."
+      },
+      "c3": {
+        "title": "Megerősítési kapu minden írás előtt",
+        "body": "Az ügynök összefoglalja az időpontot, és megerősítést kér, mielőtt a create_booking lefut. Ugyanez a kapu védi a cancel_booking hívást is, így véletlenül semmi nem szabadul fel."
+      },
+      "c4": {
+        "title": "Módosítás és lemondás telefonon",
+        "body": "A find_booking megtalálja a meglévő időpontot, a cancel_booking felszabadítja. Várólista- és lemondási folyamat is van, így a felszabaduló sáv nem vész el."
+      },
+      "c5": {
+        "title": "Szolgáltatások, erőforrások, munkatársak, telephelyek",
+        "body": "A szolgáltatások, erőforrások és munkatársak modellezve vannak, az időzóna pedig telephelyenként explicit – így a kéttelephelyes vállalkozás mindkét helyet a saját óráján foglalja."
+      },
+      "c6": {
+        "title": "Google Naptár és Microsoft 365",
+        "body": "Mindkettő OAuth2 + PKCE kapcsolattal, offline hozzáféréssel csatlakozik. A Google esetében openid, email, calendar.events és calendar.freebusy; a Microsoftnál openid, email, offline_access és Calendars.ReadWrite jogosultság. A kimenő forgalom a szolgáltató saját domainjeire van zárva."
+      }
+    },
+    "facts": {
+      "heading": "Ellenőrizhető foglalási tények",
+      "body": "Azok a részletek, amelyek eldöntik, biztonságos-e bekapcsolni a telefonos foglalást.",
+      "f1": {
+        "term": "A szabad időpont forrása",
+        "value": "Mindig a bekötött naptár vagy foglalási motor – az ügynök nem talál ki sávot"
+      },
+      "f2": {
+        "term": "Írásbiztonság",
+        "value": "Adatbázis-megszorítások, tranzakciók, idempotencia-kulcsok; a vesztes létrehozás strukturált ütközést ad vissza"
+      },
+      "f3": {
+        "term": "Megerősítés",
+        "value": "Az ügynök minden írás előtt összefoglal és kifejezett megerősítést kér"
+      },
+      "f4": { "term": "Időzóna", "value": "Telephelyenként explicit" },
+      "f5": {
+        "term": "Visszaigazoló e-mail",
+        "value": "Sikeres foglalás után kiküldhető; saját SMTP-relé is használható"
+      },
+      "f6": {
+        "term": "Foglalási eszközök",
+        "value": "list_services, check_availability, create_booking, find_booking, cancel_booking"
+      },
+      "f7": {
+        "term": "Naptárak",
+        "value": "Google Naptár (/freeBusy, létrehozás, törlés) és Microsoft 365 (getSchedule, létrehozás, törlés)"
+      },
+      "f8": {
+        "term": "Foglalási webhookok",
+        "value": "booking.created, booking.changed, booking.canceled, waitlist.slot_released"
+      }
+    },
+    "limits": {
+      "heading": "Mit nem csinál a telefonos foglalás?",
+      "body": "Hol van a határ, és mi van a túloldalán.",
+      "l1": {
+        "title": "Nem talál ki időpontot a hívó kedvéért",
+        "body": "Ha a naptárban nincs semmi, az ügynök azt mondja, hogy nincs semmi. Pontosan ezért megy a szabad időpont eszközhíváson és nem prompton keresztül – és ezért van, hogy néhány hívás foglalás nélkül ér véget."
+      },
+      "l2": {
+        "title": "Foglal, de nem vezeti a CRM-edet",
+        "body": "Az eszközkatalógus a foglalási és tudásbázis-eszközökből, plusz az általad definiált saját HTTPS API-kból áll. Nincs általános folyamatépítő és nincs CRM-írási út – ha a foglalásnak máshová is el kell jutnia, az a saját API-eszközödön vagy aláírt kimenő webhookon keresztül történik."
+      },
+      "l3": {
+        "title": "A hívószám nem bizonyítja, ki hív",
+        "body": "Más ember időpontjának megkeresése vagy lemondása egy felismert számról pontosan az az eset, amely megerősített azonosítást vagy embert igényel. A telefonszám kényelmi azonosító, nem hitelesítés."
+      },
+      "l4": {
+        "title": "Két naptárszolgáltató, nem az összes",
+        "body": "A Google Naptár és a Microsoft 365 köthető be. Minden más csak saját API-eszközön keresztül érhető el, saját JSON Schemával, időkorláttal, újrapróbálkozási szabállyal és kimenő forgalmi engedélylistával."
+      },
+      "l5": {
+        "title": "Az e-mail az egyetlen értesítési csatorna",
+        "body": "Sikeres foglalás után visszaigazoló e-mail küldhető. Nincs SMS, nincs üzenetküldő alkalmazás és nincs push értesítés: a többi értesítési csatorna szerepel az adatmodellben, de nem küld."
+      },
+      "l6": {
+        "title": "A hívás itt is 30 percnél véget ér",
+        "body": "A foglalási beszélgetés ugyanabba az 1800 másodperces korlátba fut bele, mint bármelyik másik hívás. Aki tizenegy időpontot akar áttenni, azt emberhez kell kapcsolni."
+      }
+    },
+    "faq": {
+      "heading": "Gyakori kérdések a telefonos időpontfoglalásról",
+      "q1": {
+        "question": "Lefoglalhatja kétszer ugyanazt a sávot?",
+        "answer": "Nem. A szabad időpont a naptárból jön, az írást pedig adatbázis-megszorítások, tranzakciók és idempotencia-kulcsok védik. Ha két hívás versenyez ugyanazért a sávért, a vesztes létrehozás strukturált ütközést ad vissza, és az az ügynök a következő valódi alternatívát ajánlja."
+      },
+      "q2": {
+        "question": "Mi történik, ha foglalás közben megszakad a vonal?",
+        "answer": "A megerősítésig semmi nem íródik, így a megerősítési kapu előtt megszakadt hívás nem hagy maga után időpontot. A megerősítés után az idempotencia-kulcs gondoskodik arról, hogy egy újrapróbált írás ne hozzon létre második, azonos foglalást."
+      },
+      "q3": {
+        "question": "Milyen naptárat köthetek be?",
+        "answer": "Google Naptárt és Microsoft 365-öt, vagyis az Outlook naptárat a Microsoft Graphon keresztül. Mindkettő OAuth2 + PKCE és offline hozzáférés, a kimenő forgalom pedig a www.googleapis.com és oauth2.googleapis.com, illetve a graph.microsoft.com és login.microsoftonline.com domainekre van zárva."
+      },
+      "q4": {
+        "question": "Kap a hívó visszaigazolást?",
+        "answer": "Az ügynök még az írás előtt visszaolvassa az időpontot a telefonban, és élőszóban visszaigazolja, amint az írás sikerült. Utána visszaigazoló e-mail is kiküldhető, akár a saját SMTP-szervereden keresztül."
+      },
+      "q5": {
+        "question": "Le lehet mondani vagy áttenni időpontot telefonon?",
+        "answer": "Igen. A find_booking megkeresi az időpontot, a cancel_booking felszabadítja, és várólista- és lemondási folyamat is van, így a felszabaduló sáv továbbajánlható. Minden, ami más ember foglalása körül érzékeny, megerősített azonosítást vagy embert igényel."
+      },
+      "q6": {
+        "question": "Hogyan értesülnek a saját rendszereink az új foglalásról?",
+        "answer": "Kimenő webhookokon. A booking.created, booking.changed, booking.canceled és waitlist.slot_released a 17 eseménytípus között van, HTTPS-en, a velyric-signature fejlécben HMAC-SHA256 aláírással, legfeljebb 8 kézbesítési kísérlettel, 30 másodperctől 24 óráig növekvő várakozással."
+      },
+      "q7": {
+        "question": "Hány foglalási hívás futhat egyszerre?",
+        "answer": "Annyi, amennyit a csomagod enged: Start 2, Business 10, Pro 50, Enterprise 100+ párhuzamos hívás. A beszédpercek 150, 400 és 1000, a kereten felüli percdíj pedig nettó 149, 129 és 109 Ft."
+      }
+    },
+    "related": {
+      "heading": "Olvass tovább",
+      "r1": {
+        "label": "AI recepciós",
+        "description": "A teljes recepció: hívásfogadás, tudásbázis, gombkódok és zárás utáni szabályok."
+      },
+      "r2": {
+        "label": "Többnyelvű AI hangasszisztens",
+        "description": "Magyarul indított foglalás, angolul visszaigazolva, ugyanazon a híváson."
+      },
+      "r3": {
+        "label": "Hívás átadása munkatársnak",
+        "description": "Mi történik, ha a foglaláshoz mégis ember kell."
+      },
+      "r4": {
+        "label": "Árak",
+        "description": "Csomagok, benne foglalt percek, percdíjak és egyidejűségi korlátok."
+      },
+      "r5": {
+        "label": "Időpontfoglalás fodrászatnak és szépségszalonnak",
+        "description": "Szolgáltatások, munkatársak, és egy szék, amely sosem lesz duplán foglalva."
+      },
+      "r6": {
+        "label": "Termékáttekintés",
+        "description": "A teljes platform: orchestráció, tudásbázis, integrációk és védőkorlátok."
+      }
+    }
+  },
+  "multilingual": {
+    "meta": {
+      "title": "Többnyelvű AI hangasszisztens: magyar, német, angol",
+      "description": "Egy ügynök, egy szám, három nyelv. Az országhívó csak tipp: a kimondott kérés vagy a mentett preferencia felülírja, és a nyelv hívás közben is váltható."
+    },
+    "breadcrumb": "Többnyelvű hívások",
+    "eyebrow": "Többnyelvű hangasszisztens",
+    "title": "Egy szám, három nyelv, nulla nyelvválasztó menü",
+    "body": "Az ügynök a hívószámból, a ténylegesen elhangzottakból és abból választ nyelvet, amit már tudsz a hívóról – és követi, ha a beszélgetés közepén vált.",
+    "answer": {
+      "question": "Hogyan választ nyelvet a többnyelvű AI hangasszisztens?",
+      "body": "A többnyelvű hangasszisztens úgy dönti el, milyen nyelven beszéljen, hogy nem kér a hívótól gombnyomást. A Velyricnél a hívó E.164 országhívója csak kiindulási tipp: a kifejezett kérés („magyarul kérem”), a felismert beszélt nyelv és a hívói profilon tárolt preferred_language mind felülírja. A nyelv hívás közben is váltható, így azt a hívót, aki németül kezd és angolul folytatja, az ügynök követi, nem javítja ki. A köszöntés, az AI-tájékoztatás és a tartalékmondatok nyelvenként külön állíthatók, a támogatott nyelvek pedig a magyar, a német és az angol."
+    },
+    "context": {
+      "heading": "Miért rossz válasz a nyelvválasztó menü?",
+      "body": "A „nyomja meg az 1-est a magyar nyelvért” minden hívónak időbe kerül, a gyakori eseteket mégis elrontja.",
+      "p1": "A nyelvi menü pont attól várja el a navigálást, aki a legkevésbé tud navigálni benne. És pont ott bukik el, ahol számít: a német mobilról hívó magyarnál, az osztrák vendégnél, aki jobban beszél angolul, mint németül, vagy a törzsügyfélnél, akinek a nyelvét a múltkori hívásból már tudod.",
+      "p2": "A Velyric ehelyett rétegzi a jeleket. Az országhívó ad egy kezdő tippet, így az első mondat többnyire eltalálja. Amit a hívó ténylegesen mond, azonnal felülírja a tippet. A visszatérő ügyfélnél pedig a hívói profilon mentett preferencia mindkettőt veri – a hívói memória bérlőnként tárolódik, és soha nem kerül át más bérlőhöz."
+    },
+    "how": {
+      "heading": "Hogyan dől el a nyelv, sorrendben",
+      "body": "Négy jel, egy beszélgetés, sehol egy menü.",
+      "s1": {
+        "title": "Az országhívó adja a kezdő tippet",
+        "body": "A +36-ról érkező hívás magyarul indul, a +49-ről vagy +43-ról érkező németül. Az E.164 országhívó csak tipp: azt dönti el, melyik köszöntés hangzik el először, semmi mást."
+      },
+      "s2": {
+        "title": "A köszöntés és a tájékoztatás nyelvenként külön áll",
+        "body": "Minden nyelvnek saját beállított köszöntése és AI-tájékoztatása van: „Jó napot kívánok, Ön egy AI asszisztenssel beszél.” vagy „Guten Tag, Sie sprechen mit einem KI-Assistenten.” A tájékoztatás nyelvváltásnál sem marad el."
+      },
+      "s3": {
+        "title": "Amit a hívó mond, az dönt",
+        "body": "Ha a hívó azt feleli, hogy „Beszélhetnénk inkább angolul?”, vagy egyszerűen angolul kezd beszélni, az ügynök vált. A kifejezett kérés és a felismert beszélt nyelv is felülírja az országhívó alapján adott tippet – menü és újramondott köszöntés nélkül."
+      },
+      "s4": {
+        "title": "A mentett preferencia veri a tippet",
+        "body": "Visszatérő hívónál a saját hívói profilodon tárolt preferred_language élvez elsőbbséget az országhívóval szemben. Aki német számról mindig magyarul hív, az első szótól magyar köszöntést kap."
+      },
+      "s5": {
+        "title": "A hívás közbeni váltás normális",
+        "body": "Azt a hívót, aki magyarul kezd, és egyetlen szakmai részlet kedvéért angolra vált, az ügynök a beszélgetés közben követi. A beszélgetési állapot, az addig felvett adatok és az eszközeredmények túlélik a váltást: a hang nyelve változik, a hívás nem indul újra."
+      },
+      "s6": {
+        "title": "A hívás többi része is követi",
+        "body": "A tudásbázis-keresés, a foglalás visszaolvasása, a megerősítő kérdés és az átadási mondat is azon a nyelven folytatódik, amelyen a beszélgetés zajlik. A nyelvváltás pontossága a vezérlőpulton mért minőségi jelek egyike, tehát ez ellenőrizhető, nem remélhető."
+      }
+    },
+    "capabilities": {
+      "heading": "Mit jelent itt a többnyelvűség?",
+      "body": "Egy ügynök három piacra, nyelvenként beállítva, nem futásidőben lefordítva.",
+      "c1": {
+        "title": "Magyar, német és angol",
+        "body": "Három nyelv egy ügynökön és egy számon. Nincs külön szám, külön ügynök vagy nyelvi menü piaconként."
+      },
+      "c2": {
+        "title": "Rétegzett nyelvválasztás",
+        "body": "Az E.164 országhívó tippje, a hívó kifejezett kérése, a felismert beszélt nyelv és a mentett preferred_language – ebben a fontossági sorrendben."
+      },
+      "c3": {
+        "title": "Váltás hívás közben",
+        "body": "A nyelv a beszélgetés bármely pontján megváltozhat az állapot elvesztése nélkül, és az ügynök nem tereli vissza a hívót oda, ahonnan indult."
+      },
+      "c4": {
+        "title": "Nyelvenkénti köszöntés, tájékoztatás és tartalékmondatok",
+        "body": "A köszöntés, az AI-tájékoztatás és a tartalékmondatok nyelvenként állíthatók, így egy német hívás úgy hangzik, mintha arra a piacra írták volna, nem mintha menet közben fordítanák magyarból."
+      },
+      "c5": {
+        "title": "Bérlőnkénti hívói memória",
+        "body": "A hívó nyelvi preferenciája a saját hívói profilodon marad, szigorú bérlői elkülönítéssel: tenant_id minden bérlőhöz kötött táblán és Postgres row level security. Semmi nem kerül át másik bérlőhöz."
+      },
+      "c6": {
+        "title": "Mérve, nem feltételezve",
+        "body": "A nyelvváltás pontossága a válaszlatencia, a közbevágás sikeressége, az eszközök sikerességi aránya és az első hívásos megoldás mellett áll. A szimulációs felületen nyelvenként futtathatsz szkriptelt teszthívásokat és regressziós készleteket, mielőtt egy verzió élesbe megy."
+      }
+    },
+    "facts": {
+      "heading": "Ellenőrizhető nyelvi tények",
+      "body": "Mi dönti el a nyelvet, és mi nem.",
+      "f1": { "term": "Támogatott nyelvek", "value": "Magyar, német és angol" },
+      "f2": { "term": "Kezdeti tipp", "value": "A hívó E.164 országhívója" },
+      "f3": {
+        "term": "Felülírja a tippet",
+        "value": "Kifejezett kérés, a felismert beszélt nyelv és a mentett preferred_language"
+      },
+      "f4": {
+        "term": "Váltás hívás közben",
+        "value": "Támogatott; a beszélgetési állapot és a felvett adatok megmaradnak"
+      },
+      "f5": {
+        "term": "Köszöntés és AI-tájékoztatás",
+        "value": "Nyelvenként beállítva, váltásnál sem marad el"
+      },
+      "f6": {
+        "term": "Hívói memória",
+        "value": "Bérlőnként tárolva, más bérlővel soha nem megosztva"
+      },
+      "f7": {
+        "term": "Szükséges számok",
+        "value": "Egy – minden csomag 1 telefonszámot és 1 telephelyet tartalmaz"
+      },
+      "f8": {
+        "term": "Minőségi jel",
+        "value": "A nyelvváltás pontossága mért és riportált érték"
+      }
+    },
+    "limits": {
+      "heading": "Mit nem jelent a többnyelvűség?",
+      "body": "Három nyelv rendesen, nem negyven félkészen.",
+      "l1": {
+        "title": "Három nyelv, és ennyi a lista",
+        "body": "A magyar, a német és az angol támogatott. Nincs szlovák, román, lengyel vagy ukrán ügynök; a más nyelven hívó ügyfél átadási eset, és érdemes beállítanod, hová menjen ez az átadás."
+      },
+      "l2": {
+        "title": "A felismerés jel, nem bizonyosság",
+        "body": "Nagyon rövid megszólalás, erős háttérzaj vagy egy mondaton belüli két nyelv rossz tippet eredményezhet. A kifejezett kérés mindig nyer, és az élő munkatárs gombkódja minden nyelven elérhető marad."
+      },
+      "l3": {
+        "title": "A forrásaidnak is létezniük kell az adott nyelven",
+        "body": "Az ügynök a tudásbázisodból válaszol. Ha az árlista csak magyarul létezik, egy angolul beszélő hívót csak annyira lehet belőle kiszolgálni, amennyire a keresés engedi – a fontos dokumentumok nyelvenkénti karbantartása a te dolgod, nem a modellé."
+      },
+      "l4": {
+        "title": "Hangasszisztens, nem tolmács",
+        "body": "Az ügynök a hívó nyelvén beszél. Nem tolmácsol két másik ember között, és nem feliratozó vagy szinkronizáló eszköz."
+      },
+      "l5": {
+        "title": "Egy szám, nem piaconként egy",
+        "body": "Minden csomag egy telefonszámot és egy telephelyet tartalmaz. A külön piaci helyi számok fizetős kiegészítők, nem nyelvi funkciók."
+      },
+      "l6": {
+        "title": "Ugyanaz a 30 perces korlát",
+        "body": "A nyelvváltás nem indítja újra az órát. Minden hívás 1800 másodpercnél véget ér, akárhány nyelvet használt."
+      }
+    },
+    "faq": {
+      "heading": "Gyakori kérdések a többnyelvű hangasszisztensről",
+      "q1": {
+        "question": "Kell nyelvet választania a hívónak?",
+        "answer": "Nem. Nincs „nyomja meg az 1-est a magyar nyelvért” menü. Az országhívó dönti el az első mondatot, és bármi, amit a hívó mond – kifejezett kérés vagy egyszerűen egy másik nyelv –, azonnal felülírja."
+      },
+      "q2": {
+        "question": "Milyen nyelveket támogattok?",
+        "answer": "Magyar, német és angol. Az ügynök ezt a hármat beszéli; a más nyelven hívó ügyfelet emberhez adjuk át, nem fordítási feladatként kezeljük."
+      },
+      "q3": {
+        "question": "Mi van, ha a hívó mondat közben vált nyelvet?",
+        "answer": "Az ügynök követi. A nyelv hívás közben is váltható, a beszélgetési állapot, a felvett adatok és az eszközeredmények pedig megmaradnak, így egy németül indított foglalás angolul is visszaigazolható, újrakezdés nélkül."
+      },
+      "q4": {
+        "question": "Szabályozhatom a szövegeket nyelvenként?",
+        "answer": "Igen. A köszöntés, az AI-tájékoztatás és a tartalékmondatok nyelvenként állíthatók. Így marad a német hívás németes ahelyett, hogy magyarból fordított szkriptnek hangozna."
+      },
+      "q5": {
+        "question": "A német szám automatikusan német hívást jelent?",
+        "answer": "Csak első tippként. Az E.164 országhívó kezdeti jelzés, amelyet a kifejezett kérés, a felismert beszélt nyelv vagy a hívói profilon mentett preferred_language felülír."
+      },
+      "q6": {
+        "question": "Honnan tudom, hogy a nyelvválasztás tényleg működik?",
+        "answer": "A nyelvváltás pontossága mért minőségi jel, a válaszlatencia, a közbevágás sikeressége és az első hívásos megoldás mellett. A szimulációs felületen nyelvenként futtathatsz szkriptelt teszthívásokat és regressziós készleteket, mielőtt egy új ügynökverzió valódi hívókhoz kerül."
+      },
+      "q7": {
+        "question": "Kell nyelvenként külön telefonszám?",
+        "answer": "Nem. Egy ügynök egy számon mind a három nyelvet lefedi, és minden csomag egy telefonszámot és egy telephelyet tartalmaz. További számok fizetős kiegészítőként érhetők el, ha külön helyi jelenlétet szeretnél egy másik piacon."
+      }
+    },
+    "related": {
+      "heading": "Olvass tovább",
+      "r1": {
+        "label": "AI recepciós",
+        "description": "Hívásfogadás, tudásbázis, gombkódok és zárás utáni szabályok a saját számodon."
+      },
+      "r2": {
+        "label": "Telefonos időpontfoglalás AI-val",
+        "description": "Valódi szabad időpontok, megerősítési kapu és ütközésmentes írás."
+      },
+      "r3": {
+        "label": "Hívás átadása munkatársnak",
+        "description": "Hová kerüljön a nem támogatott nyelven érkező hívás, és hogyan állítsd be."
+      },
+      "r4": {
+        "label": "Árak",
+        "description": "Csomagok, benne foglalt percek, percdíjak és egyidejűségi korlátok."
+      },
+      "r5": {
+        "label": "Hangasszisztens szállásadóknak",
+        "description": "Három országból érkező vendégek egyetlen recepciós számon."
+      },
+      "r6": {
+        "label": "Termékáttekintés",
+        "description": "A teljes platform: orchestráció, tudásbázis, integrációk és védőkorlátok."
+      }
+    }
+  },
+  "transfer": {
+    "meta": {
+      "title": "Hívás átadása munkatársnak AI-val",
+      "description": "A Velyric hat meghatározott esetben ad át embernek: kérésre, ### lenyomására, félreértés, eszközhiba, érzékeny kérés vagy nyitvatartáson kívüli hívás esetén."
+    },
+    "breadcrumb": "Hívásátadás",
+    "eyebrow": "Átadás munkatársnak",
+    "title": "Az AI tudja, mikor kell megállnia és embert hívnia",
+    "body": "Az átadás itt első osztályú funkció, nem kudarcút. Hat meghatározott eset küldi emberhez a hívást, a rendszer pedig az általad beállított tel: vagy sip: célra irányítja át.",
+    "answer": {
+      "question": "Mikor adja át az AI hangasszisztens a hívást munkatársnak?",
+      "body": "Az emberi átadás az a pillanat, amikor a hangasszisztens abbahagyja a hívás önálló kezelését, és embernek adja tovább. A Velyric hat meghatározott esetben ad át: a hívó munkatársat kér, a hívó lenyomja a ### gombot, két-három megértési kísérlet egymás után sikertelen, egy eszköz egy újrapróbálkozás után is időtúllépéssel vagy 5xx hibával tér vissza, a kérés érzékeny vagy kívül esik az ügynök jogosultságán, illetve a hívás nyitvatartási időn kívül érkezik. A SIP-hívást ilyenkor a rendszer egy másik, általad beállított tel: vagy sip: célra irányítja át. A hívónak soha nem kell kiharcolnia az embert: elég egyszer kérnie, vagy megnyomnia a ### gombot."
+    },
+    "context": {
+      "heading": "Az átadás terméktervezési döntés, nem hiba",
+      "body": "Nem az az érdekes kérdés, hogy az AI mindent meg tud-e oldani. Hanem az, mi történik abban a pillanatban, amikor nem szabad megoldania.",
+      "p1": "A telefonos automatizálással szerzett rossz élmények nagy része egyetlen tervezési döntésből ered: hogy az „embert akarok” kérést minimalizálandó kudarcnak tekintik. A hívók megtanulják nyomkodni a 0-t, bekiabálni, hogy „operátor”, vagy leteszik és az értékesítési vonalat hívják. Ez neked rosszabb kimenet, mint egy átadás lett volna – és pontosan ez az alapértelmezés, ha az átadás utólagos gondolat.",
+      "p2": "A Velyric az ellenkező irányba megy. Az átadási esetek explicitek, a gombkódot a hívó megkapja, és az ügynök felajánlja az embert, amint a beszélgetés rosszul kezd menni – két-három sikertelen megértési kísérlet után, vagy amint egy eszköz az újrapróbálkozást is elbukja. Az átadási arány vezérlőpulti mutató a megoldási arány és az átlagos híváshossz mellett, nem rejtegetnivaló szám."
+    },
+    "how": {
+      "heading": "Hogyan zajlik egy átadás?",
+      "body": "A kiváltó októl addig a pillanatig, amíg a kollégád vonalban van.",
+      "s1": {
+        "title": "A hívó kéri, vagy lenyomja a ### gombot",
+        "body": "A „Beszélhetnék egy kollégával?” azonnal lezárja az ügynök beszédfordulóját – nincs marasztalás, nincs még egy kérdés, és nincs számolgatás, hányadszor kérte. A ### az élő munkatárs gombkódja, a 0 pedig azonnali átadásra van állítva, így a gyorsítás akkor is működik, amikor az ügynök éppen beszél."
+      },
+      "s2": {
+        "title": "Vagy az ügynök látja, hogy nem megy",
+        "body": "Két-három sikertelen megértési kísérlet után az ügynök abbahagyja a próbálkozást, és embert ajánl: „Úgy látom, nem sikerül jól értenem. Kapcsoljam egy kollégámhoz?” Ugyanígy jár az érzékeny vagy nem engedélyezett kérés, és minden, amihez olyan megerősített azonosítás kellene, amit a telefon nem tud megadni."
+      },
+      "s3": {
+        "title": "Vagy elbukik egy eszköz",
+        "body": "Ha egy bekötött eszköz időtúllépéssel vagy 5xx hibával válaszol, a backend egyszer újrapróbálja. Ha az újrapróbálkozás is elbukik, a hívás tartalék útra vagy emberhez kerül, ahelyett hogy a hívó egy olyan ügynökkel maradna, amely nem tudja befejezni, amit ígért."
+      },
+      "s4": {
+        "title": "A beszélgetés HANDOFF állapotba lép",
+        "body": "A HANDOFF explicit állapot a kódolt beszélgetési állapotgépben, a CONFIRMATION_GATE, a TOOL_EXECUTION és a SAFE_FAILURE mellett. Az ügynök nem javasol több eszközt, és elmondja a hívónak, mi következik, ahelyett hogy elhallgatna."
+      },
+      "s5": {
+        "title": "A SIP-hívás a beállított célra kerül",
+        "body": "A rendszer az általad megadott tel: vagy sip: célra irányítja át a hívást: mobilra, asztali készülékre, alközponti mellékre vagy ügyeleti számra. Nyitvatartási időn kívül ugyanez a mechanizmus éri el az ügyeleti számot, vagy az ügynök üzenetet, illetve visszahívási kérést vesz fel."
+      },
+      "s6": {
+        "title": "Mit kap a másik oldalon ülő ember?",
+        "body": "A kollégád élő hívást kap a beállított célon. A Velyric nem súg neki szóban összefoglalót a kapcsolás előtt: a kontextus a hívás rekordján él – átiratként és összefoglalóként a vezérlőpulton, ahol ez engedélyezve van –, valamint call.started és call.ended webhook eseményként, amelyet a saját rendszereid feldolgozhatnak."
+      }
+    },
+    "capabilities": {
+      "heading": "Hogyan épül fel az átadás?",
+      "body": "Hat kiváltó ok, egy mechanizmus, és egy mutató, amely megmutatja, ha túl gyakran történik.",
+      "c1": {
+        "title": "Elég egyszer kérni",
+        "body": "A „Beszélhetnék egy emberrel?” azonnali átadást indít. Nincs marasztaló szöveg, nincs „hadd próbáljak még egyet”, és nincs küszöb, amit a hívónak előbb át kell lépnie."
+      },
+      "c2": {
+        "title": "Gombkódok, amelyek mindig működnek",
+        "body": "A ### élő munkatársat ér el, a 0 azonnali átadásra van állítva, a * pedig egy kérdéssel visszalép. A DTMF bérlőnként állítható, és akkor is működik, amikor az ügynök éppen beszél."
+      },
+      "c3": {
+        "title": "Hibára induló átadás",
+        "body": "Két-három sikertelen megértési kísérlet, vagy egy időtúllépés, illetve 5xx, amely az egyetlen újrapróbálkozást is túléli, emberhez viszi a hívást ahelyett, hogy ugyanazt a kérdést újra és újra feltenné."
+      },
+      "c4": {
+        "title": "Az érzékeny kérés emberhez megy",
+        "body": "A hívó telefonszáma nem hitelesítés. Minden, amihez megerősített azonosítás kell, és minden, ami kívül esik az ügynök jogosultságán, szabály szerint emberhez kerül – nem próbálkozás történik."
+      },
+      "c5": {
+        "title": "Nyitvatartáson kívüli útvonal",
+        "body": "Nyitvatartási időn kívül a hívás az ügyeleti számodra kerül, vagy az ügynök üzenetet vesz fel, illetve visszahívási kérést rögzít – aszerint, amit arra az idősávra beállítottál."
+      },
+      "c6": {
+        "title": "Az átadási arány mutatóként",
+        "body": "Az átadási arány a vezérlőpulton szerepel a hívások, a megoldási arány, az átlagos híváshossz, a foglalások és a költség mellett, így az átadások emelkedése látszik, mielőtt a csapatod megérezné."
+      }
+    },
+    "facts": {
+      "heading": "Minden átadási eset és a hozzá tartozó viselkedés",
+      "body": "A teljes lista az alapértelmezett viselkedéssel.",
+      "f1": { "term": "A hívó embert kér", "value": "Azonnali átadás" },
+      "f2": { "term": "### a billentyűzeten", "value": "Azonnali átadás élő munkatársnak" },
+      "f3": {
+        "term": "0 és * a billentyűzeten",
+        "value": "0 azonnali átadás, * egy kérdéssel vissza – a DTMF állítható"
+      },
+      "f4": {
+        "term": "Ismételt félreértés",
+        "value": "2-3 sikertelen megértési kísérlet után az ügynök átadást ajánl"
+      },
+      "f5": {
+        "term": "Eszköz időtúllépés vagy 5xx",
+        "value": "Egy újrapróbálkozás, majd átadás vagy tartalék út"
+      },
+      "f6": {
+        "term": "Érzékeny vagy tiltott kérés",
+        "value": "Szabály szerinti emberi átadás, a megerősített azonosítást igénylő esetekkel együtt"
+      },
+      "f7": {
+        "term": "Nyitvatartási időn kívül",
+        "value": "Üzenetrögzítés, visszahívási kérés vagy az ügyeleti szám"
+      },
+      "f8": {
+        "term": "Az átadás módja",
+        "value": "A SIP-hívás a beállított tel: vagy sip: célra kerül átirányításra"
+      }
+    },
+    "limits": {
+      "heading": "Mit nem csinál az átadás?",
+      "body": "Amire a csapatodnak a fogadó oldalon fel kell készülnie.",
+      "l1": {
+        "title": "Nincs súgott összefoglaló",
+        "body": "A kollégád az átirányított hívást kapja meg, nem szóbeli összefoglalót arról, ami előtte történt. A kontextus a hívás rekordján van – átirat és összefoglaló a vezérlőpulton, ahol engedélyezett –, tehát számolj azzal, hogy a kollégának meg kell néznie a hívást, vagy fel kell tennie egy rövid kérdést."
+      },
+      "l2": {
+        "title": "Az átadásnak kell egy cél",
+        "body": "A cél egy általad beállított tel: vagy sip: cím. Ha ott senki nem veszi fel, az ügynök nem menti meg a hívást; az történik, amit arra az idősávra beállítottál – hangposta, visszahívási kérés vagy túlcsordulási szám."
+      },
+      "l3": {
+        "title": "Alapból nincs felvétel az AI-s szakaszról",
+        "body": "A nyers hang nem tárolódik: az alapértelmezett megőrzés 0 nap. Ha pontosan vissza akarod hallgatni, hogyan hangzott a hívás az átadás előtt, előre be kell kapcsolnod a hangrögzítés kiegészítőt. Egyébként az alapból 90 napig őrzött átirat marad."
+      },
+      "l4": {
+        "title": "Az ügynök nem azonosít helyetted",
+        "body": "A hívószám kényelmi azonosító, nem hitelesítés. Ha a folyamatod érzékeny művelet előtt személyazonosítást kíván, az ügynök átad, nem talál ki saját ellenőrzést."
+      },
+      "l5": {
+        "title": "A 30 perces korlát az egész hívásra vonatkozik",
+        "body": "A hívás 1800 másodpercnél véget ér. Az átadás előtt az ügynökkel töltött idő is beleszámít, tehát egy hosszú AI-beszélgetés plusz egy hosszú emberi beszélgetés nem az, amire a korlát készült."
+      },
+      "l6": {
+        "title": "Nincs SMS- vagy chat-tartalék",
+        "body": "Ha senki nem tudja fogadni a hívást, a lehetőségek: üzenetrögzítés, visszahívási kérés, túlcsordulási szám vagy e-mail. Nincs SMS, üzenetküldő alkalmazás vagy push értesítés."
+      }
+    },
+    "faq": {
+      "heading": "Gyakori kérdések a hívásátadásról",
+      "q1": {
+        "question": "Hogyan ér el a hívó egy embert?",
+        "answer": "Kéréssel vagy a ### lenyomásával. Ha munkatársat kér, az átadás azonnal megtörténik, a ### pedig az élő munkatárs gombkódja, a 0 azonnali átadásra állítva. A DTMF-kódok bérlőnként állíthatók, így ahhoz igazíthatók, amit a hívóid már megszoktak."
+      },
+      "q2": {
+        "question": "Pontosan mit jelent itt a meleg átadás?",
+        "answer": "Az élő SIP-hívást a rendszer egy általad beállított másik tel: vagy sip: célra irányítja át, így a hívó vonalban marad, és emberrel beszél tovább. A Velyric nem játszik le szóbeli összefoglalót a fogadó kollégának; a hívás kontextusa a hívás rekordján van, átiratként és összefoglalóként, ahol ez engedélyezett."
+      },
+      "q3": {
+        "question": "Mi történik, ha az egyik saját API-nk nem elérhető?",
+        "answer": "A backend egyszer újrapróbálja az eszközhívást. Ha az újrapróbálkozás is időtúllépéssel vagy 5xx hibával zárul, a hívás tartalék útra vagy emberhez kerül, ahelyett hogy a hívó egy befejezni képtelen ügynökkel maradna."
+      },
+      "q4": {
+        "question": "Mi történik a nyitvatartási időn kívüli hívásokkal?",
+        "answer": "Te döntöd el: az ügynök üzenetet vehet fel, visszahívási kérést rögzíthet, vagy ügyeleti számra adhatja át a hívást. Hasonló beállítás dönti el azt is, mi történjen, ha a csomagod egyidejűségi korlátja már teljesen foglalt."
+      },
+      "q5": {
+        "question": "Látom, milyen gyakran kerül át hívás?",
+        "answer": "Igen. Az átadási arány a vezérlőpult mutatói között van a hívások, a megoldási arány, az átlagos híváshossz, a foglalások és a költség mellett. Olyan mért jelek társaságában, mint az eszközök sikerességi aránya, az első hívásos megoldás és a megválaszolatlan kérdések aránya."
+      },
+      "q6": {
+        "question": "Van korlát arra, meddig tarthat egy átadott hívás?",
+        "answer": "Egyetlen hívás minden csomagban 1800 másodpercnél, vagyis 30 percnél véget ér, és ez a korlát az egész hívásra vonatkozik, beleértve az ügynökkel töltött időt is. A beszédpercek 150 (Start), 400 (Business) és 1000 (Pro), a kereten felüli percdíj pedig nettó 149, 129 és 109 Ft."
+      },
+      "q7": {
+        "question": "Mehetnek különböző kérések különböző emberekhez?",
+        "answer": "Az átadási cél egy általad beállított tel: vagy sip: cím, tehát az útvonal azt jelenti, hogy a megfelelő számra mutatsz – asztali készülék, alközponti mellék, mobil vagy ügyeleti vonal. A több telephely támogatása és a telephelyre szűkített, szerepkör-alapú hozzáférés miatt a többtelephelyes vállalkozás minden helyszín célját külön tarthatja."
+      }
+    },
+    "related": {
+      "heading": "Olvass tovább",
+      "r1": {
+        "label": "AI recepciós",
+        "description": "Mindaz, amit az ügynök elintéz, mielőtt az átadás szükségessé válna."
+      },
+      "r2": {
+        "label": "Telefonos időpontfoglalás AI-val",
+        "description": "Valódi szabad időpontok, megerősítési kapu és ütközésmentes írás."
+      },
+      "r3": {
+        "label": "Többnyelvű AI hangasszisztens",
+        "description": "Nyelvválasztás, hívás közbeni váltás, és mikor lesz a nyelv átadási eset."
+      },
+      "r4": {
+        "label": "Árak",
+        "description": "Csomagok, benne foglalt percek, percdíjak és egyidejűségi korlátok."
+      },
+      "r5": {
+        "label": "Hangasszisztens autószervizeknek",
+        "description": "Egyszerű kérdések megválaszolva, a diagnosztika a szerelőnél."
+      },
+      "r6": {
+        "label": "Termékáttekintés",
+        "description": "A teljes platform: orchestráció, tudásbázis, integrációk és védőkorlátok."
+      }
+    }
+  }
+}

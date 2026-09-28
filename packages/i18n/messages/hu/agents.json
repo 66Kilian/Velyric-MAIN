@@ -1,0 +1,254 @@
+{
+  "title": "Ügynökök",
+  "description": "A telefonszámaidat és weboldaladat kiszolgáló hangalapú ügynökök.",
+  "empty": "Még nincs ügynök",
+  "emptyDescription": "Hozz létre egy ügynököt, és állítsd be a hangját, nyelveit, eszközeit és átadási szabályait.",
+  "notPublished": "Nincs publikálva",
+  "production": "Éles",
+  "canaryRunning": "Fokozatos bevezetés",
+  "allLocations": "Minden telephely",
+  "columns": {
+    "name": "Név",
+    "status": "Állapot",
+    "release": "Kiadás",
+    "numbers": "Telefonszámok",
+    "location": "Telephely",
+    "updated": "Módosítva"
+  },
+  "create": {
+    "button": "Új ügynök",
+    "title": "Ügynök létrehozása",
+    "description": "A következő képernyőn beállíthatod és publikálhatod.",
+    "name": "Ügynök neve",
+    "nameInvalid": "Adj meg 1 és 120 karakter közötti nevet.",
+    "location": "Telephely",
+    "allLocations": "Minden telephely"
+  },
+  "status": {
+    "pause": "Szüneteltetés",
+    "pauseTitle": "Szünetelteted az ügynököt?",
+    "pauseDescription": "Az ügynök nem fogad bejövő hívásokat, amíg újra nem indítod.",
+    "resume": "Folytatás",
+    "archive": "Archiválás",
+    "archiveTitle": "Archiválod az ügynököt?",
+    "archiveDescription": "Az archivált ügynök nem fogad hívást, és többé nem szerkeszthető.",
+    "changed": {
+      "ACTIVE": "Az ügynök újra aktív",
+      "PAUSED": "Az ügynök szünetel",
+      "ARCHIVED": "Az ügynök archiválva"
+    }
+  },
+  "detail": {
+    "back": "Összes ügynök",
+    "description": "Állítsd be, hogyan beszél az ügynök, milyen eszközöket használhat, és mikor adja át a hívást a csapatodnak.",
+    "versions": "Verziók",
+    "release": "Kiadás",
+    "publishedAt": "Publikálva",
+    "canary": "Fokozatos bevezetés",
+    "canaryLabel": "{version}. verzió a hívások {percent}%-ánál",
+    "latestDraft": "Legutóbbi verzió",
+    "noVersions": "Még nincs verzió",
+    "versionLabel": "{version}. verzió"
+  },
+  "phones": {
+    "title": "Telefonszámok",
+    "restricted": "A szerepköröd nem láthatja a telefonszámokat.",
+    "none": "Ennek a munkaterületnek még nincs telefonszáma.",
+    "unassigned": "Nincs hozzárendelve",
+    "thisAgent": "Ez az ügynök fogadja",
+    "otherAgent": "{name} fogadja",
+    "bind": "Hozzárendelés",
+    "unbind": "Leválasztás",
+    "bound": "A(z) {number} hívásait mostantól ez az ügynök fogadja",
+    "unbound": "A(z) {number} már nincs hozzárendelve"
+  },
+  "versions": {
+    "title": "Ügynökverziók",
+    "description": "Minden mentett beállítás egy változtathatatlan verzió. Publikálhatsz, fokozatosan vezethetsz be, vagy visszaállíthatsz korábbi kiadást.",
+    "empty": "Még nincs verzió",
+    "emptyDescription": "Mentsd el a beállításokat az első verzió létrehozásához.",
+    "version": "Verzió",
+    "summary": "Változások leírása",
+    "created": "Létrehozva",
+    "published": "Publikálva",
+    "actions": "Műveletek",
+    "compare": "Változások",
+    "publish": "Publikálás",
+    "publishTitle": "{version}. verzió publikálása",
+    "publishDescription": "A publikáláshoz sikeres kiadási szimuláció szükséges. 100% alatti arány esetén a verzió fokozatosan fut az éles verzió mellett.",
+    "publishProduction": "Publikálás minden hívásra",
+    "publishCanary": "Bevezetés {percent}%-on",
+    "published": "A(z) {version}. verzió publikálva",
+    "rollout": "Bevezetési arány",
+    "rolloutHint": "Teljes kiadáshoz 100, fokozatos bevezetéshez 1–99.",
+    "rollback": "Visszaállítás",
+    "rollbackTitle": "Visszaállítod a(z) {version}. verziót?",
+    "rollbackDescription": "Az aktuális éles és bevezetés alatti verziók visszavonásra kerülnek, és újra ez a verzió szolgál ki minden hívást.",
+    "rolledBack": "A(z) {version}. verzió visszaállítva",
+    "reason": "Indoklás",
+    "diffTitle": "Változások a(z) {base}. és {target}. verzió között",
+    "noChanges": "A két beállítás megegyezik.",
+    "diffKinds": {
+      "added": "Hozzáadva",
+      "removed": "Eltávolítva",
+      "changed": "Módosítva"
+    }
+  },
+  "editor": {
+    "title": "Beállítások",
+    "startingPoint": "Javasolt kiinduló beállítás. A mentés létrehozza az 1. verziót.",
+    "basedOn": "A(z) {version}. verzió másolatát szerkeszted. A mentés új piszkozatverziót hoz létre.",
+    "saved": "A(z) {version}. verzió elmentve",
+    "serverIssues": "A beállítás nem menthető:",
+    "tabs": {
+      "voice": "Hang és nyelvek",
+      "behavior": "Viselkedés és eszközök",
+      "handoff": "Átadás",
+      "hours": "Nyitvatartás és korlátok"
+    },
+    "voice": "Hang",
+    "defaultLanguage": "Alapértelmezett nyelv",
+    "languages": "Nyelvek",
+    "locales": {
+      "hu": "Magyar",
+      "de": "Német",
+      "en": "Angol"
+    },
+    "greeting": "Köszöntés",
+    "fallback": "Ha nem érti a hívót",
+    "closing": "Elköszönés",
+    "disclosure": "MI-tájékoztatás",
+    "disclosureHint": "Minden hívás elején elhangzik. Módosítása új tájékoztatási verziót hoz létre.",
+    "persona": {
+      "warmth": "Melegség",
+      "formality": "Formalitás",
+      "energy": "Energia",
+      "pace": "Beszédtempó",
+      "brevity": "Tömörség",
+      "empathy": "Empátia",
+      "humor": "Humor",
+      "assertiveness": "Határozottság"
+    },
+    "specialists": {
+      "RECEPTION_ROUTER": {
+        "title": "Recepció",
+        "description": "Köszönti a hívókat, általános kérdésekre válaszol, és a megfelelő specialistához irányít. Csak olvasó eszközök."
+      },
+      "BOOKING": {
+        "title": "Foglalás",
+        "description": "Szabad időpontokat keres, foglalásokat hoz létre, keres vagy mond le."
+      },
+      "SUPPORT": {
+        "title": "Ügyfélszolgálat",
+        "description": "Termék- és szolgáltatáskérdésekre válaszol a tudásbázis alapján. Csak olvasó eszközök."
+      },
+      "SALES": {
+        "title": "Értékesítés",
+        "description": "Minősíti az érdeklődőket és rögzíti az elérhetőségeiket."
+      },
+      "BILLING": {
+        "title": "Számlázás",
+        "description": "Számlákkal és fizetésekkel kapcsolatos kérdéseket kezel."
+      },
+      "HANDOFF_COMPLIANCE": {
+        "title": "Átadás és megfelelőség",
+        "description": "A csapatodhoz kapcsol és kezeli az érzékeny kéréseket. Nem használ eszközt."
+      }
+    },
+    "modelTier": "Gondolkodási szint",
+    "tiers": {
+      "ROUTINE": "Rutin",
+      "COMPLEX": "Összetett",
+      "ESCALATION": "Eszkalációs",
+      "FRONTIER": "Legfejlettebb"
+    },
+    "maxToolExecutions": "Eszközhívások maximuma",
+    "tools": "Engedélyezett eszközök",
+    "unknownTool": "A(z) {name} eszköz már nem létezik, ezért a mentés elutasításra kerül.",
+    "complexEscalation": "Összetett gondolkodásra való eszkaláció engedélyezése",
+    "premiumReasoning": "Prémium gondolkodó modellek engedélyezése",
+    "recording": "Hívások rögzítése",
+    "destinations": "Átadási célpontok",
+    "addDestination": "Célpont hozzáadása",
+    "noDestinations": "Célpontok nélkül az ügynök nem tudja átadni a hívást a csapatodnak.",
+    "destinationLabel": "Azonosító",
+    "destinationPhone": "Telefonszám",
+    "destinationDescription": "Leírás",
+    "removeDestination": "Célpont eltávolítása",
+    "defaultDestination": "Alapértelmezett célpont",
+    "none": "Nincs",
+    "failedUnderstandings": "Ennyi félreértés után ajánljon munkatársat",
+    "noAnswer": "Ha az átadást senki nem veszi fel",
+    "noAnswerOptions": {
+      "RETURN_TO_AI": "Vissza az asszisztenshez",
+      "CALLBACK_REQUEST": "Visszahívási kérés felvétele",
+      "ALTERNATE_QUEUE": "Alternatív sor kipróbálása"
+    },
+    "warmTransfer": "Kísért átadás összefoglalóval",
+    "overloadPolicy": "Ha minden vonal foglalt",
+    "overloadOptions": {
+      "SHORT_QUEUE": "Rövid várakozási sor",
+      "HUMAN_OVERFLOW": "Átirányítás munkatárshoz",
+      "CALLBACK_REQUEST": "Visszahívás felajánlása",
+      "VOICEMAIL": "Hangposta",
+      "PAID_BURST": "Fizetős többletkapacitás",
+      "DEGRADED_MESSAGE": "Foglaltsági üzenet"
+    },
+    "maxWait": "Maximális várakozás (másodperc)",
+    "overflowDestination": "Túlcsordulási célpont",
+    "timezone": "Időzóna",
+    "businessHours": "Nyitvatartás",
+    "addHours": "Nyitvatartás hozzáadása",
+    "alwaysClosed": "Nincs nyitvatartás: mindig a nyitvatartáson kívüli viselkedés érvényes.",
+    "weekday": "Nap",
+    "weekdays": {
+      "1": "Hétfő",
+      "2": "Kedd",
+      "3": "Szerda",
+      "4": "Csütörtök",
+      "5": "Péntek",
+      "6": "Szombat",
+      "7": "Vasárnap"
+    },
+    "opens": "Nyit",
+    "closes": "Zár",
+    "removeHours": "Nyitvatartás eltávolítása",
+    "afterHours": "Nyitvatartáson kívül",
+    "afterHoursOptions": {
+      "TAKE_MESSAGE": "Üzenet felvétele",
+      "CALLBACK_REQUEST": "Visszahívás felajánlása",
+      "TRANSFER_ON_CALL": "Átadás az ügyeletesnek"
+    },
+    "onCallDestination": "Ügyeleti célpont",
+    "maxDuration": "Maximális hívásidő (másodperc)",
+    "silenceTimeout": "Csend időkorlát (másodperc)",
+    "maxToolsPerCall": "Eszközhívások maximuma hívásonként",
+    "maxSpend": "Maximális szolgáltatói költség hívásonként (USD)",
+    "maxSpendHint": "A költség elérésekor a hívás udvariasan véget ér.",
+    "changeSummary": "Változások leírása",
+    "saveDraft": "Mentés új verzióként",
+    "rules": {
+      "invalid": "Ellenőrizd ezt az értéket.",
+      "schema": "A beállítás formátuma nem megfelelő.",
+      "unique_locale": "Minden nyelv csak egyszer adható hozzá.",
+      "unique_kind": "Minden specialista csak egyszer adható hozzá.",
+      "must_be_configured_language": "Az alapértelmezett nyelvnek a beállított nyelvek egyikének kell lennie.",
+      "required_for_configured_language": "Minden beállított nyelvhez kötelező MI-tájékoztatás.",
+      "reception_router_required": "A recepció specialista kötelező.",
+      "unique_label": "A célpont-azonosítóknak egyedinek kell lenniük.",
+      "unknown_destination": "Válassz létező célpontot.",
+      "queue_requires_wait": "Rövid sorhoz nullánál nagyobb maximális várakozás kell.",
+      "exceeds_call_limit": "Ez meghaladja a hívásonkénti eszközhívás-maximumot.",
+      "closes_after_opens": "A zárásnak a nyitás után kell lennie.",
+      "unknown_tool": "Ez az eszköz nem létezik.",
+      "tool_not_active": "Ez az eszköz nem aktív.",
+      "router_read_only": "A recepció csak olvasó eszközöket használhat.",
+      "support_read_only": "Az ügyfélszolgálat csak olvasó eszközöket használhat.",
+      "handoff_specialist_is_transfer_only": "Az átadási specialista nem használhat eszközt.",
+      "complex_escalation_disabled": "Előbb engedélyezd az összetett gondolkodásra való eszkalációt.",
+      "premium_reasoning_disabled": "Előbb engedélyezd a prémium gondolkodó modelleket.",
+      "iana_time_zone": "Válassz érvényes időzónát.",
+      "unique_sequence": "A billentyűsorozatoknak egyedinek kell lenniük."
+    }
+  }
+}

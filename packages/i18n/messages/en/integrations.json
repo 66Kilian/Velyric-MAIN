@@ -1,0 +1,176 @@
+{
+  "title": "Integrations",
+  "description": "Connect calendars and your own APIs so agents can check availability, book and look up data.",
+  "callback": {
+    "connected": "The connection was authorized successfully.",
+    "denied": "Access was denied at the provider. Nothing was connected.",
+    "failed": "The connection could not be completed ({code}). Try again."
+  },
+  "connectors": {
+    "title": "Calendars",
+    "connect": "Connect",
+    "reconnect": "Reconnect",
+    "disconnect": "Disconnect",
+    "disconnectTitle": "Disconnect this calendar?",
+    "disconnectDescription": "Agents can no longer read availability or create bookings in it. Stored tokens are revoked.",
+    "disconnected": "Calendar disconnected",
+    "neverChecked": "Not checked yet",
+    "checked": "Last checked {time}",
+    "GOOGLE_CALENDAR": {
+      "name": "Google Calendar",
+      "description": "Read free/busy time and create events in Google Workspace calendars."
+    },
+    "MICROSOFT_365": {
+      "name": "Microsoft 365",
+      "description": "Read free/busy time and create events in Outlook calendars."
+    }
+  },
+  "tools": {
+    "title": "Custom API tools",
+    "description": "Let agents call your HTTPS endpoints with validated inputs, strict egress rules and confirmations.",
+    "create": "New tool",
+    "createDescription": "Describe the endpoint, its JSON schemas and how risky its effects are.",
+    "back": "Back to integrations",
+    "empty": "No custom tools",
+    "emptyDescription": "Add a tool to let agents look up orders, create tickets or call other systems.",
+    "columns": {
+      "name": "Name",
+      "endpoint": "Endpoint",
+      "effect": "Effect",
+      "confirmation": "Confirmation",
+      "status": "Status"
+    },
+    "status": {
+      "ACTIVE": "Active",
+      "DISABLED": "Disabled",
+      "KILLED": "Blocked by kill switch"
+    },
+    "form": {
+      "serverIssues": "The tool could not be saved:",
+      "name": "Tool name",
+      "nameHint": "Lowercase letters, numbers and underscores, e.g. lookup_order.",
+      "method": "HTTP method",
+      "description": "Description for the agent",
+      "descriptionHint": "Explain when the agent should use this tool and what it returns.",
+      "baseUrl": "Base URL",
+      "baseUrlHint": "Public HTTPS origin. Private and internal addresses are blocked.",
+      "path": "Path template",
+      "pathHint": "Wrap placeholder names in curly braces; they must match input schema properties.",
+      "inputSchema": "Input JSON schema",
+      "outputSchema": "Output JSON schema",
+      "schemaHint": "JSON Schema 2020-12 object, max 32 KB.",
+      "sideEffect": "Side effect",
+      "sideEffectHint": "Tools that change data require stronger confirmation.",
+      "confirmation": "Confirmation policy",
+      "timeout": "Timeout (ms)",
+      "retries": "Retries",
+      "idempotency": "The endpoint supports idempotency keys",
+      "auth": "Authentication",
+      "authTypes": {
+        "NONE": "None",
+        "BEARER": "Bearer token",
+        "HMAC": "HMAC signature"
+      },
+      "secret": "Secret",
+      "secretHint": "Stored encrypted and never shown again.",
+      "submit": "Create tool",
+      "created": "Tool {name} created",
+      "errors": {
+        "invalid": "Check this value.",
+        "name": "Use 3–64 lowercase letters, numbers or underscores, starting with a letter.",
+        "description": "Use 10 to 1000 characters.",
+        "base_url": "Enter an HTTPS URL of 10 to 300 characters.",
+        "path_template": "The path must start with / and contain only URL-safe characters.",
+        "json": "Enter a valid JSON object.",
+        "timeout": "Use a value between 500 and 10000.",
+        "retries": "Use a value between 0 and 5.",
+        "bearer_secret": "Bearer tokens need 16–4096 printable characters without spaces.",
+        "hmac_secret": "HMAC secrets need 32–512 printable characters without spaces."
+      }
+    },
+    "settings": {
+      "description": "Description",
+      "confirmation": "Confirmation policy",
+      "timeout": "Timeout (ms)",
+      "retries": "Retries",
+      "save": "Save changes",
+      "saved": "Tool updated",
+      "enable": "Enable",
+      "disable": "Disable",
+      "enabled": "Tool enabled",
+      "disabled": "Tool disabled",
+      "rotateSecret": "New secret",
+      "rotateHint": "Replaces the current credential immediately.",
+      "rotate": "Rotate credential",
+      "rotated": "Credential rotated"
+    },
+    "detail": {
+      "endpoint": "Endpoint",
+      "allowedHosts": "Allowed hosts",
+      "credential": "Credential",
+      "configured": "Configured",
+      "missing": "Missing",
+      "yes": "Yes",
+      "no": "No",
+      "responseLimit": "Response limit",
+      "schemas": "Schemas"
+    }
+  },
+  "messaging": {
+    "title": "Messaging",
+    "description": "Confirmations to your guests are sent from your own email address and in your name.",
+    "sms": {
+      "name": "SMS notifications",
+      "description": "A short confirmation text to guests when a booking is made, changed or canceled.",
+      "onHint": "On: guests also get a text message when they gave their phone number.",
+      "offHint": "Off: guests only receive email.",
+      "enabled": "SMS notifications turned on",
+      "disabled": "SMS notifications turned off"
+    },
+    "email": {
+      "name": "Email system",
+      "description": "Your guests receive their confirmations from this address.",
+      "connect": "Set up",
+      "change": "Change",
+      "disconnect": "Disconnect",
+      "disconnectTitle": "Disconnect the email system?",
+      "disconnectDescription": "Until a new email system is set up, guests will not receive email confirmations. The stored password is deleted immediately.",
+      "disconnected": "Email system disconnected",
+      "connected": "Email system set up and the test connection succeeded",
+      "active": "Working",
+      "test": "Test email",
+      "testSent": "We sent a test email to {email}",
+      "viaGoogle": "Through your Google account",
+      "viaSmtp": "Through your own mail server ({host})",
+      "emptyHint": "Not set up yet. Until you connect it, guests will not receive email confirmations.",
+      "dialogTitle": "Set up your email system",
+      "dialogDescription": "Your sign-in details are stored encrypted and only used to send emails to your guests.",
+      "close": "Close",
+      "cancel": "Cancel",
+      "save": "Test connection and save",
+      "or": "or enter it manually",
+      "googleTitle": "Gmail or Google Workspace account",
+      "googleDescription": "The quickest way: sign in to your Google account and you are done. No password needed.",
+      "googleButton": "Connect with Google",
+      "host": "Mail server",
+      "hostHint": "For Gmail: smtp.gmail.com",
+      "port": "Port",
+      "security": "Encryption",
+      "securityHint": "Port 465 uses SSL/TLS, port 587 uses STARTTLS.",
+      "securityOptions": {
+        "TLS": "SSL/TLS",
+        "STARTTLS": "STARTTLS",
+        "NONE": "None (not recommended)"
+      },
+      "username": "Username",
+      "usernameHint": "Usually your full email address.",
+      "password": "Password or app password",
+      "passwordHint": "With Gmail and 2-step verification, create an app password in your Google account security settings.",
+      "fromName": "Sender name",
+      "fromNameHint": "The name guests see, for example your business name.",
+      "fromAddress": "Sender email address",
+      "replyTo": "Reply-to address",
+      "replyToHint": "Optional. Guest replies go here when it differs from the sender address."
+    }
+  }
+}

@@ -1,0 +1,1395 @@
+{
+  "tenants.status": [
+    "ACTIVE",
+    "CANCELED_GRACE",
+    "DATA_RETENTION",
+    "DELETED",
+    "DELETION",
+    "GRACE_PERIOD",
+    "PAYMENT_AT_RISK",
+    "PROVISIONING",
+    "RESTRICTED",
+    "SUSPENDED_ADMIN",
+    "SUSPENDED_BILLING",
+    "SUSPENDED_DISPUTE",
+    "SUSPENDED_RISK"
+  ],
+  "tenants.default_locale": [
+    "de",
+    "en",
+    "hu"
+  ],
+  "tenants.billing_market": [
+    "HU",
+    "INTERNATIONAL"
+  ],
+  "tenants.plan_code": [
+    "BUSINESS",
+    "ENTERPRISE",
+    "PRO",
+    "START"
+  ],
+  "tenants.trust_tier": [
+    "ESTABLISHED",
+    "NEW",
+    "RESTRICTED",
+    "TRUSTED"
+  ],
+  "tenants.vertical_pack": [
+    "AUTO_SERVICE",
+    "B2B_SUPPORT",
+    "CAR_DETAILING",
+    "DENTAL_CLINIC",
+    "GENERAL",
+    "HOTEL",
+    "REAL_ESTATE",
+    "RESTAURANT",
+    "SALON",
+    "WEBSHOP"
+  ],
+  "tenant_directory.status": [
+    "ACTIVE",
+    "CANCELED_GRACE",
+    "DATA_RETENTION",
+    "DELETED",
+    "DELETION",
+    "GRACE_PERIOD",
+    "PAYMENT_AT_RISK",
+    "PROVISIONING",
+    "RESTRICTED",
+    "SUSPENDED_ADMIN",
+    "SUSPENDED_BILLING",
+    "SUSPENDED_DISPUTE",
+    "SUSPENDED_RISK"
+  ],
+  "tenant_status_history.from_status": [
+    "ACTIVE",
+    "CANCELED_GRACE",
+    "DATA_RETENTION",
+    "DELETED",
+    "DELETION",
+    "GRACE_PERIOD",
+    "PAYMENT_AT_RISK",
+    "PROVISIONING",
+    "RESTRICTED",
+    "SUSPENDED_ADMIN",
+    "SUSPENDED_BILLING",
+    "SUSPENDED_DISPUTE",
+    "SUSPENDED_RISK"
+  ],
+  "tenant_status_history.to_status": [
+    "ACTIVE",
+    "CANCELED_GRACE",
+    "DATA_RETENTION",
+    "DELETED",
+    "DELETION",
+    "GRACE_PERIOD",
+    "PAYMENT_AT_RISK",
+    "PROVISIONING",
+    "RESTRICTED",
+    "SUSPENDED_ADMIN",
+    "SUSPENDED_BILLING",
+    "SUSPENDED_DISPUTE",
+    "SUSPENDED_RISK"
+  ],
+  "tenant_status_history.actor_type": [
+    "API_KEY",
+    "PROVIDER_WEBHOOK",
+    "SERVICE",
+    "SUPPORT_STAFF",
+    "SYSTEM",
+    "USER"
+  ],
+  "users.locale": [
+    "de",
+    "en",
+    "hu"
+  ],
+  "users.theme_preference": [
+    "dark",
+    "light",
+    "system"
+  ],
+  "platform_staff.platform_role": [
+    "FINANCE_OPS",
+    "PLATFORM_ADMIN",
+    "PLATFORM_OPS",
+    "SUPPORT_AGENT",
+    "SUPPORT_LEAD"
+  ],
+  "locations.status": [
+    "ACTIVE",
+    "ARCHIVED",
+    "INACTIVE"
+  ],
+  "memberships.role": [
+    "ADMIN",
+    "ANALYST",
+    "BILLING",
+    "DEVELOPER",
+    "OPERATOR",
+    "OWNER",
+    "VIEWER"
+  ],
+  "memberships.status": [
+    "ACTIVE",
+    "INVITED",
+    "REMOVED",
+    "SUSPENDED"
+  ],
+  "identity_provider_configs.retention_state": [
+    "DISABLED_RETAINED",
+    "ENABLED",
+    "PURGED",
+    "PURGE_SCHEDULED"
+  ],
+  "balance_entries.kind": [
+    "ADJUSTMENT",
+    "CREDIT",
+    "DEBIT",
+    "GOODWILL",
+    "REFUND"
+  ],
+  "support_tickets.status": [
+    "CLOSED",
+    "OPEN",
+    "PENDING_CUSTOMER",
+    "PENDING_STAFF",
+    "RESOLVED"
+  ],
+  "support_tickets.priority": [
+    "HIGH",
+    "LOW",
+    "NORMAL",
+    "URGENT"
+  ],
+  "support_tickets.category": [
+    "ACCOUNT",
+    "BILLING",
+    "OTHER",
+    "PHONE_NUMBERS",
+    "TECHNICAL"
+  ],
+  "support_ticket_messages.author_kind": [
+    "STAFF",
+    "SYSTEM",
+    "TENANT_USER"
+  ],
+  "support_ticket_messages.visibility": [
+    "INTERNAL_NOTE",
+    "PUBLIC"
+  ],
+  "support_ticket_events.actor_kind": [
+    "STAFF",
+    "SYSTEM",
+    "TENANT_USER"
+  ],
+  "support_ticket_participants.participant_kind": [
+    "STAFF",
+    "SYSTEM",
+    "TENANT_USER"
+  ],
+  "support_ticket_directory.status": [
+    "CLOSED",
+    "OPEN",
+    "PENDING_CUSTOMER",
+    "PENDING_STAFF",
+    "RESOLVED"
+  ],
+  "support_ticket_directory.priority": [
+    "HIGH",
+    "LOW",
+    "NORMAL",
+    "URGENT"
+  ],
+  "support_ticket_directory.category": [
+    "ACCOUNT",
+    "BILLING",
+    "OTHER",
+    "PHONE_NUMBERS",
+    "TECHNICAL"
+  ],
+  "support_access_grants.access_level": [
+    "REDACTED",
+    "SENSITIVE"
+  ],
+  "support_access_grants.status": [
+    "ACTIVE",
+    "DENIED",
+    "EXPIRED",
+    "REQUESTED",
+    "REVOKED"
+  ],
+  "price_books.market": [
+    "HU",
+    "INTERNATIONAL"
+  ],
+  "price_books.plan_code": [
+    "BUSINESS",
+    "ENTERPRISE",
+    "PRO",
+    "START"
+  ],
+  "price_books.add_on_code": [
+    "BYOK",
+    "CALL_RECORDING",
+    "CONCURRENCY_BOOST",
+    "CUSTOM_INTEGRATION_SETUP",
+    "DEDICATED_REDUNDANCY",
+    "DEDICATED_SLA_SUPPORT",
+    "EXTENDED_RETENTION",
+    "EXTRA_LOCATION",
+    "EXTRA_PHONE_NUMBER",
+    "LARGE_KNOWLEDGE_STORAGE",
+    "OUTBOUND_CALLING",
+    "PCI_PAYMENTS",
+    "PHONE_NUMBER_RETENTION",
+    "PREMIUM_REASONING",
+    "PRIVATE_CONNECTOR",
+    "SIEM_EXPORT",
+    "SIMULATION_CREDITS",
+    "SSO_SCIM",
+    "WHITE_LABEL_DOMAIN"
+  ],
+  "checkout_orders.status": [
+    "AWAITING_PAYMENT",
+    "CANCELED",
+    "DRAFT",
+    "EXPIRED",
+    "PAID",
+    "PARTIALLY_REFUNDED",
+    "PAYMENT_FAILED",
+    "REFUNDED"
+  ],
+  "checkout_orders.plan_code": [
+    "BUSINESS",
+    "ENTERPRISE",
+    "PRO",
+    "START"
+  ],
+  "checkout_orders.market": [
+    "HU",
+    "INTERNATIONAL"
+  ],
+  "subscriptions.status": [
+    "ACTIVE",
+    "CANCELED",
+    "INCOMPLETE",
+    "INCOMPLETE_EXPIRED",
+    "PAST_DUE",
+    "PAUSED",
+    "TRIALING",
+    "UNPAID"
+  ],
+  "subscriptions.plan_code": [
+    "BUSINESS",
+    "ENTERPRISE",
+    "PRO",
+    "START"
+  ],
+  "subscriptions.pending_plan_code": [
+    "BUSINESS",
+    "ENTERPRISE",
+    "PRO",
+    "START"
+  ],
+  "subscription_add_ons.add_on_code": [
+    "BYOK",
+    "CALL_RECORDING",
+    "CONCURRENCY_BOOST",
+    "CUSTOM_INTEGRATION_SETUP",
+    "DEDICATED_REDUNDANCY",
+    "DEDICATED_SLA_SUPPORT",
+    "EXTENDED_RETENTION",
+    "EXTRA_LOCATION",
+    "EXTRA_PHONE_NUMBER",
+    "LARGE_KNOWLEDGE_STORAGE",
+    "OUTBOUND_CALLING",
+    "PCI_PAYMENTS",
+    "PHONE_NUMBER_RETENTION",
+    "PREMIUM_REASONING",
+    "PRIVATE_CONNECTOR",
+    "SIEM_EXPORT",
+    "SIMULATION_CREDITS",
+    "SSO_SCIM",
+    "WHITE_LABEL_DOMAIN"
+  ],
+  "subscription_add_ons.retention_state": [
+    "DISABLED_RETAINED",
+    "ENABLED",
+    "PURGED",
+    "PURGE_SCHEDULED"
+  ],
+  "entitlement_snapshots.plan_code": [
+    "BUSINESS",
+    "ENTERPRISE",
+    "PRO",
+    "START"
+  ],
+  "entitlement_snapshots.burst_policy": [
+    "CONFIGURABLE",
+    "CONTRACTUAL",
+    "NONE",
+    "PAID_BURST"
+  ],
+  "billing_documents.document_type": [
+    "CANCELLATION_INVOICE",
+    "INVOICE",
+    "MODIFICATION_INVOICE"
+  ],
+  "billing_documents.status": [
+    "CANCELED",
+    "CORRECTED",
+    "CREATED",
+    "FAILED",
+    "PENDING",
+    "SEND_FAILED",
+    "SENT"
+  ],
+  "disputes.status": [
+    "LOST",
+    "NEEDS_RESPONSE",
+    "PREVENTED",
+    "UNDER_REVIEW",
+    "WARNING_CLOSED",
+    "WARNING_NEEDS_RESPONSE",
+    "WARNING_UNDER_REVIEW",
+    "WON"
+  ],
+  "fraud_signals.signal_type": [
+    "BUSINESS_VERIFICATION_FAILED",
+    "COST_ANOMALY",
+    "PREMIUM_DESTINATION",
+    "RADAR_ELEVATED_RISK",
+    "THREE_DS_FAILED",
+    "TRANSFER_LOOP",
+    "VELOCITY_ACCOUNT",
+    "VELOCITY_CARD",
+    "VELOCITY_DEVICE",
+    "VELOCITY_IP",
+    "VELOCITY_PHONE"
+  ],
+  "fraud_reviews.status": [
+    "BLOCKED",
+    "CLEAR",
+    "REVIEW_REQUIRED"
+  ],
+  "payment_sessions.provider": [
+    "aws_ses",
+    "billingo",
+    "custom_api",
+    "google",
+    "microsoft",
+    "openai",
+    "smtp",
+    "stripe",
+    "telnyx",
+    "twilio",
+    "workos"
+  ],
+  "tenant_secret_refs.kind": [
+    "CUSTOM_API_CREDENTIAL",
+    "OAUTH_ACCESS_TOKEN",
+    "OAUTH_REFRESH_TOKEN",
+    "OPENAI_SERVICE_ACCOUNT_KEY",
+    "OPENAI_WEBHOOK_SECRET",
+    "OUTBOUND_WEBHOOK_SIGNING_SECRET",
+    "SMTP_PASSWORD",
+    "WIDGET_SIGNING_KEY"
+  ],
+  "tenant_secret_refs.provider": [
+    "aws_ses",
+    "billingo",
+    "custom_api",
+    "google",
+    "microsoft",
+    "openai",
+    "smtp",
+    "stripe",
+    "telnyx",
+    "twilio",
+    "workos"
+  ],
+  "provisioning_workflows.state": [
+    "ACTIVE",
+    "AGENT_READY",
+    "BILLING_DOCUMENT_CREATED",
+    "BILLING_PENDING",
+    "CANCELED",
+    "COMPENSATED",
+    "COMPENSATING",
+    "GO_LIVE_ELIGIBLE",
+    "MANUAL_REVIEW_REQUIRED",
+    "OPENAI_PROJECT_PROVISIONING",
+    "OPENAI_READY",
+    "OPENAI_SERVICE_ACCOUNT_PROVISIONING",
+    "ORDER_CREATED",
+    "PAYMENT_CONFIRMED",
+    "PAYMENT_PENDING",
+    "PHONE_KYC_REQUIRED",
+    "PHONE_ORDERING",
+    "PHONE_READY",
+    "PHONE_RESERVING",
+    "PHONE_UNDER_REVIEW",
+    "SIP_AGENT_BINDING",
+    "TENANT_CREATED",
+    "TENANT_PROVISIONING",
+    "TEST_CALL_READY",
+    "WAITING_FOR_CUSTOMER",
+    "WAITING_FOR_PROVIDER"
+  ],
+  "provisioning_step_runs.step": [
+    "BILLING_DOCUMENT",
+    "DEFAULT_AGENT",
+    "GO_LIVE",
+    "KNOWLEDGE_IMPORT",
+    "NOTIFICATION",
+    "OPENAI_API_KEY",
+    "OPENAI_PROJECT",
+    "OPENAI_SERVICE_ACCOUNT",
+    "PAYMENT",
+    "PHONE_ORDER",
+    "PHONE_REGULATORY",
+    "PHONE_RESERVATION",
+    "SIP_ROUTING",
+    "TENANT",
+    "TEST_CALL"
+  ],
+  "provisioning_step_runs.status": [
+    "COMPENSATED",
+    "FAILED",
+    "PENDING",
+    "RETRYING",
+    "RUNNING",
+    "SKIPPED",
+    "SUCCEEDED",
+    "WAITING"
+  ],
+  "provider_resources.provider": [
+    "aws_ses",
+    "billingo",
+    "custom_api",
+    "google",
+    "microsoft",
+    "openai",
+    "smtp",
+    "stripe",
+    "telnyx",
+    "twilio",
+    "workos"
+  ],
+  "phone_numbers.provider": [
+    "telnyx",
+    "twilio"
+  ],
+  "phone_numbers.fallback_provider": [
+    "telnyx",
+    "twilio"
+  ],
+  "phone_numbers.number_type": [
+    "LOCAL",
+    "MOBILE",
+    "NATIONAL",
+    "TOLL_FREE"
+  ],
+  "phone_numbers.status": [
+    "ACTIVE",
+    "PORTING_IN",
+    "PROVISIONING",
+    "RELEASED",
+    "RELEASE_PENDING",
+    "RETENTION_HOLD",
+    "SUSPENDED"
+  ],
+  "phone_orders.provider": [
+    "telnyx",
+    "twilio"
+  ],
+  "phone_orders.number_type": [
+    "LOCAL",
+    "MOBILE",
+    "NATIONAL",
+    "TOLL_FREE"
+  ],
+  "phone_orders.status": [
+    "APPROVED",
+    "CANCELED",
+    "DECLINED",
+    "FAILED",
+    "KYC_REQUIRED",
+    "NO_INVENTORY",
+    "NUMBER_SELECTED",
+    "ORDER_SUBMITTED",
+    "RESERVED",
+    "UNDER_REVIEW"
+  ],
+  "phone_orders.requirements_status": [
+    "APPROVED",
+    "DECLINED",
+    "EXPIRED",
+    "NOT_REQUIRED",
+    "REQUIRED",
+    "SUBMITTED",
+    "UNDER_REVIEW"
+  ],
+  "kyc_requirements.status": [
+    "APPROVED",
+    "DECLINED",
+    "EXPIRED",
+    "NOT_REQUIRED",
+    "REQUIRED",
+    "SUBMITTED",
+    "UNDER_REVIEW"
+  ],
+  "agents.status": [
+    "ACTIVE",
+    "ARCHIVED",
+    "DRAFT",
+    "PAUSED"
+  ],
+  "agents.vertical_pack": [
+    "AUTO_SERVICE",
+    "B2B_SUPPORT",
+    "CAR_DETAILING",
+    "DENTAL_CLINIC",
+    "GENERAL",
+    "HOTEL",
+    "REAL_ESTATE",
+    "RESTAURANT",
+    "SALON",
+    "WEBSHOP"
+  ],
+  "agent_versions.status": [
+    "ARCHIVED",
+    "CANARY",
+    "DRAFT",
+    "PRODUCTION",
+    "ROLLED_BACK",
+    "STAGING",
+    "SUPERSEDED",
+    "VALIDATING",
+    "VALIDATION_FAILED"
+  ],
+  "person_identities.identity_type": [
+    "EMAIL",
+    "EXTERNAL_ID",
+    "NAME",
+    "PHONE"
+  ],
+  "person_identities.verification_state": [
+    "CALLER_PROVIDED",
+    "CONNECTOR_VERIFIED",
+    "CRM_VERIFIED",
+    "EMAIL_VERIFIED",
+    "HUMAN_VERIFIED",
+    "INFERRED",
+    "OBSERVED",
+    "OTP_VERIFIED"
+  ],
+  "identity_merge_events.actor_type": [
+    "API_KEY",
+    "PROVIDER_WEBHOOK",
+    "SERVICE",
+    "SUPPORT_STAFF",
+    "SYSTEM",
+    "USER"
+  ],
+  "calls.channel": [
+    "PSTN",
+    "SIMULATION",
+    "WEB_VOICE"
+  ],
+  "calls.direction": [
+    "INBOUND",
+    "OUTBOUND"
+  ],
+  "calls.status": [
+    "ABANDONED",
+    "COMPLETED",
+    "FAILED",
+    "INITIATED",
+    "IN_PROGRESS",
+    "QUEUED",
+    "REJECTED",
+    "TRANSFERRED",
+    "TRANSFERRING"
+  ],
+  "calls.conversation_state": [
+    "ACTION_PREVIEW",
+    "CLOSING",
+    "CONFIRMATION_GATE",
+    "DISCOVERY",
+    "END",
+    "FOLLOW_UP",
+    "GREETING",
+    "HANDOFF",
+    "IDENTITY",
+    "RESULT_CONFIRMATION",
+    "SAFE_FAILURE",
+    "TOOL_EXECUTION"
+  ],
+  "calls.admission_decision": [
+    "ADMITTED",
+    "OVERFLOWED",
+    "QUEUED",
+    "REJECTED"
+  ],
+  "calls.admission_reject_reason": [
+    "CPS_LIMIT",
+    "ENTITLEMENT_INACTIVE",
+    "FRAUD_BLOCK",
+    "GLOBAL_CAPACITY",
+    "KILL_SWITCH",
+    "LOCATION_CONCURRENCY_LIMIT",
+    "NO_PRODUCTION_AGENT",
+    "NUMBER_CONCURRENCY_LIMIT",
+    "PROVIDER_CAPACITY",
+    "RUNTIME_DRAINING",
+    "SNAPSHOT_UNAVAILABLE",
+    "SPEND_CAP_REACHED",
+    "TENANT_CONCURRENCY_LIMIT",
+    "TENANT_SUSPENDED"
+  ],
+  "calls.intent": [
+    "BILLING",
+    "BOOKING",
+    "GENERAL_INQUIRY",
+    "HUMAN_REQUEST",
+    "LEAD",
+    "OTHER",
+    "SALES",
+    "SPAM",
+    "SUPPORT"
+  ],
+  "calls.outcome": [
+    "ABANDONED",
+    "BOOKING_CANCELED",
+    "BOOKING_CHANGED",
+    "BOOKING_CREATED",
+    "CALLBACK_REQUESTED",
+    "FAILED",
+    "INFORMATION_PROVIDED",
+    "LEAD_CAPTURED",
+    "MESSAGE_TAKEN",
+    "POLICY_BLOCKED",
+    "RESOLVED",
+    "SPAM",
+    "TRANSFERRED_TO_HUMAN",
+    "UNRESOLVED",
+    "WAITLISTED"
+  ],
+  "calls.end_reason": [
+    "ADMISSION_REJECTED",
+    "AGENT_HANGUP",
+    "CALLER_HANGUP",
+    "KILL_SWITCH",
+    "MAX_DURATION_REACHED",
+    "OPERATOR_TERMINATED",
+    "ORPHAN_RECONCILED",
+    "POLICY_VIOLATION",
+    "PROVIDER_FAILURE",
+    "QUEUE_TIMEOUT",
+    "RUNTIME_FAILURE",
+    "SILENCE_TIMEOUT",
+    "SPEND_CAP_REACHED",
+    "TOOL_BUDGET_EXHAUSTED",
+    "TRANSFER_COMPLETED"
+  ],
+  "tool_definitions.kind": [
+    "BUILT_IN",
+    "CONNECTOR",
+    "CUSTOM_API"
+  ],
+  "tool_definitions.auth_type": [
+    "BEARER",
+    "HMAC",
+    "NONE",
+    "OAUTH2"
+  ],
+  "tool_definitions.side_effect_class": [
+    "EXTERNAL_COMMUNICATION",
+    "HIGH_RISK_WRITE",
+    "READ",
+    "WRITE"
+  ],
+  "tool_definitions.confirmation_policy": [
+    "CALLER_CONFIRMATION",
+    "CALLER_CONFIRMATION_WITH_VERIFICATION",
+    "HUMAN_APPROVAL",
+    "NONE"
+  ],
+  "tool_runs.status": [
+    "AWAITING_CONFIRMATION",
+    "CANCELED",
+    "DEDUPLICATED",
+    "FAILED",
+    "PENDING",
+    "REJECTED_BY_POLICY",
+    "RUNNING",
+    "SUCCEEDED",
+    "TIMED_OUT"
+  ],
+  "tool_runs.specialist": [
+    "BILLING",
+    "BOOKING",
+    "HANDOFF_COMPLIANCE",
+    "RECEPTION_ROUTER",
+    "SALES",
+    "SUPPORT"
+  ],
+  "transfer_attempts.transfer_type": [
+    "COLD",
+    "WARM"
+  ],
+  "transfer_attempts.trigger": [
+    "AGENT_LOOP",
+    "CALLER_REQUEST",
+    "DTMF",
+    "EMERGENCY",
+    "OPERATOR",
+    "OUTSIDE_BUSINESS_HOURS",
+    "POLICY",
+    "REPEATED_MISUNDERSTANDING",
+    "SENSITIVE_TOPIC",
+    "TOOL_FAILURE"
+  ],
+  "transfer_attempts.state": [
+    "AGENT_ANSWERED",
+    "BRIDGING",
+    "CANCELED",
+    "COMPLETED",
+    "DIALING_AGENT",
+    "FAILED",
+    "PREPARING",
+    "RETURNED_TO_AI",
+    "WHISPER"
+  ],
+  "transfer_attempts.failure_reason": [
+    "BUSY",
+    "CALLER_HANGUP",
+    "DECLINED_BY_AGENT",
+    "DESTINATION_NOT_ALLOWED",
+    "KILL_SWITCH",
+    "NO_ANSWER",
+    "PROVIDER_ERROR",
+    "TIMEOUT"
+  ],
+  "consent_ledger.channel": [
+    "PSTN",
+    "SIMULATION",
+    "WEB_VOICE"
+  ],
+  "consent_ledger.recording_consent": [
+    "DENIED",
+    "GRANTED",
+    "NOT_APPLICABLE",
+    "NOT_REQUESTED"
+  ],
+  "consent_ledger.disclosure_language": [
+    "de",
+    "en",
+    "hu"
+  ],
+  "quality_scores.flags": [
+    "ABANDONMENT",
+    "DEAD_AIR",
+    "EXCESSIVE_CLARIFICATION",
+    "EXCESSIVE_FILLER",
+    "INTERRUPTION_MISHANDLED",
+    "KNOWLEDGE_GAP",
+    "LATENCY_SPIKE",
+    "LONG_RESPONSE",
+    "LOOP_DETECTED",
+    "POLICY_BREACH",
+    "REPEATED_QUESTION",
+    "TOOL_FAILURE",
+    "UNSUPPORTED_ANSWER",
+    "WRONG_LANGUAGE"
+  ],
+  "knowledge_sources.source_type": [
+    "FAQ",
+    "FILE_CSV",
+    "FILE_DOCX",
+    "FILE_MARKDOWN",
+    "FILE_PDF",
+    "FILE_TXT",
+    "MANUAL_QA",
+    "URL",
+    "WEBSITE"
+  ],
+  "knowledge_sources.status": [
+    "ACTIVE",
+    "ARCHIVED",
+    "CHUNKING",
+    "DELETING",
+    "EMBEDDING",
+    "FAILED",
+    "PARSING",
+    "PENDING_UPLOAD",
+    "QUARANTINED",
+    "QUEUED",
+    "READY",
+    "SCANNING",
+    "SUPERSEDED"
+  ],
+  "knowledge_sources.freshness": [
+    "EXPIRED",
+    "FRESH",
+    "STALE",
+    "UNKNOWN"
+  ],
+  "knowledge_source_versions.status": [
+    "ACTIVE",
+    "ARCHIVED",
+    "CHUNKING",
+    "DELETING",
+    "EMBEDDING",
+    "FAILED",
+    "PARSING",
+    "PENDING_UPLOAD",
+    "QUARANTINED",
+    "QUEUED",
+    "READY",
+    "SCANNING",
+    "SUPERSEDED"
+  ],
+  "resources.resource_type": [
+    "BAY",
+    "DOCTOR",
+    "EMPLOYEE",
+    "EQUIPMENT",
+    "ROOM",
+    "SERVICE_POINT",
+    "TABLE",
+    "VEHICLE"
+  ],
+  "services.required_resource_types": [
+    "BAY",
+    "DOCTOR",
+    "EMPLOYEE",
+    "EQUIPMENT",
+    "ROOM",
+    "SERVICE_POINT",
+    "TABLE",
+    "VEHICLE"
+  ],
+  "booking_holds.status": [
+    "ACTIVE",
+    "CONVERTED",
+    "EXPIRED",
+    "RELEASED"
+  ],
+  "bookings.status": [
+    "CANCELED",
+    "COMPLETED",
+    "CONFIRMED",
+    "NO_SHOW",
+    "PENDING_DEPOSIT"
+  ],
+  "bookings.source": [
+    "DASHBOARD",
+    "EXTERNAL_CALENDAR",
+    "PUBLIC_API",
+    "VOICE_AGENT",
+    "WAITLIST"
+  ],
+  "bookings.external_sync_status": [
+    "CONFLICT",
+    "FAILED",
+    "NOT_REQUIRED",
+    "PENDING",
+    "SYNCED"
+  ],
+  "waitlist_entries.resource_type": [
+    "BAY",
+    "DOCTOR",
+    "EMPLOYEE",
+    "EQUIPMENT",
+    "ROOM",
+    "SERVICE_POINT",
+    "TABLE",
+    "VEHICLE"
+  ],
+  "waitlist_entries.status": [
+    "ACCEPTED",
+    "ACTIVE",
+    "CANCELED",
+    "DECLINED",
+    "EXPIRED",
+    "FULFILLED",
+    "OFFERED"
+  ],
+  "waitlist_entries.contact_channel": [
+    "EMAIL",
+    "IN_APP",
+    "SMS",
+    "WEBHOOK"
+  ],
+  "integrations.integration_type": [
+    "CUSTOM_API",
+    "CUSTOM_SMTP",
+    "GOOGLE_CALENDAR",
+    "MICROSOFT_365",
+    "OUTBOUND_WEBHOOK"
+  ],
+  "integrations.status": [
+    "AUTH_EXPIRED",
+    "CONNECTED",
+    "DEGRADED",
+    "DISCONNECTED",
+    "ERROR",
+    "PENDING_AUTHORIZATION",
+    "REVOKED"
+  ],
+  "integrations.provider": [
+    "aws_ses",
+    "billingo",
+    "custom_api",
+    "google",
+    "microsoft",
+    "openai",
+    "smtp",
+    "stripe",
+    "telnyx",
+    "twilio",
+    "workos"
+  ],
+  "oauth_authorizations.provider": [
+    "aws_ses",
+    "billingo",
+    "custom_api",
+    "google",
+    "microsoft",
+    "openai",
+    "smtp",
+    "stripe",
+    "telnyx",
+    "twilio",
+    "workos"
+  ],
+  "connector_manifests.auth_type": [
+    "BEARER",
+    "HMAC",
+    "NONE",
+    "OAUTH2"
+  ],
+  "notification_events.notification_type": [
+    "ADD_ON_CHANGED",
+    "CALLER_BOOKING_CANCELED",
+    "CALLER_BOOKING_CHANGED",
+    "CALLER_BOOKING_CONFIRMATION",
+    "CALLER_WAITLIST_OFFER",
+    "CANCELED_GRACE_ENDING",
+    "CONCURRENCY_LIMIT_REACHED",
+    "DATA_DELETION_COMPLETED",
+    "DATA_RETENTION_STARTED",
+    "DISPUTE_OPENED",
+    "DSAR_EXPORT_READY",
+    "GO_LIVE_COMPLETED",
+    "GRACE_PERIOD_FINAL_DAY",
+    "GRACE_PERIOD_REMINDER",
+    "INTEGRATION_AUTH_EXPIRED",
+    "INVOICE_DELIVERY_FAILED",
+    "KNOWLEDGE_SYNC_FAILED",
+    "PAYMENT_FAILED_GRACE_STARTED",
+    "PAYMENT_SUCCEEDED",
+    "PHONE_NUMBER_ACTIVE",
+    "PHONE_NUMBER_RELEASED",
+    "PHONE_NUMBER_RETENTION_ENDING",
+    "PLAN_CHANGED",
+    "PROVISIONING_DELAYED",
+    "PROVISIONING_KYC_DECLINED",
+    "PROVISIONING_KYC_REQUIRED",
+    "PROVISIONING_STARTED",
+    "QUALITY_ALERT",
+    "REFUND_ISSUED",
+    "RENEWAL_REMINDER_1D",
+    "RENEWAL_REMINDER_3D",
+    "RENEWAL_REMINDER_5D",
+    "SECURITY_API_KEY_CREATED",
+    "SECURITY_MEMBER_INVITED",
+    "SECURITY_MEMBER_ROLE_CHANGED",
+    "SECURITY_SSO_CONFIGURATION_CHANGED",
+    "SECURITY_SUPPORT_ACCESS_GRANTED",
+    "SERVICE_REACTIVATED",
+    "SERVICE_RESTRICTED",
+    "SERVICE_SUSPENDED_BILLING",
+    "SPEND_CAP_REACHED",
+    "SPEND_CAP_WARNING",
+    "SUBSCRIPTION_CANCELED",
+    "SUPPORT_REQUEST_RECEIVED",
+    "SUPPORT_REQUEST_UPDATED",
+    "TENANT_CALLBACK_REQUESTED",
+    "TENANT_MESSAGE_TAKEN",
+    "TEST_CALL_READY"
+  ],
+  "notification_events.channel": [
+    "EMAIL",
+    "IN_APP",
+    "SMS",
+    "WEBHOOK"
+  ],
+  "notification_events.locale": [
+    "de",
+    "en",
+    "hu"
+  ],
+  "notification_attempts.status": [
+    "BOUNCED",
+    "CANCELED",
+    "COMPLAINED",
+    "DELIVERED",
+    "FAILED",
+    "PENDING",
+    "SCHEDULED",
+    "SENDING",
+    "SENT",
+    "SUPPRESSED"
+  ],
+  "notification_preferences.notification_type": [
+    "ADD_ON_CHANGED",
+    "CALLER_BOOKING_CANCELED",
+    "CALLER_BOOKING_CHANGED",
+    "CALLER_BOOKING_CONFIRMATION",
+    "CALLER_WAITLIST_OFFER",
+    "CANCELED_GRACE_ENDING",
+    "CONCURRENCY_LIMIT_REACHED",
+    "DATA_DELETION_COMPLETED",
+    "DATA_RETENTION_STARTED",
+    "DISPUTE_OPENED",
+    "DSAR_EXPORT_READY",
+    "GO_LIVE_COMPLETED",
+    "GRACE_PERIOD_FINAL_DAY",
+    "GRACE_PERIOD_REMINDER",
+    "INTEGRATION_AUTH_EXPIRED",
+    "INVOICE_DELIVERY_FAILED",
+    "KNOWLEDGE_SYNC_FAILED",
+    "PAYMENT_FAILED_GRACE_STARTED",
+    "PAYMENT_SUCCEEDED",
+    "PHONE_NUMBER_ACTIVE",
+    "PHONE_NUMBER_RELEASED",
+    "PHONE_NUMBER_RETENTION_ENDING",
+    "PLAN_CHANGED",
+    "PROVISIONING_DELAYED",
+    "PROVISIONING_KYC_DECLINED",
+    "PROVISIONING_KYC_REQUIRED",
+    "PROVISIONING_STARTED",
+    "QUALITY_ALERT",
+    "REFUND_ISSUED",
+    "RENEWAL_REMINDER_1D",
+    "RENEWAL_REMINDER_3D",
+    "RENEWAL_REMINDER_5D",
+    "SECURITY_API_KEY_CREATED",
+    "SECURITY_MEMBER_INVITED",
+    "SECURITY_MEMBER_ROLE_CHANGED",
+    "SECURITY_SSO_CONFIGURATION_CHANGED",
+    "SECURITY_SUPPORT_ACCESS_GRANTED",
+    "SERVICE_REACTIVATED",
+    "SERVICE_RESTRICTED",
+    "SERVICE_SUSPENDED_BILLING",
+    "SPEND_CAP_REACHED",
+    "SPEND_CAP_WARNING",
+    "SUBSCRIPTION_CANCELED",
+    "SUPPORT_REQUEST_RECEIVED",
+    "SUPPORT_REQUEST_UPDATED",
+    "TENANT_CALLBACK_REQUESTED",
+    "TENANT_MESSAGE_TAKEN",
+    "TEST_CALL_READY"
+  ],
+  "notification_preferences.channel": [
+    "EMAIL",
+    "IN_APP",
+    "SMS",
+    "WEBHOOK"
+  ],
+  "idempotency_keys.state": [
+    "COMPLETED",
+    "IN_PROGRESS"
+  ],
+  "outbox_events.event_type": [
+    "agent_version.published",
+    "agent_version.rolled_back",
+    "billing.document_created",
+    "booking.canceled",
+    "booking.changed",
+    "booking.created",
+    "call.admission_decided",
+    "call.conversation_state_changed",
+    "call.disclosure_delivered",
+    "call.ended",
+    "call.language_changed",
+    "call.started",
+    "call.tool_completed",
+    "call.tool_requested",
+    "call.transfer_state_changed",
+    "checkout.order_paid",
+    "contact.merged",
+    "entitlement.snapshot_created",
+    "feature_flag.changed",
+    "integration.auth_expired",
+    "kill_switch.changed",
+    "knowledge.ingestion_completed",
+    "knowledge.ingestion_failed",
+    "knowledge.ingestion_requested",
+    "knowledge.source_activated",
+    "notification.requested",
+    "phone_number.status_changed",
+    "privacy.request_created",
+    "provider_cost.recorded",
+    "provider_health.changed",
+    "provisioning.state_changed",
+    "quality.score_requested",
+    "quality.scored",
+    "runtime.instance_state_changed",
+    "simulation.run_completed",
+    "simulation.run_requested",
+    "subscription.updated",
+    "tenant.created",
+    "tenant.status_changed",
+    "usage.recorded",
+    "waitlist.slot_released"
+  ],
+  "feature_flags.flag_key": [
+    "feature.agent.canary_rollout",
+    "feature.analyst_transcript_access",
+    "feature.call_recording",
+    "feature.caller_memory",
+    "feature.knowledge.website_sync",
+    "feature.onboarding.website_import",
+    "feature.outbound_calls",
+    "feature.pci_payment_mode",
+    "feature.quality.auto_rollback_recommendation",
+    "feature.routing.complex_escalation",
+    "feature.routing.frontier_reasoning",
+    "feature.routing.premium_reasoning",
+    "feature.simulation_lab",
+    "feature.waitlist",
+    "feature.warm_transfer",
+    "feature.web_voice_widget"
+  ],
+  "feature_flags.scope_type": [
+    "AGENT",
+    "GLOBAL",
+    "LOCATION",
+    "REGION",
+    "TENANT",
+    "TOOL"
+  ],
+  "kill_switches.switch_key": [
+    "kill.agent_publish",
+    "kill.call_transfer",
+    "kill.global_new_calls",
+    "kill.model",
+    "kill.outbound_calls",
+    "kill.payment",
+    "kill.provider",
+    "kill.recording",
+    "kill.tenant_traffic",
+    "kill.tool"
+  ],
+  "provider_health.provider": [
+    "aws_ses",
+    "billingo",
+    "custom_api",
+    "google",
+    "microsoft",
+    "openai",
+    "smtp",
+    "stripe",
+    "telnyx",
+    "twilio",
+    "workos"
+  ],
+  "provider_health.capability": [
+    "backend_reasoning",
+    "calendar",
+    "call_transfer",
+    "email",
+    "embeddings",
+    "identity",
+    "invoicing",
+    "number_inventory",
+    "payments",
+    "realtime_voice",
+    "sip_inbound",
+    "sip_outbound",
+    "transcription"
+  ],
+  "provider_health.status": [
+    "DEGRADED",
+    "HEALTHY",
+    "UNAVAILABLE",
+    "UNKNOWN"
+  ],
+  "provider_health.circuit_state": [
+    "CLOSED",
+    "HALF_OPEN",
+    "OPEN"
+  ],
+  "provider_webhook_events.provider": [
+    "aws_ses",
+    "billingo",
+    "custom_api",
+    "google",
+    "microsoft",
+    "openai",
+    "smtp",
+    "stripe",
+    "telnyx",
+    "twilio",
+    "workos"
+  ],
+  "audit_logs.actor_type": [
+    "API_KEY",
+    "PROVIDER_WEBHOOK",
+    "SERVICE",
+    "SUPPORT_STAFF",
+    "SYSTEM",
+    "USER"
+  ],
+  "retention_policies.retention_class": [
+    "ANALYTICS",
+    "AUDIT",
+    "BILLING",
+    "CALLER_PROFILE",
+    "CALL_EVENTS",
+    "CONSENT",
+    "DISPUTE_EVIDENCE",
+    "EXPORT_ARTIFACT",
+    "KNOWLEDGE_DOCUMENT",
+    "KYC_REFERENCE",
+    "OPERATIONAL_LOG",
+    "RAW_AUDIO",
+    "RAW_PROVIDER_PAYLOAD",
+    "TOOL_PAYLOAD",
+    "TRANSCRIPT"
+  ],
+  "dsar_requests.request_type": [
+    "DELETE",
+    "EXPORT",
+    "RECTIFY",
+    "RESTRICT"
+  ],
+  "dsar_requests.status": [
+    "COMPLETED",
+    "IN_PROGRESS",
+    "ON_LEGAL_HOLD",
+    "RECEIVED",
+    "REJECTED",
+    "VERIFYING"
+  ],
+  "simulation_scenarios.scenario_class": [
+    "AUDIO_STRESS",
+    "CONCURRENCY",
+    "CONVERSATION_STRESS",
+    "HAPPY_PATH",
+    "SECURITY",
+    "TOOL_FAILURE"
+  ],
+  "simulation_scenarios.language": [
+    "de",
+    "en",
+    "hu"
+  ],
+  "simulation_runs.status": [
+    "CANCELED",
+    "ERRORED",
+    "FAILED",
+    "PASSED",
+    "QUEUED",
+    "RUNNING"
+  ],
+  "usage_events.metric": [
+    "backend_input_tokens",
+    "backend_output_tokens",
+    "billable_voice_seconds",
+    "carrier_seconds",
+    "connected_voice_seconds",
+    "email_count",
+    "live_voice_cost",
+    "recording_seconds",
+    "simulation_seconds",
+    "tool_external_cost"
+  ],
+  "usage_events.unit": [
+    "COUNT",
+    "SECONDS",
+    "TOKENS",
+    "USD_MICROS"
+  ],
+  "usage_events.provider": [
+    "aws_ses",
+    "billingo",
+    "custom_api",
+    "google",
+    "microsoft",
+    "openai",
+    "smtp",
+    "stripe",
+    "telnyx",
+    "twilio",
+    "workos"
+  ],
+  "usage_aggregates.metric": [
+    "backend_input_tokens",
+    "backend_output_tokens",
+    "billable_voice_seconds",
+    "carrier_seconds",
+    "connected_voice_seconds",
+    "email_count",
+    "live_voice_cost",
+    "recording_seconds",
+    "simulation_seconds",
+    "tool_external_cost"
+  ],
+  "provider_cost_events.provider": [
+    "aws_ses",
+    "billingo",
+    "custom_api",
+    "google",
+    "microsoft",
+    "openai",
+    "smtp",
+    "stripe",
+    "telnyx",
+    "twilio",
+    "workos"
+  ],
+  "reconciliation_runs.provider": [
+    "aws_ses",
+    "billingo",
+    "custom_api",
+    "google",
+    "microsoft",
+    "openai",
+    "smtp",
+    "stripe",
+    "telnyx",
+    "twilio",
+    "workos"
+  ],
+  "vertical_policy_packs.pack": [
+    "AUTO_SERVICE",
+    "B2B_SUPPORT",
+    "CAR_DETAILING",
+    "DENTAL_CLINIC",
+    "GENERAL",
+    "HOTEL",
+    "REAL_ESTATE",
+    "RESTAURANT",
+    "SALON",
+    "WEBSHOP"
+  ],
+  "tenant_policy_packs.pack": [
+    "AUTO_SERVICE",
+    "B2B_SUPPORT",
+    "CAR_DETAILING",
+    "DENTAL_CLINIC",
+    "GENERAL",
+    "HOTEL",
+    "REAL_ESTATE",
+    "RESTAURANT",
+    "SALON",
+    "WEBSHOP"
+  ]
+}

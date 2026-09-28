@@ -1,0 +1,263 @@
+{
+  "callOutcome": {
+    "RESOLVED": "Gelöst",
+    "INFORMATION_PROVIDED": "Auskunft erteilt",
+    "BOOKING_CREATED": "Termin gebucht",
+    "BOOKING_CHANGED": "Termin geändert",
+    "BOOKING_CANCELED": "Termin storniert",
+    "WAITLISTED": "Auf Warteliste",
+    "LEAD_CAPTURED": "Lead erfasst",
+    "CALLBACK_REQUESTED": "Rückruf angefordert",
+    "MESSAGE_TAKEN": "Nachricht aufgenommen",
+    "TRANSFERRED_TO_HUMAN": "An Mitarbeiter weitergeleitet",
+    "UNRESOLVED": "Ungelöst",
+    "ABANDONED": "Abgebrochen",
+    "SPAM": "Spam",
+    "POLICY_BLOCKED": "Durch Richtlinie blockiert",
+    "FAILED": "Fehlgeschlagen"
+  },
+  "callIntent": {
+    "BOOKING": "Buchung",
+    "SUPPORT": "Support",
+    "SALES": "Vertrieb",
+    "LEAD": "Lead",
+    "BILLING": "Abrechnung",
+    "GENERAL_INQUIRY": "Allgemeine Anfrage",
+    "HUMAN_REQUEST": "Mitarbeiter gewünscht",
+    "SPAM": "Spam",
+    "OTHER": "Sonstiges"
+  },
+  "callStatus": {
+    "INITIATED": "Wird gestartet",
+    "QUEUED": "In Warteschlange",
+    "IN_PROGRESS": "Läuft",
+    "TRANSFERRING": "Wird weitergeleitet",
+    "TRANSFERRED": "Weitergeleitet",
+    "COMPLETED": "Abgeschlossen",
+    "FAILED": "Fehlgeschlagen",
+    "REJECTED": "Abgelehnt",
+    "ABANDONED": "Abgebrochen"
+  },
+  "callChannel": {
+    "PSTN": "Telefon",
+    "WEB_VOICE": "Web-Sprache",
+    "SIMULATION": "Simulation"
+  },
+  "callEndReason": {
+    "CALLER_HANGUP": "Anrufer hat aufgelegt",
+    "AGENT_HANGUP": "Assistent hat beendet",
+    "TRANSFER_COMPLETED": "Weiterleitung abgeschlossen",
+    "MAX_DURATION_REACHED": "Maximale Dauer erreicht",
+    "SILENCE_TIMEOUT": "Zeitüberschreitung wegen Stille",
+    "SPEND_CAP_REACHED": "Ausgabenlimit erreicht",
+    "TOOL_BUDGET_EXHAUSTED": "Werkzeuglimit erreicht",
+    "KILL_SWITCH": "Sicherheitsabschaltung",
+    "OPERATOR_TERMINATED": "Vom Mitarbeiter beendet",
+    "POLICY_VIOLATION": "Richtlinienverstoß",
+    "ADMISSION_REJECTED": "Nicht angenommen",
+    "QUEUE_TIMEOUT": "Wartezeit überschritten",
+    "PROVIDER_FAILURE": "Anbieterfehler",
+    "RUNTIME_FAILURE": "Systemfehler",
+    "ORPHAN_RECONCILED": "Durch Abgleich geschlossen"
+  },
+  "tenantStatus": {
+    "PROVISIONING": "Wird eingerichtet",
+    "ACTIVE": "Aktiv",
+    "PAYMENT_AT_RISK": "Zahlung gefährdet",
+    "GRACE_PERIOD": "Kulanzfrist",
+    "RESTRICTED": "Eingeschränkt",
+    "SUSPENDED_BILLING": "Wegen Abrechnung gesperrt",
+    "SUSPENDED_DISPUTE": "Wegen Zahlungsstreit gesperrt",
+    "SUSPENDED_RISK": "Zur Prüfung gesperrt",
+    "SUSPENDED_ADMIN": "Gesperrt",
+    "CANCELED_GRACE": "Gekündigt",
+    "DATA_RETENTION": "Datenaufbewahrung",
+    "DELETION": "Wird gelöscht",
+    "DELETED": "Gelöscht"
+  },
+  "role": {
+    "OWNER": "Inhaber",
+    "ADMIN": "Administrator",
+    "OPERATOR": "Operator",
+    "ANALYST": "Analyst",
+    "DEVELOPER": "Entwickler",
+    "BILLING": "Abrechnung",
+    "VIEWER": "Betrachter"
+  },
+  "planCode": {
+    "START": "Start",
+    "BUSINESS": "Business",
+    "PRO": "Pro",
+    "ENTERPRISE": "Enterprise"
+  },
+  "agentStatus": {
+    "DRAFT": "Entwurf",
+    "ACTIVE": "Aktiv",
+    "PAUSED": "Pausiert",
+    "ARCHIVED": "Archiviert"
+  },
+  "agentVersionStatus": {
+    "DRAFT": "Entwurf",
+    "VALIDATING": "Wird geprüft",
+    "VALIDATION_FAILED": "Prüfung fehlgeschlagen",
+    "STAGING": "Staging",
+    "CANARY": "Canary",
+    "PRODUCTION": "Produktiv",
+    "SUPERSEDED": "Ersetzt",
+    "ROLLED_BACK": "Zurückgerollt",
+    "ARCHIVED": "Archiviert"
+  },
+  "knowledgeSourceStatus": {
+    "PENDING_UPLOAD": "Wartet auf Upload",
+    "QUEUED": "In Warteschlange",
+    "SCANNING": "Sicherheitsprüfung",
+    "PARSING": "Wird gelesen",
+    "CHUNKING": "Wird aufgeteilt",
+    "EMBEDDING": "Wird indexiert",
+    "READY": "Bereit",
+    "ACTIVE": "Aktiv",
+    "FAILED": "Fehlgeschlagen",
+    "QUARANTINED": "In Quarantäne",
+    "SUPERSEDED": "Ersetzt",
+    "ARCHIVED": "Archiviert",
+    "DELETING": "Wird gelöscht"
+  },
+  "knowledgeSourceType": {
+    "FILE_PDF": "PDF-Dokument",
+    "FILE_DOCX": "Word-Dokument",
+    "FILE_TXT": "Textdatei",
+    "FILE_MARKDOWN": "Markdown-Datei",
+    "FILE_CSV": "Tabelle (CSV)",
+    "URL": "Webseite",
+    "WEBSITE": "Website",
+    "FAQ": "FAQ",
+    "MANUAL_QA": "Fragen und Antworten"
+  },
+  "knowledgeFreshness": {
+    "FRESH": "Aktuell",
+    "STALE": "Veraltet",
+    "EXPIRED": "Abgelaufen",
+    "UNKNOWN": "Unbekannt"
+  },
+  "phoneNumberStatus": {
+    "PROVISIONING": "Wird eingerichtet",
+    "PORTING_IN": "Wird portiert",
+    "ACTIVE": "Aktiv",
+    "SUSPENDED": "Gesperrt",
+    "RETENTION_HOLD": "Zurückgehalten",
+    "RELEASE_PENDING": "Freigabe ausstehend",
+    "RELEASED": "Freigegeben"
+  },
+  "phoneOrderStatus": {
+    "NUMBER_SELECTED": "Nummer ausgewählt",
+    "RESERVED": "Reserviert",
+    "ORDER_SUBMITTED": "Bestellt",
+    "KYC_REQUIRED": "Angaben erforderlich",
+    "UNDER_REVIEW": "In Prüfung",
+    "APPROVED": "Genehmigt",
+    "DECLINED": "Abgelehnt",
+    "NO_INVENTORY": "Nicht verfügbar",
+    "FAILED": "Fehlgeschlagen",
+    "CANCELED": "Storniert"
+  },
+  "kycRequirementStatus": {
+    "NOT_REQUIRED": "Nicht erforderlich",
+    "REQUIRED": "Erforderlich",
+    "SUBMITTED": "Eingereicht",
+    "UNDER_REVIEW": "In Prüfung",
+    "APPROVED": "Genehmigt",
+    "DECLINED": "Abgelehnt",
+    "EXPIRED": "Abgelaufen"
+  },
+  "provisioningState": {
+    "ORDER_CREATED": "Bestellung erstellt",
+    "PAYMENT_PENDING": "Zahlung ausstehend",
+    "PAYMENT_CONFIRMED": "Zahlung bestätigt",
+    "BILLING_PENDING": "Rechnung wird erstellt",
+    "BILLING_DOCUMENT_CREATED": "Rechnung ausgestellt",
+    "TENANT_PROVISIONING": "Arbeitsbereich wird vorbereitet",
+    "TENANT_CREATED": "Arbeitsbereich bereit",
+    "OPENAI_PROJECT_PROVISIONING": "KI-Projekt wird vorbereitet",
+    "OPENAI_SERVICE_ACCOUNT_PROVISIONING": "KI-Zugang wird abgesichert",
+    "OPENAI_READY": "KI bereit",
+    "PHONE_RESERVING": "Rufnummer wird reserviert",
+    "PHONE_ORDERING": "Rufnummer wird bestellt",
+    "PHONE_KYC_REQUIRED": "Angaben für die Nummer erforderlich",
+    "WAITING_FOR_CUSTOMER": "Wartet auf Sie",
+    "PHONE_UNDER_REVIEW": "Nummer in Prüfung",
+    "WAITING_FOR_PROVIDER": "Wartet auf den Anbieter",
+    "PHONE_READY": "Rufnummer aktiv",
+    "SIP_AGENT_BINDING": "Assistent wird verbunden",
+    "AGENT_READY": "Assistent bereit",
+    "TEST_CALL_READY": "Bereit für Testanruf",
+    "GO_LIVE_ELIGIBLE": "Bereit für den Livegang",
+    "ACTIVE": "Live",
+    "MANUAL_REVIEW_REQUIRED": "Unser Team prüft",
+    "COMPENSATING": "Wird zurückgesetzt",
+    "COMPENSATED": "Zurückgesetzt",
+    "CANCELED": "Storniert"
+  },
+  "subscriptionStatus": {
+    "INCOMPLETE": "Unvollständig",
+    "INCOMPLETE_EXPIRED": "Abgelaufen",
+    "TRIALING": "Testphase",
+    "ACTIVE": "Aktiv",
+    "PAST_DUE": "Zahlung überfällig",
+    "UNPAID": "Unbezahlt",
+    "PAUSED": "Pausiert",
+    "CANCELED": "Gekündigt"
+  },
+  "bookingStatus": {
+    "PENDING_DEPOSIT": "Anzahlung ausstehend",
+    "CONFIRMED": "Bestätigt",
+    "CANCELED": "Storniert",
+    "NO_SHOW": "Nicht erschienen",
+    "COMPLETED": "Abgeschlossen"
+  },
+  "integrationStatus": {
+    "PENDING_AUTHORIZATION": "Wartet auf Autorisierung",
+    "CONNECTED": "Verbunden",
+    "DEGRADED": "Eingeschränkt",
+    "AUTH_EXPIRED": "Neu verbinden erforderlich",
+    "REVOKED": "Widerrufen",
+    "DISCONNECTED": "Getrennt",
+    "ERROR": "Fehler"
+  },
+  "toolSideEffectClass": {
+    "READ": "Nur lesen",
+    "WRITE": "Ändert Daten",
+    "HIGH_RISK_WRITE": "Risikoreiche Änderung",
+    "EXTERNAL_COMMUNICATION": "Sendet Nachrichten"
+  },
+  "toolConfirmationPolicy": {
+    "NONE": "Keine Bestätigung",
+    "CALLER_CONFIRMATION": "Anrufer bestätigt",
+    "CALLER_CONFIRMATION_WITH_VERIFICATION": "Anrufer bestätigt nach Verifizierung",
+    "HUMAN_APPROVAL": "Freigabe durch Mitarbeiter"
+  },
+  "conversationState": {
+    "GREETING": "Begrüßung",
+    "DISCOVERY": "Anliegen klären",
+    "IDENTITY": "Identitätsprüfung",
+    "ACTION_PREVIEW": "Aktion vorbereiten",
+    "CONFIRMATION_GATE": "Wartet auf Bestätigung",
+    "TOOL_EXECUTION": "Wird ausgeführt",
+    "RESULT_CONFIRMATION": "Ergebnis bestätigen",
+    "FOLLOW_UP": "Nachfrage",
+    "HANDOFF": "Übergabe",
+    "SAFE_FAILURE": "Fehlerbehandlung",
+    "CLOSING": "Abschluss",
+    "END": "Beendet"
+  },
+  "vertical": {
+    "restaurant": "Restaurants",
+    "dental-clinic": "Zahnarztpraxen",
+    "auto-service": "Autowerkstätten",
+    "car-detailing": "Fahrzeugaufbereitung",
+    "salon": "Beautysalons",
+    "hotel": "Hotels",
+    "real-estate": "Immobilien",
+    "webshop": "Onlineshops",
+    "b2b-support": "B2B-Support"
+  }
+}

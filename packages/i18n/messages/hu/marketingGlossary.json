@@ -1,0 +1,768 @@
+{
+  "hub": {
+    "meta": {
+      "title": "Hang-AI és telefónia szószedet",
+      "description": "Világos, pontos meghatározások azokhoz a fogalmakhoz, amelyekkel akkor találkozik, amikor AI hangasszisztenst tesz egy céges telefonvonalra: SIP, PSTN, DID, DTMF, E.164, közbevágás, egyidejű hívások és RAG."
+    },
+    "eyebrow": "Szószedet",
+    "title": "Hang-AI és telefónia szószedet",
+    "body": "Tizenkét fogalom, amellyel akkor találkozik, amikor AI asszisztenst tesz egy céges telefonvonalra, úgy meghatározva, ahogyan a szabványok határozzák meg őket, mindegyikhez egy megjegyzéssel arról, hogyan működik ez valójában a Velyricben.",
+    "breadcrumb": "Szószedet",
+    "breadcrumbLabel": "Morzsamenü",
+    "intro": {
+      "heading": "Mire való ez a szószedet?",
+      "answer": "Ez a szószedet azt a szókincset határozza meg, amely két világ között helyezkedik el: a telefóniáé, amely évtizedek óta szabványosított, és a hang-AI-é, amely nem. Az olyan fogalmaknak, mint a SIP, a PSTN, a DID, a DTMF, az E.164 és a RAG, pontos jelentésük van, amelyet szabványügyi testületek vagy az őket bevezető szakcikk rögzített, és itt ezekkel a jelentésekkel szerepelnek. Az olyan fogalmak, mint az AI hangasszisztens és a közbevágás, újabbak és lazábbak, ezért minden szócikk elkülöníti azt, ami általánosan elfogadott, attól, ami egy gyártó implementációs döntése.",
+      "p1": "Azért érdemes ezzel óvatosnak lenni, mert beszerzésről van szó. Egy hang-AI értékelésében a félreértések többsége abból fakad, hogy egyetlen szó mást jelent a vevőnek és mást a szállítónak: az, hogy hány telefonszámot kap, nem ugyanaz, mint hogy hány hívást tud egyszerre fogadni, egy olyan átkapcsolás, amely nem ad át kontextust, nem meleg átadás, és a visszakeresés önmagában nem akadályozza meg, hogy a modell választ találjon ki.",
+      "p2": "Minden szócikk ugyanazt a felépítést követi. Egy meghatározás, amely önmagában is idézhető, egy technikai magyarázat arról, mi történik valójában, egy konkrét példa, egy rész arról, mit jelent a fogalom kifejezetten a Velyricen belül, és a hiba, amelyet az emberek általában elkövetnek vele. Ahol a Velyric viselkedése terméki döntés és nem szabvány — például a billentyűkódok, a csomagonkénti egyidejűségi korlátok vagy az, hogy mi történik, ha a tudásbázisban nincs válasz —, ott a szócikk ezt kimondja."
+    },
+    "groups": {
+      "voiceAi": {
+        "title": "Hang-AI fogalmak",
+        "body": "Mi az AI hangasszisztens, milyen recepciós szerepre alkalmazzák általában, és melyik menürendszerrel szokták összehasonlítani."
+      },
+      "telephony": {
+        "title": "Telefónia alapok",
+        "body": "A protokollok, hálózatok és számformátumok, amelyeken egy telefonhívás fut. Ezek iparági szabványok, amelyek jóval megelőzik a hang-AI-t, és semmi nem Velyric-specifikus közülük."
+      },
+      "conversation": {
+        "title": "A beszélgetés mechanikája",
+        "body": "Mi történik másodpercről másodpercre egy élő híváson: billentyűzetes bevitel, az asszisztens félbeszakítása, a hívó átadása egy kollégának, és hogy hányan lehetnek egyszerre vonalban."
+      },
+      "knowledge": {
+        "title": "Tudás és adat",
+        "body": "Hogyan jut az asszisztens azokhoz a tényekhez, amelyeket hangosan kimondhat, és mi akadályozza meg abban, hogy a hézagokat valami hihetővel töltse ki."
+      }
+    },
+    "faq": {
+      "heading": "Gyakori kérdések",
+      "q1": {
+        "question": "Melyik fogalom számít a legjobban vásárlás előtt?",
+        "answer": "Három hordozza a meglepetések többségét. Az egyidejű hívások, mert ez kapacitás és nem forgalom, és ez dönti el, hogy a hívók egyáltalán bejutnak-e. A meleg átadás, mert a címkét rendszeresen olyan átadásokra használják, amelyek semmilyen kontextust nem adnak át. És a visszakereséssel bővített generálás, mert a megalapozottság dönti el, hogy az asszisztens kitalál-e válaszokat a cégéről."
+      },
+      "q2": {
+        "question": "Ezek a meghatározások Velyric-specifikusak?",
+        "answer": "Nem. A SIP, a PSTN, a DID, a DTMF, az E.164 és a RAG iparági szabványfogalmak, és itt úgy szerepelnek, ahogyan a szabványok meghatározzák őket. Minden szócikk külön, jelölt szakaszban tartja a Velyric-specifikus viselkedést, így a kettő soha nem mosódik össze."
+      },
+      "q3": {
+        "question": "Elérhető a szószedet több nyelven?",
+        "answer": "Igen. Minden szócikk angolul, magyarul és németül jelenik meg, és ez az a három nyelv, amelyet a Velyric hangasszisztense beszél. A hívó nyelve hívás közben is változhat."
+      },
+      "q4": {
+        "question": "Hol találom az árakat?",
+        "answer": "Az árak oldalon. A csomagok a magyar piacra, forintban, áfa nélkül vannak közzétéve, és mindegyik csomag megadja a benne foglalt beszédperceket, a percalapú túlhasználati díjat és az egyidejű hívások korlátját."
+      },
+      "q5": {
+        "question": "Mi van, ha a keresett fogalom nincs itt?",
+        "answer": "Ez a lista azt a tizenkét fogalmat fedi le, amely egy értékelés során a leggyakrabban felmerül, nem a telefónia egészét. A dokumentáció jóval mélyebben tárgyalja a konfigurációt, és minden, ami a saját beállításához kötődik, ott jobb választ kap, mint egy meghatározástól."
+      }
+    },
+    "related": {
+      "heading": "Hova tovább",
+      "product": {
+        "label": "A Velyric termék",
+        "description": "Hogyan illeszkedik össze az asszisztens, a tudásbázis, a foglalás és az átadás."
+      },
+      "pricing": {
+        "label": "Csomagok és árak",
+        "description": "Benne foglalt percek, percalapú túlhasználat és az egyidejűségi korlát csomagonként."
+      },
+      "integrations": {
+        "label": "Integrációk",
+        "description": "Naptárak, egyedi API-eszközök, webhookok és a Velyric által kiosztott telefonszámok."
+      },
+      "security": {
+        "label": "Biztonság és adatvédelem",
+        "description": "Megőrzési alapértékek, bérlői elkülönítés, és hogyan kezeljük valójában a hívási adatokat."
+      }
+    }
+  },
+  "labels": {
+    "exampleHeading": "Egy konkrét példa",
+    "velyricHeading": "Hogyan működik ez a Velyricben",
+    "relatedHeading": "Kapcsolódó fogalmak és oldalak",
+    "faqHeading": "Gyakori kérdések"
+  },
+  "terms": {
+    "ai-voice-agent": {
+      "term": "AI hangasszisztens",
+      "short": "Szoftver, amely valódi beszélt párbeszédet folytat egy telefonhíváson, kitalálja, mit szeretne a hívó, és műveleteket hajt végre, például foglal.",
+      "meta": {
+        "title": "AI hangasszisztens: meghatározás és működés",
+        "description": "Az AI hangasszisztens beszélt telefonbeszélgetést folytat, megérti a szabad beszédet és valódi műveleteket hajt végre. Mi fut a hívás alatt, és hogyan valósítja meg ezt a Velyric."
+      },
+      "title": "Mi az AI hangasszisztens?",
+      "definition": "Az AI hangasszisztens olyan szoftver, amely beszélt, kétirányú párbeszédet folytat egy hangcsatornán, például egy telefonvonalon. A hívó beszédét szándékká alakítja, eldönti, mi a következő lépés — ideértve külső rendszerek hívását egy adat lekérdezéséhez vagy egy rekord írásához —, és valós időben, szintetizált beszéddel válaszol. Egy felvett menüvel ellentétben nem korlátozódik rögzített menüpontokra: a hívó a saját szavaival beszélhet, és mondat közben irányt válthat.",
+      "explanation": {
+        "heading": "Mi fut valójában a hívás alatt?",
+        "p1": "Egy hangasszisztens valós idejű ciklus, nem egyetlen modellhívás. A hang folyamatosan érkezik a telefónia oldaláról, a beszéd értelmezése már folyam közben zajlik, a rendszer eldönti, hogy a hívó befejezte-e a gondolatát, a válasz pedig szintetizálódik és lejátszásra kerül. A keret néhány száz ezredmásodperc, mert bárminél lassabb kínos csendnek hallatszik, nem gondolkodásnak.",
+        "p2": "A döntési réteg az, ahol az implementációk a leginkább eltérnek. Egy naiv asszisztens az egész beszélgetést átadja egy nyelvi modellnek, és reméli, hogy az jól viselkedik. Egy éles asszisztens explicit beszélgetési állapotot tart, meghatározott készletét azoknak a műveleteknek, amelyeket végrehajthat, és egy ellenőrzési lépést, amely megvizsgálja, hogy a javasolt művelet a hívás adott pontján megengedett-e, mielőtt bármi lefutna.",
+        "p3": "A műveletek miatt léteznek kereskedelmileg a hangasszisztensek. Egy kérdés megválaszolásához csak tudás kell. Egy időpont lefoglalásához az kell, hogy az asszisztens valódi naptárat olvasson, dupla foglalás létrehozása nélkül írjon rekordot, és igazat mondjon a hívónak arról, mi került mentésre."
+      },
+      "example": {
+        "p1": "Egy hívó 21:40-kor telefonál egy rendelőbe. Azt mondja: „Jó estét, szeretném áttenni a csütörtöki időpontomat valamikorra jövő hétre, lehetőleg délelőttre.” Egy menürendszer ezt a mondatot nem tudja értelmezni. Egy hangasszisztens megkeresi a meglévő foglalást, meghívja a szabad időpontokat lekérdező eszközt, felajánl két valódi délelőtti idősávot jövő hétre, visszaolvassa a kiválasztottat megerősítésre, és csak ezután írja be a módosítást.",
+        "p2": "A beszélgetés közepén a hívó hozzáteszi: „Amúgy megkérdezhetem, mennyibe kerül egy kontroll?” Az asszisztens a rendelő saját tudásbázisából válaszol, majd visszatér a még be nem fejezett időpont-áthelyezéshez. Sem a kérdés, sem az érkezésének sorrendje nem volt előre megírva."
+      },
+      "velyric": {
+        "p1": "A Velyric a beszélgetést explicit, kódban leírt állapotgépen vezeti végig, nem egyetlen prompton: GREETING, DISCOVERY, IDENTITY, ACTION_PREVIEW, CONFIRMATION_GATE, TOOL_EXECUTION, RESULT_CONFIRMATION, FOLLOW_UP, HANDOFF, SAFE_FAILURE, CLOSING, END. A modell javasolhatja a következő eszközt; a háttérrendszer dönti el, hogy az adott állapotban megengedett-e.",
+        "p2": "A beépített műveletkészlet szándékosan kicsi és rögzített: list_services, check_availability, create_booking, find_booking, cancel_booking és search_knowledge, mellettük bármely egyedi HTTPS API-eszköz, amelyet a bérlő definiál. Minden hívás azzal indul, hogy a hívó AI asszisztenssel beszél, minden hívás 1800 másodpercben van korlátozva, és a magyar, a német meg az angol támogatott."
+      },
+      "mistake": {
+        "heading": "Az AI hangasszisztens csak egy chatbot hanggal?",
+        "body": "Nem, és a különbség többnyire az időzítés és a hibakezelés. Egy chatfelület két másodpercig is válaszolhat, és kis költséggel kiírhatja, hogy „sajnálom, ezt nem értettem”. Egy telefonhíváson az a két másodperc megszakadt vonalnak hallatszik, egy félreértést pedig magán a beszélgetésen belül kell helyrehozni. A hang hozzáadja a szóváltást, a közbevágás kezelését, a háttérzajt, és azt a tényt, hogy a hívó semmit nem lát és nem tud újraolvasni."
+      },
+      "facts": {
+        "f1": { "term": "Csatorna", "value": "Bejövő telefonhívások a cég saját számán" },
+        "f2": {
+          "term": "Nyelvek",
+          "value": "Magyar, német és angol, hívás közben váltható"
+        },
+        "f3": { "term": "Maximális híváshossz", "value": "1800 másodperc minden csomagban" }
+      },
+      "capability": {
+        "label": "A Velyric termék",
+        "description": "Hogyan illeszkedik össze az asszisztens, a tudásbázis, a foglalás és az átadás."
+      },
+      "faq": {
+        "q1": {
+          "question": "Meg kell mondani a hívónak, hogy géppel beszél?",
+          "answer": "A Velyricben mindig megtudja. Az asszisztens a hívás elején közli, hogy a hívó AI asszisztenssel beszél, a szokásos nyitás részeként, nem opcióként. Az EU AI-rendelet 50. cikkének átláthatósági kötelezettségei 2026. augusztus 2-ától alkalmazandók."
+        },
+        "q2": {
+          "question": "Mi történik, ha az asszisztens nem tudja a választ?",
+          "answer": "Nem találgat. Ha a bérlő tudásbázisában nem található alátámasztó forrás, az asszisztens pontosító kérdést tesz fel vagy emberhez adja a hívást. A bérlő saját anyagán kívülről válaszolni nem támogatott viselkedés."
+        },
+        "q3": {
+          "question": "Tud egy AI hangasszisztens kimenő hívásokat indítani?",
+          "answer": "A hangasszisztensek mint kategória igen, de a Velyric megvalósított híváskezelése bejövő: a hívásokat a bérlő saját számán fogadja a nap 24 órájában. A csomagonkénti egyidejűségi korlát azt írja le, ezekből a bejövő hívásokból hány futhat egyszerre."
+        }
+      }
+    },
+    "ai-receptionist": {
+      "term": "AI recepciós",
+      "short": "Egy cég fővonalára állított AI hangasszisztens, amely köszönti a hívókat, megválaszolja a rutinkérdéseket, foglalásokat vesz fel és emberhez irányít.",
+      "meta": {
+        "title": "AI recepciós: meghatározás és működés",
+        "description": "Az AI recepciós felveszi a céges vonalat, kezeli a rutinkérdéseket és a foglalásokat, és emberhez kapcsol, ha az a helyes kimenet. Meghatározás, valós viselkedés és korlátok."
+      },
+      "title": "Mi az AI recepciós?",
+      "definition": "Az AI recepciós olyan AI hangasszisztens, amelyet egy cég fő telefonvonalára állítanak recepciós munkára: köszönti a hívót, megválaszolja azokat a kérdéseket, amelyeket egy recepciós megválaszolna, foglalásokat vesz fel vagy módosít, és átadja a hívást egy kollégának, ha az a helyes kimenet. Ez inkább szerep, mint külön technológia, vagyis ugyanaz a hangasszisztens-gépezet, recepciós feladatokra konfigurálva. Az értékét azokban a hívásokban mérik, amelyek egyébként megválaszolatlanul vagy hangpostán végeztek volna.",
+      "explanation": {
+        "heading": "Mit igényel valójában a recepciós szerep?",
+        "p1": "A recepció többnyire osztályozás. Egy kisvállalkozáshoz érkező hívások néhány ismétlődő formára oszlanak: nyitvatartás, árak, útbaigazítás, „van valami szabad péntekre”, „le szeretném mondani” és „beszélhetnék valakivel”. Egy AI recepciós azzal érdemli ki a helyét, hogy az ismétlődő formákat végig lezárja, nem azzal, hogy mindennel megpróbálkozik.",
+        "p2": "A második követelmény az, hogy tudja, mikor álljon meg. Egy recepció, amely nem tudja azt mondani, hogy „kapcsolom”, rosszabb, mint a recepció hiánya, mert a hívó csapdába esik. Az átadásnak ezért elsőrendű útvonalnak kell lennie explicit kiváltó okokkal, nem hibaágnak, amely akkor sül el, amikor minden más már megbukott.",
+        "p3": "A harmadik a lefedettség. A recepció pontosan akkor számít a legtöbbet, amikor nincs ott senki: esténként, hétvégén, ebédidőben, és azokban a percekben, amikor a telefon már egy másik hívóval foglalt. A nyitvatartáson kívüli viselkedés önálló tervezési döntés, mert az üzenetfelvétel, a visszahívási kérés rögzítése és az ügyeleti számra kapcsolás három egészen különböző ígéret a hívó felé."
+      },
+      "example": {
+        "p1": "Egy szalon vonala 19:30-kor csörög, zárás után. A hívó azt kérdezi, van-e valami szabad szombat délelőtt, és mennyi ideig tart egy festés. Az asszisztens az időtartamot a szalon saját szolgáltatáslistájából válaszolja meg, ellenőrzi a valós naptárat, felajánlja a 9:30-at és a 11:00-t, visszaigazolja a kiválasztott időpontot a hívónak, és beírja a foglalást.",
+        "p2": "Egy második hívó húsz másodperccel később egy számláról szeretne vitatkozni. Ez nem recepciós feladat, és semmilyen beállítás nem tenné azzá. A hívó azt mondja: „Szeretnék valakivel beszélni”, és a hívás azonnal átkapcsol."
+      },
+      "velyric": {
+        "p1": "A Velyric a bejövő hívásokat a nap 24 órájában fogadja a bérlő saját számán, és minden csomag tartalmaz egy telefonszámot és egy telephelyet. Nyitvatartási időn kívül a beállított viselkedés veszi át: üzenetfelvétel, visszahívási kérés vagy átkapcsolás egy ügyeleti számra. A szabad időpontot mindig a valós naptárhoz ellenőrzi, így az asszisztens soha nem ajánl olyan idősávot, amely nem létezik.",
+        "p2": "Az emberhez adás kiváltó okai: kifejezett kérés, a ### billentyűkód, két-három sikertelen megértési kísérlet, egy eszköz időtúllépése vagy 5xx hibája egy újrapróbálkozás után, valamint az érzékeny vagy nem engedélyezett kérések. Az irányítópult a hívásokat, a megoldási arányt, az átlagos híváshosszt, az átkapcsolási arányt, a foglalásokat és a költséget jelenti, így az, amekkora részt az asszisztens ténylegesen megold, szám, nem benyomás."
+      },
+      "mistake": {
+        "heading": "Az AI recepciós leváltja a pultnál ülő embert?",
+        "body": "Általában nem, és ha így állítjuk be, mindenkiben rossz elvárást kelt. A hívásmennyiség ismétlődő, nyitvatartáson kívüli és túlcsorduló részét veszi le, a többit pedig átadja. A panaszok, a tárgyalások, minden, ami mérlegelést igényel, és minden, ami érzékeny adatot érint, továbbra is a kollégára tartozik, nem utolsósorban azért, mert a hívó telefonszáma kényelmi azonosító, nem hitelesítés."
+      },
+      "facts": {
+        "f1": {
+          "term": "Elérhetőség",
+          "value": "Bejövő hívások fogadása a nap 24 órájában a bérlő számán"
+        },
+        "f2": {
+          "term": "Csomagonként benne foglalt",
+          "value": "1 telefonszám és 1 telephely minden csomagban"
+        },
+        "f3": {
+          "term": "Eszkaláció",
+          "value": "Azonnali átkapcsolás kérésre vagy a ### billentyűkódra"
+        }
+      },
+      "capability": {
+        "label": "AI recepciós",
+        "description": "A teljes képességoldal: hívásmenet, nyitvatartáson kívüli viselkedés és őszinte korlátok."
+      },
+      "faq": {
+        "q1": {
+          "question": "Mi történik, ha zárás után érkezik hívás?",
+          "answer": "A nyitvatartási időn kívülre beállított viselkedés érvényesül: üzenet felvétele, visszahívási kérés rögzítése vagy átkapcsolás egy ügyeleti számra. Ez bérlőnként állítható, nem rögzített tartalék, és külön útvonal a nyitvatartás alatti beszélgetéstől."
+        },
+        "q2": {
+          "question": "Hány hívót tud egyszerre kezelni?",
+          "answer": "Ez a csomag egyidejűségi korlátjától függ: 2 egyszerre futó hívás a Starton, 10 a Businessen, 50 a Prón, és 100 vagy több az Enterprise-on szerződéses keretek között. A korlát fölötti hullámok a bérlő által választott szabályt követik, például rövid sort, túlcsordulási számot, visszahívást vagy hangpostát."
+        },
+        "q3": {
+          "question": "Rögzítik a hívásokat?",
+          "answer": "A nyers hívásaudiót alapértelmezés szerint nem tároljuk; a megőrzése nulla nap. A hívásrögzítés fizetős kiegészítő, nem alapértelmezés. Az átiratokat alapértelmezetten 90 napig őrizzük, ami bérlőnként állítható, legkevesebb egy napra."
+        }
+      }
+    },
+    "ivr": {
+      "term": "IVR (interaktív hangválasz)",
+      "short": "Automatizált telefonrendszer, amely szövegeket játszik le és billentyűzetes vagy korlátozott hangbevitelt gyűjt, hogy a hívót egy rögzített menüfán vezesse végig.",
+      "meta": {
+        "title": "IVR: mit jelent az interaktív hangválasz",
+        "description": "Az IVR szövegeket játszik le és billentyűzetes bevitelt gyűjt, hogy a hívásokat egy előre megtervezett menüfán irányítsa. Miben jó, hol bukik el, és mi váltja fel egy beszélgetős vonalon."
+      },
+      "title": "Mi az IVR?",
+      "definition": "Az IVR az Interactive Voice Response, vagyis az interaktív hangválasz rövidítése: automatizált telefóniarendszer, amely felvett vagy szintetizált szövegeket játszik le és bevitelt gyűjt a hívótól — rendszerint DTMF billentyűnyomásokat, néha néhány kimondott szót —, hogy a hívást egy előre meghatározott menüfán irányítsa. Egy IVR minden útvonala a hívás előtt készül el, így a hívónak kell lefordítania a problémáját a kínált menüpontokra. Érett, szabványos technológia, és továbbra is a helyes eszköz, ha az irányítási választások valóban kevesek és állandók.",
+      "explanation": {
+        "heading": "Miért frusztrálják a menüfák a hívókat?",
+        "p1": "Az IVR egy döntési fa, amelyen a hívónak végig kell mennie. Akkor működik, ha a fa sekély, és a címkék egybevágnak azokkal a szavakkal, amelyekkel a hívók a saját problémájukat írják le. A mélységgel gyorsan romlik, mert minden további szint megsokszorozza azoknak a menüpontoknak a számát, amelyeket a hívónak hallgatás közben fejben kell tartania, egy beszélt menüt pedig nem lehet átfutni úgy, mint egy weboldalt.",
+        "p2": "A klasszikus hiba a szervezeti ábra és a hívó szándéka közötti eltérés. A menük általában osztályok köré épülnek; a hívók problémákkal érkeznek. A „nyomja meg a 3-ast a könyveléshez” csak annak hasznos, aki már tudja, hogy a kérdése a könyvelésre tartozik.",
+        "p3": "Mindettől az IVR még nem elavult. A billentyűzetes bevitel egyértelmű, bármely készülékről működik, túléli a rossz hangminőséget és a zajos hátteret, és ez az akadálymentes tartalék, amikor a beszédfelismerés küzd. Pontosan ezért érdemes a billentyűs rövidítéseket még egy teljesen beszélgetős rendszeren belül is megtartani."
+      },
+      "example": {
+        "p1": "Egy tipikus háromszintes menü: „Magyar nyelvért nyomja meg az 1-est.” Aztán: „Foglalásért nyomja meg az 1-est, meglévő rendelésekért a 2-est, minden egyébért a 3-ast.” Aztán: „A mai foglalásokért nyomja meg az 1-est, más dátumért a 2-est.” Annak a hívónak, aki a holnapi időpontját szeretné áttenni és közben árat is kérdezne, nincs egyetlen helyes útvonala, és a 0-t fogja nyomni vagy leteszi.",
+        "p2": "Ugyanez a kérés kimondva — „Szeretném áttenni a holnapi időpontot, és megkérdezni, mennyibe kerül egy kontroll” — egyetlen mondat, amely két műveletet tartalmaz. Nem tervezhető olyan fa, amelyben minden ilyen kombinációhoz van ág, és ez a formátum szerkezeti korlátja."
+      },
+      "velyric": {
+        "p1": "A Velyric nem tesz menüfát a hívó elé. Az asszisztens megnyitja a hívást, közli, hogy AI asszisztens, és megkérdezi, mire van szüksége a hívónak; hogy merre megy a hívás, abból dől el, amit a hívó mond, nem egy számozott választásból. A termékben nincs IVR-menüszerkesztő, és általános folyamatszerkesztő sincs.",
+        "p2": "A billentyűzetes bevitel rövidítésként marad meg, nem felületként. Az állítható DTMF kódok: ### az élő ügyintéző eléréséhez, 0 az azonnali átkapcsoláshoz és * a visszalépéshez. Ez megőrzi az IVR egyetlen valódi előnyét, a bármely készüléken működő determinisztikus vészkijáratot, a fa nélkül."
+      },
+      "mistake": {
+        "heading": "Az AI hangasszisztens csak egy jobb IVR?",
+        "body": "Ugyanarra az üzleti problémára válaszolnak más interakciós modellel, így a „jobb IVR” alábecsüli a változást. Az IVR irányít: eldönti, hova megy tovább a hívás. Egy hangasszisztens meg is tud oldani, vagyis megválaszolja a kérdést, ellenőrzi a naptárat, beírja a foglalást és lezárja a hívást anélkül, hogy bárki ember csatlakozna. A gyakorlati próba az, hogy a hívások mekkora része fejeződik be a rendszeren belül ahelyett, hogy máshova kerülne."
+      },
+      "facts": {
+        "f1": {
+          "term": "Mit rövidít",
+          "value": "Interactive Voice Response, interaktív hangválasz"
+        },
+        "f2": {
+          "term": "Tipikus bevitel",
+          "value": "DTMF billentyűnyomások, néha korlátozott beszédnyelvtan"
+        },
+        "f3": {
+          "term": "A Velyricben",
+          "value": "Nincs menüfa; a ###, a 0 és a * rövidítésként megmarad"
+        }
+      },
+      "capability": {
+        "label": "AI recepciós",
+        "description": "Mi veszi fel a fővonalat, miután a menü eltűnt."
+      },
+      "faq": {
+        "q1": {
+          "question": "Az IVR ugyanaz, mint egy automata központ?",
+          "answer": "A hétköznapi használatban a kettő átfedésben van. Az „automata központ” általában azt a szűk esetet jelenti, amikor a rendszer felveszi a hívást és egy mellékre irányítja, míg az „IVR” a tágabb kategóriát fedi le, beleértve azokat a szövegeket is, amelyek adatot gyűjtenek, például egy ügyfélszámot. Mindkettő menüvezérelt és előre megírt."
+        },
+        "q2": {
+          "question": "Tartalmaz a Velyric IVR-menüszerkesztőt?",
+          "answer": "Nem. A termékben nincs menüfa-szerkesztő és nincs általános folyamatszerkesztő sem. Az asszisztens viselkedése a tudásbázisából, a rögzített műveletkészletéből és az átadási szabályaiból származik, a billentyűzetes bevitel pedig csak a ###, a 0 és a * rövidítésként létezik."
+        },
+        "q3": {
+          "question": "Miért kéri el az IVR az ügyfélszámot, aztán újra elkéri?",
+          "answer": "Mert egy érték begyűjtése a menüben és annak átadása annak, aki végül felveszi, két külön integrációs munka, és sok bevezetés csak az elsőt fejezte be. Ez adatátadási probléma, nem az IVR mint technológia korlátja."
+        }
+      }
+    },
+    "sip": {
+      "term": "SIP (Session Initiation Protocol)",
+      "short": "A jelzésprotokoll, amely IP-hálózatokon felépíti, módosítja és lezárja a hanghívásokat; maga a hang külön, RTP-n utazik.",
+      "meta": {
+        "title": "SIP: a Session Initiation Protocol elmagyarázva",
+        "description": "A SIP az a jelzésprotokoll, amely felépíti és lebontja a VoIP-hívásokat, míg a hangot az RTP viszi. Metódusok, válaszkódok, átkapcsolások, és hogyan használja a Velyric telefóniája."
+      },
+      "title": "Mi a SIP?",
+      "definition": "A SIP, azaz Session Initiation Protocol, az RFC 3261-ben szabványosított alkalmazásrétegbeli jelzésprotokoll, amely valós idejű munkameneteket — például IP-hálózatokon zajló hanghívásokat — épít fel, módosít és zár le. A SIP csak a vezérlőüzeneteket viszi, vagyis azt, hogy ki kit hív, hogy csörög, hogy felvették és hogy letették, míg a hang külön médiafolyamban, rendszerint RTP-n halad, amelynek kodekjeit és portjait a SIP-üzenetek SDP törzsében egyeztetik. Ezt a protokollt beszélik az üzleti VoIP-szolgáltatások és a SIP trunkök.",
+      "explanation": {
+        "heading": "Hogyan épül fel egy SIP-hívás?",
+        "p1": "A SIP szöveges és a HTTP mintájára készült: a kérések metódust hordoznak, a válaszok numerikus státuszkódot. A fő metódusok: az INVITE munkamenet indítására vagy módosítására, az ACK az INVITE végleges válaszának visszaigazolására, a BYE a munkamenet lezárására, a CANCEL egy még folyamatban lévő kérés elhagyására, a REGISTER, amely megmondja a hálózatnak, hol érhető el egy felhasználó, és az OPTIONS, amely megkérdezi a másik felet, mit támogat.",
+        "p2": "A válaszok ismerős osztályokba esnek: 100 Trying, 180 Ringing, 200 OK a felvételkor, 486 Busy Here, 404 Not Found. Egy szokásos hívás: INVITE, 180, 200, ACK, beszélgetés, BYE, 200. Az átkapcsolás a REFER-t használja, amely arra kéri a másik felet, hogy indítson új hívást egy harmadik cél felé.",
+        "p3": "A jelzés és a média szétválasztása az a rész, amely a gyakorlatban számít. A SIP egyezteti a munkamenetet és SDP-ben írja le a médiát; az RTP ezután viszi a hangcsomagokat, gyakran más hálózati útvonalon. Ezért fordulhat elő, hogy egy hívás a jelzésrétegben kapcsoltnak látszik, miközben senki nem hall semmit: az egyirányú hang szinte mindig RTP- vagy NAT-probléma, még akkor is, ha a SIP-nyomvonal tiszta."
+      },
+      "example": {
+        "p1": "Egy SIP trunk köti össze egy cég telefóniáját a szolgáltatóval. Amikor valaki a cég számát tárcsázza, a szolgáltató INVITE-ot küld a trunk felé, a hívó számával a From fejlécben és a hívott számmal a To fejlécben. A fogadó oldal 200 OK-val válaszol egy SDP-vel, amely leírja, hova küldje a hangot, az RTP elindul, a BYE pedig lezárja a hívást.",
+        "p2": "Ha ezt az élő hívást egy kollégára szeretnénk átvinni, a vezérlő fél REFER-t küld, amely tel: vagy sip: URI-ként nevezi meg az új célt, és a hívás e felé a cél felé épül újra. A hangformátumon semmi nem változik; csak a jelzés irányítja át a szakaszt."
+      },
+      "velyric": {
+        "p1": "A Velyric telefóniája SIP-en fut, de ebből semmit nem a bérlő konfigurál. A Telnyx a platform által üzemeltetett szolgáltató a bejövő és kimenő SIP-hez és a számkiosztáshoz, és a valós idejű hangmodell is SIP-en érhető el. Nincs szolgáltatói fiók, amelyet a bérlőnek be kellene kötnie, és nincs trunk, amelyet karban kellene tartania.",
+        "p2": "Az emberhez adás SIP-szintű művelet: a hívás egy másik tel: vagy sip: célra kerül átirányításra. Az egyidejű hívások el vannak különítve egymástól, mindegyiknek saját call_id-je, AI-munkamenete, beszélgetési állapota és nyomvonala van, így az egyik szakasz hibája nem hathat a másikra."
+      },
+      "mistake": {
+        "heading": "A SIP viszi a hangot?",
+        "body": "Nem, és ez a félreértés valódi hibakeresési tévedéseket okoz. A SIP csak jelzés: egyezteti a munkamenetet és SDP-ben írja le a médiát. A hang RTP-ként, külön egyeztetett útvonalon utazik, gyakran más hálózati eszközökön át. A látszólag kapcsolt híváson tapasztalt csendet vagy az egyirányú hangot ezért szinte soha nem oldja meg az, ha alaposabban nézzük a SIP-üzeneteket."
+      },
+      "facts": {
+        "f1": { "term": "Szabvány", "value": "RFC 3261, alkalmazásrétegbeli jelzés" },
+        "f2": { "term": "Média", "value": "RTP, SDP-n keresztül egyeztetve, a jelzéstől külön" },
+        "f3": { "term": "Átkapcsolás", "value": "REFER egy tel: vagy sip: cél felé" }
+      },
+      "capability": {
+        "label": "Integrációk",
+        "description": "Mit köt be a bérlő, és mit üzemeltet helyette a platform."
+      },
+      "faq": {
+        "q1": {
+          "question": "Kell saját SIP trunk a Velyric használatához?",
+          "answer": "Nem. A telefóniát a platform üzemelteti: a számok a Telnyxen keresztül kerülnek kiosztásra, amely egyben a bejövő és kimenő SIP-szolgáltató is. Nincs bérlői oldali szolgáltatói fiók, amelyet be kellene kötni, és a SIP nem része annak, amit a bérlő konfigurál."
+        },
+        "q2": {
+          "question": "A SIP ugyanaz, mint a VoIP?",
+          "answer": "Nem. A VoIP az az általános gondolat, hogy a hangot IP-hálózatokon visszük, a SIP pedig egy konkrét jelzésprotokoll, amely ezeket a hívásokat felépíti. Egy VoIP-bevezetés jellemzően SIP-et használ jelzésre, RTP-t a médiához, és több kodek egyikét magához a hanghoz."
+        },
+        "q3": {
+          "question": "Mi az a SIP URI?",
+          "answer": "Egy sip:nev@domain alakú cím, amely egy SIP-végpontot azonosít, formájában hasonlóan egy e-mail-címhez. Egy hívás címezhető SIP URI-ra vagy tel: URI-ként kifejezett telefonszámra, és a Velyric átkapcsolásai mindkettőt célozhatják."
+        }
+      }
+    },
+    "pstn": {
+      "term": "PSTN (nyilvános kapcsolt telefonhálózat)",
+      "short": "A világméretű, összekapcsolt nyilvános telefonhálózat, amelyen a hagyományos telefonszámok elérhetők, bármilyen technológia is viszi az utolsó szakaszt.",
+      "meta": {
+        "title": "PSTN: a nyilvános telefonhálózat elmagyarázva",
+        "description": "A PSTN az az összekapcsolt nyilvános telefonhálózat, amelyen a hagyományos számok elérhetők. Mi ez ma, hogyan csatlakoznak hozzá az IP-rendszerek, és mit jelent ez egy céges vonalnak."
+      },
+      "title": "Mi a PSTN?",
+      "definition": "A PSTN, azaz Public Switched Telephone Network, a licencelt szolgáltatók által üzemeltetett, összekapcsolt nyilvános telefonhálózatok globális összessége. Történetileg vonalkapcsolt és analóg volt, ma pedig magukon a szolgáltatókon belül nagyrészt IP-alapú, de a meghatározó tulajdonsága nem változott: egy hagyományos telefonszám a világ bármely másik telefonjáról elérhető, akár mobilról, akár vezetékesről, akár VoIP-szolgáltatásból hívják. A PSTN elérése egy IP-rendszerből szolgáltatói összekapcsolást igényel, és ezt árulja egy SIP trunk vagy egy hosztolt hangszolgáltató.",
+      "explanation": {
+        "heading": "Külön hálózat még a PSTN?",
+        "p1": "Egyre kevésbé, és ezt a részt hagyja ki a legtöbb magyarázat. A nyilvános hálózat vonalkapcsolásra épült, ahol minden hívás idejére dedikált csatorna maradt nyitva. Ezt az architektúrát kivezetik: a szolgáltatók IP-re költöztették a magjukat, az örökölt analóg és ISDN hozzáférést pedig piacról piacra, közzétett ütemezés szerint kapcsolják le.",
+        "p2": "Amit a migráció túlél, az a számozási terv és az összekapcsolási kötelezettségek. Egy E.164 terv szerinti szám bármely másik szolgáltató előfizetőitől elérhető, mert a szolgáltatók összekapcsolódnak és elszámolják egymás közt a forgalmat. Ez a tulajdonság, a szám alapján való egyetemes elérhetőség az, amit a „PSTN” kifejezés ma valójában megnevez.",
+        "p3": "Bármi, ami IP-re épül, a PSTN-t egy olyan szolgáltatón keresztül éri el, amely birtokolja a számtartományokat, a hatósági kapcsolatokat és az összekapcsolásokat, és SIP-en adja át a forgalmat az ügyfelének. A gyakorlati következmények inkább adminisztratívak, mint technikaiak: a számok hatósági ellenőrzést igényelhetnek, a hordozás szolgáltatói időt vesz igénybe, és az elérhetőség országonként és körzetenként eltér."
+      },
+      "example": {
+        "p1": "Egy ügyfél német mobilról tárcsáz egy budapesti vezetékes számot. A hívás elhagyja a mobilszolgáltató magját, összekapcsoláson át egy magyar szolgáltatóhoz kerül, és ahhoz jut el, aki az adott számtartományt birtokolja. Ha a számot VoIP-szolgáltató hosztolja, az utolsó szakasz SIP INVITE-ként érkezik, nem áramkörként.",
+        "p2": "Ebből semmi nem látszik a hívónak, aki egy hagyományos számot tárcsázott és hallotta, hogy csörög. Éppen ez a láthatatlanság a lényeg: egy cég átviheti a vonalát egy IP-platformra anélkül, hogy egyetlen ügyfelétől bármit is kérne."
+      },
+      "velyric": {
+        "p1": "A Velyric a Telnyxen keresztül éri el a PSTN-t, amely kiosztja a számokat és a bejövő meg kimenő SIP-szolgáltatóként működik. Magyar vezetékes számok elérhetők, és meglévő szám is hordozható új helyett.",
+        "p2": "Mivel licencelt szolgáltató van az útvonalban, egy szám megrendelése szolgáltatói vagy hatósági cégellenőrzést igényelhet, és ez a KYC lépés a kiosztási folyamat része. A szám elérhetősége és az átfutási ideje a szolgáltatótól és ettől az ellenőrzéstől függ. Ez a bevezetés egyetlen olyan része, amely nem azonnali, és érdemes korán elkezdeni."
+      },
+      "mistake": {
+        "heading": "Egy VoIP-szám valódi telefonszám?",
+        "body": "Igen, ha a nemzeti számozási tervből származó, szolgáltatón keresztül kiosztott szám. Bármely telefonról elérhető és úgy viselkedik, mint bármely más szám; csak a kézbesítés más, mivel a hívás IP-n érkezik a rendszeréhez áramkör helyett. Az a különbség, ami az embereket valójában érdekli, szabályozási: segélyhívás-irányítás, címregisztráció és területi jogosultság, nem az, hogy a szám valódinak számít-e."
+      },
+      "facts": {
+        "f1": {
+          "term": "Mi ez",
+          "value": "Az összekapcsolt nyilvános telefonhálózat, szám alapján elérhetően"
+        },
+        "f2": {
+          "term": "Hogyan érik el az IP-rendszerek",
+          "value": "SIP-en kézbesített szolgáltatói összekapcsoláson át"
+        },
+        "f3": {
+          "term": "A Velyricben",
+          "value": "A Telnyx osztja ki a számokat és viszi a forgalmat"
+        }
+      },
+      "capability": {
+        "label": "Integrációk",
+        "description": "Telefonszámok, naptárak és azok a rendszerek, amelyekkel a Velyric beszél."
+      },
+      "faq": {
+        "q1": {
+          "question": "Megtarthatom a jelenlegi céges számomat?",
+          "answer": "Igen. A meglévő szám hordozása a termék része, és a számok a Telnyxen keresztül kerülnek kiosztásra. Hogy egy hordozás mennyi ideig tart, azt az érintett szolgáltatók és a hatósági ellenőrzés határozza meg, nem a Velyric."
+        },
+        "q2": {
+          "question": "Többet fizet a hívó azért, hogy AI asszisztenst érjen el?",
+          "answer": "Nem. A hívó a nemzeti számozási tervből származó hagyományos számot tárcsáz, és a saját szolgáltatója szokásos díját fizeti. A Velyric költsége a fogadó oldalon van, a csomag benne foglalt beszédperceiként és percalapú túlhasználati díjaként."
+        },
+        "q3": {
+          "question": "Lekapcsolják a PSTN-t?",
+          "answer": "Az örökölt vonalkapcsolt és ISDN hozzáférési technológiákat piacról piacra vezetik ki, a szolgáltatók pedig IP-re költöztették a magjukat. A számozási terv és a szám alapján való egyetemes elérhetőség nem szűnik meg velük együtt."
+        }
+      }
+    },
+    "did": {
+      "term": "DID (közvetlen befelé tárcsázás)",
+      "short": "Nyilvános telefonszám, amely közvetlenül egy szervezeten belüli célhoz irányít, így a hívók központos átkapcsolás nélkül érik el.",
+      "meta": {
+        "title": "DID szám: a közvetlen befelé tárcsázás elmagyarázva",
+        "description": "A DID, Európa nagy részén DDI, olyan nyilvános szám, amely közvetlenül egy szervezeten belüli célhoz irányít. Mit jelent VoIP-környezetben, és hogyan oszt ki számokat a Velyric."
+      },
+      "title": "Mi az a DID szám?",
+      "definition": "A DID a Direct Inward Dialling, vagyis a közvetlen befelé tárcsázás rövidítése, Európa nagy részén DDI vagy Direct Dialling In néven ismert. Ez az a megoldás, amellyel a szolgáltató nyilvános telefonszámokat irányít egy szervezet telefonrendszeréhez úgy, hogy minden szám közvetlenül egy adott célt ér el, ahelyett hogy minden hívó egyetlen központba futna be. A modern VoIP-használatban a „DID” kifejezést lazábban arra használják, hogy megvásárolható nyilvános szám, amely az Ön SIP trunkjén vagy hangplatformján végződik.",
+      "explanation": {
+        "heading": "Miért létezik egyáltalán ez a fogalom?",
+        "p1": "Történetileg egy szervezetnek néhány fizikai vonala és egy közzétett száma volt, a hívók pedig egy telefonközpontost értek el, aki továbbkapcsolta őket. A DID volt az a szolgáltatói funkció, amely ezen változtatott: a szolgáltató a hívással együtt átadja a tárcsázott számjegyeket a telefonrendszernek, és a rendszer a megfelelő célhoz irányít. Egy százas számblokkhoz többé nem kellett száz vonal.",
+        "p2": "Ezt a felismerést őrzi a modern használat. A számok darabszáma és az egyidejű hívások darabszáma két külön mennyiség, amelyeket csak a régi hardver kötött össze. Egy cég tarthat ötven számot úgy, hogy közben csak két hívást tud egyszerre fogadni, vagy tarthat egyet és fogadhat ötvenet.",
+        "p3": "Egy IP-bevezetésben a számot a szolgáltató osztja ki, hozzárendeli az ügyfél fiókjához és egy SIP-célra irányítja. Hogy utána mi történik egy rajta érkező hívással — melyik asszisztens, melyik köszöntő, melyik nyelv és melyik nyitvatartás —, azt a fogadó platformon állítják be, nem a szolgáltatónál."
+      },
+      "example": {
+        "p1": "Egy két telephelyes rendelő két külön számot tesz közzé. Az elsőre érkező hívásokat az első telephely nevében köszöntik, annak nyitvatartásával és naptárával; a másodikra érkezők a második telephely beállításaira futnak be. A hívó számára nincs semmiféle beállítás, csak „a szám, amit tárcsáztam”.",
+        "p2": "A második gyakori felhasználás a mérés. Egy külön szám, amelyet egyetlen hirdetésre nyomtatnak, megszámolhatóvá teszi az adott hirdetés által generált hívásokat anélkül, hogy egyetlen hívótól is meg kellene kérdezni, hol látta."
+      },
+      "velyric": {
+        "p1": "Minden Velyric csomag tartalmaz egy telefonszámot és egy telephelyet. A számok a Telnyxen keresztül kerülnek kiosztásra, magyar vezetékes számok elérhetők, és helyettük meglévő szám is hordozható. Mivel szolgáltató van az útvonalban, a megrendelés cégellenőrzést igényelhet a kiosztási folyamat részeként.",
+        "p2": "A további telefonszámok fizetős kiegészítők, a többtelephelyes támogatás pedig azt jelenti, hogy minden telephely külön modellezhető saját, kifejezetten megadott időzónával. A szerepkörök telephelyre szűkíthetők, így azok, akik az egyik telephely hívásait látják, nem automatikusan ugyanazok, akik a másikét."
+      },
+      "mistake": {
+        "heading": "Ha több számot veszek, egyszerre több hívást tudok fogadni?",
+        "body": "Nem, és ez a fogalom legelterjedtebb félreértése. A számok címek; az egyidejű kapacitás külön korlát, amelyet külön kell megvenni. A Velyricben az egyidejűséget a csomag állítja be 2, 10 vagy 50 egyszerre futó hívásra, az Enterprise-on 100-ra vagy többre, a további telefonszámok és az egyidejűség-bővítés pedig két különböző kiegészítő, amely két különböző problémát old meg."
+      },
+      "facts": {
+        "f1": { "term": "Más néven", "value": "DDI, Direct Dialling In, az európai használatban" },
+        "f2": { "term": "Csomagonként benne foglalt", "value": "1 telefonszám és 1 telephely" },
+        "f3": {
+          "term": "Nem azonos ezzel",
+          "value": "Az egyidejű hívási kapacitás, amely külön csomaghatár"
+        }
+      },
+      "capability": {
+        "label": "Integrációk",
+        "description": "Hogyan kerülnek kiosztásra, hordozásra és telephelyhez rendelésre a számok."
+      },
+      "faq": {
+        "q1": {
+          "question": "Lehet külön szám minden telephelyhez?",
+          "answer": "Igen, a további telefonszámok kiegészítővel. Minden csomag alapból tartalmaz egy számot és egy telephelyet, a Velyric pedig több telephelyet is támogat, mindegyiket saját, kifejezetten megadott időzónával és saját, telephelyre szűkített hozzáféréssel."
+        },
+        "q2": {
+          "question": "A DID ugyanaz, mint egy mellék?",
+          "answer": "Nem. A mellék egy belső rövid szám a telefonrendszeren belül, míg a DID nyilvános szám, amelyet a külvilág tárcsázhat. A DID éppen azért létezik, hogy egy külső hívó kézi átkapcsolás nélkül érjen el egy belső célt."
+        },
+        "q3": {
+          "question": "Hordozhatom a meglévő számomat új helyett?",
+          "answer": "Igen, a meglévő szám hordozása a termék része. Az elérhetőség és az átfutási idő a szolgáltatótól és a hatósági cégellenőrzéstől függ, amely a kiosztási folyamat része, nem pedig valami, amit a Velyric lerövidíthetne."
+        }
+      }
+    },
+    "dtmf": {
+      "term": "DTMF (kéthangú többfrekvenciás jelzés)",
+      "short": "Nyomógombos jelzés: minden billentyűnyomás egyedi hangpárt küld, amelyet a telefonrendszer egyértelműen felismer.",
+      "meta": {
+        "title": "DTMF: a nyomógombos billentyűjelzés elmagyarázva",
+        "description": "A DTMF minden billentyűnyomást egyedi hangpárrá alakít. A frekvenciatáblázat, a sávon belüli és az RFC 2833 szerinti jelzés, és a Velyric által támogatott billentyűkódok."
+      },
+      "title": "Mi a DTMF?",
+      "definition": "A DTMF, azaz Dual-Tone Multi-Frequency jelzés, közismertebb nevén nyomógombos jelzés, az a módszer, amellyel a telefon billentyűzete számjegyeket küld a hálózatnak. Egy billentyű megnyomása két szinuszhangot ad ki egyszerre: egyet a 697, 770, 852 és 941 Hz-es alacsony frekvenciájú csoportból, amely a sort azonosítja, és egyet az 1209, 1336, 1477 és 1633 Hz-es magas frekvenciájú csoportból, amely az oszlopot, így mind a tizenhat lehetséges billentyűnek egyedi párja van. Az, hogy két hang külön sávból származik, nagyon valószínűtlenné teszi a beszéd vagy a háttérzaj okozta véletlen egyezést.",
+      "explanation": {
+        "heading": "Hogyan utazik a DTMF egy VoIP-híváson?",
+        "p1": "Egy analóg vonalon a hangok szó szerint a hang részei. IP-n ez problémává válik, mert az alacsony bitsebességű beszédkodekek az emberi hangra vannak optimalizálva, és a tiszta hangokat annyira torzíthatják, hogy a túlsó vég rosszul ismer fel vagy teljesen elveszít egy számjegyet, miközben a csomagvesztés félbe is vághat egy billentyűnyomást.",
+        "p2": "A szabványos megoldás az, hogy a számjegyeket kivesszük a hangból. Az RFC 2833, amelyet az RFC 4733 frissített, elnevezett telefonesemények formájában definiálja őket, külön RTP hasznos teherként: a számjegy, a hangereje és az időtartama eseményként utazik, nem hangként. A SIP INFO üzenetek alternatívát jelentenek, amelyet egyes bevezetések használnak. Két rendszer közötti együttműködési gond leggyakrabban abból fakad, hogy nem értenek egyet abban, melyik módszer van használatban.",
+        "p3": "Bármelyik átvitelt választjuk, a DTMF-nek van egy olyan tulajdonsága, amellyel a híváson semmi más nem rendelkezik: egyértelmű. Nem függ a beszéd felismerésétől, túléli a zajos vonalat, a halk hívót és a hangos szobát, és minden nyelven pontosan ugyanazt jelenti."
+      },
+      "example": {
+        "p1": "Az 5-ös megnyomása 770 Hz-et és 1336 Hz-et küld együtt. A * megnyomása 941 Hz-et és 1209 Hz-et. A bevitelre figyelő rendszer a kapott párt a táblázathoz illeszti és kiolvassa a számjegyet, mindenféle nyelvi modell és akusztikus tanítás nélkül.",
+        "p2": "A táblázat egy gyakorlati élű érdekességet is megmagyaráz: az 1633 Hz-es oszlop az A, B, C és D billentyűt kódolja, amelyek a szabványban léteznek, de az előfizetői készüléken nem, mert hálózati jelzésre voltak fenntartva."
+      },
+      "velyric": {
+        "p1": "A Velyric a DTMF-et determinisztikus rövidítésként tartja meg, nem felületként. A kódok állíthatók: a ### élő ügyintézőt ér el, a 0 azonnali átkapcsolást hajt végre, a * pedig visszalép a beszélgetésben. Nincs menü, amelyben navigálni kellene velük.",
+        "p2": "Ez akadálymentességi és vészkijárati szempontból számít. A ### megnyomása nem függ attól, hogy az asszisztens bármit is megértett-e, és a többi explicit átadási kiváltó ok mellett áll: a kért átkapcsolás, a két-három sikertelen megértési kísérlet, egy eszköz időtúllépése vagy 5xx hibája egy újrapróbálkozás után, valamint az érzékeny vagy nem engedélyezett kérések."
+      },
+      "mistake": {
+        "heading": "Ha billentyűkódokat használ, akkor valójában mégis menü?",
+        "body": "Nem, és a kettő összemosásával elveszítünk valami hasznosat. Egy menü a DTMF-et az egyetlen bejáratként használja, tehát számot kell nyomni ahhoz, hogy egyáltalán tovább lehessen jutni. Egy beszélgetős rendszer felülbírálásként használja, amely mindig működik: kiút, amikor a beszédfelismerés küzd, amikor rossz a vonal, vagy amikor a hívó egyszerűen nem akar beszélni. A kódok megtartása nem visszalépés, az eltávolításuk pedig azt az egyetlen bevitelt szüntetné meg a híváson, amely soha nem hibázik."
+      },
+      "facts": {
+        "f1": {
+          "term": "Alacsony hangcsoport",
+          "value": "697, 770, 852 és 941 Hz, a sort azonosítja"
+        },
+        "f2": {
+          "term": "Magas hangcsoport",
+          "value": "1209, 1336, 1477 és 1633 Hz, az oszlopot azonosítja"
+        },
+        "f3": {
+          "term": "Velyric kódok",
+          "value": "### élő ügyintéző, 0 azonnali átkapcsolás, * visszalépés, mind állítható"
+        }
+      },
+      "capability": {
+        "label": "Hívásátadás emberhez",
+        "description": "Minden útvonal az asszisztenstől a kollégáig, és hogy melyiket mi váltja ki."
+      },
+      "faq": {
+        "q1": {
+          "question": "Melyik billentyűkkel lehet embert elérni a Velyricben?",
+          "answer": "A ### élő ügyintézőt ér el, a 0 azonnali átkapcsolást hajt végre, a * pedig visszalép a beszélgetésben. Mindhárom kód állítható, így a bérlő megváltoztathatja őket ahhoz, amit a hívói már megszoktak."
+        },
+        "q2": {
+          "question": "Miért nem érzékel néha egy billentyűnyomást egy VoIP-hívás?",
+          "answer": "Általában azért, mert a két vég nem ért egyet abban, hogyan utazik a DTMF. A sávon belüli hangokat az alacsony bitsebességű beszédkodekek és a csomagvesztés károsíthatják, míg az RFC 2833 és az RFC 4733 külön RTP-eseményként küldi a számjegyeket. Ha az egyik oldal eseményekre számít, a másik pedig hangot küld, a számjegyek csendben elvesznek."
+        },
+        "q3": {
+          "question": "Beszéddel is közbevághat a hívó gombnyomás helyett?",
+          "answer": "Igen. A Velyric beszélgetése full duplex, így a hívó közbevághat, tétovázhat vagy rövid megerősítést adhat anélkül, hogy a menet megtörne. A billentyűkódok azokra az esetekre vannak, amikor a beszéd nem jut át."
+        }
+      }
+    },
+    "barge-in": {
+      "term": "Közbevágás",
+      "short": "A hívó azon képessége, hogy belebeszéljen egy szövegbe, mire a rendszer elhallgat és figyel, ahelyett hogy előbb befejezné a mondatát.",
+      "meta": {
+        "title": "Közbevágás: egy hangrendszer félbeszakítása",
+        "description": "A közbevágás lehetővé teszi, hogy a hívó belebeszéljen egy szövegbe és meghallják. Mit igényel technikailag, miért van téves riasztás, és hogyan kezeli a Velyric a félbeszakítást."
+      },
+      "title": "Mi a közbevágás?",
+      "definition": "A közbevágás a hívó azon képessége, hogy elkezdjen beszélni, miközben a rendszer még beszél, és a rendszer leállítsa a saját kimenetét, majd feldolgozza az elhangzottakat. Full duplex hangot igényel, vagyis azt, hogy mindkét irány egyszerre nyitva legyen, és visszhangszűrést, hogy a rendszer ne a saját szintetizált hangját nézze a hívó beszédének. Közbevágás nélkül a hívónak minden szöveg végét meg kell várnia, és ez az automatizált telefonrendszerek leggyakrabban emlegetett panasza.",
+      "explanation": {
+        "heading": "Mitől nehéz jól megcsinálni a közbevágást?",
+        "p1": "A rendszernek beszéd közben kell figyelnie, ami azt jelenti, hogy a saját kimenete visszatér a mikrofon útvonalán. A visszhangszűrés ennek nagy részét eltávolítja, de soha nem az egészet, és ami marad, az beszédnek nézhető ki. Ha túl alacsony a küszöb, az asszisztens félbeszakítja magát, mert becsukódott egy ajtó; ha túl magas, a hívónak fel kell emelnie a hangját, hogy egyáltalán meghallják.",
+        "p2": "A második probléma annak eldöntése, mit jelent a félbeszakítás. Az emberek legalább háromféle okból vágnak közbe: hogy átvegyék a szót, mint a „nem, várjon”; hogy nyugtázzanak anélkül, hogy átvennék a szót, mint a „ühüm” vagy az „aha”; és hogy kitöltsenek egy tétovázást. Ha a nyugtázást szóátvételnek kezeljük, az asszisztens néhány másodpercenként holtan megáll, ha viszont egy valódi helyesbítést nyugtázásnak, akkor belebeszél a hívóba.",
+        "p3": "A harmadik a tiszta helyreállás. Amikor a kimenet mondat közben megszakad, a rendszer nyilvántartása arról, hogy a hívó mit hallott, immár téves. Egy asszisztens, amely felajánlotta a „kedd tíz, szerda kettő” időpontokat és az első után félbeszakadt, nem viselkedhet később úgy, mintha a második is elhangzott volna."
+      },
+      "example": {
+        "p1": "Az asszisztens belekezd: „Van csütörtök fél tíz, csütörtök tizenegy, és péntek...”, a hívó pedig azt mondja: „a fél tízet kérem”. Az asszisztens azonnal megáll, elfogadja a választást és visszaigazolja. Az egész párbeszéd rövidebb, mint amennyi a szöveg önmagában lett volna.",
+        "p2": "Hasonlítsuk össze ugyanezt a hívást közbevágás nélkül. A hívó ugyanazt mondja, nem hallják meg, megvárja a teljes listát, majd megismétli magát. A hívás hosszabb, a hívó pedig megtanulta, hogy ne beszéljen, amíg nem szólnak hozzá, és ez az a szokás, amitől az automatizált vonalak akkor is lassúnak érződnek, ha gyorsak."
+      },
+      "velyric": {
+        "p1": "A Velyric a beszélgetést full duplexben vezeti. A hívó közbevághat, tétovázhat és rövid nyugtázásokat adhat anélkül, hogy a menet megtörne, így egy „ühüm” és egy „nem, a másikat” nem ugyanannak az eseménynek számít. A félbeszakítás kezelése annak a része, ahogyan minden hívás fut, nem pedig bekapcsolható beállítás.",
+        "p2": "A közbevágás sikeressége egyike azoknak a jelzéseknek, amelyeket a Velyric mér, a válaszlatencia, az eszközök sikeraránya, az első hívásos megoldás, az átkapcsolási arány, a nem alátámasztott válaszok aránya és a nyelvváltás pontossága mellett. Attól hangolható, hogy mért minőségi mutatóként kezeljük, nem funkciókapcsolóként."
+      },
+      "mistake": {
+        "heading": "A közbevágás ugyanaz, mint egyszerűen rövidebb szövegeket használni?",
+        "body": "Ugyanazt a bosszúságot támadják két ellentétes irányból, és egyik sem helyettesíti a másikat. A szövegek rövidítése csökkenti, mennyit vár a hívó. A közbevágás magát a várakozást szünteti meg mint kategóriát, mert a hívó eleve nem kényszerül várakozásra. Egy rendszer rövid szövegekkel és közbevágás nélkül továbbra is arra tanítja a hívókat, hogy hallgassanak, amíg nem szólnak hozzájuk, és ez a szokás teszi egy automatizált hívást lassabbnak, mint amilyen valójában."
+      },
+      "facts": {
+        "f1": { "term": "Amit igényel", "value": "Full duplex hang és visszhangszűrés" },
+        "f2": {
+          "term": "Amit meg kell különböztetnie",
+          "value": "A szóátvételi félbeszakítást a nyugtázástól és a tétovázástól"
+        },
+        "f3": {
+          "term": "Ahogy mérjük",
+          "value": "Közbevágás sikeressége, a Velyric hívásminőségi jelzéseinek egyike"
+        }
+      },
+      "capability": {
+        "label": "A Velyric termék",
+        "description": "Hogyan működik együtt a beszélgetési réteg, az eszközök és az átadás egy élő híváson."
+      },
+      "faq": {
+        "q1": {
+          "question": "Félbeszakíthatom a Velyric asszisztensét?",
+          "answer": "Igen. A beszélgetés full duplex, így belebeszélhet az asszisztensbe, az pedig megáll és figyel. A tétovázó hangokat és a rövid nyugtázásokat úgy kezeli, hogy ne álljon meg feleslegesen."
+        },
+        "q2": {
+          "question": "Félbeszakítja az asszisztenst a háttérzaj?",
+          "answer": "A közbevágás érzékelésének el kell választania a hívó beszédét az asszisztens saját kimenetétől és a környezeti zajtól, ezért a közbevágás sikeressége mért jelzés, nem feltételezés. Ha a beszéd nem jut át egy rossz vonalon, a billentyűkódok akkor is működnek: a ### élő ügyintézőt ér el, a 0 pedig azonnali átkapcsolást hajt végre."
+        },
+        "q3": {
+          "question": "Mindhárom nyelven működik a közbevágás?",
+          "answer": "A Velyric a magyart, a németet és az angolt támogatja, és a hívó nyelve hívás közben is változhat. A full duplex félbeszakításkezelés annak a része, ahogyan minden hívás fut, nem nyelvenként bekapcsolható."
+        }
+      }
+    },
+    "warm-transfer": {
+      "term": "Meleg átadás",
+      "short": "Hívás átadása kollégának úgy, hogy előbb elérjük és átadjuk neki a kontextust, ahelyett hogy egyszerűen összekapcsolnánk a hívót és kilépnénk.",
+      "meta": {
+        "title": "Meleg átadás: a kísért hívásátadás elmagyarázva",
+        "description": "A meleg átadás átadja a kontextust a kollégának, mielőtt összekapcsolná a hívót; a vak átadás nem. Hogyan működik mindkettő SIP-ben, és hogyan ad át egy hívást a Velyric."
+      },
+      "title": "Mi a meleg átadás?",
+      "definition": "A meleg átadás — más néven kísért vagy konzultatív átadás — az, amelyben az átadó fél előbb eléri a célt, elmondja, ki hív és miért, és csak ezután kapcsolja össze a két felet. Ezzel szemben áll a vak vagy hideg átadás, amelyben a hívást bejelentés nélkül tolják a célhoz, az átadó fél pedig azonnal kilép. A különbség, amelyet a hívó valójában érzékel, az, hogy másodszor is el kell-e mondania a problémáját.",
+      "explanation": {
+        "heading": "Miben tér el technikailag a meleg és a vak átadás?",
+        "p1": "SIP-ben mindkettő a REFER-re épül, arra a metódusra, amely arra kéri az egyik felet, hogy indítson hívást egy harmadik cél felé. A vak átadás egy azonnal elküldött REFER: az átirányított felet megkérik, hogy hívja a célt, az átadó fél pedig végzett. A számon kívül semmi nem kerül átadásra.",
+        "p2": "A kísért átadás előbb betesz egy konzultációs szakaszt. Az átadó fél tartásba teszi a hívót, felhívja a célt, beszél vele, és csak ezután küld egy REFER-t Replaces fejléccel, amely megmondja a cél végpontjának, hogy vegye át a meglévő párbeszédet. A hívó és a cél egyetlen hívásban köt ki, a konzultációs szakasz pedig eltűnik.",
+        "p3": "A meleg változat ára az idő, mert valaki tartásban van, amíg a konzultáció zajlik, és az átadás meghiúsulhat, ha a cél nem veszi fel — pontosan ezért van még ott az átadó fél, hogy visszatérjen és ezt elmondja. A vak változat ára az, hogy a hívó megismétli magát, vagy egy olyan hangpostán köt ki, amelyre senki nem figyelmeztette."
+      },
+      "example": {
+        "p1": "Vak: „Kapcsolom a könyvelést.” Egy kattanás, aztán egy másik ember azzal veszi fel, hogy „Könyvelés, miben segíthetek?”, a hívó pedig elölről kezdi, a nevével és a számlaszámával együtt.",
+        "p2": "Meleg: ugyanaz a hívó húsz másodperc tartást hall, a kolléga pedig már a számlaszám és a kérdés ismeretében veszi fel. A hívó egy mondatot mond öt helyett. Az összidő hasonló; az élmény nem."
+      },
+      "velyric": {
+        "p1": "A Velyric az emberhez adást elsőrendű útvonalként kezeli explicit kiváltó okokkal, nem hibaágként: kért átkapcsolás, a ### billentyűkód, két-három sikertelen megértési kísérlet, egy eszköz időtúllépése vagy 5xx hibája egy újrapróbálkozás után, valamint az érzékeny vagy nem engedélyezett kérések. Protokollszinten a SIP-hívás egy másik tel: vagy sip: célra kerül átirányításra.",
+        "p2": "A kontextus a platformon marad meg, nem a vonalon hangzik el. A hívásátiratok és összefoglalók ott érhetők el, ahol engedélyezve vannak, és minden hívás megtartja a saját call_id-jét, beszélgetési állapotát és nyomvonalát. Nyitvatartási időn kívül átkapcsolás helyett a beállított alternatíva érvényesül: üzenetfelvétel, visszahívási kérés vagy egy ügyeleti szám."
+      },
+      "mistake": {
+        "heading": "A „meleg átadás” csak egy szebb szó bármilyen átadásra?",
+        "body": "Konkrét, ellenőrizhető dolog, és a próba egyszerű: tudta a fogadó ember, ki hív és miért, mielőtt köszönt volna? Ha a hívónak meg kell ismételnie a nevét vagy a problémáját, akkor vak átadás volt, bármi is áll a prospektusban. Bármely szállító értékelésekor kérdezze meg, pontosan mi jut el a kollégához és milyen mechanizmuson — szóbeli bejelentés, képernyőre ugró adat vagy egy összefoglaló az irányítópulton —, ahelyett hogy a szót elfogadná."
+      },
+      "facts": {
+        "f1": { "term": "Más néven", "value": "Kísért átadás, konzultatív átadás" },
+        "f2": { "term": "Ellentéte", "value": "Vak vagy hideg átadás, bejelentés nélkül" },
+        "f3": { "term": "SIP-ben", "value": "REFER, a kísért esetben Replaces fejléccel" }
+      },
+      "capability": {
+        "label": "Hívásátadás emberhez",
+        "description": "A kiváltó okok, a célok, és hogy mi történik nyitvatartási időn kívül."
+      },
+      "faq": {
+        "q1": {
+          "question": "Mikor ad át a Velyric egy hívást embernek?",
+          "answer": "Ha a hívó kifejezetten valakivel szeretne beszélni, a ### billentyűkódra, két-három sikertelen megértési kísérlet után, egy eszköz időtúllépésére vagy 5xx hibájára egy újrapróbálkozás után, valamint érzékeny vagy nem engedélyezett kérésekre. Nyitvatartási időn kívül helyette a beállított nyitvatartáson kívüli viselkedés érvényesül."
+        },
+        "q2": {
+          "question": "Mi történik egy nyitvatartási időn kívül érkező hívással?",
+          "answer": "A nyitvatartáson kívülre beállított viselkedés érvényesül: üzenet felvétele, visszahívási kérés rögzítése vagy átkapcsolás egy ügyeleti számra. Ez bérlőnkénti választás, nem rögzített tartalék, így ugyanaz a kiváltó ok különböző cégeknél különböző kimenetet adhat."
+        },
+        "q3": {
+          "question": "Elérhet a hívó embert anélkül, hogy előbb elmagyarázná magát?",
+          "answer": "Igen. Ha valakivel szeretne beszélni, az azonnali átkapcsolást vált ki, ahogy a 0 billentyűkód is, míg a ### élő ügyintézőt ér el. Ezek egyike sem igényli, hogy az asszisztens megértette volna a hívó tényleges kérését."
+        }
+      }
+    },
+    "e164": {
+      "term": "E.164",
+      "short": "Az ITU-T szabvány a telefonszámok nemzetközi leírására: plusz jel, országhívószám és nemzeti szám, legfeljebb tizenöt számjegy.",
+      "meta": {
+        "title": "E.164: a nemzetközi telefonszám-formátum",
+        "description": "Az E.164 meghatározza, hogyan írjuk le nemzetközileg a telefonszámokat: plusz, országhívószám, nemzeti szám, legfeljebb 15 számjegy. Miért normalizálnak rá a rendszerek, és miért nem azonosság bizonyítéka."
+      },
+      "title": "Mi az E.164 telefonszám-formátum?",
+      "definition": "Az E.164 az az ITU-T ajánlás, amely a nemzetközi nyilvános távközlési számozási tervet határozza meg: egy szám egy-három számjegyű országhívószámból és az azt követő nemzeti jelentős számból áll, összesen legfeljebb tizenöt számjeggyel. Kanonikus írott formájában a szám plusz jellel kezdődik, és nem tartalmaz szóközt, zárójelet vagy kötőjelet, például +3612345678. Ez az egyetlen egyértelmű módja annak, hogy egy számot úgy írjunk le, hogy a világ bármely pontjáról tárcsázható, tárolható és illeszthető legyen.",
+      "explanation": {
+        "heading": "Miért ragaszkodnak a rendszerek az E.164-hez?",
+        "p1": "Mert minden más írásmód kétértelmű. A „06 1 234 5678”, az „(1) 234-5678” és a „+36 1 234 5678” mind ugyanaz az előfizető lehet, de csak az utolsó értelmezhető anélkül, hogy tudnánk, hol állt az író, amikor leírta. Az olyan előtétszámok, mint a magyar 06 vagy a német 0, nemzeti tárcsázási konvenciók, és nem részei magának a számnak.",
+        "p2": "Az E.164-ben tárolt számok összehasonlíthatók. A kapcsolatok deduplikálása, egy beérkező hívószám illesztése egy meglévő rekordhoz és az irányítás mind azon múlik, hogy ugyanannak az előfizetőnek két különböző ábrázolása ugyanazt a karakterláncot adja. A szám szép megjelenítése kimeneti kérdés, amely ezután, kifelé menet történik.",
+        "p3": "A plusz jel jelölés, amelynek jelentése „ide jön egy nemzetközi előtét”, nem számjegy. Amikor a számot ténylegesen tárcsázzuk, a készülék vagy a hálózat behelyettesíti a helyi nemzetközi hozzáférési kódot, ami Európa nagy részén 00, Észak-Amerikában pedig 011. A tizenöt számjegyes maximum nem tartalmazza ezt az előtétet."
+      },
+      "example": {
+        "p1": "Ugyanaz a budapesti vezetékes szám, amelyet nemzetileg 06 1 234 5678 alakban írunk, E.164-ben +3612345678: országhívószám 36, nemzeti jelentős szám 12345678, és sehol egy előtétszám.",
+        "p2": "Egy 0151 23456789 alakban írt német mobil +4915123456789 lesz. A vezető 0 eltűnik, mert nemzeti előtétszám és nem része az előfizetői számnak. Ennek megtartása vagy egy olyan számjegy elhagyása, amely nem előtét volt, a leggyakoribb adatbeviteli hiba egy számlista normalizálásakor."
+      },
+      "velyric": {
+        "p1": "A Velyric a hívó E.164 országhívószámát kiindulási jelzésként használja ahhoz, hogy milyen nyelven köszönjön, és semmi többre. Egy kifejezett kérés, például a „magyarul kérem”, a hívó beszédében ténylegesen felismert nyelv és egy eltárolt preferred_language mind felülírja a jelzést, és a nyelv hívás közben is változhat.",
+        "p2": "A szám kifejezetten nem hitelesítés. A hívó telefonszáma kényelmi azonosító egy rekord megtalálásához; az érzékeny adatok vagy műveletek megerősített azonosítást vagy emberhez kapcsolást igényelnek. A hívói memória bérlőnként tárolódik, és soha nem kerül megosztásra bérlők között, így egy szám, amelyet az egyik cég ismer, a másiknak nem ismerős."
+      },
+      "mistake": {
+        "heading": "Megmondja az országhívószám, ki hív?",
+        "body": "Azt mondja meg, melyik ország számozási terve osztotta ki a számot, és ennyi az egész. Nem mondja meg, hol áll az illető, milyen nyelvet beszél, sem azt, hogy az, akinek a szám alapján látszik: egy Bécsben élő magyar megtartja a +36-os számát, a hívószám pedig hamisítható. Az országhívószámot a nyelvre vonatkozó első tippként kezelni ésszerű. Egy telefonszámot az azonosság bizonyítékaként kezelni biztonsági hiba."
+      },
+      "facts": {
+        "f1": { "term": "Szabvány", "value": "ITU-T E.164 ajánlás" },
+        "f2": {
+          "term": "Maximális hossz",
+          "value": "15 számjegy, országhívószám és nemzeti jelentős szám"
+        },
+        "f3": {
+          "term": "A Velyricben",
+          "value": "Csak kiindulási nyelvi jelzés, és soha nem hitelesítés"
+        }
+      },
+      "capability": {
+        "label": "Többnyelvű hang",
+        "description": "Hogyan választ nyelvet az asszisztens, és hogyan vált hívás közben."
+      },
+      "faq": {
+        "q1": {
+          "question": "Hogyan dönti el a Velyric, milyen nyelven köszönjön?",
+          "answer": "A hívó E.164 országhívószáma adja a kiindulási jelzést. Egy kifejezett kérés, a hívó beszédében ténylegesen felismert nyelv és egy eltárolt preferred_language mind felülírja, és a nyelv hívás közben is válthat."
+        },
+        "q2": {
+          "question": "Elég a telefonszám egy visszatérő hívó azonosításához?",
+          "answer": "Elég egy rekord megkereséséhez, nem elég ahhoz, hogy megbízzunk benne. A Velyric a számot kényelmi azonosítóként kezeli, az érzékeny adatok vagy műveletek pedig megerősített azonosítást vagy emberhez kapcsolást igényelnek."
+        },
+        "q3": {
+          "question": "Nekem magamnak kell E.164 formátumban megadnom a számokat?",
+          "answer": "A rendszerek belsőleg E.164-re normalizálnak, mert ez az egyetlen egyértelmű ábrázolás. A buktató, amelyre figyelni kell, a nemzeti előtétszám: a magyar 06 és a német vezető 0 tárcsázási konvenció, és az országhívószám hozzáadásakor eltűnik."
+        }
+      }
+    },
+    "concurrent-calls": {
+      "term": "Egyidejű hívások",
+      "short": "Hány hívás lehet ugyanabban a pillanatban kapcsolva; ez kapacitáskorlát, és semmi köze ahhoz, hány hívást kap egy nap alatt.",
+      "meta": {
+        "title": "Egyidejű hívások: mit jelent valójában a korlát",
+        "description": "Az egyidejű hívások azt mérik, hány hívás fut ugyanabban a pillanatban, nem azt, hányat kap. Hogyan méretezze a korlátot, és mekkorák a Velyric csomagok 2, 10 és 50 hívásos korlátai."
+      },
+      "title": "Mik az egyidejű hívások?",
+      "definition": "Az egyidejű hívások azoknak a telefonhívásoknak a száma, amelyek ugyanabban a pillanatban kapcsolva vannak egy fiókon, egy trunkön vagy egy telefonrendszeren. Ez kapacitásmérőszám és nem forgalommérőszám: egy cégnek, amely havi ezer hívást fogad, lehet, hogy soha nincs szüksége kettőnél többre egyszerre, míg egy másiknak, amely kétszázat fogad, tízre is szüksége lehet, ha mind ugyanabban az órában érkezik. A kapacitás dönti el, hogy a hívó egyáltalán bejut-e; a forgalom csak azt, mennyit számláznak.",
+      "explanation": {
+        "heading": "Hány egyidejű hívásra van szüksége valójában egy cégnek?",
+        "p1": "Az őszinte válasz az érkezési mintázattól és a híváshossztól függ, nem a havi összegektől. A forgalmi intenzitás a kettő szorzata: száz hívás a legforgalmasabb órában, egyenként átlagosan három perccel, öt erlang terhelést jelent, és pontosan öt csatornára méretezni még mindig elutasított hívókat eredményezne, mert az érkezések csomósodnak, nem pedig udvariasan elosztva jönnek. Az Erlang B a szabványos képlet arra, hogy egy célzott blokkolási valószínűségből csatornaszámot kapjunk.",
+        "p2": "A valódi telefonforgalom olyan módon csúcsos, amit az átlagok elrejtenek. A hívások a nyitvatartást, a hirdetéseket, az időjárást követik, és aki időpontokat vesz fel, annál a hétfői nyitás utáni első órát. A forgalmas órás érték az, ami számít, és ez általában a napi átlag többszöröse.",
+        "p3": "Hogy mi történjen túlcsorduláskor, az külön tervezési döntés, és ez az, amit a hívó megtapasztal. A lehetőségek: foglalt jelzés, sor, átirányítás egy másik számra, visszahívási ígéret vagy hangposta. Mindegyik a hívó türelmét váltja egy elvesztett hívásra, és ha egyiket sem választjuk, azzal alapértelmezésben a foglalt jelzést választottuk."
+      },
+      "example": {
+        "p1": "Egy fogorvosi rendelő hétfőn nagyjából hatvan hívást fogad. Ebből tizenöt 8:00 és 9:00 között érkezik, egyenként átlagosan négy perccel. Már ez az egy óra egy erlang átlagos terhelést hordoz, de az érkezések csomósodnak, így két egyidejű csatorna időnként betelik, miközben tíz egész délután üresen állna.",
+        "p2": "Ugyanez a rendelő havi hatszáz, egyenletesen elosztott hívással sokkal kisebb kapacitást igényelne ugyanahhoz az összmennyiséghez. A forgalom és a kapacitás valóban független mennyiségek, és csak az egyikük dönti el, hogy a telefon kicseng-e."
+      },
+      "velyric": {
+        "p1": "A Velyric egyidejűségi korlátját a csomag állítja be: 2 egyszerre futó hívás a Starton, 10 a Businessen, 50 a Prón, és 100 vagy több az Enterprise-on szerződéses keretek között. Ez kereskedelmi korlát, nem technikai plafon, és az egyidejűség-bővítés fizetős kiegészítőként elérhető.",
+        "p2": "A korlát fölötti hullámok a bérlő által választott szabályt követik, amely lehet rövid sor, túlcsordulási szám, visszahívás vagy hangposta, nem pedig egyetlen rögzített viselkedés. A párhuzamos hívások teljesen elkülönülnek: mindegyiknek saját call_id-je, AI-munkamenete, beszélgetési állapota és nyomvonala van, így az egyik hívás hibája nem hathat a másikra. Minden hívás 1800 másodpercben van korlátozva minden csomagban."
+      },
+      "mistake": {
+        "heading": "Az egyidejűségi korlát ugyanaz, mint a benne foglalt percek?",
+        "body": "Nem, és ezek összekeverése a leggyakoribb méretezési hiba. A benne foglalt percek forgalom: mennyi beszédet fedez a csomag, mielőtt a percalapú túlhasználati díj életbe lép. Az egyidejűség kapacitás: ezekből a percekből hány beszélhető el ugyanabban a pillanatban. Egy csomagban maradhat rengeteg perc, és mégis elutasíthat egy hívót, mert minden egyidejű hely foglalt, és erre nem több perc a megoldás, hanem magasabb csomag vagy az egyidejűség-bővítés kiegészítő."
+      },
+      "facts": {
+        "f1": {
+          "term": "Csomaghatárok",
+          "value": "Start 2, Business 10, Pro 50, Enterprise 100 vagy több"
+        },
+        "f2": {
+          "term": "A korlát fölött",
+          "value": "Bérlői szabály: rövid sor, túlcsordulási szám, visszahívás vagy hangposta"
+        },
+        "f3": {
+          "term": "Nem azonos ezzel",
+          "value": "A benne foglalt beszédpercek, amelyek forgalmat mérnek, nem kapacitást"
+        }
+      },
+      "capability": {
+        "label": "Csomagok és árak",
+        "description": "Benne foglalt percek, túlhasználati díjak és az egyidejűségi korlát csomagonként."
+      },
+      "faq": {
+        "q1": {
+          "question": "Hány hívást tud a Velyric egyszerre kezelni?",
+          "answer": "Ez a csomagtól függ: 2 egyidejű hívás a Starton, 10 a Businessen, 50 a Prón, és 100 vagy több az Enterprise-on szerződéses keretek között. Az egyidejűség-bővítés fizetős kiegészítőként elérhető, ha a csomaghatár a szűk keresztmetszet, nem a percek."
+        },
+        "q2": {
+          "question": "Mi történik, ha több hívó érkezik, mint amennyit a korlát enged?",
+          "answer": "A korlát fölötti hullámok a bérlő által választott szabályt követik: rövid sor, túlcsordulási szám, visszahívás vagy hangposta. Az egyidejűség a csomag kereskedelmi korlátja, nem a platform technikai plafonja."
+        },
+        "q3": {
+          "question": "Zavarják egymást a párhuzamos hívások?",
+          "answer": "Nem. Minden hívásnak saját call_id-je, AI-munkamenete, beszélgetési állapota és nyomvonala van, így az egyik hívás hibája nem hathat a másikra. Minden hívás 1800 másodpercben is korlátozva van, ami behatárolja, meddig foglalhat egyetlen hívás egy egyidejűségi helyet."
+        }
+      }
+    },
+    "rag": {
+      "term": "RAG (visszakereséssel bővített generálás)",
+      "short": "A saját dokumentumaiból visszakeresett releváns részletek átadása a modellnek a válaszadás pillanatában, hogy a válasz az Ön anyagában legyen megalapozva.",
+      "meta": {
+        "title": "RAG: a visszakereséssel bővített generálás elmagyarázva",
+        "description": "A RAG a saját dokumentumaiból keres vissza részleteket, és a válaszadáskor adja át őket a modellnek. A betöltési folyamat, a darabolás, a bérlői szűrés és a Velyric nincs-válasz szabálya."
+      },
+      "title": "Mi a visszakereséssel bővített generálás (RAG)?",
+      "definition": "A visszakereséssel bővített generálás, azaz RAG, olyan technika, amelyben a rendszer egy külső dokumentumhalmazban keresi meg a kérdés szempontjából releváns részleteket, és ezeket a részleteket kontextusként átadja egy nyelvi modellnek, mielőtt az válaszolna. A modell ezután abból az anyagból generál, amelyet átadtak neki, nem csak abból, amit a tanítás során felvett. A gyakorlati előnyök: a válasz visszavezethető valami konkrétra, a korpusz frissíthető anélkül, hogy bármit újra kellene tanítani, és a korpuszhoz való hozzáférés felhasználónként vagy bérlőnként korlátozható.",
+      "explanation": {
+        "heading": "Mi történik a kérdés és a válasz között?",
+        "p1": "Először a betöltés jön, és ez határoz meg szinte mindent utána. A dokumentumokat szöveggé alakítjuk, olyan darabokra bontjuk, amelyek elég kicsik a pontossághoz, de elég nagyok ahhoz, hogy önmagukban is megálljanak, metaadattal gazdagítjuk, beágyazási vektorrá alakítjuk és indexbe írjuk. A darabolás az, ahol a minőség nagy része eldől: az a darab, amely elválasztja az árat attól a szolgáltatástól, amelyhez tartozik, magabiztosan kerül vissza, és rosszul válaszol.",
+        "p2": "A válaszadáskor a kérdést ugyanúgy beágyazzuk, az index visszaadja a legközelebbi darabokat, és ezek a darabok a modell kontextusába kerülnek. A visszakeresés keresési probléma a szokásos hibamódokkal: a dokumentumtól eltérően megfogalmazott kérdés, olyan kifejezés, amelyet a korpusz sosem használ, vagy egy dokumentum, amelyet egyszerűen soha nem töltöttek fel.",
+        "p3": "Az üres eset szabálya az, ami elválasztja a használható rendszert a veszélyestől. Ha a visszakeresés semmi relevánsat nem ad vissza, egy megalapozás nélkül hagyott modell akkor is gördülékeny választ állít elő, mert a gördülékenység nem azonos a tudással. Az az előzetes döntés, hogy inkább pontosító kérdést tegyen fel vagy eszkaláljon, tervezési döntés, nem modellképesség."
+      },
+      "example": {
+        "p1": "Egy étterem feltölti az étlapját PDF-ben, és engedi, hogy a weboldalát bejárják. Egy hívó megkérdezi, van-e valami gluténmentes. A kérdést az étlap darabjaihoz illesztjük, a két releváns részlet visszakerül, és a válasz a tényleges fogásokat nevezi meg ahelyett, hogy azt mondaná, „több lehetőségünk is van”.",
+        "p2": "A következő hívó azt kérdezi, fűtött-e a terasz. Sem az étlapon, sem a weboldalon nincs róla szó. Egy megalapozott rendszer ezt mondja meg és felajánlja az átkapcsolást; egy megalapozatlan hihető választ ad, a hívó pedig hideg teraszhoz érkezik."
+      },
+      "velyric": {
+        "p1": "A Velyric PDF-et, DOCX-et, TXT-t és Markdownt, CSV-t, kézzel írt kérdés-válasz bejegyzéseket és weboldalcímeket tölt be. A weboldalakat előbb sitemap alapján járja be, ennek hiányában az azonos oldalon lévő aloldalak linkjeit követve, és a lapon talált schema.org JSON-LD adatokat — például címet, nyitvatartást és étlapot — strukturált tényként vonja ki. A folyamat: kártevőkeresés, értelmezés, személyes adatok és biztonsági vizsgálat, darabolás, metaadat, beágyazás és index.",
+        "p2": "A források verziózottak: egy új dokumentumverzió atomi módon váltja le a régi darabokat az aktív indexben, így nincs olyan időablak, amelyben mindkettő élne. Minden visszakeresés bérlőre szűrt. Ha nem található alátámasztó forrás, az asszisztens pontosító kérdést tesz fel vagy emberhez adja a hívást, ahelyett hogy találgatna. A dokumentumokat és a hívó szövegét nem megbízható bemenetként kezeli, így egy dokumentumba rejtett utasítás nem változtathatja meg az asszisztens szabályait, az eszközjogosultságok pedig kódban élnek, nem a promptban."
+      },
+      "mistake": {
+        "heading": "Megakadályozza a RAG, hogy a modell kitaláljon dolgokat?",
+        "body": "Csökkenti a lehetőséget; önmagában nem szünteti meg. A RAG megváltoztatja, mi van a modell előtt, de a modell attól még félreolvashat egy visszakeresett részletet, összegyúrhat két olyan darabot, amelyet nem lett volna szabad, vagy magabiztosan válaszolhat, amikor a visszakeresés semmi hasznosat nem adott vissza. Ami valójában megakadályozza a kitalálást, az az üres eset szabálya — a Velyricben pontosító kérdés vagy emberhez adás —, együtt azzal a darabolással, amely épen hagyja a tényeket, és azzal a visszakereséssel, amely a megfelelő bérlőre van szűrve."
+      },
+      "facts": {
+        "f1": {
+          "term": "Folyamat",
+          "value": "Kártevőkeresés, értelmezés, személyesadat-vizsgálat, darabolás, metaadat, beágyazás, index"
+        },
+        "f2": { "term": "Elkülönítés", "value": "Minden visszakeresés a bérlőre van szűrve" },
+        "f3": {
+          "term": "Nincs-válasz szabály",
+          "value": "Pontosító kérdés vagy emberhez adás, soha nem találgatás"
+        }
+      },
+      "capability": {
+        "label": "A Velyric termék",
+        "description": "A tudásbázis, a műveletkészlet, és hogyan lesz megalapozott egy válasz."
+      },
+      "faq": {
+        "q1": {
+          "question": "Mit tölthetek fel tudásként?",
+          "answer": "PDF-et, DOCX-et, TXT-t és Markdownt, CSV-t, kézzel írt kérdés-válasz bejegyzéseket és weboldalcímeket. A weboldalforrásokat előbb sitemap alapján járjuk be, egyébként az azonos oldalon lévő aloldalak linkjeit követve, és minden lapot kártevőre vizsgálunk, értelmezünk és darabolunk, mielőtt indexbe kerülne."
+        },
+        "q2": {
+          "question": "Mi történik, ha frissítek egy dokumentumot?",
+          "answer": "Az új verzió atomi módon váltja le a régi darabokat az aktív indexben, így az asszisztens soha nem válaszol a régi és az új keverékéből. A dokumentumok verziózva vannak, nem helyben felülírva, ami azt is jelenti, hogy egy változás különálló esemény, nem fokozatos elsodródás."
+        },
+        "q3": {
+          "question": "Elrejthet valaki utasításokat egy dokumentumban, hogy megváltoztassa az asszisztens viselkedését?",
+          "answer": "Nem. A dokumentumokat és a hívó szövegét nem megbízható bemenetként kezeljük: a dokumentumon belüli utasítások nem változtathatják meg az asszisztens szabályait, azt pedig, hogy mely eszközöket hívhatja meg, kódban érvényesítjük, nem a promptban."
+        }
+      }
+    }
+  }
+}

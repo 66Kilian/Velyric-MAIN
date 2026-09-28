@@ -1,0 +1,263 @@
+{
+  "callOutcome": {
+    "RESOLVED": "Resolved",
+    "INFORMATION_PROVIDED": "Information provided",
+    "BOOKING_CREATED": "Appointment booked",
+    "BOOKING_CHANGED": "Appointment changed",
+    "BOOKING_CANCELED": "Appointment canceled",
+    "WAITLISTED": "Added to waitlist",
+    "LEAD_CAPTURED": "Lead captured",
+    "CALLBACK_REQUESTED": "Callback requested",
+    "MESSAGE_TAKEN": "Message taken",
+    "TRANSFERRED_TO_HUMAN": "Transferred to a person",
+    "UNRESOLVED": "Unresolved",
+    "ABANDONED": "Abandoned",
+    "SPAM": "Spam",
+    "POLICY_BLOCKED": "Blocked by policy",
+    "FAILED": "Failed"
+  },
+  "callIntent": {
+    "BOOKING": "Booking",
+    "SUPPORT": "Support",
+    "SALES": "Sales",
+    "LEAD": "Leads",
+    "BILLING": "Billing",
+    "GENERAL_INQUIRY": "General inquiry",
+    "HUMAN_REQUEST": "Asked for a person",
+    "SPAM": "Spam",
+    "OTHER": "Other"
+  },
+  "callStatus": {
+    "INITIATED": "Starting",
+    "QUEUED": "Queued",
+    "IN_PROGRESS": "In progress",
+    "TRANSFERRING": "Transferring",
+    "TRANSFERRED": "Transferred",
+    "COMPLETED": "Completed",
+    "FAILED": "Failed",
+    "REJECTED": "Rejected",
+    "ABANDONED": "Abandoned"
+  },
+  "callChannel": {
+    "PSTN": "Phone",
+    "WEB_VOICE": "Web voice",
+    "SIMULATION": "Simulation"
+  },
+  "callEndReason": {
+    "CALLER_HANGUP": "Caller hung up",
+    "AGENT_HANGUP": "Assistant ended the call",
+    "TRANSFER_COMPLETED": "Transfer completed",
+    "MAX_DURATION_REACHED": "Maximum duration reached",
+    "SILENCE_TIMEOUT": "Silence timeout",
+    "SPEND_CAP_REACHED": "Spending limit reached",
+    "TOOL_BUDGET_EXHAUSTED": "Tool limit reached",
+    "KILL_SWITCH": "Disabled for safety",
+    "OPERATOR_TERMINATED": "Ended by operator",
+    "POLICY_VIOLATION": "Policy violation",
+    "ADMISSION_REJECTED": "Not admitted",
+    "QUEUE_TIMEOUT": "Queue timeout",
+    "PROVIDER_FAILURE": "Provider failure",
+    "RUNTIME_FAILURE": "System failure",
+    "ORPHAN_RECONCILED": "Closed by reconciliation"
+  },
+  "tenantStatus": {
+    "PROVISIONING": "Setting up",
+    "ACTIVE": "Active",
+    "PAYMENT_AT_RISK": "Payment at risk",
+    "GRACE_PERIOD": "Grace period",
+    "RESTRICTED": "Restricted",
+    "SUSPENDED_BILLING": "Suspended for billing",
+    "SUSPENDED_DISPUTE": "Suspended for dispute",
+    "SUSPENDED_RISK": "Suspended for review",
+    "SUSPENDED_ADMIN": "Suspended",
+    "CANCELED_GRACE": "Canceled",
+    "DATA_RETENTION": "Data retention",
+    "DELETION": "Being deleted",
+    "DELETED": "Deleted"
+  },
+  "role": {
+    "OWNER": "Owner",
+    "ADMIN": "Admin",
+    "OPERATOR": "Operator",
+    "ANALYST": "Analyst",
+    "DEVELOPER": "Developer",
+    "BILLING": "Billing",
+    "VIEWER": "Viewer"
+  },
+  "planCode": {
+    "START": "Start",
+    "BUSINESS": "Business",
+    "PRO": "Pro",
+    "ENTERPRISE": "Enterprise"
+  },
+  "agentStatus": {
+    "DRAFT": "Draft",
+    "ACTIVE": "Active",
+    "PAUSED": "Paused",
+    "ARCHIVED": "Archived"
+  },
+  "agentVersionStatus": {
+    "DRAFT": "Draft",
+    "VALIDATING": "Validating",
+    "VALIDATION_FAILED": "Validation failed",
+    "STAGING": "Staging",
+    "CANARY": "Canary",
+    "PRODUCTION": "Production",
+    "SUPERSEDED": "Superseded",
+    "ROLLED_BACK": "Rolled back",
+    "ARCHIVED": "Archived"
+  },
+  "knowledgeSourceStatus": {
+    "PENDING_UPLOAD": "Waiting for upload",
+    "QUEUED": "Queued",
+    "SCANNING": "Security scan",
+    "PARSING": "Reading",
+    "CHUNKING": "Splitting",
+    "EMBEDDING": "Indexing",
+    "READY": "Ready",
+    "ACTIVE": "Active",
+    "FAILED": "Failed",
+    "QUARANTINED": "Quarantined",
+    "SUPERSEDED": "Superseded",
+    "ARCHIVED": "Archived",
+    "DELETING": "Deleting"
+  },
+  "knowledgeSourceType": {
+    "FILE_PDF": "PDF document",
+    "FILE_DOCX": "Word document",
+    "FILE_TXT": "Text file",
+    "FILE_MARKDOWN": "Markdown file",
+    "FILE_CSV": "Spreadsheet (CSV)",
+    "URL": "Web page",
+    "WEBSITE": "Website",
+    "FAQ": "FAQ",
+    "MANUAL_QA": "Questions and answers"
+  },
+  "knowledgeFreshness": {
+    "FRESH": "Fresh",
+    "STALE": "Stale",
+    "EXPIRED": "Expired",
+    "UNKNOWN": "Unknown"
+  },
+  "phoneNumberStatus": {
+    "PROVISIONING": "Setting up",
+    "PORTING_IN": "Porting in",
+    "ACTIVE": "Active",
+    "SUSPENDED": "Suspended",
+    "RETENTION_HOLD": "On hold",
+    "RELEASE_PENDING": "Release pending",
+    "RELEASED": "Released"
+  },
+  "phoneOrderStatus": {
+    "NUMBER_SELECTED": "Number selected",
+    "RESERVED": "Reserved",
+    "ORDER_SUBMITTED": "Order submitted",
+    "KYC_REQUIRED": "Details required",
+    "UNDER_REVIEW": "Under review",
+    "APPROVED": "Approved",
+    "DECLINED": "Declined",
+    "NO_INVENTORY": "Unavailable",
+    "FAILED": "Failed",
+    "CANCELED": "Canceled"
+  },
+  "kycRequirementStatus": {
+    "NOT_REQUIRED": "Not required",
+    "REQUIRED": "Required",
+    "SUBMITTED": "Submitted",
+    "UNDER_REVIEW": "Under review",
+    "APPROVED": "Approved",
+    "DECLINED": "Declined",
+    "EXPIRED": "Expired"
+  },
+  "provisioningState": {
+    "ORDER_CREATED": "Order created",
+    "PAYMENT_PENDING": "Waiting for payment",
+    "PAYMENT_CONFIRMED": "Payment confirmed",
+    "BILLING_PENDING": "Preparing invoice",
+    "BILLING_DOCUMENT_CREATED": "Invoice issued",
+    "TENANT_PROVISIONING": "Preparing workspace",
+    "TENANT_CREATED": "Workspace ready",
+    "OPENAI_PROJECT_PROVISIONING": "Preparing AI project",
+    "OPENAI_SERVICE_ACCOUNT_PROVISIONING": "Securing AI access",
+    "OPENAI_READY": "AI ready",
+    "PHONE_RESERVING": "Reserving phone number",
+    "PHONE_ORDERING": "Ordering phone number",
+    "PHONE_KYC_REQUIRED": "Details required for the number",
+    "WAITING_FOR_CUSTOMER": "Waiting for you",
+    "PHONE_UNDER_REVIEW": "Number under review",
+    "WAITING_FOR_PROVIDER": "Waiting for the carrier",
+    "PHONE_READY": "Phone number active",
+    "SIP_AGENT_BINDING": "Connecting the assistant",
+    "AGENT_READY": "Assistant ready",
+    "TEST_CALL_READY": "Ready for a test call",
+    "GO_LIVE_ELIGIBLE": "Ready to go live",
+    "ACTIVE": "Live",
+    "MANUAL_REVIEW_REQUIRED": "Our team is reviewing",
+    "COMPENSATING": "Rolling back",
+    "COMPENSATED": "Rolled back",
+    "CANCELED": "Canceled"
+  },
+  "subscriptionStatus": {
+    "INCOMPLETE": "Incomplete",
+    "INCOMPLETE_EXPIRED": "Expired",
+    "TRIALING": "Trial",
+    "ACTIVE": "Active",
+    "PAST_DUE": "Payment overdue",
+    "UNPAID": "Unpaid",
+    "PAUSED": "Paused",
+    "CANCELED": "Canceled"
+  },
+  "bookingStatus": {
+    "PENDING_DEPOSIT": "Awaiting deposit",
+    "CONFIRMED": "Confirmed",
+    "CANCELED": "Canceled",
+    "NO_SHOW": "No-show",
+    "COMPLETED": "Completed"
+  },
+  "integrationStatus": {
+    "PENDING_AUTHORIZATION": "Waiting for authorization",
+    "CONNECTED": "Connected",
+    "DEGRADED": "Degraded",
+    "AUTH_EXPIRED": "Reconnect required",
+    "REVOKED": "Revoked",
+    "DISCONNECTED": "Disconnected",
+    "ERROR": "Error"
+  },
+  "toolSideEffectClass": {
+    "READ": "Read only",
+    "WRITE": "Changes data",
+    "HIGH_RISK_WRITE": "High-risk change",
+    "EXTERNAL_COMMUNICATION": "Sends messages"
+  },
+  "toolConfirmationPolicy": {
+    "NONE": "No confirmation",
+    "CALLER_CONFIRMATION": "Caller confirms",
+    "CALLER_CONFIRMATION_WITH_VERIFICATION": "Caller confirms after verification",
+    "HUMAN_APPROVAL": "Staff approval"
+  },
+  "conversationState": {
+    "GREETING": "Greeting",
+    "DISCOVERY": "Understanding the request",
+    "IDENTITY": "Identity check",
+    "ACTION_PREVIEW": "Preparing action",
+    "CONFIRMATION_GATE": "Waiting for confirmation",
+    "TOOL_EXECUTION": "Working on it",
+    "RESULT_CONFIRMATION": "Confirming result",
+    "FOLLOW_UP": "Follow-up",
+    "HANDOFF": "Handing off",
+    "SAFE_FAILURE": "Recovering",
+    "CLOSING": "Closing",
+    "END": "Ended"
+  },
+  "vertical": {
+    "restaurant": "Restaurants",
+    "dental-clinic": "Dental clinics",
+    "auto-service": "Auto service",
+    "car-detailing": "Car detailing",
+    "salon": "Beauty salons",
+    "hotel": "Hotels",
+    "real-estate": "Real estate",
+    "webshop": "Webshops",
+    "b2b-support": "B2B support"
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "navLabel": "Legal documents",
+  "updated": "Last updated: {date}",
+  "operator": "Service provider: {entity}, {address}. Company registration: {registration}. Tax number: {taxNumber}. Privacy contact: {email}.",
+  "status": {
+    "title": "Service status",
+    "body": "The public status page is not configured for this environment. Contact support if you experience an outage.",
+    "overallOperational": "All systems operational",
+    "overallIssues": "Some systems are experiencing issues",
+    "monitorUp": "Operational",
+    "monitorDown": "Down",
+    "uptime": "Uptime"
+  },
+  "privacy": {
+    "short": "Privacy",
+    "title": "Privacy Notice",
+    "updated": "2026-09-01",
+    "intro": "This notice explains how {entity} processes personal data when you visit our website, create an account or use the Velyric platform, and how call data is processed on behalf of our customers.",
+    "s1": {
+      "heading": "1. Our roles",
+      "body": "For website visitors, account holders and billing contacts we act as data controller. For calls, transcripts, contacts and bookings handled by a customer's voice agents we act as data processor on behalf of that customer, who is the controller for those callers."
+    },
+    "s2": {
+      "heading": "2. Data we process",
+      "body": "Account data (name, email, role, authentication events), billing data (company details, tax numbers, invoices, payment status), usage and security logs (IP address, device information, audit events) and, as processor, call data (phone number, audio stream, transcripts, summaries, tool results, bookings)."
+    },
+    "s3": {
+      "heading": "3. Purposes and legal bases",
+      "body": "We process account and billing data to perform our contract with customers (GDPR Art. 6(1)(b)), to meet accounting and tax obligations (Art. 6(1)(c)), and to secure and improve the service based on legitimate interests (Art. 6(1)(f)). Marketing communication is sent only with consent."
+    },
+    "s4": {
+      "heading": "4. AI processing",
+      "body": "Calls are answered by AI models. Callers are informed at the start of each call that they are speaking with an AI assistant. Customer call data is not used to train general-purpose models."
+    },
+    "s5": {
+      "heading": "5. Recipients and sub-processors",
+      "body": "We use carefully selected providers for cloud hosting, speech and language AI, telephony, payment processing, invoicing, authentication and email delivery. The current list of sub-processors is part of our Data Processing Agreement. International transfers rely on adequacy decisions or standard contractual clauses."
+    },
+    "s6": {
+      "heading": "6. Retention",
+      "body": "Account data is kept for the duration of the customer relationship. Invoices are kept for the period required by Hungarian accounting law. Call recordings, transcripts and summaries are kept according to the retention settings of each workspace and deleted afterwards unless a legal hold applies."
+    },
+    "s7": {
+      "heading": "7. Your rights",
+      "body": "You may request access, rectification, erasure, restriction, portability and object to processing. Callers of our customers should contact the business they called; we support our customers in answering such requests. You also have the right to lodge a complaint with the Hungarian National Authority for Data Protection and Freedom of Information (NAIH)."
+    },
+    "s8": {
+      "heading": "8. Contact",
+      "body": "For privacy questions or to exercise your rights, write to {email}."
+    }
+  },
+  "terms": {
+    "short": "Terms",
+    "title": "Terms of Service",
+    "updated": "2026-09-01",
+    "intro": "These terms govern the use of the Velyric platform provided by {entity} to business customers.",
+    "s1": {
+      "heading": "1. The service",
+      "body": "Velyric provides AI voice agents, phone numbers, booking, knowledge, integration, analytics and related features as described for the selected plan. Features may evolve; material reductions of paid functionality will be announced in advance."
+    },
+    "s2": {
+      "heading": "2. Accounts and access",
+      "body": "The service is intended for businesses. You are responsible for the members you invite, the roles you assign and the confidentiality of API keys. You must notify us without delay of any unauthorized access."
+    },
+    "s3": {
+      "heading": "3. Fees and billing",
+      "body": "Plans are billed monthly in advance; usage above included minutes and add-ons are billed according to the price list in force. Invoices are issued electronically. If payment fails, the service may be restricted and later suspended after prior notice."
+    },
+    "s4": {
+      "heading": "4. Customer obligations",
+      "body": "You must configure the AI disclosure, obtain any consents required for recording or processing callers' data, keep your knowledge and business information accurate and use transfers to reach a human where required by law."
+    },
+    "s5": {
+      "heading": "5. Acceptable use",
+      "body": "You may not use the service for unlawful, deceptive or harassing calls, unsolicited marketing without a legal basis, emergency services, or to process payment card data outside the dedicated features. We may suspend traffic that endangers callers, carriers or the platform."
+    },
+    "s6": {
+      "heading": "6. Availability and support",
+      "body": "We operate the service with redundancy and monitoring and perform maintenance with minimal disruption. Contractual service levels apply only where agreed in an Enterprise agreement."
+    },
+    "s7": {
+      "heading": "7. Liability",
+      "body": "AI agents can make mistakes. You remain responsible for decisions made on the basis of calls and bookings. To the extent permitted by law, our aggregate liability is limited to the fees paid in the twelve months before the event giving rise to the claim; liability for intent and gross negligence is not limited."
+    },
+    "s8": {
+      "heading": "8. Term, termination and governing law",
+      "body": "Subscriptions renew monthly until canceled. On termination, phone numbers are held for a retention period and customer data is deleted according to the Data Processing Agreement. These terms are governed by Hungarian law; the competent courts of Budapest have jurisdiction."
+    }
+  },
+  "dpa": {
+    "short": "DPA",
+    "title": "Data Processing Agreement",
+    "updated": "2026-09-01",
+    "intro": "This agreement forms part of the contract between the customer as controller and {entity} as processor under Article 28 GDPR.",
+    "s1": {
+      "heading": "1. Subject matter and duration",
+      "body": "The processor processes personal data to provide the Velyric service for the duration of the contract and any agreed retention period thereafter."
+    },
+    "s2": {
+      "heading": "2. Categories of data and data subjects",
+      "body": "Data subjects are callers, website visitors using web voice, contacts, the customer's employees and booking participants. Data includes phone numbers, voice audio, transcripts, summaries, contact details, booking details and information provided during calls."
+    },
+    "s3": {
+      "heading": "3. Instructions and confidentiality",
+      "body": "The processor processes data only on documented instructions of the controller, including the configuration made in the dashboard. Personnel with access are bound by confidentiality."
+    },
+    "s4": {
+      "heading": "4. Security measures",
+      "body": "Measures include tenant isolation at database level, encryption in transit and at rest, managed secret storage, role-based access control, audit logging, redaction of sensitive data, monitoring and incident response procedures."
+    },
+    "s5": {
+      "heading": "5. Sub-processors",
+      "body": "The controller authorizes the use of sub-processors for cloud infrastructure, speech and language AI, telephony, payments, invoicing, authentication and email. The processor will inform the controller of intended changes and give an opportunity to object."
+    },
+    "s6": {
+      "heading": "6. Assistance and data subject requests",
+      "body": "The processor provides export, erasure and retention features and assists the controller in responding to data subject requests, impact assessments and consultations with supervisory authorities."
+    },
+    "s7": {
+      "heading": "7. Personal data breaches",
+      "body": "The processor notifies the controller without undue delay after becoming aware of a personal data breach and provides the information needed for the controller's notification obligations."
+    },
+    "s8": {
+      "heading": "8. Deletion, audits and contact",
+      "body": "At the end of the service the processor deletes or returns personal data as configured, unless retention is required by law. The controller may request information necessary to demonstrate compliance. Contact: {email}."
+    }
+  }
+}

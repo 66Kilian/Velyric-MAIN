@@ -1,0 +1,181 @@
+{
+  "title": "Kontakte",
+  "description": "Anrufer, die über Anrufe, Buchungen und Wartelisten hinweg erkannt wurden, mit ihrer Einwilligungs- und Datenschutzhistorie.",
+  "searchPlaceholder": "Nach Name, Telefonnummer oder E-Mail suchen",
+  "empty": "Noch keine Kontakte",
+  "emptyDescription": "Kontakte erscheinen automatisch, sobald Anrufer Ihre Agenten erreichen oder einen Termin buchen.",
+  "noMatches": "Keine passenden Kontakte",
+  "noMatchesDescription": "Versuchen Sie einen anderen Namen, eine andere Telefonnummer oder E-Mail-Adresse.",
+  "unnamed": "Unbenannter Anrufer",
+  "sharedPhone": "Geteiltes Telefon",
+  "back": "Alle Kontakte",
+  "since": "Bekannt seit {date}",
+  "export": "Daten exportieren",
+  "columns": {
+    "name": "Name",
+    "identities": "Telefon und E-Mail",
+    "language": "Sprache",
+    "trust": "Vertrauen",
+    "lastInteraction": "Letzter Kontakt"
+  },
+  "trust": {
+    "UNVERIFIED": "Nicht verifiziert",
+    "PARTIALLY_VERIFIED": "Teilweise verifiziert",
+    "VERIFIED": "Verifiziert"
+  },
+  "profile": {
+    "title": "Profil",
+    "saved": "Kontakt aktualisiert",
+    "displayName": "Anzeigename",
+    "preferredLanguage": "Bevorzugte Sprache",
+    "languageUnknown": "Nicht bekannt",
+    "memory": "Anrufergedächtnis",
+    "memoryHint": "Agenten dürfen diesen Anrufer mit Namen begrüßen und seine Präferenzen bei späteren Anrufen wiederverwenden.",
+    "verification": {
+      "CALLER_PROVIDED": "Vom Anrufer angegeben",
+      "CONNECTOR_VERIFIED": "Durch eine Integration bestätigt",
+      "CRM_VERIFIED": "Durch das CRM bestätigt",
+      "EMAIL_VERIFIED": "Per E-Mail bestätigt",
+      "HUMAN_VERIFIED": "Von Ihrem Team bestätigt",
+      "INFERRED": "Aus dem Gespräch abgeleitet",
+      "OBSERVED": "Bei einem Anruf beobachtet",
+      "OTP_VERIFIED": "Mit Einmalcode bestätigt"
+    }
+  },
+  "identities": {
+    "title": "Kennungen",
+    "empty": "Keine Telefonnummern oder E-Mail-Adressen verknüpft.",
+    "add": "Kennung hinzufügen",
+    "addTitle": "Kennung hinzufügen",
+    "addDescription": "Verknüpfen Sie eine Telefonnummer, E-Mail-Adresse oder externe ID, die zu diesem Kontakt gehört.",
+    "added": "Kennung hinzugefügt",
+    "type": "Typ",
+    "value": "Wert",
+    "remove": "Kennung entfernen",
+    "removeTitle": "Kennung entfernen?",
+    "removeDescription": "{value} wird bei künftigen Anrufen nicht mehr diesem Kontakt zugeordnet.",
+    "types": {
+      "PHONE": "Telefon",
+      "EMAIL": "E-Mail",
+      "EXTERNAL_ID": "Externe ID"
+    },
+    "hints": {
+      "PHONE": "Internationales Format, zum Beispiel +49 30 1234567.",
+      "EMAIL": "Die Adresse, an die der Kontakt Bestätigungen erhält.",
+      "EXTERNAL_ID": "Die Kennung dieser Person in Ihrem CRM oder Buchungssystem."
+    },
+    "states": {
+      "CALLER_PROVIDED": "vom Anrufer angegeben",
+      "CONNECTOR_VERIFIED": "per Integration verifiziert",
+      "CRM_VERIFIED": "per CRM verifiziert",
+      "EMAIL_VERIFIED": "per E-Mail verifiziert",
+      "HUMAN_VERIFIED": "vom Team verifiziert",
+      "INFERRED": "abgeleitet",
+      "OBSERVED": "beobachtet",
+      "OTP_VERIFIED": "per Code verifiziert"
+    },
+    "sources": {
+      "CALLER_ID": "Rufnummernanzeige",
+      "DASHBOARD": "Dashboard",
+      "VOICE_AGENT": "Sprachagent",
+      "PUBLIC_API": "API",
+      "CRM": "CRM"
+    }
+  },
+  "merge": {
+    "action": "Zusammenführen",
+    "title": "Doppelten Kontakt zusammenführen",
+    "description": "Alle Anrufe, Buchungen, Kennungen und Anfragen dieses Kontakts werden in einen anderen verschoben. Einwilligungseinträge bleiben mit der ursprünglichen Historie verbunden.",
+    "searchPlaceholder": "Zu behaltenden Kontakt suchen",
+    "results": "Passende Kontakte",
+    "noResults": "Keine anderen Kontakte entsprechen dieser Suche.",
+    "unnamed": "Unbenannter Anrufer",
+    "noIdentities": "Keine Kennungen",
+    "warning": "Dieser Kontakt wird mit {name} zusammengeführt. Der Vorgang wird im Audit-Log protokolliert und kann im Dashboard nicht rückgängig gemacht werden.",
+    "confirm": "Kontakte zusammenführen",
+    "merged": "Kontakte zusammengeführt"
+  },
+  "erasure": {
+    "action": "Löschantrag",
+    "title": "Löschantrag erfassen",
+    "description": "Personenbezogene Daten werden innerhalb von 30 Tagen gelöscht, sofern keine rechtliche Aufbewahrungspflicht besteht. Notieren Sie, wie Sie die Identität der antragstellenden Person geprüft haben.",
+    "channel": "Eingegangen über",
+    "channels": {
+      "PHONE": "Telefon",
+      "EMAIL": "E-Mail",
+      "LETTER": "Brief",
+      "IN_PERSON": "Persönlich",
+      "DASHBOARD": "Dashboard"
+    },
+    "verification": "Identitätsprüfung",
+    "verificationHint": "Zum Beispiel: Rückruf an die hinterlegte Telefonnummer bestätigt.",
+    "confirm": "Antrag erfassen",
+    "requested": "Löschantrag erfasst",
+    "onHold": "Antrag erfasst und wegen einer aktiven Aufbewahrungspflicht pausiert"
+  },
+  "calls": {
+    "title": "Letzte Anrufe",
+    "empty": "Noch keine Anrufe mit diesem Kontakt.",
+    "started": "Beginn",
+    "channel": "Kanal",
+    "intent": "Anliegen",
+    "outcome": "Ergebnis",
+    "duration": "Dauer"
+  },
+  "bookings": {
+    "title": "Buchungen",
+    "empty": "Keine Buchungen für diesen Kontakt."
+  },
+  "waitlist": {
+    "title": "Warteliste",
+    "empty": "Dieser Kontakt steht auf keiner Warteliste.",
+    "added": "Hinzugefügt am {date}",
+    "expires": "Läuft ab am {date}",
+    "status": {
+      "ACTIVE": "Wartend",
+      "OFFERED": "Angeboten",
+      "ACCEPTED": "Angenommen",
+      "DECLINED": "Abgelehnt",
+      "EXPIRED": "Abgelaufen",
+      "FULFILLED": "Erfüllt",
+      "CANCELED": "Storniert"
+    }
+  },
+  "consents": {
+    "title": "Einwilligungshistorie",
+    "empty": "Diesem Kontakt wurden noch keine Hinweise ausgespielt.",
+    "recording": "Aufzeichnung: {state}",
+    "contact": "{channel}: {state}",
+    "states": {
+      "GRANTED": "erteilt",
+      "DENIED": "verweigert",
+      "NOT_APPLICABLE": "nicht anwendbar",
+      "NOT_REQUESTED": "nicht angefragt"
+    },
+    "channels": {
+      "SMS": "SMS",
+      "EMAIL": "E-Mail",
+      "PHONE": "Telefon",
+      "WHATSAPP": "WhatsApp"
+    }
+  },
+  "privacy": {
+    "title": "Datenschutzanfragen",
+    "empty": "Keine Datenschutzanfragen für diesen Kontakt.",
+    "due": "Fällig am {date}",
+    "types": {
+      "DELETE": "Löschung",
+      "EXPORT": "Datenauskunft",
+      "RECTIFY": "Berichtigung",
+      "RESTRICT": "Einschränkung"
+    },
+    "status": {
+      "RECEIVED": "Eingegangen",
+      "VERIFYING": "In Prüfung",
+      "IN_PROGRESS": "In Bearbeitung",
+      "ON_LEGAL_HOLD": "Aufbewahrungspflicht",
+      "COMPLETED": "Abgeschlossen",
+      "REJECTED": "Abgelehnt"
+    }
+  }
+}

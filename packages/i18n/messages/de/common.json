@@ -1,0 +1,98 @@
+{
+  "brand": {
+    "name": "Velyric",
+    "tagline": "Ein hellerer Morgen. Gemeinsam."
+  },
+  "actions": {
+    "save": "Speichern",
+    "saveChanges": "Änderungen speichern",
+    "cancel": "Abbrechen",
+    "confirm": "Bestätigen",
+    "delete": "Löschen",
+    "remove": "Entfernen",
+    "edit": "Bearbeiten",
+    "create": "Erstellen",
+    "add": "Hinzufügen",
+    "back": "Zurück",
+    "next": "Weiter",
+    "close": "Schließen",
+    "retry": "Erneut versuchen",
+    "refresh": "Aktualisieren",
+    "search": "Suchen",
+    "filter": "Filtern",
+    "clearFilters": "Filter zurücksetzen",
+    "viewAll": "Alle ansehen",
+    "viewDetails": "Details ansehen",
+    "copy": "Kopieren",
+    "copied": "Kopiert",
+    "loadMore": "Mehr laden",
+    "signIn": "Anmelden",
+    "signOut": "Abmelden",
+    "signUp": "Loslegen",
+    "bookDemo": "Demo buchen",
+    "contactSales": "Vertrieb kontaktieren",
+    "upload": "Hochladen",
+    "download": "Herunterladen",
+    "archive": "Archivieren",
+    "revoke": "Widerrufen",
+    "invite": "Einladen",
+    "connect": "Verbinden",
+    "disconnect": "Trennen",
+    "publish": "Veröffentlichen",
+    "rollback": "Zurückrollen",
+    "sync": "Jetzt synchronisieren",
+    "submit": "Absenden"
+  },
+  "states": {
+    "loading": "Wird geladen…",
+    "saving": "Wird gespeichert…",
+    "empty": "Noch nichts vorhanden",
+    "noResults": "Keine Ergebnisse für diese Filter",
+    "comingSoon": "Noch nicht verfügbar",
+    "enabled": "Aktiviert",
+    "disabled": "Deaktiviert",
+    "live": "Live",
+    "optional": "Optional",
+    "required": "Pflichtfeld",
+    "unsavedChanges": "Sie haben ungespeicherte Änderungen"
+  },
+  "time": {
+    "today": "Heute",
+    "yesterday": "Gestern",
+    "last7Days": "Letzte 7 Tage",
+    "last30Days": "Letzte 30 Tage",
+    "last90Days": "Letzte 90 Tage",
+    "custom": "Eigener Zeitraum",
+    "secondsAgo": "vor {count, plural, one {# Sekunde} other {# Sekunden}}",
+    "minutesAgo": "vor {count, plural, one {# Minute} other {# Minuten}}",
+    "durationShort": "{minutes} Min. {seconds} Sek."
+  },
+  "theme": {
+    "label": "Design",
+    "light": "Hell",
+    "dark": "Dunkel",
+    "system": "System"
+  },
+  "language": {
+    "label": "Sprache",
+    "hu": "Magyar",
+    "de": "Deutsch",
+    "en": "English"
+  },
+  "pagination": {
+    "previous": "Zurück",
+    "next": "Weiter",
+    "showing": "{count} Einträge angezeigt",
+    "first": "Erste Seite"
+  },
+  "a11y": {
+    "skipToContent": "Zum Inhalt springen",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "loading": "Inhalt wird geladen"
+  },
+  "confirmations": {
+    "deleteTitle": "{name} löschen?",
+    "irreversible": "Diese Aktion kann nicht rückgängig gemacht werden."
+  }
+}

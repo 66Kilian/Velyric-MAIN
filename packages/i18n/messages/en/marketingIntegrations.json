@@ -1,0 +1,682 @@
+{
+  "common": {
+    "breadcrumbLabel": "Breadcrumb",
+    "factsHeading": "At a glance",
+    "setupHeading": "Setting it up",
+    "actionsHeading": "What the agent can do",
+    "securityHeading": "How it is secured",
+    "limitsHeading": "Limits worth knowing",
+    "faqHeading": "Frequently asked questions",
+    "relatedHeading": "Related",
+    "labels": {
+      "auth": "Authentication",
+      "direction": "Data flow",
+      "operations": "Operations",
+      "surface": "Configured in"
+    }
+  },
+  "hub": {
+    "heading": "Every integration Velyric supports today",
+    "body": "This is the complete list. Anything not shown here is not available as a built-in connector, but most systems can still be reached through custom API tools or outbound webhooks.",
+    "readMore": "Read the integration guide",
+    "scope": {
+      "heading": "What counts as an integration",
+      "body": "Velyric separates connectors a customer authorises from platform services Velyric operates on their behalf.",
+      "detail": "Google Calendar, Microsoft 365, custom API tools, outbound webhooks and a bring-your-own SMTP relay are connected by the customer. Phone numbers, realtime voice, payments and invoicing are operated by Velyric as part of the service, so there is nothing for a customer to connect. There is no CRM connector, no commerce or delivery platform connector, and no chat or SMS channel: those systems are reachable only through custom API tools or webhooks."
+    }
+  },
+  "google-calendar": {
+    "meta": {
+      "title": "Google Calendar integration for AI phone booking",
+      "description": "Connect Google Calendar so the Velyric voice agent can read real availability and create or cancel events during a phone call, using least-privilege OAuth scopes."
+    },
+    "eyebrow": "Integration",
+    "title": "Google Calendar",
+    "body": "Let the voice agent check real free time and write appointments straight into the calendar your team already uses.",
+    "answer": {
+      "question": "What does the Google Calendar integration do?",
+      "body": "It lets the Velyric voice agent read busy time from a connected Google Calendar and create or cancel events during a live phone call. The connection is authorised per workspace with OAuth 2.0 and PKCE, and Velyric stores only the refresh token, sealed with AES-256-GCM. Availability is always read from Google at the moment of the call, so the agent never offers a slot that is already taken."
+    },
+    "facts": {
+      "auth": "OAuth 2.0 authorization code with PKCE (S256) and offline access",
+      "direction": "Two-way: read busy time, write and cancel events",
+      "operations": "freeBusy read, event create, event cancel",
+      "surface": "Dashboard, Integrations screen"
+    },
+    "setup": {
+      "heading": "Setting it up",
+      "body": "Connecting takes a few minutes and only needs a Google account that can see the target calendar.",
+      "steps": {
+        "s1": {
+          "title": "Start the connection",
+          "body": "Open Integrations in the dashboard and start the Google Calendar connection. Velyric generates a PKCE challenge and redirects you to Google's consent screen."
+        },
+        "s2": {
+          "title": "Grant the scopes",
+          "body": "Google asks you to approve openid, email, calendar.events and calendar.freebusy. Offline access is requested so the agent can keep working without you being signed in; if Google does not return a refresh token the connection is rejected rather than half-configured."
+        },
+        "s3": {
+          "title": "Pick the calendar and timezone",
+          "body": "Choose which calendar the agent should use for the location, and confirm the location timezone so spoken times match what the caller expects."
+        },
+        "s4": {
+          "title": "Test with a call",
+          "body": "Run a test call and ask for an appointment. Check that the event appears on the calendar with the right time, title and duration before you point real traffic at the number."
+        }
+      }
+    },
+    "actions": {
+      "heading": "What the agent can do",
+      "body": "The agent has three calendar operations and nothing beyond them.",
+      "items": {
+        "a1": {
+          "title": "Check availability",
+          "body": "Reads busy periods through Google's freeBusy endpoint and offers only slots that are genuinely free at that moment."
+        },
+        "a2": {
+          "title": "Create a booking",
+          "body": "Writes the event after the caller confirms the summary, using an idempotency key so a retry cannot create a duplicate."
+        },
+        "a3": {
+          "title": "Cancel a booking",
+          "body": "Finds an existing booking and cancels it, then confirms the cancellation back to the caller."
+        }
+      }
+    },
+    "security": {
+      "heading": "How it is secured",
+      "body": "Calendar access is deliberately narrow and host-locked.",
+      "items": {
+        "i1": "Only calendar.events and calendar.freebusy are requested. Velyric cannot read your mail, files or contacts.",
+        "i2": "Refresh tokens are sealed with AES-256-GCM in a secret store and never written to logs.",
+        "i3": "Outbound calls are restricted by an egress allowlist to www.googleapis.com and oauth2.googleapis.com over HTTPS only.",
+        "i4": "If authorisation expires or is revoked, an integration.auth_expired webhook event is emitted so you can reconnect before bookings start failing."
+      }
+    },
+    "limits": {
+      "heading": "Limits worth knowing",
+      "items": {
+        "l1": "One calendar is used per location. Complex multi-calendar routing is not configurable from the voice agent itself.",
+        "l2": "The agent creates, cancels and looks up events. It does not edit arbitrary event fields or manage sharing and permissions.",
+        "l3": "If Google is unreachable the agent does not guess: it offers a callback or transfers to a human instead of inventing a slot."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Can the agent double-book a slot?",
+        "answer": "It should not. Availability is re-checked immediately before the write, the booking is created with an idempotency key, and the booking engine enforces conflicts at database level. If a competing booking wins the race the agent receives a structured conflict and offers the next real alternative."
+      },
+      "q2": {
+        "question": "Which Google permissions do you actually request?",
+        "answer": "openid, email, https://www.googleapis.com/auth/calendar.events and https://www.googleapis.com/auth/calendar.freebusy, with offline access. Nothing else is requested, and no other Google product is accessed."
+      },
+      "q3": {
+        "question": "What happens if someone revokes access in Google?",
+        "answer": "Calendar tool calls start failing and Velyric emits an integration.auth_expired webhook event. The agent stops offering bookings it cannot complete and falls back to taking a callback or transferring to a human."
+      },
+      "q4": {
+        "question": "Can I use a shared team calendar?",
+        "answer": "Yes, as long as the Google account you authorise with can see and write to that calendar. The calendar is selected per location after the connection is made."
+      },
+      "q5": {
+        "question": "In which timezone are appointments created?",
+        "answer": "In the timezone configured on the Velyric location, which is set explicitly rather than inferred from the caller. This is what keeps spoken times and calendar entries consistent."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "AI appointment booking",
+        "description": "How a booking conversation actually runs from intent to confirmation."
+      },
+      "r2": {
+        "label": "Microsoft 365",
+        "description": "The same booking flow against Outlook calendars via Microsoft Graph."
+      }
+    }
+  },
+  "microsoft-365": {
+    "meta": {
+      "title": "Microsoft 365 and Outlook calendar integration",
+      "description": "Connect Microsoft 365 so the Velyric voice agent can read Outlook availability and create or delete calendar events during a call, using Calendars.ReadWrite via Microsoft Graph."
+    },
+    "eyebrow": "Integration",
+    "title": "Microsoft 365",
+    "body": "Book into Outlook calendars through Microsoft Graph, with the same conflict-safe flow as Google Calendar.",
+    "answer": {
+      "question": "What does the Microsoft 365 integration do?",
+      "body": "It connects an Outlook calendar through Microsoft Graph so the voice agent can read availability with getSchedule and create or delete events during a call. Authorisation uses OAuth 2.0 with PKCE and offline_access, and only the refresh token is retained, sealed with AES-256-GCM. The booking logic is identical to Google Calendar, so switching providers does not change how a call sounds."
+    },
+    "facts": {
+      "auth": "OAuth 2.0 authorization code with PKCE (S256) and offline_access",
+      "direction": "Two-way: read schedule, write and delete events",
+      "operations": "getSchedule, event create, event delete",
+      "surface": "Dashboard, Integrations screen"
+    },
+    "setup": {
+      "heading": "Setting it up",
+      "body": "You need a Microsoft 365 account with access to the calendar the agent should manage.",
+      "steps": {
+        "s1": {
+          "title": "Start the connection",
+          "body": "Open Integrations in the dashboard and start the Microsoft 365 connection. Velyric requests account selection so you can choose the right tenant account deliberately."
+        },
+        "s2": {
+          "title": "Grant Calendars.ReadWrite",
+          "body": "Microsoft asks you to approve openid, email, offline_access and Calendars.ReadWrite. Offline access is required so the agent can act between sign-ins."
+        },
+        "s3": {
+          "title": "Select the calendar and timezone",
+          "body": "Choose the calendar for the location and confirm the timezone used when the agent speaks times aloud and writes events."
+        },
+        "s4": {
+          "title": "Verify with a test call",
+          "body": "Place a test call, book a slot, then confirm the event in Outlook and cancel it through the agent to check both directions."
+        }
+      }
+    },
+    "actions": {
+      "heading": "What the agent can do",
+      "body": "Microsoft Graph is used for exactly three operations.",
+      "items": {
+        "a1": {
+          "title": "Read availability",
+          "body": "Calls getSchedule to find busy periods before suggesting any time to the caller."
+        },
+        "a2": {
+          "title": "Create an event",
+          "body": "Writes the appointment after explicit caller confirmation, with an idempotency key protecting against retries."
+        },
+        "a3": {
+          "title": "Delete an event",
+          "body": "Removes a previously created booking when a caller cancels, and confirms the result out loud."
+        }
+      }
+    },
+    "security": {
+      "heading": "How it is secured",
+      "body": "Graph access is scoped to calendars and locked to Microsoft hosts.",
+      "items": {
+        "i1": "Only Calendars.ReadWrite is requested. Mail, Teams, files and directory data are out of scope.",
+        "i2": "Refresh tokens are sealed with AES-256-GCM and are never logged.",
+        "i3": "Egress is allowlisted to graph.microsoft.com and login.microsoftonline.com over HTTPS only.",
+        "i4": "Expired or revoked consent raises an integration.auth_expired webhook event so you can reconnect deliberately."
+      }
+    },
+    "limits": {
+      "heading": "Limits worth knowing",
+      "items": {
+        "l1": "One calendar per location, the same as Google Calendar.",
+        "l2": "Room and equipment resource booking beyond the selected calendar is not driven by the voice agent.",
+        "l3": "If Graph is unavailable the agent offers a callback or a human transfer instead of promising a time it cannot write."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Does this work with a personal Microsoft account?",
+        "answer": "The integration is built for Microsoft 365 work accounts using Microsoft Graph. Account selection is forced during consent so you can pick the correct organisational account."
+      },
+      "q2": {
+        "question": "Which permissions are requested?",
+        "answer": "openid, email, offline_access and https://graph.microsoft.com/Calendars.ReadWrite. No mail or directory permissions are requested."
+      },
+      "q3": {
+        "question": "Can I connect both Google Calendar and Microsoft 365?",
+        "answer": "Both connector types exist, and a location uses one calendar for booking. Run them per location rather than expecting the agent to merge two calendars into one availability view."
+      },
+      "q4": {
+        "question": "What happens to bookings if I disconnect?",
+        "answer": "Events already written stay in Outlook because they are real calendar entries. The agent simply stops being able to read availability or write new bookings."
+      },
+      "q5": {
+        "question": "Is the caller's data written into the event?",
+        "answer": "Only what the booking needs, such as the name and the time. Velyric applies data minimisation and does not push unnecessary personal data into calendar entries."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Google Calendar",
+        "description": "The same booking flow against Google Calendar with freeBusy."
+      },
+      "r2": {
+        "label": "AI appointment booking",
+        "description": "What the caller hears while availability is checked and confirmed."
+      }
+    }
+  },
+  "custom-api-tools": {
+    "meta": {
+      "title": "Custom API tools for AI voice agents",
+      "description": "Expose your own HTTPS endpoints as tools the Velyric voice agent can call during a phone conversation, with JSON Schema validation, HMAC or bearer auth and SSRF protection."
+    },
+    "eyebrow": "Integration",
+    "title": "Custom API tools",
+    "body": "Give the agent a safe, typed door into systems Velyric does not connect to natively.",
+    "answer": {
+      "question": "What is a custom API tool?",
+      "body": "A custom API tool is an HTTPS endpoint you define in the dashboard that the voice agent may call during a conversation, for example to look up an order or check a membership. You declare the method, URL, authentication, and JSON Schema for both the request and the response, so the model can never send an arbitrary request. This is how systems without a built-in connector, including CRMs and internal back offices, are reached."
+    },
+    "facts": {
+      "auth": "None, bearer token, or HMAC-SHA256 over timestamp and body",
+      "direction": "Outbound from Velyric to your endpoint, with a validated response",
+      "operations": "GET, POST, PUT, PATCH, DELETE with templated paths",
+      "surface": "Dashboard, Integrations, custom tools"
+    },
+    "setup": {
+      "heading": "Setting it up",
+      "body": "Defining a tool is a configuration task, not a code change on the Velyric side.",
+      "steps": {
+        "s1": {
+          "title": "Describe the endpoint",
+          "body": "Set the HTTP method, base URL and path template. Only HTTPS is accepted and path traversal is rejected."
+        },
+        "s2": {
+          "title": "Choose authentication",
+          "body": "Pick none, a bearer token, or HMAC-SHA256. Credentials are stored as workspace secrets and can be rotated without editing the tool."
+        },
+        "s3": {
+          "title": "Define the schemas",
+          "body": "Provide JSON Schema 2020-12 for the input the agent may send and the response you return. Anything that does not validate is rejected before it reaches your system or the caller."
+        },
+        "s4": {
+          "title": "Set the safety policy",
+          "body": "Declare the side-effect class and whether the caller must confirm before the tool runs, then set the timeout, retry count and response size cap."
+        }
+      }
+    },
+    "actions": {
+      "heading": "What the agent can do",
+      "body": "The agent selects a tool, the backend validates that the call is allowed, and the structured result is spoken back.",
+      "items": {
+        "a1": {
+          "title": "Look something up",
+          "body": "Read-only tools let the agent answer questions from live systems, such as the status of an order, without exposing your database."
+        },
+        "a2": {
+          "title": "Perform an action",
+          "body": "Write tools can create or change records. Anything with a side effect can require an explicit spoken confirmation first."
+        },
+        "a3": {
+          "title": "Fail safely",
+          "body": "On timeout or a server error the agent retries once according to policy and then transfers to a human rather than guessing an outcome."
+        }
+      }
+    },
+    "security": {
+      "heading": "How it is secured",
+      "body": "The model never gets a general-purpose HTTP client.",
+      "items": {
+        "i1": "Every request and response is validated against your JSON Schema, so malformed model output cannot reach your API.",
+        "i2": "Egress is restricted by an allowlist, and localhost, link-local, private ranges and cloud metadata endpoints are blocked to prevent SSRF.",
+        "i3": "Credentials live in a secret store, are never logged, and support rotation.",
+        "i4": "Write operations carry an idempotency key, and high-risk operations can be gated behind a confirmation policy."
+      }
+    },
+    "limits": {
+      "heading": "Limits worth knowing",
+      "items": {
+        "l1": "Endpoints must be reachable over public HTTPS. There is no VPN or private network tunnel.",
+        "l2": "Each tool has a hard timeout and a response size cap, so long-running jobs need an asynchronous design.",
+        "l3": "Tools are typed single operations, not a workflow engine. Multi-step processes are composed from several tools."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Can I connect my CRM this way?",
+        "answer": "Yes, if your CRM exposes an HTTPS API. Velyric has no built-in CRM connector, so a custom API tool is the supported path for CRM lookups or writes."
+      },
+      "q2": {
+        "question": "How do I verify a request really came from Velyric?",
+        "answer": "Use the HMAC-SHA256 option. Velyric signs the timestamp and body with your shared secret so your endpoint can verify authenticity and reject replays."
+      },
+      "q3": {
+        "question": "What stops the AI from calling the wrong endpoint?",
+        "answer": "Tool permissions live in code, not in the prompt. The backend validates that the selected tool is allowed for that workspace and conversation state before anything is sent."
+      },
+      "q4": {
+        "question": "What does the caller hear while the tool runs?",
+        "answer": "The agent keeps the conversation natural while the call is in flight, then confirms the structured result. If the tool fails it says so and offers a human instead of inventing an answer."
+      },
+      "q5": {
+        "question": "Can a tool charge a card or take payment?",
+        "answer": "Do not design tools that read card data over the phone. Payment collection is not part of the voice flow, and high-risk operations should be confirmed and audited rather than automated blindly."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Outbound webhooks",
+        "description": "Receive events from Velyric instead of being called by it."
+      },
+      "r2": {
+        "label": "Developer documentation",
+        "description": "API conventions, authentication and error handling."
+      }
+    }
+  },
+  "webhooks": {
+    "meta": {
+      "title": "Outbound webhooks for call and booking events",
+      "description": "Subscribe to Velyric events such as call.ended and booking.created with HMAC-signed outbound webhooks, delivered with retries over 24 hours to your HTTPS endpoint."
+    },
+    "eyebrow": "Integration",
+    "title": "Outbound webhooks",
+    "body": "Push call, booking and workspace events into your own systems as they happen.",
+    "answer": {
+      "question": "What do Velyric webhooks do?",
+      "body": "Outbound webhooks deliver workspace events to an HTTPS endpoint you control, so your systems learn about calls, bookings and configuration changes without polling. Each delivery is signed with HMAC-SHA256 so you can verify it came from Velyric, and failed deliveries are retried with backoff over roughly 24 hours. You can register up to ten endpoints per workspace and choose which of the seventeen event types each one receives."
+    },
+    "facts": {
+      "auth": "HMAC-SHA256 signature in the velyric-signature header",
+      "direction": "Outbound from Velyric to your endpoint",
+      "operations": "17 event types, up to 10 endpoints per workspace",
+      "surface": "Dashboard, Settings, Webhooks"
+    },
+    "setup": {
+      "heading": "Setting it up",
+      "body": "A webhook endpoint needs to be publicly reachable over HTTPS and respond quickly.",
+      "steps": {
+        "s1": {
+          "title": "Register the endpoint",
+          "body": "Add the HTTPS URL in Settings and select the event types it should receive. Only port 443 is used and redirects are not followed."
+        },
+        "s2": {
+          "title": "Store the signing secret",
+          "body": "Keep the generated secret somewhere your server can read it. You need it to verify every delivery."
+        },
+        "s3": {
+          "title": "Verify the signature",
+          "body": "Read the velyric-signature header in the form t=timestamp,v1=hex, recompute the HMAC over the timestamp and raw body, and compare using a constant-time function."
+        },
+        "s4": {
+          "title": "Send a test event",
+          "body": "Trigger a webhook.test delivery and confirm your endpoint returns quickly with a 2xx status before enabling production events."
+        }
+      }
+    },
+    "actions": {
+      "heading": "Which events you can receive",
+      "body": "Seventeen event types cover the call lifecycle, bookings, knowledge and workspace changes.",
+      "items": {
+        "a1": {
+          "title": "Calls and bookings",
+          "body": "call.started, call.ended, booking.created, booking.changed, booking.canceled and waitlist.slot_released."
+        },
+        "a2": {
+          "title": "Knowledge and agents",
+          "body": "knowledge.ingestion_completed, knowledge.ingestion_failed, agent_version.published, agent_version.rolled_back, quality.scored and simulation.run_completed."
+        },
+        "a3": {
+          "title": "Workspace and compliance",
+          "body": "contact.merged, privacy.request_created, integration.auth_expired, phone_number.status_changed and the webhook.test event."
+        }
+      }
+    },
+    "security": {
+      "heading": "How it is secured",
+      "body": "Delivery is signed, bounded and deliberately unforgiving about redirects.",
+      "items": {
+        "i1": "Every request carries an HMAC-SHA256 signature over the timestamp and body, so you can reject forged or replayed deliveries.",
+        "i2": "Only HTTPS on port 443 is used and redirects are never followed, which prevents a redirect from moving your data somewhere else.",
+        "i3": "Deliveries time out after ten seconds and only a small response body is read, so a slow endpoint cannot hold resources open.",
+        "i4": "Failed deliveries retry eight times with backoff at 30 seconds, 2, 10 and 30 minutes, then 2, 6, 12 and 24 hours."
+      }
+    },
+    "limits": {
+      "heading": "Limits worth knowing",
+      "items": {
+        "l1": "Up to ten endpoints per workspace.",
+        "l2": "Delivery is at-least-once, so your handler must be idempotent and tolerate a repeat of the same event.",
+        "l3": "After the final retry a delivery is abandoned; treat webhooks as a fast path and reconcile through the API if you need a guarantee."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Are webhooks actually available, or planned?",
+        "answer": "They are fully available and have a dashboard screen for managing endpoints, event selection and delivery history."
+      },
+      "q2": {
+        "question": "How do I verify a delivery?",
+        "answer": "Parse the velyric-signature header as t=timestamp,v1=hex, recompute HMAC-SHA256 over the timestamp and the raw request body using your endpoint secret, and compare in constant time. Reject deliveries with an old timestamp."
+      },
+      "q3": {
+        "question": "What should my endpoint return?",
+        "answer": "Return a 2xx status quickly and do the real work asynchronously. Anything slower than the ten second timeout counts as a failed delivery and will be retried."
+      },
+      "q4": {
+        "question": "Can the same event arrive twice?",
+        "answer": "Yes. Retries mean delivery is at-least-once, so deduplicate on the event identifier and make your handler idempotent."
+      },
+      "q5": {
+        "question": "Can I use plain HTTP for a quick test?",
+        "answer": "No. Only HTTPS on port 443 is accepted, including in testing. Use a tunnelling service that terminates TLS if you need to receive events on a local machine."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Custom API tools",
+        "description": "Let the agent call your systems during the conversation."
+      },
+      "r2": {
+        "label": "Developer documentation",
+        "description": "Authentication, conventions and error handling."
+      }
+    }
+  },
+  "phone-numbers": {
+    "meta": {
+      "title": "Phone numbers for AI voice agents",
+      "description": "How Velyric provisions phone numbers through Telnyx, what business verification is required, and how existing numbers are ported to an AI voice agent."
+    },
+    "eyebrow": "Platform",
+    "title": "Phone numbers",
+    "body": "Every workspace gets a real phone number that routes straight into the voice agent.",
+    "answer": {
+      "question": "How do phone numbers work in Velyric?",
+      "body": "Velyric provisions numbers through Telnyx as part of the service, so you do not connect your own carrier account. Every plan includes one phone number, and calls to it are answered by your configured agent. Existing business numbers can be ported instead, and number ordering may require regulatory or carrier business verification depending on the country."
+    },
+    "facts": {
+      "auth": "Operated by Velyric, no customer carrier account needed",
+      "direction": "Inbound calls from the public telephone network",
+      "operations": "Provision a new number or port an existing one",
+      "surface": "Onboarding and the Phone numbers screen"
+    },
+    "setup": {
+      "heading": "Getting a number live",
+      "body": "Provisioning is part of onboarding and is tracked as a workflow you can follow.",
+      "steps": {
+        "s1": {
+          "title": "Choose a number",
+          "body": "Pick an available number in the country you serve during onboarding, or start a port for a number you already use."
+        },
+        "s2": {
+          "title": "Complete business verification",
+          "body": "Some countries require regulatory documentation before a local number can be activated. Provide the requested business details so the carrier can approve the order."
+        },
+        "s3": {
+          "title": "Attach an agent",
+          "body": "Bind the number to the agent that should answer it, including the greeting, disclosure text and business hours behaviour."
+        },
+        "s4": {
+          "title": "Make a test call",
+          "body": "Call the number, confirm the agent answers, states that it is an AI assistant, and can complete at least one real task before you publish it."
+        }
+      }
+    },
+    "actions": {
+      "heading": "What happens on an inbound call",
+      "body": "The number is the entry point to everything else the agent does.",
+      "items": {
+        "a1": {
+          "title": "The agent answers immediately",
+          "body": "Calls are answered around the clock and the caller is told at the start that they are speaking with an AI assistant."
+        },
+        "a2": {
+          "title": "Language is detected",
+          "body": "The country code of the caller's number is an initial hint only. An explicit request or the detected spoken language takes over immediately."
+        },
+        "a3": {
+          "title": "Handover stays available",
+          "body": "A caller can ask for a person at any time, or press the configured DTMF sequence, and the call is transferred."
+        }
+      }
+    },
+    "security": {
+      "heading": "How it is handled",
+      "body": "Telephony is treated as regulated infrastructure, not a convenience feature.",
+      "items": {
+        "i1": "Numbers are provisioned through a carrier workflow with an auditable state machine, not by ad-hoc scripts.",
+        "i2": "Regulatory and KYC requirements are collected explicitly where the destination country demands them.",
+        "i3": "The caller's phone number is treated as a convenience identifier and never as authentication for sensitive data.",
+        "i4": "Raw call audio is not stored by default, so a phone number does not become a hidden voice archive."
+      }
+    },
+    "limits": {
+      "heading": "Limits worth knowing",
+      "items": {
+        "l1": "Each plan includes one phone number and one location; extra numbers are a paid add-on.",
+        "l2": "Availability, price and lead time depend on the country and the carrier, and verification can add days.",
+        "l3": "Concurrency is capped per plan at 2, 10 or 50 simultaneous calls, with enterprise capacity agreed contractually."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Can I keep my existing business number?",
+        "answer": "Yes, porting an existing number is supported. Until the port completes you can run the agent on a temporary number so nothing is blocked."
+      },
+      "q2": {
+        "question": "Do I need my own Telnyx or Twilio account?",
+        "answer": "No. Telephony is operated by Velyric as part of the service, so there is no carrier account for you to create or connect."
+      },
+      "q3": {
+        "question": "Why does a number order need business documents?",
+        "answer": "Many countries regulate local numbers and require proof of business identity or address before activation. This is a carrier and regulator requirement, not a Velyric policy."
+      },
+      "q4": {
+        "question": "What happens if more people call than my plan allows?",
+        "answer": "Behaviour follows your chosen policy: a short queue, an overflow number, a callback request or voicemail. Calls are never dropped silently without the caller being told something."
+      },
+      "q5": {
+        "question": "How long can a single call last?",
+        "answer": "Calls are capped at 30 minutes on every plan. Conversations that need longer are better handed to a person."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "AI receptionist",
+        "description": "What the agent does with the calls that arrive on the number."
+      },
+      "r2": {
+        "label": "Pricing",
+        "description": "Included minutes, concurrency limits and overage rates per plan."
+      }
+    }
+  },
+  "email-notifications": {
+    "meta": {
+      "title": "E-mail confirmations and notifications",
+      "description": "How Velyric sends booking confirmations and workspace notifications by e-mail, and how a bring-your-own SMTP relay can be configured for sending from your own domain."
+    },
+    "eyebrow": "Platform",
+    "title": "E-mail notifications",
+    "body": "Confirmations and operational notices reach people after the call ends.",
+    "answer": {
+      "question": "What does Velyric send by e-mail?",
+      "body": "Velyric sends transactional e-mail such as booking confirmations to callers who provided an address, and operational notifications to your team. E-mail is the only notification channel that actually sends today. If you want mail to leave through your own relay, a bring-your-own SMTP configuration is supported through the control API, although there is no self-serve dashboard screen for it yet."
+    },
+    "facts": {
+      "auth": "Platform sending by default, optional customer SMTP relay",
+      "direction": "Outbound from Velyric to the recipient",
+      "operations": "Booking confirmations and workspace notifications",
+      "surface": "Platform default; custom relay via the control API"
+    },
+    "setup": {
+      "heading": "Setting it up",
+      "body": "Nothing is required to receive the default behaviour; the custom relay is an opt-in.",
+      "steps": {
+        "s1": {
+          "title": "Decide when confirmations are sent",
+          "body": "Enable confirmation e-mail for bookings and decide whether the agent should ask for an address when it does not already have a verified one."
+        },
+        "s2": {
+          "title": "Check the spell-back",
+          "body": "When the agent collects an address by phone it reads it back for confirmation. Test this with a realistic address before going live."
+        },
+        "s3": {
+          "title": "Choose the sending path",
+          "body": "Stay on platform sending, or ask to configure a bring-your-own SMTP relay so mail leaves through your own domain and reputation."
+        },
+        "s4": {
+          "title": "Confirm deliverability",
+          "body": "If you use your own relay, make sure its SPF, DKIM and DMARC records are correct so confirmations are not filtered."
+        }
+      }
+    },
+    "actions": {
+      "heading": "What gets sent",
+      "body": "Mail is transactional and tied to something that actually happened.",
+      "items": {
+        "a1": {
+          "title": "Booking confirmations",
+          "body": "After a successful booking the caller can receive a written confirmation of the time and details agreed on the call."
+        },
+        "a2": {
+          "title": "Operational notifications",
+          "body": "Your team receives notices about events that need attention, such as a workflow that could not complete."
+        },
+        "a3": {
+          "title": "Nothing speculative",
+          "body": "There is no marketing sending, no newsletter and no bulk campaign feature. Mail follows a real transaction."
+        }
+      }
+    },
+    "security": {
+      "heading": "How it is handled",
+      "body": "Mail carries personal data, so it follows the same minimisation rules as the rest of the platform.",
+      "items": {
+        "i1": "Only the data the message needs is included; call transcripts are not mailed around by default.",
+        "i2": "SMTP credentials for a custom relay are stored as sealed secrets and are never written to logs.",
+        "i3": "Consent flags are recorded on the caller profile so confirmations are only sent where that is appropriate.",
+        "i4": "Retention rules apply to the underlying records, not just the mail, so data does not live indefinitely."
+      }
+    },
+    "limits": {
+      "heading": "Limits worth knowing",
+      "items": {
+        "l1": "E-mail is the only channel that sends. SMS, in-app and chat notifications are not available.",
+        "l2": "The bring-your-own SMTP relay is configured through the control API and has no dashboard screen yet.",
+        "l3": "An address collected over the phone is unverified until the recipient acts on the mail, so treat it accordingly."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Can Velyric send SMS confirmations?",
+        "answer": "No. E-mail is the only notification channel that sends today. Other channels exist in the data model but are not implemented, and claiming otherwise would be wrong."
+      },
+      "q2": {
+        "question": "Can mail come from our own domain?",
+        "answer": "Yes, through a bring-your-own SMTP relay. It is configured through the control API rather than a dashboard screen, so ask support to set it up."
+      },
+      "q3": {
+        "question": "How does the agent get a correct e-mail address by phone?",
+        "answer": "It asks for the address and reads it back for confirmation before using it. If there is already a verified address on the caller profile it uses that instead of asking again."
+      },
+      "q4": {
+        "question": "Are call transcripts e-mailed to us?",
+        "answer": "No. Transcripts stay inside the platform under their retention policy, and notifications are kept to what the message actually needs."
+      },
+      "q5": {
+        "question": "What happens if the mail bounces?",
+        "answer": "The booking itself is unaffected because the calendar entry is the source of truth. A failed confirmation does not silently cancel anything."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "AI appointment booking",
+        "description": "Where confirmations fit into the booking conversation."
+      },
+      "r2": {
+        "label": "Security and compliance",
+        "description": "Retention defaults, GDPR roles and data minimisation."
+      }
+    }
+  }
+}

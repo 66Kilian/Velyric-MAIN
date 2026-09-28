@@ -1,0 +1,181 @@
+{
+  "title": "Contacts",
+  "description": "Callers recognised across calls, bookings and waitlists, with their consent and privacy history.",
+  "searchPlaceholder": "Search by name, phone number or email",
+  "empty": "No contacts yet",
+  "emptyDescription": "Contacts appear automatically when callers reach your agents or book an appointment.",
+  "noMatches": "No matching contacts",
+  "noMatchesDescription": "Try a different name, phone number or email address.",
+  "unnamed": "Unnamed caller",
+  "sharedPhone": "Shared phone",
+  "back": "All contacts",
+  "since": "Known since {date}",
+  "export": "Export data",
+  "columns": {
+    "name": "Name",
+    "identities": "Phone and email",
+    "language": "Language",
+    "trust": "Trust",
+    "lastInteraction": "Last interaction"
+  },
+  "trust": {
+    "UNVERIFIED": "Unverified",
+    "PARTIALLY_VERIFIED": "Partially verified",
+    "VERIFIED": "Verified"
+  },
+  "profile": {
+    "title": "Profile",
+    "saved": "Contact updated",
+    "displayName": "Display name",
+    "preferredLanguage": "Preferred language",
+    "languageUnknown": "Not known",
+    "memory": "Caller memory",
+    "memoryHint": "Let agents greet this caller by name and reuse their preferences on later calls.",
+    "verification": {
+      "CALLER_PROVIDED": "Provided by the caller",
+      "CONNECTOR_VERIFIED": "Confirmed by an integration",
+      "CRM_VERIFIED": "Confirmed by the CRM",
+      "EMAIL_VERIFIED": "Confirmed by email",
+      "HUMAN_VERIFIED": "Confirmed by your team",
+      "INFERRED": "Inferred from conversation",
+      "OBSERVED": "Observed on a call",
+      "OTP_VERIFIED": "Confirmed with a one-time code"
+    }
+  },
+  "identities": {
+    "title": "Identifiers",
+    "empty": "No phone numbers or email addresses are linked.",
+    "add": "Add identifier",
+    "addTitle": "Add identifier",
+    "addDescription": "Link a phone number, email address or external ID that belongs to this contact.",
+    "added": "Identifier added",
+    "type": "Type",
+    "value": "Value",
+    "remove": "Remove identifier",
+    "removeTitle": "Remove identifier?",
+    "removeDescription": "{value} will no longer be matched to this contact on future calls.",
+    "types": {
+      "PHONE": "Phone",
+      "EMAIL": "Email",
+      "EXTERNAL_ID": "External ID"
+    },
+    "hints": {
+      "PHONE": "International format, for example +36 30 123 4567.",
+      "EMAIL": "The address the contact uses to receive confirmations.",
+      "EXTERNAL_ID": "The identifier used for this person in your CRM or booking system."
+    },
+    "states": {
+      "CALLER_PROVIDED": "caller provided",
+      "CONNECTOR_VERIFIED": "integration verified",
+      "CRM_VERIFIED": "CRM verified",
+      "EMAIL_VERIFIED": "email verified",
+      "HUMAN_VERIFIED": "team verified",
+      "INFERRED": "inferred",
+      "OBSERVED": "observed",
+      "OTP_VERIFIED": "code verified"
+    },
+    "sources": {
+      "CALLER_ID": "caller ID",
+      "DASHBOARD": "dashboard",
+      "VOICE_AGENT": "voice agent",
+      "PUBLIC_API": "API",
+      "CRM": "CRM"
+    }
+  },
+  "merge": {
+    "action": "Merge",
+    "title": "Merge duplicate contact",
+    "description": "Move all calls, bookings, identifiers and requests from this contact into another one. Consent records stay attached to the original history.",
+    "searchPlaceholder": "Find the contact to keep",
+    "results": "Matching contacts",
+    "noResults": "No other contacts match this search.",
+    "unnamed": "Unnamed caller",
+    "noIdentities": "No identifiers",
+    "warning": "This contact will be merged into {name}. The merge is recorded in the audit log and cannot be undone from the dashboard.",
+    "confirm": "Merge contacts",
+    "merged": "Contacts merged"
+  },
+  "erasure": {
+    "action": "Erasure request",
+    "title": "Record an erasure request",
+    "description": "Personal data is deleted within 30 days unless a legal hold applies. Keep a note of how you verified the requester's identity.",
+    "channel": "Received via",
+    "channels": {
+      "PHONE": "Phone",
+      "EMAIL": "Email",
+      "LETTER": "Letter",
+      "IN_PERSON": "In person",
+      "DASHBOARD": "Dashboard"
+    },
+    "verification": "Identity verification",
+    "verificationHint": "For example: confirmed callback to the registered phone number.",
+    "confirm": "Record request",
+    "requested": "Erasure request recorded",
+    "onHold": "Request recorded and paused by an active legal hold"
+  },
+  "calls": {
+    "title": "Recent calls",
+    "empty": "No calls with this contact yet.",
+    "started": "Started",
+    "channel": "Channel",
+    "intent": "Intent",
+    "outcome": "Outcome",
+    "duration": "Duration"
+  },
+  "bookings": {
+    "title": "Bookings",
+    "empty": "No bookings for this contact."
+  },
+  "waitlist": {
+    "title": "Waitlist",
+    "empty": "This contact is not on any waitlist.",
+    "added": "Added {date}",
+    "expires": "Expires {date}",
+    "status": {
+      "ACTIVE": "Waiting",
+      "OFFERED": "Offered",
+      "ACCEPTED": "Accepted",
+      "DECLINED": "Declined",
+      "EXPIRED": "Expired",
+      "FULFILLED": "Fulfilled",
+      "CANCELED": "Canceled"
+    }
+  },
+  "consents": {
+    "title": "Consent history",
+    "empty": "No disclosures have been delivered to this contact.",
+    "recording": "Recording: {state}",
+    "contact": "{channel}: {state}",
+    "states": {
+      "GRANTED": "granted",
+      "DENIED": "denied",
+      "NOT_APPLICABLE": "not applicable",
+      "NOT_REQUESTED": "not requested"
+    },
+    "channels": {
+      "SMS": "SMS",
+      "EMAIL": "Email",
+      "PHONE": "Phone",
+      "WHATSAPP": "WhatsApp"
+    }
+  },
+  "privacy": {
+    "title": "Privacy requests",
+    "empty": "No privacy requests for this contact.",
+    "due": "Due {date}",
+    "types": {
+      "DELETE": "Erasure",
+      "EXPORT": "Data export",
+      "RECTIFY": "Rectification",
+      "RESTRICT": "Restriction"
+    },
+    "status": {
+      "RECEIVED": "Received",
+      "VERIFYING": "Verifying",
+      "IN_PROGRESS": "In progress",
+      "ON_LEGAL_HOLD": "On legal hold",
+      "COMPLETED": "Completed",
+      "REJECTED": "Rejected"
+    }
+  }
+}

@@ -1,0 +1,560 @@
+{
+  "common": {
+    "breadcrumbLabel": "Morzsamenü",
+    "criterion": "Szempont",
+    "faqHeading": "Gyakori kérdések",
+    "relatedHeading": "Olvasson tovább",
+    "ctaPrimary": "Kezdjen a Velyrickel",
+    "ctaSecondary": "Árak megtekintése",
+    "pricing": {
+      "label": "Velyric árak",
+      "description": "Csomagok, benne foglalt percek, túlhasználati díjak és egyidejűségi korlátok, a magyar piacra közzétéve."
+    }
+  },
+  "vs-call-center": {
+    "meta": {
+      "title": "AI recepciós vagy call center: őszinte összehasonlítás",
+      "description": "Miben különbözik egy AI hangasszisztens és egy kiszervezett call center elérhetőségben, nyelvekben, átadásban, riportolásban és költségszerkezetben, és mikor marad mégis a személyzettel működő call center a jobb válasz."
+    },
+    "breadcrumb": "AI recepciós vagy call center",
+    "eyebrow": "Összehasonlítás",
+    "title": "AI recepciós vagy call center",
+    "body": "Mindkettő egy felkészült hangot tesz a céges vonal túlsó végére. Abban különböznek, hogy milyen gyorsan változtatható ez a hang, mihez fér hozzá a rendszereiben, mi történik, ha elakad, és mi marad a kezében, miután a hívó letette.",
+    "card": {
+      "label": "AI recepciós vagy call center",
+      "description": "Elérhetőség, nyelvek, átadás és riportolás összevetve egy kiszervezett telefonos ügyfélszolgálattal."
+    },
+    "summary": {
+      "question": "AI recepcióst vagy call centert érdemes választani?",
+      "answer": "AI hangasszisztenst akkor, ha a hívások ismétlődnek, és a válaszok már írásban is megvannak: nyitvatartás, szolgáltatások, árak, szabad időpontok, egy rendelés állapota. A Velyric a saját számán veszi fel a telefont a nap 24 órájában magyarul, németül és angolul, valós naptári szabad időpontot ellenőriz, mielőtt idősávot ajánlana, és abban a pillanatban emberhez kapcsol, amint a hívó ezt kéri. Személyzettel működő call centert akkor, ha a hívások hosszúak, érzelmileg terheltek, szabályozottak, vagy olyan mérlegelést igényelnek, amely egyetlen tudásbázisban sincs benne. Sok cég mindkettőt használja: az asszisztens viszi az első vonalat, az emberek pedig azt, amit átad nekik."
+    },
+    "table": {
+      "heading": "Egymás mellett",
+      "intro": "Csak szerkezeti különbségek. Nincsenek benne iparági átlagok és nincs benne költségmegtakarítás, mert azt nem mértük.",
+      "caption": "Egy AI hangasszisztens és egy kiszervezett call center összevetése tíz működési szempont mentén.",
+      "columns": {
+        "velyric": "Velyric AI hangasszisztens",
+        "other": "Kiszervezett call center"
+      },
+      "rows": {
+        "availability": {
+          "criterion": "Elérhetőség",
+          "velyric": "A nap 24 órájában felveszi a saját számán, éjjel, hétvégén és ünnepnapokon is. A nyitvatartáson kívüli viselkedés külön állítható: üzenetrögzítés, visszahívási kérés vagy átkapcsolás egy ügyeleti számra.",
+          "other": "Arra az idősávra van lefedve, amelyre szerződik és amelyre embert állít. Az éjszakákra és hétvégékre kiterjesztés kereskedelmi és létszámkérdés."
+        },
+        "pickup": {
+          "criterion": "Mi történik a felvételkor",
+          "velyric": "Azonnal felveszi, és a hívás elején elmondja, hogy a hívó AI asszisztenssel beszél. A beszélgetés full duplex, így a hívó mondat közben is közbevághat, és az asszisztens elhallgat.",
+          "other": "Akkor veszi fel egy ember, amikor van szabad ügyintéző. Mivel a kapacitás létszám, a csúcsokat sorban állás vagy visszahívás nyeli el."
+        },
+        "language": {
+          "criterion": "Nyelvek",
+          "velyric": "Magyar, német és angol, hívás közben váltható. A hívó országhívószáma csak kiindulási jelzés; egy kifejezett kérés, a felismert beszélt nyelv vagy egy eltárolt preferencia felülírja.",
+          "other": "Amit a műszakban lévő ügyintézők beszélnek. Egy harmadik nyelv előbb toborzási vagy beosztási kérdés, mint terméké."
+        },
+        "questions": {
+          "criterion": "Kérdések megválaszolása",
+          "velyric": "A saját tudásbázisából válaszol: PDF, DOCX, TXT, Markdown, CSV, kézi kérdés-válasz lista és bejárt weboldalak, és minden visszakeresés az Ön bérlőjére szűrve fut. Ha nincs alátámasztó forrás, inkább pontosító kérdést tesz fel vagy átad, ahelyett hogy találgatna.",
+          "other": "Egy tájékoztatóból, egy szkriptből és az ügyintéző emlékezetéből válaszol. A pontosság attól függ, mikor kapott a csapat legutóbb tájékoztatást a változásról."
+        },
+        "booking": {
+          "criterion": "Időpontfoglalás",
+          "velyric": "Google Naptárban vagy Microsoft 365-ben valós szabad időpontot ellenőriz, mielőtt idősávot ajánlana, visszaolvassa a foglalást és megerősítést kér, majd adatbázis-megszorításokkal, tranzakciókkal és idempotenciakulccsal írja be, hogy dupla foglalás ne csúszhasson át.",
+          "other": "Attól függ, milyen eszközt kap a központ. A naptárához való hozzáférés nélkül egy foglalási kérést kap, amit később valaki az Ön oldalán rögzít."
+        },
+        "escalation": {
+          "criterion": "Eljutás emberhez",
+          "velyric": "Ha a hívó embert kér, a hívás azonnal átkapcsol. A DTMF állítható, például ### az élő ügyintézőhöz, 0 az azonnali átkapcsoláshoz és * a visszalépéshez. Két-három sikertelen megértési kísérlet után az asszisztens magától ajánlja fel az átkapcsolást.",
+          "other": "Az első vonal már eleve ember. Az eszkaláció belső átkapcsolás Önhöz vagy egy csoportvezetőhöz."
+        },
+        "concurrency": {
+          "criterion": "Csúcsterhelés",
+          "velyric": "Az egyidejű hívások száma csomaghatár: 2 a Starton, 10 a Businessen, 50 a Prón, 100 vagy több az Enterprise-on. Minden hívás saját izolált munkamenetben fut, saját call_id-vel, állapottal és nyomvonallal, így egy hibázó hívás nem hat a többire.",
+          "other": "A kapacitás a műszakban lévő létszám. A csúcsokat sorban állás, túlóra vagy nagyobb átalány nyeli el."
+        },
+        "changes": {
+          "criterion": "Az elhangzottak módosítása",
+          "velyric": "Töltsön fel új dokumentumverziót, és az atomi módon váltja le a régi darabokat az aktív indexben. Az asszisztens verziói publikálhatók és visszagörgethetők, egy szimulációs felület pedig előbb tesztelő hívásokat és regressziós készleteket futtat.",
+          "other": "Frissíti a tájékoztatót, és újra tájékoztatja a műszakban lévő ügyintézőket. A bevezetés annyira gyors, amennyire a következő tájékoztatási kör."
+        },
+        "data": {
+          "criterion": "Mit kap utána",
+          "velyric": "Hívások, megoldási arány, átlagos híváshossz, átkapcsolási arány, foglalások és költség a saját irányítópultján, valamint átiratok és összefoglalók ott, ahol engedélyezi. Nyers hangfelvételt alapértelmezés szerint nem tárol; a rögzítés fizetős kiegészítő.",
+          "other": "Amit a szerződés tartalmaz: híváslisták, ügyintézői jegyzetek, és felvételek, ha a központ rögzít és megosztja azokat."
+        },
+        "cost": {
+          "criterion": "Hogyan számláznak",
+          "velyric": "Havi előfizetés benne foglalt beszédpercekkel és közzétett percalapú túlhasználati díjjal. Az egyidejűség és az asszisztensek száma csomaghatár. Az árak a magyar piacra, forintban, áfa nélkül vannak közzétéve.",
+          "other": "A szolgáltató árazza, ügyintézői időre vagy kezelt mennyiségre. Kérdezze meg, melyik egységet számlázzák, és mekkora a minimális elkötelezettség."
+        }
+      }
+    },
+    "caller": {
+      "question": "Mit tapasztal valójában a hívó?",
+      "answer": "A hívást azonnal felveszi egy hang, amely előre elmondja, hogy AI asszisztens. A hívó közbevághat, tétovázhat, meggondolhatja magát és mondat közben nyelvet válthat anélkül, hogy a beszélgetés összeomlana. Ha embert szeretne, szól, vagy megnyomja a beállított billentyűt, és a hívás az Ön számára kerül átirányításra.",
+      "first": "A beszélgetés nem egyetlen hosszú prompt. Explicit, kódban leírt állapotgépen fut végig — köszönés, igényfelmérés, azonosítás, művelet előnézete, megerősítési kapu, eszközfuttatás, eredmény visszaigazolása, utókövetés, átadás, biztonságos hibakezelés, lezárás —, és a háttérrendszer dönti el, hogy a modell által javasolt eszköz egyáltalán megengedett-e az adott állapotban. Ezért olvassa vissza az asszisztens, mit készül tenni, mielőtt bármit beírna, és ezért nem tud csendben kitalálni egy foglalást.",
+      "second": "Egy call centerben az első vonal ember, ami előny abban a pillanatban, amint a hívó felzaklatott vagy a kérés szokatlan. A cserébe az, hogy az illető egy, a cégéről szóló tájékoztatóból dolgozik, nem az élő naptárából és a dokumentumaiból, hacsak nem adott a központnak hozzáférést mindkettőhöz. Ha megadta, akkor részben azért fizet, hogy egy második csapatot szinkronban tartson a rendszereivel."
+    },
+    "fallback": {
+      "question": "Mi történik, ha a rendszer nem tud segíteni?",
+      "answer": "A Velyric nem találgat. Ha nincs alátámasztó forrás a tudásbázisában, az asszisztens pontosító kérdést tesz fel vagy átadja a hívást egy embernek. Egy eszköz időtúllépését vagy az Ön API-jától kapott 5xx hibát egyszer újrapróbálja, utána a hívás átkapcsol vagy a beállított nyitvatartáson kívüli viselkedésre esik vissza. Az érzékeny vagy nem engedélyezett kérések tervezetten emberhez kerülnek.",
+      "first": "Az átadás valódi SIP-átirányítás egy másik tel: vagy sip: célra, így a hívó nem egy második menüben köt ki, hanem telefonon az Ön egyik munkatársánál. Nyitvatartási időn kívül az tartalék, amit beállított: üzenetrögzítés, visszahívási kérés felvétele vagy egy ügyeleti szám hívása.",
+      "second": "Egy korlátot érdemes kimondani. A hívó telefonszáma kényelmi azonosító, nem hitelesítés, ezért bármi érzékeny megerősített azonosítást vagy embert igényel. Egy személyzettel működő központnak pontosan ugyanez a gondja, és azzal az azonosítási ellenőrzéssel oldja meg, amit a szkriptben előír."
+    },
+    "setup": {
+      "question": "Mennyi munka a beállítás és a módosítás?",
+      "answer": "A Velyric beállítása olyan konfiguráció, amit maga végez el: szerez vagy hordoz egy számot, betölti a tudását, összeköt egy naptárat, eldönti, mit tehet az asszisztens. A későbbi módosítás egy dokumentumfeltöltés és egy publikált asszisztensverzió. Egy call center bevezetése emberi folyamat — tájékoztatás, szkript, képzés, felfutás —, és minden későbbi változás ennek egy kisebb változatát ismétli meg.",
+      "steps": {
+        "s1": {
+          "title": "Szerezzen számot",
+          "body": "Igényeljen magyar vezetékes számot a Telnyxen keresztül, vagy hordozza át azt, amit már közzétett. A számigénylés szolgáltatói és hatósági cégellenőrzést igényelhet, ami a kiosztási folyamat része."
+        },
+        "s2": {
+          "title": "Töltse be, amit tud",
+          "body": "Töltsön fel PDF, DOCX, TXT, Markdown vagy CSV fájlokat, adjon hozzá kézi kérdés-válasz listát, vagy irányítsa a bejárót a weboldalára. Előbb a sitemapet követi, egyébként az azonos oldalon lévő aloldalakat járja be, és a schema.org adatokat — például címet és nyitvatartást — strukturált tényként olvassa ki."
+        },
+        "s3": {
+          "title": "Kösse be a naptárat és az eszközöket",
+          "body": "Google Naptár vagy Microsoft 365 OAuth2-vel és PKCE-vel, mellette a saját HTTPS végpontjai egyedi API-eszközként, JSON Schema be- és kimenettel, eszközönkénti időtúllépéssel, újrapróbálkozással, idempotenciakulccsal és megerősítési szabállyal."
+        },
+        "s4": {
+          "title": "Teszteljen publikálás előtt",
+          "body": "Futtasson tesztelő hívásokat és regressziós készleteket a szimulációs felületen, publikálja az asszisztensverziót, és görgesse vissza, ha valami nem stimmel."
+        }
+      }
+    },
+    "reporting": {
+      "question": "Milyen adatot kap a hívás után?",
+      "answer": "A Velyric minden hívást a saját irányítópultjára ír: hívásszám, megoldási arány, átlagos hossz, átkapcsolási arány, foglalások és költség, valamint átiratok és összefoglalók ott, ahol engedélyezi. A mért jelzések között van a válaszlatencia, a közbevágás sikeressége, az eszközök sikeraránya, az első hívásos megoldás, a foglalási konverzió, a nem alátámasztott válaszok aránya és a nyelvváltás pontossága. A nyers hangfelvétel megőrzése nulla nap, és nem tárolódik, hacsak nem vásárolja meg a rögzítés kiegészítőt.",
+      "first": "A megőrzés kimondott és állítható: az átiratok alapértelmezetten 90 napig, minimum egy napig, a hívásesemények 180 napig, minimum 30 napig, az eszközök adattartalma 30 napig, a hívói profilok 730 napig. Legfeljebb tíz kimenő webhook végpont tolhat 17 eseménytípust a saját rendszereibe, köztük a call.started, call.ended, booking.created, booking.changed és booking.canceled eseményeket, mindegyiket HMAC-SHA256-tal aláírva.",
+      "second": "Kiszervezett központnál a riportolás szerződéses feltétel. Kérdezze meg, mit kap, milyen formátumban, milyen gyakran, és hogy a szerződés lejárta után is olvasható marad-e. A Velyric a hívási adatok tekintetében az Ön nevében eljáró adatfeldolgozó egy közzétett 28. cikk szerinti adatfeldolgozási szerződés alapján, az alkalmazás- és hívásadatok pedig EU-s felhőrégióban kerülnek feldolgozásra."
+    },
+    "cost": {
+      "question": "Miben tér el a két költségmodell?",
+      "answer": "A Velyric előfizetés benne foglalt beszédpercekkel és közzétett percalapú túlhasználati díjjal, tehát a számla a lebeszélt perceket követi. Egy call center emberek idejére vagy kezelt mennyiségre árazódik, tehát a számla azt követi, mennyire terhelt, és mennyi időre köti a szerződés. A kettő között nem mértünk megtakarítást, és nem is fogunk ilyet mondani.",
+      "first": "Amit érdemes összevetni, az az, hová megy a pénz akkor, amikor nem történik semmi. Az előfizetés akkor is fizetendő, ha nem csörög a telefon, és ugyanez igaz a személyzettel lefedett órákra. A különbség a széleken látszik: egy csendes éjszaka semmit nem tesz hozzá egy percalapú számlához, egy hirtelen csúcs pedig egyidejűségbe kerül, nem túlórába.",
+      "second": "A Velyric kizárólag a magyar piacra és kizárólag forintban tesz közzé árat, áfa nélkül. A magasabb csomagra váltás azonnal, a leminősítés a számlázási időszak végén lép életbe; a túlhasználat a csomag percdíján folytatódik, költési korlátokkal. A hívásrögzítés, a további telefonszámok és az egyidejűség-bővítés fizetős kiegészítők.",
+      "facts": {
+        "plans": {
+          "term": "Havi csomagok",
+          "value": "Start 39 900 Ft, Business 69 900 Ft, Pro 129 900 Ft, áfa nélkül. Az Enterprise szerződéses."
+        },
+        "minutes": {
+          "term": "Benne foglalt beszédpercek",
+          "value": "Havi 150, 400 vagy 1000 perc, a túlhasználat 149, 129 vagy 109 Ft percenként."
+        },
+        "concurrency": {
+          "term": "Egyidejű hívások",
+          "value": "2 a Starton, 10 a Businessen, 50 a Prón, 100 vagy több az Enterprise-on."
+        },
+        "included": {
+          "term": "Minden csomagban benne van",
+          "value": "Egy telefonszám, egy telephely, és legfeljebb 1800 másodperces híváshossz."
+        }
+      }
+    },
+    "alternative": {
+      "question": "Mikor jobb választás a call center?",
+      "answer": "Amikor maga a beszélgetés a termék. A hosszú, tanácsadói értékesítési hívások, a szabályozott tanácsadás, a felelősségvállalást igénylő panaszok, a követeléskezelés, és minden, ahol a hívónak azt kell éreznie, hogy egy ember felelős, képzett emberekhez tartozik. Ha a hívásai többsége így néz ki, egy AI hangasszisztens legfeljebb bejárati ajtó.",
+      "first": "Három további eset szól az emberek mellett. Amikor a szkript folyamatosan úgy változik, ahogy azt egyetlen dokumentum sem rögzíti, egy tájékoztatott csapat gyorsabban alkalmazkodik, mint egy tudásbázis. Amikor a hívások rendszeresen kivételekről szóló mérlegelésen múlnak — egy kedvezmény, egy méltányossági döntés, egy eltérés a szabályzattól —, mert a Velyric eszközjogosultságai kódban élnek, és nem fog rögtönözni egyet. És amikor kimenő hívásokra van szüksége nagy mennyiségben: a Velyric bejövő hívásokat fogad a saját számán.",
+      "second": "Van egy hibrid megoldás, amit érdemes megfontolni, mielőtt bármelyik mellett dönt. Tegye az asszisztenst az első vonalra, hagyja, hogy befejezze az ismétlődő hívásokat, a többit pedig adja át a csapatának vagy a központjának úgy, hogy a hívó szándéka már össze van gyűjtve. Pont ezért létezik az átadási útvonal, és ezért közönséges tel: és sip: célok az átkapcsolási célpontok.",
+      "third": "A Velyric saját korlátai is ide tartoznak: csak magyar, német és angol; a hívások 30 percben korlátozva; az egyidejűség csomaghoz kötve; tárolt hangfelvétel nélkül, hacsak nem veszi hozzá a rögzítést; és a számelérhetőség, amely a szolgáltatótól és a hatósági ellenőrzéstől függ."
+    },
+    "faq": {
+      "q1": {
+        "question": "Tudja a hívó, hogy AI-jal beszél?",
+        "answer": "Igen. Az asszisztens a hívás elején elmondja, hogy a hívó AI asszisztenssel beszél. Ez terméki alapértelmezés, nem valami, amit emlékezni kell bekapcsolni, és egybevág az EU AI-rendelet 50. cikkének átláthatósági kötelezettségével, amely 2026. augusztus 2-ától alkalmazandó."
+      },
+      "q2": {
+        "question": "Megtarthatom a call centeremet, és használhatom mellette a Velyricet?",
+        "answer": "Igen. A Velyric azon a számon vesz fel, amelyet ráirányít, és bármely tel: vagy sip: célra továbbítja a hívásokat, ami lehet a központja várósora is. Gyakori felosztás, hogy az asszisztens viszi az első vonalas hívásokat, és továbbadja, amit nem tud befejezni, miközben a hívó bármely pillanatban kérhet embert vagy megnyomhatja a beállított billentyűt."
+      },
+      "q3": {
+        "question": "Mi történik az egyszerre érkező hívásokkal?",
+        "answer": "Minden hívás saját call_id-t, AI-munkamenetet, beszélgetési állapotot és nyomvonalat kap, így a hívások izoláltak, és egy hiba nem hat a többire. Hogy egyszerre hány fut, az csomaghatár: 2 a Starton, 10 a Businessen, 50 a Prón, 100 vagy több az Enterprise-on. A korlát fölötti hullámok az Ön által választott szabályt követik: rövid sor, túlcsordulási szám, visszahívás vagy hangposta."
+      },
+      "q4": {
+        "question": "Kitalál valamit az AI, ha nem tudja a választ?",
+        "answer": "Kifejezetten úgy készült, hogy ne. A visszakeresés az Ön saját bérlőjére van szűrve, és ha nem található alátámasztó forrás, az asszisztens pontosító kérdést tesz fel vagy emberhez adja a hívást, ahelyett hogy válaszolna. A dokumentumokat és a hívó beszédét nem megbízható bemenetként kezeli, így egy feltöltött fájlba rejtett utasítás nem változtathatja meg, mit tehet az asszisztens."
+      },
+      "q5": {
+        "question": "Tárolják a hívásaim felvételeit?",
+        "answer": "Alapértelmezés szerint nem. A nyers hívásaudió megőrzése nulla nap, és nem tárolódik; a rögzítés fizetős kiegészítő. Az átiratokat alapértelmezetten 90 napig őrizzük, és ezt egyetlen napra is leállíthatja, az ügyfélhívási adatokat pedig nem használjuk általános célú modellek tanítására."
+      },
+      "q6": {
+        "question": "Mennyibe kerül egy call centerhez képest?",
+        "answer": "Nem fogunk összehasonlítást mondani, mert nem mértünk ilyet. A szerkezetek eltérnek: a Velyric havi előfizetés 150, 400 vagy 1000 benne foglalt perccel és közzétett percalapú túlhasználati díjjal, míg egy központ a személyzettel töltött időre vagy a kezelt mennyiségre számláz. A Velyric árai a magyar piacra, forintban, áfa nélkül vannak közzétéve."
+      }
+    },
+    "related": {
+      "capability": {
+        "label": "Hívásátadás a csapatának",
+        "description": "Amikor egy hívás emberhez kerül: hogyan történik az átirányítás, és mit tesz először az asszisztens."
+      }
+    }
+  },
+  "vs-ivr": {
+    "meta": {
+      "title": "AI hangasszisztens vagy IVR: mi változik, ha a hívó beszélhet",
+      "description": "Egy AI hangasszisztens és egy klasszikus nyomógombos IVR menü összevetése hívói élményben, átadásban, módosítási ráfordításban, riportolásban és költségszerkezetben, azzal együtt, mikor jobb megoldás mégis a menü."
+    },
+    "breadcrumb": "AI hangasszisztens vagy IVR",
+    "eyebrow": "Összehasonlítás",
+    "title": "AI hangasszisztens vagy IVR telefonmenü",
+    "body": "Az IVR arra kéri a hívót, hogy fordítsa le a problémáját egy számra. Egy hangasszisztens hagyja, hogy elmondja. Ez az egyetlen különbség megváltoztatja, mit tesz a hívó először, mit tud utána mérni, és mibe kerül megváltoztatni a köszöntőt.",
+    "card": {
+      "label": "AI hangasszisztens vagy IVR menü",
+      "description": "Mi változik, ha a hívó beszélhet gombnyomás helyett, és mikor nyer mégis a menü."
+    },
+    "summary": {
+      "question": "Le kellene cserélni az IVR-t AI hangasszisztensre?",
+      "answer": "Akkor cserélje le, ha a menü olyan kérdések irányítására létezik, amelyeket egyszerűen meg is lehetett volna válaszolni: nyitvatartás, árak, szabad időpontok, hol lehet parkolni, van-e raktáron egy alkatrész. A Velyric felveszi, meghallgatja a hívó saját szavait magyarul, németül vagy angolul, a dokumentumaiból válaszol, a valós naptárába foglal, és kérésre átkapcsol. Akkor tartsa meg az IVR-t, ha minden hívónak valóban két fix cél egyikére van szüksége és semmi másra, mert ilyenkor a menü a leggyorsabb és legkiszámíthatóbb, amit építhet. A kettő kombinálható is: egy DTMF billentyű továbbra is ugorhat egyenesen emberhez."
+    },
+    "table": {
+      "heading": "Egymás mellett",
+      "intro": "Csak szerkezeti különbségek. Nincsenek iparági statisztikák és nincsenek kitalált lemorzsolódási arányok.",
+      "caption": "Egy AI hangasszisztens és egy klasszikus IVR telefonmenü összevetése tíz működési szempont mentén.",
+      "columns": {
+        "velyric": "Velyric AI hangasszisztens",
+        "other": "Klasszikus IVR menü"
+      },
+      "rows": {
+        "availability": {
+          "criterion": "Elérhetőség",
+          "velyric": "A nap 24 órájában felveszi a saját számán, és nyitvatartási időn kívül másként viselkedik: üzenetrögzítés, visszahívási kérés vagy átkapcsolás egy ügyeleti számra.",
+          "other": "Mindig elérhető, mert egy felvétel és egy döntési fa. Ami a menüpontok mögött van, csak akkor elérhető, ha van ott valaki."
+        },
+        "pickup": {
+          "criterion": "Mit tesz a hívó először",
+          "velyric": "Saját szavaival elmondja, mit szeretne. Az asszisztens közli, hogy AI asszisztens, és a hívó mondat közben is közbevághat, mert a beszélgetés full duplex.",
+          "other": "Végighallgatja a menüpontokat, és ráilleszti a problémáját az egyikre. A közbevágás korai gombnyomást jelent, nem beszédet."
+        },
+        "language": {
+          "criterion": "Nyelvek",
+          "velyric": "Magyar, német és angol egyetlen számon, és a nyelv hívás közben is változhat. Az E.164 országhívószám csak kiindulási jelzés; egy kifejezett kérés vagy a felismert beszélt nyelv felülírja.",
+          "other": "Minden nyelv külön felvett ág, amelyet többnyire előbb gombnyomással kell kiválasztani. Egy új nyelv a fa újrafelmondását jelenti."
+        },
+        "questions": {
+          "criterion": "Egy kérdés megválaszolása",
+          "velyric": "Közvetlenül a tudásbázisából válaszol — dokumentumok, kézi kérdés-válasz lista és bejárt weboldalak —, és pontosító kérdést tesz fel vagy átad, ha semmi nem támaszt alá választ.",
+          "other": "Le tud játszani egy felvett közleményt, például a nyitvatartást, de egy előre nem látott kérdést nem tud megválaszolni. Bármi, ami kilóg a menüből, emberre várássá válik."
+        },
+        "booking": {
+          "criterion": "Időpontfoglalás",
+          "velyric": "Valós szabad időpontot ellenőriz a Google Naptárban vagy a Microsoft 365-ben, csak szabad idősávot ajánl, hangosan megerősíti, majd megszorításokkal, tranzakciókkal és idempotenciakulccsal írja be a foglalást a dupla foglalás ellen.",
+          "other": "Ahhoz irányít, aki foglal. Maga a menü nem tart naptárat."
+        },
+        "escalation": {
+          "criterion": "Eljutás emberhez",
+          "velyric": "Ha a hívó embert kér, a hívás azonnal átkapcsol. A DTMF továbbra is elérhető és állítható, például ### az élő ügyintézőhöz, 0 az azonnali átkapcsoláshoz és * egy lépés visszalépéshez.",
+          "other": "Egy menüpont, ha épített ilyet. Egyébként a hívó újra végigmegy a fán."
+        },
+        "concurrency": {
+          "criterion": "Csúcsterhelés",
+          "velyric": "Az egyidejű hívások csomaghatára 2, 10, 50 vagy 100 és több, és minden hívás izolált munkamenetben fut. A korlát fölött Ön választja a szabályt: rövid sor, túlcsordulási szám, visszahívás vagy hangposta.",
+          "other": "A menü szabadon skálázódik; a mögötte lévő sor nem. A szűk keresztmetszet egyszerűen átkerül a menüpont másik oldalán lévő emberekhez."
+        },
+        "changes": {
+          "criterion": "Az elhangzottak módosítása",
+          "velyric": "Töltsön fel új dokumentumverziót, és az atomi módon váltja le a régi darabokat. A viselkedés verziózott, szimulációs felületen tesztelhető és visszagörgethető.",
+          "other": "Újra fel kell venni a szövegeket és újra publikálni a fát, minden támogatott nyelven."
+        },
+        "data": {
+          "criterion": "Mit tanul a hívásból",
+          "velyric": "Szándék, megoldási arány, átkapcsolási arány, átlagos hossz, foglalások és költség, valamint átiratok és összefoglalók, ahol engedélyezi. A nem alátámasztott válaszok aránya megmutatja, mely kérdéseket nem tudja még megválaszolni a tudásbázisa.",
+          "other": "Gombnyomások. Azt tudja, melyik menüpontot választották, nem azt, mit akart a hívó."
+        },
+        "cost": {
+          "criterion": "Hogyan számláznak",
+          "velyric": "Havi előfizetés benne foglalt beszédpercekkel és közzétett percalapú túlhasználati díjjal. Az árak a magyar piacra, forintban, áfa nélkül vannak közzétéve.",
+          "other": "Általában a telefonrendszere vagy PBX-licence része. Egy módosítás költsége az újrafelmondás és újrapublikálás munkája."
+        }
+      }
+    },
+    "caller": {
+      "question": "Mit tapasztal valójában a hívó?",
+      "answer": "Menüvel a hívó előbb hallgat, utána cselekszik: meghallgatja a menüpontokat, ráilleszti a problémáját az egyikre, gombot nyom, vár. Hangasszisztenssel előbb beszél — „szeretném áttenni a keddi időpontomat” —, és az asszisztens ebből a mondatból dolgozik. Közbevághat, tétovázhat, hümmöghet és hívás közben nyelvet válthat anélkül, hogy bármit újra kellene kezdeni.",
+      "first": "Nincs megjegyzendő nyomógombos fa, és nincs mit megismételni, ha a hívó rossz ágat választott. A beszélgetés explicit, kódban leírt állapotgépen fut végig — köszönés, igényfelmérés, azonosítás, művelet előnézete, megerősítési kapu, eszközfuttatás, eredmény visszaigazolása, utókövetés, átadás, biztonságos hibakezelés, lezárás —, így az asszisztens mindig tudja, hol tart, a háttérrendszer pedig ellenőrzi, megengedett-e abban az állapotban a modell által javasolt eszköz.",
+      "second": "A billentyűk nem tűnnek el. A DTMF a beszéd mellett is állítható marad, így aki pontosan tudja, mit akar, továbbra is nyomhat gombot: például ### az élő ügyintézőhöz, 0 az azonnali átkapcsoláshoz, * a visszalépéshez. Aki megtanulta a rövidítéseit, semmit nem veszít azzal, hogy az előtte lévő menü beszélgetéssé válik."
+    },
+    "fallback": {
+      "question": "Mi történik, ha a rendszer nem tud segíteni?",
+      "answer": "Egy IVR hibamódja a zsákutca: a hívó egy olyan ágban van, ami nem illik rá, és vagy újrakezdi, vagy leteszi. A Velyric hibamódja az átadás. Két-három sikertelen megértési kísérlet után az asszisztens felajánlja az átkapcsolást, egy emberre vonatkozó kérés azonnal átkapcsol, egy eszköz időtúllépését vagy 5xx hibáját pedig egyszer újrapróbálja, mielőtt a hívás átkapcsolna vagy a nyitvatartáson kívüli tartalékra esne.",
+      "first": "Az asszisztens nem tölt ki egy hézagot egy hihető mondattal. Minden válasz az Ön bérlőjének saját indexelt forrásaiból származik, és ha semmi nem támaszt alá választ, a szabály az, hogy pontosító kérdést tesz fel vagy átad. Az érzékeny vagy nem engedélyezett kérések tervezetten emberhez kerülnek, a hívó telefonszámát pedig kényelmi azonosítóként kezeli, nem hitelesítésként.",
+      "second": "Nyitvatartási időn kívül a viselkedés külön állítható: üzenet felvétele, visszahívási kérés rögzítése vagy a hívás továbbítása egy ügyeleti számra. Ez közelebb van ahhoz, amit este 22-kor várnak az emberek, mint egy fa, amelynek minden ága üres irodában végződik."
+    },
+    "setup": {
+      "question": "Mennyi munka a beállítás és a módosítás?",
+      "answer": "Egy IVR-t egyszer építenek meg, és a szövegek újrafelmondásával meg a fa újrapublikálásával szerkesztik, minden nyelven. A Velyricet egyszer konfigurálják, és egy dokumentum feltöltésével szerkesztik. Először mindkettő gyors. A huszadik módosításnál válnak szét, és azon a napon, amikor egy harmadik nyelv jön.",
+      "steps": {
+        "s1": {
+          "title": "Irányítsa a számot a Velyricre",
+          "body": "Igényeljen magyar vezetékes számot a Telnyxen keresztül, vagy hordozza át azt, amelyen ma a menü felveszi. A számigénylés szolgáltatói és hatósági cégellenőrzést igényelhet, ami a kiosztási folyamat része."
+        },
+        "s2": {
+          "title": "Alakítsa a menüszöveget tudássá",
+          "body": "A mondatok, amelyeket a menü felolvas, általában már le vannak írva. Töltse fel a PDF, DOCX, TXT, Markdown vagy CSV fájlokat, adjon hozzá kézi kérdés-válasz listát, vagy irányítsa a bejárót a weboldalára: előbb a sitemapet követi, és a schema.org adatokat — például címet és nyitvatartást — strukturált tényként olvassa ki."
+        },
+        "s3": {
+          "title": "Tartsa meg a valóban létező útvonalakat",
+          "body": "Rendelje hozzá a két-három valódi célt DTMF billentyűkhöz és átkapcsolási célpontokhoz, hogy azok a hívók, akik már tudják, mit akarnak, semmit ne veszítsenek azzal, hogy a menüből beszélgetés lesz."
+        },
+        "s4": {
+          "title": "Tesztelje azokat a hívásokat, amelyektől tart",
+          "body": "Építsen regressziós készletet a szimulációs felületen a legnehezebb hívásaiból, publikálja az asszisztensverziót, és görgesse vissza, ha rosszul viselkedik."
+        }
+      }
+    },
+    "reporting": {
+      "question": "Milyen adatot kap a hívás után?",
+      "answer": "Egy IVR megmondja, melyik gombot nyomták meg. A Velyric megmondja, mit kért a hívó. Az irányítópult mutatja a hívásszámot, a megoldási arányt, az átlagos hosszt, az átkapcsolási arányt, a foglalásokat és a költséget, valamint az átiratokat és összefoglalókat ott, ahol engedélyezi. A nem alátámasztott válaszok aránya a leghasznosabb, mert lényegében azoknak a kérdéseknek a listája, amelyekre a cége még nem tud válaszolni.",
+      "first": "A mért jelzések között van a válaszlatencia, a közbevágás sikeressége, az eszközök sikeraránya, az első hívásos megoldás, az átkapcsolási arány, a foglalási konverzió, a kapcsolt percre jutó költség, a megoldott hívásra jutó költség és a nyelvváltás pontossága. Legfeljebb tíz kimenő webhook végpont tolhat 17 eseménytípust a saját rendszereibe, HMAC-SHA256-tal aláírva és nyolc kísérleten át, növekvő várakozással újrapróbálva.",
+      "second": "Nyers hangfelvételt alapértelmezés szerint nem tárolunk. Az átiratokat alapértelmezetten 90 napig őrizzük, állítható minimum egy nappal, a híváseseményeket 180 napig, minimum 30 nappal. A Velyric a hívási adatok tekintetében adatfeldolgozó egy közzétett 28. cikk szerinti adatfeldolgozási szerződés alapján, a feldolgozás EU-s felhőrégióban történik."
+    },
+    "cost": {
+      "question": "Miben tér el a két költségmodell?",
+      "answer": "Egy IVR általában a telefonszolgáltatási szerződéssel együtt jár, így a határköltsége nullának látszik, a valódi költsége pedig minden módosítás munkája. A Velyric havi előfizetés benne foglalt beszédpercekkel és közzétett túlhasználati díjjal, tehát látható sora van a számlán, és nincs módosítási költsége. Nem mértük, melyik olcsóbb az Ön híváskeverékére, és nem találunk ki rá számot.",
+      "first": "Amit egyik számla sem mutat meg, az az, mi lesz azokkal a hívókkal, akik úgy távoznak, hogy nem kapták meg, amiért telefonáltak. Egy menü egy gombnyomáson túl semmilyen nyomot nem hagy róluk, így a szám a saját adataiból nem megismerhető; az asszisztens átiratot és nem alátámasztott válaszarányt hagy maga után, ami legalább mérhetővé teszi.",
+      "second": "A Velyric kizárólag a magyar piacra és kizárólag forintban tesz közzé árat, áfa nélkül. A magasabb csomagra váltás azonnal, a leminősítés a számlázási időszak végén lép életbe, a túlhasználat pedig a csomag percdíján folytatódik, költési korlátokkal. A hívásrögzítés, a további telefonszámok és az egyidejűség-bővítés fizetős kiegészítők.",
+      "facts": {
+        "plans": {
+          "term": "Havi csomagok",
+          "value": "Start 39 900 Ft, Business 69 900 Ft, Pro 129 900 Ft, áfa nélkül. Az Enterprise szerződéses."
+        },
+        "minutes": {
+          "term": "Benne foglalt beszédpercek",
+          "value": "Havi 150, 400 vagy 1000 perc, a túlhasználat 149, 129 vagy 109 Ft percenként."
+        },
+        "concurrency": {
+          "term": "Egyidejű hívások",
+          "value": "2 a Starton, 10 a Businessen, 50 a Prón, 100 vagy több az Enterprise-on."
+        },
+        "included": {
+          "term": "Minden csomagban benne van",
+          "value": "Egy telefonszám, egy telephely, és legfeljebb 1800 másodperces híváshossz."
+        }
+      }
+    },
+    "alternative": {
+      "question": "Mikor jobb választás az IVR?",
+      "answer": "Amikor a fa valóban két szint mély, és mindkét ág cél, nem kérdés. A „nyomja meg az 1-est a szervizért, a 2-est az alkatrészekért” gyorsabb bármely beszélgetésnél, működik azoknak, akik fejből tudják a számot, és semmibe nem kerül fenntartani. Ha ez írja le a menüjét, tartsa meg.",
+      "first": "Az IVR a biztonságosabb választás ott is, ahol az irányítás jogilag vagy működésileg kötött — egy segélyvonal, egy szabályozott forródrót, egy sor, amelybe meghatározott rendben kell belépni —, és ahol egy determinisztikus fát egyszerűen könnyebb auditálni, mint egy beszélgetést.",
+      "second": "Akkor is nyer, ha kicsi a hívásszám. Egy tudásbázis karbantartása akkor térül meg, ha elég hívás van ahhoz, hogy indokolt legyen naprakészen tartani; heti néhány hívásnál egy felvett üzenet és egy gombnyomás arányos a problémával.",
+      "third": "A Velyricnek is vannak mérlegelendő korlátai: csak magyar, német és angol, 30 perces híváshossz-korlát, csomaghoz kötött egyidejűség, tárolt hangfelvétel nélkül, hacsak nem veszi hozzá a rögzítést, és a szolgáltatótól meg a hatósági ellenőrzéstől függő számelérhetőség."
+    },
+    "faq": {
+      "q1": {
+        "question": "Megtarthatom a gombnyomásokat, amelyeket a törzsvendégeim már ismernek?",
+        "answer": "Igen. A DTMF állítható és a beszéd mellett működik, így a megszokott rövidítések pontosan ott maradhatnak, ahol vannak. A példákban használt alapértelmezések: ### az élő ügyintézőhöz, 0 az azonnali átkapcsoláshoz és * egy lépés visszalépéshez."
+      },
+      "q2": {
+        "question": "Végig kell hallgatnia a hívónak a menüpontokat?",
+        "answer": "Nem. Az asszisztens köszönti a hívót, közli, hogy AI asszisztens, és utána figyel. Mivel a beszélgetés full duplex, a hívó belebeszélhet a köszöntőbe, és az asszisztens elhallgat, ami a korai gombnyomás legközelebbi megfelelője."
+      },
+      "q3": {
+        "question": "Lassabb egy hangasszisztens, mint egy gombnyomás?",
+        "answer": "Annak a hívónak, aki már tudja a helyes billentyűt, a gombnyomás gyorsabb, pontosan ezért marad elérhető a DTMF. Mindenki másnak nem gombnyomás áll szemben egy mondattal, hanem egy mondat áll szemben azzal, hogy végighallgat egy menüt, ágat választ, és utána gyakran még egy menüt hallgat."
+      },
+      "q4": {
+        "question": "Mi történik, ha a hívó olyat kérdez, amit a menü sosem fedett le?",
+        "answer": "Az asszisztens megkeresi az Ön saját indexelt forrásait, és válaszol, ha valami alátámasztja a választ. Ha semmi nem, pontosító kérdést tesz fel vagy emberhez adja a hívást, ahelyett hogy találgatna. Mindegyik ilyen eset megjelenik a nem alátámasztott válaszok arányában is, így pótolhatja a hiányzó dokumentumot."
+      },
+      "q5": {
+        "question": "Hány nyelvet tud kezelni egyetlen szám?",
+        "answer": "Egy szám kezeli a magyart, a németet és az angolt, és a nyelv hívás közben is változhat. A hívó E.164 országhívószáma csak kiindulási jelzés: egy kifejezett kérés, például a „magyarul kérem”, a felismert beszélt nyelv vagy egy eltárolt preferált nyelv mind felülírja."
+      },
+      "q6": {
+        "question": "Tud az asszisztens ténylegesen csinálni is dolgokat, vagy csak beszélni?",
+        "answer": "Rögzített készleten belül cselekszik: szolgáltatások listázása, szabad időpont ellenőrzése, foglalás létrehozása, foglalás megkeresése, foglalás lemondása és keresés a tudásbázisában, mellette bármely egyedi API-eszköz, amelyet a saját HTTPS végpontjaira definiál. Minden írás előtt összefoglalja, mit készül tenni, és megerősítést kér a hívótól."
+      }
+    },
+    "related": {
+      "capability": {
+        "label": "Többnyelvű hívások egy számon",
+        "description": "Hogyan ismeri fel, választja ki és váltja hívás közben a magyart, a németet és az angolt."
+      }
+    }
+  },
+  "vs-voicemail": {
+    "meta": {
+      "title": "AI recepciós vagy hangposta: mivel marad a hívó",
+      "description": "Egy AI recepciós és a hangposta összevetése abban, mit tud a hívó a hívás alatt befejezni, mi jut el Önhöz utána, hogyan számláznak, és mikor marad a hangposta a helyes válasz."
+    },
+    "breadcrumb": "AI recepciós vagy hangposta",
+    "eyebrow": "Összehasonlítás",
+    "title": "AI recepciós vagy hangposta és nem fogadott hívások",
+    "body": "A hangposta későbbre és Önre tolja a munkát. Egy AI recepciós befejezi, amit tud, még a hívás alatt, és csak azt hagyja Önre, amihez tényleg ember kell. A valódi összehasonlítás az, milyen állapotban van a hívó, amikor leteszi.",
+    "card": {
+      "label": "AI recepciós vagy hangposta",
+      "description": "Mit tud a hívó a hívás alatt befejezni, és mikor elég mégis a hangposta."
+    },
+    "summary": {
+      "question": "AI recepcióst érdemes használni hangposta helyett?",
+      "answer": "Akkor érdemes, ha az elmulasztott hívások olyasmit tartalmaznak, amit helyben be lehetett volna fejezni: egy foglalást, egy lemondást, egy kérdést, amelynek válasza már benne van a dokumentumaiban. A Velyric a saját számán veszi fel a telefont a nap 24 órájában magyarul, németül és angolul, a valós naptárat ellenőrzi, mielőtt idősávot ajánlana, és visszaolvassa a foglalást, mielőtt bármit beírna. Akkor tartsa meg a hangpostát, ha a hívásszám elhanyagolható és a költségnek nullának kell lennie, mert egy havi két üzenetet fogadó postaláda arányos megoldás. A Velyric egyébként maga is lehet az, ami felveszi az üzenetet, csak hangfájl helyett átiratot és összefoglalót ad vissza."
+    },
+    "table": {
+      "heading": "Egymás mellett",
+      "intro": "Csak szerkezeti különbségek. Nincs mért adatunk arról, mennyibe kerül egy elmulasztott hívás a cégének, ezért ilyen nincs is ebben a táblázatban.",
+      "caption": "Egy AI recepciós és a hangposta összevetése tíz működési szempont mentén.",
+      "columns": {
+        "velyric": "Velyric AI recepciós",
+        "other": "Hangposta és nem fogadott hívások"
+      },
+      "rows": {
+        "availability": {
+          "criterion": "Elérhetőség",
+          "velyric": "A nap 24 órájában felveszi a saját számán, a nyitvatartáson kívüli viselkedés pedig külön állítható: üzenet felvétele, visszahívási kérés rögzítése vagy továbbítás egy ügyeleti számra.",
+          "other": "Mindig elérhető, amikor a vonalat nem veszik fel, éppen ez a lényege. Semmi nem halad előre, amíg valaki meg nem hallgatja az üzenetet."
+        },
+        "pickup": {
+          "criterion": "Mi történik a hívóval",
+          "velyric": "Beszélgetést folytat. Az asszisztens közli, hogy AI asszisztens, a hívó közbevághat, tétovázhat és nyelvet válthat, és a rutinkérések többsége a híváson belül lezárul.",
+          "other": "Meghallgat egy szöveget és üzenetet hagy, vagy leteszi anélkül. A hívás alatt így vagy úgy semmi nem kerül megválaszolásra, lefoglalásra vagy lemondásra."
+        },
+        "language": {
+          "criterion": "Nyelvek",
+          "velyric": "Magyar, német és angol egyetlen számon, hívás közben váltható, és a beszélt nyelv felülírja az országhívószámot.",
+          "other": "Amilyen nyelveken a kimenő köszöntőt felvették. Az üzenet azon a nyelven érkezik vissza, amelyen a hívó beszélt."
+        },
+        "questions": {
+          "criterion": "Egy kérdés megválaszolása",
+          "velyric": "A saját tudásbázisából válaszol, az Ön bérlőjére szűrve, és pontosító kérdést tesz fel vagy átkapcsol, ha semmi nem támaszt alá választ.",
+          "other": "A hívás alatt nem kerül megválaszolásra. A kérdés akkor kap választ, amikor valaki visszahív, ha visszahív."
+        },
+        "booking": {
+          "criterion": "Időpontfoglalás",
+          "velyric": "Valós szabad időpontot ellenőriz a Google Naptárban vagy a Microsoft 365-ben, csak szabad idősávot ajánl, hangosan megerősíti, majd megszorításokkal, tranzakciókkal és idempotenciakulccsal írja be a foglalást, hogy duplikátum ne csúszhasson át.",
+          "other": "Foglalási kérés, nem foglalás. Két hívó kérheti ugyanazt az idősávot, és egyikük sem tud róla."
+        },
+        "escalation": {
+          "criterion": "Eljutás emberhez",
+          "velyric": "Ha a hívó embert kér, a hívás ott helyben átkapcsol, a DTMF pedig állítható, például ### az élő ügyintézőhöz vagy 0 az azonnali átkapcsoláshoz. Nyitvatartáson kívül a beállított tartalék lép életbe.",
+          "other": "A hívás alatt nem lehetséges. Az emberhez jutásból visszahívás lesz."
+        },
+        "concurrency": {
+          "criterion": "Csúcsterhelés",
+          "velyric": "Az egyidejű hívások csomaghatára 2, 10, 50 vagy 100 és több, és minden hívás izolált. A korlát fölött Ön választ rövid sort, túlcsordulási számot, visszahívást vagy hangpostát.",
+          "other": "Gyakorlatilag korlátlan, mert minden hívó tud üzenetet hagyni. A valódi szűk keresztmetszet az üzenetek feltorlódása."
+        },
+        "changes": {
+          "criterion": "Az elhangzottak módosítása",
+          "velyric": "Töltsön fel új dokumentumverziót, és az atomi módon váltja le a régi darabokat az aktív indexben. Az asszisztens verziói publikálhatók és visszagörgethetők.",
+          "other": "Újra fel kell venni a köszöntőt."
+        },
+        "data": {
+          "criterion": "Mit kap utána",
+          "velyric": "Irányítópult hívásokkal, megoldási aránnyal, átlagos hosszal, átkapcsolási aránnyal, foglalásokkal és költséggel, valamint átiratokkal és összefoglalókkal, ahol engedélyezi. Nyers hangfelvételt alapértelmezés szerint nem tárol.",
+          "other": "Egy hangfájl és egy időbélyeg. Minden mást meg kell hallgatni és kézzel be kell gépelni."
+        },
+        "cost": {
+          "criterion": "Hogyan számláznak",
+          "velyric": "Havi előfizetés benne foglalt beszédpercekkel és közzétett percalapú túlhasználati díjjal, a magyar piacra forintban árazva, áfa nélkül.",
+          "other": "Általában a vonal része, külön díj nélkül. A költség a visszahívásokban van, nem a számlán."
+        }
+      }
+    },
+    "caller": {
+      "question": "Mit tapasztal valójában a hívó?",
+      "answer": "Sípszó helyett a hívó olyan beszélgetést kap, amely be tudja fejezni a feladatot. Elmondja, mit szeretne, az asszisztens a saját anyagából válaszol vagy ellenőrzi a valós naptárát, visszaolvassa, mit készül tenni, és lefoglalja. Ha inkább emberrel beszélne, szól, és a hívás az Ön számára kerül átirányításra.",
+      "first": "A hívó számára a hangposta ígéret arról, hogy valaki visszahívja. Addig működik, amíg mindig vissza is hív, és csendben elbukik, ha nem. Egy asszisztens mindarra, amit a híváson belül be tud fejezni, megszünteti az ígéretet, a többiből pedig strukturált átadást csinál egy kétperces felvétel helyett, amit valakinek füllel kell legépelnie.",
+      "second": "A nyitvatartáson kívüli útvonal továbbra is megvan, ha kéri. A Velyric maga is felveheti az üzenetet, rögzíthet visszahívási kérést, vagy továbbíthatja a hívást egy ügyeleti számra. A különbség az, mi jut el Önhöz: átirat és összefoglaló a hívó szándékával, nem hangfájl és időbélyeg."
+    },
+    "fallback": {
+      "question": "Mi történik, ha a rendszer nem tud segíteni?",
+      "answer": "Átad, ahelyett hogy találgatna. Ha nincs alátámasztó forrás a tudásbázisában, az asszisztens pontosító kérdést tesz fel vagy átkapcsol; két-három sikertelen megértési kísérlet után magától ajánlja fel az átkapcsolást; egy eszköz időtúllépését vagy 5xx hibáját egyszer újrapróbálja, utána átkapcsol. Nyitvatartási időn kívül a beállított tartalék lép életbe, és ez lehet pontosan az az üzenetfelvétel, amit ma a hangposta végez.",
+      "first": "Ez ennek az összehasonlításnak az őszinte változata. Egy AI recepciós nem veszi ki a hangpostát a rendszeréből, hanem az első válasz helyett a végső tartalékká teszi. Bármi érzékenyhez továbbra is ember kell, mert a hívó telefonszáma kényelmi azonosító, nem hitelesítés.",
+      "second": "Maga az átadás SIP-átirányítás egy másik tel: vagy sip: célra, így a hívó valódi telefonon köt ki. Ha ott nem veszik fel, visszajut a meglévő tartalékához, ami jó ok arra, hogy a nyitvatartáson kívüli útvonalat tudatosan állítsa be, és ne hagyja alapértelmezésen."
+    },
+    "setup": {
+      "question": "Mennyi munka a beállítás és a módosítás?",
+      "answer": "A hangposta egy felvett köszöntőbe kerül és nulla karbantartásba. A Velyric egy délutánnyi konfigurációba, utána pedig egy dokumentumfeltöltésbe, valahányszor valami változik. Ha a postaláda valóban elbírja a mennyiségét, ezt a beállítást nem éri meg elvégezni. Ha a délelőttjei visszahívásokkal telnek, megéri.",
+      "steps": {
+        "s1": {
+          "title": "Szerezzen vagy hordozzon számot",
+          "body": "Igényeljen magyar vezetékes számot a Telnyxen keresztül, vagy hordozza át azt, amit már hívnak az emberek. A számigénylés szolgáltatói és hatósági cégellenőrzést igényelhet, ami a kiosztási folyamat része."
+        },
+        "s2": {
+          "title": "Töltse be a válaszokat, amiket visszahíváskor elismétel",
+          "body": "Amit visszahíváskor el szokott mondani, az maga a tudásbázis: nyitvatartás, árak, szolgáltatások, mit hozzon magával. Töltsön fel PDF, DOCX, TXT, Markdown vagy CSV fájlokat, adjon hozzá kézi kérdés-válasz listát, vagy hagyja, hogy a bejáró elolvassa a weboldalát."
+        },
+        "s3": {
+          "title": "Kösse be a naptárat",
+          "body": "Google Naptár vagy Microsoft 365 OAuth2-vel és PKCE-vel. A Velyric olvassa a foglalt időt, eseményt hoz létre és mond le, így egy hívás foglalással érhet véget, nem foglalási kéréssel."
+        },
+        "s4": {
+          "title": "Döntse el, miből legyen továbbra is üzenet",
+          "body": "Állítsa be a nyitvatartáson kívüli viselkedést és az átkapcsolási célpontokat. Az üzenetfelvétel elérhető marad; egyszerűen kivétellé válik az alapértelmezés helyett."
+        }
+      }
+    },
+    "reporting": {
+      "question": "Milyen adatot kap a hívás után?",
+      "answer": "A hangposta egy hangfájlt, egy számot és egy időbélyeget ad. A Velyric átiratot, összefoglalót, felismert szándékot ad, és azt, hogy a hívás megoldódott, átkapcsolt vagy foglalással végződött, egy olyan irányítópulton, amely a hívásszámot, az átlagos hosszt, az átkapcsolási arányt és a költséget is mutatja. A nyers hangfelvétel megőrzése nulla nap, és nem tárolódik, hacsak nem vásárolja meg a rögzítés kiegészítőt.",
+      "first": "A megőrzés kimondott: az átiratok alapértelmezetten 90 napig, állítható minimum egy nappal, a hívásesemények 180 napig, minimum 30 nappal, az eszközök adattartalma 30 napig, a hívói profilok 730 napig. A hívói memória bérlőnként tárolódik, és soha nem kerül megosztásra bérlők között.",
+      "second": "Ha az eseményeket a saját rendszereiben szeretné, legfeljebb tíz kimenő webhook végpont fogadhat 17 eseménytípust, köztük a call.started, call.ended, booking.created, booking.changed és booking.canceled eseményeket, mindegyiket HMAC-SHA256-tal aláírva és nyolc kísérleten át, növekvő várakozással újrapróbálva."
+    },
+    "cost": {
+      "question": "Miben tér el a két költségmodell?",
+      "answer": "A hangposta rendszerint a vonal része, így a számlán megjelenő költsége gyakorlatilag nulla, a valódi költsége pedig a visszahívásokkal töltött idő. A Velyric havi előfizetés benne foglalt beszédpercekkel és közzétett percalapú túlhasználati díjjal. Nincs mért adatunk arról, mennyibe kerülnek a cégének az elmulasztott hívások, és nem is találunk ki ilyet.",
+      "first": "A döntés őszinte módja a számolás. Hány hívás megy hangpostára egy héten, ezekből hányat hív vissza, mennyi ideig tart egyet visszahívni, és hány volt közülük olyan kérdés, amire valahol már írásban válaszolt. Ha ez a számtan kicsit ad ki, tartsa meg a postaládát.",
+      "second": "A Velyric kizárólag a magyar piacra és kizárólag forintban tesz közzé árat, áfa nélkül: a Start 39 900 Ft 150 benne foglalt perccel, a Business 69 900 Ft 400-zal, a Pro 129 900 Ft 1000-rel, az Enterprise pedig szerződéses. A túlhasználat a csomag díján folytatódik, költési korlátokkal, a magasabb csomagra váltás azonnal, a leminősítés a számlázási időszak végén lép életbe.",
+      "facts": {
+        "plans": {
+          "term": "Havi csomagok",
+          "value": "Start 39 900 Ft, Business 69 900 Ft, Pro 129 900 Ft, áfa nélkül. Az Enterprise szerződéses."
+        },
+        "minutes": {
+          "term": "Benne foglalt beszédpercek",
+          "value": "Havi 150, 400 vagy 1000 perc, a túlhasználat 149, 129 vagy 109 Ft percenként."
+        },
+        "concurrency": {
+          "term": "Egyidejű hívások",
+          "value": "2 a Starton, 10 a Businessen, 50 a Prón, 100 vagy több az Enterprise-on."
+        },
+        "included": {
+          "term": "Minden csomagban benne van",
+          "value": "Egy telefonszám, egy telephely, és legfeljebb 1800 másodperces híváshossz."
+        }
+      }
+    },
+    "alternative": {
+      "question": "Mikor jobb választás a hangposta?",
+      "answer": "Amikor a mennyiség elhanyagolható, és a költségnek nullának kell lennie. Egy havi két-három üzenetet fogadó vonalhoz nem kell előfizetés, és egy postaláda, amelyet minden reggel valóban kiürítenek, működő rendszer. A hangposta a helyes válasz egy formalitásként létező vonalra is: egy bejegyzett cím, egy életben tartott régi szám, egy tartalék útvonal.",
+      "first": "Akkor is jobb választás, ha minden híváshoz egy konkrét ember kell és más nem felel meg: egy személyes vonal, egy egyedül dolgozó szakember átruházott hatáskör nélkül, egy szám, amely egyetlen megnevezett kapcsolattartót ér el. Egy asszisztens ott is fel tud venni üzenetet, de többet nem fog tenni, mint amit egy postaláda már most is megtesz.",
+      "second": "Ahol a bizalmasság a lényeg, egy olyan postaláda, amelyet csak egy ember nyit meg, egyszerűbben átlátható, mint egy platform. Érdemes azonban megjegyezni, hogy a Velyric alapértelmezés szerint nem tárol nyers hangfelvételt, minden visszakeresést az Ön bérlőjére szűr, és az alkalmazás- meg hívásadatokat EU-s felhőrégióban dolgozza fel adatfeldolgozóként, egy közzétett 28. cikk szerinti szerződés alapján.",
+      "third": "A Velyric saját korlátai is ide tartoznak: csak magyar, német és angol, 30 percben korlátozott hívások, csomaghoz kötött egyidejűség, és a szolgáltatótól meg a hatósági ellenőrzéstől függő számelérhetőség."
+    },
+    "faq": {
+      "q1": {
+        "question": "Tud a Velyric egyszerűen csak üzenetet felvenni?",
+        "answer": "Igen. Az üzenetfelvétel az egyik beállítható nyitvatartáson kívüli viselkedés, a visszahívási kérés rögzítése és az ügyeleti számra kapcsolás mellett. A hangpostához képest az a különbség, mi jut el Önhöz: átirat és összefoglaló a hívó szándékával, nem pedig egy hangfájl, amit valakinek meg kell hallgatnia."
+      },
+      "q2": {
+        "question": "Zavarni fogja a hívókat, hogy nem ember?",
+        "answer": "Az első mondatból tudni fogják, mert az asszisztens közli, hogy a hívó AI asszisztenssel beszél. Ami utána jön, az egy beszélgetés, amelybe a saját nyelvükön belevághatnak, és amely ténylegesen be tudja fejezni a foglalást. Hogy egy adott hívó ezt jobban kedveli-e a sípszónál, azt nem tudjuk Ön helyett megmérni."
+      },
+      "q3": {
+        "question": "Le tud foglalni egy időpontot úgy, hogy utána nem kell megerősítenem?",
+        "answer": "Igen. A szabad időpont a valós naptárához van ellenőrizve Google Naptáron vagy Microsoft 365-ön keresztül, az asszisztens összefoglalja a foglalást és megerősítést kér a hívótól, az írást pedig adatbázis-megszorítások, tranzakciók és idempotenciakulcsok védik. Ha két hívás versenyez ugyanazért az idősávért, a vesztes értesítést kap és felajánlja neki a következő valós alternatívát."
+      },
+      "q4": {
+        "question": "Mi történik, ha több hívás érkezik, mint amennyit a csomagom enged?",
+        "answer": "Az egyidejűség kereskedelmi korlát: 2 egyszerre futó hívás a Starton, 10 a Businessen, 50 a Prón, 100 vagy több az Enterprise-on. A korlát fölötti viselkedés az Ön által választott szabály: rövid sor, túlcsordulási szám, visszahívás vagy hangposta. Az egyidejűség-bővítés fizetős kiegészítőként elérhető."
+      },
+      "q5": {
+        "question": "Le kell mondanom a meglévő számomról?",
+        "answer": "Nem. A meglévő számok hordozhatók, és minden csomag tartalmaz egy telefonszámot és egy telephelyet. Az új magyar vezetékes számok a Telnyxen keresztül kerülnek kiosztásra, és az igénylés szolgáltatói meg hatósági cégellenőrzést igényelhet a kiosztási folyamat részeként."
+      },
+      "q6": {
+        "question": "Rögzítik a hívóim üzeneteit?",
+        "answer": "A nyers hívásaudiót alapértelmezés szerint nem tároljuk: a megőrzés nulla nap, a rögzítés pedig fizetős kiegészítő. Az átiratokat alapértelmezetten 90 napig őrizzük, és ezt egyetlen napra is leállíthatja, a híváseseményeket 180 napig. Az ügyfélhívási adatokat nem használjuk általános célú modellek tanítására."
+      }
+    },
+    "related": {
+      "capability": {
+        "label": "Telefonos időpontfoglalás",
+        "description": "Hogyan lesz egy hívásból megerősített idősáv a valós naptárában, dupla foglalás nélkül."
+      }
+    }
+  }
+}

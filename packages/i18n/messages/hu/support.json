@@ -1,0 +1,42 @@
+{
+  "title": "Segítségkérés",
+  "description": "Írj nekünk, és itt folytathatod a beszélgetést. A lezárt jegyek is megmaradnak.",
+  "new": "Új hibajegy",
+  "newTitle": "Új hibajegy nyitása",
+  "newBody": "Írd le, mi történt. Minél konkrétabb vagy, annál gyorsabban tudunk segíteni.",
+  "subject": "Tárgy",
+  "category": "Terület",
+  "priority": "Sürgősség",
+  "describe": "Mi a probléma?",
+  "describeHint": "Ha van, írd le a pontos időpontot és a telefonszámot is.",
+  "send": "Küldés",
+  "empty": "Még nincs hibajegyed.",
+  "pickTitle": "Válassz egy hibajegyet",
+  "pickBody": "A bal oldali listából bármelyik beszélgetésre átválthatsz.",
+  "replyPlaceholder": "Írd ide a válaszod…",
+  "close": "Lezárás",
+  "reopen": "Újranyitás",
+  "closedNotice": "Ez a hibajegy lezárult. A beszélgetés megmarad; ha újra gondod van, nyisd meg újra.",
+  "velyric": "Velyric",
+  "you": "Te",
+  "status": {
+    "OPEN": "Nyitott",
+    "PENDING_STAFF": "Nálunk van",
+    "PENDING_CUSTOMER": "Válaszoltunk",
+    "RESOLVED": "Megoldva",
+    "CLOSED": "Lezárva"
+  },
+  "categories": {
+    "TECHNICAL": "Technikai",
+    "BILLING": "Számlázás",
+    "PHONE_NUMBERS": "Telefonszám",
+    "ACCOUNT": "Fiók",
+    "OTHER": "Egyéb"
+  },
+  "priorities": {
+    "LOW": "Ráér",
+    "NORMAL": "Normál",
+    "HIGH": "Sürgős",
+    "URGENT": "Kritikus"
+  }
+}

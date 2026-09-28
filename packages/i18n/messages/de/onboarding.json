@@ -1,0 +1,520 @@
+{
+  "title": "Velyric einrichten",
+  "progress": "Fortschritt der Einrichtung",
+  "profileRequired": "Vervollständige zuerst die Rechnungsdaten.",
+  "steps": {
+    "workspace": "Workspace",
+    "billing": "Rechnungsdaten",
+    "plan": "Tarif",
+    "provisioning": "Live gehen"
+  },
+  "headings": {
+    "workspace": {
+      "title": "Workspace erstellen",
+      "description": "Ein Workspace enthält deine Agenten, Rufnummern, dein Team und die Abrechnung."
+    },
+    "billing": {
+      "title": "Rechnungsdaten",
+      "description": "Wird für Rechnungen nach ungarischen und EU-Steuerregeln verwendet."
+    },
+    "plan": {
+      "title": "Tarif wählen",
+      "description": "Preise sind monatliche Nettobeträge. Du kannst den Tarif später ändern."
+    },
+    "provisioning": {
+      "title": "Wir bringen dich live",
+      "description": "Wir richten dein KI-Projekt, deine Rufnummer und deinen ersten Agenten ein. Das dauert meist nur wenige Minuten."
+    }
+  },
+  "invitations": {
+    "title": "Du wurdest eingeladen",
+    "accept": "Workspace beitreten",
+    "notFoundTitle": "Einladung nicht verfügbar",
+    "notFoundBody": "Diese Einladung ist abgelaufen, wurde widerrufen oder an eine andere Adresse als {email} gesendet."
+  },
+  "workspace": {
+    "displayName": "Name des Unternehmens",
+    "displayNameHint": "Wird deinem Team im Dashboard angezeigt.",
+    "legalName": "Rechtlicher Firmenname",
+    "legalNameHint": "Wie im Register eingetragen, für Verträge und Rechnungen.",
+    "slug": "Workspace-Adresse",
+    "slugHint": "Kleinbuchstaben, Ziffern und Bindestriche.",
+    "country": "Land",
+    "language": "Standardsprache",
+    "timezone": "Zeitzone",
+    "locationName": "Name des ersten Standorts",
+    "locationNameHint": "Zum Beispiel dein Geschäft, deine Praxis oder dein Büro.",
+    "internationalNotice": "Der Self-Service-Checkout ist derzeit für ungarische Unternehmen verfügbar. Andere Märkte richtet unser Vertriebsteam nach dem Erstellen des Workspace ein.",
+    "submit": "Workspace erstellen",
+    "errors": {
+      "invalid": "Bitte prüfe diesen Wert.",
+      "required": "Dieses Feld ist erforderlich.",
+      "too_long": "Dieser Wert ist zu lang.",
+      "slug": "3–63 Kleinbuchstaben, Ziffern oder Bindestriche, nicht mit Bindestrich beginnend oder endend.",
+      "slug_taken": "Diese Adresse ist bereits vergeben."
+    }
+  },
+  "billing": {
+    "customerType": "Kundentyp",
+    "customerTypes": {
+      "BUSINESS": "Unternehmen",
+      "INDIVIDUAL": "Privatperson"
+    },
+    "companyName": "Firmenname",
+    "fullName": "Vollständiger Name",
+    "country": "Land",
+    "billingEmail": "Rechnungs-E-Mail",
+    "billingEmailHint": "Rechnungen und Zahlungshinweise werden hierhin gesendet.",
+    "postalCode": "Postleitzahl",
+    "city": "Ort",
+    "address": "Straße und Hausnummer",
+    "address2": "Adresszusatz",
+    "huTaxNumber": "Ungarische Steuernummer",
+    "euVatId": "USt-IdNr.",
+    "euVatIdHint": "Optional. Beginnt mit dem Ländercode.",
+    "submit": "Speichern und weiter",
+    "saved": "Rechnungsdaten gespeichert",
+    "errors": {
+      "invalid": "Bitte prüfe diesen Wert.",
+      "required": "Dieses Feld ist erforderlich.",
+      "too_long": "Dieser Wert ist zu lang.",
+      "email": "Gib eine gültige E-Mail-Adresse ein.",
+      "hu_tax_number": "Verwende das Format 12345678-1-12.",
+      "eu_vat_id": "Gib eine gültige USt-IdNr. ein.",
+      "hu_tax_required": "Ungarische Unternehmen müssen ihre Steuernummer angeben.",
+      "vat_prefix": "Die USt-IdNr. muss mit dem Code des gewählten Landes beginnen."
+    }
+  },
+  "plan": {
+    "canceled": "Der Checkout wurde abgebrochen. Es wurde keine Zahlung eingezogen.",
+    "marketUnavailable": "Für dieses Rechnungsland ist der Online-Checkout noch nicht verfügbar. Kontaktiere unseren Vertrieb.",
+    "choose": "Tarife",
+    "popular": "Am beliebtesten",
+    "perMonth": "/ Monat zzgl. USt.",
+    "includedMinutes": "{minutes} Gesprächsminuten inklusive",
+    "concurrentCalls": "{count, plural, one {# gleichzeitiger Anruf} other {# gleichzeitige Anrufe}}",
+    "phoneNumbers": "{count, plural, one {# Rufnummer} other {# Rufnummern}}",
+    "overage": "Zusätzliche Minuten für {price} / Minute",
+    "enterprise": "Brauchst du SSO, individuelle Limits oder dedizierte Redundanz?",
+    "contactSales": "Vertrieb kontaktieren",
+    "terms": "Ich akzeptiere die <terms>Allgemeinen Geschäftsbedingungen</terms> und habe die <privacy>Datenschutzhinweise</privacy> gelesen.",
+    "checkout": "Weiter zur sicheren Zahlung",
+    "plans": {
+      "START": {
+        "name": "Start",
+        "tagline": "Ein Standort, der jeden Anruf rund um die Uhr annimmt."
+      },
+      "BUSINESS": {
+        "name": "Business",
+        "tagline": "Kalenderbuchung, Integrationen und begleitete Weiterleitungen."
+      },
+      "PRO": {
+        "name": "Pro",
+        "tagline": "Mehrere Standorte, erweitertes Routing und das Simulation Lab."
+      }
+    }
+  },
+  "kyc": {
+    "declined": "Abgelehnt",
+    "document": "Dokument",
+    "documentHint": "PDF, PNG oder JPG bis 4 MB.",
+    "documentTooLarge": "Das Dokument darf höchstens 4 MB groß sein.",
+    "address": {
+      "business_name": "Name des Unternehmens",
+      "first_name": "Vorname der Kontaktperson",
+      "last_name": "Nachname der Kontaktperson",
+      "street_address": "Straße und Hausnummer",
+      "postal_code": "Postleitzahl",
+      "locality": "Ort"
+    },
+    "action": "Der Netzbetreiber meldet sich bei dir, um diesen Schritt abzuschließen.",
+    "submit": "Angaben senden",
+    "submitted": "Angaben an den Netzbetreiber gesendet"
+  },
+  "provisioning": {
+    "waitingForPayment": "Warten auf Zahlungsbestätigung",
+    "openDashboard": "Dashboard öffnen",
+    "setupTitle": "Richten Sie Ihre Assistenz ein",
+    "setupBody": "Während Ihre Telefonnummer aktiviert wird, legen Sie in wenigen Minuten fest, wie Anrufe angenommen werden.",
+    "setupAction": "Einrichtung starten",
+    "phoneOrder": "Rufnummer {number} ({country})",
+    "numberPending": "wird zugewiesen",
+    "steps": {
+      "PAYMENT": "Zahlung",
+      "BILLING_DOCUMENT": "Rechnung",
+      "TENANT": "Workspace",
+      "OPENAI_PROJECT": "KI-Projekt",
+      "OPENAI_SERVICE_ACCOUNT": "KI-Dienstkonto",
+      "OPENAI_API_KEY": "KI-Zugangsdaten",
+      "PHONE_RESERVATION": "Nummernreservierung",
+      "PHONE_ORDER": "Nummernbestellung",
+      "PHONE_REGULATORY": "Prüfung durch den Netzbetreiber",
+      "SIP_ROUTING": "Anrufweiterleitung",
+      "DEFAULT_AGENT": "Erster Agent",
+      "KNOWLEDGE_IMPORT": "Wissensimport",
+      "TEST_CALL": "Testanruf",
+      "GO_LIVE": "Live gehen",
+      "NOTIFICATION": "Bestätigungs-E-Mail"
+    }
+  },
+  "setup": {
+    "metaTitle": "Assistenz einrichten",
+    "changeSummary": "Mit dem Einrichtungsassistenten konfiguriert",
+    "steps": {
+      "business": "Ihr Unternehmen",
+      "voice": "Stimme und Persönlichkeit",
+      "knowledge": "Wissen",
+      "bookings": "Buchungen",
+      "calls": "Anrufbehandlung",
+      "launch": "Test und Start"
+    },
+    "headings": {
+      "business": {
+        "title": "Beginnen wir mit dem, was Sie schon wissen.",
+        "description": "Geben Sie die Grundlagen ein. Beim Rest helfen wir Ihnen."
+      },
+      "voice": {
+        "title": "Geben Sie Ihrer Assistenz eine Stimme.",
+        "description": "Blättern Sie durch die Stimmen und hören Sie, welche zu Ihnen passt."
+      },
+      "knowledge": {
+        "title": "Zeigen Sie, was sie wissen sollte.",
+        "description": "Wir sammeln die Grundlagen von Ihrer Website. Prüfen Sie, ob alles stimmt."
+      },
+      "bookings": {
+        "title": "Lassen Sie sie für Sie buchen.",
+        "description": "Verbinden Sie Ihren Kalender und legen Sie fest, was gebucht werden kann."
+      },
+      "calls": {
+        "title": "Was soll mit Anrufen passieren?",
+        "description": "Entscheiden Sie, wann an Ihr Team weitergeleitet wird und was nach Feierabend passiert."
+      },
+      "launch": {
+        "title": "Lernen Sie Ihr neues Teammitglied kennen.",
+        "description": "Probieren Sie es aus, prüfen Sie die Einstellungen und starten Sie, wenn Sie zufrieden sind."
+      }
+    },
+    "actions": {
+      "back": "Zurück",
+      "business": "Weiter",
+      "voice": "Diese Stimme gefällt mir",
+      "knowledge": "Passt, weiter",
+      "bookings": "Weiter",
+      "calls": "Weiter zum Test",
+      "launch": "Assistenz starten"
+    },
+    "shell": {
+      "eyebrow": "Erste Schritte",
+      "title": "Wir richten es gemeinsam ein.",
+      "subtitle": "Nur ein paar einfache Entscheidungen.",
+      "progress": "Einrichtungsschritte",
+      "helpTitle": "Wir helfen, wenn Sie nicht weiterkommen.",
+      "helpBody": "Kein technisches Wissen nötig.",
+      "helpAction": "Hilfe anfordern",
+      "autosave": "Automatisches Speichern",
+      "saved": "Automatisch gespeichert",
+      "saveExit": "Speichern und beenden",
+      "hint": "Sie können die Einstellungen später ändern.",
+      "launchHint": "Die Anrufannahme startet mit dem Start."
+    },
+    "errors": {
+      "businessName": "Geben Sie den Namen Ihres Unternehmens ein.",
+      "website": "Das sieht nicht nach einer gültigen Webadresse aus.",
+      "goals": "Wählen Sie mindestens eine Aufgabe.",
+      "address": "Schreiben Sie es so: 10115 Berlin, Invalidenstraße 1",
+      "qa": "Geben Sie zu jeder Frage eine Antwort ein; Fragen brauchen mindestens 3 Zeichen.",
+      "serviceName": "Geben Sie an, was gebucht werden kann.",
+      "party": "Die Mindestpersonenzahl darf nicht größer als die Höchstzahl sein.",
+      "locationMissing": "Speichern Sie zuerst Ihre Unternehmensdaten.",
+      "transferNumber": "Das sieht nicht nach einer gültigen Telefonnummer aus."
+    },
+    "activation": {
+      "payment": {
+        "title": "Die Zahlung Ihres Pakets ist noch nicht abgeschlossen",
+        "body": "Ihre Einstellungen werden gespeichert, aber die Verarbeitung der Website und der Testanruf starten erst nach der Zahlung.",
+        "action": "Zahlung abschließen"
+      },
+      "provisioning": {
+        "title": "Ihr Konto wird aktiviert",
+        "body": "Das dauert meist einige Minuten. Danach startet die Verarbeitung der Website automatisch und Sie können Ihre Assistenz testen.",
+        "action": "Status ansehen"
+      }
+    },
+    "languages": {
+      "hu": "Ungarisch",
+      "en": "Englisch",
+      "de": "Deutsch"
+    },
+    "business": {
+      "name": "Name des Unternehmens",
+      "website": "Ihre Website",
+      "websiteHint": "Daraus sammeln wir die wichtigsten Informationen.",
+      "goals": "Wobei soll sie Ihren Kunden helfen?",
+      "reception": "Anrufer empfangen",
+      "receptionHint": "Fragen, Öffnungszeiten, Wegbeschreibung",
+      "bookings": "Buchungen verwalten",
+      "bookingsHint": "Termine und Tischreservierungen",
+      "address": "Adresse des Standorts",
+      "addressHint": "Postleitzahl, Ort, Straße und Hausnummer.",
+      "addressPlaceholder": "10115 Berlin, Invalidenstraße 1",
+      "asideTitle": "Schon einen Schritt weiter.",
+      "asideBody": "Aus diesen Angaben erstellen wir die Grundeinstellungen Ihrer Assistenz.",
+      "timezone": "Zeitzone: {zone}",
+      "editableLater": "Jederzeit änderbar"
+    },
+    "voice": {
+      "recommended": "Für Sie empfohlen",
+      "previous": "Vorherige Stimme",
+      "next": "Nächste Stimme",
+      "allVoices": "Alle Stimmen",
+      "previewUnavailable": "Die Hörprobe ist gerade nicht verfügbar. Bitte versuchen Sie es gleich noch einmal.",
+      "listen": "Stimme anhören",
+      "stop": "Stopp",
+      "personas": {
+        "mark": {
+          "tag": "Ruhig und bestimmt",
+          "description": "Ruhig, selbstsicher und direkt."
+        },
+        "anna": {
+          "tag": "Warm und aufmerksam",
+          "description": "Warm, natürlich und aufmerksam."
+        },
+        "lili": {
+          "tag": "Frisch und schwungvoll",
+          "description": "Heiter, locker und energiegeladen."
+        },
+        "bence": {
+          "tag": "Freundlich und locker",
+          "description": "Nahbar, freundlich und hilfsbereit."
+        },
+        "zsofi": {
+          "tag": "Hell und herzlich",
+          "description": "Klar, herzlich und genau."
+        },
+        "david": {
+          "tag": "Tief und beruhigend",
+          "description": "Tiefe Stimme, gelassen und verlässlich."
+        },
+        "eszter": {
+          "tag": "Elegant und gelassen",
+          "description": "Ausgeglichen, elegant und geduldig."
+        },
+        "gergo": {
+          "tag": "Energisch und fröhlich",
+          "description": "Lebhaft, fröhlich und schlagfertig."
+        }
+      },
+      "styleTitle": "Wie soll das Gespräch wirken?",
+      "styles": {
+        "friendly": "Freundlich",
+        "professional": "Professionell",
+        "energetic": "Schwungvoll"
+      },
+      "fineTune": "Begrüßung und Feinabstimmung",
+      "greeting": "Begrüßung zu Beginn des Anrufs",
+      "listenGreeting": "Begrüßung anhören",
+      "resetGreeting": "Vorgeschlagene Begrüßung wiederherstellen",
+      "addressing": "Anrede",
+      "addressingOptions": {
+        "formal": "Sie",
+        "informal": "Du"
+      },
+      "pace": "Sprechtempo",
+      "paces": {
+        "calm": "Ruhig",
+        "natural": "Natürlich",
+        "dynamic": "Dynamisch"
+      },
+      "transparencyTitle": "Transparentes, natürliches Gespräch",
+      "transparencyBody": "Durch die Begrüßung wissen Anrufer, dass sie mit einer KI-Assistenz sprechen.",
+      "anyLanguage": "Spricht jede Sprache: Die Startsprache richtet sich nach der Telefonnummer des Anrufers, geantwortet wird immer in der Sprache des Anrufers. Im Zweifel beginnt sie auf {language}.",
+      "anyLanguageShort": "jede Sprache"
+    },
+    "knowledge": {
+      "website": "Ihre Website",
+      "websiteStatus": {
+        "none": "Nicht angegeben",
+        "ready": "Verarbeitet",
+        "processing": "Wird verarbeitet",
+        "failed": "Fehlgeschlagen",
+        "waiting": "Wartet auf Aktivierung"
+      },
+      "websiteWaiting": "Wir verarbeiten sie automatisch, sobald Ihr Konto aktiviert ist. Sie können währenddessen weitermachen.",
+      "websiteFailed": "Die Seite konnte nicht gelesen werden. Prüfen Sie die Adresse und versuchen Sie es erneut.",
+      "noWebsite": "Sie haben noch keine Website angegeben.",
+      "addWebsite": "Website angeben",
+      "websiteProcessing": "Wir lesen Ihre Seite, das kann einige Minuten dauern. Sie können währenddessen weitermachen.",
+      "websiteMeta": "{chunks, plural, one {# Textabschnitt verarbeitet} other {# Textabschnitte verarbeitet}} · Aktualisiert {when}",
+      "resync": "Aktualisieren",
+      "reviewTitle": "Prüfen Sie kurz das Wichtigste!",
+      "hours": "Öffnungszeiten",
+      "noHours": "Noch keine Öffnungszeiten",
+      "opens": "{day} öffnet",
+      "closes": "{day} schließt",
+      "closed": "Geschlossen",
+      "copyMonday": "Öffnungszeiten vom Montag auf alle Werktage übertragen",
+      "location": "Standort und Anfahrt",
+      "noAddress": "Noch keine Adresse",
+      "edit": "Bearbeiten",
+      "done": "Fertig",
+      "qaTitle": "Fragen und Antworten",
+      "qaBody": "Was Sie oft gefragt werden. Genau so wird sie antworten.",
+      "question": "Frage",
+      "questionPlaceholder": "Z. B. Gibt es Parkplätze?",
+      "answer": "Antwort",
+      "answerPlaceholder": "Z. B. Ja, für Gäste gibt es kostenlose Parkplätze direkt neben dem Gebäude.",
+      "removeQa": "Frage entfernen",
+      "uploadFile": "Datei hochladen",
+      "addQa": "Frage und Antwort",
+      "uploadState": {
+        "uploading": "Wird hochgeladen…",
+        "done": "Wird verarbeitet",
+        "failed": "Fehlgeschlagen"
+      },
+      "fileInvalid": "Laden Sie eine PDF-, DOCX-, TXT-, Markdown- oder CSV-Datei bis 50 MB hoch.",
+      "qaSourceTitle": "Fragen und Antworten",
+      "previewTitle": "So wird sie antworten",
+      "sampleQuestion": "Wann haben Sie geöffnet?",
+      "sampleAnswer": "Gern! Unsere Öffnungszeiten: {hours}.",
+      "sampleAnswerUnknown": "Das weiß ich gerade nicht genau, aber ich nehme Ihre Kontaktdaten auf und wir rufen Sie zurück.",
+      "previewNote": "Sie antwortet nur mit geprüften Informationen. Wenn sie unsicher ist, bittet sie Ihr Team um Hilfe.",
+      "previewIllustrative": "Beispielhafte Antwort"
+    },
+    "bookings": {
+      "disabledTitle": "Buchungen ausgeschaltet",
+      "disabledBody": "Die Assistenz beantwortet derzeit nur Fragen. Buchungen können Sie jederzeit einschalten.",
+      "enable": "Buchungen einschalten",
+      "calendarTitle": "Verbinden Sie Ihren Kalender",
+      "calendarBody": "So bietet sie nur Zeiten an, die wirklich frei sind.",
+      "calendarOptional": "Es funktioniert auch ohne Kalender: Dann werden Zeiten anhand der Öffnungszeiten und bestehender Buchungen angeboten.",
+      "providers": {
+        "GOOGLE_CALENDAR": {
+          "name": "Google Kalender",
+          "hint": "Gmail- oder Google-Workspace-Konto"
+        },
+        "MICROSOFT_365": {
+          "name": "Microsoft 365",
+          "hint": "Outlook-Kalender verwenden"
+        }
+      },
+      "connected": "Verbunden",
+      "connect": "Verbinden",
+      "calendarConnected": "Ihr Kalender ist verbunden.",
+      "calendarFailed": "Der Kalender konnte nicht verbunden werden. Bitte versuchen Sie es erneut.",
+      "calendarLinkFailed": "Der Kalender ist gerade nicht erreichbar, daher funktionieren Buchungen vorerst ohne ihn. Verbinden Sie den Kalender später erneut.",
+      "service": "Buchbare Leistung",
+      "servicePlaceholder": "Z. B. Tischreservierung",
+      "duration": "Dauer einer Buchung",
+      "minutes": "{count, plural, one {# Minute} other {# Minuten}}",
+      "partySize": "Anzahl der Gäste",
+      "partyMax": "Höchstens so viele Personen",
+      "capacity": "Buchungen zur gleichen Zeit",
+      "capacityHint": "So viele Buchungen werden für denselben Zeitpunkt angenommen.",
+      "confirmTitle": "Bestätigt immer die Details",
+      "confirmBody": "Die Assistenz wiederholt Name, Uhrzeit und Personenzahl, bevor sie bucht.",
+      "more": "Weitere Buchungsregeln",
+      "buffer": "Pause zwischen Buchungen",
+      "noBuffer": "Keine Pause",
+      "cancellation": "Stornierung spätestens",
+      "anytime": "Jederzeit",
+      "hoursBefore": "{count, plural, one {# Stunde vorher} other {# Stunden vorher}}"
+    },
+    "calls": {
+      "humanTitle": "Wenn ein Mensch gebraucht wird",
+      "humanBody": "Wenn der Anrufer nach Personal fragt oder die Assistenz nicht weiterkommt.",
+      "transferNumber": "Anrufe weiterleiten an",
+      "transferHint": "Leer lassen, wenn keine Weiterleitung gewünscht ist.",
+      "noAnswer": "Wenn niemand abnimmt",
+      "noAnswerOptions": {
+        "CALLBACK_REQUEST": "Nimmt einen Rückrufwunsch auf und sendet die Details",
+        "RETURN_TO_AI": "Übernimmt den Anruf wieder und hilft weiter"
+      },
+      "afterHoursTitle": "Außerhalb der Öffnungszeiten",
+      "afterHoursBody": "Auch nach Feierabend wird jeder Anruf angenommen.",
+      "afterHours": "Was soll dann passieren?",
+      "afterHoursOptions": {
+        "TAKE_MESSAGE": "Nachricht aufnehmen",
+        "CALLBACK_REQUEST": "Rückrufwunsch aufnehmen",
+        "TRANSFER_ON_CALL": "An die angegebene Nummer weiterleiten"
+      },
+      "openHours": "Öffnungszeiten: {hours}",
+      "noHours": "Keine Öffnungszeiten angegeben",
+      "editHours": "Ändern",
+      "more": "Anrufdauer und weitere Grenzen",
+      "maxCall": "Höchstdauer eines Anrufs",
+      "maxCallHint": "Danach beendet sie das Gespräch höflich.",
+      "minutes": "{count, plural, one {# Minute} other {# Minuten}}",
+      "recording": "Anrufe aufzeichnen",
+      "recordingHint": "Anrufer werden zu Beginn des Gesprächs über die Aufzeichnung informiert."
+    },
+    "launch": {
+      "hello": "Hallo, hier ist {name}!",
+      "activationRequired": "Den Test können Sie starten, sobald Ihr Konto aktiviert ist.",
+      "failedActivation": "Der Test konnte nicht starten, weil die Aktivierung Ihres Kontos noch nicht abgeschlossen ist. Versuchen Sie es danach erneut.",
+      "testBody": "Sie führt einige typische Anrufe durch, und wir prüfen, ob alles funktioniert.",
+      "startTest": "Testanruf starten",
+      "retest": "Test erneut starten",
+      "testing": "Testanrufe laufen…",
+      "testHint": "Der Test startet noch keine echte Anrufannahme. Er dauert meist 1–2 Minuten.",
+      "webCallTitle": "Live mit ihr sprechen",
+      "webCallBody": "Schalten Sie Ihr Mikrofon ein und sprechen Sie mit {name} wie ein Gast.",
+      "webCallStart": "Mit Mikrofon sprechen",
+      "webCallConnecting": "Verbindung wird aufgebaut…",
+      "webCallStop": "Gespräch beenden",
+      "webCallLive": "Live-Gespräch",
+      "webCallHint": "Stimme, Stil, Sprache und Begrüßung sind genau die der echten Anrufe. Sie kennt Ihre Öffnungszeiten, Leistungen und gespeicherten Fragen und Antworten, kann freie Termine prüfen und eine echte Buchung anlegen, und das Gespräch erscheint mit Transkript unter Ihren Anrufen.",
+      "webCallFailed": "Das Gespräch konnte nicht gestartet werden. Bitte versuchen Sie es gleich noch einmal.",
+      "webCallMicDenied": "Der Browser hat den Mikrofonzugriff blockiert. Erlauben Sie ihn und versuchen Sie es erneut.",
+      "scenarios": {
+        "opening_hours": "Frage nach den Öffnungszeiten",
+        "booking": "Buchungsanfrage",
+        "human_handoff": "Weiterleitung an Mitarbeitende"
+      },
+      "scenarioFallback": "Weiterer Testanruf",
+      "passed": "Alles in Ordnung! {name} ist startklar.",
+      "failed": "Etwas hat nicht funktioniert. Prüfen Sie die Einstellungen und starten Sie den Test erneut.",
+      "retestNeeded": "Sie haben inzwischen Einstellungen geändert. Starten Sie den Test vor dem Start erneut.",
+      "readyTitle": "Ist alles bereit?",
+      "check": {
+        "business": "Unternehmen und Standort",
+        "voice": "Stimme und Sprachen",
+        "knowledge": "Geprüftes Wissen",
+        "calls": "Buchungen und Anrufe",
+        "noWebsite": "Keine Website",
+        "qaCount": "{count, plural, one {# Frage-Antwort} other {# Fragen-Antworten}}",
+        "noCalendar": "Ohne Kalender",
+        "transfer": "mit Weiterleitung",
+        "noTransfer": "ohne Weiterleitung"
+      },
+      "controlTitle": "Sie behalten die Kontrolle.",
+      "controlBody": "Nach dem Start nimmt {name} Anrufe unter {number} an. Sie können jederzeit pausieren.",
+      "controlBodyNoNumber": "Nach dem Start nimmt {name} Anrufe an, sobald Ihre Telefonnummer aktiv ist. Sie können jederzeit pausieren.",
+      "suiteName": "Basisprüfung",
+      "suiteDescription": "Automatische Testanrufe des Einrichtungsassistenten."
+    },
+    "done": {
+      "badge": "Einrichtung abgeschlossen",
+      "title": "{name} ist bereit für Anrufe.",
+      "body": "Gut gemacht! Ihre Assistenz nimmt Ihnen ab jetzt Arbeit ab.",
+      "activeNumber": "Aktiv · {number}",
+      "activePending": "Aktiv · Telefonnummer wird aktiviert",
+      "cards": {
+        "calls": {
+          "title": "Dashboard",
+          "body": "Live-Anrufe und die neueste Zusammenfassung auf einen Blick."
+        },
+        "bookings": {
+          "title": "Buchungen",
+          "body": "Neue Buchungen sehen Sie automatisch auch im Kalender."
+        },
+        "assistant": {
+          "title": "Ihre Assistenz",
+          "body": "Stimme und Einstellungen können Sie jederzeit anpassen."
+        }
+      },
+      "open": "Ansehen",
+      "cta": "Weiter zum Dashboard",
+      "tagline": "Gute Dinge passieren, wenn ein Unternehmen aufmerksam ist."
+    }
+  }
+}

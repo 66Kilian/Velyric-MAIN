@@ -1,0 +1,724 @@
+{
+  "common": {
+    "breadcrumb": "Brotkrumennavigation",
+    "cta": "Mit Velyric starten",
+    "other": "Weitere Branchen",
+    "answerHeading": "Die kurze Antwort",
+    "factsHeading": "Was es im Gespräch tut",
+    "workflowHeading": "Wie ein Gespräch abläuft",
+    "limitsHeading": "Was es nicht tut",
+    "faqHeading": "Häufige Fragen",
+    "relatedHeading": "Weiterlesen"
+  },
+  "restaurant": {
+    "meta": {
+      "title": "KI-Telefonannahme für Restaurants",
+      "description": "Ein KI-Telefonassistent, der Ihre Restaurantleitung rund um die Uhr auf Ungarisch, Deutsch und Englisch annimmt, Tischreservierungen gegen Ihren echten Kalender bucht und Fragen zur Karte aus Ihren eigenen Dokumenten beantwortet."
+    },
+    "answer": {
+      "question": "Kann eine KI das Telefon eines Restaurants annehmen und Reservierungen entgegennehmen?",
+      "body": "Für die Gespräche, die sich wiederholen, ja. Velyric nimmt rund um die Uhr unter Ihrer eigenen Nummer ab, sagt, dass es ein KI-Assistent ist, und erledigt die drei Dinge, aus denen eine Restaurantleitung überwiegend besteht: eine Tischreservierung, eine Frage, deren Antwort bereits geschrieben steht, und eine Absage. Die Verfügbarkeit wird im verbundenen Google Kalender oder in Microsoft 365 geprüft, bevor eine Zeit angeboten wird, die Reservierung wird zur Bestätigung zurückgelesen und mit Datenbankbedingungen und Idempotenzschlüsseln geschrieben, sodass zwei Anrufer nicht denselben Platz nehmen können. Fragen zu Karte, Allergenen, Öffnungszeiten und Parken werden aus Ihren eigenen hochgeladenen Dokumenten und Ihrer gecrawlten Website beantwortet. Alles andere — eine Absprache für eine große Gruppe, eine Beschwerde, ein Lieferant — geht in dem Moment an eine Person, in dem der Anrufer darum bittet."
+    },
+    "facts": {
+      "f1": {
+        "term": "Bucht gegen",
+        "value": "Google Kalender oder Microsoft 365, live geprüft, bevor eine Zeit angeboten wird"
+      },
+      "f2": {
+        "term": "Antwortet aus",
+        "value": "Ihrer Karte, Preisliste und FAQ-Dokumenten sowie Ihrer gecrawlten Website"
+      },
+      "f3": {
+        "term": "An vollen Abenden",
+        "value": "Parallelität ist eine Tarifgrenze von 2, 10 oder 50 Gesprächen gleichzeitig"
+      }
+    },
+    "workflow": {
+      "heading": "Wie ein Restaurantgespräch abläuft",
+      "body": "Jedes Mal derselbe Weg, wobei der Anrufer jederzeit unterbrechen, es sich anders überlegen oder die Sprache wechseln kann.",
+      "steps": {
+        "s1": {
+          "title": "Annehmen und verstehen",
+          "body": "Der Assistent nimmt sofort ab, gibt an, dass er ein KI-Assistent ist, und hört den eigenen Worten des Anrufers auf Ungarisch, Deutsch oder Englisch zu. Es gibt kein Menü, durch das man sich drücken müsste."
+        },
+        "s2": {
+          "title": "Antworten oder den Kalender prüfen",
+          "body": "Eine Frage zu Karte, Allergenen, Öffnungszeiten oder Parken wird aus Ihren eigenen indexierten Dokumenten beantwortet. Ein Reservierungswunsch löst eine Live-Verfügbarkeitsprüfung aus, und es werden nur freie Zeiten angeboten."
+        },
+        "s3": {
+          "title": "Bestätigen, bevor geschrieben wird",
+          "body": "Der Assistent wiederholt Datum, Uhrzeit und Personenzahl und bittet um Bestätigung. Erst dann wird die Reservierung geschrieben, und eine Bestätigungsmail geht raus, wenn der Anrufer eine Adresse genannt hat."
+        }
+      }
+    },
+    "limits": {
+      "heading": "Was es nicht tut",
+      "body": "Klar gesagt, denn genau das nimmt man an und stellt es dann am ersten vollen Freitag fest.",
+      "items": {
+        "l1": "Es gibt keinen Tischplan und keine Wartelistenfunktion. Eine Reservierung ist ein Kalendereintrag mit Zeit und Personenzahl, kein Sitzplan, und wenn jeder Parallelitätsplatz belegt ist, greift die von Ihnen konfigurierte Überlaufregel: eine kurze Warteschlange, eine Überlaufnummer, ein Rückruf oder die Mailbox.",
+        "l2": "Es gibt keinen Konnektor für ein Kassensystem oder eine Restaurant-Reservierungsplattform. Wenn Sie eines betreiben, muss es als eigenes API-Werkzeug über Ihren eigenen HTTPS-Endpunkt erreicht werden.",
+        "l3": "Der Assistent improvisiert kein Gericht, keinen Preis und keine Allergenauskunft. Ist Ihre Karte nicht hochgeladen oder crawlbar, stellt er eine Rückfrage oder übergibt das Gespräch an eine Person, statt zu raten."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Was passiert, wenn an einem Freitagabend mehrere gleichzeitig anrufen?",
+        "answer": "Jedes Gespräch läuft in einer eigenen isolierten Sitzung, und wie viele gleichzeitig laufen, ist eine Tarifgrenze: 2 bei Start, 10 bei Business, 50 bei Pro. Über Ihrer Grenze gilt die Regel, die Sie wählen — eine kurze Warteschlange, eine Überlaufnummer, ein Rückruf oder die Mailbox —, und eine Parallelitätserweiterung ist als kostenpflichtiges Zusatzmodul verfügbar."
+      },
+      "q2": {
+        "question": "Kann er Allergenfragen sicher beantworten?",
+        "answer": "Er antwortet aus Ihrer eigenen hochgeladenen Karte und Ihren Dokumenten, gefiltert auf Ihren Mandanten, und er antwortet nicht, wenn nichts eine Antwort belegt. Das macht ihn genau so korrekt wie das, was Sie geschrieben haben, und genau deshalb ist eine Allergenauskunft nur so gut wie das Dokument dahinter. Für alles, was die Karte nicht ausweist, stellt der Assistent eine Rückfrage oder leitet an eine Person weiter."
+      },
+      "q3": {
+        "question": "Funktioniert das für deutsch- und englischsprachige Gäste?",
+        "answer": "Ja. Eine Nummer bedient Ungarisch, Deutsch und Englisch, und die Sprache kann mitten im Gespräch wechseln. Die Ländervorwahl des Anrufers ist nur ein erster Hinweis; eine ausdrückliche Bitte oder die tatsächlich gesprochene Sprache überschreibt sie."
+      },
+      "q4": {
+        "question": "Kann ein Gast telefonisch absagen oder umbuchen?",
+        "answer": "Ja. Der Assistent kann eine bestehende Reservierung finden und stornieren, und eine Änderung wird als Stornierung plus neue Reservierung gegen die Live-Verfügbarkeit abgewickelt. Jeder Schreibvorgang wird vorher laut mit dem Anrufer bestätigt."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Terminbuchung am Telefon",
+        "description": "Wie aus einem Gespräch ein bestätigter Termin in Ihrem echten Kalender wird, ohne Doppelbuchungen."
+      },
+      "r2": {
+        "label": "KI-Empfang oder Mailbox",
+        "description": "Was ein Anrufer während des Gesprächs abschließen kann, und wann eine Mailbox genügt."
+      }
+    }
+  },
+  "dental-clinic": {
+    "meta": {
+      "title": "KI-Telefonannahme für Zahnarzt- und Arztpraxen",
+      "description": "Ein KI-Telefonassistent, der Ihre Praxisleitung rund um die Uhr annimmt, Kontrolltermine gegen Ihren echten Kalender bucht, Vorbereitungs- und Preisfragen aus Ihren Dokumenten beantwortet und dringende Anrufe an Ihr Team weiterleitet."
+    },
+    "answer": {
+      "question": "Kann ein KI-Empfang die Anrufe einer Zahnarztpraxis übernehmen?",
+      "body": "Den routinemäßigen Teil davon, ja. Velyric nimmt rund um die Uhr unter Ihrer Praxisnummer ab, auf Ungarisch, Deutsch und Englisch, bucht und verschiebt Termine gegen den verbundenen Google Kalender oder Microsoft 365, und beantwortet die Fragen, die eine Empfangskraft den ganzen Tag wiederholt: Öffnungszeiten, was mitzubringen ist, wie lange eine Behandlung dauert, was sie kostet, wo man parkt. Zu Beginn sagt er, dass er ein KI-Assistent ist. Was er bewusst nicht tut, ist klinisch: Er gibt keinen Rat, nimmt keine Einschätzung vor und leitet Schmerz-, Notfall- und alle sensiblen Anliegen sofort an Ihr Team weiter, denn die Telefonnummer eines Anrufers ist eine Bequemlichkeitskennung und keine Authentifizierung."
+    },
+    "facts": {
+      "f1": {
+        "term": "Bucht gegen",
+        "value": "Google Kalender oder Microsoft 365, mit der Behandlungsdauer aus Ihrer eigenen Leistungsliste"
+      },
+      "f2": {
+        "term": "Antwortet aus",
+        "value": "Ihren hochgeladenen Vorbereitungshinweisen, der Preisliste und dem FAQ, gefiltert auf Ihren Mandanten"
+      },
+      "f3": {
+        "term": "Dringende Anrufe",
+        "value": "Sofortige Weiterleitung auf Wunsch oder über den konfigurierten Tastencode"
+      }
+    },
+    "workflow": {
+      "heading": "Wie ein Praxisgespräch abläuft",
+      "body": "So gebaut, dass die langweiligen Gespräche enden und die, die eine Person brauchen, schnell eine erreichen.",
+      "steps": {
+        "s1": {
+          "title": "Annehmen und einordnen",
+          "body": "Der Assistent nimmt ab, gibt an, dass er ein KI-Assistent ist, und hört zu. Eine Bitte um eine Person oder der konfigurierte Tastencode leitet das Gespräch auf der Stelle weiter, ohne dass der Assistent sonst irgendetwas verstehen müsste."
+        },
+        "s2": {
+          "title": "Buchen oder antworten",
+          "body": "Für einen Termin prüft er die echte Verfügbarkeit für die passende Behandlungsdauer und bietet nur freie Zeiten an. Für eine Frage antwortet er aus Ihren eigenen Dokumenten und stellt eine Rückfrage, wenn nichts eine Antwort belegt."
+        },
+        "s3": {
+          "title": "Bestätigen und festhalten",
+          "body": "Die Buchung wird zurückgelesen und bestätigt, bevor sie geschrieben wird, geschützt durch Datenbankbedingungen und Idempotenzschlüssel. Das Gespräch erscheint in Ihrem Dashboard mit Transkript und Zusammenfassung, wo Sie sie aktivieren."
+        }
+      }
+    },
+    "limits": {
+      "heading": "Was es nicht tut",
+      "body": "Eine Praxisleitung trägt Pflichten, die ein Allzweckassistent nicht übernehmen sollte.",
+      "items": {
+        "l1": "Er gibt keinen klinischen Rat, keine Triage-Beurteilung und keine Einschätzung von Symptomen. Velyric ist kein Medizinprodukt und erhebt keinen diagnostischen Anspruch. Schmerz- und Notfallanrufe sind konstruktionsbedingt eine Weiterleitung.",
+        "l2": "Er prüft nicht, wer anruft. Die Telefonnummer dient dazu, einen Datensatz zu finden, nicht dazu, ihm zu vertrauen, deshalb erfordert alles, was Patientendaten berührt, eine zusätzliche Verifizierung oder eine Person. Roh-Audio wird standardmäßig nicht gespeichert, und die Aufzeichnung ist ein kostenpflichtiges Zusatzmodul.",
+        "l3": "Es gibt keinen Konnektor für ein Praxisverwaltungssystem. Eines zu erreichen bedeutet, ein eigenes API-Werkzeug gegen Ihren eigenen HTTPS-Endpunkt zu bauen, mit JSON-Schema für Ein- und Ausgabe und einer Bestätigungsregel."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Was passiert, wenn ein Patient nachts mit Schmerzen anruft?",
+        "answer": "Eine Bitte um eine Person leitet das Gespräch sofort weiter, ebenso der konfigurierte Tastencode. Außerhalb der Geschäftszeiten gilt stattdessen das von Ihnen konfigurierte Verhalten: eine Nachricht aufnehmen, einen Rückrufwunsch erfassen oder an eine Bereitschaftsnummer weiterleiten. Diese Wahl sollten Sie bewusst treffen, statt sie auf einer Vorgabe zu belassen."
+      },
+      "q2": {
+        "question": "Sind Patientendaten in diesen Gesprächen sicher?",
+        "answer": "Jeder Abruf ist auf Ihren eigenen Mandanten gefiltert, und das Anrufergedächtnis wird nie zwischen Mandanten geteilt. Roh-Audio hat eine Aufbewahrung von null Tagen und wird nicht gespeichert, sofern Sie das Aufzeichnungs-Zusatzmodul nicht dazubuchen; Transkripte werden standardmäßig 90 Tage aufbewahrt und lassen sich bis auf einen Tag herunterstellen. Velyric handelt als Auftragsverarbeiter unter einem veröffentlichten Vertrag nach Artikel 28, mit Verarbeitung in einer EU-Cloud-Region."
+      },
+      "q3": {
+        "question": "Kann er die richtige Dauer für verschiedene Behandlungen buchen?",
+        "answer": "Ja, sofern Ihre Leistungen mit ihren Dauern definiert sind. Der Assistent listet Leistungen auf, prüft die Verfügbarkeit für die passende Länge und bietet nur Termine an, die tatsächlich passen. Was er nicht kann, ist klinisch zu entscheiden, welche Behandlung ein Anrufer braucht."
+      },
+      "q4": {
+        "question": "Merken Patienten, dass sie nicht mit einer Person sprechen?",
+        "answer": "Ja. Der Assistent sagt zu Beginn des Gesprächs, dass der Anrufer mit einem KI-Assistenten spricht. Das ist eine Produktvorgabe und keine Einstellung, und es deckt sich mit der Transparenzpflicht aus Artikel 50 der KI-Verordnung der EU, die ab dem 2. August 2026 gilt."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Weiterleitung an Ihr Team",
+        "description": "Jeder Auslöser, der ein Gespräch an eine Person übergibt, und was nach Feierabend passiert."
+      },
+      "r2": {
+        "label": "Sicherheit und Datenschutz",
+        "description": "Aufbewahrungsvorgaben, Mandantentrennung und wie Anrufdaten tatsächlich behandelt werden."
+      }
+    }
+  },
+  "auto-service": {
+    "meta": {
+      "title": "KI-Telefonannahme für Kfz-Werkstätten",
+      "description": "Ein KI-Telefonassistent, der Services und Prüfungen gegen Ihren echten Kalender bucht, Fahrzeugdaten erfasst, bevor das Auto ankommt, und Kostenvoranschläge sowie Diagnosefragen an Ihre Serviceberater weiterleitet."
+    },
+    "answer": {
+      "question": "Kann ein KI-Telefonassistent Werkstatttermine buchen?",
+      "body": "Ja, und das Nützliche ist, was er unterwegs einsammelt. Velyric nimmt Ihre Werkstattleitung rund um die Uhr an, bucht Services und Prüfungen gegen den verbundenen Google Kalender oder Microsoft 365 und erfasst Marke, Modell und geschildertes Symptom, solange der Anrufer noch am Telefon ist, sodass der Auftrag kein Rätsel ist, wenn das Auto ankommt. Öffnungszeiten, Servicedauern und was mitzubringen ist, werden aus Ihren eigenen Dokumenten beantwortet. Was er nicht tut, ist eine Reparatur zu beziffern oder eine Diagnose zu raten: Das geht an einen Serviceberater, mit den bereits erfassten Angaben."
+    },
+    "facts": {
+      "f1": {
+        "term": "Bucht gegen",
+        "value": "Google Kalender oder Microsoft 365, passend zur von Ihnen definierten Servicedauer"
+      },
+      "f2": {
+        "term": "Erfasst",
+        "value": "Fahrzeugdaten und das geschilderte Problem, in den Worten des Anrufers"
+      },
+      "f3": {
+        "term": "Übergibt",
+        "value": "Kostenvoranschläge und Diagnosefragen, per SIP-Verweisung an Ihre Nummer"
+      }
+    },
+    "workflow": {
+      "heading": "Wie ein Werkstattgespräch abläuft",
+      "body": "Das Ziel ist ein gebuchter Termin mit genug Information daran, dass niemand dafür zurückrufen muss.",
+      "steps": {
+        "s1": {
+          "title": "Den Auftrag verstehen",
+          "body": "Der Anrufer schildert das Problem in eigenen Worten. Der Assistent arbeitet aus diesem Satz statt aus einem Menü und fragt nach Marke, Modell und Symptom, soweit sie noch fehlen."
+        },
+        "s2": {
+          "title": "Einen echten Termin finden",
+          "body": "Die Verfügbarkeit wird live für die von Ihnen definierte Servicedauer geprüft, sodass eine Prüfung und eine längere Reparatur nicht dasselbe Zeitfenster angeboten bekommen. Es werden nur freie Zeiten angeboten."
+        },
+        "s3": {
+          "title": "Bestätigen oder übergeben",
+          "body": "Die Buchung wird zurückgelesen und bestätigt, bevor sie geschrieben wird. Alles zu Preis, Diagnose oder einer Entscheidung über die Arbeit wird stattdessen an einen Berater weitergeleitet, auf Wunsch sofort."
+        }
+      }
+    },
+    "limits": {
+      "heading": "Was es nicht tut",
+      "body": "Das gehört ausgesprochen, denn an einer Werkstattleitung landen viele Fragen, für die jemand das Auto ansehen muss.",
+      "items": {
+        "l1": "Er diagnostiziert nicht, schätzt nicht und erstellt keinen Kostenvoranschlag. Der Assistent antwortet aus dem, was Sie aufgeschrieben haben, ein Preis, den er nicht bekommen hat, ist also eine Weiterleitung und keine Zahl.",
+        "l2": "Es gibt keinen Konnektor für ein Händlerverwaltungssystem oder einen Teilekatalog. Bestands- und Auftragsabfragen brauchen ein eigenes API-Werkzeug gegen Ihren eigenen HTTPS-Endpunkt, mit Zeitlimits je Werkzeug, Wiederholungen und einem Idempotenzschlüssel.",
+        "l3": "Er nimmt ausschließlich eingehende Gespräche an, unter Ihrer eigenen Nummer. Kunden zurückzurufen, wenn ein Auto fertig ist, gehört nicht zu dem, was Velyric tut."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Kann er einem Kunden sagen, was eine Reparatur kostet?",
+        "answer": "Nur wenn der Preis in Ihren eigenen hochgeladenen Dokumenten steht, und nur als die Zahl, die Sie veröffentlicht haben. Für alles, was vom Blick auf das Auto abhängt, leitet der Assistent an einen Serviceberater weiter, statt zu schätzen. Er ist so gebaut, dass er keine Zahl produziert, hinter der keine Quelle steht."
+      },
+      "q2": {
+        "question": "Kann er nachsehen, ob ein Teil vorrätig ist?",
+        "answer": "Nur über ein eigenes API-Werkzeug, das Sie gegen Ihren eigenen HTTPS-Endpunkt definieren. Velyric hat keine eingebaute Teile- oder Bestandsintegration, und der eingebaute Aktionskatalog deckt Leistungen, Verfügbarkeit und Buchungen ab, nicht Bestände."
+      },
+      "q3": {
+        "question": "Welche Angaben sammelt er vor dem Termin?",
+        "answer": "Was immer Sie ihn fragen lassen, typischerweise Marke, Modell und das geschilderte Problem, dazu die eigene Symptombeschreibung des Anrufers. Transkript und Zusammenfassung des Gesprächs stehen in Ihrem Dashboard zur Verfügung, wo Sie sie aktivieren."
+      },
+      "q4": {
+        "question": "Funktioniert er außerhalb der Öffnungszeiten?",
+        "answer": "Er nimmt rund um die Uhr ab, und außerhalb der Geschäftszeiten gilt das von Ihnen konfigurierte Verhalten: eine Nachricht aufnehmen, einen Rückrufwunsch erfassen oder an eine Bereitschaftsnummer weiterleiten. Nachts getätigte Buchungen laufen gegen denselben Live-Kalender."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Integrationen",
+        "description": "Kalender, eigene API-Werkzeuge und Webhooks, und was jedes davon tatsächlich erreicht."
+      },
+      "r2": {
+        "label": "KI-Empfang oder Callcenter",
+        "description": "Erreichbarkeit, Eskalation und Kostenstruktur im Vergleich mit einem ausgelagerten Dienst."
+      }
+    }
+  },
+  "car-detailing": {
+    "meta": {
+      "title": "KI-Telefonannahme für Fahrzeugaufbereitung",
+      "description": "Ein KI-Telefonassistent, der Ihre Aufbereitungspakete aus Ihrer eigenen Preisliste erklärt, die passende Termindauer gegen Ihren echten Kalender bucht und eine Bestätigungsmail schickt, während Ihr Team an den Autos bleibt."
+    },
+    "answer": {
+      "question": "Kann ein KI-Assistent Aufbereitungspakete erklären und buchen?",
+      "body": "Ja, denn beide Hälften stehen bereits geschrieben. Velyric nimmt Ihre Leitung rund um die Uhr an, beschreibt Ihre Pakete, was jedes enthält und wie lange es dauert, aus Ihrer eigenen hochgeladenen Preisliste, und bucht dann die passende Termindauer gegen den verbundenen Google Kalender oder Microsoft 365. Die Buchung wird laut zurückgelesen und bestätigt, bevor irgendetwas geschrieben wird, und eine Bestätigungsmail geht an den Anrufer, wenn er eine Adresse nennt. Die Arbeit, für die jemand den Lack sehen muss — eine Zustandsbeurteilung, ein Angebot für eine Politur —, ist eine Weiterleitung und keine Vermutung."
+    },
+    "facts": {
+      "f1": {
+        "term": "Erklärt",
+        "value": "Pakete, Leistungsumfang und Dauern aus Ihrer eigenen Preisliste"
+      },
+      "f2": {
+        "term": "Bucht gegen",
+        "value": "Google Kalender oder Microsoft 365, mit der Termindauer, die jedes Paket braucht"
+      },
+      "f3": {
+        "term": "Bestätigt per",
+        "value": "E-Mail, wenn der Anrufer eine Adresse nennt. Einen SMS-Kanal gibt es nicht."
+      }
+    },
+    "workflow": {
+      "heading": "Wie ein Aufbereitungsgespräch abläuft",
+      "body": "Die meisten dieser Gespräche sind dieselben zwei Fragen und dann eine Buchung, also genau die Form, die ein Assistent gut kann.",
+      "steps": {
+        "s1": {
+          "title": "Die Optionen erklären",
+          "body": "Der Anrufer fragt, was ein Paket enthält oder worin der Unterschied liegt. Der Assistent antwortet aus Ihren eigenen Dokumenten, mit den von Ihnen veröffentlichten Dauern, und erfindet keine Leistung, die Sie nicht anbieten."
+        },
+        "s2": {
+          "title": "Die richtige Dauer buchen",
+          "body": "Eine einstündige Wäsche und eine ganztägige Politur sind unterschiedliche Termindauern. Die Verfügbarkeit wird live für das gewählte Paket geprüft, sodass nur Zeiten angeboten werden, die wirklich passen."
+        },
+        "s3": {
+          "title": "Bestätigen und senden",
+          "body": "Der Assistent wiederholt Paket, Datum und Uhrzeit und bittet um Bestätigung. Die Buchung wird mit Bedingungen und Idempotenzschlüsseln geschrieben, und eine Bestätigungsmail folgt, wenn eine Adresse genannt wurde."
+        }
+      }
+    },
+    "limits": {
+      "heading": "Was es nicht tut",
+      "body": "Die ehrlichen Kanten, wenn ein Telefonassistent auf eine Studioleitung kommt.",
+      "items": {
+        "l1": "Er kann kein Auto beurteilen. Lackzustand, Kratzertiefe und ob sich eine Politur lohnt, muss jemand ansehen, deshalb werden diese Gespräche zu einer Weiterleitung, mit der Beschreibung des Anrufers bereits erfasst.",
+        "l2": "E-Mail ist der einzige Benachrichtigungskanal, der sendet. Es gibt kein SMS, keine In-App- und keine Chat-Benachrichtigung, eine Erinnerung am Vortag ist also nichts, was Velyric von selbst verschickt.",
+        "l3": "Er nimmt keine Zahlung entgegen und hält keine Anzahlung. Im Gespräch gibt es keinen Zahlungsschritt, und alles Kaufmännische jenseits der veröffentlichten Preisliste gehört zu einer Person."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Kann er im Gespräch ein Zusatzangebot machen?",
+        "answer": "Er kann die Zusatzleistungen beschreiben, die in Ihrer eigenen Preisliste stehen, und den längeren Termin buchen, wenn der Anrufer das möchte. Was er nicht tut: ein Paket erfinden, eines rabattieren oder etwas anbieten, das Sie nicht veröffentlicht haben, denn Preise und Leistungen kommen aus Ihren Dokumenten und nicht aus dem Modell."
+      },
+      "q2": {
+        "question": "Bekommt der Kunde vor dem Termin eine Erinnerung?",
+        "answer": "Eine Bestätigungsmail wird gesendet, wenn der Anrufer eine Adresse angibt. Geplante Erinnerungen sind keine Velyric-Funktion und SMS ist gar nicht verfügbar, ein Erinnerungsablauf muss also in Ihren eigenen Systemen liegen, angetrieben von den Buchungs-Webhook-Ereignissen."
+      },
+      "q3": {
+        "question": "Kann er eine Lackpolitur am Telefon beziffern?",
+        "answer": "Nein. Er nennt die Preise, die Sie für die von Ihnen definierten Pakete veröffentlicht haben, und alles, was vom Zustand des Autos abhängt, wird an Sie weitergeleitet. Der Assistent produziert keine Zahl, hinter der keine Quelle steht."
+      },
+      "q4": {
+        "question": "Was passiert, wenn zwei denselben Termin buchen?",
+        "answer": "Das können sie nicht. Der Schreibvorgang ist durch Datenbankbedingungen, Transaktionen und Idempotenzschlüssel geschützt, konkurrieren also zwei Gespräche um dieselbe Zeit, wird dem unterlegenen das mitgeteilt und die nächste echte Alternative angeboten, statt still doppelt zu buchen."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Terminbuchung am Telefon",
+        "description": "Live-Verfügbarkeit, der Bestätigungsschritt und wie Doppelbuchungen verhindert werden."
+      },
+      "r2": {
+        "label": "Integrationen",
+        "description": "Kalender, E-Mail-Benachrichtigungen, Webhooks und eigene API-Werkzeuge."
+      }
+    }
+  },
+  "salon": {
+    "meta": {
+      "title": "KI-Telefonannahme für Friseur- und Kosmetiksalons",
+      "description": "Ein KI-Telefonassistent, der Ihre Salonleitung annimmt, während jeder Stuhl belegt ist, die richtige Kraft und Leistungsdauer gegen Ihren echten Kalender bucht und Absagen sowie Preisfragen erledigt."
+    },
+    "answer": {
+      "question": "Kann ein KI-Empfang das Telefon eines Salons übernehmen?",
+      "body": "Für die Gespräche, die ständig eine Behandlung unterbrechen, ja. Velyric nimmt Ihre Nummer rund um die Uhr an, auf Ungarisch, Deutsch und Englisch, bucht Leistungen gegen den verbundenen Google Kalender oder Microsoft 365, findet und storniert bestehende Buchungen und beantwortet Preis- und Dauerfragen aus Ihrer eigenen Leistungsliste. Das deckt das meiste ab, was klingelt, während Ihre Hände beschäftigt sind. Beratungen, Beschwerden und alles, was Urteilsvermögen verlangt, geht an eine Person, sobald der Anrufer darum bittet oder den von Ihnen konfigurierten Tastencode drückt."
+    },
+    "facts": {
+      "f1": {
+        "term": "Bucht gegen",
+        "value": "Google Kalender oder Microsoft 365, für die von Ihnen definierte Leistungsdauer"
+      },
+      "f2": {
+        "term": "Erledigt außerdem",
+        "value": "Eine bestehende Buchung im Gespräch finden und stornieren"
+      },
+      "f3": {
+        "term": "Antwortet aus",
+        "value": "Ihrer eigenen Leistungsliste und Ihrem FAQ, nie aus einem erfundenen Preis"
+      }
+    },
+    "workflow": {
+      "heading": "Wie ein Salongespräch abläuft",
+      "body": "Gebaut um die Tatsache herum, dass zwischen 10 und 18 Uhr niemand frei ist, um abzunehmen.",
+      "steps": {
+        "s1": {
+          "title": "Abnehmen, während Sie arbeiten",
+          "body": "Der Assistent nimmt sofort ab, gibt an, dass er ein KI-Assistent ist, und hört zu. Der Anrufer hört nie ein klingelndes Telefon, an das niemand geht."
+        },
+        "s2": {
+          "title": "Buchen, verschieben oder absagen",
+          "body": "Eine neue Buchung wird gegen die Live-Verfügbarkeit für die richtige Leistungsdauer geprüft. Eine bestehende kann gefunden und storniert werden, und eine Änderung wird als Stornierung plus neue Buchung abgewickelt."
+        },
+        "s3": {
+          "title": "Laut bestätigen",
+          "body": "Leistung, Datum und Uhrzeit werden zurückgelesen und bestätigt, bevor etwas geschrieben wird. Eine Bestätigungsmail folgt, wenn der Anrufer eine Adresse genannt hat."
+        }
+      }
+    },
+    "limits": {
+      "heading": "Was es nicht tut",
+      "body": "Die Teile, die bewusst eingerichtet werden müssen oder die schlicht nicht da sind.",
+      "items": {
+        "l1": "Eine bestimmte Kraft zu buchen funktioniert nur, wenn jede mit eigenem Kalender und eigenen Leistungen abgebildet ist. Velyric bucht gegen die Kalender, die Sie verbinden; einen Dienstplan kennt es von sich aus nicht.",
+        "l2": "Es gibt keinen Konnektor für eine Salon-Buchungsplattform. Betreiben Sie bereits eine, muss sie als eigenes API-Werkzeug über Ihren eigenen HTTPS-Endpunkt erreicht werden statt über eine fertige Integration.",
+        "l3": "Er kann nicht beurteilen, was ein Anrufer braucht. Eine Farbberatung, eine Korrektur nach einem schlechten Ergebnis oder eine Beschwerde ist ein Gespräch für eine Person, und der Assistent leitet weiter, statt zu beraten."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Kann ein Anrufer eine bestimmte Kraft verlangen?",
+        "answer": "Ja, wenn diese Kraft einen eigenen verbundenen Kalender und eigene definierte Leistungen hat. Der Assistent prüft die Verfügbarkeit gegen den Kalender, den er bekommen hat, wie gut das funktioniert, ist also eine Frage der Kalendereinrichtung und nicht dessen, was der Assistent sagen kann."
+      },
+      "q2": {
+        "question": "Kann er eine Buchung stornieren, ohne dass ich es danach bestätige?",
+        "answer": "Ja. Er kann eine bestehende Buchung finden und stornieren und bestätigt das mit dem Anrufer, bevor die Änderung geschrieben wird. Vor jedem Schreibvorgang fasst der Assistent zusammen, was er zu tun beabsichtigt, und bittet den Anrufer um Zustimmung."
+      },
+      "q3": {
+        "question": "Was sagt er zu Preisen?",
+        "answer": "Genau das, was in Ihrer eigenen hochgeladenen Leistungsliste steht, und sonst nichts. Steht ein Preis nicht in Ihren Dokumenten, stellt der Assistent eine Rückfrage oder leitet an eine Person weiter, statt einen zu schätzen."
+      },
+      "q4": {
+        "question": "Bearbeitet er Gespräche auf Deutsch oder Englisch?",
+        "answer": "Ja, auf derselben Nummer. Ungarisch, Deutsch und Englisch werden unterstützt und die Sprache kann mitten im Gespräch wechseln, ein spontan hereinkommender Tourist und eine Stammkundin erreichen also dieselbe Leitung, ohne dass je Anrufer etwas konfiguriert wäre."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Terminbuchung am Telefon",
+        "description": "Wie Live-Verfügbarkeit, Bestätigung und Stornierung in einem Gespräch funktionieren."
+      },
+      "r2": {
+        "label": "Mehrsprachige Gespräche auf einer Nummer",
+        "description": "Wie Ungarisch, Deutsch und Englisch erkannt, gewählt und mitten im Gespräch gewechselt werden."
+      }
+    }
+  },
+  "hotel": {
+    "meta": {
+      "title": "KI-Telefonannahme für Hotels und Pensionen",
+      "description": "Ein KI-Telefonassistent, der Gästefragen rund um die Uhr auf Ungarisch, Deutsch und Englisch beantwortet, nachts Nachrichten und Rückrufwünsche aufnimmt und Reservierungen sowie Beschwerden an Ihre Rezeption weiterleitet."
+    },
+    "answer": {
+      "question": "Kann ein KI-Assistent nachts das Telefon eines Hotels annehmen?",
+      "body": "Ja, und das ist die Schicht, in der er sich seinen Platz verdient. Velyric nimmt rund um die Uhr unter Ihrer eigenen Nummer ab und beantwortet Gästefragen auf Ungarisch, Deutsch und Englisch aus Ihren eigenen Dokumenten: Check-in- und Check-out-Zeiten, Parken, Frühstück, ob der Pool geöffnet ist, wie man Sie erreicht. Zu Beginn des Gesprächs sagt er, dass er ein KI-Assistent ist. Nachts tut er, was Sie konfiguriert haben — eine Nachricht aufnehmen, einen Rückrufwunsch erfassen oder eine Bereitschaftsnummer anwählen —, und Reservierungen, Beschwerden und alles Kaufmännische leitet er an die Rezeption weiter, statt es selbst zu erledigen."
+    },
+    "facts": {
+      "f1": {
+        "term": "Sprachen",
+        "value": "Ungarisch, Deutsch und Englisch auf einer Nummer, mitten im Gespräch umschaltbar"
+      },
+      "f2": {
+        "term": "Antwortet aus",
+        "value": "Ihrer eigenen Hausordnung, Ausstattungsliste und Ihren FAQ-Dokumenten"
+      },
+      "f3": {
+        "term": "Nachts",
+        "value": "Nachricht aufnehmen, Rückrufwunsch erfassen oder an eine Bereitschaftsnummer weiterleiten"
+      }
+    },
+    "workflow": {
+      "heading": "Wie ein Gästegespräch abläuft",
+      "body": "Ein Gast mit einer einfachen Frage bekommt eine Antwort; alles andere erreicht eine Person mit bereits formuliertem Anliegen.",
+      "steps": {
+        "s1": {
+          "title": "In der Sprache des Gastes antworten",
+          "body": "Die Ländervorwahl gibt einen ersten Hinweis, dann übernimmt die tatsächlich gesprochene Sprache. Ein Gast kann mitten im Satz die Sprache wechseln, ohne dass das Gespräch neu beginnt."
+        },
+        "s2": {
+          "title": "Aus Ihrem eigenen Material antworten",
+          "body": "Ausstattung, Zeiten, Anfahrt und Hausordnung kommen aus Ihren hochgeladenen Dokumenten und Ihrer gecrawlten Website. Wo nichts eine Antwort belegt, stellt der Assistent eine Rückfrage oder übergibt."
+        },
+        "s3": {
+          "title": "Erfassen oder weiterleiten",
+          "body": "Reservierungen, Änderungen und Beschwerden gehen tagsüber an die Rezeption. Nachts gilt die konfigurierte Rückfallebene, und was Sie erreicht, ist ein Transkript mit Zusammenfassung statt einer Audiodatei."
+        }
+      }
+    },
+    "limits": {
+      "heading": "Was es nicht tut",
+      "body": "Eine Hotelleitung berührt Systeme, an die Velyric nicht anbindet, und das weiß man besser vorher.",
+      "items": {
+        "l1": "Es gibt keinen Konnektor für ein Hotelverwaltungssystem oder eine Buchungsmaschine. Zimmerbestand, Raten und Reservierungen liegen in Systemen, die Velyric nur über ein eigenes API-Werkzeug erreichen kann, das Sie gegen Ihren eigenen HTTPS-Endpunkt bauen.",
+        "l2": "Er nimmt keine Zahlung entgegen, hält keine Karte und bestätigt keine Rate. Alles Kaufmännische ist eine Weiterleitung an die Rezeption, und der Assistent nennt keinen Preis, der nicht in Ihren eigenen Dokumenten steht.",
+        "l3": "Gespräche sind auf 30 Minuten begrenzt und die Parallelität ist eine Tarifgrenze, eine gleichzeitig eintreffende Reisegruppe wird also von der von Ihnen konfigurierten Überlaufregel aufgefangen und nicht von unbegrenzt vielen parallelen Leitungen."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Kann er eine Zimmerreservierung entgegennehmen?",
+        "answer": "Nicht gegen ein Hotelverwaltungssystem, denn Velyric hat keinen PMS- oder Buchungsmaschinen-Konnektor. Er kann gegen einen verbundenen Google Kalender oder Microsoft 365 buchen, und er kann einen Reservierungswunsch erfassen und weiterleiten oder für die Rezeption hinterlassen. Ihr PMS zu erreichen bedeutet, ein eigenes API-Werkzeug zu bauen."
+      },
+      "q2": {
+        "question": "Was passiert mit Anrufen mitten in der Nacht?",
+        "answer": "Sie werden angenommen. Fragen, die Ihre Dokumente abdecken, werden direkt beantwortet; alles andere folgt dem von Ihnen konfigurierten Verhalten außerhalb der Geschäftszeiten, also Nachricht aufnehmen, Rückrufwunsch erfassen oder an eine Bereitschaftsnummer weiterleiten. Sie bekommen ein Transkript mit Zusammenfassung statt einer Mailbox-Datei."
+      },
+      "q3": {
+        "question": "Wie viele Sprachen können Gäste nutzen?",
+        "answer": "Drei: Ungarisch, Deutsch und Englisch, auf derselben Nummer, wobei die Sprache mitten im Gespräch wechseln kann. Eine ausdrückliche Bitte oder die tatsächlich erkannte Sprache überschreibt den Hinweis aus der Ländervorwahl."
+      },
+      "q4": {
+        "question": "Können Gäste immer einen Menschen erreichen?",
+        "answer": "Ja. Eine Bitte um eine Person leitet das Gespräch sofort weiter, ebenso der von Ihnen konfigurierte Tastencode. Tagsüber ist das Ihre Rezeption; nachts der Weg, den Sie für außerhalb der Geschäftszeiten gesetzt haben, einschließlich einer Bereitschaftsnummer."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Mehrsprachige Gespräche auf einer Nummer",
+        "description": "Wie die Sprache erkannt, gewählt und mitten im Gespräch gewechselt wird."
+      },
+      "r2": {
+        "label": "KI-Empfang oder Mailbox",
+        "description": "Was Sie nach dem Gespräch erreicht, und wann eine Mailbox die richtige Antwort bleibt."
+      }
+    }
+  },
+  "real-estate": {
+    "meta": {
+      "title": "KI-Telefonannahme für Immobilienbüros",
+      "description": "Ein KI-Telefonassistent, der Fragen zu Objekten aus Ihren eigenen Dokumenten beantwortet, von jedem Anrufer Budget und Zeitrahmen erfasst und Besichtigungen in den echten Kalendern Ihrer Makler bucht."
+    },
+    "answer": {
+      "question": "Kann ein KI-Telefonassistent Immobilienanfragen qualifizieren?",
+      "body": "Er kann erfassen, was die Qualifizierung braucht, und die Besichtigung buchen, also genau den Teil, der verloren geht, wenn niemand abnimmt. Velyric nimmt rund um die Uhr unter Ihrer eigenen Nummer ab, beantwortet Fragen zu einem Objekt aus Ihren eigenen hochgeladenen Objektunterlagen, erfasst Budget, Zeitrahmen und Wünsche in den Worten des Anrufers und bucht Besichtigungen gegen den verbundenen Google Kalender oder Microsoft 365 des Maklers. Jedes Gespräch erscheint in Ihrem Dashboard mit Transkript und Zusammenfassung, wo Sie sie aktivieren. Die Beurteilung, ob eine Anfrage es wert ist, bleibt bei Ihren Maklern."
+    },
+    "facts": {
+      "f1": {
+        "term": "Erfasst",
+        "value": "Budget, Zeitrahmen und Wünsche, so wie der Anrufer sie genannt hat"
+      },
+      "f2": {
+        "term": "Bucht Besichtigungen in",
+        "value": "Dem verbundenen Google Kalender oder Microsoft 365"
+      },
+      "f3": {
+        "term": "Antwortet aus",
+        "value": "Ihren eigenen Objektunterlagen und gecrawlten Website-Seiten"
+      }
+    },
+    "workflow": {
+      "heading": "Wie ein Immobiliengespräch abläuft",
+      "body": "Wer um 21:00 eine Anzeige gesehen hat, bekommt um 21:00 eine Antwort und eine Besichtigung im Kalender.",
+      "steps": {
+        "s1": {
+          "title": "Die Frage zum Objekt beantworten",
+          "body": "Größe, Grundriss, Etage, Heizung, was dazugehört — was in Ihren eigenen hochgeladenen Unterlagen steht, wird direkt beantwortet. Was nicht darin steht, wird zur Rückfrage oder zur Übergabe, nie zu einem erfundenen Detail."
+        },
+        "s2": {
+          "title": "Die Qualifizierung erfassen",
+          "body": "Budget, Zeitrahmen, ob zuerst verkauft werden muss, welche Lage gewünscht ist. Der Assistent fragt, was Sie konfiguriert haben, und hält die Worte des Anrufers fest statt einer selbst erdachten Bewertung."
+        },
+        "s3": {
+          "title": "Die Besichtigung buchen",
+          "body": "Die Verfügbarkeit wird live im verbundenen Maklerkalender geprüft und nur freie Zeiten angeboten. Der Termin wird zurückgelesen und bestätigt, bevor er geschrieben wird."
+        }
+      }
+    },
+    "limits": {
+      "heading": "Was es nicht tut",
+      "body": "Maklerarbeit läuft über ein CRM, und genau daran bindet Velyric nicht von Haus aus an.",
+      "items": {
+        "l1": "Es gibt keinen CRM-Konnektor. Eine qualifizierte Anfrage in Ihr eigenes System zu schieben bedeutet ein eigenes API-Werkzeug gegen Ihren HTTPS-Endpunkt oder eines der ausgehenden Webhook-Ereignisse, von denen bis zu zehn Endpunkte 17 Typen empfangen können, signiert mit HMAC-SHA256.",
+        "l2": "Er bewertet nicht, priorisiert nicht und entscheidet nicht. Sie bekommen, was der Anrufer gesagt hat, korrekt erfasst, plus Transkript und Zusammenfassung. Die Anfrage zu beurteilen ist die Arbeit Ihrer Makler.",
+        "l3": "Er nimmt ausschließlich eingehende Gespräche an. Eine Interessentenliste zurückzurufen gehört nicht zu dem, was Velyric tut, und die Telefonnummer eines Anrufers ist eine Bequemlichkeitskennung und kein Nachweis, wer er ist."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Kann er Fragen zu einem bestimmten Objekt beantworten?",
+        "answer": "Ja, sofern das Objekt in Ihren hochgeladenen Unterlagen oder auf Ihrer gecrawlten Website steht. Der Abruf ist auf Ihren eigenen Mandanten gefiltert, und wo nichts eine Antwort belegt, stellt der Assistent eine Rückfrage oder leitet weiter, statt ein Detail über eine Wohnung zu erfinden."
+      },
+      "q2": {
+        "question": "Kann er eine Anfrage in unser CRM schreiben?",
+        "answer": "Nicht über eine fertige Integration, denn es gibt keinen CRM-Konnektor. Sie können Ihr CRM über ein eigenes API-Werkzeug erreichen, das Sie gegen Ihren eigenen HTTPS-Endpunkt definieren, oder einen Endpunkt auf die ausgehenden Webhook-Ereignisse abonnieren und die Anfrage selbst schreiben."
+      },
+      "q3": {
+        "question": "Kann er eine Besichtigung im Kalender eines bestimmten Maklers buchen?",
+        "answer": "Ja, gegen den Google Kalender oder Microsoft 365, den Sie für diesen Makler verbinden. Die Verfügbarkeit wird live geprüft, bevor eine Zeit angeboten wird, und der Termin wird mit dem Anrufer bestätigt, bevor er geschrieben wird."
+      },
+      "q4": {
+        "question": "Was bekommen wir nach dem Gespräch?",
+        "answer": "Das Gespräch erscheint in Ihrem Dashboard mit den erfassten Angaben, dazu Transkript und Zusammenfassung, wo Sie sie aktivieren. Roh-Audio wird standardmäßig nicht gespeichert; die Aufzeichnung ist ein kostenpflichtiges Zusatzmodul, und Transkripte werden standardmäßig 90 Tage aufbewahrt."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Integrationen",
+        "description": "Kalender, eigene API-Werkzeuge und die 17 Webhook-Ereignisse, die Sie abonnieren können."
+      },
+      "r2": {
+        "label": "Terminbuchung am Telefon",
+        "description": "Live-Verfügbarkeit, Bestätigung und Schutz vor Doppelbuchungen."
+      }
+    }
+  },
+  "webshop": {
+    "meta": {
+      "title": "KI-Telefonannahme für Onlineshops",
+      "description": "Ein KI-Telefonassistent, der Fragen zu Bestellung und Lieferung über ein eigenes API-Werkzeug gegen Ihre Systeme beantwortet, Ihre Rückgaberichtlinie aus Ihren Dokumenten erklärt und Streitfälle mit einer Zusammenfassung eskaliert."
+    },
+    "answer": {
+      "question": "Kann ein KI-Assistent Anrufe zum Bestellstatus beantworten?",
+      "body": "Ja, sobald Sie Ihr eigenes Bestellsystem angebunden haben. Velyric hat keinen Konnektor für eine E-Commerce-Plattform; was es hat, sind eigene API-Werkzeuge, mit denen der Assistent Ihren eigenen HTTPS-Endpunkt aufrufen kann, mit JSON-Schema für Ein- und Ausgabe, einem Zeitlimit je Werkzeug, einer Wiederholung und einem Idempotenzschlüssel. Damit kann der Assistent eine Bestellung nachschlagen und dem Anrufer sagen, wo sie steht. Fragen zu Rückgabe, Versand und Richtlinien werden ganz ohne Integration aus Ihren eigenen hochgeladenen Dokumenten beantwortet. Streitfälle und alles Kaufmännische gehen an Ihr Support-Team, mit dem Anliegen des Anrufers bereits erfasst."
+    },
+    "facts": {
+      "f1": {
+        "term": "Bestellabfragen über",
+        "value": "Ein eigenes API-Werkzeug gegen Ihren eigenen HTTPS-Endpunkt"
+      },
+      "f2": {
+        "term": "Richtlinienantworten aus",
+        "value": "Ihren hochgeladenen Rückgabe-, Versand- und Garantiedokumenten"
+      },
+      "f3": {
+        "term": "Eskalation",
+        "value": "Sofortige Weiterleitung auf Wunsch, mit Transkripten, wo aktiviert"
+      }
+    },
+    "workflow": {
+      "heading": "Wie ein Support-Gespräch abläuft",
+      "body": "Zwei verschiedene Wege, und der Unterschied ist, ob eine Antwort Ihre Live-Daten braucht.",
+      "steps": {
+        "s1": {
+          "title": "Richtlinie von Daten trennen",
+          "body": "Eine Frage zur Rückgabefrist wird sofort aus Ihren Dokumenten beantwortet. Eine Frage zum Bestellstatus braucht Ihr System, also ruft der Assistent das von Ihnen definierte eigene API-Werkzeug auf."
+        },
+        "s2": {
+          "title": "Sicher nachschlagen",
+          "body": "Der Werkzeugaufruf wird gegen Ihr JSON-Schema validiert, durch ein Zeitlimit begrenzt, bei Fehlschlag einmal wiederholt und mit einem Idempotenzschlüssel versehen. Eine Telefonnummer identifiziert einen Anrufer der Bequemlichkeit halber, nicht als Authentifizierung, deshalb braucht alles Sensible eine zusätzliche Verifizierung oder eine Person."
+        },
+        "s3": {
+          "title": "Abschließen oder eskalieren",
+          "body": "Einfache Fälle enden im Gespräch. Ein Streitfall, eine Erstattungsentscheidung oder alles, was das Werkzeug nicht beantworten konnte, geht an Ihr Support-Team, mit Transkript und Zusammenfassung des Gesprächs, wo Sie sie aktivieren."
+        }
+      }
+    },
+    "limits": {
+      "heading": "Was es nicht tut",
+      "body": "Die Integrationsrealität, gesagt bevor Sie mit etwas planen, das es nicht gibt.",
+      "items": {
+        "l1": "Es gibt keinen fertigen Konnektor für irgendeine E-Commerce-Plattform oder einen Marktplatz. Jede Bestellabfrage läuft über ein eigenes API-Werkzeug, das Sie selbst bauen und betreiben.",
+        "l2": "Er kann einen Anrufer nicht authentifizieren. Eine Telefonnummer ist eine Bequemlichkeitskennung, deshalb erfordert das Vorlesen von etwas Sensiblem zu einer Bestellung eine zusätzliche Verifizierung oder eine Weiterleitung an eine Person.",
+        "l3": "Er nimmt keine Zahlung entgegen, erstattet nichts und trifft keine Kulanzentscheidung. Das sind Weiterleitungen, denn Werkzeugberechtigungen liegen im Code, und der Assistent improvisiert keine."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Integrieren Sie sich mit unserer Shop-Plattform?",
+        "answer": "Nicht über einen benannten Konnektor. Velyric bindet sich als eigenes API-Werkzeug an Ihre eigenen HTTPS-Endpunkte an, unterstützt GET, POST, PUT, PATCH und DELETE mit Pfadvorlagen, JSON-Schema-Validierung für Ein- und Ausgabe und Authentifizierung per Bearer-Token oder HMAC-SHA256-Signatur über Zeitstempel und Body."
+      },
+      "q2": {
+        "question": "Ist es sicher, Bestelldaten am Telefon vorzulesen?",
+        "answer": "Das ist Ihre Richtlinienentscheidung, und die Plattform ist so gebaut, dass die vorsichtige Variante leicht fällt. Die Nummer des Anrufers gilt als Bequemlichkeitskennung und nicht als Authentifizierung, sensible Anliegen gehen konstruktionsbedingt an einen Menschen, und Sie legen in der Bestätigungsregel des Werkzeugs fest, was ohne Person gesagt werden darf."
+      },
+      "q3": {
+        "question": "Was passiert, wenn unsere API langsam oder ausgefallen ist?",
+        "answer": "Jedes Werkzeug hat sein eigenes Zeitlimit. Eine Zeitüberschreitung oder ein 5xx wird einmal wiederholt, und schlägt es weiterhin fehl, wird das Gespräch an eine Person weitergeleitet oder fällt auf das konfigurierte Verhalten außerhalb der Geschäftszeiten zurück. Der Assistent erfindet kein Lieferdatum, um die Lücke zu füllen."
+      },
+      "q4": {
+        "question": "Kann er Ereignisse in unsere Systeme schieben?",
+        "answer": "Ja, über ausgehende Webhooks. Bis zu zehn Endpunkte je Arbeitsbereich können 17 Ereignistypen empfangen, darunter call.started, call.ended, booking.created, booking.changed und booking.canceled, jeweils mit HMAC-SHA256 signiert und über acht Versuche mit wachsender Wartezeit wiederholt."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Eigene API-Werkzeuge",
+        "description": "Schemas, Authentifizierung, Zeitlimits, Wiederholungen und Bestätigungsregeln."
+      },
+      "r2": {
+        "label": "Webhooks",
+        "description": "Die 17 Ereignistypen, die HMAC-Signierung und der Wiederholungsplan."
+      }
+    }
+  },
+  "b2b-support": {
+    "meta": {
+      "title": "KI-Telefonannahme für B2B-Supportdesks",
+      "description": "Ein KI-Telefonassistent, der wiederkehrende Anrufer erkennt, Produktfragen aus Ihren Handbüchern und technischen Dokumenten beantwortet und über Ihre eigene API Tickets anlegt, bevor er an einen Techniker übergibt."
+    },
+    "answer": {
+      "question": "Kann ein KI-Assistent den First-Level-Support im B2B übernehmen?",
+      "body": "Für die wiederkehrenden Fragen und die Aufnahme, ja. Velyric nimmt rund um die Uhr unter Ihrer eigenen Nummer ab, erkennt einen wiederkehrenden Anrufer aus dem je Mandant gespeicherten Anrufergedächtnis und antwortet aus Ihren eigenen Handbüchern, Release Notes und technischen Dokumenten, wobei jeder Abruf auf Ihren Mandanten gefiltert ist. Wo Sie ein eigenes API-Werkzeug gebaut haben, kann er vor Gesprächsende ein Ticket anlegen, sodass der Techniker, der es übernimmt, mit den Details startet statt mit einer Mailbox-Nachricht. Alles, was technische Beurteilung verlangt, wird weitergeleitet, auf Wunsch sofort oder über den von Ihnen konfigurierten Tastencode."
+    },
+    "facts": {
+      "f1": {
+        "term": "Antwortet aus",
+        "value": "Ihren Handbüchern und technischen Dokumenten, gefiltert auf Ihren Mandanten"
+      },
+      "f2": {
+        "term": "Ticketanlage über",
+        "value": "Ein eigenes API-Werkzeug gegen Ihren eigenen HTTPS-Endpunkt"
+      },
+      "f3": {
+        "term": "Anrufergedächtnis",
+        "value": "Je Mandant gespeichert, 730 Tage aufbewahrt, nie zwischen Mandanten geteilt"
+      }
+    },
+    "workflow": {
+      "heading": "Wie ein Support-Gespräch abläuft",
+      "body": "First Level heißt abschließen, was beantwortbar ist, und verpacken, was es nicht ist.",
+      "steps": {
+        "s1": {
+          "title": "Erkennen und verstehen",
+          "body": "Ein wiederkehrender Anrufer wird der Bequemlichkeit halber gegen das gespeicherte Anrufergedächtnis abgeglichen, nicht als Authentifizierung. Der Assistent hört sich das Problem in den Worten des Anrufers an, statt ihn durch ein Menü zu führen."
+        },
+        "s2": {
+          "title": "Aus der Dokumentation antworten",
+          "body": "Handbücher, Release Notes und interne FAQ-Dokumente werden mit auf Ihren Mandanten gefiltertem Abruf durchsucht. Belegt nichts eine Antwort, stellt der Assistent eine Rückfrage oder übergibt, statt zu raten."
+        },
+        "s3": {
+          "title": "Ticket anlegen, dann übergeben",
+          "body": "Wo ein eigenes API-Werkzeug existiert, wird mit den erfassten Angaben ein Ticket angelegt, unter einer von Ihnen gesetzten Bestätigungsregel. Danach wird das Gespräch weitergeleitet, oder das Ticket bleibt mit Transkript und Zusammenfassung in der Warteschlange."
+        }
+      }
+    },
+    "limits": {
+      "heading": "Was es nicht tut",
+      "body": "Die Grenze zwischen First Level und Technik, ausdrücklich gezogen.",
+      "items": {
+        "l1": "Es gibt keinen Konnektor für ein Ticket- oder Servicedesk-Produkt. Ein Ticket anzulegen bedeutet, ein eigenes API-Werkzeug gegen Ihren eigenen HTTPS-Endpunkt zu bauen, mit JSON-Schema-Validierung und einem Idempotenzschlüssel.",
+        "l2": "Er behebt keine Fehler jenseits Ihrer Dokumentation. Der Assistent antwortet aus indexierten Quellen, ein Problem, das Ihre Dokumente nicht abdecken, ist also eine Übergabe und kein Experiment an einem Produktivsystem.",
+        "l3": "Er authentifiziert weder den Anrufer noch dessen Berechtigung. Die Telefonnummer identifiziert einen Datensatz der Bequemlichkeit halber; Entscheidungen zu Vertrag, Lizenz oder Zugriff brauchen eine zusätzliche Verifizierung oder eine Person."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Wie erkennt er einen wiederkehrenden Anrufer?",
+        "answer": "Über das je Mandant gespeicherte Anrufergedächtnis, standardmäßig 730 Tage aufbewahrt und nie zwischen Mandanten geteilt. Es dient dazu, einen Datensatz zu finden und das Gespräch zu personalisieren, nicht zur Authentifizierung: Eine Telefonnummer ist eine Bequemlichkeitskennung, und alles Sensible erfordert eine zusätzliche Verifizierung oder eine Person."
+      },
+      "q2": {
+        "question": "Kann er in unserem Servicedesk ein Ticket anlegen?",
+        "answer": "Über ein eigenes API-Werkzeug, das Sie gegen Ihren eigenen HTTPS-Endpunkt definieren, ja. Für kein Ticketprodukt gibt es einen eingebauten Konnektor. Der Werkzeugaufruf wird gegen Ihr JSON-Schema validiert, durch ein Zeitlimit begrenzt, einmal wiederholt und mit einem Idempotenzschlüssel versehen, sodass eine Wiederholung kein Duplikat anlegen kann."
+      },
+      "q3": {
+        "question": "Was hindert ihn daran, eine technische Frage falsch zu beantworten?",
+        "answer": "Der Abruf ist auf Ihren eigenen Mandanten gefiltert, und die Regel für den leeren Fall ist ausdrücklich: ohne belegende Quelle stellt der Assistent eine Rückfrage oder übergibt das Gespräch an eine Person. Dokumente gelten außerdem als nicht vertrauenswürdige Eingabe, eine in einer hochgeladenen Datei versteckte Anweisung kann also nicht ändern, was der Assistent darf."
+      },
+      "q4": {
+        "question": "Können wir Änderungen testen, bevor Kunden sie hören?",
+        "answer": "Ja. Assistentenversionen werden veröffentlicht und lassen sich zurückrollen, und eine Simulationsoberfläche führt Testanrufe und Regressionsläufe aus, bevor eine Version live geht. Ein Dokument zu aktualisieren ersetzt seine alten Abschnitte im aktiven Index atomar, der Assistent antwortet also nie aus einer Mischung von Alt und Neu."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Eigene API-Werkzeuge",
+        "description": "Wie der Assistent Ihre eigenen Systeme erreicht, und was jeden Aufruf begrenzt."
+      },
+      "r2": {
+        "label": "Sicherheit und Datenschutz",
+        "description": "Mandantentrennung, Aufbewahrungsvorgaben und der Umgang mit nicht vertrauenswürdiger Eingabe."
+      }
+    }
+  }
+}

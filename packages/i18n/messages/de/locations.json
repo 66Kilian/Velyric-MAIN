@@ -1,0 +1,70 @@
+{
+  "title": "Standorte",
+  "description": "Standorte mit eigener Adresse, Öffnungszeiten, Feiertagen und Zeitzone.",
+  "create": "Neuer Standort",
+  "empty": "Noch keine Standorte",
+  "emptyDescription": "Füge deinen ersten Standort hinzu, um Öffnungszeiten und buchbare Leistungen einzurichten.",
+  "back": "Alle Standorte",
+  "primary": "Hauptstandort",
+  "hoursCount": "{count, plural, =0 {Keine Öffnungszeiten} one {# Zeitfenster} other {# Zeitfenster}}",
+  "columns": {
+    "name": "Name",
+    "address": "Adresse",
+    "timezone": "Zeitzone",
+    "hours": "Öffnungszeiten",
+    "status": "Status"
+  },
+  "status": {
+    "ACTIVE": "Aktiv",
+    "INACTIVE": "Inaktiv"
+  },
+  "form": {
+    "name": "Name",
+    "timezone": "Zeitzone",
+    "country": "Land",
+    "countries": {
+      "HU": "Ungarn",
+      "AT": "Österreich",
+      "DE": "Deutschland",
+      "CH": "Schweiz",
+      "SK": "Slowakei",
+      "RO": "Rumänien",
+      "SI": "Slowenien",
+      "HR": "Kroatien",
+      "CZ": "Tschechien",
+      "PL": "Polen"
+    },
+    "line1": "Straße und Hausnummer",
+    "line2": "Adresszusatz",
+    "postalCode": "Postleitzahl",
+    "city": "Ort",
+    "hours": "Öffnungszeiten",
+    "day": "Tag",
+    "opens": "Öffnet",
+    "closes": "Schließt",
+    "removeHours": "Öffnungszeit entfernen",
+    "hoursInvalid": "Öffnungszeiten müssen nach dem Öffnen schließen und dürfen sich am selben Tag nicht überschneiden.",
+    "addHours": "Öffnungszeit hinzufügen",
+    "holidays": "Feiertage und besondere Tage",
+    "noHolidays": "Keine Feiertage eingerichtet.",
+    "date": "Datum",
+    "holidayName": "Bezeichnung",
+    "closed": "Geschlossen",
+    "removeHoliday": "Feiertag entfernen",
+    "addHoliday": "Feiertag hinzufügen",
+    "create": "Standort erstellen",
+    "save": "Änderungen speichern",
+    "created": "Standort erstellt",
+    "saved": "Standort aktualisiert"
+  },
+  "actions": {
+    "makePrimary": "Zum Hauptstandort machen",
+    "primarySet": "Hauptstandort geändert",
+    "deactivate": "Deaktivieren",
+    "deactivateTitle": "Diesen Standort deaktivieren?",
+    "deactivateDescription": "Agenten bieten an diesem Standort keine Buchungen mehr an.",
+    "deactivated": "Standort deaktiviert",
+    "activate": "Aktivieren",
+    "activated": "Standort aktiviert"
+  }
+}

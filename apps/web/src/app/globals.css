@@ -1,0 +1,5 @@
+@import 'tailwindcss';
+@import '@velyric/ui/styles.css';
+
+@source '../../../../packages/ui/src';
+@source '../';

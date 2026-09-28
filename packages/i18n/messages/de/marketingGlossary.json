@@ -1,0 +1,780 @@
+{
+  "hub": {
+    "meta": {
+      "title": "Glossar zu Sprach-KI und Telefonie",
+      "description": "Klare, präzise Definitionen der Begriffe, die Ihnen begegnen, wenn Sie einen KI-Telefonassistenten an eine geschäftliche Telefonleitung hängen: SIP, PSTN, DID, DTMF, E.164, Barge-in, gleichzeitige Gespräche und RAG."
+    },
+    "eyebrow": "Glossar",
+    "title": "Glossar zu Sprach-KI und Telefonie",
+    "body": "Zwölf Begriffe, die Ihnen begegnen, wenn Sie einen KI-Assistenten an eine geschäftliche Telefonleitung hängen, so definiert, wie die Standards sie definieren, jeder mit einer Notiz dazu, wie es in Velyric tatsächlich funktioniert.",
+    "breadcrumb": "Glossar",
+    "breadcrumbLabel": "Brotkrumennavigation",
+    "intro": {
+      "heading": "Wozu dient dieses Glossar?",
+      "answer": "Dieses Glossar definiert das Vokabular, das zwischen zwei Welten liegt: der Telefonie, die seit Jahrzehnten standardisiert ist, und der Sprach-KI, die es nicht ist. Begriffe wie SIP, PSTN, DID, DTMF, E.164 und RAG haben präzise Bedeutungen, die von Normungsgremien oder von der Arbeit festgelegt wurden, die sie eingeführt hat, und sie werden hier mit genau diesen Bedeutungen verwendet. Begriffe wie KI-Telefonassistent und Barge-in sind jünger und unschärfer, deshalb trennt jeder Eintrag das allgemein Anerkannte von dem, was die Implementierungsentscheidung eines Anbieters ist.",
+      "p1": "Der Grund, hier sorgfältig zu sein, ist die Beschaffung. Die meisten Missverständnisse in einer Sprach-KI-Bewertung entstehen daraus, dass ein einziges Wort für Käufer und Anbieter Unterschiedliches bedeutet: Wie viele Rufnummern Sie bekommen, ist nicht, wie viele Gespräche Sie gleichzeitig annehmen können; eine Weiterleitung, die keinen Kontext übergibt, ist keine warme Übergabe; und Abruf allein hindert ein Modell nicht daran, eine Antwort zu erfinden.",
+      "p2": "Jeder Eintrag folgt derselben Form. Eine Definition, die Sie für sich zitieren können, eine technische Erklärung dessen, was tatsächlich passiert, ein konkretes Beispiel, ein Abschnitt dazu, was der Begriff speziell innerhalb von Velyric bedeutet, und der Fehler, den man damit üblicherweise macht. Wo Velyrics Verhalten eine Produktentscheidung und kein Standard ist, etwa bei den Tastencodes, den Parallelitätsgrenzen je Tarif oder dem, was passiert, wenn die Wissensdatenbank keine Antwort hat, sagt der Eintrag das ausdrücklich."
+    },
+    "groups": {
+      "voiceAi": {
+        "title": "Konzepte der Sprach-KI",
+        "body": "Was ein KI-Telefonassistent ist, für welche Empfangsrolle er üblicherweise eingesetzt wird, und mit welchem Menüsystem er üblicherweise verglichen wird."
+      },
+      "telephony": {
+        "title": "Grundlagen der Telefonie",
+        "body": "Die Protokolle, Netze und Nummernformate, auf denen ein Telefongespräch läuft. Das sind Industriestandards, die der Sprach-KI weit vorausgehen, und nichts davon ist Velyric-spezifisch."
+      },
+      "conversation": {
+        "title": "Mechanik des Gesprächs",
+        "body": "Was Sekunde für Sekunde in einem laufenden Gespräch passiert: Tasteneingabe, das Unterbrechen des Assistenten, die Übergabe an eine Kollegin oder einen Kollegen, und wie viele Anrufer gleichzeitig in der Leitung sein können."
+      },
+      "knowledge": {
+        "title": "Wissen und Daten",
+        "body": "Wie ein Assistent an die Fakten kommt, die er aussprechen darf, und was ihn davon abhält, die Lücken mit etwas Plausiblem zu füllen."
+      }
+    },
+    "faq": {
+      "heading": "Häufige Fragen",
+      "q1": {
+        "question": "Welche dieser Begriffe sind vor dem Kauf am wichtigsten?",
+        "answer": "Drei tragen die meisten Überraschungen. Gleichzeitige Gespräche, weil das Kapazität und nicht Volumen ist und darüber entscheidet, ob Anrufer überhaupt durchkommen. Warme Übergabe, weil das Etikett routinemäßig für Übergaben verwendet wird, die keinen Kontext weitergeben. Und abrufgestützte Generierung, weil die Erdung darüber entscheidet, ob der Assistent Antworten über Ihr Unternehmen erfindet."
+      },
+      "q2": {
+        "question": "Sind diese Definitionen Velyric-spezifisch?",
+        "answer": "Nein. SIP, PSTN, DID, DTMF, E.164 und RAG sind Begriffe des Industriestandards und werden hier so definiert, wie die Standards sie definieren. Jeder Eintrag hält Velyric-spezifisches Verhalten in einem eigenen, klar gekennzeichneten Abschnitt, sodass beides nie vermischt wird."
+      },
+      "q3": {
+        "question": "Gibt es das Glossar in mehr als einer Sprache?",
+        "answer": "Ja. Jeder Eintrag erscheint auf Englisch, Ungarisch und Deutsch, und das sind zugleich die drei Sprachen, die Velyrics Telefonassistent spricht. Die Sprache des Anrufers kann mitten im Gespräch wechseln."
+      },
+      "q4": {
+        "question": "Wo finde ich die Preise?",
+        "answer": "Auf der Preisseite. Die Tarife sind für den ungarischen Markt in Forint und ohne Mehrwertsteuer veröffentlicht, und jeder Tarif nennt seine enthaltenen Sprachminuten, seinen Minutensatz für Mehrverbrauch und seine Grenze für gleichzeitige Gespräche."
+      },
+      "q5": {
+        "question": "Was, wenn der Begriff, den ich suche, hier fehlt?",
+        "answer": "Diese Liste deckt die zwölf Begriffe ab, die in einer Bewertung am häufigsten vorkommen, nicht die gesamte Telefonie. Die Dokumentation geht erheblich tiefer auf die Konfiguration ein, und alles, was Ihren eigenen Aufbau betrifft, ist dort besser aufgehoben als in einer Definition."
+      }
+    },
+    "related": {
+      "heading": "Wie es weitergeht",
+      "product": {
+        "label": "Das Produkt Velyric",
+        "description": "Wie Assistent, Wissensdatenbank, Buchung und Übergabe zusammenpassen."
+      },
+      "pricing": {
+        "label": "Tarife und Preise",
+        "description": "Enthaltene Minuten, Mehrverbrauch je Minute und die Parallelitätsgrenze je Tarif."
+      },
+      "integrations": {
+        "label": "Integrationen",
+        "description": "Kalender, eigene API-Werkzeuge, Webhooks und die Rufnummern, die Velyric bereitstellt."
+      },
+      "security": {
+        "label": "Sicherheit und Datenschutz",
+        "description": "Aufbewahrungsvorgaben, Mandantentrennung und wie Anrufdaten tatsächlich behandelt werden."
+      }
+    }
+  },
+  "labels": {
+    "exampleHeading": "Ein konkretes Beispiel",
+    "velyricHeading": "Wie das in Velyric funktioniert",
+    "relatedHeading": "Verwandte Begriffe und Seiten",
+    "faqHeading": "Häufige Fragen"
+  },
+  "terms": {
+    "ai-voice-agent": {
+      "term": "KI-Telefonassistent",
+      "short": "Software, die auf einem Telefongespräch eine echte gesprochene Unterhaltung führt, das Anliegen des Anrufers erfasst und Aktionen wie eine Buchung ausführt.",
+      "meta": {
+        "title": "KI-Telefonassistent: Definition und Funktionsweise",
+        "description": "Ein KI-Telefonassistent führt ein gesprochenes Telefongespräch, versteht freie Rede und führt echte Aktionen aus. Was während des Gesprächs läuft, und wie Velyric es umsetzt."
+      },
+      "title": "Was ist ein KI-Telefonassistent?",
+      "definition": "Ein KI-Telefonassistent ist Software, die über einen Sprachkanal wie eine Telefonleitung eine gesprochene, wechselseitige Unterhaltung führt. Sie wandelt die Sprache des Anrufers in ein Anliegen um, entscheidet über den nächsten Schritt — einschließlich Aufrufen externer Systeme, um etwas nachzuschlagen oder einen Datensatz zu schreiben — und antwortet in Echtzeit mit synthetisierter Sprache. Anders als ein aufgezeichnetes Menü ist sie nicht auf eine feste Auswahl beschränkt: Der Anrufer kann in eigenen Worten sprechen und mitten im Satz die Richtung wechseln.",
+      "explanation": {
+        "heading": "Was läuft während des Gesprächs tatsächlich?",
+        "p1": "Ein Telefonassistent ist eine Echtzeitschleife, kein einzelner Modellaufruf. Audio kommt fortlaufend von der Telefonieseite, Sprache wird im Strom interpretiert, das System entscheidet, ob der Anrufer einen Gedanken abgeschlossen hat, und eine Antwort wird synthetisiert und abgespielt. Das Budget sind einige hundert Millisekunden, denn alles Langsamere wird als unangenehme Stille gehört und nicht als Nachdenken.",
+        "p2": "Die Entscheidungsebene ist die Stelle, an der sich Implementierungen am stärksten unterscheiden. Ein naiver Assistent übergibt das ganze Gespräch einem Sprachmodell und hofft, dass es sich benimmt. Ein produktiver Assistent hält einen expliziten Gesprächszustand, einen definierten Katalog erlaubter Aktionen und einen Prüfschritt, der vor jeder Ausführung feststellt, ob eine vorgeschlagene Aktion an dieser Stelle des Gesprächs zulässig ist.",
+        "p3": "Aktionen sind der Grund, warum es Telefonassistenten kommerziell gibt. Eine Frage zu beantworten braucht nur Wissen. Einen Termin zu buchen verlangt, dass der Assistent einen echten Kalender liest, einen Datensatz schreibt, ohne eine Doppelbuchung zu erzeugen, und dem Anrufer die Wahrheit darüber sagt, was gespeichert wurde."
+      },
+      "example": {
+        "p1": "Eine Anruferin ruft um 21:40 in einer Praxis an. Sie sagt: „Guten Abend, ich würde meinen Termin am Donnerstag gern auf nächste Woche verschieben, am liebsten vormittags.“ Ein Menüsystem kann diesen Satz nicht auflösen. Ein Telefonassistent findet die bestehende Buchung, ruft das Verfügbarkeitswerkzeug auf, bietet zwei echte Vormittagstermine der nächsten Woche an, liest den gewählten zur Bestätigung zurück und schreibt erst dann die Änderung.",
+        "p2": "Mittendrin ergänzt sie: „Ach, darf ich noch fragen, was eine Kontrolle kostet?“ Der Assistent antwortet aus der eigenen Wissensdatenbank der Praxis und kehrt danach zu der noch nicht abgeschlossenen Verschiebung zurück. Weder die Frage noch die Reihenfolge, in der sie kam, war vorgeschrieben."
+      },
+      "velyric": {
+        "p1": "Velyric führt das Gespräch durch eine explizite, im Code hinterlegte Zustandsmaschine statt durch einen einzelnen Prompt: GREETING, DISCOVERY, IDENTITY, ACTION_PREVIEW, CONFIRMATION_GATE, TOOL_EXECUTION, RESULT_CONFIRMATION, FOLLOW_UP, HANDOFF, SAFE_FAILURE, CLOSING, END. Das Modell darf das nächste Werkzeug vorschlagen; das Backend entscheidet, ob dieses Werkzeug im aktuellen Zustand erlaubt ist.",
+        "p2": "Der eingebaute Aktionskatalog ist bewusst klein und fest: list_services, check_availability, create_booking, find_booking, cancel_booking und search_knowledge, dazu jedes eigene HTTPS-API-Werkzeug, das der Mandant definiert. Jedes Gespräch beginnt mit der ausdrücklichen Angabe, dass der Anrufer mit einem KI-Assistenten spricht, jedes Gespräch ist auf 1.800 Sekunden begrenzt, und Ungarisch, Deutsch und Englisch werden unterstützt."
+      },
+      "mistake": {
+        "heading": "Ist ein KI-Telefonassistent nur ein Chatbot mit Stimme?",
+        "body": "Nein, und der Unterschied liegt vor allem in Zeitverhalten und Fehlerbehandlung. Eine Chat-Oberfläche darf zwei Sekunden bis zur Antwort brauchen und kann günstig „Entschuldigung, das habe ich nicht verstanden“ anzeigen. In einem Telefongespräch lesen sich diese zwei Sekunden wie eine abgebrochene Leitung, und ein Missverständnis muss innerhalb des Gesprächs selbst aufgefangen werden. Sprache bringt Sprecherwechsel, Unterbrechungen, Hintergrundgeräusche mit sich und die Tatsache, dass der Anrufer nichts sehen und nichts noch einmal lesen kann."
+      },
+      "facts": {
+        "f1": {
+          "term": "Kanal",
+          "value": "Eingehende Telefongespräche auf der eigenen Nummer des Unternehmens"
+        },
+        "f2": {
+          "term": "Sprachen",
+          "value": "Ungarisch, Deutsch und Englisch, mitten im Gespräch umschaltbar"
+        },
+        "f3": { "term": "Maximale Gesprächsdauer", "value": "1.800 Sekunden in jedem Tarif" }
+      },
+      "capability": {
+        "label": "Das Produkt Velyric",
+        "description": "Wie Assistent, Wissensdatenbank, Buchung und Übergabe zusammenpassen."
+      },
+      "faq": {
+        "q1": {
+          "question": "Muss dem Anrufer gesagt werden, dass er mit einer Maschine spricht?",
+          "answer": "In Velyric erfährt er es immer. Der Assistent sagt zu Beginn des Gesprächs, dass der Anrufer mit einem KI-Assistenten spricht, als Teil der Standarderöffnung und nicht als Option. Die Transparenzpflichten aus Artikel 50 der KI-Verordnung der EU gelten ab dem 2. August 2026."
+        },
+        "q2": {
+          "question": "Was passiert, wenn der Assistent die Antwort nicht kennt?",
+          "answer": "Er rät nicht. Wird in der Wissensdatenbank des Mandanten keine belegende Quelle gefunden, stellt der Assistent eine Rückfrage oder übergibt das Gespräch an einen Menschen. Aus etwas anderem als dem eigenen Material des Mandanten zu antworten, ist kein unterstütztes Verhalten."
+        },
+        "q3": {
+          "question": "Kann ein KI-Telefonassistent ausgehende Anrufe tätigen?",
+          "answer": "Telefonassistenten als Kategorie können das, aber Velyrics umgesetzte Gesprächsbehandlung ist eingehend: Gespräche werden rund um die Uhr auf der eigenen Nummer des Mandanten angenommen. Die Parallelitätsgrenze je Tarif beschreibt, wie viele dieser eingehenden Gespräche gleichzeitig laufen können."
+        }
+      }
+    },
+    "ai-receptionist": {
+      "term": "KI-Empfang",
+      "short": "Ein KI-Telefonassistent auf der Hauptleitung eines Unternehmens, der Anrufer begrüßt, Routinefragen beantwortet, Buchungen annimmt und an eine Person weiterleitet.",
+      "meta": {
+        "title": "KI-Empfang: Definition und Funktionsweise",
+        "description": "Ein KI-Empfang nimmt die Geschäftsleitung an, erledigt Routinefragen und Buchungen und leitet an eine Person weiter, wenn das die richtige Antwort ist. Definition, reales Verhalten und Grenzen."
+      },
+      "title": "Was ist ein KI-Empfang?",
+      "definition": "Ein KI-Empfang ist ein KI-Telefonassistent, der auf der Hauptleitung eines Unternehmens Empfangsarbeit übernimmt: den Anrufer begrüßen, die Fragen beantworten, die eine Empfangskraft beantworten würde, Buchungen annehmen oder ändern, und das Gespräch an eine Kollegin oder einen Kollegen übergeben, wenn das die richtige Antwort ist. Es ist eher eine Rolle als eine eigene Technologie, also dieselbe Telefonassistenz-Maschinerie, konfiguriert für Empfangsaufgaben. Ihr Wert bemisst sich an den Gesprächen, die sonst unbeantwortet geblieben oder auf der Mailbox gelandet wären.",
+      "explanation": {
+        "heading": "Was verlangt die Empfangsrolle tatsächlich?",
+        "p1": "Empfang ist überwiegend Triage. Eingehende Gespräche bei einem kleinen Unternehmen fallen in eine Handvoll wiederkehrender Formen: Öffnungszeiten, Preise, Anfahrt, „haben Sie Freitag noch etwas frei“, „ich muss absagen“ und „kann ich jemanden sprechen“. Ein KI-Empfang verdient seinen Platz, indem er die wiederkehrenden Formen von Anfang bis Ende erledigt, nicht indem er alles versucht.",
+        "p2": "Die zweite Anforderung ist zu wissen, wann Schluss ist. Ein Empfang, der nicht sagen kann „ich verbinde Sie“, ist schlechter als gar kein Empfang, denn der Anrufer sitzt fest. Die Übergabe muss deshalb ein erstklassiger Pfad mit ausdrücklichen Auslösern sein und kein Fehlerzweig, der erst greift, wenn alles andere bereits gescheitert ist.",
+        "p3": "Die dritte ist Abdeckung. Empfang zählt genau dann am meisten, wenn niemand da ist: abends, am Wochenende, in der Mittagsstunde und in den Minuten, in denen das Telefon bereits mit einem anderen Anrufer belegt ist. Das Verhalten außerhalb der Geschäftszeiten ist eine eigene Designentscheidung, denn eine Nachricht aufzunehmen, einen Rückrufwunsch zu erfassen und an eine Bereitschaftsnummer weiterzuleiten sind drei recht unterschiedliche Versprechen an den Anrufer."
+      },
+      "example": {
+        "p1": "Die Leitung eines Salons klingelt um 19:30, nach Feierabend. Der Anrufer fragt, ob am Samstagvormittag etwas frei ist und wie lange eine Farbbehandlung dauert. Der Assistent beantwortet die Dauer aus der eigenen Leistungsliste des Salons, prüft den echten Kalender, bietet 09:30 und 11:00 an, bestätigt die gewählte Zeit zurück und schreibt die Buchung.",
+        "p2": "Ein zweiter Anrufer will zwanzig Sekunden später über eine Rechnung streiten. Das ist keine Empfangsaufgabe, und keine Konfiguration würde sie dazu machen. Der Anrufer sagt „Ich möchte jemanden sprechen“, und das Gespräch wird sofort weitergeleitet."
+      },
+      "velyric": {
+        "p1": "Velyric nimmt eingehende Gespräche rund um die Uhr auf der eigenen Nummer des Mandanten an, und jeder Tarif enthält eine Rufnummer und einen Standort. Außerhalb der Geschäftszeiten übernimmt das konfigurierte Verhalten: Nachricht aufnehmen, Rückrufwunsch erfassen oder an eine Bereitschaftsnummer weiterleiten. Die Verfügbarkeit wird immer gegen den echten Kalender geprüft, der Assistent bietet also nie einen Termin an, den es nicht gibt.",
+        "p2": "Die Übergabe an eine Person wird ausgelöst durch eine ausdrückliche Bitte, den Tastencode ###, zwei bis drei erfolglose Verständnisversuche, eine Zeitüberschreitung oder einen 5xx-Fehler eines Werkzeugs nach einer Wiederholung sowie durch sensible oder nicht erlaubte Anliegen. Das Dashboard weist Gespräche, Lösungsquote, durchschnittliche Gesprächsdauer, Weiterleitungsquote, Buchungen und Kosten aus, sodass der tatsächlich gelöste Anteil eine Zahl ist und kein Eindruck."
+      },
+      "mistake": {
+        "heading": "Ersetzt ein KI-Empfang die Person am Tresen?",
+        "body": "Meist nicht, und diese Erwartung zu wecken hilft niemandem. Er nimmt den wiederkehrenden Teil des Gesprächsaufkommens ab, dazu die Zeiten außerhalb der Öffnung und die Überläufe, und übergibt den Rest. Beschwerden, Verhandlungen, alles, was Urteilsvermögen verlangt, und alles, was sensible Daten berührt, gehören weiterhin zu einer Kollegin oder einem Kollegen, nicht zuletzt weil die Telefonnummer eines Anrufers eine Bequemlichkeitskennung und keine Authentifizierung ist."
+      },
+      "facts": {
+        "f1": {
+          "term": "Erreichbarkeit",
+          "value": "Eingehende Gespräche rund um die Uhr auf der Nummer des Mandanten"
+        },
+        "f2": {
+          "term": "Je Tarif enthalten",
+          "value": "1 Rufnummer und 1 Standort in jedem Tarif"
+        },
+        "f3": {
+          "term": "Eskalation",
+          "value": "Sofortige Weiterleitung auf Wunsch oder über den Tastencode ###"
+        }
+      },
+      "capability": {
+        "label": "KI-Empfang",
+        "description": "Die vollständige Seite: Gesprächsverlauf, Verhalten nach Feierabend und ehrliche Grenzen."
+      },
+      "faq": {
+        "q1": {
+          "question": "Was passiert bei einem Anruf nach Feierabend?",
+          "answer": "Es gilt das für außerhalb der Geschäftszeiten konfigurierte Verhalten: eine Nachricht aufnehmen, einen Rückrufwunsch erfassen oder an eine Bereitschaftsnummer weiterleiten. Es wird je Mandant festgelegt statt fest vorgegeben und ist ein anderer Pfad als das Gespräch während der Öffnungszeiten."
+        },
+        "q2": {
+          "question": "Wie viele Anrufer kann er gleichzeitig bedienen?",
+          "answer": "Das hängt von der Parallelitätsgrenze des Tarifs ab: 2 gleichzeitige Gespräche bei Start, 10 bei Business, 50 bei Pro und 100 oder mehr bei Enterprise nach Vertrag. Spitzen über der Grenze folgen der vom Mandanten gewählten Regel, etwa einer kurzen Warteschlange, einer Überlaufnummer, einem Rückruf oder der Mailbox."
+        },
+        "q3": {
+          "question": "Werden die Gespräche aufgezeichnet?",
+          "answer": "Roh-Audio von Gesprächen wird standardmäßig nicht gespeichert; seine Aufbewahrung beträgt null Tage. Die Gesprächsaufzeichnung ist ein kostenpflichtiges Zusatzmodul und keine Vorgabe. Transkripte werden standardmäßig 90 Tage aufbewahrt, je Mandant konfigurierbar bis auf mindestens einen Tag."
+        }
+      }
+    },
+    "ivr": {
+      "term": "IVR (Interactive Voice Response)",
+      "short": "Ein automatisiertes Telefonsystem, das Ansagen abspielt und Tasten- oder begrenzte Spracheingaben sammelt, um einen Anrufer durch einen festen Menübaum zu führen.",
+      "meta": {
+        "title": "IVR: was Interactive Voice Response bedeutet",
+        "description": "IVR spielt Ansagen ab und sammelt Tasteneingaben, um Gespräche durch einen vorab entworfenen Menübaum zu leiten. Was es gut kann, wo es scheitert, und was es auf einer sprechenden Leitung ersetzt."
+      },
+      "title": "Was ist ein IVR?",
+      "definition": "IVR steht für Interactive Voice Response: ein automatisiertes Telefoniesystem, das aufgezeichnete oder synthetisierte Ansagen abspielt und Eingaben vom Anrufer sammelt, in der Regel DTMF-Tastendrücke und manchmal eine kleine Auswahl gesprochener Wörter, um das Gespräch durch einen vorab definierten Menübaum zu leiten. Jeder Pfad durch ein IVR wird vor dem Gespräch entworfen, der Anrufer muss sein Problem also in die angebotenen Optionen übersetzen. Es ist eine ausgereifte, standardisierte Technologie und bleibt das richtige Werkzeug, wenn die Weiterleitungsentscheidungen wirklich wenige und stabil sind.",
+      "explanation": {
+        "heading": "Warum frustrieren Menübäume Anrufer?",
+        "p1": "Ein IVR ist ein Entscheidungsbaum, den der Anrufer ablaufen muss. Er funktioniert, wenn der Baum flach ist und die Bezeichnungen zu den Wörtern passen, mit denen Anrufer ihr eigenes Problem beschreiben. Mit der Tiefe verschlechtert er sich schnell, denn jede zusätzliche Ebene vervielfacht die Optionen, die der Anrufer beim Zuhören im Gedächtnis behalten muss, und ein gesprochenes Menü lässt sich nicht überfliegen wie eine Webseite.",
+        "p2": "Der klassische Fehlschlag ist die Nichtübereinstimmung von Organigramm und Anliegen des Anrufers. Menüs werden meist um Abteilungen herum gebaut; Anrufer kommen mit Problemen. „Drücken Sie die 3 für die Buchhaltung“ nützt nur jemandem, der bereits weiß, dass seine Frage zur Buchhaltung gehört.",
+        "p3": "Nichts davon macht IVR überflüssig. Tasteneingabe ist eindeutig, funktioniert von jedem Apparat, übersteht schlechtes Audio und einen lauten Hintergrund und ist die barrierearme Rückfallebene, wenn die Spracherkennung kämpft. Genau deshalb lohnt es sich, Tastenkürzel selbst in einem vollständig sprechenden System beizubehalten."
+      },
+      "example": {
+        "p1": "Ein typisches dreistufiges Menü: „Für Deutsch drücken Sie die 1.“ Dann: „Für Buchungen die 1, für bestehende Aufträge die 2, für alles Weitere die 3.“ Dann: „Für heutige Buchungen die 1, für ein anderes Datum die 2.“ Ein Anrufer, der den Termin von morgen verschieben und außerdem nach einem Preis fragen will, hat keinen einzigen richtigen Pfad und wird die 0 drücken oder auflegen.",
+        "p2": "Dasselbe Anliegen laut gesagt — „Ich würde gern den Termin morgen verschieben und fragen, was eine Kontrolle kostet“ — ist ein Satz mit zwei Aktionen. Kein Baum lässt sich mit einem Zweig für jede solche Kombination entwerfen, und das ist die strukturelle Grenze des Formats."
+      },
+      "velyric": {
+        "p1": "Velyric stellt dem Anrufer keinen Menübaum voran. Der Assistent eröffnet das Gespräch, gibt an, dass er ein KI-Assistent ist, und fragt, was der Anrufer braucht; wohin das Gespräch geht, entscheidet sich aus dem, was der Anrufer sagt, und nicht aus einer nummerierten Auswahl. Es gibt im Produkt weder einen IVR-Menübaukasten noch einen allgemeinen Workflow-Baukasten.",
+        "p2": "Tasteneingabe bleibt als Abkürzung erhalten, nicht als Oberfläche. Die konfigurierbaren DTMF-Codes sind ### für einen menschlichen Mitarbeiter, 0 für eine sofortige Weiterleitung und * für einen Schritt zurück. Das bewahrt den einen echten Vorteil eines IVR, eine deterministische Notausstiegsluke, die auf jedem Apparat funktioniert, ohne den Baum."
+      },
+      "mistake": {
+        "heading": "Ist ein KI-Telefonassistent nur ein besseres IVR?",
+        "body": "Sie gehen dasselbe geschäftliche Problem mit einem anderen Interaktionsmodell an, „besseres IVR“ untertreibt die Veränderung also. Ein IVR leitet weiter: Es entscheidet, wohin das Gespräch als Nächstes geht. Ein Telefonassistent kann außerdem lösen, also die Frage beantworten, den Kalender prüfen, die Buchung schreiben und das Gespräch beenden, ohne dass je ein Mensch dazukommt. Der praktische Test ist, welcher Anteil der Gespräche im System endet, statt woanders hin übergeben zu werden."
+      },
+      "facts": {
+        "f1": { "term": "Steht für", "value": "Interactive Voice Response" },
+        "f2": {
+          "term": "Typische Eingabe",
+          "value": "DTMF-Tastendrücke, manchmal eine begrenzte Sprachgrammatik"
+        },
+        "f3": {
+          "term": "In Velyric",
+          "value": "Kein Menübaum; ###, 0 und * bleiben als Abkürzungen"
+        }
+      },
+      "capability": {
+        "label": "KI-Empfang",
+        "description": "Was die Hauptleitung annimmt, sobald das Menü weg ist."
+      },
+      "faq": {
+        "q1": {
+          "question": "Ist ein IVR dasselbe wie eine automatische Vermittlung?",
+          "answer": "Im täglichen Gebrauch überschneiden sich beide. „Automatische Vermittlung“ meint meist den engen Fall, ein Gespräch anzunehmen und an eine Nebenstelle zu leiten, während „IVR“ die breitere Kategorie abdeckt, einschließlich Ansagen, die Daten wie eine Kundennummer erfassen. Beide sind menügeführt und vorab skriptiert."
+        },
+        "q2": {
+          "question": "Enthält Velyric einen IVR-Menübaukasten?",
+          "answer": "Nein. Es gibt im Produkt weder einen Menübaum-Baukasten noch einen allgemeinen Workflow-Baukasten. Das Verhalten des Assistenten ergibt sich aus seiner Wissensdatenbank, seinem festen Aktionskatalog und seinen Übergaberegeln, und Tasteneingabe existiert nur als die Abkürzungen ###, 0 und *."
+        },
+        "q3": {
+          "question": "Warum fragen IVR-Systeme nach einer Kundennummer und fragen dann erneut danach?",
+          "answer": "Weil das Erfassen eines Werts im Menü und seine Weitergabe an denjenigen, der schließlich abnimmt, zwei getrennte Integrationsarbeiten sind, und viele Einführungen nur die erste abgeschlossen haben. Das ist ein Datenweiterleitungsproblem und keine Grenze von IVR als Technologie."
+        }
+      }
+    },
+    "sip": {
+      "term": "SIP (Session Initiation Protocol)",
+      "short": "Das Signalisierungsprotokoll, das Sprachgespräche über IP-Netze aufbaut, ändert und beendet; das Audio selbst läuft getrennt über RTP.",
+      "meta": {
+        "title": "SIP: das Session Initiation Protocol erklärt",
+        "description": "SIP ist das Signalisierungsprotokoll, das VoIP-Gespräche auf- und abbaut, während RTP das Audio trägt. Methoden, Antwortcodes, Weiterleitungen, und wie Velyrics Telefonie es nutzt."
+      },
+      "title": "Was ist SIP?",
+      "definition": "SIP, das Session Initiation Protocol, ist ein in RFC 3261 standardisiertes Signalisierungsprotokoll der Anwendungsschicht, das Echtzeitsitzungen wie Sprachgespräche über IP-Netze aufbaut, ändert und beendet. SIP trägt nur die Steuernachrichten, also wer wen anruft, es klingelt, angenommen und aufgelegt, während das Audio in einem getrennten Medienstrom fließt, normalerweise RTP, dessen Codecs und Ports im SDP-Teil der SIP-Nachrichten ausgehandelt werden. Es ist das Protokoll, das geschäftliche VoIP-Dienste und SIP-Trunks sprechen.",
+      "explanation": {
+        "heading": "Wie wird ein SIP-Gespräch aufgebaut?",
+        "p1": "SIP ist textbasiert und an HTTP angelehnt: Anfragen tragen eine Methode, Antworten einen numerischen Statuscode. Die Kernmethoden sind INVITE zum Starten oder Ändern einer Sitzung, ACK zur Bestätigung der endgültigen Antwort auf ein INVITE, BYE zum Beenden der Sitzung, CANCEL zum Abbrechen einer noch laufenden Anfrage, REGISTER, um dem Netz mitzuteilen, wo ein Teilnehmer erreichbar ist, und OPTIONS, um eine Gegenstelle nach ihren Fähigkeiten zu fragen.",
+        "p2": "Antworten fallen in vertraute Klassen: 100 Trying, 180 Ringing, 200 OK beim Annehmen, 486 Busy Here, 404 Not Found. Ein normales Gespräch ist INVITE, 180, 200, ACK, Unterhaltung, BYE, 200. Weiterleitungen nutzen REFER, das die Gegenstelle bittet, ein neues Gespräch in Richtung eines dritten Ziels aufzubauen.",
+        "p3": "Die Trennung von Signalisierung und Medien ist der Teil, der in der Praxis zählt. SIP handelt die Sitzung aus und beschreibt die Medien in SDP; RTP trägt dann die Audiopakete, oft über einen anderen Netzpfad. Deshalb kann ein Gespräch in der Signalisierungsschicht verbunden wirken, während niemand etwas hört: Einweg-Audio ist fast immer ein RTP- oder NAT-Problem, selbst wenn die SIP-Spur sauber ist."
+      },
+      "example": {
+        "p1": "Ein SIP-Trunk verbindet die Telefonie eines Unternehmens mit einem Netzbetreiber. Wählt jemand die Nummer des Unternehmens, schickt der Betreiber ein INVITE in Richtung Trunk, mit der Nummer des Anrufers im From-Header und der gewählten Nummer im To-Header. Die empfangende Seite antwortet mit 200 OK und einem SDP, das beschreibt, wohin das Audio gehen soll, RTP beginnt zu fließen, und BYE beendet das Gespräch.",
+        "p2": "Um dieses laufende Gespräch an eine Kollegin oder einen Kollegen zu übergeben, sendet die steuernde Seite ein REFER, das das neue Ziel als tel:- oder sip:-URI benennt, und das Gespräch wird zu diesem Ziel hin neu aufgebaut. Am Audioformat ändert sich nichts; nur die Signalisierung lenkt den Schenkel um."
+      },
+      "velyric": {
+        "p1": "Velyrics Telefonie läuft auf SIP, aber nichts davon konfiguriert der Mandant. Telnyx ist der plattformseitig betriebene Netzbetreiber für eingehendes und ausgehendes SIP und für die Rufnummernbereitstellung, und auch das Echtzeit-Sprachmodell wird über SIP erreicht. Es gibt kein Betreiberkonto, das ein Mandant anbinden müsste, und keinen Trunk, den er pflegen müsste.",
+        "p2": "Die Übergabe an eine Person ist eine Operation auf SIP-Ebene: Das Gespräch wird an ein anderes tel:- oder sip:-Ziel verwiesen. Gleichzeitige Gespräche sind voneinander isoliert, jedes mit eigener call_id, eigener KI-Sitzung, eigenem Gesprächszustand und eigener Ablaufverfolgung, sodass ein Fehler auf einem Schenkel keinen anderen beeinflussen kann."
+      },
+      "mistake": {
+        "heading": "Trägt SIP das Audio?",
+        "body": "Nein, und diese Verwechslung führt zu echten Fehlersuchfehlern. SIP ist reine Signalisierung: Es handelt die Sitzung aus und beschreibt die Medien in SDP. Das Audio läuft als RTP über einen getrennt ausgehandelten Pfad, häufig durch andere Netzgeräte. Stille in einem scheinbar verbundenen Gespräch oder Audio in nur einer Richtung lässt sich deshalb fast nie beheben, indem man die SIP-Nachrichten genauer ansieht."
+      },
+      "facts": {
+        "f1": { "term": "Standard", "value": "RFC 3261, Signalisierung auf Anwendungsschicht" },
+        "f2": {
+          "term": "Medien",
+          "value": "RTP, über SDP ausgehandelt, getrennt von der Signalisierung"
+        },
+        "f3": { "term": "Weiterleitung", "value": "REFER in Richtung eines tel:- oder sip:-Ziels" }
+      },
+      "capability": {
+        "label": "Integrationen",
+        "description": "Was ein Mandant anbindet und was die Plattform für ihn betreibt."
+      },
+      "faq": {
+        "q1": {
+          "question": "Brauche ich einen eigenen SIP-Trunk, um Velyric zu nutzen?",
+          "answer": "Nein. Die Telefonie wird von der Plattform betrieben: Rufnummern werden über Telnyx bereitgestellt, das zugleich der Netzbetreiber für eingehendes und ausgehendes SIP ist. Es gibt kein Betreiberkonto auf Mandantenseite anzubinden, und SIP gehört nicht zu dem, was ein Mandant konfiguriert."
+        },
+        "q2": {
+          "question": "Ist SIP dasselbe wie VoIP?",
+          "answer": "Nein. VoIP ist die allgemeine Idee, Sprache über IP-Netze zu übertragen, während SIP ein bestimmtes Signalisierungsprotokoll ist, mit dem diese Gespräche aufgebaut werden. Eine VoIP-Einführung nutzt typischerweise SIP für die Signalisierung, RTP für die Medien und einen von mehreren Codecs für das Audio selbst."
+        },
+        "q3": {
+          "question": "Was ist eine SIP-URI?",
+          "answer": "Eine Adresse der Form sip:name@domain, die einen SIP-Endpunkt identifiziert, in der Form einer E-Mail-Adresse ähnlich. Ein Gespräch kann an eine SIP-URI oder an eine als tel:-URI ausgedrückte Rufnummer gerichtet werden, und Velyrics Weiterleitungen können beides ansteuern."
+        }
+      }
+    },
+    "pstn": {
+      "term": "PSTN (öffentliches Telefonnetz)",
+      "short": "Das weltweit zusammengeschaltete öffentliche Telefonnetz, über das gewöhnliche Rufnummern erreichbar sind, gleich welche Technik den letzten Abschnitt trägt.",
+      "meta": {
+        "title": "PSTN: das öffentliche Telefonnetz erklärt",
+        "description": "Das PSTN ist das zusammengeschaltete öffentliche Telefonnetz, über das gewöhnliche Rufnummern erreichbar sind. Was es heute ist, wie IP-Systeme sich anbinden, und was das für eine Geschäftsleitung bedeutet."
+      },
+      "title": "Was ist das PSTN?",
+      "definition": "Das PSTN, Public Switched Telephone Network, ist die weltweite Gesamtheit der zusammengeschalteten öffentlichen Telefonnetze lizenzierter Netzbetreiber. Historisch war es leitungsvermittelt und analog und ist heute innerhalb der Betreiber selbst weitgehend IP-basiert, aber seine bestimmende Eigenschaft hat sich nicht geändert: Eine gewöhnliche Rufnummer ist von jedem anderen Telefon der Welt aus erreichbar, ob der Anrufer über Mobilfunk, Festnetz oder einen VoIP-Dienst kommt. Das PSTN aus einem IP-System zu erreichen erfordert eine Betreiberzusammenschaltung, und genau die verkauft ein SIP-Trunk oder ein gehosteter Sprachanbieter.",
+      "explanation": {
+        "heading": "Ist das PSTN noch ein eigenes Netz?",
+        "p1": "Immer weniger, und genau diesen Teil lassen die meisten Erklärungen aus. Das öffentliche Netz war auf Leitungsvermittlung gebaut, mit einem für die Dauer jedes Gesprächs offen gehaltenen Kanal. Diese Architektur wird stillgelegt: Die Betreiber haben ihre Kerne auf IP migriert, und der alte analoge und ISDN-Zugang wird Markt für Markt nach veröffentlichten Zeitplänen abgeschaltet.",
+        "p2": "Was die Migration überdauert, sind der Nummernplan und die Zusammenschaltungspflichten. Eine Nummer im E.164-Plan ist von den Teilnehmern jedes anderen Betreibers erreichbar, weil Betreiber sich zusammenschalten und den Verkehr untereinander abrechnen. Diese Eigenschaft, die universelle Erreichbarkeit über die Nummer, ist das, was der Ausdruck „das PSTN“ heute wirklich benennt.",
+        "p3": "Für alles, was auf IP aufsetzt, wird das PSTN über einen Betreiber erreicht, der die Nummernbereiche, die regulatorischen Beziehungen und die Zusammenschaltungen hält und den Verkehr per SIP an seinen Kunden übergibt. Die praktischen Folgen sind eher administrativ als technisch: Nummern können eine behördliche Prüfung erfordern, eine Portierung braucht Zeit beim Betreiber, und die Verfügbarkeit unterscheidet sich nach Land und Vorwahlbereich."
+      },
+      "example": {
+        "p1": "Ein Kunde wählt von einem deutschen Mobiltelefon eine Budapester Festnetznummer. Das Gespräch verlässt den Kern des Mobilfunkbetreibers, überquert eine Zusammenschaltung zu einem ungarischen Betreiber und wird an denjenigen zugestellt, der diesen Nummernbereich hält. Wird die Nummer von einem VoIP-Betreiber gehostet, kommt der letzte Abschnitt als SIP-INVITE an und nicht als Leitung.",
+        "p2": "Nichts davon ist für den Anrufer sichtbar, der eine normale Nummer gewählt und es klingeln gehört hat. Diese Unsichtbarkeit ist der Punkt: Ein Unternehmen kann seine Leitung auf eine IP-Plattform umziehen, ohne einen einzigen Kunden um irgendetwas zu bitten."
+      },
+      "velyric": {
+        "p1": "Velyric erreicht das PSTN über Telnyx, das die Rufnummern bereitstellt und als Netzbetreiber für eingehendes und ausgehendes SIP auftritt. Ungarische Ortsnummern sind verfügbar, und statt einer neuen Nummer lässt sich eine bestehende portieren.",
+        "p2": "Weil ein lizenzierter Betreiber im Pfad sitzt, kann die Bestellung einer Nummer eine Netzbetreiber- oder behördliche Unternehmensprüfung erfordern, und dieser KYC-Schritt ist Teil des Bereitstellungsablaufs. Verfügbarkeit und Vorlaufzeit einer Nummer hängen vom Betreiber und von dieser Prüfung ab. Es ist der eine Teil der Einführung, der nicht sofort geht, und es lohnt sich, früh damit anzufangen."
+      },
+      "mistake": {
+        "heading": "Ist eine VoIP-Nummer eine echte Rufnummer?",
+        "body": "Ja, sofern es eine über einen Betreiber zugeteilte Nummer aus dem nationalen Nummernplan ist. Sie ist von jedem Telefon erreichbar und verhält sich wie jede andere Nummer; anders ist nur die Zustellung, da das Gespräch über IP statt über eine Leitung bei Ihrem System ankommt. Der Unterschied, der Menschen tatsächlich interessiert, ist regulatorisch, also Notrufweiterleitung, Adressregistrierung und geografische Berechtigung, und nicht, ob die Nummer als echt gilt."
+      },
+      "facts": {
+        "f1": {
+          "term": "Was es ist",
+          "value": "Das zusammengeschaltete öffentliche Telefonnetz, über die Nummer erreichbar"
+        },
+        "f2": {
+          "term": "Wie IP-Systeme es erreichen",
+          "value": "Über eine per SIP zugestellte Betreiberzusammenschaltung"
+        },
+        "f3": {
+          "term": "In Velyric",
+          "value": "Telnyx stellt die Nummern bereit und trägt den Verkehr"
+        }
+      },
+      "capability": {
+        "label": "Integrationen",
+        "description": "Rufnummern, Kalender und die Systeme, mit denen Velyric spricht."
+      },
+      "faq": {
+        "q1": {
+          "question": "Kann ich meine aktuelle Geschäftsnummer behalten?",
+          "answer": "Ja. Die Portierung einer bestehenden Nummer gehört zum Produkt, und Rufnummern werden über Telnyx bereitgestellt. Wie lange eine Portierung dauert, bestimmen die beteiligten Netzbetreiber und die behördliche Prüfung, nicht Velyric."
+        },
+        "q2": {
+          "question": "Zahlt der Anrufer mehr, um einen KI-Assistenten zu erreichen?",
+          "answer": "Nein. Der Anrufer wählt eine gewöhnliche Nummer aus dem nationalen Nummernplan und zahlt den üblichen Tarif seines eigenen Anbieters. Velyrics Kosten sitzen auf der empfangenden Seite, als enthaltene Sprachminuten und Minutensatz für Mehrverbrauch des Tarifs."
+        },
+        "q3": {
+          "question": "Wird das PSTN abgeschaltet?",
+          "answer": "Die alten leitungsvermittelten und ISDN-Zugangstechniken werden Markt für Markt stillgelegt, und die Betreiber haben ihre Kerne auf IP umgestellt. Der Nummernplan und die universelle Erreichbarkeit über die Nummer verschwinden damit nicht."
+        }
+      }
+    },
+    "did": {
+      "term": "DID (Durchwahl)",
+      "short": "Eine öffentliche Rufnummer, die direkt zu einem bestimmten Ziel innerhalb einer Organisation führt, sodass Anrufer sie ohne Vermittlung erreichen.",
+      "meta": {
+        "title": "DID-Nummer: Direct Inward Dialling erklärt",
+        "description": "Eine DID, in weiten Teilen Europas DDI genannt, ist eine öffentliche Nummer, die direkt zu einem Ziel innerhalb einer Organisation führt. Was das in VoIP bedeutet, und wie Velyric Nummern zuweist."
+      },
+      "title": "Was ist eine DID-Nummer?",
+      "definition": "DID steht für Direct Inward Dialling, in weiten Teilen Europas als DDI oder Direct Dialling In bekannt und im Deutschen als Durchwahl geläufig. Es ist die Anordnung, bei der ein Netzbetreiber öffentliche Rufnummern so an die Telefonanlage einer Organisation leitet, dass jede Nummer direkt ein bestimmtes Ziel erreicht, statt dass jeder Anrufer bei einer einzigen Zentrale landet. Im modernen VoIP-Gebrauch wird „eine DID“ lockerer für eine käufliche öffentliche Nummer verwendet, die auf Ihrem SIP-Trunk oder Ihrer Sprachplattform endet.",
+      "explanation": {
+        "heading": "Warum gibt es den Begriff überhaupt?",
+        "p1": "Historisch hatte eine Organisation eine Handvoll physischer Leitungen und eine veröffentlichte Nummer, und Anrufer erreichten eine Vermittlung, die sie weiterverband. DID war die Betreiberfunktion, die das änderte: Der Betreiber übergibt die gewählten Ziffern zusammen mit dem Gespräch an die Telefonanlage, und die Anlage leitet an das passende Ziel. Ein Block von hundert Nummern brauchte nicht länger hundert Leitungen.",
+        "p2": "Genau diese Einsicht bewahrt der moderne Gebrauch. Die Anzahl der Nummern und die Anzahl gleichzeitiger Gespräche sind getrennte Größen, die alte Hardware zufällig aneinandergekoppelt hatte. Ein Unternehmen kann fünfzig Nummern halten und trotzdem nur zwei Gespräche gleichzeitig annehmen können, oder eine Nummer halten und fünfzig annehmen.",
+        "p3": "In einer IP-Einführung wird eine Nummer vom Betreiber bereitgestellt, dem Konto des Kunden zugeordnet und auf ein SIP-Ziel gerichtet. Was dann mit einem darauf eingehenden Gespräch passiert, also welcher Assistent, welche Begrüßung, welche Sprache und welche Öffnungszeiten, wird auf der empfangenden Plattform konfiguriert und nicht beim Betreiber."
+      },
+      "example": {
+        "p1": "Eine Praxis mit zwei Standorten veröffentlicht zwei getrennte Nummern. Gespräche an die erste werden im Namen des ersten Standorts begrüßt, mit dessen Öffnungszeiten und dessen Kalender; Gespräche an die zweite landen auf der Konfiguration des zweiten Standorts. Für den Anrufer gibt es überhaupt keine Konfiguration, sondern nur „die Nummer, die ich gewählt habe“.",
+        "p2": "Eine zweite verbreitete Verwendung ist die Messung. Eine eigene Nummer, die auf genau einer Anzeige steht, macht die von dieser Anzeige erzeugten Gespräche zählbar, ohne einen einzigen Anrufer zu fragen, wo er sie gesehen hat."
+      },
+      "velyric": {
+        "p1": "Jeder Velyric-Tarif enthält eine Rufnummer und einen Standort. Rufnummern werden über Telnyx bereitgestellt, ungarische Ortsnummern sind verfügbar, und stattdessen lässt sich eine bestehende Nummer portieren. Weil ein Netzbetreiber im Pfad sitzt, kann die Bestellung als Teil des Bereitstellungsablaufs eine Unternehmensprüfung erfordern.",
+        "p2": "Zusätzliche Rufnummern sind ein kostenpflichtiges Zusatzmodul, und die Unterstützung mehrerer Standorte bedeutet, dass jeder Standort mit eigener, ausdrücklich gesetzter Zeitzone getrennt abgebildet werden kann. Rollen lassen sich auf einen Standort begrenzen, die Personen, die die Gespräche eines Standorts sehen, sind also nicht automatisch dieselben, die die eines anderen sehen."
+      },
+      "mistake": {
+        "heading": "Kann ich mit mehr Nummern mehr Gespräche gleichzeitig annehmen?",
+        "body": "Nein, und das ist das mit Abstand häufigste Missverständnis dieses Begriffs. Nummern sind Adressen; gleichzeitige Kapazität ist eine getrennte Grenze, die getrennt gekauft werden muss. In Velyric setzt der Tarif die Parallelität auf 2, 10 oder 50 gleichzeitige Gespräche, bei Enterprise auf 100 oder mehr, und zusätzliche Rufnummern sowie eine Parallelitätserweiterung sind zwei verschiedene Zusatzmodule, die zwei verschiedene Probleme lösen."
+      },
+      "facts": {
+        "f1": {
+          "term": "Auch genannt",
+          "value": "DDI, Direct Dialling In, im europäischen Gebrauch"
+        },
+        "f2": { "term": "Je Tarif enthalten", "value": "1 Rufnummer und 1 Standort" },
+        "f3": {
+          "term": "Nicht dasselbe wie",
+          "value": "Die Kapazität gleichzeitiger Gespräche, eine eigene Tarifgrenze"
+        }
+      },
+      "capability": {
+        "label": "Integrationen",
+        "description": "Wie Nummern bereitgestellt, portiert und einem Standort zugeordnet werden."
+      },
+      "faq": {
+        "q1": {
+          "question": "Kann ich für jeden Standort eine eigene Nummer haben?",
+          "answer": "Ja, über das Zusatzmodul für zusätzliche Rufnummern. Jeder Tarif enthält standardmäßig eine Nummer und einen Standort, und Velyric unterstützt mehrere Standorte, jeden mit eigener, ausdrücklich gesetzter Zeitzone und eigenem, standortbezogenem Zugriff."
+        },
+        "q2": {
+          "question": "Ist eine DID dasselbe wie eine Nebenstelle?",
+          "answer": "Nein. Eine Nebenstelle ist eine interne Kurznummer innerhalb der Telefonanlage, während eine DID eine öffentliche Nummer ist, die die Außenwelt wählen kann. DID existiert genau dafür, dass ein externer Anrufer ein internes Ziel erreicht, ohne von Hand verbunden zu werden."
+        },
+        "q3": {
+          "question": "Kann ich meine bestehende Nummer portieren statt eine neue zu nehmen?",
+          "answer": "Ja, die Portierung einer bestehenden Nummer gehört zum Produkt. Verfügbarkeit und Vorlaufzeit hängen vom Netzbetreiber und von der behördlichen Unternehmensprüfung ab, die Teil des Bereitstellungsablaufs ist und nicht etwas, das Velyric verkürzen kann."
+        }
+      }
+    },
+    "dtmf": {
+      "term": "DTMF (Mehrfrequenzwahlverfahren)",
+      "short": "Tonwahl: Jeder Tastendruck sendet ein eindeutiges Paar von Audiotönen, das eine Telefonanlage unmissverständlich erkennt.",
+      "meta": {
+        "title": "DTMF: die Tonwahl über die Tastatur erklärt",
+        "description": "DTMF macht aus jedem Tastendruck ein eindeutiges Tonpaar. Die Frequenztabelle, Signalisierung im Audio gegenüber RFC 2833, und die Tastencodes, die Velyric im Gespräch unterstützt."
+      },
+      "title": "Was ist DTMF?",
+      "definition": "DTMF, Dual-Tone Multi-Frequency und im Deutschen Mehrfrequenzwahlverfahren oder Tonwahl genannt, ist die Methode, mit der eine Telefontastatur Ziffern an das Netz sendet. Ein Tastendruck überträgt zwei Sinustöne gleichzeitig: einen aus der niedrigen Frequenzgruppe mit 697, 770, 852 und 941 Hz, der die Zeile bestimmt, und einen aus der hohen Gruppe mit 1209, 1336, 1477 und 1633 Hz, der die Spalte bestimmt, sodass jede der sechzehn möglichen Tasten ein eindeutiges Paar hat. Zwei Töne aus getrennten Bändern zu verwenden macht eine zufällige Übereinstimmung durch Sprache oder Hintergrundgeräusch sehr unwahrscheinlich.",
+      "explanation": {
+        "heading": "Wie wird DTMF über ein VoIP-Gespräch übertragen?",
+        "p1": "Auf einer analogen Leitung sind die Töne buchstäblich Teil des Audios. Über IP wird das zum Problem, denn Sprachcodecs mit niedriger Bitrate sind auf die menschliche Stimme optimiert und können reine Töne so verzerren, dass die Gegenseite eine Ziffer falsch erkennt oder ganz verliert, während Paketverlust einen Tastendruck in der Mitte abschneiden kann.",
+        "p2": "Die übliche Abhilfe ist, die Ziffern aus dem Audio herauszunehmen. RFC 2833, aktualisiert durch RFC 4733, definiert benannte Telefonereignisse, die als eigener RTP-Nutzlasttyp übertragen werden: Ziffer, Lautstärke und Dauer reisen als Ereignisse statt als Klang. SIP-INFO-Nachrichten sind eine Alternative, die manche Installationen nutzen. Interoperabilitätsprobleme zwischen zwei Systemen sind meist eine Uneinigkeit darüber, welche dieser Methoden im Einsatz ist.",
+        "p3": "Welcher Transport auch gewählt wird, DTMF hat eine Eigenschaft, die sonst nichts in einem Gespräch hat: Es ist eindeutig. Es hängt nicht davon ab, dass Sprache erkannt wird, es übersteht eine rauschende Leitung, einen leisen Anrufer und einen lauten Raum, und es bedeutet in jeder Sprache genau dasselbe."
+      },
+      "example": {
+        "p1": "Die 5 zu drücken sendet 770 Hz und 1336 Hz gemeinsam. Die * zu drücken sendet 941 Hz und 1209 Hz. Ein auf Eingaben lauschendes System gleicht das empfangene Paar mit der Tabelle ab und liest die Ziffer ab, ganz ohne Sprachmodell und ohne akustisches Training.",
+        "p2": "Die Tabelle erklärt außerdem eine Randnotiz mit praktischem Nutzen: Die Spalte mit 1633 Hz kodiert die Tasten A, B, C und D, die es im Standard gibt, aber nicht auf einem Teilnehmerapparat, weil sie für Netzsignalisierung reserviert waren."
+      },
+      "velyric": {
+        "p1": "Velyric behält DTMF als deterministische Abkürzung und nicht als Oberfläche. Die Codes sind konfigurierbar: ### erreicht einen menschlichen Mitarbeiter, 0 führt eine sofortige Weiterleitung aus, und * geht im Gespräch einen Schritt zurück. Es gibt kein Menü, durch das man damit navigieren müsste.",
+        "p2": "Das zählt als Barrierefreiheits- und Notausstiegspfad. ### zu drücken hängt nicht davon ab, ob der Assistent irgendetwas verstanden hat, und es steht neben den anderen ausdrücklichen Übergabeauslösern: einer erbetenen Weiterleitung, zwei bis drei erfolglosen Verständnisversuchen, einer Zeitüberschreitung oder einem 5xx eines Werkzeugs nach einer Wiederholung sowie sensiblen oder nicht erlaubten Anliegen."
+      },
+      "mistake": {
+        "heading": "Heißt der Einsatz von Tastencodes, dass es doch ein Menü ist?",
+        "body": "Nein, und beides gleichzusetzen verschenkt etwas Nützliches. Ein Menü nutzt DTMF als einzigen Eingang, man muss also eine Zahl drücken, um überhaupt weiterzukommen. Ein sprechendes System nutzt es als Übersteuerung, die immer funktioniert: ein Ausweg, wenn die Spracherkennung kämpft, wenn die Leitung schlecht ist oder wenn der Anrufer schlicht nicht sprechen möchte. Die Codes zu behalten ist kein Rückschritt, und sie zu entfernen würde die einzige Eingabe in einem Gespräch beseitigen, die nie versagt."
+      },
+      "facts": {
+        "f1": {
+          "term": "Niedrige Tongruppe",
+          "value": "697, 770, 852 und 941 Hz, bestimmt die Zeile"
+        },
+        "f2": {
+          "term": "Hohe Tongruppe",
+          "value": "1209, 1336, 1477 und 1633 Hz, bestimmt die Spalte"
+        },
+        "f3": {
+          "term": "Velyric-Codes",
+          "value": "### menschlicher Mitarbeiter, 0 sofortige Weiterleitung, * Schritt zurück, alle konfigurierbar"
+        }
+      },
+      "capability": {
+        "label": "Weiterleitung an eine Person",
+        "description": "Jeder Weg vom Assistenten zu einer Kollegin oder einem Kollegen, und was ihn auslöst."
+      },
+      "faq": {
+        "q1": {
+          "question": "Welche Tasten erreichen in Velyric eine Person?",
+          "answer": "### erreicht einen menschlichen Mitarbeiter und 0 führt eine sofortige Weiterleitung aus, während * im Gespräch einen Schritt zurückgeht. Alle drei Codes sind konfigurierbar, ein Mandant kann sie also an das anpassen, was seine Anrufer bereits gewohnt sind."
+        },
+        "q2": {
+          "question": "Warum wird ein Tastendruck in einem VoIP-Gespräch manchmal nicht erkannt?",
+          "answer": "Meist, weil die beiden Enden uneinig darüber sind, wie DTMF übertragen wird. Töne im Audio können durch Sprachcodecs mit niedriger Bitrate und durch Paketverlust beschädigt werden, während RFC 2833 und RFC 4733 die Ziffern als eigene RTP-Ereignisse senden. Erwartet eine Seite Ereignisse und sendet die andere Klang, gehen Ziffern still verloren."
+        },
+        "q3": {
+          "question": "Kann der Anrufer durch Sprechen unterbrechen statt eine Taste zu drücken?",
+          "answer": "Ja. Velyrics Gespräch läuft im Vollduplex, der Anrufer kann also unterbrechen, zögern oder kurz zustimmen, ohne den Ablauf zu stören. Die Tastencodes gibt es für die Fälle, in denen Sprechen nicht durchdringt."
+        }
+      }
+    },
+    "barge-in": {
+      "term": "Barge-in",
+      "short": "Die Möglichkeit des Anrufers, in eine Ansage hineinzusprechen, woraufhin das System aufhört zu reden und zuhört, statt erst seinen Satz zu beenden.",
+      "meta": {
+        "title": "Barge-in: ein Sprachsystem unterbrechen",
+        "description": "Barge-in erlaubt es dem Anrufer, in eine Ansage hineinzusprechen und gehört zu werden. Was es technisch verlangt, warum Fehlauslösungen passieren, und wie Velyric Unterbrechungen behandelt."
+      },
+      "title": "Was ist Barge-in?",
+      "definition": "Barge-in ist die Fähigkeit eines Anrufers, zu sprechen zu beginnen, während das System noch redet, woraufhin das System seine eigene Ausgabe stoppt und das Gesagte verarbeitet. Es erfordert Vollduplex-Audio, also dass beide Richtungen gleichzeitig offen sind, und Echokompensation, damit das System seine eigene synthetisierte Stimme nicht für die Sprache des Anrufers hält. Ohne Barge-in muss der Anrufer jede Ansage zu Ende hören, und das ist die meistgenannte Beschwerde über automatisierte Telefonsysteme.",
+      "explanation": {
+        "heading": "Was macht Barge-in schwierig?",
+        "p1": "Das System muss zuhören, während es spricht, das heißt seine eigene Ausgabe kommt über den Mikrofonpfad zurück. Echokompensation entfernt das meiste davon, aber nie alles, und was übrig bleibt, kann wie Sprache aussehen. Setzt man die Schwelle zu niedrig, unterbricht sich der Assistent selbst, weil eine Tür zugefallen ist; setzt man sie zu hoch, muss der Anrufer die Stimme heben, um überhaupt gehört zu werden.",
+        "p2": "Das zweite Problem ist zu entscheiden, was eine Unterbrechung bedeutet. Menschen unterbrechen aus mindestens drei verschiedenen Gründen: um das Wort zu übernehmen, wie bei „nein, warten Sie“; um zu bestätigen, ohne das Wort zu übernehmen, wie bei „mhm“ oder „genau“; und um eine Pause zu füllen. Ein Rückmeldesignal als Wortübernahme zu behandeln lässt den Assistenten alle paar Sekunden abrupt stoppen, während eine echte Korrektur als Rückmeldesignal zu behandeln dazu führt, dass er über den Anrufer hinwegredet.",
+        "p3": "Das dritte ist das saubere Wiederaufsetzen. Wird die Ausgabe mitten im Satz abgeschnitten, stimmt die Aufzeichnung des Systems darüber, was dem Anrufer gesagt wurde, nicht mehr. Ein Assistent, der „Dienstag um zehn, Mittwoch um zwei“ angeboten hat und nach der ersten Option unterbrochen wurde, darf sich später nicht so verhalten, als sei die zweite gehört worden."
+      },
+      "example": {
+        "p1": "Der Assistent beginnt: „Ich habe Donnerstag um halb zehn, Donnerstag um elf und Freitag um…“, und der Anrufer sagt „das um halb zehn“. Der Assistent hält sofort an, nimmt die Wahl auf und bestätigt sie zurück. Der ganze Wortwechsel ist kürzer, als die Ansage allein gewesen wäre.",
+        "p2": "Man vergleiche dasselbe Gespräch ohne Barge-in. Der Anrufer sagt dasselbe, wird nicht gehört, wartet die ganze Liste ab und wiederholt sich dann. Das Gespräch ist länger, und der Anrufer hat gelernt, nicht zu sprechen, bis er angesprochen wird — genau die Gewohnheit, die automatisierte Leitungen langsam wirken lässt, auch wenn sie schnell sind."
+      },
+      "velyric": {
+        "p1": "Velyric führt das Gespräch im Vollduplex. Der Anrufer kann unterbrechen, zögern und kurze Bestätigungen geben, ohne den Ablauf zu stören, ein „mhm“ und ein „nein, das andere“ werden also nicht als dasselbe Ereignis behandelt. Die Behandlung von Unterbrechungen gehört dazu, wie jedes Gespräch geführt wird, und ist keine Einstellung zum Aktivieren.",
+        "p2": "Der Erfolg beim Unterbrechen ist eines der Signale, die Velyric misst, neben Antwortlatenz, Erfolgsquote der Werkzeuge, Lösung im Erstkontakt, Weiterleitungsquote, Anteil nicht belegter Antworten und Genauigkeit des Sprachwechsels. Es als gemessene Qualitätskennzahl statt als Funktionsschalter zu behandeln macht es überhaupt erst abstimmbar."
+      },
+      "mistake": {
+        "heading": "Ist Barge-in dasselbe wie einfach kürzere Ansagen?",
+        "body": "Beide gehen dieselbe Frustration von entgegengesetzten Seiten an, und eines ersetzt das andere nicht. Kürzere Ansagen verringern, wie lange der Anrufer wartet. Barge-in beseitigt das Warten als Kategorie, weil der Anrufer gar nicht erst zum Warten gezwungen wird. Ein System mit kurzen Ansagen und ohne Barge-in bringt Anrufern weiterhin bei, zu schweigen, bis sie angesprochen werden, und genau diese Gewohnheit lässt ein automatisiertes Gespräch langsamer wirken, als es ist."
+      },
+      "facts": {
+        "f1": { "term": "Erfordert", "value": "Vollduplex-Audio und Echokompensation" },
+        "f2": {
+          "term": "Muss unterscheiden",
+          "value": "Wortübernehmende Unterbrechungen von Rückmeldesignalen und Zögern"
+        },
+        "f3": {
+          "term": "Gemessen als",
+          "value": "Erfolg beim Unterbrechen, eines von Velyrics Gesprächsqualitätssignalen"
+        }
+      },
+      "capability": {
+        "label": "Das Produkt Velyric",
+        "description": "Wie Gesprächsebene, Werkzeuge und Übergabe in einem laufenden Gespräch zusammenspielen."
+      },
+      "faq": {
+        "q1": {
+          "question": "Kann ich den Velyric-Assistenten unterbrechen?",
+          "answer": "Ja. Das Gespräch läuft im Vollduplex, Sie können also über den Assistenten sprechen, und er hält an und hört zu. Zögerlaute und kurze Bestätigungen werden behandelt, ohne den Assistenten unnötig zu stoppen."
+        },
+        "q2": {
+          "question": "Unterbricht Hintergrundgeräusch den Assistenten?",
+          "answer": "Die Barge-in-Erkennung muss die Sprache des Anrufers von der eigenen Ausgabe des Assistenten und von Umgebungsgeräuschen trennen, deshalb ist der Erfolg beim Unterbrechen ein gemessenes Signal und keine Annahme. Dringt Sprache auf einer schlechten Leitung nicht durch, funktionieren weiterhin die Tastencodes: ### erreicht einen menschlichen Mitarbeiter und 0 führt eine sofortige Weiterleitung aus."
+        },
+        "q3": {
+          "question": "Funktioniert Barge-in in allen drei Sprachen?",
+          "answer": "Velyric unterstützt Ungarisch, Deutsch und Englisch, und die Sprache des Anrufers kann mitten im Gespräch wechseln. Die Vollduplex-Unterbrechungsbehandlung gehört dazu, wie jedes Gespräch geführt wird, und wird nicht je Sprache aktiviert."
+        }
+      }
+    },
+    "warm-transfer": {
+      "term": "Warme Übergabe",
+      "short": "Ein Gespräch an eine Kollegin oder einen Kollegen übergeben, nachdem man sie zuerst erreicht und den Kontext weitergegeben hat, statt den Anrufer nur zu verbinden und auszusteigen.",
+      "meta": {
+        "title": "Warme Übergabe: die begleitete Weiterleitung erklärt",
+        "description": "Eine warme Übergabe gibt der Kollegin oder dem Kollegen vor dem Verbinden den Kontext weiter; eine blinde nicht. Wie beides in SIP funktioniert, und wie Velyric ein Gespräch an eine Person übergibt."
+      },
+      "title": "Was ist eine warme Übergabe?",
+      "definition": "Eine warme Übergabe, auch begleitete oder konsultative Weiterleitung genannt, ist eine, bei der die übergebende Seite zuerst das Ziel erreicht, erklärt, wer anruft und warum, und die beiden Parteien erst danach verbindet. Sie steht im Gegensatz zur blinden oder kalten Weiterleitung, bei der das Gespräch ohne Ankündigung zum Ziel geschoben wird und die übergebende Seite sofort aussteigt. Der Unterschied, den der Anrufer tatsächlich bemerkt, ist, ob er sein Problem ein zweites Mal erklären muss.",
+      "explanation": {
+        "heading": "Wie unterscheiden sich warme und blinde Weiterleitung technisch?",
+        "p1": "In SIP bauen beide auf REFER auf, der Methode, die eine Seite bittet, ein Gespräch in Richtung eines dritten Ziels aufzubauen. Eine blinde Weiterleitung ist ein sofort gesendetes REFER: Die weitergeleitete Seite wird gebeten, das Ziel anzurufen, und die übergebende Seite ist fertig. Außer der Nummer wird nichts weitergegeben.",
+        "p2": "Eine begleitete Weiterleitung fügt zuerst einen Beratungsschenkel hinzu. Die übergebende Seite hält den Anrufer, ruft das Ziel an, spricht mit ihm und sendet erst dann ein REFER mit einem Replaces-Header, der dem Endpunkt des Ziels sagt, den bestehenden Dialog zu übernehmen. Anrufer und Ziel landen in einem Gespräch, und der Beratungsschenkel verschwindet.",
+        "p3": "Der Preis der warmen Variante ist Zeit, denn jemand wartet in der Schleife, während die Beratung läuft, und die Weiterleitung kann scheitern, wenn das Ziel nicht abnimmt — genau deshalb ist die übergebende Seite noch da, um zurückzukommen und das zu sagen. Der Preis der blinden Variante ist, dass der Anrufer sich wiederholt oder in einer Mailbox landet, vor der ihn niemand gewarnt hat."
+      },
+      "example": {
+        "p1": "Blind: „Ich verbinde Sie mit der Buchhaltung.“ Ein Klicken, dann meldet sich eine andere Person mit „Buchhaltung, was kann ich für Sie tun?“, und der Anrufer fängt von vorn an, samt Namen und Rechnungsnummer.",
+        "p2": "Warm: Derselbe Anrufer hört zwanzig Sekunden Wartemusik, und die Kollegin nimmt ab und kennt Rechnungsnummer und Frage bereits. Der Anrufer sagt einen Satz statt fünf. Die Gesamtzeit ist ähnlich; das Erlebnis nicht."
+      },
+      "velyric": {
+        "p1": "Velyric behandelt die Übergabe an eine Person als erstklassigen Pfad mit ausdrücklichen Auslösern und nicht als Fehlerzweig: eine erbetene Weiterleitung, der Tastencode ###, zwei bis drei erfolglose Verständnisversuche, eine Zeitüberschreitung oder ein 5xx-Fehler eines Werkzeugs nach einer Wiederholung sowie sensible oder nicht erlaubte Anliegen. Auf Protokollebene wird das SIP-Gespräch an ein anderes tel:- oder sip:-Ziel verwiesen.",
+        "p2": "Der Kontext bleibt auf der Plattform erhalten, statt über die Leitung angesagt zu werden. Gesprächstranskripte und Zusammenfassungen sind verfügbar, wo sie aktiviert sind, und jedes Gespräch behält seine eigene call_id, seinen Gesprächszustand und seine Ablaufverfolgung. Außerhalb der Geschäftszeiten gilt statt einer Weiterleitung die konfigurierte Alternative: Nachricht aufnehmen, Rückrufwunsch erfassen oder eine Bereitschaftsnummer."
+      },
+      "mistake": {
+        "heading": "Ist „warme Übergabe“ nur ein schöneres Wort für jede Weiterleitung?",
+        "body": "Es ist etwas Konkretes und Überprüfbares, und der Test ist einfach: Wusste die annehmende Person vor ihrem Hallo, wer anruft und warum? Muss der Anrufer seinen Namen oder sein Problem wiederholen, war es eine blinde Weiterleitung, ganz gleich, was im Prospekt steht. Fragen Sie bei der Bewertung eines Anbieters, was genau die Kollegin oder den Kollegen erreicht und über welchen Mechanismus — eine mündliche Ankündigung, ein eingeblendeter Datensatz oder eine Zusammenfassung im Dashboard —, statt das Wort hinzunehmen."
+      },
+      "facts": {
+        "f1": {
+          "term": "Auch genannt",
+          "value": "Begleitete Weiterleitung, konsultative Weiterleitung"
+        },
+        "f2": {
+          "term": "Gegenteil von",
+          "value": "Blinde oder kalte Weiterleitung, ohne Ankündigung"
+        },
+        "f3": { "term": "In SIP", "value": "REFER, im begleiteten Fall mit Replaces-Header" }
+      },
+      "capability": {
+        "label": "Weiterleitung an eine Person",
+        "description": "Die Auslöser, die Ziele, und was außerhalb der Geschäftszeiten passiert."
+      },
+      "faq": {
+        "q1": {
+          "question": "Wann übergibt Velyric ein Gespräch an eine Person?",
+          "answer": "Auf eine ausdrückliche Bitte, jemanden zu sprechen, auf den Tastencode ###, nach zwei bis drei erfolglosen Verständnisversuchen, bei einer Zeitüberschreitung oder einem 5xx-Fehler eines Werkzeugs nach einer Wiederholung sowie bei sensiblen oder nicht erlaubten Anliegen. Außerhalb der Geschäftszeiten gilt stattdessen das konfigurierte Verhalten."
+        },
+        "q2": {
+          "question": "Was passiert mit einem Gespräch außerhalb der Geschäftszeiten?",
+          "answer": "Es gilt das dafür konfigurierte Verhalten: eine Nachricht aufnehmen, einen Rückrufwunsch erfassen oder an eine Bereitschaftsnummer weiterleiten. Es ist eine Wahl je Mandant und keine feste Rückfallebene, derselbe Auslöser kann bei verschiedenen Unternehmen also zu verschiedenen Ergebnissen führen."
+        },
+        "q3": {
+          "question": "Kann der Anrufer eine Person erreichen, ohne sich vorher zu erklären?",
+          "answer": "Ja. Darum zu bitten, eine Person zu sprechen, löst eine sofortige Weiterleitung aus, ebenso der Tastencode 0, während ### einen menschlichen Mitarbeiter erreicht. Keines davon setzt voraus, dass der Assistent das tatsächliche Anliegen verstanden hat."
+        }
+      }
+    },
+    "e164": {
+      "term": "E.164",
+      "short": "Der ITU-T-Standard für die internationale Schreibweise von Rufnummern: ein Pluszeichen, eine Ländervorwahl und eine nationale Nummer, höchstens fünfzehn Ziffern.",
+      "meta": {
+        "title": "E.164: das internationale Rufnummernformat",
+        "description": "E.164 legt fest, wie Rufnummern international geschrieben werden: Plus, Ländervorwahl, nationale Nummer, bis zu 15 Ziffern. Warum Systeme darauf normalisieren, und warum es kein Identitätsnachweis ist."
+      },
+      "title": "Was ist das E.164-Rufnummernformat?",
+      "definition": "E.164 ist die ITU-T-Empfehlung, die den internationalen öffentlichen Telekommunikations-Nummernplan festlegt: Eine Nummer besteht aus einer ein- bis dreistelligen Ländervorwahl, gefolgt von einer nationalen signifikanten Nummer, mit insgesamt höchstens fünfzehn Ziffern. In ihrer kanonischen Schreibweise beginnt die Nummer mit einem Pluszeichen und enthält keine Leerzeichen, Klammern oder Bindestriche, zum Beispiel +3612345678. Es ist die einzige eindeutige Art, eine Nummer so zu schreiben, dass sie von überall auf der Welt gewählt, gespeichert und abgeglichen werden kann.",
+      "explanation": {
+        "heading": "Warum bestehen Systeme auf E.164?",
+        "p1": "Weil jede andere Schreibweise mehrdeutig ist. „06 1 234 5678“, „(1) 234-5678“ und „+36 1 234 5678“ können alle derselbe Teilnehmer sein, aber nur die letzte ist interpretierbar, ohne zu wissen, wo der Schreibende gerade stand. Verkehrsausscheidungsziffern wie die ungarische 06 oder die deutsche 0 sind nationale Wählkonventionen und nicht Teil der Nummer selbst.",
+        "p2": "Nummern in E.164 zu speichern macht sie vergleichbar. Kontakte zu entdoppeln, eine eingehende Rufnummer gegen einen bestehenden Datensatz abzugleichen und die Weiterleitung hängen alle davon ab, dass zwei verschiedene Darstellungen desselben Teilnehmers dieselbe Zeichenkette ergeben. Eine Nummer hübsch darzustellen ist eine Frage der Ausgabe und passiert danach, auf dem Weg nach außen.",
+        "p3": "Das Pluszeichen ist eine Notation mit der Bedeutung „hier gehört eine Auslandsvorwahl hin“, keine Ziffer. Wird die Nummer tatsächlich gewählt, setzt das Gerät oder das Netz die lokale Auslandskennzahl ein, in weiten Teilen Europas 00 und in Nordamerika 011. Das Maximum von fünfzehn Ziffern schließt diese Vorwahl nicht ein."
+      },
+      "example": {
+        "p1": "Dieselbe Budapester Festnetznummer, national als 06 1 234 5678 geschrieben, lautet in E.164 +3612345678: Ländervorwahl 36, nationale signifikante Nummer 12345678, und nirgends eine Ausscheidungsziffer.",
+        "p2": "Ein als 0151 23456789 geschriebenes deutsches Mobiltelefon wird zu +4915123456789. Die führende 0 verschwindet, weil sie eine nationale Ausscheidungsziffer und nicht Teil der Teilnehmernummer ist. Sie zu behalten oder eine Ziffer zu streichen, die keine Ausscheidungsziffer war, ist der häufigste Eingabefehler beim Normalisieren einer Nummernliste."
+      },
+      "velyric": {
+        "p1": "Velyric nutzt die E.164-Ländervorwahl des Anrufers als ersten Hinweis darauf, in welcher Sprache begrüßt wird, und als nicht mehr als das. Eine ausdrückliche Bitte wie „magyarul kérem“, die in der Sprache des Anrufers tatsächlich erkannte Sprache und eine gespeicherte preferred_language überschreiben den Hinweis alle, und die Sprache kann mitten im Gespräch wechseln.",
+        "p2": "Die Nummer ist ausdrücklich keine Authentifizierung. Die Telefonnummer eines Anrufers ist eine Bequemlichkeitskennung, um einen Datensatz zu finden; sensible Daten oder Aktionen erfordern eine zusätzliche Verifizierung oder eine Weiterleitung an eine Person. Das Anrufergedächtnis wird je Mandant gespeichert und nie zwischen Mandanten geteilt, eine Nummer, die ein Unternehmen kennt, ist einem anderen also nicht bekannt."
+      },
+      "mistake": {
+        "heading": "Sagt die Ländervorwahl, wer anruft?",
+        "body": "Sie sagt, welcher nationale Nummernplan die Nummer zugeteilt hat, und das ist alles. Sie sagt nicht, wo die Person gerade steht, welche Sprache sie spricht oder dass sie die ist, die die Nummer nahelegt: Eine in Wien lebende Ungarin behält ihre +36-Nummer, und Rufnummernanzeigen lassen sich fälschen. Eine Ländervorwahl als erste Vermutung über die Sprache zu behandeln ist vernünftig. Eine Rufnummer als Identitätsnachweis zu behandeln ist ein Sicherheitsfehler."
+      },
+      "facts": {
+        "f1": { "term": "Standard", "value": "ITU-T-Empfehlung E.164" },
+        "f2": {
+          "term": "Maximale Länge",
+          "value": "15 Ziffern, Ländervorwahl plus nationale signifikante Nummer"
+        },
+        "f3": {
+          "term": "In Velyric",
+          "value": "Nur ein erster Sprachhinweis und nie eine Authentifizierung"
+        }
+      },
+      "capability": {
+        "label": "Mehrsprachige Sprache",
+        "description": "Wie der Assistent eine Sprache wählt und wie er mitten im Gespräch wechselt."
+      },
+      "faq": {
+        "q1": {
+          "question": "Wie entscheidet Velyric, in welcher Sprache begrüßt wird?",
+          "answer": "Die E.164-Ländervorwahl des Anrufers liefert den ersten Hinweis. Eine ausdrückliche Bitte, die in der Sprache des Anrufers tatsächlich erkannte Sprache und eine gespeicherte preferred_language überschreiben ihn alle, und die Sprache kann mitten im Gespräch wechseln."
+        },
+        "q2": {
+          "question": "Reicht eine Rufnummer, um einen wiederkehrenden Anrufer zu identifizieren?",
+          "answer": "Sie reicht, um einen Datensatz nachzuschlagen, nicht, um ihm zu vertrauen. Velyric behandelt die Nummer als Bequemlichkeitskennung, und sensible Daten oder Aktionen erfordern eine zusätzliche Verifizierung oder eine Weiterleitung an eine Person."
+        },
+        "q3": {
+          "question": "Muss ich Nummern selbst im E.164-Format eingeben?",
+          "answer": "Systeme normalisieren intern auf E.164, weil das die einzige eindeutige Darstellung ist. Die Falle, auf die zu achten ist, ist die nationale Ausscheidungsziffer: die 06 in Ungarn und die führende 0 in Deutschland sind Wählkonventionen und entfallen, sobald die Ländervorwahl hinzukommt."
+        }
+      }
+    },
+    "concurrent-calls": {
+      "term": "Gleichzeitige Gespräche",
+      "short": "Wie viele Gespräche im selben Moment verbunden sein können; das ist eine Kapazitätsgrenze und hat nichts damit zu tun, wie viele Anrufe Sie an einem Tag bekommen.",
+      "meta": {
+        "title": "Gleichzeitige Gespräche: was die Grenze tatsächlich bedeutet",
+        "description": "Gleichzeitige Gespräche messen, wie viele Gespräche im selben Moment laufen, nicht wie viele Sie bekommen. Wie man die Grenze bemisst, und die Grenzen von 2, 10 und 50 in den Velyric-Tarifen."
+      },
+      "title": "Was sind gleichzeitige Gespräche?",
+      "definition": "Gleichzeitige Gespräche sind die Anzahl der Telefongespräche, die im selben Moment auf einem Konto, einem Trunk oder einer Telefonanlage verbunden sind. Es ist ein Kapazitätsmaß und kein Volumenmaß: Ein Unternehmen mit tausend Gesprächen im Monat braucht womöglich nie mehr als zwei gleichzeitig, während eines mit zweihundert zehn brauchen kann, wenn sie alle in derselben Stunde eintreffen. Die Kapazität entscheidet, ob ein Anrufer überhaupt durchkommt; das Volumen entscheidet nur, was abgerechnet wird.",
+      "explanation": {
+        "heading": "Wie viele gleichzeitige Gespräche braucht ein Unternehmen wirklich?",
+        "p1": "Die ehrliche Antwort hängt vom Ankunftsmuster und der Gesprächsdauer ab, nicht von Monatssummen. Die Verkehrsintensität ist das Produkt aus beidem: hundert Gespräche in der Hauptstunde mit durchschnittlich drei Minuten sind fünf Erlang Last, und genau auf fünf Kanäle zu bemessen würde immer noch Anrufer abweisen, weil Ankünfte sich ballen, statt sich höflich zu verteilen. Erlang B ist die übliche Formel, um aus einer angestrebten Blockierwahrscheinlichkeit eine Kanalzahl zu machen.",
+        "p2": "Echter Telefonverkehr ist auf eine Weise spitz, die Durchschnitte verbergen. Gespräche folgen Öffnungszeiten, Werbung, Wetter und, für alle mit Terminvergabe, der ersten Stunde nach der Öffnung am Montag. Der Wert der Hauptstunde ist die Zahl, auf die es ankommt, und er liegt meist um ein Vielfaches über dem Tagesdurchschnitt.",
+        "p3": "Was beim Überlauf passiert, ist eine eigene Designentscheidung, und es ist die, die der Anrufer erlebt. Die Optionen sind ein Besetztzeichen, eine Warteschlange, eine Umleitung auf eine andere Nummer, ein Rückrufversprechen oder die Mailbox. Jede tauscht Geduld des Anrufers gegen ein verlorenes Gespräch, und keine davon zu wählen heißt, sich standardmäßig für das Besetztzeichen zu entscheiden."
+      },
+      "example": {
+        "p1": "Eine Zahnarztpraxis nimmt an einem Montag rund sechzig Gespräche an. Fünfzehn davon treffen zwischen 08:00 und 09:00 ein und dauern durchschnittlich vier Minuten. Allein diese Stunde trägt ein Erlang Durchschnittslast, aber die Ankünfte ballen sich, zwei gleichzeitige Kanäle sind also gelegentlich belegt, während zehn den ganzen Nachmittag brachliegen würden.",
+        "p2": "Dieselbe Praxis mit sechshundert gleichmäßig verteilten Gesprächen im Monat bräuchte für dasselbe Gesamtvolumen weit weniger Kapazität. Volumen und Kapazität sind wirklich unabhängige Größen, und nur eine von beiden entscheidet, ob das Telefon ins Leere klingelt."
+      },
+      "velyric": {
+        "p1": "Velyrics Parallelitätsgrenze setzt der Tarif: 2 gleichzeitige Gespräche bei Start, 10 bei Business, 50 bei Pro und 100 oder mehr bei Enterprise nach Vertrag. Es ist eine kaufmännische Grenze und keine technische Decke, und eine Parallelitätserweiterung ist als kostenpflichtiges Zusatzmodul verfügbar.",
+        "p2": "Spitzen über der Grenze folgen der vom Mandanten gewählten Regel, die eine kurze Warteschlange, eine Überlaufnummer, ein Rückruf oder die Mailbox sein kann, und nicht einem festen Verhalten. Parallele Gespräche sind vollständig isoliert: Jedes hat seine eigene call_id, KI-Sitzung, seinen eigenen Gesprächszustand und seine eigene Ablaufverfolgung, sodass das Scheitern eines Gesprächs kein anderes beeinflussen kann. Jedes Gespräch ist in jedem Tarif auf 1.800 Sekunden begrenzt."
+      },
+      "mistake": {
+        "heading": "Ist die Parallelitätsgrenze dasselbe wie die enthaltenen Minuten?",
+        "body": "Nein, und beides zu verwechseln ist der häufigste Bemessungsfehler. Enthaltene Minuten sind Volumen: wie viel Sprechen der Tarif abdeckt, bevor der Minutensatz für Mehrverbrauch greift. Parallelität ist Kapazität: wie viele dieser Minuten im selben Moment gesprochen werden können. Ein Tarif kann reichlich Minuten übrig haben und trotzdem einen Anrufer abweisen, weil jeder gleichzeitige Platz belegt ist, und die Abhilfe dafür ist ein höherer Tarif oder das Zusatzmodul zur Parallelitätserweiterung, nicht mehr Minuten."
+      },
+      "facts": {
+        "f1": {
+          "term": "Tarifgrenzen",
+          "value": "Start 2, Business 10, Pro 50, Enterprise 100 oder mehr"
+        },
+        "f2": {
+          "term": "Über der Grenze",
+          "value": "Mandantenregel: kurze Warteschlange, Überlaufnummer, Rückruf oder Mailbox"
+        },
+        "f3": {
+          "term": "Nicht dasselbe wie",
+          "value": "Enthaltene Sprachminuten, die Volumen statt Kapazität messen"
+        }
+      },
+      "capability": {
+        "label": "Tarife und Preise",
+        "description": "Enthaltene Minuten, Mehrverbrauchssätze und die Parallelitätsgrenze je Tarif."
+      },
+      "faq": {
+        "q1": {
+          "question": "Wie viele Gespräche kann Velyric gleichzeitig führen?",
+          "answer": "Das hängt vom Tarif ab: 2 gleichzeitige Gespräche bei Start, 10 bei Business, 50 bei Pro und 100 oder mehr bei Enterprise nach Vertrag. Eine Parallelitätserweiterung ist als kostenpflichtiges Zusatzmodul verfügbar, wenn die Tarifgrenze der Engpass ist und nicht die Minuten."
+        },
+        "q2": {
+          "question": "Was passiert, wenn mehr Anrufer eintreffen, als die Grenze erlaubt?",
+          "answer": "Spitzen über der Grenze folgen der vom Mandanten gewählten Regel: eine kurze Warteschlange, eine Überlaufnummer, ein Rückruf oder die Mailbox. Parallelität ist eine kaufmännische Grenze des Tarifs und keine technische Decke der Plattform."
+        },
+        "q3": {
+          "question": "Stören sich parallele Gespräche gegenseitig?",
+          "answer": "Nein. Jedes Gespräch hat seine eigene call_id, KI-Sitzung, seinen eigenen Gesprächszustand und seine eigene Ablaufverfolgung, sodass das Scheitern eines Gesprächs kein anderes beeinflussen kann. Jedes Gespräch ist außerdem auf 1.800 Sekunden begrenzt, was beschränkt, wie lange ein einzelnes Gespräch einen Parallelitätsplatz belegen kann."
+        }
+      }
+    },
+    "rag": {
+      "term": "RAG (abrufgestützte Generierung)",
+      "short": "Die relevanten Passagen aus Ihren eigenen Dokumenten abrufen und dem Modell beim Antworten übergeben, damit die Antwort in Ihrem Material verankert ist.",
+      "meta": {
+        "title": "RAG: abrufgestützte Generierung erklärt",
+        "description": "RAG ruft Passagen aus Ihren eigenen Dokumenten ab und gibt sie dem Modell beim Antworten. Die Einlesestrecke, die Aufteilung, die Mandantenfilterung und Velyrics Regel für den Fall ohne Antwort."
+      },
+      "title": "Was ist abrufgestützte Generierung (RAG)?",
+      "definition": "Abrufgestützte Generierung, kurz RAG, ist ein Verfahren, bei dem ein System einen externen Dokumentenbestand nach Passagen durchsucht, die zur Frage passen, und diese Passagen einem Sprachmodell als Kontext übergibt, bevor es antwortet. Das Modell generiert dann aus Material, das ihm gereicht wurde, und nicht nur aus dem, was es beim Training aufgenommen hat. Die praktischen Vorteile sind, dass sich die Antwort auf etwas Konkretes zurückführen lässt, dass der Bestand aktualisiert werden kann, ohne irgendetwas neu zu trainieren, und dass der Zugriff auf den Bestand je Nutzer oder je Mandant eingeschränkt werden kann.",
+      "explanation": {
+        "heading": "Was passiert zwischen der Frage und der Antwort?",
+        "p1": "Zuerst kommt das Einlesen, und es bestimmt fast alles Weitere. Dokumente werden zu Text geparst, in Abschnitte geteilt, die klein genug für Präzision und groß genug sind, um für sich zu stehen, mit Metadaten angereichert, in Einbettungsvektoren umgewandelt und in einen Index geschrieben. Beim Aufteilen wird der Großteil der Qualität gewonnen oder verloren: Ein Abschnitt, der einen Preis von der Leistung trennt, zu der er gehört, wird selbstbewusst abgerufen und antwortet falsch.",
+        "p2": "Beim Antworten wird die Frage auf dieselbe Weise eingebettet, der Index liefert die nächstgelegenen Abschnitte, und diese Abschnitte kommen in den Kontext des Modells. Abruf ist ein Suchproblem mit den üblichen Fehlerbildern: eine Frage, die anders formuliert ist als das Dokument, ein Begriff, den der Bestand nie verwendet, oder ein Dokument, das schlicht nie hochgeladen wurde.",
+        "p3": "Die Regel für den leeren Fall ist das, was ein brauchbares von einem gefährlichen System trennt. Liefert der Abruf nichts Relevantes, produziert ein Modell ohne Erdung trotzdem eine flüssige Antwort, denn Flüssigkeit ist nicht dasselbe wie Wissen. Vorab zu entscheiden, stattdessen eine Rückfrage zu stellen oder zu eskalieren, ist eine Designentscheidung und keine Fähigkeit des Modells."
+      },
+      "example": {
+        "p1": "Ein Restaurant lädt seine Speisekarte als PDF hoch und lässt seine Website crawlen. Ein Anrufer fragt, ob es etwas Glutenfreies gibt. Die Frage wird gegen die Abschnitte der Speisekarte abgeglichen, die zwei passenden Passagen werden abgerufen, und die Antwort nennt die tatsächlichen Gerichte, statt zu sagen „wir haben mehrere Optionen“.",
+        "p2": "Der nächste Anrufer fragt, ob die Terrasse beheizt ist. Weder die Speisekarte noch die Website erwähnt das. Ein geerdetes System sagt das und bietet an, weiterzuverbinden; ein ungeerdetes produziert eine plausible Antwort, und der Anrufer kommt an einer kalten Terrasse an."
+      },
+      "velyric": {
+        "p1": "Velyric liest PDF, DOCX, TXT und Markdown, CSV, manuell geschriebene FAQ-Einträge und Website-Adressen ein. Websites werden zuerst über die Sitemap gecrawlt, ersatzweise als Link-Crawl der Unterseiten derselben Website, und auf der Seite gefundene schema.org-JSON-LD-Daten wie Adresse, Öffnungszeiten und Speisekarte werden als strukturierte Fakten extrahiert. Die Strecke ist: Schadsoftwareprüfung, Parsen, Prüfung auf personenbezogene Daten und Sicherheit, Aufteilen, Metadaten, Einbettung und Index.",
+        "p2": "Quellen sind versioniert: Eine neue Dokumentversion ersetzt die alten Abschnitte im aktiven Index atomar, es gibt also kein Zeitfenster, in dem beide live sind. Jeder Abruf ist mandantengefiltert. Wird keine belegende Quelle gefunden, stellt der Assistent eine Rückfrage oder übergibt an einen Menschen, statt zu raten. Dokumente und Anrufertext werden als nicht vertrauenswürdige Eingabe behandelt, in einem Dokument versteckte Anweisungen können die Regeln des Assistenten also nicht ändern, und Werkzeugberechtigungen liegen im Code statt im Prompt."
+      },
+      "mistake": {
+        "heading": "Verhindert RAG, dass ein Modell sich etwas ausdenkt?",
+        "body": "Es verringert die Gelegenheit; es beseitigt sie nicht von allein. RAG ändert, was das Modell vor sich hat, aber das Modell kann eine abgerufene Passage trotzdem falsch lesen, zwei Abschnitte vermengen, die nicht hätten kombiniert werden dürfen, oder selbstbewusst antworten, wenn der Abruf nichts Brauchbares geliefert hat. Was Erfindungen tatsächlich verhindert, ist die Regel für den leeren Fall — in Velyric eine Rückfrage oder eine Übergabe an einen Menschen — zusammen mit einer Aufteilung, die Fakten intakt lässt, und einem Abruf, der auf den richtigen Mandanten gefiltert ist."
+      },
+      "facts": {
+        "f1": {
+          "term": "Strecke",
+          "value": "Schadsoftwareprüfung, Parsen, Prüfung auf personenbezogene Daten, Aufteilen, Metadaten, Einbettung, Index"
+        },
+        "f2": { "term": "Trennung", "value": "Jeder Abruf ist auf den Mandanten gefiltert" },
+        "f3": {
+          "term": "Regel ohne Antwort",
+          "value": "Rückfrage oder Übergabe an einen Menschen, niemals geraten"
+        }
+      },
+      "capability": {
+        "label": "Das Produkt Velyric",
+        "description": "Die Wissensdatenbank, der Aktionskatalog, und wie eine Antwort geerdet wird."
+      },
+      "faq": {
+        "q1": {
+          "question": "Was kann ich als Wissen hochladen?",
+          "answer": "PDF, DOCX, TXT und Markdown, CSV, manuell geschriebene FAQ-Einträge und Website-Adressen. Website-Quellen werden zuerst über die Sitemap gecrawlt, sonst als Link-Crawl der Unterseiten derselben Website, und jede Seite wird auf Schadsoftware geprüft, geparst und aufgeteilt, bevor sie indexiert wird."
+        },
+        "q2": {
+          "question": "Was passiert, wenn ich ein Dokument aktualisiere?",
+          "answer": "Die neue Version ersetzt die alten Abschnitte im aktiven Index atomar, der Assistent antwortet also nie aus einer Mischung von Alt und Neu. Dokumente werden versioniert statt an Ort und Stelle überschrieben, was auch bedeutet, dass eine Änderung ein klar abgegrenztes Ereignis ist und kein schleichendes Abdriften."
+        },
+        "q3": {
+          "question": "Kann jemand Anweisungen in einem Dokument verstecken, um das Verhalten des Assistenten zu ändern?",
+          "answer": "Nein. Dokumente und Anrufertext werden als nicht vertrauenswürdige Eingabe behandelt: Anweisungen innerhalb eines Dokuments können die Regeln des Assistenten nicht ändern, und welche Werkzeuge der Assistent aufrufen darf, wird im Code durchgesetzt und nicht im Prompt."
+        }
+      }
+    }
+  }
+}

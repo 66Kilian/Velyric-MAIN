@@ -1,0 +1,45 @@
+{
+  "name": "velyric",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.24.0",
+  "engines": {
+    "node": ">=22.20.0 <23",
+    "pnpm": "11.24.0"
+  },
+  "scripts": {
+    "bootstrap": "node scripts/bootstrap.mjs",
+    "dev": "node scripts/dev.mjs",
+    "build": "pnpm run build:ts && pnpm run build:rust",
+    "build:ts": "pnpm -r --workspace-concurrency=4 --if-present run build",
+    "build:rust": "cargo build --workspace --locked",
+    "lint": "pnpm run lint:ts && pnpm run lint:rust && pnpm run lint:py",
+    "lint:ts": "eslint . --max-warnings=0 && prettier --check .",
+    "lint:rust": "cargo fmt --all --check && cargo clippy --workspace --all-targets --locked -- -D warnings",
+    "lint:py": "uv run --frozen ruff check . && uv run --frozen ruff format --check .",
+    "format": "prettier --write . && cargo fmt --all && uv run --frozen ruff format .",
+    "typecheck": "pnpm -r --if-present run typecheck && uv run --frozen mypy",
+    "test": "pnpm run test:scripts && pnpm run test:ts && pnpm run test:rust && pnpm run test:py",
+    "test:scripts": "node --test \"scripts/test/*.test.mjs\"",
+    "test:ts": "pnpm -r --if-present run test",
+    "test:rust": "cargo test --workspace --locked",
+    "test:py": "uv run --frozen pytest",
+    "test:coverage": "pnpm -r --if-present run test:coverage",
+    "test:db": "pnpm -r --if-present run test:db",
+    "test:e2e": "pnpm --filter @velyric/e2e run test",
+    "contracts:check": "pnpm -r --if-present run generated:check",
+    "verify": "pnpm run lint && pnpm run typecheck && pnpm run contracts:check && pnpm run test && pnpm run build"
+  },
+  "devDependencies": {
+    "@eslint/js": "catalog:",
+    "@types/node": "catalog:",
+    "eslint": "catalog:",
+    "eslint-config-prettier": "catalog:",
+    "eslint-plugin-security": "catalog:",
+    "globals": "catalog:",
+    "prettier": "catalog:",
+    "typescript": "catalog:",
+    "typescript-eslint": "catalog:"
+  }
+}

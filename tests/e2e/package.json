@@ -1,0 +1,23 @@
+{
+  "name": "@velyric/e2e",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:public": "playwright test --project=public --project=public-mobile",
+    "test:journeys": "playwright test --project=journeys",
+    "test:update": "playwright test --update-snapshots",
+    "install:browsers": "playwright install chromium",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "catalog:",
+    "@playwright/test": "catalog:",
+    "@types/node": "catalog:",
+    "typescript": "catalog:"
+  },
+  "dependencies": {
+    "@velyric/contracts": "workspace:*"
+  }
+}

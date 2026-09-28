@@ -1,0 +1,512 @@
+{
+  "meta": {
+    "homeTitle": "Velyric – AI voice agents for Hungarian, German and English calls",
+    "homeDescription": "Velyric answers your business calls around the clock, books appointments, answers questions from your knowledge and hands over to your team when it matters."
+  },
+  "hero": {
+    "eyebrow": "AI voice agents for a brighter tomorrow",
+    "titleStart": "Natural AI voice agents for",
+    "titleHighlight": "modern businesses",
+    "body": "Answer every call, book appointments, qualify leads and support customers in Hungarian, German and English – with a voice agent that knows when to hand over to your team.",
+    "primary": "Get started",
+    "secondary": "See the product",
+    "visual": {
+      "greeting": "Hello, how can I help you today?",
+      "caller": "Caller",
+      "request": "I would like to book an appointment for next Tuesday morning.",
+      "booked": "Appointment booked",
+      "bookedDetail": "Tuesday, 10:00 · confirmation sent"
+    }
+  },
+  "proof": {
+    "languages": "Hungarian, German and English",
+    "always": "Answers 24/7",
+    "handoff": "Human handoff built in",
+    "calendars": "Google and Microsoft calendars"
+  },
+  "features": {
+    "heading": "What Velyric does",
+    "multilingual": {
+      "title": "Multilingual voice",
+      "body": "Detects the caller's language and switches between Hungarian, German and English mid-call."
+    },
+    "conversation": {
+      "title": "Natural conversation",
+      "body": "Handles interruptions, clarifying questions and pauses like a trained receptionist."
+    },
+    "booking": {
+      "title": "Calendar booking",
+      "body": "Checks real availability across staff and rooms and books without double-booking."
+    },
+    "integrations": {
+      "title": "Your APIs as tools",
+      "body": "Look up orders or create tickets through secured custom API tools with confirmations."
+    },
+    "handoff": {
+      "title": "Smart call transfer",
+      "body": "Transfers to the right person with a short summary whenever a human is needed."
+    },
+    "analytics": {
+      "title": "Actionable analytics",
+      "body": "See resolution rates, intents, knowledge gaps and costs for every location."
+    }
+  },
+  "command": {
+    "eyebrow": "A unified command center",
+    "titleStart": "Everything you need,",
+    "titleHighlight": "in one place.",
+    "body": "Configure agents, watch live calls, review summaries and connect your tools from a single dashboard.",
+    "items": {
+      "live": "Live call monitoring and control",
+      "summaries": "Transcripts and call summaries",
+      "languages": "Per-language greetings and disclosures",
+      "integrations": "Calendar and API integrations",
+      "analytics": "Real-time analytics"
+    }
+  },
+  "showcase": {
+    "nav": {
+      "dashboard": "Dashboard",
+      "calls": "Calls",
+      "agents": "Agents",
+      "contacts": "Contacts",
+      "integrations": "Integrations",
+      "analytics": "Analytics",
+      "settings": "Settings"
+    },
+    "welcome": "Welcome back",
+    "subtitle": "Here's what's happening with your voice agents.",
+    "kpi": {
+      "calls": "Total calls",
+      "duration": "Average duration",
+      "resolution": "Resolved by AI",
+      "quality": "Quality score"
+    },
+    "liveCalls": "Live calls",
+    "inProgress": "In progress",
+    "tags": {
+      "booking": "Booking",
+      "support": "Support",
+      "lead": "Lead"
+    },
+    "summary": "Call summary",
+    "duration": "Duration",
+    "outcome": "Outcome",
+    "booked": "Appointment booked",
+    "summaryText": "The caller booked a check-up for Tuesday at 10:00 and asked for a reminder by email.",
+    "caption": "Illustrative product preview with sample data."
+  },
+  "integrations": {
+    "eyebrow": "Works with your tools",
+    "title": "Connected where it matters.",
+    "body": "Connect calendars and your own systems in minutes.",
+    "items": {
+      "google": {
+        "name": "Google Calendar",
+        "detail": "Availability and bookings"
+      },
+      "microsoft": {
+        "name": "Microsoft 365",
+        "detail": "Outlook calendars"
+      },
+      "phone": {
+        "name": "Phone numbers",
+        "detail": "Local numbers provisioned for you"
+      },
+      "api": {
+        "name": "Custom API tools",
+        "detail": "Your HTTPS endpoints"
+      }
+    }
+  },
+  "pricing": {
+    "eyebrow": "Simple, transparent pricing",
+    "title": "Plans for every stage of your business.",
+    "popular": "Most popular",
+    "perMonth": "/ month + VAT",
+    "minutes": "{minutes} voice minutes included",
+    "concurrent": "{count, plural, one {# call at a time} other {# calls at a time}}",
+    "numbers": "{count, plural, one {# phone number} other {# phone numbers}}",
+    "overage": "Extra minutes at {price} / minute",
+    "cta": "Get started",
+    "custom": "Custom",
+    "contactSales": "Contact sales",
+    "plans": {
+      "START": {
+        "name": "Start",
+        "description": "For a single location that wants every call answered.",
+        "highlight": "Knowledge base, human handoff and quality monitoring"
+      },
+      "BUSINESS": {
+        "name": "Business",
+        "description": "For growing businesses that book and integrate.",
+        "highlight": "Calendar booking, custom API tools and warm transfers"
+      },
+      "PRO": {
+        "name": "Pro",
+        "description": "For multi-location teams with advanced routing.",
+        "highlight": "Multiple locations, Simulation Lab and priority support"
+      },
+      "ENTERPRISE": {
+        "name": "Enterprise",
+        "description": "For organizations with custom volume, compliance and redundancy needs."
+      }
+    },
+    "enterprise": {
+      "sso": "Single sign-on and SCIM",
+      "sla": "Contractual SLA",
+      "redundancy": "Dedicated redundancy",
+      "byok": "Bring your own keys"
+    }
+  },
+  "trust": {
+    "eyebrow": "Security and compliance",
+    "title": "Built for trust from the first call.",
+    "link": "Read about security",
+    "items": {
+      "disclosure": {
+        "title": "AI disclosure",
+        "body": "Every call starts with a clear, versioned AI disclosure in the caller's language."
+      },
+      "gdpr": {
+        "title": "GDPR controls",
+        "body": "Retention settings, data export and erasure requests are built into the product."
+      },
+      "audit": {
+        "title": "Audit logs",
+        "body": "Every configuration change and sensitive action is recorded."
+      },
+      "eu": {
+        "title": "EU infrastructure",
+        "body": "Application and call data are processed in an EU cloud region."
+      }
+    }
+  },
+  "cta": {
+    "title": "Ready to give your business a voice?",
+    "body": "Set up your first voice agent today and let your team focus on the conversations that need them.",
+    "button": "Get started"
+  },
+  "pricingPage": {
+    "eyebrow": "Pricing",
+    "title": "Plans that grow with your calls",
+    "body": "Monthly plans with included voice minutes and transparent per-minute pricing beyond that.",
+    "canceled": "Checkout was canceled. No payment was taken.",
+    "footnote": "Prices are net amounts for the Hungarian market. VAT is added according to the applicable rules.",
+    "faqTitle": "Frequently asked questions",
+    "faq": {
+      "vat": {
+        "question": "Are the prices net or gross?",
+        "answer": "All prices are net. Invoices include VAT according to the customer's country and tax status."
+      },
+      "overage": {
+        "question": "What happens when included minutes run out?",
+        "answer": "Calls keep working and extra minutes are billed at the plan's per-minute rate. Spending limits protect you from surprises."
+      },
+      "change": {
+        "question": "Can I change plans later?",
+        "answer": "Yes. Upgrades take effect immediately, downgrades at the end of the billing period."
+      },
+      "numbers": {
+        "question": "Is a phone number included?",
+        "answer": "Every plan includes at least one phone number. Carriers may require business verification before the number goes live."
+      }
+    }
+  },
+  "productPage": {
+    "eyebrow": "Product",
+    "title": "A voice agent that works like your best receptionist",
+    "body": "Velyric combines real-time voice AI with booking, knowledge, integrations and human handoff in one controlled platform.",
+    "cta": "Get started",
+    "blocks": {
+      "orchestration": {
+        "title": "Specialist orchestration",
+        "body": "A reception agent routes each request to booking, support, sales or billing specialists with their own tool permissions."
+      },
+      "languages": {
+        "title": "Three languages, one agent",
+        "body": "Greetings, disclosures and fallbacks are configured per language, and the agent follows the caller's language."
+      },
+      "booking": {
+        "title": "Reliable booking",
+        "body": "Services, resources, availability rules and calendar sync prevent double bookings."
+      },
+      "handoff": {
+        "title": "Handoff with context",
+        "body": "Warm transfers pass a short summary so your team never asks the caller to repeat themselves."
+      },
+      "simulation": {
+        "title": "Simulation before publishing",
+        "body": "Test new versions against scripted scenarios before they reach real callers."
+      },
+      "safety": {
+        "title": "Guardrails",
+        "body": "Spending limits, tool confirmations and kill switches keep every call under control."
+      }
+    }
+  },
+  "solutions": {
+    "common": {
+      "cta": "Start with Velyric",
+      "other": "Other industries",
+      "breadcrumb": "Breadcrumb"
+    },
+    "restaurant": {
+      "title": "Never miss a reservation again",
+      "body": "Take table bookings, answer questions about opening hours and menus, and manage waitlists during busy evenings.",
+      "points": {
+        "first": {
+          "title": "Table reservations",
+          "body": "Books tables by party size and time without double-booking."
+        },
+        "second": {
+          "title": "Menu and allergen questions",
+          "body": "Answers from your own menu and FAQ documents."
+        },
+        "third": {
+          "title": "Busy-hour overflow",
+          "body": "Offers callbacks or waitlist spots when the kitchen is full."
+        }
+      }
+    },
+    "dental-clinic": {
+      "title": "A calm front desk for your clinic",
+      "body": "Book check-ups, handle rescheduling and route urgent cases to staff while patients get answers immediately.",
+      "points": {
+        "first": {
+          "title": "Appointment booking",
+          "body": "Matches treatments with the right dentist and room."
+        },
+        "second": {
+          "title": "Patient questions",
+          "body": "Explains preparation, prices and opening hours from your knowledge base."
+        },
+        "third": {
+          "title": "Urgent cases",
+          "body": "Transfers pain and emergency calls to your team right away."
+        }
+      }
+    },
+    "auto-service": {
+      "title": "Fill your workshop schedule",
+      "body": "Schedule services and inspections, answer status questions and capture details before the car arrives.",
+      "points": {
+        "first": {
+          "title": "Service booking",
+          "body": "Books bays and technicians for the right job length."
+        },
+        "second": {
+          "title": "Vehicle details",
+          "body": "Collects make, model and the reported issue."
+        },
+        "third": {
+          "title": "Handover to advisors",
+          "body": "Transfers quotes and complex questions to service advisors."
+        }
+      }
+    },
+    "car-detailing": {
+      "title": "Booked detailing, zero phone tag",
+      "body": "Explain packages, book appointments and upsell add-ons while your team focuses on the cars.",
+      "points": {
+        "first": {
+          "title": "Package guidance",
+          "body": "Describes packages and durations from your price list."
+        },
+        "second": {
+          "title": "Instant booking",
+          "body": "Reserves the right slot for each package length."
+        },
+        "third": {
+          "title": "Reminders",
+          "body": "Sends confirmations so customers arrive on time."
+        }
+      }
+    },
+    "salon": {
+      "title": "Your salon, always reachable",
+      "body": "Book stylists, handle cancellations and answer price questions even while every chair is busy.",
+      "points": {
+        "first": {
+          "title": "Stylist booking",
+          "body": "Books the right stylist and service duration."
+        },
+        "second": {
+          "title": "Cancellations",
+          "body": "Finds and cancels bookings with the caller's details."
+        },
+        "third": {
+          "title": "Price questions",
+          "body": "Answers consistently from your service list."
+        }
+      }
+    },
+    "hotel": {
+      "title": "Guest service around the clock",
+      "body": "Answer guest questions in their language, handle requests and transfer reservations to your front desk.",
+      "points": {
+        "first": {
+          "title": "Guest questions",
+          "body": "Check-in times, parking and amenities in three languages."
+        },
+        "second": {
+          "title": "Request capture",
+          "body": "Takes messages and callback requests at night."
+        },
+        "third": {
+          "title": "Front desk transfer",
+          "body": "Connects booking and complaint calls to staff."
+        }
+      }
+    },
+    "real-estate": {
+      "title": "Qualify every property lead",
+      "body": "Answer listing questions, qualify buyers and book viewings with the right agent.",
+      "points": {
+        "first": {
+          "title": "Lead qualification",
+          "body": "Captures budget, timing and preferences."
+        },
+        "second": {
+          "title": "Viewing appointments",
+          "body": "Books viewings in agents' calendars."
+        },
+        "third": {
+          "title": "Listing answers",
+          "body": "Responds from your listing documents."
+        }
+      }
+    },
+    "webshop": {
+      "title": "Support that scales with your orders",
+      "body": "Answer order and delivery questions through your own APIs and hand complex cases to support.",
+      "points": {
+        "first": {
+          "title": "Order status",
+          "body": "Looks up orders through a secured custom API tool."
+        },
+        "second": {
+          "title": "Returns and policies",
+          "body": "Explains returns and shipping from your policies."
+        },
+        "third": {
+          "title": "Escalation",
+          "body": "Transfers disputes to your support team with a summary."
+        }
+      }
+    },
+    "b2b-support": {
+      "title": "First-line support for business customers",
+      "body": "Identify callers, answer product questions and create tickets before transferring to the right engineer.",
+      "points": {
+        "first": {
+          "title": "Caller identification",
+          "body": "Recognizes returning contacts and their company."
+        },
+        "second": {
+          "title": "Knowledge answers",
+          "body": "Answers from manuals and technical documents."
+        },
+        "third": {
+          "title": "Ticket creation",
+          "body": "Creates tickets through your API before handoff."
+        }
+      }
+    }
+  },
+  "integrationsPage": {
+    "eyebrow": "Integrations",
+    "title": "Connect Velyric to how you work",
+    "body": "Only integrations marked as available can be connected today.",
+    "available": "Available",
+    "planned": "Planned",
+    "items": {
+      "google": {
+        "name": "Google Calendar",
+        "body": "OAuth connection with free/busy checks and event creation for booking resources."
+      },
+      "microsoft": {
+        "name": "Microsoft 365",
+        "body": "Outlook calendar availability and bookings through Microsoft Graph."
+      },
+      "customApi": {
+        "name": "Custom API tools",
+        "body": "Call your HTTPS endpoints with JSON schema validation, egress protection and confirmation policies."
+      },
+      "telephony": {
+        "name": "Phone numbers",
+        "body": "Local numbers are provisioned and verified with the carrier as part of onboarding."
+      },
+      "payments": {
+        "name": "Card payments",
+        "body": "Subscriptions and invoices are handled through secure hosted checkout."
+      },
+      "email": {
+        "name": "Email notifications",
+        "body": "Booking confirmations and team notifications are sent automatically."
+      },
+      "webhooks": {
+        "name": "Outbound webhooks",
+        "body": "Signed event notifications to your systems."
+      }
+    }
+  },
+  "securityPage": {
+    "eyebrow": "Security",
+    "title": "Security and privacy by design",
+    "body": "Velyric is built so that each workspace's calls, data and credentials stay isolated and under your control.",
+    "blocks": {
+      "isolation": {
+        "title": "Tenant isolation",
+        "body": "Database row-level security separates every workspace's data at the storage layer."
+      },
+      "secrets": {
+        "title": "Protected credentials",
+        "body": "API keys and integration tokens are stored in a managed secret store, never shown again after creation."
+      },
+      "disclosure": {
+        "title": "Transparent AI",
+        "body": "Callers always hear that they are speaking with an AI assistant."
+      },
+      "privacy": {
+        "title": "Privacy controls",
+        "body": "Configure retention, redact transcripts and handle data subject requests."
+      },
+      "audit": {
+        "title": "Audit trail",
+        "body": "Sensitive actions by your team, API keys and support staff are logged."
+      },
+      "killSwitches": {
+        "title": "Emergency controls",
+        "body": "Kill switches can pause tools, agents or outbound actions instantly."
+      }
+    }
+  },
+  "docsPage": {
+    "eyebrow": "Developers",
+    "title": "Velyric API",
+    "body": "Automate agents, calls, bookings and knowledge with a versioned REST API.",
+    "sections": {
+      "authentication": {
+        "title": "Authentication",
+        "body": "Create an API key under Security and send it as a bearer token. Keys are scoped to specific permissions.",
+        "example": "curl \"$VELYRIC_API_URL/v1/calls\" -H \"Authorization: Bearer $VELYRIC_API_KEY\""
+      },
+      "conventions": {
+        "title": "Conventions",
+        "body": "Write requests require an Idempotency-Key header. Updates use If-Match with the resource version. Lists use cursor pagination.",
+        "example": "Idempotency-Key: 6f1c2a9e-4d7b-4b1f-9c1e-2b5a7d8e9f10\nIf-Match: W/\"3\""
+      },
+      "resources": {
+        "title": "Resources",
+        "body": "Agents, agent versions, calls, knowledge sources, services, resources, bookings and phone numbers.",
+        "example": "GET /v1/agents\nGET /v1/calls?status=ACTIVE\nPOST /v1/knowledge-sources"
+      },
+      "errors": {
+        "title": "Errors and limits",
+        "body": "Errors return a stable code and trace ID. Rate limits are reported in RateLimit headers.",
+        "example": "HTTP/1.1 429 Too Many Requests\nRetry-After: 12\nRateLimit: \"api-key-write\";r=0;t=12"
+      }
+    }
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "navLabel": "Rechtliche Dokumente",
+  "updated": "Zuletzt aktualisiert: {date}",
+  "operator": "Anbieter: {entity}, {address}. Handelsregisternummer: {registration}. Steuernummer: {taxNumber}. Datenschutzkontakt: {email}.",
+  "status": {
+    "title": "Dienststatus",
+    "body": "Für diese Umgebung ist keine öffentliche Statusseite eingerichtet. Wende dich bei einer Störung an den Support.",
+    "overallOperational": "Alle Systeme funktionieren",
+    "overallIssues": "Bei einigen Systemen gibt es Störungen",
+    "monitorUp": "Betriebsbereit",
+    "monitorDown": "Nicht erreichbar",
+    "uptime": "Verfügbarkeit"
+  },
+  "privacy": {
+    "short": "Datenschutz",
+    "title": "Datenschutzhinweise",
+    "updated": "2026-09-01",
+    "intro": "Diese Hinweise erläutern, wie {entity} personenbezogene Daten verarbeitet, wenn du unsere Website besuchst, ein Konto erstellst oder die Velyric-Plattform nutzt, und wie Anrufdaten im Auftrag unserer Kunden verarbeitet werden.",
+    "s1": {
+      "heading": "1. Unsere Rollen",
+      "body": "Für Website-Besucher, Kontoinhaber und Rechnungskontakte sind wir Verantwortlicher. Für Anrufe, Transkripte, Kontakte und Buchungen, die von den Voice-Agenten eines Kunden bearbeitet werden, sind wir Auftragsverarbeiter dieses Kunden, der für die Anrufer verantwortlich ist."
+    },
+    "s2": {
+      "heading": "2. Verarbeitete Daten",
+      "body": "Kontodaten (Name, E-Mail, Rolle, Anmeldeereignisse), Abrechnungsdaten (Unternehmensdaten, Steuernummern, Rechnungen, Zahlungsstatus), Nutzungs- und Sicherheitsprotokolle (IP-Adresse, Geräteinformationen, Audit-Ereignisse) sowie als Auftragsverarbeiter Anrufdaten (Rufnummer, Audiostream, Transkripte, Zusammenfassungen, Tool-Ergebnisse, Buchungen)."
+    },
+    "s3": {
+      "heading": "3. Zwecke und Rechtsgrundlagen",
+      "body": "Wir verarbeiten Konto- und Abrechnungsdaten zur Vertragserfüllung (Art. 6 Abs. 1 lit. b DSGVO), zur Erfüllung buchhalterischer und steuerlicher Pflichten (Art. 6 Abs. 1 lit. c) und auf Grundlage berechtigter Interessen zur Sicherung und Verbesserung des Dienstes (Art. 6 Abs. 1 lit. f). Marketingmitteilungen versenden wir nur mit Einwilligung."
+    },
+    "s4": {
+      "heading": "4. KI-Verarbeitung",
+      "body": "Anrufe werden von KI-Modellen angenommen. Anrufer werden zu Beginn jedes Anrufs informiert, dass sie mit einem KI-Assistenten sprechen. Anrufdaten von Kunden werden nicht zum Training allgemeiner Modelle verwendet."
+    },
+    "s5": {
+      "heading": "5. Empfänger und Unterauftragsverarbeiter",
+      "body": "Wir setzen sorgfältig ausgewählte Anbieter für Cloud-Hosting, Sprach- und Sprachmodell-KI, Telefonie, Zahlungsabwicklung, Rechnungsstellung, Authentifizierung und E-Mail-Versand ein. Die aktuelle Liste der Unterauftragsverarbeiter ist Teil des Auftragsverarbeitungsvertrags. Übermittlungen in Drittländer stützen sich auf Angemessenheitsbeschlüsse oder Standardvertragsklauseln."
+    },
+    "s6": {
+      "heading": "6. Speicherdauer",
+      "body": "Kontodaten werden für die Dauer der Kundenbeziehung gespeichert. Rechnungen werden für die nach ungarischem Rechnungslegungsrecht vorgeschriebene Dauer aufbewahrt. Aufnahmen, Transkripte und Zusammenfassungen werden gemäß den Aufbewahrungseinstellungen des jeweiligen Workspace gespeichert und danach gelöscht, sofern keine rechtliche Sperre besteht."
+    },
+    "s7": {
+      "heading": "7. Deine Rechte",
+      "body": "Du kannst Auskunft, Berichtigung, Löschung, Einschränkung und Datenübertragbarkeit verlangen und der Verarbeitung widersprechen. Anrufer unserer Kunden wenden sich an das angerufene Unternehmen; wir unterstützen unsere Kunden bei der Beantwortung. Zudem kannst du bei der ungarischen Datenschutzbehörde (NAIH) oder einer anderen Aufsichtsbehörde Beschwerde einlegen."
+    },
+    "s8": {
+      "heading": "8. Kontakt",
+      "body": "Für Datenschutzfragen oder zur Ausübung deiner Rechte schreibe an {email}."
+    }
+  },
+  "terms": {
+    "short": "AGB",
+    "title": "Allgemeine Geschäftsbedingungen",
+    "updated": "2026-09-01",
+    "intro": "Diese Bedingungen regeln die Nutzung der Velyric-Plattform, die {entity} Geschäftskunden bereitstellt.",
+    "s1": {
+      "heading": "1. Der Dienst",
+      "body": "Velyric stellt KI-Voice-Agenten, Rufnummern, Buchungs-, Wissens-, Integrations-, Analyse- und verwandte Funktionen gemäß der Beschreibung des gewählten Tarifs bereit. Funktionen können weiterentwickelt werden; wesentliche Einschränkungen kostenpflichtiger Funktionen werden vorab angekündigt."
+    },
+    "s2": {
+      "heading": "2. Konten und Zugriff",
+      "body": "Der Dienst richtet sich an Unternehmen. Du bist für eingeladene Mitglieder, vergebene Rollen und die Vertraulichkeit von API-Schlüsseln verantwortlich. Unbefugte Zugriffe musst du uns unverzüglich melden."
+    },
+    "s3": {
+      "heading": "3. Entgelte und Abrechnung",
+      "body": "Tarife werden monatlich im Voraus abgerechnet; Nutzung über die inklusiven Minuten hinaus und Zusatzleistungen werden gemäß der gültigen Preisliste berechnet. Rechnungen werden elektronisch ausgestellt. Bei fehlgeschlagener Zahlung kann der Dienst nach vorheriger Mitteilung eingeschränkt und später gesperrt werden."
+    },
+    "s4": {
+      "heading": "4. Pflichten des Kunden",
+      "body": "Du musst den KI-Hinweis konfigurieren, erforderliche Einwilligungen für Aufzeichnung oder Verarbeitung von Anruferdaten einholen, Wissen und Unternehmensinformationen aktuell halten und, wo gesetzlich vorgeschrieben, die Weiterleitung an einen Menschen ermöglichen."
+    },
+    "s5": {
+      "heading": "5. Zulässige Nutzung",
+      "body": "Der Dienst darf nicht für rechtswidrige, täuschende oder belästigende Anrufe, unerlaubtes Direktmarketing, als Notrufdienst oder zur Verarbeitung von Kartendaten außerhalb der dafür vorgesehenen Funktionen genutzt werden. Wir können Verkehr sperren, der Anrufer, Netzbetreiber oder die Plattform gefährdet."
+    },
+    "s6": {
+      "heading": "6. Verfügbarkeit und Support",
+      "body": "Wir betreiben den Dienst mit Redundanz und Überwachung und führen Wartungen mit möglichst geringer Unterbrechung durch. Vertragliche Service-Level gelten nur bei Vereinbarung in einem Enterprise-Vertrag."
+    },
+    "s7": {
+      "heading": "7. Haftung",
+      "body": "KI-Agenten können Fehler machen. Du bleibst für Entscheidungen verantwortlich, die auf Grundlage von Anrufen und Buchungen getroffen werden. Soweit gesetzlich zulässig, ist unsere Gesamthaftung auf die in den zwölf Monaten vor dem schadensbegründenden Ereignis gezahlten Entgelte begrenzt; die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt."
+    },
+    "s8": {
+      "heading": "8. Laufzeit, Kündigung und anwendbares Recht",
+      "body": "Abonnements verlängern sich monatlich bis zur Kündigung. Bei Vertragsende werden Rufnummern für eine Aufbewahrungsfrist gehalten und Kundendaten gemäß Auftragsverarbeitungsvertrag gelöscht. Es gilt ungarisches Recht; zuständig sind die Gerichte in Budapest."
+    }
+  },
+  "dpa": {
+    "short": "AVV",
+    "title": "Auftragsverarbeitungsvertrag",
+    "updated": "2026-09-01",
+    "intro": "Dieser Vertrag ist Teil der Vereinbarung zwischen dem Kunden als Verantwortlichem und {entity} als Auftragsverarbeiter gemäß Art. 28 DSGVO.",
+    "s1": {
+      "heading": "1. Gegenstand und Dauer",
+      "body": "Der Auftragsverarbeiter verarbeitet personenbezogene Daten zur Erbringung des Velyric-Dienstes für die Vertragsdauer und eine vereinbarte anschließende Aufbewahrungsfrist."
+    },
+    "s2": {
+      "heading": "2. Datenkategorien und betroffene Personen",
+      "body": "Betroffene sind Anrufer, Website-Besucher mit Web-Voice, Kontakte, Beschäftigte des Kunden und Buchungsteilnehmer. Die Daten umfassen Rufnummern, Sprachaudio, Transkripte, Zusammenfassungen, Kontaktdaten, Buchungsdaten und im Anruf gemachte Angaben."
+    },
+    "s3": {
+      "heading": "3. Weisungen und Vertraulichkeit",
+      "body": "Der Auftragsverarbeiter verarbeitet Daten nur auf dokumentierte Weisung des Verantwortlichen, einschließlich der im Dashboard vorgenommenen Konfiguration. Beschäftigte mit Zugriff sind zur Vertraulichkeit verpflichtet."
+    },
+    "s4": {
+      "heading": "4. Sicherheitsmaßnahmen",
+      "body": "Die Maßnahmen umfassen Mandantentrennung auf Datenbankebene, Verschlüsselung bei Übertragung und Speicherung, verwaltete Secret-Speicherung, rollenbasierte Zugriffskontrolle, Audit-Protokollierung, Schwärzung sensibler Daten, Überwachung und Verfahren zur Vorfallsbearbeitung."
+    },
+    "s5": {
+      "heading": "5. Unterauftragsverarbeiter",
+      "body": "Der Verantwortliche genehmigt Unterauftragsverarbeiter für Cloud-Infrastruktur, Sprach- und Sprachmodell-KI, Telefonie, Zahlungen, Rechnungsstellung, Authentifizierung und E-Mail. Der Auftragsverarbeiter informiert über beabsichtigte Änderungen und gibt Gelegenheit zum Einspruch."
+    },
+    "s6": {
+      "heading": "6. Unterstützung und Betroffenenanfragen",
+      "body": "Der Auftragsverarbeiter stellt Export-, Lösch- und Aufbewahrungsfunktionen bereit und unterstützt den Verantwortlichen bei Betroffenenanfragen, Folgenabschätzungen und Konsultationen mit Aufsichtsbehörden."
+    },
+    "s7": {
+      "heading": "7. Datenschutzverletzungen",
+      "body": "Der Auftragsverarbeiter meldet dem Verantwortlichen eine Verletzung des Schutzes personenbezogener Daten unverzüglich nach Kenntnisnahme und stellt die für dessen Meldepflichten erforderlichen Informationen bereit."
+    },
+    "s8": {
+      "heading": "8. Löschung, Kontrollen und Kontakt",
+      "body": "Nach Ende des Dienstes löscht oder übergibt der Auftragsverarbeiter die personenbezogenen Daten gemäß Konfiguration, sofern keine gesetzliche Aufbewahrungspflicht besteht. Der Verantwortliche kann die zum Nachweis der Einhaltung erforderlichen Informationen anfordern. Kontakt: {email}."
+    }
+  }
+}

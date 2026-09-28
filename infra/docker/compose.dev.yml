@@ -1,0 +1,178 @@
+name: velyric-dev
+
+x-healthcheck-defaults: &healthcheck-defaults
+  interval: 5s
+  timeout: 5s
+  retries: 30
+  start_period: 5s
+
+x-minio-source: &minio-source
+  image: velyric-minio:source-7aac2a2-77f82e1
+  build:
+    context: ./minio
+  pull_policy: build
+
+services:
+  postgres:
+    image: pgvector/pgvector:0.8.6-pg18
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: velyric
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${VELYRIC_LOCAL_POSTGRES_PASSWORD:?run node scripts/env-local.mjs to create .env}
+      VELYRIC_LOCAL_APP_PASSWORD: ${VELYRIC_LOCAL_APP_PASSWORD:?run node scripts/env-local.mjs to create .env}
+      VELYRIC_LOCAL_READONLY_PASSWORD: ${VELYRIC_LOCAL_READONLY_PASSWORD:?run node scripts/env-local.mjs to create .env}
+    ports:
+      - '127.0.0.1:55432:5432'
+    volumes:
+      - postgres-data:/var/lib/postgresql
+      - ./postgres/initdb:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      <<: *healthcheck-defaults
+      test: ['CMD-SHELL', 'pg_isready -U postgres -d velyric']
+
+  redis:
+    image: redis:8.10.1
+    restart: unless-stopped
+    command:
+      - redis-server
+      - --appendonly
+      - 'yes'
+      - --user
+      - default
+      - 'off'
+      - --user
+      - velyric
+      - 'on'
+      - '>${VELYRIC_LOCAL_REDIS_PASSWORD:?run node scripts/env-local.mjs to create .env}'
+      - '~vly:*'
+      - '&*'
+      - +@all
+    ports:
+      - '127.0.0.1:56379:6379'
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      <<: *healthcheck-defaults
+      test:
+        [
+          'CMD-SHELL',
+          'redis-cli --no-auth-warning --user velyric --pass "$${VELYRIC_LOCAL_REDIS_PASSWORD}" ping | grep PONG',
+        ]
+    environment:
+      VELYRIC_LOCAL_REDIS_PASSWORD: ${VELYRIC_LOCAL_REDIS_PASSWORD}
+
+  nats:
+    image: nats:2.14.6-alpine
+    restart: unless-stopped
+    command: ['-js', '-sd', '/data', '-m', '8222']
+    ports:
+      - '127.0.0.1:54222:4222'
+      - '127.0.0.1:58222:8222'
+    volumes:
+      - nats-data:/data
+    healthcheck:
+      <<: *healthcheck-defaults
+      test: ['CMD', 'wget', '-q', '-O', '-', 'http://127.0.0.1:8222/healthz?js-enabled-only=true']
+
+  temporal:
+    image: temporalio/temporal:1.8.3
+    restart: unless-stopped
+    user: '0:0'
+    command:
+      [
+        'server',
+        'start-dev',
+        '--ip',
+        '0.0.0.0',
+        '--namespace',
+        'velyric-local',
+        '--db-filename',
+        '/var/lib/temporal/temporal.db',
+      ]
+    volumes:
+      - temporal-data:/var/lib/temporal
+    ports:
+      - '127.0.0.1:57233:7233'
+      - '127.0.0.1:58233:8233'
+    healthcheck:
+      <<: *healthcheck-defaults
+      test: ['CMD', 'temporal', 'operator', 'namespace', 'describe', '--namespace', 'velyric-local']
+
+  minio:
+    <<: *minio-source
+    restart: unless-stopped
+    command: ['server', '/data', '--console-address', ':9001']
+    environment:
+      MINIO_ROOT_USER: velyric-local
+      MINIO_ROOT_PASSWORD: ${VELYRIC_LOCAL_MINIO_PASSWORD:?run node scripts/env-local.mjs to create .env}
+    ports:
+      - '127.0.0.1:59000:9000'
+      - '127.0.0.1:59001:9001'
+    volumes:
+      - minio-data:/data
+    healthcheck:
+      <<: *healthcheck-defaults
+      test: ['CMD', 'wget', '-q', '-O', '/dev/null', 'http://127.0.0.1:9000/minio/health/ready']
+
+  minio-init:
+    <<: *minio-source
+    depends_on:
+      minio:
+        condition: service_healthy
+    environment:
+      MINIO_ROOT_PASSWORD: ${VELYRIC_LOCAL_MINIO_PASSWORD}
+    entrypoint:
+      - /bin/sh
+      - -ec
+      - |
+        mc alias set local http://minio:9000 velyric-local "$${MINIO_ROOT_PASSWORD}"
+        for purpose in knowledge artifacts recordings exports evidence transient; do
+          mc mb --ignore-existing "local/velyric-local-$${purpose}"
+          mc anonymous set none "local/velyric-local-$${purpose}"
+        done
+        mc ilm rule add --expire-days 1 local/velyric-local-transient || true
+    restart: 'no'
+
+  mailpit:
+    image: axllent/mailpit:v1.31.1
+    restart: unless-stopped
+    ports:
+      - '127.0.0.1:51025:1025'
+      - '127.0.0.1:58025:8025'
+    healthcheck:
+      <<: *healthcheck-defaults
+      test: ['CMD', '/mailpit', 'readyz']
+
+  clamav:
+    image: clamav/clamav:1.5.4-debian
+    restart: unless-stopped
+    ports:
+      - '127.0.0.1:53310:3310'
+    volumes:
+      - clamav-data:/var/lib/clamav
+    healthcheck:
+      <<: *healthcheck-defaults
+      retries: 120
+      test: ['CMD', 'clamdcheck.sh']
+
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:0.160.0
+    restart: unless-stopped
+    command: ['--config=/etc/otelcol/config.yaml']
+    ports:
+      - '127.0.0.1:54317:4317'
+      - '127.0.0.1:54318:4318'
+    volumes:
+      - ../observability/otel-collector.dev.yaml:/etc/otelcol/config.yaml:ro
+    healthcheck:
+      <<: *healthcheck-defaults
+      test: ['CMD', '/otelcol-contrib', 'validate', '--config=/etc/otelcol/config.yaml']
+
+volumes:
+  postgres-data:
+  redis-data:
+  nats-data:
+  temporal-data:
+  minio-data:
+  clamav-data:

@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Kapcsolat – Velyric",
+    "description": "Írj a Velyric csapatának e-mailben értékesítési kérdésekkel, adatvédelmi és GDPR-kérelmekkel vagy biztonsági bejelentéssel, és nézd meg a szolgáltatás mögötti cégadatokat."
+  },
+  "eyebrow": "Kapcsolat",
+  "title": "Beszélj a Velyric csapatával",
+  "body": "A Velyricet egy kis termékcsapat működteti. Az értékesítés és a támogatás is e-mailen zajlik, így minden válasz írásban marad és visszakereshető. Válaszd azt a címet, amelyik a kérdésedhez tartozik, és rögtön a megfelelő emberhez jutsz.",
+  "breadcrumbLabel": "Morzsamenü",
+  "answer": {
+    "question": "Hogyan tudod felvenni a kapcsolatot a Velyrickel?",
+    "body": "A Velyricet e-mailben éred el. Az értékesítési és termékkérdések az értékesítési címre mennek, az adatvédelmi és GDPR-kérelmek az adatvédelmi címre, a feltételezett sérülékenységeket pedig a biztonsági oldalon leírt folyamat szerint jelentheted. Az induláshoz nem kell senkivel beszélned: a fiókot magadtól is létre tudod hozni a regisztrációs oldalon."
+  },
+  "channels": {
+    "heading": "Hova írj",
+    "body": "Minden csatornának megvan a maga feladata, így ha jó helyre küldöd az üzenetet, gyorsabb és konkrétabb választ kapsz.",
+    "sales": {
+      "title": "Értékesítés és termékkérdések",
+      "body": "Árak, csomagválasztás, telefonszám-elérhetőség az adott országban, bevezetési kérdések, egyedi vállalati feltételek és minden, amit regisztráció előtt tisztáznál."
+    },
+    "privacy": {
+      "title": "Adatvédelem",
+      "body": "GDPR-érintetti kérelmek, az adatfeldolgozási megállapodással kapcsolatos kérdések, megőrzési idők, alvállalkozók és a hívásadatok feldolgozási helye."
+    },
+    "security": {
+      "title": "Biztonsági bejelentés",
+      "body": "Ha úgy gondolod, sérülékenységet találtál, a biztonsági oldalon leírt felelős közzétételi folyamatot kövesd, ne nyilvános bejelentést tegyél."
+    },
+    "selfServe": {
+      "title": "Indulás értékesítés nélkül",
+      "body": "A fiók létrehozása, a csomagválasztás és a naptár összekötése önkiszolgáló. Az értékesítés bevonása opcionális, és csak egyedi vállalati feltételeknél szükséges."
+    }
+  },
+  "prepare": {
+    "heading": "Mit írj bele az első e-mailbe",
+    "body": "Ezzel az öt adattal egy válaszban tudunk konkrétan reagálni ahelyett, hogy előbb visszakérdeznénk.",
+    "items": {
+      "business": "Mivel foglalkozik a vállalkozásod, és melyik hívástípust szeretnéd először kezeltetni.",
+      "volume": "Nagyjából hány hívás érkezik, és ebből mennyi futhat be egyszerre.",
+      "languages": "A hívóid a magyar, a német vagy az angol nyelvet használják-e.",
+      "calendar": "Google Naptárat, Microsoft 365-öt vagy más foglalási rendszert használsz-e.",
+      "numbers": "Új telefonszám kell, vagy meglévőt hoznál át, és melyik országban."
+    }
+  },
+  "details": {
+    "heading": "Cégadatok",
+    "body": "A Velyricet az alábbi jogi személy üzemelteti. Ugyanezek az adatok szerepelnek a számlákon és a jogi dokumentumokban is.",
+    "labels": {
+      "entity": "Szolgáltató",
+      "address": "Székhely",
+      "registration": "Cégjegyzékszám",
+      "taxNumber": "Adószám",
+      "sales": "Értékesítési e-mail",
+      "privacy": "Adatvédelmi e-mail"
+    }
+  },
+  "faq": {
+    "heading": "Gyakori kérdések",
+    "start": {
+      "question": "Kell értékesítővel beszélnem az induláshoz?",
+      "answer": "Nem. A csomagok önkiszolgálók: regisztrálhatsz, választhatsz csomagot és beállíthatsz egy asszisztenst értékesítési hívás nélkül. Az értékesítést csak egyedi vállalati feltételeknél kell megkeresned, vagy ha előfizetés előtt segítséget kérnél a döntéshez."
+    },
+    "languages": {
+      "question": "Milyen nyelven írhatok nektek?",
+      "answer": "Magyarul, németül és angolul. Ez az a három nyelv, amelyet a hangasszisztens is kezel a hívásokban."
+    },
+    "gdpr": {
+      "question": "Hova küldjem a GDPR-kérelmet?",
+      "answer": "A fenti adatvédelmi e-mail címre. A hívásadatoknál a Velyric adatfeldolgozóként jár el az ügyfél megbízásából, ezért egy konkrét hívóra vonatkozó kérelmet általában az a cég kezeli, amelyik a telefonszámot üzemelteti."
+    },
+    "security": {
+      "question": "Hogyan jelenthetek biztonsági hibát?",
+      "answer": "A biztonsági oldalon leírt felelős közzétételi folyamat szerint. Kérünk, hogy a részleteket ne hozd nyilvánosságra, amíg nem tudtunk reagálni és javítani."
+    },
+    "phone": {
+      "question": "Van telefonszám, amit hívhatok?",
+      "answer": "Jelenleg nincs. A támogatás és az értékesítés e-mailen zajlik, így írásos nyoma marad a megbeszélteknek. Kis csapatnál ez tudatos döntés: a válaszok utánajárással készülnek, nem hívás közben rögtönözve."
+    }
+  },
+  "related": {
+    "heading": "Mielőtt írnál",
+    "pricing": {
+      "label": "Árak",
+      "description": "Csomagárak, benne foglalt percek, egyidejű hívások és túlhasználati díjak."
+    },
+    "security": {
+      "label": "Biztonság és megfelelés",
+      "description": "Adatkezelés, alapértelmezett megőrzési idők, GDPR-szerepek és a bejelentési folyamat."
+    },
+    "docs": {
+      "label": "Dokumentáció",
+      "description": "API-konvenciók, hitelesítés és integrációs részletek fejlesztőknek."
+    },
+    "product": {
+      "label": "Hogyan működik a Velyric",
+      "description": "Mit csinál a hangasszisztens a hívás közben, és milyen műveleteket hajthat végre."
+    }
+  }
+}

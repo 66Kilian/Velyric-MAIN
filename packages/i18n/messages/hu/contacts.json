@@ -1,0 +1,181 @@
+{
+  "title": "Kapcsolatok",
+  "description": "A hívásokban, foglalásokban és várólistákon felismert hívók hozzájárulási és adatvédelmi előzményeikkel.",
+  "searchPlaceholder": "Keresés név, telefonszám vagy e-mail alapján",
+  "empty": "Még nincsenek kapcsolatok",
+  "emptyDescription": "A kapcsolatok automatikusan megjelennek, amikor a hívók elérik az ügynökeidet vagy időpontot foglalnak.",
+  "noMatches": "Nincs találat",
+  "noMatchesDescription": "Próbálj más nevet, telefonszámot vagy e-mail-címet.",
+  "unnamed": "Névtelen hívó",
+  "sharedPhone": "Közös telefon",
+  "back": "Összes kapcsolat",
+  "since": "Ismert ekkortól: {date}",
+  "export": "Adatok exportálása",
+  "columns": {
+    "name": "Név",
+    "identities": "Telefon és e-mail",
+    "language": "Nyelv",
+    "trust": "Megbízhatóság",
+    "lastInteraction": "Utolsó kapcsolat"
+  },
+  "trust": {
+    "UNVERIFIED": "Nem ellenőrzött",
+    "PARTIALLY_VERIFIED": "Részben ellenőrzött",
+    "VERIFIED": "Ellenőrzött"
+  },
+  "profile": {
+    "title": "Profil",
+    "saved": "Kapcsolat frissítve",
+    "displayName": "Megjelenített név",
+    "preferredLanguage": "Előnyben részesített nyelv",
+    "languageUnknown": "Nem ismert",
+    "memory": "Hívómemória",
+    "memoryHint": "Az ügynökök néven szólíthatják a hívót, és a későbbi hívásoknál felhasználhatják a preferenciáit.",
+    "verification": {
+      "CALLER_PROVIDED": "A hívó adta meg",
+      "CONNECTOR_VERIFIED": "Integráció erősítette meg",
+      "CRM_VERIFIED": "A CRM erősítette meg",
+      "EMAIL_VERIFIED": "E-mailben megerősítve",
+      "HUMAN_VERIFIED": "A csapatod erősítette meg",
+      "INFERRED": "A beszélgetésből következtetve",
+      "OBSERVED": "Híváson észlelve",
+      "OTP_VERIFIED": "Egyszer használatos kóddal megerősítve"
+    }
+  },
+  "identities": {
+    "title": "Azonosítók",
+    "empty": "Nincs hozzárendelt telefonszám vagy e-mail-cím.",
+    "add": "Azonosító hozzáadása",
+    "addTitle": "Azonosító hozzáadása",
+    "addDescription": "Rendelj hozzá a kapcsolathoz tartozó telefonszámot, e-mail-címet vagy külső azonosítót.",
+    "added": "Azonosító hozzáadva",
+    "type": "Típus",
+    "value": "Érték",
+    "remove": "Azonosító eltávolítása",
+    "removeTitle": "Eltávolítod az azonosítót?",
+    "removeDescription": "A(z) {value} a jövőbeli hívásoknál már nem lesz ehhez a kapcsolathoz párosítva.",
+    "types": {
+      "PHONE": "Telefon",
+      "EMAIL": "E-mail",
+      "EXTERNAL_ID": "Külső azonosító"
+    },
+    "hints": {
+      "PHONE": "Nemzetközi formátumban, például +36 30 123 4567.",
+      "EMAIL": "A cím, amelyre a kapcsolat a visszaigazolásokat kapja.",
+      "EXTERNAL_ID": "Az azonosító, amelyet a CRM-ed vagy foglalási rendszered használ ehhez a személyhez."
+    },
+    "states": {
+      "CALLER_PROVIDED": "hívó adta meg",
+      "CONNECTOR_VERIFIED": "integráció ellenőrizte",
+      "CRM_VERIFIED": "CRM ellenőrizte",
+      "EMAIL_VERIFIED": "e-mailben ellenőrizve",
+      "HUMAN_VERIFIED": "csapat ellenőrizte",
+      "INFERRED": "következtetett",
+      "OBSERVED": "észlelt",
+      "OTP_VERIFIED": "kóddal ellenőrizve"
+    },
+    "sources": {
+      "CALLER_ID": "hívóazonosító",
+      "DASHBOARD": "irányítópult",
+      "VOICE_AGENT": "hangügynök",
+      "PUBLIC_API": "API",
+      "CRM": "CRM"
+    }
+  },
+  "merge": {
+    "action": "Összevonás",
+    "title": "Duplikált kapcsolat összevonása",
+    "description": "A kapcsolat összes hívása, foglalása, azonosítója és kérelme átkerül egy másik kapcsolathoz. A hozzájárulási bejegyzések az eredeti előzményhez kötve maradnak.",
+    "searchPlaceholder": "Keresd meg a megtartandó kapcsolatot",
+    "results": "Egyező kapcsolatok",
+    "noResults": "Nincs más kapcsolat, amely megfelelne a keresésnek.",
+    "unnamed": "Névtelen hívó",
+    "noIdentities": "Nincs azonosító",
+    "warning": "Ez a kapcsolat összevonásra kerül ezzel: {name}. Az összevonás bekerül a naplóba, és az irányítópultról nem vonható vissza.",
+    "confirm": "Kapcsolatok összevonása",
+    "merged": "Kapcsolatok összevonva"
+  },
+  "erasure": {
+    "action": "Törlési kérelem",
+    "title": "Törlési kérelem rögzítése",
+    "description": "A személyes adatok 30 napon belül törlődnek, kivéve ha jogi visszatartás vonatkozik rájuk. Jegyezd fel, hogyan ellenőrizted a kérelmező személyazonosságát.",
+    "channel": "Beérkezés módja",
+    "channels": {
+      "PHONE": "Telefon",
+      "EMAIL": "E-mail",
+      "LETTER": "Levél",
+      "IN_PERSON": "Személyesen",
+      "DASHBOARD": "Irányítópult"
+    },
+    "verification": "Személyazonosság ellenőrzése",
+    "verificationHint": "Például: visszahívással megerősítve a regisztrált telefonszámon.",
+    "confirm": "Kérelem rögzítése",
+    "requested": "Törlési kérelem rögzítve",
+    "onHold": "A kérelem rögzítve, de aktív jogi visszatartás miatt szünetel"
+  },
+  "calls": {
+    "title": "Legutóbbi hívások",
+    "empty": "Még nem volt hívás ezzel a kapcsolattal.",
+    "started": "Kezdés",
+    "channel": "Csatorna",
+    "intent": "Szándék",
+    "outcome": "Eredmény",
+    "duration": "Időtartam"
+  },
+  "bookings": {
+    "title": "Foglalások",
+    "empty": "Ennek a kapcsolatnak nincs foglalása."
+  },
+  "waitlist": {
+    "title": "Várólista",
+    "empty": "Ez a kapcsolat nincs várólistán.",
+    "added": "Felvéve: {date}",
+    "expires": "Lejár: {date}",
+    "status": {
+      "ACTIVE": "Várakozik",
+      "OFFERED": "Felajánlva",
+      "ACCEPTED": "Elfogadva",
+      "DECLINED": "Elutasítva",
+      "EXPIRED": "Lejárt",
+      "FULFILLED": "Teljesítve",
+      "CANCELED": "Lemondva"
+    }
+  },
+  "consents": {
+    "title": "Hozzájárulási előzmények",
+    "empty": "Ennek a kapcsolatnak még nem hangzott el tájékoztatás.",
+    "recording": "Rögzítés: {state}",
+    "contact": "{channel}: {state}",
+    "states": {
+      "GRANTED": "megadva",
+      "DENIED": "megtagadva",
+      "NOT_APPLICABLE": "nem alkalmazandó",
+      "NOT_REQUESTED": "nem kérték"
+    },
+    "channels": {
+      "SMS": "SMS",
+      "EMAIL": "E-mail",
+      "PHONE": "Telefon",
+      "WHATSAPP": "WhatsApp"
+    }
+  },
+  "privacy": {
+    "title": "Adatvédelmi kérelmek",
+    "empty": "Ehhez a kapcsolathoz nincs adatvédelmi kérelem.",
+    "due": "Határidő: {date}",
+    "types": {
+      "DELETE": "Törlés",
+      "EXPORT": "Adatexport",
+      "RECTIFY": "Helyesbítés",
+      "RESTRICT": "Korlátozás"
+    },
+    "status": {
+      "RECEIVED": "Beérkezett",
+      "VERIFYING": "Ellenőrzés alatt",
+      "IN_PROGRESS": "Folyamatban",
+      "ON_LEGAL_HOLD": "Jogi visszatartás alatt",
+      "COMPLETED": "Teljesítve",
+      "REJECTED": "Elutasítva"
+    }
+  }
+}

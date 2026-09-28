@@ -1,0 +1,24 @@
+* text=auto eol=lf
+
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.docx binary
+*.woff binary
+*.woff2 binary
+*.zip binary
+*.gz binary
+*.wav binary
+*.mp3 binary
+
+pnpm-lock.yaml linguist-generated=true -diff
+Cargo.lock linguist-generated=true -diff
+uv.lock linguist-generated=true -diff
+packages/contracts/generated/** linguist-generated=true

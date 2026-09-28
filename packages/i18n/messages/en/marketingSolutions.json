@@ -1,0 +1,724 @@
+{
+  "common": {
+    "breadcrumb": "Breadcrumb",
+    "cta": "Start with Velyric",
+    "other": "Other industries",
+    "answerHeading": "The short answer",
+    "factsHeading": "What it does on a call",
+    "workflowHeading": "How a call runs",
+    "limitsHeading": "What it does not do",
+    "faqHeading": "Frequently asked questions",
+    "relatedHeading": "Keep reading"
+  },
+  "restaurant": {
+    "meta": {
+      "title": "AI phone answering for restaurants",
+      "description": "An AI voice agent that answers your restaurant line 24/7 in Hungarian, German and English, takes table bookings against your real calendar and answers menu questions from your own documents."
+    },
+    "answer": {
+      "question": "Can an AI answer a restaurant's phone and take bookings?",
+      "body": "Yes, for the calls that repeat. Velyric answers on your own number around the clock, states that it is an AI assistant, and handles the three things a restaurant line is mostly made of: a table booking, a question whose answer is already written down, and a cancellation. Availability is checked in the Google Calendar or Microsoft 365 calendar you connect before any time is offered, the booking is read back for confirmation, and it is written with database constraints and idempotency keys so two callers cannot take the same slot. Menu, allergen, opening hours and parking questions are answered from your own uploaded documents and your crawled website. Anything else — a large-group negotiation, a complaint, a supplier — goes to a person the moment the caller asks."
+    },
+    "facts": {
+      "f1": {
+        "term": "Books against",
+        "value": "Google Calendar or Microsoft 365, checked live before a time is offered"
+      },
+      "f2": {
+        "term": "Answers from",
+        "value": "Your menu, price list and FAQ documents, plus your crawled website"
+      },
+      "f3": {
+        "term": "Busy evenings",
+        "value": "Concurrency is a plan limit of 2, 10 or 50 calls at once"
+      }
+    },
+    "workflow": {
+      "heading": "How a restaurant call runs",
+      "body": "The same path every time, with the caller able to interrupt, change their mind or switch language at any point.",
+      "steps": {
+        "s1": {
+          "title": "Answer and understand",
+          "body": "The agent picks up immediately, discloses that it is an AI assistant, and listens to the caller's own words in Hungarian, German or English. There is no menu to press through."
+        },
+        "s2": {
+          "title": "Answer or check the calendar",
+          "body": "A question about the menu, allergens, opening hours or parking is answered from your own indexed documents. A booking request triggers a live availability check, and only free times are offered."
+        },
+        "s3": {
+          "title": "Confirm before writing",
+          "body": "The agent repeats the date, time and party size back and asks the caller to confirm. Only then is the booking written, and a confirmation e-mail goes out if the caller gave an address."
+        }
+      }
+    },
+    "limits": {
+      "heading": "What it does not do",
+      "body": "Stated plainly, because these are the things people assume and then discover on the first busy Friday.",
+      "items": {
+        "l1": "There is no table map and no waitlist feature. A booking is a calendar entry with a time and a party size, not a seating plan, and when every concurrency slot is busy the overflow policy you configure applies: a short queue, an overflow number, a callback or voicemail.",
+        "l2": "There is no connector for a point-of-sale or a restaurant booking platform. If you run one, it has to be reached as a custom API tool against your own HTTPS endpoint.",
+        "l3": "The agent will not improvise a dish, a price or an allergen answer. If your menu is not uploaded or crawlable, it asks a clarifying question or hands the call to a person rather than guessing."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "What happens when several people call at once on a Friday evening?",
+        "answer": "Each call runs in its own isolated session, and how many run at the same moment is a plan limit: 2 on Start, 10 on Business, 50 on Pro. Above your limit the behaviour is the policy you choose — a short queue, an overflow number, a callback or voicemail — and a concurrency boost is available as a paid add-on."
+      },
+      "q2": {
+        "question": "Can it answer allergen questions safely?",
+        "answer": "It answers from your own uploaded menu and documents, filtered to your tenant, and it does not answer when nothing supports an answer. That makes it accurate to what you wrote, which is exactly why an allergen question is only as good as the document behind it. For anything the menu does not state, the agent asks a clarifying question or transfers to a person."
+      },
+      "q3": {
+        "question": "Does it work for German and English speaking guests?",
+        "answer": "Yes. One number handles Hungarian, German and English, and the language can change in the middle of a call. The caller's country code is only an initial hint; an explicit request or the language actually spoken overrides it."
+      },
+      "q4": {
+        "question": "Can a guest cancel or move a booking by phone?",
+        "answer": "Yes. The agent can find an existing booking and cancel it, and a change is handled as a cancellation plus a new booking against live availability. Every write is confirmed out loud with the caller before it happens."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Phone appointment booking",
+        "description": "How a call becomes a confirmed slot in your real calendar, without double bookings."
+      },
+      "r2": {
+        "label": "AI receptionist vs. voicemail",
+        "description": "What a caller can finish during the call, and when a mailbox is still enough."
+      }
+    }
+  },
+  "dental-clinic": {
+    "meta": {
+      "title": "AI phone answering for dental and medical practices",
+      "description": "An AI voice agent that answers your practice line 24/7, books check-ups against your real calendar, answers preparation and price questions from your documents, and transfers urgent calls to staff."
+    },
+    "answer": {
+      "question": "Can an AI receptionist handle a dental practice's calls?",
+      "body": "For the routine part of them, yes. Velyric answers on your practice number around the clock in Hungarian, German and English, books and reschedules appointments against the Google Calendar or Microsoft 365 calendar you connect, and answers the questions a receptionist repeats all day: opening hours, what to bring, how long a treatment takes, what it costs, where to park. It states at the start that it is an AI assistant. What it deliberately does not do is clinical: it gives no advice, makes no assessment, and transfers pain, emergency and anything sensitive to your team immediately, because a caller's phone number is a convenience identifier and not authentication."
+    },
+    "facts": {
+      "f1": {
+        "term": "Books against",
+        "value": "Google Calendar or Microsoft 365, with treatment length from your own service list"
+      },
+      "f2": {
+        "term": "Answers from",
+        "value": "Your uploaded preparation notes, price list and FAQ, filtered to your tenant"
+      },
+      "f3": {
+        "term": "Urgent calls",
+        "value": "Immediate transfer on request or on the configured keypad code"
+      }
+    },
+    "workflow": {
+      "heading": "How a practice call runs",
+      "body": "Built so that the boring calls finish and the ones that need a person reach one quickly.",
+      "steps": {
+        "s1": {
+          "title": "Answer and triage",
+          "body": "The agent picks up, discloses that it is an AI assistant, and listens. A request for a person, or the configured keypad code, transfers the call there and then without the agent needing to understand anything else."
+        },
+        "s2": {
+          "title": "Book or answer",
+          "body": "For an appointment it checks real availability for the right treatment length and offers only free times. For a question it answers from your own documents, and asks a clarifying question when nothing supports an answer."
+        },
+        "s3": {
+          "title": "Confirm and record",
+          "body": "The booking is read back and confirmed before it is written, protected by database constraints and idempotency keys. The call appears in your dashboard with a transcript and summary where you enable them."
+        }
+      }
+    },
+    "limits": {
+      "heading": "What it does not do",
+      "body": "A practice line carries obligations that a general-purpose agent has no business taking on.",
+      "items": {
+        "l1": "It gives no clinical advice, no triage judgement and no assessment of symptoms. Velyric is not a medical device and makes no diagnostic claim. Pain and emergency calls are a transfer, by design.",
+        "l2": "It does not verify who is calling. The phone number is used to find a record, not to trust one, so anything touching patient data requires step-up verification or a person. Raw call audio is not stored by default and recording is a paid add-on.",
+        "l3": "There is no connector for a practice management system. Reaching one means building a custom API tool against your own HTTPS endpoint, with JSON Schema input and output and a confirmation policy."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "What happens if a patient calls in pain at night?",
+        "answer": "Asking for a person transfers the call immediately, and so does the configured keypad code. Outside business hours the behaviour you configured applies instead: taking a message, recording a callback request, or transferring to an on-call number. That choice is yours to make deliberately rather than leave at a default."
+      },
+      "q2": {
+        "question": "Is patient data safe on these calls?",
+        "answer": "Every retrieval is filtered to your own tenant and caller memory is never shared between tenants. Raw call audio has a retention of zero days and is not stored unless you buy the recording add-on; transcripts are kept 90 days by default and can be configured down to one. Velyric acts as processor under a published Article 28 data processing agreement, with processing in an EU cloud region."
+      },
+      "q3": {
+        "question": "Can it book the right length for different treatments?",
+        "answer": "Yes, where your services are defined with their durations. The agent lists services, checks availability for the matching length and offers only slots that actually fit. What it cannot do is decide clinically which treatment a caller needs."
+      },
+      "q4": {
+        "question": "Will patients know they are not talking to a person?",
+        "answer": "Yes. The agent states at the start of the call that the caller is speaking with an AI assistant. It is a product default rather than a setting, and it lines up with the EU AI Act Article 50 transparency duty that applies from 2 August 2026."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Call transfer to your team",
+        "description": "Every trigger that hands a call to a person, and what happens after hours."
+      },
+      "r2": {
+        "label": "Security and privacy",
+        "description": "Retention defaults, tenant isolation and how call data is actually handled."
+      }
+    }
+  },
+  "auto-service": {
+    "meta": {
+      "title": "AI phone answering for auto service workshops",
+      "description": "An AI voice agent that books services and inspections against your real calendar, captures vehicle details before the car arrives, and transfers quotes and diagnosis questions to your service advisors."
+    },
+    "answer": {
+      "question": "Can an AI voice agent book workshop appointments?",
+      "body": "Yes, and the useful part is what it collects on the way. Velyric answers your workshop line around the clock, books services and inspections against the Google Calendar or Microsoft 365 calendar you connect, and gathers the make, model and reported symptom while the caller is still on the phone, so the job is not a mystery when the car arrives. Opening hours, service durations and what to bring are answered from your own documents. What it will not do is quote a repair or guess at a diagnosis: those go to a service advisor, with the details already captured."
+    },
+    "facts": {
+      "f1": {
+        "term": "Books against",
+        "value": "Google Calendar or Microsoft 365, matched to the service length you define"
+      },
+      "f2": {
+        "term": "Captures",
+        "value": "Vehicle details and the reported issue, in the caller's own words"
+      },
+      "f3": {
+        "term": "Hands over",
+        "value": "Quotes and diagnosis questions, by SIP referral to your number"
+      }
+    },
+    "workflow": {
+      "heading": "How a workshop call runs",
+      "body": "The goal is a booked slot with enough information attached that nobody has to call back for it.",
+      "steps": {
+        "s1": {
+          "title": "Understand the job",
+          "body": "The caller describes the problem in their own words. The agent works from that sentence rather than from a menu, and asks for the make, model and symptom it still needs."
+        },
+        "s2": {
+          "title": "Find a real slot",
+          "body": "Availability is checked live for the service length you defined, so an inspection and a longer repair do not get offered the same window. Only free times are offered."
+        },
+        "s3": {
+          "title": "Confirm, or hand over",
+          "body": "The booking is read back and confirmed before it is written. Anything about price, diagnosis or a decision about the work is transferred to an advisor instead, immediately on request."
+        }
+      }
+    },
+    "limits": {
+      "heading": "What it does not do",
+      "body": "Worth being explicit about, because a workshop line gets a lot of questions that need a person looking at a car.",
+      "items": {
+        "l1": "It does not diagnose, estimate or quote. The agent answers from what you have written down, so a price it has not been given is a transfer rather than a number.",
+        "l2": "There is no connector for a dealer management system or a parts catalogue. Stock and job-card lookups need a custom API tool against your own HTTPS endpoint, with per-tool timeouts, retries and an idempotency key.",
+        "l3": "It answers inbound calls only, on your own number. Calling customers back when a car is ready is not something Velyric does."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Can it tell a customer what a repair will cost?",
+        "answer": "Only if the price is in your own uploaded documents, and only as the figure you published. For anything that depends on inspecting the car, the agent transfers to a service advisor rather than estimating. It is built not to produce a number that has no source behind it."
+      },
+      "q2": {
+        "question": "Can it look up whether a part is in stock?",
+        "answer": "Only through a custom API tool you define against your own HTTPS endpoint. Velyric has no built-in parts or inventory integration, and the built-in action catalogue covers services, availability and bookings, not stock."
+      },
+      "q3": {
+        "question": "What details does it collect before the appointment?",
+        "answer": "Whatever you configure it to ask for, typically the make, model and the reported issue, alongside the caller's own description of the symptom. The transcript and summary of the call are available in your dashboard where you enable them."
+      },
+      "q4": {
+        "question": "Does it work outside opening hours?",
+        "answer": "It answers 24/7, and outside business hours the behaviour you configured applies: taking a message, recording a callback request, or transferring to an on-call number. Bookings made at night are written against the same live calendar."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Integrations",
+        "description": "Calendars, custom API tools and webhooks, and what each one can actually reach."
+      },
+      "r2": {
+        "label": "AI receptionist vs. call center",
+        "description": "Availability, escalation and cost structure compared with an outsourced service."
+      }
+    }
+  },
+  "car-detailing": {
+    "meta": {
+      "title": "AI phone answering for car detailing studios",
+      "description": "An AI voice agent that explains your detailing packages from your own price list, books the right slot length against your real calendar and sends a confirmation e-mail, while your team stays on the cars."
+    },
+    "answer": {
+      "question": "Can an AI agent explain detailing packages and book them?",
+      "body": "Yes, because both halves are already written down. Velyric answers your line around the clock, describes your packages, what each includes and how long it takes from your own uploaded price list, then books the matching slot length against the Google Calendar or Microsoft 365 calendar you connect. The booking is read back and confirmed out loud before anything is written, and a confirmation e-mail goes to the caller when they give an address. The work that needs your eyes on the paint — a condition assessment, a correction quote — is a transfer, not a guess."
+    },
+    "facts": {
+      "f1": {
+        "term": "Explains",
+        "value": "Packages, inclusions and durations from your own price list"
+      },
+      "f2": {
+        "term": "Books against",
+        "value": "Google Calendar or Microsoft 365, with the slot length each package needs"
+      },
+      "f3": {
+        "term": "Confirms by",
+        "value": "E-mail, when the caller provides an address. There is no SMS channel."
+      }
+    },
+    "workflow": {
+      "heading": "How a detailing call runs",
+      "body": "Most of these calls are the same two questions followed by a booking, which is exactly the shape an agent handles well.",
+      "steps": {
+        "s1": {
+          "title": "Explain the options",
+          "body": "The caller asks what a package includes or what the difference is. The agent answers from your own documents, with the durations you published, and does not invent a service you do not offer."
+        },
+        "s2": {
+          "title": "Book the right length",
+          "body": "A one-hour wash and a full-day correction are different slot lengths. Availability is checked live for the package chosen, so only times that genuinely fit are offered."
+        },
+        "s3": {
+          "title": "Confirm and send",
+          "body": "The agent repeats the package, date and time and asks the caller to confirm. The booking is written with constraints and idempotency keys, and a confirmation e-mail follows if an address was given."
+        }
+      }
+    },
+    "limits": {
+      "heading": "What it does not do",
+      "body": "The honest edges of putting a voice agent on a studio line.",
+      "items": {
+        "l1": "It cannot assess a car. Paint condition, swirl depth and whether a correction is worth it are things somebody has to look at, so those calls become a transfer with the caller's description already gathered.",
+        "l2": "E-mail is the only notification channel that sends. There is no SMS, no in-app and no chat notification, so a reminder the day before is not something Velyric sends on its own.",
+        "l3": "It takes no payment and holds no deposit. There is no payment step on a call, and anything commercial beyond the published price list belongs with a person."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Can it upsell an add-on during the call?",
+        "answer": "It can describe the add-ons that exist in your own price list and book the longer slot if the caller wants one. What it will not do is invent a package, discount one, or push something you have not published, because prices and services come from your documents rather than from the model."
+      },
+      "q2": {
+        "question": "Does the customer get a reminder before the appointment?",
+        "answer": "A confirmation e-mail is sent when the caller provides an address. Scheduled reminders are not a Velyric feature and SMS is not available at all, so a reminder flow has to live in your own systems, which can be driven from the booking webhook events."
+      },
+      "q3": {
+        "question": "Can it quote a paint correction over the phone?",
+        "answer": "No. It states the prices you published for the packages you defined, and anything that depends on the condition of the car is transferred to you. The agent does not produce a figure that has no source behind it."
+      },
+      "q4": {
+        "question": "What happens if two people book the same slot?",
+        "answer": "They cannot. The write is protected by database constraints, transactions and idempotency keys, so if two calls race for the same time, the losing one is told and offered the next real alternative rather than being quietly double-booked."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Phone appointment booking",
+        "description": "Live availability, the confirmation step and how double bookings are prevented."
+      },
+      "r2": {
+        "label": "Integrations",
+        "description": "Calendars, e-mail notifications, webhooks and custom API tools."
+      }
+    }
+  },
+  "salon": {
+    "meta": {
+      "title": "AI phone answering for hair and beauty salons",
+      "description": "An AI voice agent that answers your salon line while every chair is busy, books the right stylist and service length against your real calendar, and handles cancellations and price questions."
+    },
+    "answer": {
+      "question": "Can an AI receptionist run a salon's phone?",
+      "body": "For the calls that keep interrupting a treatment, yes. Velyric answers your number around the clock in Hungarian, German and English, books services against the Google Calendar or Microsoft 365 calendar you connect, finds and cancels existing bookings, and answers price and duration questions from your own service list. That covers most of what rings while your hands are busy. Consultations, complaints and anything needing judgement go to a person the moment the caller asks, or on the keypad code you configure."
+    },
+    "facts": {
+      "f1": {
+        "term": "Books against",
+        "value": "Google Calendar or Microsoft 365, for the service length you define"
+      },
+      "f2": {
+        "term": "Also handles",
+        "value": "Finding and cancelling an existing booking on the call"
+      },
+      "f3": {
+        "term": "Answers from",
+        "value": "Your own service list and FAQ, never an invented price"
+      }
+    },
+    "workflow": {
+      "heading": "How a salon call runs",
+      "body": "Designed around the fact that nobody is free to pick up between 10 and 6.",
+      "steps": {
+        "s1": {
+          "title": "Pick up while you work",
+          "body": "The agent answers immediately, discloses that it is an AI assistant and listens. The caller never hears a ringing phone that nobody reaches."
+        },
+        "s2": {
+          "title": "Book, move or cancel",
+          "body": "A new booking is checked against live availability for the right service length. An existing one can be found and cancelled, and a change is handled as a cancellation plus a new booking."
+        },
+        "s3": {
+          "title": "Confirm out loud",
+          "body": "The service, date and time are repeated back and confirmed before anything is written. A confirmation e-mail follows if the caller gave an address."
+        }
+      }
+    },
+    "limits": {
+      "heading": "What it does not do",
+      "body": "The parts that need setting up deliberately, or that simply are not there.",
+      "items": {
+        "l1": "Booking a specific stylist works only if each one is modelled with their own calendar and services. Velyric books against the calendars you connect; it has no concept of a staff roster on its own.",
+        "l2": "There is no connector for a salon booking platform. If you already run one, it has to be reached as a custom API tool against your own HTTPS endpoint rather than through a ready-made integration.",
+        "l3": "It cannot judge what a caller needs. A colour consultation, a correction after a bad result, or a complaint is a conversation for a person, and the agent transfers instead of advising."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Can a caller ask for a specific stylist?",
+        "answer": "Yes, if that stylist has their own connected calendar and their own services defined. The agent checks availability against the calendar it was given, so how well this works is a question of how you set the calendars up rather than of what the agent can say."
+      },
+      "q2": {
+        "question": "Can it cancel a booking without me confirming afterwards?",
+        "answer": "Yes. It can find an existing booking and cancel it, confirming with the caller before the change is written. Every write is preceded by the agent summarising what it is about to do and asking the caller to agree."
+      },
+      "q3": {
+        "question": "What does it say about prices?",
+        "answer": "Exactly what is in your own uploaded service list, and nothing else. If a price is not in your documents, the agent asks a clarifying question or transfers to a person rather than estimating one."
+      },
+      "q4": {
+        "question": "Does it handle calls in German or English?",
+        "answer": "Yes, on the same number. Hungarian, German and English are supported and the language can switch mid-call, so a walk-in tourist and a regular client reach the same line without anything being configured per caller."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Phone appointment booking",
+        "description": "How live availability, confirmation and cancellation work on a call."
+      },
+      "r2": {
+        "label": "Multilingual calls on one number",
+        "description": "How Hungarian, German and English are detected, chosen and switched mid-call."
+      }
+    }
+  },
+  "hotel": {
+    "meta": {
+      "title": "AI phone answering for hotels and guest houses",
+      "description": "An AI voice agent that answers guest questions in Hungarian, German and English around the clock, takes messages and callback requests at night, and transfers reservations and complaints to your front desk."
+    },
+    "answer": {
+      "question": "Can an AI agent answer a hotel's phone at night?",
+      "body": "Yes, and that is the shift where it earns its place. Velyric answers on your own number 24/7 and replies to guest questions in Hungarian, German and English from your own documents: check-in and check-out times, parking, breakfast, whether the pool is open, how to reach you. It states that it is an AI assistant at the start of the call. At night it does whatever you configured — takes a message, records a callback request, or rings an on-call number — and it transfers reservations, complaints and anything commercial to the front desk rather than handling them itself."
+    },
+    "facts": {
+      "f1": {
+        "term": "Languages",
+        "value": "Hungarian, German and English on one number, switchable mid-call"
+      },
+      "f2": {
+        "term": "Answers from",
+        "value": "Your own house rules, amenity list and FAQ documents"
+      },
+      "f3": {
+        "term": "At night",
+        "value": "Message taking, a callback request, or a transfer to an on-call number"
+      }
+    },
+    "workflow": {
+      "heading": "How a guest call runs",
+      "body": "A guest with a simple question gets an answer; everything else reaches a person with the question already stated.",
+      "steps": {
+        "s1": {
+          "title": "Answer in the guest's language",
+          "body": "The country code gives an initial hint, then the language actually spoken takes over. A guest can switch language mid-sentence without restarting the conversation."
+        },
+        "s2": {
+          "title": "Answer from your own material",
+          "body": "Amenities, times, directions and house rules come from your uploaded documents and your crawled website. Where nothing supports an answer, the agent asks a clarifying question or hands over."
+        },
+        "s3": {
+          "title": "Capture or transfer",
+          "body": "Reservations, changes and complaints go to the front desk during the day. At night the configured fallback applies, and what reaches you is a transcript and summary rather than an audio file."
+        }
+      }
+    },
+    "limits": {
+      "heading": "What it does not do",
+      "body": "A hotel line touches systems Velyric does not connect to, and it is better to know that up front.",
+      "items": {
+        "l1": "There is no connector for a property management system or a booking engine. Room inventory, rates and reservations live in systems Velyric can only reach through a custom API tool you build against your own HTTPS endpoint.",
+        "l2": "It takes no payment, holds no card and confirms no rate. Anything commercial is a transfer to the front desk, and the agent does not quote a price that is not in your own documents.",
+        "l3": "Calls are capped at 30 minutes and concurrency is a plan limit, so a coach party arriving at once is handled by the overflow policy you configure rather than by unlimited parallel lines."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Can it take a room reservation?",
+        "answer": "Not against a property management system, because Velyric has no PMS or booking-engine connector. It can book against a connected Google Calendar or Microsoft 365 calendar, and it can capture a reservation request and transfer or leave it for the front desk. Reaching your PMS means building a custom API tool."
+      },
+      "q2": {
+        "question": "What happens to calls in the middle of the night?",
+        "answer": "They are answered. Questions your documents cover are answered outright; everything else follows the out-of-hours behaviour you configured, which is message taking, a callback request or a transfer to an on-call number. You get a transcript and a summary rather than a voicemail file."
+      },
+      "q3": {
+        "question": "How many languages can guests use?",
+        "answer": "Three: Hungarian, German and English, on the same number, with the language able to change mid-call. An explicit request or the language actually detected overrides the country-code hint."
+      },
+      "q4": {
+        "question": "Can guests always reach a human?",
+        "answer": "Yes. Asking for a person transfers the call immediately, and so does the keypad code you configure. During the day that is your front desk; at night it is whatever out-of-hours path you set, including an on-call number."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Multilingual calls on one number",
+        "description": "How the language is detected, chosen and switched in the middle of a call."
+      },
+      "r2": {
+        "label": "AI receptionist vs. voicemail",
+        "description": "What reaches you after the call, and when a mailbox is still the right answer."
+      }
+    }
+  },
+  "real-estate": {
+    "meta": {
+      "title": "AI phone answering for estate agencies",
+      "description": "An AI voice agent that answers listing questions from your own documents, captures budget and timing from every caller, and books viewings in your agents' real calendars."
+    },
+    "answer": {
+      "question": "Can an AI voice agent qualify property leads?",
+      "body": "It can gather what qualification needs and book the viewing, which is the part that gets lost when nobody picks up. Velyric answers on your own number around the clock, answers questions about a listing from your own uploaded property documents, captures budget, timing and preferences in the caller's own words, and books viewings against the Google Calendar or Microsoft 365 calendar of the agent you connect. Every call arrives in your dashboard with a transcript and summary where you enable them. The judgement about whether a lead is worth pursuing stays with your agents."
+    },
+    "facts": {
+      "f1": {
+        "term": "Captures",
+        "value": "Budget, timing and preferences, as the caller stated them"
+      },
+      "f2": {
+        "term": "Books viewings in",
+        "value": "The connected Google Calendar or Microsoft 365 calendar"
+      },
+      "f3": {
+        "term": "Answers from",
+        "value": "Your own listing documents and crawled website pages"
+      }
+    },
+    "workflow": {
+      "heading": "How a property call runs",
+      "body": "A caller who saw an advertisement at 21:00 gets an answer at 21:00, and a viewing in the diary.",
+      "steps": {
+        "s1": {
+          "title": "Answer the listing question",
+          "body": "Size, layout, floor, heating, what is included — whatever is in your own uploaded documents is answered directly. What is not in them is a clarifying question or a handover, never an invented detail."
+        },
+        "s2": {
+          "title": "Capture the qualification",
+          "body": "Budget, timing, whether they are selling first, what area they want. The agent asks for what you configured and records the caller's own words rather than a score it made up."
+        },
+        "s3": {
+          "title": "Book the viewing",
+          "body": "Availability is checked live in the connected agent calendar and only free times are offered. The appointment is read back and confirmed before it is written."
+        }
+      }
+    },
+    "limits": {
+      "heading": "What it does not do",
+      "body": "Estate agency work runs on a CRM, and that is the part Velyric does not connect to out of the box.",
+      "items": {
+        "l1": "There is no CRM connector. Pushing a qualified lead into your own system means a custom API tool against your HTTPS endpoint, or one of the outbound webhook events, of which up to ten endpoints can receive 17 types signed with HMAC-SHA256.",
+        "l2": "It does not score, rank or decide. What you get is what the caller said, captured accurately, plus a transcript and summary. Judging the lead is your agents' work.",
+        "l3": "It answers inbound calls only. Calling a list of prospects back is not something Velyric does, and the phone number of a caller is a convenience identifier rather than proof of who they are."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Can it answer questions about a specific property?",
+        "answer": "Yes, where the property is in your uploaded documents or on your crawled website. Retrieval is filtered to your own tenant, and where nothing supports an answer the agent asks a clarifying question or transfers rather than inventing a detail about a home."
+      },
+      "q2": {
+        "question": "Can it put a lead into our CRM?",
+        "answer": "Not through a ready-made integration, because there is no CRM connector. You can reach your CRM through a custom API tool you define against your own HTTPS endpoint, or subscribe an endpoint to the outbound webhook events and write the lead yourself."
+      },
+      "q3": {
+        "question": "Can it book a viewing in a specific agent's diary?",
+        "answer": "Yes, against the Google Calendar or Microsoft 365 calendar you connect for that agent. Availability is checked live before any time is offered, and the appointment is confirmed with the caller before it is written."
+      },
+      "q4": {
+        "question": "What do we get after the call?",
+        "answer": "The call appears in your dashboard with the captured details, plus a transcript and summary where you enable them. Raw audio is not stored by default; recording is a paid add-on and transcripts are kept 90 days by default."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Integrations",
+        "description": "Calendars, custom API tools and the 17 webhook events you can subscribe to."
+      },
+      "r2": {
+        "label": "Phone appointment booking",
+        "description": "Live availability, confirmation and protection against double bookings."
+      }
+    }
+  },
+  "webshop": {
+    "meta": {
+      "title": "AI phone answering for online shops",
+      "description": "An AI voice agent that answers order and delivery questions through a custom API tool against your own systems, explains your returns policy from your documents, and escalates disputes with a summary."
+    },
+    "answer": {
+      "question": "Can an AI agent answer order status calls?",
+      "body": "Yes, once you have connected your own order system. Velyric has no e-commerce platform connector; what it has is custom API tools, which let the agent call your own HTTPS endpoint with a JSON Schema input and output, a per-tool timeout, a retry and an idempotency key. With that in place the agent can look up an order and tell the caller where it is. Returns, shipping and policy questions are answered from your own uploaded documents without any integration at all. Disputes and anything commercial are transferred to your support team with the caller's intent already gathered."
+    },
+    "facts": {
+      "f1": {
+        "term": "Order lookups via",
+        "value": "A custom API tool against your own HTTPS endpoint"
+      },
+      "f2": {
+        "term": "Policy answers from",
+        "value": "Your uploaded returns, shipping and warranty documents"
+      },
+      "f3": {
+        "term": "Escalation",
+        "value": "Immediate transfer on request, with transcripts where enabled"
+      }
+    },
+    "workflow": {
+      "heading": "How a support call runs",
+      "body": "Two different paths, and the difference is whether an answer needs your live data.",
+      "steps": {
+        "s1": {
+          "title": "Separate policy from data",
+          "body": "A returns-window question is answered from your documents immediately. An order-status question needs your system, so the agent calls the custom API tool you defined."
+        },
+        "s2": {
+          "title": "Look it up safely",
+          "body": "The tool call is validated against your JSON Schema, bounded by a timeout, retried once on failure, and given an idempotency key. A phone number identifies a caller for convenience, not authentication, so anything sensitive needs step-up verification or a person."
+        },
+        "s3": {
+          "title": "Finish or escalate",
+          "body": "Simple cases end on the call. A dispute, a refund decision or anything the tool could not answer is transferred to your support team, with the call's transcript and summary available where you enable them."
+        }
+      }
+    },
+    "limits": {
+      "heading": "What it does not do",
+      "body": "The integration reality, stated before you plan around something that is not there.",
+      "items": {
+        "l1": "There is no ready-made connector for any e-commerce platform or marketplace. Every order lookup goes through a custom API tool you build and host yourself.",
+        "l2": "It cannot authenticate a caller. A phone number is a convenience identifier, so reading out anything sensitive about an order requires step-up verification or a transfer to a person.",
+        "l3": "It takes no payment, issues no refund and makes no goodwill decision. Those are transfers, because tool permissions live in code and the agent will not improvise one."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Do you integrate with our shop platform?",
+        "answer": "Not through a named connector. Velyric connects to your own HTTPS endpoints as custom API tools, supporting GET, POST, PUT, PATCH and DELETE with templated paths, JSON Schema input and output validation, and authentication by bearer token or an HMAC-SHA256 signature over the timestamp and body."
+      },
+      "q2": {
+        "question": "Is it safe to read out order details over the phone?",
+        "answer": "That is your policy decision, and the platform is built to make the cautious version easy. The caller's number is treated as a convenience identifier rather than authentication, sensitive requests are routed to a human by design, and you decide in the tool's confirmation policy what may be said without a person present."
+      },
+      "q3": {
+        "question": "What happens if our API is slow or down?",
+        "answer": "Each tool has its own timeout. A timeout or a 5xx is retried once, and if it still fails the call is transferred to a person or falls back to your configured out-of-hours behaviour. The agent does not invent a delivery date to fill the gap."
+      },
+      "q4": {
+        "question": "Can it push events into our systems?",
+        "answer": "Yes, through outbound webhooks. Up to ten endpoints per workspace can receive 17 event types, including call.started, call.ended, booking.created, booking.changed and booking.canceled, each signed with HMAC-SHA256 and retried over eight attempts with backoff."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Custom API tools",
+        "description": "Schemas, authentication, timeouts, retries and confirmation policies."
+      },
+      "r2": {
+        "label": "Webhooks",
+        "description": "The 17 event types, HMAC signing and the retry schedule."
+      }
+    }
+  },
+  "b2b-support": {
+    "meta": {
+      "title": "AI phone answering for B2B support desks",
+      "description": "An AI voice agent that recognises returning callers, answers product questions from your manuals and technical documents, and creates tickets through your own API before handing over to an engineer."
+    },
+    "answer": {
+      "question": "Can an AI agent run first-line B2B support?",
+      "body": "For the repeat questions and the intake, yes. Velyric answers on your own number around the clock, recognises a returning caller from stored caller memory held per tenant, and answers from your own manuals, release notes and technical documents with every retrieval filtered to your tenant. Where you have built a custom API tool, it can create a ticket before the call ends, so the engineer who picks it up starts with the details rather than with a voicemail. Anything that needs engineering judgement is transferred, immediately on request or on the keypad code you configure."
+    },
+    "facts": {
+      "f1": {
+        "term": "Answers from",
+        "value": "Your manuals and technical documents, filtered to your tenant"
+      },
+      "f2": {
+        "term": "Ticket creation via",
+        "value": "A custom API tool against your own HTTPS endpoint"
+      },
+      "f3": {
+        "term": "Caller memory",
+        "value": "Stored per tenant, retained 730 days, never shared across tenants"
+      }
+    },
+    "workflow": {
+      "heading": "How a support call runs",
+      "body": "First line means finishing what is answerable and packaging what is not.",
+      "steps": {
+        "s1": {
+          "title": "Recognise and understand",
+          "body": "A returning caller is matched against stored caller memory for convenience, not as authentication. The agent listens to the problem in the caller's own words rather than routing them through a menu."
+        },
+        "s2": {
+          "title": "Answer from the documentation",
+          "body": "Manuals, release notes and internal FAQ documents are searched with retrieval filtered to your tenant. If nothing supports an answer, the agent asks a clarifying question or hands over instead of guessing."
+        },
+        "s3": {
+          "title": "Create the ticket, then hand over",
+          "body": "Where a custom API tool exists, a ticket is created with the details gathered, under a confirmation policy you set. The call is then transferred, or the ticket is left for the queue with a transcript and summary."
+        }
+      }
+    },
+    "limits": {
+      "heading": "What it does not do",
+      "body": "The boundary between first line and engineering, made explicit.",
+      "items": {
+        "l1": "There is no connector for a ticketing or service-desk product. Creating a ticket means building a custom API tool against your own HTTPS endpoint, with JSON Schema validation and an idempotency key.",
+        "l2": "It does not troubleshoot beyond your documentation. The agent answers from indexed sources, so a problem your documents do not cover is a handover rather than an experiment on a live system.",
+        "l3": "It does not authenticate the caller or their entitlement. The phone number identifies a record for convenience; contract, licence or access decisions need step-up verification or a person."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "How does it recognise a returning caller?",
+        "answer": "Through caller memory stored per tenant, retained 730 days by default and never shared across tenants. It is used to find a record and personalise the conversation, not to authenticate: a phone number is a convenience identifier, and anything sensitive requires step-up verification or a person."
+      },
+      "q2": {
+        "question": "Can it create a ticket in our service desk?",
+        "answer": "Through a custom API tool you define against your own HTTPS endpoint, yes. There is no built-in connector for any ticketing product. The tool call is validated against your JSON Schema, bounded by a timeout, retried once and given an idempotency key so a retry cannot create a duplicate."
+      },
+      "q3": {
+        "question": "What stops it from answering a technical question wrongly?",
+        "answer": "Retrieval is filtered to your own tenant and the policy for the empty case is explicit: with no supporting source, the agent asks a clarifying question or hands the call to a person. Documents are also treated as untrusted input, so an instruction hidden inside an uploaded file cannot change what the agent is allowed to do."
+      },
+      "q4": {
+        "question": "Can we test changes before customers hear them?",
+        "answer": "Yes. Agent versions are published and can be rolled back, and a simulation surface runs test calls and regression suites before a version goes live. Updating a document atomically replaces its old chunks in the active index, so the agent never answers from a mix of old and new."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Custom API tools",
+        "description": "How the agent reaches your own systems, and what bounds each call."
+      },
+      "r2": {
+        "label": "Security and privacy",
+        "description": "Tenant isolation, retention defaults and untrusted-input handling."
+      }
+    }
+  }
+}

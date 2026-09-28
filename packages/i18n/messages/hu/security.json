@@ -1,0 +1,376 @@
+{
+  "title": "Biztonság",
+  "description": "Csapattagok hozzáférése, szerepkörök, API-kulcsok és a manipulációbiztos auditnapló.",
+  "tabs": {
+    "label": "Biztonsági részek",
+    "members": "Tagok",
+    "roles": "Szerepkörök",
+    "apiKeys": "API-kulcsok",
+    "auditLog": "Auditnapló"
+  },
+  "members": {
+    "invite": "Tag meghívása",
+    "inviteTitle": "Csapattag meghívása",
+    "inviteDescription": "E-mailben kap meghívót, amely 7 nap után lejár.",
+    "invited": "Meghívó elküldve: {email}",
+    "email": "E-mail-cím",
+    "role": "Szerepkör",
+    "roleHints": {
+      "OWNER": "Teljes irányítás, beleértve a számlázást, a tagokat és a munkaterület törlését.",
+      "ADMIN": "Kezeli az ügynököket, integrációkat, beállításokat és a biztonságot, de a tulajdonjogot nem.",
+      "OPERATOR": "Figyeli és irányítja a hívásokat, kapcsolatokat és foglalásokat.",
+      "ANALYST": "Csak olvasási hozzáférés hívásokhoz, elemzésekhez és minőségi riportokhoz.",
+      "DEVELOPER": "Kezeli az integrációkat, egyedi eszközöket, webhookokat és API-kulcsokat.",
+      "BILLING": "Kezeli az előfizetést, a számlákat és a fizetési adatokat.",
+      "VIEWER": "Csak olvasási hozzáférés a vezérlőpulthoz."
+    },
+    "sendInvite": "Meghívó küldése",
+    "locationScope": "Telephely-hozzáférés",
+    "locationScopeHint": "Hagyd üresen, ha minden telephelyhez hozzáférhet.",
+    "changeRole": "Szerepkör módosítása",
+    "changeRoleTitle": "{name} hozzáférésének módosítása",
+    "saveRole": "Hozzáférés mentése",
+    "roleChanged": "Hozzáférés frissítve",
+    "suspend": "Felfüggesztés",
+    "suspended": "Tag felfüggesztve",
+    "reactivate": "Újraaktiválás",
+    "reactivated": "Tag újraaktiválva",
+    "revokeInvite": "Meghívó visszavonása",
+    "revokeInviteTitle": "Visszavonod {name} meghívóját?",
+    "remove": "Eltávolítás",
+    "removeTitle": "Eltávolítod {name} tagot a munkaterületről?",
+    "removeDescription": "A munkamenetei és hozzáférése azonnal megszűnnek. Ez bekerül az auditnaplóba.",
+    "removed": "Tag eltávolítva",
+    "member": "Tag",
+    "status": "Állapot",
+    "joined": "Hozzáadva",
+    "actions": "Műveletek",
+    "you": "Te",
+    "statuses": {
+      "INVITED": "Meghívva",
+      "ACTIVE": "Aktív",
+      "SUSPENDED": "Felfüggesztve",
+      "REMOVED": "Eltávolítva"
+    },
+    "expires": "Lejár: {date}",
+    "allLocations": "Minden telephely"
+  },
+  "apiKeys": {
+    "description": "Az API-kulcsok szerver–szerver kéréseket hitelesítenek. Csak az integrációhoz szükséges jogosultságokat add meg.",
+    "create": "Új API-kulcs",
+    "createTitle": "API-kulcs létrehozása",
+    "createDescription": "A kulcsok nem kezelhetnek tagokat, számlázást, biztonságot vagy más API-kulcsokat.",
+    "secretTitle": "Másold ki az API-kulcsot",
+    "name": "Név",
+    "expiry": "Lejárat",
+    "days": "{days} nap",
+    "scopes": "Jogosultságok",
+    "createKey": "Kulcs létrehozása",
+    "secretWarning": "A kulcsot csak most jelenítjük meg. Tárold el azonnal egy titokkezelőben.",
+    "copySecret": "API-kulcs másolása",
+    "done": "Eltároltam a kulcsot",
+    "revoke": "Visszavonás",
+    "revokeTitle": "Visszavonod: {name}?",
+    "revokeDescription": "Az ezzel a kulccsal küldött kéréseket azonnal elutasítjuk.",
+    "revoked": "API-kulcs visszavonva",
+    "empty": "Még nincs API-kulcs",
+    "prefix": "Kulcselőtag",
+    "status": "Állapot",
+    "lastUsed": "Utoljára használva",
+    "expires": "Lejár",
+    "scopeCount": "{count, plural, one {# jogosultság} other {# jogosultság}}",
+    "statuses": {
+      "ACTIVE": "Aktív",
+      "EXPIRED": "Lejárt",
+      "REVOKED": "Visszavonva"
+    }
+  },
+  "audit": {
+    "filters": "Auditnapló-szűrők",
+    "action": "Művelet",
+    "actor": "Ki végezte",
+    "anyActor": "Bárki",
+    "actorTypes": {
+      "USER": "Csapattag",
+      "API_KEY": "API-kulcs",
+      "SERVICE": "Velyric szolgáltatás",
+      "SUPPORT_STAFF": "Velyric ügyfélszolgálat",
+      "PROVIDER_WEBHOOK": "Szolgáltatói webhook",
+      "SYSTEM": "Rendszer"
+    },
+    "from": "Kezdő dátum",
+    "to": "Záró dátum",
+    "empty": "Nincs a szűrőknek megfelelő auditesemény.",
+    "object": "Érintett elem",
+    "ip": "IP-cím",
+    "userAgent": "Böngésző",
+    "trace": "Nyomkövetési azonosító",
+    "supportGrant": "Ügyfélszolgálati hozzáférés",
+    "metadata": "Részletek",
+    "actions": {
+      "agent": {
+        "created": "Ügynök létrehozva",
+        "updated": "Ügynök módosítva",
+        "web_test_session_started": "Böngészős teszthívás indítva"
+      },
+      "agent_version": {
+        "created": "Új ügynökbeállítás mentve",
+        "published": "Ügynökbeállítás élesítve",
+        "rolled_back": "Visszaállás korábbi ügynökbeállításra"
+      },
+      "api_key": {
+        "created": "API-kulcs létrehozva",
+        "revoked": "API-kulcs visszavonva"
+      },
+      "availability_exception": {
+        "created": "Kivételes nyitvatartás vagy szabadnap felvéve",
+        "deleted": "Kivételes nyitvatartás vagy szabadnap törölve"
+      },
+      "billing_profile": {
+        "created": "Számlázási adatok megadva",
+        "updated": "Számlázási adatok módosítva"
+      },
+      "booking": {
+        "canceled": "Foglalás lemondva"
+      },
+      "call": {
+        "terminate_requested": "Hívás bontása kérve",
+        "transfer_requested": "Hívás átadása kérve"
+      },
+      "checkout": {
+        "started": "Előfizetés vásárlása elindítva"
+      },
+      "contact": {
+        "erasure_requested": "Kontakt adatainak törlése kérve",
+        "exported": "Kontakt adatai exportálva",
+        "identity_added": "Elérhetőség hozzáadva egy kontakthoz",
+        "identity_removed": "Elérhetőség eltávolítva egy kontaktból",
+        "merged": "Kontaktok összevonva",
+        "updated": "Kontakt módosítva"
+      },
+      "custom_tool": {
+        "created": "Egyedi API-eszköz létrehozva",
+        "credential_rotated": "Egyedi API-eszköz kulcsa lecserélve",
+        "disabled": "Egyedi API-eszköz kikapcsolva",
+        "updated": "Egyedi API-eszköz módosítva"
+      },
+      "integration": {
+        "authorization_failed": "Integráció összekötése nem sikerült",
+        "authorization_started": "Integráció összekötése elindítva",
+        "connected": "Integráció összekötve",
+        "disconnected": "Integráció leválasztva"
+      },
+      "integrations": {
+        "smtp": {
+          "disconnect": "E-mail rendszer leválasztva",
+          "test_sent": "Tesztlevél elküldve az e-mail rendszerből",
+          "upsert": "E-mail rendszer beállítva"
+        }
+      },
+      "knowledge_source": {
+        "archived": "Tudásforrás archiválva",
+        "created": "Tudásforrás hozzáadva",
+        "entries_replaced": "Kérdés-válasz párok frissítve",
+        "sync_requested": "Tudásforrás frissítése kérve",
+        "updated": "Tudásforrás módosítva",
+        "upload_requested": "Dokumentum feltöltése elindítva"
+      },
+      "legal_hold": {
+        "created": "Jogi zárolás létrehozva",
+        "released": "Jogi zárolás feloldva"
+      },
+      "location": {
+        "auto_updated_from_source": "Helyszín adatai frissítve a weboldal alapján",
+        "created": "Helyszín létrehozva",
+        "made_primary": "Helyszín elsődlegesre állítva",
+        "updated": "Helyszín módosítva"
+      },
+      "member": {
+        "invitation_accepted": "Meghívó elfogadva",
+        "invited": "Csapattag meghívva",
+        "removed": "Csapattag eltávolítva",
+        "updated": "Csapattag szerepköre módosítva"
+      },
+      "messaging": {
+        "logo_removed": "Levelek logója törölve",
+        "logo_updated": "Levelek logója feltöltve",
+        "settings_updated": "SMS vagy levélmegjelenés beállítása módosítva",
+        "template_reset": "Vendéglevél visszaállítva az alapszövegre",
+        "template_updated": "Vendéglevél szövege módosítva"
+      },
+      "notification_preferences": {
+        "updated": "Értesítési beállítások módosítva"
+      },
+      "outbound_webhook": {
+        "created": "Webhook létrehozva",
+        "deleted": "Webhook törölve",
+        "delivery_retried": "Webhook-kézbesítés újrapróbálva",
+        "secret_rotated": "Webhook aláíró kulcsa lecserélve",
+        "test_sent": "Teszt webhook elküldve",
+        "updated": "Webhook módosítva"
+      },
+      "phone_number": {
+        "agent_bound": "Telefonszám ügynökhöz rendelve",
+        "agent_unbound": "Telefonszám leválasztva az ügynökről",
+        "updated": "Telefonszám módosítva"
+      },
+      "phone_order": {
+        "kyc_submitted": "Telefonszám-igényléshez szükséges adatok beküldve"
+      },
+      "privacy_request": {
+        "completed": "Adatvédelmi kérés lezárva",
+        "created": "Adatvédelmi kérés rögzítve",
+        "erasure_completed": "Adatvédelmi törlés végrehajtva",
+        "rejected": "Adatvédelmi kérés elutasítva",
+        "verified": "Adatvédelmi kérés kérelmezője azonosítva"
+      },
+      "provisioning": {
+        "cancel_requested": "Fiók előkészítésének leállítása kérve",
+        "retry_requested": "Fiók előkészítésének újrapróbálása kérve"
+      },
+      "resource": {
+        "availability_rules_replaced": "Kapacitás (asztal, munkatárs) beosztása módosítva",
+        "created": "Kapacitás (asztal, munkatárs) létrehozva",
+        "updated": "Kapacitás (asztal, munkatárs) módosítva"
+      },
+      "retention_policy": {
+        "reset": "Adatmegőrzési szabály visszaállítva alapértékre",
+        "updated": "Adatmegőrzési szabály módosítva"
+      },
+      "service": {
+        "created": "Szolgáltatás létrehozva",
+        "updated": "Szolgáltatás módosítva"
+      },
+      "simulation_run": {
+        "canceled": "Tesztfuttatás megszakítva",
+        "requested": "Tesztfuttatás elindítva"
+      },
+      "simulation_scenario": {
+        "created": "Tesztforgatókönyv létrehozva",
+        "updated": "Tesztforgatókönyv módosítva"
+      },
+      "simulation_suite": {
+        "created": "Tesztcsomag létrehozva",
+        "updated": "Tesztcsomag módosítva"
+      },
+      "tenant": {
+        "created": "Munkaterület létrehozva",
+        "updated": "Munkaterület adatai módosítva"
+      },
+      "waitlist_entry": {
+        "created": "Vendég felvéve a várólistára",
+        "updated": "Várólista-bejegyzés módosítva"
+      }
+    },
+    "objectTypes": {
+      "agent": "Ügynök",
+      "agent_version": "Ügynökbeállítás",
+      "api_key": "API-kulcs",
+      "availability_exception": "Kivételes nyitvatartás",
+      "billing_profile": "Számlázási adatok",
+      "booking": "Foglalás",
+      "call": "Hívás",
+      "caller_profile": "Kontakt",
+      "checkout_order": "Rendelés",
+      "dsar_request": "Adatvédelmi kérés",
+      "integration": "Integráció",
+      "knowledge_source": "Tudásforrás",
+      "legal_hold": "Jogi zárolás",
+      "location": "Helyszín",
+      "membership": "Csapattag",
+      "outbound_webhook": "Webhook",
+      "phone_number": "Telefonszám",
+      "phone_order": "Telefonszám-igénylés",
+      "provisioning_workflow": "Fiók előkészítése",
+      "resource": "Kapacitás",
+      "retention_policy": "Adatmegőrzési szabály",
+      "service": "Szolgáltatás",
+      "simulation_run": "Tesztfuttatás",
+      "simulation_scenario": "Tesztforgatókönyv",
+      "simulation_suite": "Tesztcsomag",
+      "tenant": "Munkaterület",
+      "tool_definition": "Egyedi API-eszköz",
+      "waitlist_entry": "Várólista-bejegyzés",
+      "webhook_delivery": "Webhook-kézbesítés"
+    },
+    "categories": {
+      "agents": "Ügynök és hívások",
+      "bookings": "Foglalások és helyszínek",
+      "knowledge": "Tudástár",
+      "integrations": "Integrációk",
+      "messaging": "Értesítések és levelek",
+      "team": "Csapat és API-kulcsok",
+      "privacy": "Kontaktok és adatvédelem",
+      "billing": "Előfizetés és telefonszámok",
+      "webhooks": "Webhookok",
+      "simulations": "Tesztelés",
+      "workspace": "Munkaterület"
+    },
+    "category": "Esemény típusa",
+    "anyCategory": "Minden esemény",
+    "objectId": "Elem azonosítója",
+    "technical": "Technikai részletek",
+    "eventCode": "Eseménykód",
+    "unknownPerson": "Ismeretlen csapattag",
+    "automatic": "Velyric (automatikus)"
+  },
+  "roles": {
+    "description": "A szerepkörök rögzített jogosultságcsomagok. Az operátorok és megtekintők ezen felül adott telephelyekre korlátozhatók.",
+    "caption": "Az egyes szerepkörök jogosultságai",
+    "permission": "Jogosultság",
+    "granted": "Engedélyezve",
+    "notGranted": "Nem engedélyezett"
+  },
+  "permissions": {
+    "resources": {
+      "workspace": "Munkaterület",
+      "members": "Tagok",
+      "roles": "Szerepkörök",
+      "locations": "Telephelyek",
+      "agents": "Ügynökök",
+      "agent_versions": "Ügynökverziók",
+      "calls": "Hívások",
+      "contacts": "Kapcsolatok",
+      "knowledge": "Tudásbázis",
+      "bookings": "Foglalások",
+      "waitlist": "Várólista",
+      "integrations": "Integrációk",
+      "custom_tools": "Egyedi eszközök",
+      "webhooks": "Webhookok",
+      "api_keys": "API-kulcsok",
+      "analytics": "Elemzések",
+      "quality": "Minőség",
+      "simulations": "Szimulációk",
+      "phone_numbers": "Telefonszámok",
+      "billing": "Számlázás",
+      "invoices": "Számlák",
+      "provisioning": "Beüzemelés",
+      "settings": "Beállítások",
+      "retention": "Adatmegőrzés",
+      "privacy_requests": "Adatvédelmi kérelmek",
+      "notifications": "Értesítések",
+      "security": "Biztonság",
+      "audit_logs": "Auditnapló",
+      "support_access": "Ügyfélszolgálati hozzáférés"
+    },
+    "actions": {
+      "read": "megtekintés",
+      "update": "szerkesztés",
+      "cancel": "lemondás",
+      "manage": "kezelés",
+      "write": "szerkesztés",
+      "publish": "publikálás",
+      "rollback": "visszaállítás",
+      "read_transcript": "átiratok megtekintése",
+      "read_recording": "felvételek lejátszása",
+      "monitor_live": "élő figyelés",
+      "transfer": "átadás",
+      "terminate": "hívás bontása",
+      "export": "exportálás",
+      "delete": "törlés",
+      "run": "futtatás",
+      "order": "igénylés",
+      "grant": "engedélyezés"
+    }
+  }
+}

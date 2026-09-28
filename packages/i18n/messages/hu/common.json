@@ -1,0 +1,98 @@
+{
+  "brand": {
+    "name": "Velyric",
+    "tagline": "Egy fényesebb holnap. Együtt."
+  },
+  "actions": {
+    "save": "Mentés",
+    "saveChanges": "Módosítások mentése",
+    "cancel": "Mégse",
+    "confirm": "Megerősítés",
+    "delete": "Törlés",
+    "remove": "Eltávolítás",
+    "edit": "Szerkesztés",
+    "create": "Létrehozás",
+    "add": "Hozzáadás",
+    "back": "Vissza",
+    "next": "Tovább",
+    "close": "Bezárás",
+    "retry": "Újrapróbálás",
+    "refresh": "Frissítés",
+    "search": "Keresés",
+    "filter": "Szűrés",
+    "clearFilters": "Szűrők törlése",
+    "viewAll": "Összes megtekintése",
+    "viewDetails": "Részletek",
+    "copy": "Másolás",
+    "copied": "Másolva",
+    "loadMore": "Továbbiak betöltése",
+    "signIn": "Bejelentkezés",
+    "signOut": "Kijelentkezés",
+    "signUp": "Kezdés",
+    "bookDemo": "Demó foglalása",
+    "contactSales": "Kapcsolat az értékesítéssel",
+    "upload": "Feltöltés",
+    "download": "Letöltés",
+    "archive": "Archiválás",
+    "revoke": "Visszavonás",
+    "invite": "Meghívás",
+    "connect": "Csatlakoztatás",
+    "disconnect": "Leválasztás",
+    "publish": "Közzététel",
+    "rollback": "Visszaállítás",
+    "sync": "Szinkronizálás most",
+    "submit": "Beküldés"
+  },
+  "states": {
+    "loading": "Betöltés…",
+    "saving": "Mentés…",
+    "empty": "Még nincs itt semmi",
+    "noResults": "Nincs a szűrőknek megfelelő találat",
+    "comingSoon": "Még nem elérhető",
+    "enabled": "Bekapcsolva",
+    "disabled": "Kikapcsolva",
+    "live": "Élő",
+    "optional": "Opcionális",
+    "required": "Kötelező",
+    "unsavedChanges": "Nem mentett módosításaid vannak"
+  },
+  "time": {
+    "today": "Ma",
+    "yesterday": "Tegnap",
+    "last7Days": "Elmúlt 7 nap",
+    "last30Days": "Elmúlt 30 nap",
+    "last90Days": "Elmúlt 90 nap",
+    "custom": "Egyéni időszak",
+    "secondsAgo": "{count} másodperce",
+    "minutesAgo": "{count} perce",
+    "durationShort": "{minutes} p {seconds} mp"
+  },
+  "theme": {
+    "label": "Téma",
+    "light": "Világos",
+    "dark": "Sötét",
+    "system": "Rendszer"
+  },
+  "language": {
+    "label": "Nyelv",
+    "hu": "Magyar",
+    "de": "Deutsch",
+    "en": "English"
+  },
+  "pagination": {
+    "previous": "Előző",
+    "next": "Következő",
+    "showing": "{count} elem megjelenítve",
+    "first": "Első oldal"
+  },
+  "a11y": {
+    "skipToContent": "Ugrás a tartalomhoz",
+    "openMenu": "Menü megnyitása",
+    "closeMenu": "Menü bezárása",
+    "loading": "A tartalom betöltése folyamatban"
+  },
+  "confirmations": {
+    "deleteTitle": "Törlöd ezt: {name}?",
+    "irreversible": "Ez a művelet nem vonható vissza."
+  }
+}

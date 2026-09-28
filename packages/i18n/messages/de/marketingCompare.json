@@ -1,0 +1,560 @@
+{
+  "common": {
+    "breadcrumbLabel": "Brotkrumennavigation",
+    "criterion": "Kriterium",
+    "faqHeading": "Häufige Fragen",
+    "relatedHeading": "Weiterlesen",
+    "ctaPrimary": "Mit Velyric starten",
+    "ctaSecondary": "Preise ansehen",
+    "pricing": {
+      "label": "Velyric Preise",
+      "description": "Tarife, enthaltene Minuten, Mehrverbrauchssätze und Parallelitätsgrenzen, veröffentlicht für den ungarischen Markt."
+    }
+  },
+  "vs-call-center": {
+    "meta": {
+      "title": "KI-Empfang oder Callcenter: ein ehrlicher Vergleich",
+      "description": "Worin sich ein KI-Telefonassistent und ein ausgelagertes Callcenter bei Erreichbarkeit, Sprachen, Weiterleitung, Auswertung und Kostenstruktur unterscheiden, und wann ein personell besetztes Callcenter weiterhin die bessere Antwort ist."
+    },
+    "breadcrumb": "KI-Empfang oder Callcenter",
+    "eyebrow": "Vergleich",
+    "title": "KI-Empfang oder Callcenter",
+    "body": "Beide setzen eine kompetente Stimme ans andere Ende Ihrer Geschäftsleitung. Sie unterscheiden sich darin, wie schnell sich diese Stimme ändern lässt, worauf sie in Ihren Systemen zugreifen kann, was passiert, wenn sie nicht weiterkommt, und was Ihnen bleibt, nachdem der Anrufer aufgelegt hat.",
+    "card": {
+      "label": "KI-Empfang oder Callcenter",
+      "description": "Erreichbarkeit, Sprachen, Weiterleitung und Auswertung im Vergleich mit einem ausgelagerten Telefondienst."
+    },
+    "summary": {
+      "question": "Sollten Sie einen KI-Empfang oder ein Callcenter einsetzen?",
+      "answer": "Setzen Sie einen KI-Telefonassistenten ein, wenn sich die Anrufe wiederholen und die Antworten bereits schriftlich vorliegen: Öffnungszeiten, Leistungen, Preise, freie Termine, der Stand einer Bestellung. Velyric nimmt rund um die Uhr unter Ihrer eigenen Nummer ab, auf Ungarisch, Deutsch und Englisch, prüft die echte Kalenderverfügbarkeit, bevor ein Termin angeboten wird, und leitet in dem Moment an eine Person weiter, in dem der Anrufer darum bittet. Setzen Sie ein personell besetztes Callcenter ein, wenn Gespräche lang, emotional aufgeladen oder reguliert sind oder ein Urteilsvermögen verlangen, das in keiner Wissensdatenbank steht. Viele Unternehmen betreiben beides: Der Assistent nimmt die erste Linie, Menschen übernehmen, was er übergibt."
+    },
+    "table": {
+      "heading": "Gegenübergestellt",
+      "intro": "Ausschließlich strukturelle Unterschiede. Es stehen keine Branchendurchschnitte und keine Kosteneinsparungen in dieser Tabelle, weil wir sie nicht gemessen haben.",
+      "caption": "Ein KI-Telefonassistent und ein ausgelagertes Callcenter im Vergleich über zehn betriebliche Kriterien.",
+      "columns": {
+        "velyric": "Velyric KI-Telefonassistent",
+        "other": "Ausgelagertes Callcenter"
+      },
+      "rows": {
+        "availability": {
+          "criterion": "Erreichbarkeit",
+          "velyric": "Nimmt rund um die Uhr unter Ihrer eigenen Nummer ab, auch nachts, am Wochenende und an Feiertagen. Das Verhalten außerhalb der Geschäftszeiten wird separat konfiguriert: Nachricht aufnehmen, Rückrufwunsch erfassen oder an eine Bereitschaftsnummer weiterleiten.",
+          "other": "Abgedeckt sind die Stunden, die Sie vertraglich vereinbaren und personell besetzen. Eine Ausweitung auf Nächte und Wochenenden ist eine kaufmännische und eine Personalentscheidung."
+        },
+        "pickup": {
+          "criterion": "Was beim Abheben passiert",
+          "velyric": "Nimmt sofort ab und sagt zu Beginn des Gesprächs, dass der Anrufer mit einem KI-Assistenten spricht. Das Gespräch läuft im Vollduplex, der Anrufer kann also mitten im Satz unterbrechen, und der Assistent hört auf zu sprechen.",
+          "other": "Eine Person nimmt ab, sobald ein Mitarbeiter frei ist. Da Kapazität Personal bedeutet, werden Spitzen durch Warteschlangen oder Rückrufe abgefangen."
+        },
+        "language": {
+          "criterion": "Sprachen",
+          "velyric": "Ungarisch, Deutsch und Englisch, mitten im Gespräch umschaltbar. Die Ländervorwahl des Anrufers ist nur ein erster Hinweis; eine ausdrückliche Bitte, die erkannte gesprochene Sprache oder eine gespeicherte Präferenz überschreiben sie.",
+          "other": "Was die Mitarbeiter in der Schicht sprechen. Eine dritte Sprache ist zuerst ein Einstellungs- oder Dienstplanproblem und erst danach ein Produktthema."
+        },
+        "questions": {
+          "criterion": "Fragen beantworten",
+          "velyric": "Antwortet aus Ihrer eigenen Wissensdatenbank: PDF, DOCX, TXT, Markdown, CSV, eine manuelle Frage-Antwort-Liste und gecrawlte Website-Seiten, wobei jeder Abruf auf Ihren Mandanten gefiltert ist. Ohne belegende Quelle stellt er eine Rückfrage oder übergibt, statt zu raten.",
+          "other": "Antwortet aus einem Briefing, einem Skript und dem Gedächtnis des Mitarbeiters. Die Genauigkeit hängt davon ab, wie aktuell das Team zur Änderung gebrieft wurde."
+        },
+        "booking": {
+          "criterion": "Termin buchen",
+          "velyric": "Prüft die echte Verfügbarkeit über Google Kalender oder Microsoft 365, bevor ein Termin angeboten wird, liest die Buchung zurück und bittet um Bestätigung, und schreibt sie dann mit Datenbankbedingungen, Transaktionen und Idempotenzschlüsseln, sodass keine Doppelbuchung durchrutschen kann.",
+          "other": "Hängt von den Werkzeugen ab, die das Center bekommt. Ohne Zugriff auf Ihren Kalender erhalten Sie einen Buchungswunsch, den jemand auf Ihrer Seite später einträgt."
+        },
+        "escalation": {
+          "criterion": "Eine Person erreichen",
+          "velyric": "Die Bitte um eine Person leitet das Gespräch sofort weiter. DTMF ist konfigurierbar, zum Beispiel ### für einen menschlichen Mitarbeiter, 0 für eine sofortige Weiterleitung und * für einen Schritt zurück. Nach zwei bis drei erfolglosen Verständnisversuchen bietet der Assistent die Weiterleitung von sich aus an.",
+          "other": "Die erste Linie ist bereits eine Person. Eskalation bedeutet eine interne Weiterleitung an Sie oder an eine Teamleitung."
+        },
+        "concurrency": {
+          "criterion": "Lastspitzen",
+          "velyric": "Gleichzeitige Gespräche sind eine Tarifgrenze: 2 bei Start, 10 bei Business, 50 bei Pro, 100 oder mehr bei Enterprise. Jedes Gespräch läuft in einer eigenen isolierten Sitzung mit eigener call_id, eigenem Zustand und eigener Ablaufverfolgung, sodass ein fehlschlagendes Gespräch kein anderes beeinflussen kann.",
+          "other": "Die Kapazität ist die Personalstärke in der Schicht. Spitzen werden durch Warteschlangen, Überstunden oder eine höhere Pauschale abgefangen."
+        },
+        "changes": {
+          "criterion": "Ändern, was gesagt wird",
+          "velyric": "Laden Sie eine neue Dokumentversion hoch, und sie ersetzt die alten Abschnitte im aktiven Index atomar. Assistentenversionen werden veröffentlicht und lassen sich zurückrollen, und eine Simulationsoberfläche führt vorher Testanrufe und Regressionsläufe aus.",
+          "other": "Das Briefing aktualisieren und die Mitarbeiter in der Schicht neu briefen. Die Einführung ist so schnell wie Ihr nächster Briefing-Zyklus."
+        },
+        "data": {
+          "criterion": "Was Sie danach bekommen",
+          "velyric": "Anrufe, Lösungsquote, durchschnittliche Gesprächsdauer, Weiterleitungsquote, Buchungen und Kosten in Ihrem Dashboard, dazu Transkripte und Zusammenfassungen, wo Sie sie aktivieren. Roh-Audio wird standardmäßig nicht gespeichert; die Aufzeichnung ist ein kostenpflichtiges Zusatzmodul.",
+          "other": "Was der Vertrag hergibt: Anruflisten, Notizen der Mitarbeiter und Aufzeichnungen, sofern das Center aufzeichnet und sie herausgibt."
+        },
+        "cost": {
+          "criterion": "Wie abgerechnet wird",
+          "velyric": "Ein Monatsabonnement mit enthaltenen Sprachminuten und einem veröffentlichten Minutensatz für Mehrverbrauch. Parallelität und Anzahl der Assistenten sind Tarifgrenzen. Die Preise sind für den ungarischen Markt in Forint und ohne Mehrwertsteuer veröffentlicht.",
+          "other": "Vom Anbieter bepreist, nach Mitarbeiterzeit oder bearbeitetem Volumen. Fragen Sie, welche Einheit abgerechnet wird und wie hoch die Mindestabnahme ist."
+        }
+      }
+    },
+    "caller": {
+      "question": "Was erlebt der Anrufer tatsächlich?",
+      "answer": "Das Gespräch wird sofort von einer Stimme angenommen, die vorab sagt, dass sie ein KI-Assistent ist. Der Anrufer kann sie unterbrechen, zögern, seine Meinung ändern und mitten im Satz die Sprache wechseln, ohne dass das Gespräch abbricht. Wünscht er einen Menschen, sagt er es oder drückt die konfigurierte Taste, und das Gespräch wird an Ihre Nummer verwiesen.",
+      "first": "Das Gespräch ist kein einziger langer Prompt. Es läuft durch eine explizite, im Code hinterlegte Zustandsmaschine — Begrüßung, Bedarfsklärung, Identität, Vorschau der Aktion, Bestätigungsschwelle, Werkzeugausführung, Ergebnisbestätigung, Nachfassen, Übergabe, sicheres Scheitern, Abschluss — und das Backend entscheidet, ob ein vom Modell vorgeschlagenes Werkzeug im aktuellen Zustand überhaupt erlaubt ist. Deshalb liest der Assistent vor, was er zu tun beabsichtigt, bevor er etwas schreibt, und deshalb kann er keine Buchung still erfinden.",
+      "second": "In einem Callcenter ist die erste Linie eine Person, und das ist ein Vorteil in dem Moment, in dem ein Anrufer aufgebracht oder ein Anliegen ungewöhnlich ist. Der Preis dafür ist, dass diese Person aus einem Briefing über Ihr Unternehmen arbeitet und nicht aus Ihrem aktuellen Kalender und Ihren Dokumenten, sofern Sie dem Center nicht Zugriff auf beides gegeben haben. Wenn Sie das tun, zahlen Sie zum Teil dafür, ein zweites Team mit Ihren Systemen synchron zu halten."
+    },
+    "fallback": {
+      "question": "Was passiert, wenn das System nicht helfen kann?",
+      "answer": "Velyric rät nicht. Ohne belegende Quelle in Ihrer Wissensdatenbank stellt der Assistent eine Rückfrage oder übergibt an eine Person. Eine Zeitüberschreitung eines Werkzeugs oder ein 5xx von einer Ihrer APIs wird einmal wiederholt, danach wird das Gespräch weitergeleitet oder fällt auf das konfigurierte Verhalten außerhalb der Geschäftszeiten zurück. Sensible oder nicht erlaubte Anliegen gehen konstruktionsbedingt an einen Menschen.",
+      "first": "Die Übergabe ist eine echte SIP-Verweisung an ein anderes tel:- oder sip:-Ziel, sodass der Anrufer am Telefon bei einem Ihrer Mitarbeiter landet und nicht in einem zweiten Menü. Außerhalb der Geschäftszeiten greift das, was Sie konfiguriert haben: eine Nachricht aufnehmen, einen Rückrufwunsch erfassen oder eine Bereitschaftsnummer anwählen.",
+      "second": "Eine Einschränkung gehört klar benannt. Die Telefonnummer eines Anrufers ist eine Bequemlichkeitskennung und keine Authentifizierung, deshalb erfordert alles Sensible eine zusätzliche Verifizierung oder einen Menschen. Ein besetztes Center hat genau dasselbe Problem und löst es mit der Identitätsprüfung, die Sie im Skript vorgeben."
+    },
+    "setup": {
+      "question": "Wie viel Arbeit sind Einrichtung und Änderung?",
+      "answer": "Velyric einzurichten ist Konfiguration, die Sie selbst vornehmen: eine Nummer beschaffen oder portieren, Ihr Wissen laden, einen Kalender verbinden, festlegen, was der Assistent darf. Später zu ändern heißt: ein Dokument hochladen und eine Assistentenversion veröffentlichen. Ein Callcenter einzuführen ist ein Menschenprozess — Briefing, Skript, Schulung, Hochlauf — und jede spätere Änderung wiederholt eine kleinere Variante davon.",
+      "steps": {
+        "s1": {
+          "title": "Eine Nummer beschaffen",
+          "body": "Beziehen Sie eine ungarische Ortsnummer über Telnyx oder portieren Sie die Nummer, die Sie bereits veröffentlichen. Die Bestellung kann eine Netzbetreiber- und behördliche Unternehmensprüfung erfordern, die Teil des Bereitstellungsablaufs ist."
+        },
+        "s2": {
+          "title": "Laden, was Sie wissen",
+          "body": "Laden Sie PDF-, DOCX-, TXT-, Markdown- oder CSV-Dateien hoch, ergänzen Sie eine manuelle Frage-Antwort-Liste, oder richten Sie den Crawler auf Ihre Website. Er folgt zuerst der Sitemap, crawlt sonst Unterseiten derselben Website und liest schema.org-Daten wie Adresse und Öffnungszeiten als strukturierte Fakten."
+        },
+        "s3": {
+          "title": "Kalender und Werkzeuge verbinden",
+          "body": "Google Kalender oder Microsoft 365 über OAuth2 mit PKCE, dazu Ihre eigenen HTTPS-Endpunkte als eigene API-Werkzeuge mit JSON-Schema für Ein- und Ausgabe, Zeitlimits je Werkzeug, Wiederholungen, einem Idempotenzschlüssel und einer Bestätigungsregel."
+        },
+        "s4": {
+          "title": "Vor der Veröffentlichung testen",
+          "body": "Führen Sie Testanrufe und Regressionsläufe auf der Simulationsoberfläche aus, veröffentlichen Sie die Assistentenversion, und rollen Sie sie zurück, wenn etwas nicht stimmt."
+        }
+      }
+    },
+    "reporting": {
+      "question": "Welche Daten bekommen Sie nach dem Gespräch?",
+      "answer": "Velyric schreibt jedes Gespräch in Ihr eigenes Dashboard: Anrufvolumen, Lösungsquote, durchschnittliche Dauer, Weiterleitungsquote, Buchungen und Kosten, dazu Transkripte und Zusammenfassungen, wo Sie sie aktivieren. Zu den gemessenen Signalen gehören Antwortlatenz, Erfolg beim Unterbrechen, Erfolgsquote der Werkzeuge, Lösung im Erstkontakt, Buchungskonversion, Anteil nicht belegter Antworten und Genauigkeit des Sprachwechsels. Roh-Audio hat eine Aufbewahrung von null Tagen und wird nicht gespeichert, sofern Sie das Aufzeichnungs-Zusatzmodul nicht dazubuchen.",
+      "first": "Die Aufbewahrung ist ausdrücklich und konfigurierbar: Transkripte standardmäßig 90 Tage bei mindestens einem Tag, Anrufereignisse 180 Tage bei mindestens 30, Werkzeugdaten 30 Tage, Anruferprofile 730 Tage. Bis zu zehn ausgehende Webhook-Endpunkte können 17 Ereignistypen in Ihre eigenen Systeme schieben, darunter call.started, call.ended, booking.created, booking.changed und booking.canceled, jeweils mit HMAC-SHA256 signiert.",
+      "second": "Bei einem ausgelagerten Center ist die Auswertung eine Vertragsklausel. Fragen Sie, was Sie bekommen, in welchem Format, wie oft, und ob Sie es nach Vertragsende noch lesen können. Velyric handelt für Anrufdaten in Ihrem Auftrag als Auftragsverarbeiter unter einem veröffentlichten Auftragsverarbeitungsvertrag nach Artikel 28, und Anwendungs- sowie Anrufdaten werden in einer EU-Cloud-Region verarbeitet."
+    },
+    "cost": {
+      "question": "Worin unterscheiden sich die beiden Kostenmodelle?",
+      "answer": "Velyric ist ein Abonnement mit enthaltenen Sprachminuten und einem veröffentlichten Minutensatz für Mehrverbrauch, die Rechnung folgt also den gesprochenen Minuten. Ein Callcenter wird nach Personenzeit oder bearbeitetem Volumen bepreist, die Rechnung folgt also Ihrer Auslastung und der Laufzeit, auf die Sie sich festlegen. Wir haben zwischen beiden keine Einsparung gemessen und werden auch keine beziffern.",
+      "first": "Vergleichenswert ist, wohin das Geld fließt, wenn nichts passiert. Ein Abonnement wird bezahlt, ob das Telefon klingelt oder nicht, und besetzte Stunden ebenso. Der Unterschied zeigt sich an den Rändern: Eine ruhige Nacht kostet auf einer minutenbasierten Rechnung nichts, und eine plötzliche Spitze kostet Parallelität statt Überstunden.",
+      "second": "Velyric veröffentlicht Preise ausschließlich für den ungarischen Markt und ausschließlich in Forint, ohne Mehrwertsteuer. Ein Höherstufen wirkt sofort, ein Herabstufen zum Ende des Abrechnungszeitraums; Mehrverbrauch läuft zum Minutensatz des Tarifs mit Ausgabegrenzen weiter. Gesprächsaufzeichnung, zusätzliche Rufnummern und eine Parallelitätserweiterung sind kostenpflichtige Zusatzmodule.",
+      "facts": {
+        "plans": {
+          "term": "Monatstarife",
+          "value": "Start 39.900 HUF, Business 69.900 HUF, Pro 129.900 HUF, ohne Mehrwertsteuer. Enterprise ist vertraglich."
+        },
+        "minutes": {
+          "term": "Enthaltene Sprachminuten",
+          "value": "150, 400 oder 1.000 pro Monat, Mehrverbrauch zu 149, 129 oder 109 HUF je Minute."
+        },
+        "concurrency": {
+          "term": "Gleichzeitige Gespräche",
+          "value": "2 bei Start, 10 bei Business, 50 bei Pro, 100 oder mehr bei Enterprise."
+        },
+        "included": {
+          "term": "In jedem Tarif enthalten",
+          "value": "Eine Rufnummer, ein Standort und eine maximale Gesprächsdauer von 1.800 Sekunden."
+        }
+      }
+    },
+    "alternative": {
+      "question": "Wann ist ein Callcenter die bessere Wahl?",
+      "answer": "Wenn das Gespräch das Produkt ist. Lange beratende Verkaufsgespräche, regulierte Beratung, Beschwerden, bei denen jemand Verantwortung übernehmen muss, Forderungsmanagement und alles, wo der Anrufer spüren muss, dass ein Mensch verantwortlich ist, gehören zu geschulten Menschen. Wenn die meisten Ihrer Gespräche so aussehen, ist ein KI-Telefonassistent bestenfalls eine Eingangstür.",
+      "first": "Drei weitere Fälle sprechen für Menschen. Wenn sich das Skript ständig auf eine Weise ändert, die kein Dokument erfasst, passt sich ein gebrieftes Team schneller an als eine Wissensdatenbank. Wenn Gespräche regelmäßig von einer Beurteilung von Ausnahmen abhängen — ein Rabatt, eine Kulanzentscheidung, eine Abweichung von der Richtlinie —, weil die Werkzeugberechtigungen von Velyric im Code liegen und er keine improvisiert. Und wenn Sie ausgehende Anrufe in großer Zahl brauchen: Velyric nimmt eingehende Anrufe unter Ihrer eigenen Nummer entgegen.",
+      "second": "Es gibt eine Mischform, die Sie prüfen sollten, bevor Sie sich für eines von beiden entscheiden. Setzen Sie den Assistenten auf die erste Linie, lassen Sie ihn die wiederkehrenden Gespräche abschließen, und lassen Sie ihn den Rest an Ihr Team oder Ihr Center übergeben, wobei das Anliegen des Anrufers bereits erfasst ist. Genau dafür existiert der Übergabepfad, und deshalb sind die Weiterleitungsziele gewöhnliche tel:- und sip:-Ziele.",
+      "third": "Die eigenen Grenzen von Velyric gehören ebenfalls in diesen Abschnitt: nur Ungarisch, Deutsch und Englisch; Gespräche auf 30 Minuten begrenzt; Parallelität durch den Tarif begrenzt; kein gespeichertes Audio, sofern Sie die Aufzeichnung nicht dazubuchen; und eine Rufnummernverfügbarkeit, die vom Netzbetreiber und von der behördlichen Prüfung abhängt."
+    },
+    "faq": {
+      "q1": {
+        "question": "Weiß der Anrufer, dass er mit einer KI spricht?",
+        "answer": "Ja. Der Assistent sagt zu Beginn des Gesprächs, dass der Anrufer mit einem KI-Assistenten spricht. Das ist eine Produktvorgabe und nichts, woran Sie denken müssen, und es deckt sich mit der Transparenzpflicht aus Artikel 50 der KI-Verordnung der EU, die ab dem 2. August 2026 gilt."
+      },
+      "q2": {
+        "question": "Kann ich mein Callcenter behalten und Velyric gleichzeitig nutzen?",
+        "answer": "Ja. Velyric nimmt unter der Nummer ab, die Sie darauf richten, und verweist Gespräche an jedes tel:- oder sip:-Ziel, was auch die Warteschlange Ihres Centers sein kann. Eine verbreitete Aufteilung ist, dass der Assistent die Gespräche der ersten Linie führt und alles weitergibt, was er nicht abschließen kann, wobei der Anrufer jederzeit eine Person verlangen oder die konfigurierte Taste drücken kann."
+      },
+      "q3": {
+        "question": "Was passiert mit Anrufen, die gleichzeitig eingehen?",
+        "answer": "Jedes Gespräch erhält eine eigene call_id, eine eigene KI-Sitzung, einen eigenen Gesprächszustand und eine eigene Ablaufverfolgung, Gespräche sind also isoliert und ein Fehler kann kein anderes beeinflussen. Wie viele gleichzeitig laufen, ist eine Tarifgrenze: 2 bei Start, 10 bei Business, 50 bei Pro, 100 oder mehr bei Enterprise. Spitzen über Ihrer Grenze folgen der Regel, die Sie wählen: eine kurze Warteschlange, eine Überlaufnummer, ein Rückruf oder die Mailbox."
+      },
+      "q4": {
+        "question": "Erfindet die KI etwas, wenn sie die Antwort nicht kennt?",
+        "answer": "Sie ist so gebaut, dass sie es nicht tut. Der Abruf ist auf Ihren eigenen Mandanten gefiltert, und wenn keine belegende Quelle gefunden wird, stellt der Assistent eine Rückfrage oder übergibt das Gespräch an eine Person, statt zu antworten. Dokumente und die Sprache des Anrufers werden als nicht vertrauenswürdige Eingabe behandelt, eine in einer hochgeladenen Datei versteckte Anweisung kann also nicht ändern, was der Assistent darf."
+      },
+      "q5": {
+        "question": "Speichern Sie Aufzeichnungen meiner Gespräche?",
+        "answer": "Standardmäßig nicht. Roh-Audio hat eine Aufbewahrung von null Tagen und wird nicht gespeichert; die Aufzeichnung ist ein kostenpflichtiges Zusatzmodul. Transkripte werden standardmäßig 90 Tage aufbewahrt, und Sie können das bis auf einen einzigen Tag herunterstellen, und Kundengesprächsdaten werden nicht zum Training von Allzweckmodellen verwendet."
+      },
+      "q6": {
+        "question": "Was kostet es im Vergleich zu einem Callcenter?",
+        "answer": "Wir beziffern keinen Vergleich, weil wir keinen gemessen haben. Die Strukturen unterscheiden sich: Velyric ist ein Monatsabonnement mit 150, 400 oder 1.000 enthaltenen Minuten und einem veröffentlichten Minutensatz für Mehrverbrauch, während ein Center nach besetzter Zeit oder bearbeitetem Volumen abrechnet. Die Preise von Velyric sind für den ungarischen Markt in Forint und ohne Mehrwertsteuer veröffentlicht."
+      }
+    },
+    "related": {
+      "capability": {
+        "label": "Weiterleitung an Ihr Team",
+        "description": "Wenn ein Gespräch an eine Person übergeben wird: wie verwiesen wird und was der Assistent zuerst tut."
+      }
+    }
+  },
+  "vs-ivr": {
+    "meta": {
+      "title": "KI-Telefonassistent oder IVR: was sich ändert, wenn Anrufer sprechen",
+      "description": "Ein KI-Telefonassistent und ein klassisches Tastenmenü im Vergleich bei Anrufererlebnis, Weiterleitung, Änderungsaufwand, Auswertung und Kostenstruktur, samt der Frage, wann ein Menü weiterhin das bessere Design ist."
+    },
+    "breadcrumb": "KI-Telefonassistent oder IVR",
+    "eyebrow": "Vergleich",
+    "title": "KI-Telefonassistent oder IVR-Telefonmenü",
+    "body": "Ein IVR verlangt vom Anrufer, sein Problem in eine Zahl zu übersetzen. Ein Telefonassistent lässt ihn es sagen. Dieser eine Unterschied ändert, was der Anrufer zuerst tut, was Sie danach messen können und was es kostet, die Begrüßung zu ändern.",
+    "card": {
+      "label": "KI-Telefonassistent oder IVR-Menü",
+      "description": "Was sich ändert, wenn Anrufer sprechen statt Tasten zu drücken, und wann ein Menü weiterhin gewinnt."
+    },
+    "summary": {
+      "question": "Sollten Sie Ihr IVR durch einen KI-Telefonassistenten ersetzen?",
+      "answer": "Ersetzen Sie es, wenn das Menü existiert, um Fragen weiterzuleiten, die man ebenso gut hätte beantworten können: Öffnungszeiten, Preise, freie Termine, wo man parkt, ob ein Teil vorrätig ist. Velyric nimmt ab, hört den eigenen Worten des Anrufers auf Ungarisch, Deutsch oder Englisch zu, antwortet aus Ihren Dokumenten, bucht in Ihren echten Kalender und leitet auf Wunsch weiter. Behalten Sie ein IVR, wenn jeder Anrufer wirklich eines von zwei festen Zielen braucht und sonst nichts, denn dann ist ein Menü das Schnellste und Berechenbarste, was Sie bauen können. Beides lässt sich auch kombinieren: Eine DTMF-Taste kann weiterhin direkt zu einer Person springen."
+    },
+    "table": {
+      "heading": "Gegenübergestellt",
+      "intro": "Ausschließlich strukturelle Unterschiede. Keine Branchenstatistiken und keine erfundenen Abbruchquoten.",
+      "caption": "Ein KI-Telefonassistent und ein klassisches IVR-Telefonmenü im Vergleich über zehn betriebliche Kriterien.",
+      "columns": {
+        "velyric": "Velyric KI-Telefonassistent",
+        "other": "Klassisches IVR-Menü"
+      },
+      "rows": {
+        "availability": {
+          "criterion": "Erreichbarkeit",
+          "velyric": "Nimmt rund um die Uhr unter Ihrer eigenen Nummer ab und verhält sich außerhalb der Geschäftszeiten anders: Nachricht aufnehmen, Rückrufwunsch erfassen oder an eine Bereitschaftsnummer weiterleiten.",
+          "other": "Immer verfügbar, denn es ist eine Aufnahme und ein Entscheidungsbaum. Was hinter den Optionen liegt, ist nur verfügbar, wenn jemand da ist."
+        },
+        "pickup": {
+          "criterion": "Was der Anrufer zuerst tut",
+          "velyric": "Sagt in eigenen Worten, was er möchte. Der Assistent gibt an, dass er ein KI-Assistent ist, und der Anrufer kann ihn mitten im Satz unterbrechen, weil das Gespräch im Vollduplex läuft.",
+          "other": "Hört die Optionen an und ordnet sein Problem einer davon zu. Unterbrechen heißt, früh eine Taste zu drücken, nicht zu sprechen."
+        },
+        "language": {
+          "criterion": "Sprachen",
+          "velyric": "Ungarisch, Deutsch und Englisch auf einer Nummer, und die Sprache kann mitten im Gespräch wechseln. Die E.164-Ländervorwahl ist nur ein erster Hinweis; eine ausdrückliche Bitte oder die erkannte gesprochene Sprache überschreibt sie.",
+          "other": "Jede Sprache ist ein eigener aufgenommener Zweig, der meist zuerst per Tastendruck gewählt wird. Eine weitere Sprache bedeutet, den Baum neu aufzunehmen."
+        },
+        "questions": {
+          "criterion": "Eine Frage beantworten",
+          "velyric": "Antwortet direkt aus Ihrer Wissensdatenbank — Dokumente, eine manuelle Frage-Antwort-Liste und gecrawlte Website-Seiten — und stellt eine Rückfrage oder übergibt, wenn nichts eine Antwort belegt.",
+          "other": "Kann eine aufgenommene Ansage abspielen, etwa die Öffnungszeiten, aber keine unvorhergesehene Frage beantworten. Alles außerhalb des Menüs wird zum Warten auf eine Person."
+        },
+        "booking": {
+          "criterion": "Termin buchen",
+          "velyric": "Prüft die echte Verfügbarkeit in Google Kalender oder Microsoft 365, bietet nur freie Zeiten an, bestätigt laut und schreibt die Buchung dann mit Bedingungen, Transaktionen und Idempotenzschlüsseln gegen Doppelbuchungen.",
+          "other": "Leitet an denjenigen weiter, der bucht. Das Menü selbst führt keinen Kalender."
+        },
+        "escalation": {
+          "criterion": "Eine Person erreichen",
+          "velyric": "Die Bitte um eine Person leitet das Gespräch sofort weiter. DTMF bleibt verfügbar und konfigurierbar, zum Beispiel ### für einen menschlichen Mitarbeiter, 0 für eine sofortige Weiterleitung und * für einen Schritt zurück.",
+          "other": "Eine Menüoption, sofern Sie eine gebaut haben. Sonst arbeitet sich der Anrufer erneut durch den Baum."
+        },
+        "concurrency": {
+          "criterion": "Lastspitzen",
+          "velyric": "Gleichzeitige Gespräche sind eine Tarifgrenze von 2, 10, 50 oder 100 und mehr, und jedes Gespräch läuft in einer isolierten Sitzung. Über der Grenze wählen Sie die Regel: eine kurze Warteschlange, eine Überlaufnummer, ein Rückruf oder die Mailbox.",
+          "other": "Das Menü skaliert frei; die Warteschlange dahinter nicht. Der Engpass verschiebt sich schlicht zu den Menschen auf der anderen Seite der Option."
+        },
+        "changes": {
+          "criterion": "Ändern, was gesagt wird",
+          "velyric": "Laden Sie eine neue Dokumentversion hoch, und sie ersetzt die alten Abschnitte atomar. Das Verhalten ist versioniert, auf einer Simulationsoberfläche testbar und zurückrollbar.",
+          "other": "Die Ansagen neu aufnehmen und den Baum neu veröffentlichen, in jeder Sprache, die Sie anbieten."
+        },
+        "data": {
+          "criterion": "Was Sie aus dem Gespräch lernen",
+          "velyric": "Anliegen, Lösungsquote, Weiterleitungsquote, durchschnittliche Dauer, Buchungen und Kosten, dazu Transkripte und Zusammenfassungen, wo aktiviert. Der Anteil nicht belegter Antworten zeigt, welche Fragen Ihre Wissensdatenbank noch nicht beantworten kann.",
+          "other": "Tastendrücke. Sie wissen, welche Option gewählt wurde, nicht, was der Anrufer wollte."
+        },
+        "cost": {
+          "criterion": "Wie abgerechnet wird",
+          "velyric": "Ein Monatsabonnement mit enthaltenen Sprachminuten und einem veröffentlichten Minutensatz für Mehrverbrauch. Die Preise sind für den ungarischen Markt in Forint und ohne Mehrwertsteuer veröffentlicht.",
+          "other": "Meist Teil Ihrer Telefonanlage oder PBX-Lizenz. Die Kosten einer Änderung sind die Arbeit des Neuaufnehmens und Neuveröffentlichens."
+        }
+      }
+    },
+    "caller": {
+      "question": "Was erlebt der Anrufer tatsächlich?",
+      "answer": "Mit einem Menü hört der Anrufer zuerst und handelt danach: Optionen anhören, das Problem einer zuordnen, Taste drücken, warten. Mit einem Telefonassistenten spricht er zuerst — „Ich würde gern meinen Termin am Dienstag verschieben“ — und der Assistent arbeitet aus diesem Satz. Er kann unterbrechen, zögern, zwischendurch zustimmen und mitten im Gespräch die Sprache wechseln, ohne dass etwas neu beginnt.",
+      "first": "Es gibt keinen Tastenbaum zu merken und nichts zu wiederholen, wenn der Anrufer den falschen Zweig gewählt hat. Das Gespräch läuft durch eine explizite, im Code hinterlegte Zustandsmaschine — Begrüßung, Bedarfsklärung, Identität, Vorschau der Aktion, Bestätigungsschwelle, Werkzeugausführung, Ergebnisbestätigung, Nachfassen, Übergabe, sicheres Scheitern, Abschluss —, sodass der Assistent immer weiß, wo er steht, und das Backend prüft, ob ein vom Modell vorgeschlagenes Werkzeug in diesem Zustand erlaubt ist.",
+      "second": "Tasten verschwinden nicht. DTMF bleibt neben der Sprache konfigurierbar, ein Anrufer, der genau weiß, was er will, kann also weiterhin drücken: zum Beispiel ### für einen menschlichen Mitarbeiter, 0 für eine sofortige Weiterleitung, * für einen Schritt zurück. Wer Ihre Abkürzungen gelernt hat, verliert nichts, wenn aus dem Menü vor ihm ein Gespräch wird."
+    },
+    "fallback": {
+      "question": "Was passiert, wenn das System nicht helfen kann?",
+      "answer": "Der Fehlerfall eines IVR ist eine Sackgasse: Der Anrufer steckt in einem Zweig, der nicht passt, und kann nur neu beginnen oder auflegen. Der Fehlerfall von Velyric ist eine Übergabe. Nach zwei bis drei erfolglosen Verständnisversuchen bietet der Assistent die Weiterleitung an, eine Bitte um eine Person leitet sofort weiter, und eine Zeitüberschreitung oder ein 5xx eines Werkzeugs wird einmal wiederholt, bevor das Gespräch weitergeleitet oder vom Verhalten außerhalb der Geschäftszeiten aufgefangen wird.",
+      "first": "Der Assistent füllt eine Lücke nicht mit einem plausiblen Satz. Jede Antwort wird aus den eigenen indexierten Quellen Ihres Mandanten abgerufen, und wenn nichts eine Antwort belegt, lautet die Regel: Rückfrage stellen oder übergeben. Sensible oder nicht erlaubte Anliegen gehen konstruktionsbedingt an einen Menschen, und die Telefonnummer eines Anrufers gilt als Bequemlichkeitskennung, nicht als Authentifizierung.",
+      "second": "Außerhalb der Geschäftszeiten wird das Verhalten separat konfiguriert: eine Nachricht aufnehmen, einen Rückrufwunsch erfassen oder das Gespräch an eine Bereitschaftsnummer verweisen. Das kommt dem, was Menschen um 22 Uhr erwarten, näher als ein Baum, dessen Zweige alle in einem leeren Büro enden."
+    },
+    "setup": {
+      "question": "Wie viel Arbeit sind Einrichtung und Änderung?",
+      "answer": "Ein IVR wird einmal gebaut und bearbeitet, indem man Ansagen neu aufnimmt und den Baum neu veröffentlicht, in jeder Sprache. Velyric wird einmal konfiguriert und bearbeitet, indem man ein Dokument hochlädt. Beim ersten Mal geht beides schnell. Sie gehen bei der zwanzigsten Änderung auseinander, und an dem Tag, an dem eine dritte Sprache dazukommt.",
+      "steps": {
+        "s1": {
+          "title": "Die Nummer auf Velyric richten",
+          "body": "Beziehen Sie eine ungarische Ortsnummer über Telnyx oder portieren Sie die Nummer, unter der Ihr Menü heute abnimmt. Die Bestellung kann eine Netzbetreiber- und behördliche Unternehmensprüfung erfordern, die Teil des Bereitstellungsablaufs ist."
+        },
+        "s2": {
+          "title": "Menütext in Wissen verwandeln",
+          "body": "Die Sätze, die Ihr Menü vorliest, stehen meist längst irgendwo geschrieben. Laden Sie die PDF-, DOCX-, TXT-, Markdown- oder CSV-Dateien hoch, ergänzen Sie eine manuelle Frage-Antwort-Liste, oder richten Sie den Crawler auf Ihre Website: Er folgt zuerst der Sitemap und liest schema.org-Daten wie Adresse und Öffnungszeiten als strukturierte Fakten."
+        },
+        "s3": {
+          "title": "Die Routen behalten, die es wirklich gibt",
+          "body": "Ordnen Sie die zwei oder drei echten Ziele DTMF-Tasten und Weiterleitungszielen zu, damit Anrufer, die bereits wissen, was sie wollen, nichts verlieren, wenn aus dem Menü ein Gespräch wird."
+        },
+        "s4": {
+          "title": "Die Gespräche testen, vor denen Sie sich fürchten",
+          "body": "Bauen Sie aus Ihren schwierigsten Gesprächen einen Regressionslauf auf der Simulationsoberfläche, veröffentlichen Sie die Assistentenversion, und rollen Sie sie zurück, wenn sie sich danebenbenimmt."
+        }
+      }
+    },
+    "reporting": {
+      "question": "Welche Daten bekommen Sie nach dem Gespräch?",
+      "answer": "Ein IVR sagt Ihnen, welche Taste gedrückt wurde. Velyric sagt Ihnen, worum der Anrufer gebeten hat. Das Dashboard zeigt Anrufvolumen, Lösungsquote, durchschnittliche Dauer, Weiterleitungsquote, Buchungen und Kosten, dazu Transkripte und Zusammenfassungen, wo Sie sie aktivieren. Der Anteil nicht belegter Antworten ist der nützlichste Wert, denn er ist faktisch eine Liste der Fragen, die Ihr Unternehmen noch nicht beantworten kann.",
+      "first": "Zu den gemessenen Signalen gehören Antwortlatenz, Erfolg beim Unterbrechen, Erfolgsquote der Werkzeuge, Lösung im Erstkontakt, Weiterleitungsquote, Buchungskonversion, Kosten je verbundener Minute, Kosten je gelöstem Gespräch und Genauigkeit des Sprachwechsels. Bis zu zehn ausgehende Webhook-Endpunkte können 17 Ereignistypen in Ihre eigenen Systeme schieben, mit HMAC-SHA256 signiert und über acht Versuche mit wachsender Wartezeit wiederholt.",
+      "second": "Roh-Audio wird standardmäßig nicht gespeichert. Transkripte werden standardmäßig 90 Tage aufbewahrt, konfigurierbar bis auf einen Tag, Anrufereignisse 180 Tage bei mindestens 30. Velyric handelt für Anrufdaten als Auftragsverarbeiter unter einem veröffentlichten Auftragsverarbeitungsvertrag nach Artikel 28, die Verarbeitung erfolgt in einer EU-Cloud-Region."
+    },
+    "cost": {
+      "question": "Worin unterscheiden sich die beiden Kostenmodelle?",
+      "answer": "Ein IVR läuft meist im Telefonievertrag mit, seine Grenzkosten sehen also aus wie null, und seine wirklichen Kosten sind die Arbeit jeder Änderung. Velyric ist ein Monatsabonnement mit enthaltenen Sprachminuten und einem veröffentlichten Mehrverbrauchssatz, hat also eine sichtbare Zeile auf der Rechnung und keine Änderungskosten. Wir haben nicht gemessen, was für Ihre Gesprächsmischung günstiger ist, und erfinden dafür keine Zahl.",
+      "first": "Was keine der beiden Rechnungen zeigt, ist, was mit den Anrufern passiert, die gehen, ohne bekommen zu haben, weswegen sie angerufen haben. Ein Menü hinterlässt über einen Tastendruck hinaus keine Spur von ihnen, die Zahl ist aus Ihren eigenen Daten also nicht erkennbar; der Assistent hinterlässt ein Transkript und einen Anteil nicht belegter Antworten, was sie zumindest messbar macht.",
+      "second": "Velyric veröffentlicht Preise ausschließlich für den ungarischen Markt und ausschließlich in Forint, ohne Mehrwertsteuer. Ein Höherstufen wirkt sofort, ein Herabstufen zum Ende des Abrechnungszeitraums, und Mehrverbrauch läuft zum Minutensatz des Tarifs mit Ausgabegrenzen weiter. Gesprächsaufzeichnung, zusätzliche Rufnummern und eine Parallelitätserweiterung sind kostenpflichtige Zusatzmodule.",
+      "facts": {
+        "plans": {
+          "term": "Monatstarife",
+          "value": "Start 39.900 HUF, Business 69.900 HUF, Pro 129.900 HUF, ohne Mehrwertsteuer. Enterprise ist vertraglich."
+        },
+        "minutes": {
+          "term": "Enthaltene Sprachminuten",
+          "value": "150, 400 oder 1.000 pro Monat, Mehrverbrauch zu 149, 129 oder 109 HUF je Minute."
+        },
+        "concurrency": {
+          "term": "Gleichzeitige Gespräche",
+          "value": "2 bei Start, 10 bei Business, 50 bei Pro, 100 oder mehr bei Enterprise."
+        },
+        "included": {
+          "term": "In jedem Tarif enthalten",
+          "value": "Eine Rufnummer, ein Standort und eine maximale Gesprächsdauer von 1.800 Sekunden."
+        }
+      }
+    },
+    "alternative": {
+      "question": "Wann ist ein IVR die bessere Wahl?",
+      "answer": "Wenn der Baum wirklich zwei Ebenen tief ist und beide Optionen Ziele sind statt Fragen. „Drücken Sie die 1 für die Werkstatt, die 2 für Ersatzteile“ ist schneller als jedes Gespräch, funktioniert für Anrufer, die die Nummer auswendig kennen, und kostet nichts zusätzlich im Betrieb. Wenn das Ihr Menü beschreibt, behalten Sie es.",
+      "first": "Ein IVR ist auch die sicherere Wahl, wo die Weiterleitung rechtlich oder betrieblich festgelegt ist — eine Notrufleitung, eine regulierte Hotline, eine Warteschlange, die in einer bestimmten Reihenfolge betreten werden muss — und wo sich ein deterministischer Baum schlicht leichter prüfen lässt als ein Gespräch.",
+      "second": "Es gewinnt erneut, wo das Anrufvolumen klein ist. Eine Wissensdatenbank zu pflegen lohnt sich, wenn genug Gespräche anfallen, um sie aktuell zu halten; bei einer Handvoll Anrufe pro Woche sind eine aufgenommene Ansage und ein Tastendruck dem Problem angemessen.",
+      "third": "Velyric hat eigene Grenzen, die mitzuwägen sind: nur Ungarisch, Deutsch und Englisch, eine Begrenzung der Gesprächsdauer auf 30 Minuten, durch den Tarif begrenzte Parallelität, kein gespeichertes Audio, sofern Sie die Aufzeichnung nicht dazubuchen, und eine Rufnummernverfügbarkeit, die vom Netzbetreiber und von der behördlichen Prüfung abhängt."
+    },
+    "faq": {
+      "q1": {
+        "question": "Kann ich die Tastendrücke behalten, die meine Stammanrufer schon kennen?",
+        "answer": "Ja. DTMF ist konfigurierbar und funktioniert neben der Sprache, die gelernten Abkürzungen können also genau dort bleiben, wo sie sind. Die in Beispielen verwendeten Vorgaben sind ### für einen menschlichen Mitarbeiter, 0 für eine sofortige Weiterleitung und * für einen Schritt zurück."
+      },
+      "q2": {
+        "question": "Muss der Anrufer eine Liste von Optionen abwarten?",
+        "answer": "Nein. Der Assistent begrüßt den Anrufer, gibt an, dass er ein KI-Assistent ist, und hört dann zu. Da das Gespräch im Vollduplex läuft, kann der Anrufer in die Begrüßung hineinsprechen und der Assistent hört auf, was dem frühen Tastendruck am nächsten kommt."
+      },
+      "q3": {
+        "question": "Ist ein Telefonassistent langsamer als ein Tastendruck?",
+        "answer": "Für einen Anrufer, der die richtige Taste bereits kennt, ist Drücken schneller, und genau deshalb bleibt DTMF verfügbar. Für alle anderen steht nicht ein Tastendruck einem Satz gegenüber, sondern ein Satz dem Anhören eines Menüs, dem Wählen eines Zweigs und oft einem zweiten Menü danach."
+      },
+      "q4": {
+        "question": "Was passiert, wenn ein Anrufer etwas fragt, das das Menü nie abgedeckt hat?",
+        "answer": "Der Assistent durchsucht Ihre eigenen indexierten Quellen und antwortet, wenn etwas die Antwort belegt. Wenn nichts sie belegt, stellt er eine Rückfrage oder übergibt das Gespräch an eine Person, statt zu raten. Jeder dieser Fälle erscheint außerdem im Anteil nicht belegter Antworten, sodass Sie das fehlende Dokument ergänzen können."
+      },
+      "q5": {
+        "question": "Wie viele Sprachen kann eine Nummer bedienen?",
+        "answer": "Eine Nummer bedient Ungarisch, Deutsch und Englisch, und die Sprache kann mitten im Gespräch wechseln. Die E.164-Ländervorwahl des Anrufers ist nur ein erster Hinweis: eine ausdrückliche Bitte wie „magyarul kérem“, die erkannte gesprochene Sprache oder eine gespeicherte bevorzugte Sprache überschreiben sie alle."
+      },
+      "q6": {
+        "question": "Kann der Assistent wirklich etwas tun oder nur reden?",
+        "answer": "Er handelt innerhalb eines festen Katalogs: Leistungen auflisten, Verfügbarkeit prüfen, eine Buchung anlegen, eine Buchung finden, eine Buchung stornieren und Ihre Wissensdatenbank durchsuchen, dazu jedes eigene API-Werkzeug, das Sie gegen Ihre eigenen HTTPS-Endpunkte definieren. Vor jedem Schreibvorgang fasst er zusammen, was er zu tun beabsichtigt, und bittet den Anrufer um Bestätigung."
+      }
+    },
+    "related": {
+      "capability": {
+        "label": "Mehrsprachige Gespräche auf einer Nummer",
+        "description": "Wie Ungarisch, Deutsch und Englisch erkannt, gewählt und mitten im Gespräch gewechselt werden."
+      }
+    }
+  },
+  "vs-voicemail": {
+    "meta": {
+      "title": "KI-Empfang oder Mailbox: womit der Anrufer zurückbleibt",
+      "description": "Ein KI-Empfang und die Mailbox im Vergleich: was der Anrufer während des Gesprächs abschließen kann, was Sie danach erreicht, wie jeweils abgerechnet wird, und wann eine Mailbox weiterhin die richtige Antwort ist."
+    },
+    "breadcrumb": "KI-Empfang oder Mailbox",
+    "eyebrow": "Vergleich",
+    "title": "KI-Empfang oder Mailbox und verpasste Anrufe",
+    "body": "Die Mailbox verschiebt die Arbeit auf später und auf Sie. Ein KI-Empfang schließt ab, was er kann, während des Gesprächs, und lässt Ihnen nur das, wofür es wirklich eine Person braucht. Der eigentliche Vergleich ist, in welchem Zustand der Anrufer auflegt.",
+    "card": {
+      "label": "KI-Empfang oder Mailbox",
+      "description": "Was ein Anrufer während des Gesprächs abschließen kann, und wann eine Mailbox weiterhin genügt."
+    },
+    "summary": {
+      "question": "Sollten Sie einen KI-Empfang statt einer Mailbox einsetzen?",
+      "answer": "Setzen Sie einen KI-Empfang ein, wenn die Anrufe, die Sie verpassen, Dinge enthalten, die sich an Ort und Stelle hätten abschließen lassen: eine Buchung, eine Stornierung, eine Frage, deren Antwort bereits in Ihren Dokumenten steht. Velyric nimmt rund um die Uhr unter Ihrer eigenen Nummer ab, auf Ungarisch, Deutsch und Englisch, prüft den echten Kalender, bevor ein Termin angeboten wird, und liest die Buchung zurück, bevor etwas geschrieben wird. Behalten Sie die Mailbox, wenn das Anrufvolumen vernachlässigbar ist und die Kosten null sein müssen, denn eine Mailbox mit zwei Nachrichten im Monat ist angemessen. Velyric kann auch selbst das sein, was die Nachricht aufnimmt, und liefert dann ein Transkript und eine Zusammenfassung statt einer Audiodatei."
+    },
+    "table": {
+      "heading": "Gegenübergestellt",
+      "intro": "Ausschließlich strukturelle Unterschiede. Wir haben keine gemessene Zahl dafür, was ein verpasster Anruf Ihr Unternehmen kostet, deshalb steht keine in dieser Tabelle.",
+      "caption": "Ein KI-Empfang und die Mailbox im Vergleich über zehn betriebliche Kriterien.",
+      "columns": {
+        "velyric": "Velyric KI-Empfang",
+        "other": "Mailbox und verpasste Anrufe"
+      },
+      "rows": {
+        "availability": {
+          "criterion": "Erreichbarkeit",
+          "velyric": "Nimmt rund um die Uhr unter Ihrer eigenen Nummer ab, das Verhalten außerhalb der Geschäftszeiten wird separat konfiguriert: Nachricht aufnehmen, Rückrufwunsch erfassen oder an eine Bereitschaftsnummer verweisen.",
+          "other": "Verfügbar, wann immer die Leitung nicht abgenommen wird, genau darum geht es. Nichts bewegt sich, bis jemand die Nachricht abhört."
+        },
+        "pickup": {
+          "criterion": "Was mit dem Anrufer passiert",
+          "velyric": "Führt ein Gespräch. Der Assistent gibt an, dass er ein KI-Assistent ist, der Anrufer kann unterbrechen, zögern und die Sprache wechseln, und die meisten Routineanliegen enden innerhalb des Gesprächs.",
+          "other": "Hört eine Ansage und hinterlässt eine Nachricht oder legt auf, ohne eine zu hinterlassen. So oder so wird während des Gesprächs nichts beantwortet, gebucht oder storniert."
+        },
+        "language": {
+          "criterion": "Sprachen",
+          "velyric": "Ungarisch, Deutsch und Englisch auf einer Nummer, mitten im Gespräch umschaltbar, wobei die gesprochene Sprache die Ländervorwahl überschreibt.",
+          "other": "Die Sprachen, in denen die Ansage aufgenommen wurde. Die Nachricht kommt in der Sprache zurück, die der Anrufer gesprochen hat."
+        },
+        "questions": {
+          "criterion": "Eine Frage beantworten",
+          "velyric": "Antwortet aus Ihrer eigenen Wissensdatenbank, gefiltert auf Ihren Mandanten, und stellt eine Rückfrage oder leitet weiter, wenn nichts eine Antwort belegt.",
+          "other": "Wird während des Gesprächs nicht beantwortet. Die Frage bekommt eine Antwort, wenn jemand zurückruft, falls jemand zurückruft."
+        },
+        "booking": {
+          "criterion": "Termin buchen",
+          "velyric": "Prüft die echte Verfügbarkeit in Google Kalender oder Microsoft 365, bietet nur freie Zeiten an, bestätigt laut und schreibt die Buchung dann mit Bedingungen, Transaktionen und Idempotenzschlüsseln, sodass kein Duplikat durchrutschen kann.",
+          "other": "Ein Buchungswunsch, keine Buchung. Zwei Anrufer können denselben Termin erbitten, und keiner von beiden weiß davon."
+        },
+        "escalation": {
+          "criterion": "Eine Person erreichen",
+          "velyric": "Die Bitte um eine Person leitet das Gespräch auf der Stelle weiter, und DTMF ist konfigurierbar, zum Beispiel ### für einen menschlichen Mitarbeiter oder 0 für eine sofortige Weiterleitung. Außerhalb der Geschäftszeiten greift das konfigurierte Verhalten.",
+          "other": "Während des Gesprächs nicht möglich. Aus dem Erreichen einer Person wird ein Rückruf."
+        },
+        "concurrency": {
+          "criterion": "Lastspitzen",
+          "velyric": "Gleichzeitige Gespräche sind eine Tarifgrenze von 2, 10, 50 oder 100 und mehr, und jedes Gespräch ist isoliert. Über der Grenze wählen Sie eine kurze Warteschlange, eine Überlaufnummer, einen Rückruf oder die Mailbox.",
+          "other": "Praktisch unbegrenzt, denn jeder Anrufer kann eine Nachricht hinterlassen. Der eigentliche Engpass ist der Stau der Nachrichten."
+        },
+        "changes": {
+          "criterion": "Ändern, was gesagt wird",
+          "velyric": "Laden Sie eine neue Dokumentversion hoch, und sie ersetzt die alten Abschnitte im aktiven Index atomar. Assistentenversionen werden veröffentlicht und lassen sich zurückrollen.",
+          "other": "Die Ansage neu aufnehmen."
+        },
+        "data": {
+          "criterion": "Was Sie danach bekommen",
+          "velyric": "Ein Dashboard mit Anrufen, Lösungsquote, durchschnittlicher Dauer, Weiterleitungsquote, Buchungen und Kosten, dazu Transkripte und Zusammenfassungen, wo aktiviert. Roh-Audio wird standardmäßig nicht gespeichert.",
+          "other": "Eine Audiodatei und ein Zeitstempel. Alles andere muss abgehört und von Hand eingetippt werden."
+        },
+        "cost": {
+          "criterion": "Wie abgerechnet wird",
+          "velyric": "Ein Monatsabonnement mit enthaltenen Sprachminuten und einem veröffentlichten Minutensatz für Mehrverbrauch, bepreist für den ungarischen Markt in Forint, ohne Mehrwertsteuer.",
+          "other": "Meist ohne Aufpreis im Anschluss enthalten. Die Kosten stecken in den Rückrufen, nicht auf der Rechnung."
+        }
+      }
+    },
+    "caller": {
+      "question": "Was erlebt der Anrufer tatsächlich?",
+      "answer": "Statt eines Signaltons bekommt der Anrufer ein Gespräch, das die Sache abschließen kann. Er sagt, was er möchte, der Assistent antwortet aus Ihrem eigenen Material oder prüft Ihren echten Kalender, liest vor, was er zu tun beabsichtigt, und bucht es. Möchte er lieber mit einer Person sprechen, sagt er es, und das Gespräch wird an Ihre Nummer verwiesen.",
+      "first": "Für einen Anrufer ist die Mailbox ein Versprechen, dass jemand zurückruft. Sie funktioniert, solange Sie das immer tun, und scheitert leise, wenn nicht. Ein Assistent nimmt dieses Versprechen für alles heraus, was er innerhalb des Gesprächs abschließen kann, und macht aus dem Rest eine strukturierte Übergabe statt einer zweiminütigen Aufnahme, die jemand nach Gehör abtippen muss.",
+      "second": "Der Weg außerhalb der Geschäftszeiten bleibt, wenn Sie ihn möchten. Velyric kann die Nachricht selbst aufnehmen, einen Rückrufwunsch erfassen oder das Gespräch an eine Bereitschaftsnummer verweisen. Der Unterschied ist, was Sie erreicht: ein Transkript und eine Zusammenfassung mit dem Anliegen des Anrufers, keine Audiodatei und kein Zeitstempel."
+    },
+    "fallback": {
+      "question": "Was passiert, wenn das System nicht helfen kann?",
+      "answer": "Es übergibt, statt zu raten. Ohne belegende Quelle in Ihrer Wissensdatenbank stellt der Assistent eine Rückfrage oder leitet weiter; nach zwei bis drei erfolglosen Verständnisversuchen bietet er die Weiterleitung von sich aus an; eine Zeitüberschreitung oder ein 5xx eines Werkzeugs wird einmal wiederholt und dann weitergeleitet. Außerhalb der Geschäftszeiten greift das konfigurierte Verhalten, und das kann genau die Nachrichtenaufnahme sein, die heute die Mailbox übernimmt.",
+      "first": "Das ist die ehrliche Fassung dieses Vergleichs. Ein KI-Empfang entfernt die Mailbox nicht aus Ihrem Aufbau, er macht sie zum letzten Ausweg statt zur ersten Antwort. Alles Sensible braucht weiterhin eine Person, denn die Telefonnummer eines Anrufers ist eine Bequemlichkeitskennung und keine Authentifizierung.",
+      "second": "Die Übergabe selbst ist eine SIP-Verweisung an ein anderes tel:- oder sip:-Ziel, der Anrufer landet also an einem echten Telefon. Nimmt dort niemand ab, sind Sie zurück bei Ihrem bestehenden Auffangverhalten, was ein guter Grund ist, den Weg außerhalb der Geschäftszeiten bewusst zu konfigurieren und nicht auf den Vorgaben zu belassen."
+    },
+    "setup": {
+      "question": "Wie viel Arbeit sind Einrichtung und Änderung?",
+      "answer": "Die Mailbox kostet eine aufgenommene Ansage und keine Pflege. Velyric kostet einen Nachmittag Konfiguration und danach einen Dokument-Upload, wann immer sich etwas ändert. Wenn die Mailbox Ihr Volumen wirklich bewältigt, lohnt diese Einrichtung nicht. Wenn Sie Ihre Vormittage mit Rückrufen verbringen, lohnt sie sich.",
+      "steps": {
+        "s1": {
+          "title": "Die Nummer beschaffen oder portieren",
+          "body": "Beziehen Sie eine ungarische Ortsnummer über Telnyx oder portieren Sie die Nummer, die Menschen bereits anrufen. Die Bestellung kann eine Netzbetreiber- und behördliche Unternehmensprüfung erfordern, die Teil des Bereitstellungsablaufs ist."
+        },
+        "s2": {
+          "title": "Die Antworten laden, die Sie bei Rückrufen wiederholen",
+          "body": "Was Sie sagen, wenn Sie zurückrufen, ist die Wissensdatenbank: Öffnungszeiten, Preise, Leistungen, was mitzubringen ist. Laden Sie PDF-, DOCX-, TXT-, Markdown- oder CSV-Dateien hoch, ergänzen Sie eine manuelle Frage-Antwort-Liste, oder lassen Sie den Crawler Ihre Website lesen."
+        },
+        "s3": {
+          "title": "Den Kalender verbinden",
+          "body": "Google Kalender oder Microsoft 365 über OAuth2 mit PKCE. Velyric liest belegte Zeiten, legt Termine an und storniert sie, sodass ein Gespräch mit einer Buchung enden kann statt mit einem Buchungswunsch."
+        },
+        "s4": {
+          "title": "Festlegen, was weiterhin eine Nachricht wird",
+          "body": "Stellen Sie das Verhalten außerhalb der Geschäftszeiten und die Weiterleitungsziele ein. Die Nachrichtenaufnahme bleibt verfügbar; sie wird schlicht zur Ausnahme statt zur Vorgabe."
+        }
+      }
+    },
+    "reporting": {
+      "question": "Welche Daten bekommen Sie nach dem Gespräch?",
+      "answer": "Die Mailbox gibt Ihnen eine Audiodatei, eine Nummer und einen Zeitstempel. Velyric gibt Ihnen ein Transkript, eine Zusammenfassung, ein erkanntes Anliegen und die Information, ob das Gespräch gelöst, weitergeleitet oder mit einer Buchung beendet wurde, in einem Dashboard, das außerdem Anrufvolumen, durchschnittliche Dauer, Weiterleitungsquote und Kosten zeigt. Roh-Audio hat eine Aufbewahrung von null Tagen und wird nicht gespeichert, sofern Sie das Aufzeichnungs-Zusatzmodul nicht dazubuchen.",
+      "first": "Die Aufbewahrung ist ausdrücklich: Transkripte standardmäßig 90 Tage, konfigurierbar bis auf einen Tag, Anrufereignisse 180 Tage bei mindestens 30, Werkzeugdaten 30 Tage, Anruferprofile 730 Tage. Das Anrufergedächtnis wird je Mandant gespeichert und nie zwischen Mandanten geteilt.",
+      "second": "Möchten Sie die Ereignisse in Ihren eigenen Systemen, können bis zu zehn ausgehende Webhook-Endpunkte 17 Ereignistypen empfangen, darunter call.started, call.ended, booking.created, booking.changed und booking.canceled, jeweils mit HMAC-SHA256 signiert und über acht Versuche mit wachsender Wartezeit wiederholt."
+    },
+    "cost": {
+      "question": "Worin unterscheiden sich die beiden Kostenmodelle?",
+      "answer": "Die Mailbox ist üblicherweise im Anschluss enthalten, ihre Kosten auf der Rechnung sind also faktisch null, und ihre wirklichen Kosten sind die Zeit für Rückrufe. Velyric ist ein Monatsabonnement mit enthaltenen Sprachminuten und einem veröffentlichten Minutensatz für Mehrverbrauch. Wir haben keine gemessene Zahl dafür, was verpasste Anrufe Ihr Unternehmen kosten, und werden auch keine erfinden.",
+      "first": "Der ehrliche Weg zur Entscheidung ist Nachzählen. Wie viele Anrufe landen pro Woche auf der Mailbox, wie viele davon rufen Sie zurück, wie lange dauert ein Rückruf, und wie viele davon waren eine Frage, die Sie irgendwo bereits schriftlich beantwortet haben. Kommt bei dieser Rechnung wenig heraus, behalten Sie die Mailbox.",
+      "second": "Velyric veröffentlicht Preise ausschließlich für den ungarischen Markt und ausschließlich in Forint, ohne Mehrwertsteuer: Start zu 39.900 HUF mit 150 enthaltenen Minuten, Business zu 69.900 HUF mit 400, Pro zu 129.900 HUF mit 1.000 und Enterprise vertraglich. Mehrverbrauch läuft zum Tarifsatz mit Ausgabegrenzen weiter, ein Höherstufen wirkt sofort und ein Herabstufen zum Ende des Abrechnungszeitraums.",
+      "facts": {
+        "plans": {
+          "term": "Monatstarife",
+          "value": "Start 39.900 HUF, Business 69.900 HUF, Pro 129.900 HUF, ohne Mehrwertsteuer. Enterprise ist vertraglich."
+        },
+        "minutes": {
+          "term": "Enthaltene Sprachminuten",
+          "value": "150, 400 oder 1.000 pro Monat, Mehrverbrauch zu 149, 129 oder 109 HUF je Minute."
+        },
+        "concurrency": {
+          "term": "Gleichzeitige Gespräche",
+          "value": "2 bei Start, 10 bei Business, 50 bei Pro, 100 oder mehr bei Enterprise."
+        },
+        "included": {
+          "term": "In jedem Tarif enthalten",
+          "value": "Eine Rufnummer, ein Standort und eine maximale Gesprächsdauer von 1.800 Sekunden."
+        }
+      }
+    },
+    "alternative": {
+      "question": "Wann ist die Mailbox die bessere Wahl?",
+      "answer": "Wenn das Volumen vernachlässigbar ist und die Kosten null sein müssen. Eine Leitung, die zwei oder drei Nachrichten im Monat aufnimmt, braucht kein Abonnement, und eine Mailbox, die jeden Morgen tatsächlich geleert wird, ist ein funktionierendes System. Die Mailbox ist auch die richtige Antwort für eine Leitung, die als Formalität existiert: eine eingetragene Adresse, eine am Leben gehaltene alte Nummer, ein Ausweichweg.",
+      "first": "Sie ist ebenso die bessere Wahl, wo jedes Gespräch eine bestimmte Person braucht und niemand sonst genügt: eine persönliche Leitung, eine allein arbeitende Fachkraft ohne delegierte Befugnis, eine Nummer, die genau einen benannten Kontakt erreicht. Ein Assistent kann dort eine Nachricht aufnehmen, wird aber nicht mehr tun, als eine Mailbox ohnehin schon tut.",
+      "second": "Wo Vertraulichkeit der ganze Punkt ist, kann eine Mailbox, die nur eine Person öffnet, einfacher zu überblicken sein als eine Plattform. Erwähnenswert ist allerdings, dass Velyric standardmäßig kein Roh-Audio speichert, jeden Abruf auf Ihren Mandanten filtert und Anwendungs- sowie Anrufdaten in einer EU-Cloud-Region als Auftragsverarbeiter unter einem veröffentlichten Vertrag nach Artikel 28 verarbeitet.",
+      "third": "Die eigenen Grenzen von Velyric gehören ebenfalls hierher: nur Ungarisch, Deutsch und Englisch, Gespräche auf 30 Minuten begrenzt, durch den Tarif begrenzte Parallelität, und eine Rufnummernverfügbarkeit, die vom Netzbetreiber und von der behördlichen Prüfung abhängt."
+    },
+    "faq": {
+      "q1": {
+        "question": "Kann Velyric auch einfach nur eine Nachricht aufnehmen?",
+        "answer": "Ja. Die Nachrichtenaufnahme ist eines der konfigurierten Verhalten außerhalb der Geschäftszeiten, neben dem Erfassen eines Rückrufwunsches und der Weiterleitung an eine Bereitschaftsnummer. Der Unterschied zur Mailbox ist, was Sie erreicht: ein Transkript und eine Zusammenfassung mit dem Anliegen des Anrufers statt einer Audiodatei, die jemand abhören muss."
+      },
+      "q2": {
+        "question": "Stört es Anrufer, dass es keine Person ist?",
+        "answer": "Sie wissen es ab dem ersten Satz, denn der Assistent gibt an, dass der Anrufer mit einem KI-Assistenten spricht. Was folgt, ist ein Gespräch, das sie unterbrechen können, in ihrer eigenen Sprache, und das die Buchung tatsächlich abschließen kann. Ob ein einzelner Anrufer das einem Signalton vorzieht, können wir für Sie nicht messen."
+      },
+      "q3": {
+        "question": "Kann er einen Termin buchen, ohne dass ich ihn danach bestätige?",
+        "answer": "Ja. Die Verfügbarkeit wird über Google Kalender oder Microsoft 365 gegen Ihren echten Kalender geprüft, der Assistent fasst die Buchung zusammen und bittet den Anrufer um Bestätigung, und der Schreibvorgang ist durch Datenbankbedingungen, Transaktionen und Idempotenzschlüssel geschützt. Konkurrieren zwei Gespräche um denselben Termin, wird dem unterlegenen das mitgeteilt und die nächste echte Alternative angeboten."
+      },
+      "q4": {
+        "question": "Was passiert, wenn mehr Anrufe eingehen, als mein Tarif erlaubt?",
+        "answer": "Parallelität ist eine kaufmännische Grenze: 2 gleichzeitige Gespräche bei Start, 10 bei Business, 50 bei Pro, 100 oder mehr bei Enterprise. Über Ihrer Grenze gilt die Regel, die Sie wählen, ob das eine kurze Warteschlange, eine Überlaufnummer, ein Rückruf oder die Mailbox ist. Eine Parallelitätserweiterung ist als kostenpflichtiges Zusatzmodul verfügbar."
+      },
+      "q5": {
+        "question": "Muss ich meine bestehende Nummer aufgeben?",
+        "answer": "Nein. Bestehende Nummern lassen sich portieren, und jeder Tarif enthält eine Rufnummer und einen Standort. Neue ungarische Ortsnummern werden über Telnyx bereitgestellt, und die Bestellung kann als Teil des Bereitstellungsablaufs eine Netzbetreiber- und behördliche Unternehmensprüfung erfordern."
+      },
+      "q6": {
+        "question": "Werden die Nachrichten meiner Anrufer aufgezeichnet?",
+        "answer": "Roh-Audio von Gesprächen wird standardmäßig nicht gespeichert: Die Aufbewahrung beträgt null Tage, und die Aufzeichnung ist ein kostenpflichtiges Zusatzmodul. Transkripte werden standardmäßig 90 Tage aufbewahrt, und Sie können das bis auf einen Tag herunterstellen, Anrufereignisse 180 Tage. Kundengesprächsdaten werden nicht zum Training von Allzweckmodellen verwendet."
+      }
+    },
+    "related": {
+      "capability": {
+        "label": "Terminbuchung am Telefon",
+        "description": "Wie aus einem Gespräch ein bestätigter Termin in Ihrem echten Kalender wird, ohne Doppelbuchungen."
+      }
+    }
+  }
+}

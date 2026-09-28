@@ -1,0 +1,30 @@
+{
+  "title": "Phone numbers",
+  "description": "Numbers your callers dial, which agent answers them and how many calls they take at once.",
+  "empty": "No phone numbers yet",
+  "emptyDescription": "Your first number is provisioned automatically after checkout and business verification.",
+  "saved": "{number} updated",
+  "save": "Save",
+  "unassigned": "No agent",
+  "allLocations": "All locations",
+  "types": {
+    "LOCAL": "Local",
+    "MOBILE": "Mobile",
+    "NATIONAL": "National",
+    "TOLL_FREE": "Toll-free"
+  },
+  "columns": {
+    "number": "Number",
+    "status": "Status",
+    "agent": "Answering agent",
+    "location": "Location",
+    "maxCalls": "Max. parallel calls"
+  },
+  "orders": {
+    "title": "Number orders in progress",
+    "kycNeeded": "The carrier needs business details before the number can go live.",
+    "inProgress": "The carrier is processing your order.",
+    "completeKyc": "Provide details",
+    "numberPending": "Number being assigned"
+  }
+}

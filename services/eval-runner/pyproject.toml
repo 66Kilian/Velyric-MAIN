@@ -1,0 +1,29 @@
+[project]
+name = "velyric-eval-runner"
+version = "0.0.0"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "pydantic==2.13.5",
+    "pydantic-settings==2.15.0",
+    "polars==1.44.2",
+    "openai==3.13.0",
+    "nats-py==2.15.0",
+    "boto3==1.43.93",
+    "cryptography==50.0.1",
+    "httpx==0.28.1",
+    "structlog==26.1.0",
+    "uuid-utils==1.0.0",
+    "opentelemetry-api==1.44.0",
+    "opentelemetry-sdk==1.44.0",
+    "opentelemetry-exporter-otlp-proto-http==1.44.0",
+]
+
+[project.scripts]
+velyric-eval-runner = "velyric_eval_runner.main:main"
+
+[build-system]
+requires = ["uv_build>=0.12.0,<0.13"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "velyric_eval_runner"

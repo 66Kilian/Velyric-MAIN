@@ -1,0 +1,72 @@
+{
+  "marketing": {
+    "product": "Produkt",
+    "solutions": "Lösungen",
+    "pricing": "Preise",
+    "integrations": "Integrationen",
+    "docs": "Doku",
+    "security": "Sicherheit",
+    "privacy": "Datenschutz",
+    "terms": "AGB",
+    "dpa": "AVV",
+    "status": "Status",
+    "contact": "Kontakt",
+    "home": "Startseite",
+    "aiReceptionist": "KI-Rezeptionist",
+    "appointmentBooking": "Terminbuchung",
+    "multilingual": "Mehrsprachige Anrufe",
+    "callTransfer": "Anrufweiterleitung",
+    "glossary": "Glossar",
+    "footer": {
+      "description": "Sprach-KI-Agenten, die ans Telefon gehen, Termine buchen und Kunden antworten – rund um die Uhr, im Namen deines Unternehmens.",
+      "servicesHeading": "Unsere Leistungen",
+      "infoHeading": "Informationen",
+      "contactHeading": "Kontakt",
+      "registration": "Registrierungsnummer:",
+      "rights": "Alle Rechte vorbehalten."
+    }
+  },
+  "app": {
+    "dashboard": "Dashboard",
+    "calls": "Anrufe",
+    "agents": "Assistenten",
+    "contacts": "Kontakte",
+    "knowledge": "Wissen",
+    "bookings": "Buchungen",
+    "integrations": "Integrationen",
+    "analytics": "Analysen",
+    "phoneNumbers": "Rufnummern",
+    "locations": "Standorte",
+    "simulation": "Simulation",
+    "billing": "Abrechnung",
+    "settings": "Einstellungen",
+    "security": "Sicherheit",
+    "onboarding": "Einrichtung",
+    "workspaceSwitcher": "Arbeitsbereich wechseln",
+    "pendingInvitations": "Einladungen",
+    "joinWorkspace": "Beitreten",
+    "joining": "Tritt bei…",
+    "createWorkspace": "Neuer Arbeitsbereich",
+    "account": "Konto",
+    "sidebarQuote": "Gutes passiert, wenn Unternehmen zuhören.",
+    "groups": {
+      "operate": "Betrieb",
+      "configure": "Konfiguration",
+      "admin": "Verwaltung",
+      "main": "Menü",
+      "assistant": "Assistent",
+      "channels": "Kanäle",
+      "account": "Konto"
+    },
+    "support": "Hilfe",
+    "adminConsole": "Admin-Portal",
+    "settingsGeneral": "Allgemein",
+    "settingsDescription": "Assistenten, Kanäle und Kontoeinstellungen an einem Ort.",
+    "settingsNav": "Einstellungsbereiche"
+  },
+  "support": {
+    "console": "Support-Konsole",
+    "tenants": "Arbeitsbereiche",
+    "queue": "Prüfwarteschlange"
+  }
+}

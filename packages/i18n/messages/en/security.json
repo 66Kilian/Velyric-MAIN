@@ -1,0 +1,376 @@
+{
+  "title": "Security",
+  "description": "Team access, roles, API keys and the tamper-evident audit trail.",
+  "tabs": {
+    "label": "Security sections",
+    "members": "Members",
+    "roles": "Roles",
+    "apiKeys": "API keys",
+    "auditLog": "Audit log"
+  },
+  "members": {
+    "invite": "Invite member",
+    "inviteTitle": "Invite a team member",
+    "inviteDescription": "They receive an email invitation that expires after 7 days.",
+    "invited": "Invitation sent to {email}",
+    "email": "Email address",
+    "role": "Role",
+    "roleHints": {
+      "OWNER": "Full control including billing, members and workspace deletion.",
+      "ADMIN": "Manages agents, integrations, settings and security, but not ownership.",
+      "OPERATOR": "Monitors and controls calls, contacts and bookings.",
+      "ANALYST": "Read-only access to calls, analytics and quality reports.",
+      "DEVELOPER": "Manages integrations, custom tools, webhooks and API keys.",
+      "BILLING": "Manages the subscription, invoices and payment details.",
+      "VIEWER": "Read-only access to the dashboard."
+    },
+    "sendInvite": "Send invitation",
+    "locationScope": "Location access",
+    "locationScopeHint": "Leave empty to grant access to all locations.",
+    "changeRole": "Change role",
+    "changeRoleTitle": "Change access for {name}",
+    "saveRole": "Save access",
+    "roleChanged": "Access updated",
+    "suspend": "Suspend",
+    "suspended": "Member suspended",
+    "reactivate": "Reactivate",
+    "reactivated": "Member reactivated",
+    "revokeInvite": "Revoke invitation",
+    "revokeInviteTitle": "Revoke the invitation for {name}?",
+    "remove": "Remove",
+    "removeTitle": "Remove {name} from the workspace?",
+    "removeDescription": "Their sessions and access end immediately. This is recorded in the audit log.",
+    "removed": "Member removed",
+    "member": "Member",
+    "status": "Status",
+    "joined": "Added",
+    "actions": "Actions",
+    "you": "You",
+    "statuses": {
+      "INVITED": "Invited",
+      "ACTIVE": "Active",
+      "SUSPENDED": "Suspended",
+      "REMOVED": "Removed"
+    },
+    "expires": "Expires {date}",
+    "allLocations": "All locations"
+  },
+  "apiKeys": {
+    "description": "API keys authenticate server-to-server requests. Grant only the scopes an integration needs.",
+    "create": "New API key",
+    "createTitle": "Create an API key",
+    "createDescription": "Keys cannot manage members, billing, security or other API keys.",
+    "secretTitle": "Copy your API key",
+    "name": "Name",
+    "expiry": "Expires after",
+    "days": "{days} days",
+    "scopes": "Scopes",
+    "createKey": "Create key",
+    "secretWarning": "This is the only time the key is shown. Store it in a secret manager now.",
+    "copySecret": "Copy API key",
+    "done": "I have stored the key",
+    "revoke": "Revoke",
+    "revokeTitle": "Revoke {name}?",
+    "revokeDescription": "Requests using this key are rejected immediately.",
+    "revoked": "API key revoked",
+    "empty": "No API keys yet",
+    "prefix": "Key prefix",
+    "status": "Status",
+    "lastUsed": "Last used",
+    "expires": "Expires",
+    "scopeCount": "{count, plural, one {# scope} other {# scopes}}",
+    "statuses": {
+      "ACTIVE": "Active",
+      "EXPIRED": "Expired",
+      "REVOKED": "Revoked"
+    }
+  },
+  "audit": {
+    "filters": "Audit log filters",
+    "action": "Action",
+    "actor": "Performed by",
+    "anyActor": "Anyone",
+    "actorTypes": {
+      "USER": "Team member",
+      "API_KEY": "API key",
+      "SERVICE": "Velyric service",
+      "SUPPORT_STAFF": "Velyric support",
+      "PROVIDER_WEBHOOK": "Provider webhook",
+      "SYSTEM": "System"
+    },
+    "from": "From date",
+    "to": "To date",
+    "empty": "No audit events match these filters.",
+    "object": "Affected item",
+    "ip": "IP address",
+    "userAgent": "User agent",
+    "trace": "Trace ID",
+    "supportGrant": "Support access grant",
+    "metadata": "Details",
+    "actions": {
+      "agent": {
+        "created": "Agent created",
+        "updated": "Agent updated",
+        "web_test_session_started": "Browser test call started"
+      },
+      "agent_version": {
+        "created": "New agent settings saved",
+        "published": "Agent settings published",
+        "rolled_back": "Rolled back to earlier agent settings"
+      },
+      "api_key": {
+        "created": "API key created",
+        "revoked": "API key revoked"
+      },
+      "availability_exception": {
+        "created": "Special opening hours or day off added",
+        "deleted": "Special opening hours or day off removed"
+      },
+      "billing_profile": {
+        "created": "Billing details added",
+        "updated": "Billing details updated"
+      },
+      "booking": {
+        "canceled": "Booking canceled"
+      },
+      "call": {
+        "terminate_requested": "Call hang-up requested",
+        "transfer_requested": "Call transfer requested"
+      },
+      "checkout": {
+        "started": "Subscription checkout started"
+      },
+      "contact": {
+        "erasure_requested": "Contact data deletion requested",
+        "exported": "Contact data exported",
+        "identity_added": "Contact detail added",
+        "identity_removed": "Contact detail removed",
+        "merged": "Contacts merged",
+        "updated": "Contact updated"
+      },
+      "custom_tool": {
+        "created": "Custom API tool created",
+        "credential_rotated": "Custom API tool key replaced",
+        "disabled": "Custom API tool turned off",
+        "updated": "Custom API tool updated"
+      },
+      "integration": {
+        "authorization_failed": "Integration connection failed",
+        "authorization_started": "Integration connection started",
+        "connected": "Integration connected",
+        "disconnected": "Integration disconnected"
+      },
+      "integrations": {
+        "smtp": {
+          "disconnect": "Email system disconnected",
+          "test_sent": "Test email sent from the email system",
+          "upsert": "Email system set up"
+        }
+      },
+      "knowledge_source": {
+        "archived": "Knowledge source archived",
+        "created": "Knowledge source added",
+        "entries_replaced": "Questions and answers updated",
+        "sync_requested": "Knowledge source refresh requested",
+        "updated": "Knowledge source updated",
+        "upload_requested": "Document upload started"
+      },
+      "legal_hold": {
+        "created": "Legal hold created",
+        "released": "Legal hold released"
+      },
+      "location": {
+        "auto_updated_from_source": "Location details updated from the website",
+        "created": "Location created",
+        "made_primary": "Location set as primary",
+        "updated": "Location updated"
+      },
+      "member": {
+        "invitation_accepted": "Invitation accepted",
+        "invited": "Team member invited",
+        "removed": "Team member removed",
+        "updated": "Team member role changed"
+      },
+      "messaging": {
+        "logo_removed": "Email logo removed",
+        "logo_updated": "Email logo uploaded",
+        "settings_updated": "SMS or email appearance settings changed",
+        "template_reset": "Guest email reset to the default text",
+        "template_updated": "Guest email text changed"
+      },
+      "notification_preferences": {
+        "updated": "Notification settings changed"
+      },
+      "outbound_webhook": {
+        "created": "Webhook created",
+        "deleted": "Webhook deleted",
+        "delivery_retried": "Webhook delivery retried",
+        "secret_rotated": "Webhook signing secret replaced",
+        "test_sent": "Test webhook sent",
+        "updated": "Webhook updated"
+      },
+      "phone_number": {
+        "agent_bound": "Phone number assigned to an agent",
+        "agent_unbound": "Phone number unassigned from the agent",
+        "updated": "Phone number updated"
+      },
+      "phone_order": {
+        "kyc_submitted": "Phone number verification details submitted"
+      },
+      "privacy_request": {
+        "completed": "Privacy request completed",
+        "created": "Privacy request recorded",
+        "erasure_completed": "Privacy erasure carried out",
+        "rejected": "Privacy request rejected",
+        "verified": "Privacy request identity verified"
+      },
+      "provisioning": {
+        "cancel_requested": "Account setup cancellation requested",
+        "retry_requested": "Account setup retry requested"
+      },
+      "resource": {
+        "availability_rules_replaced": "Schedule of a table or staff member changed",
+        "created": "Table or staff member added",
+        "updated": "Table or staff member updated"
+      },
+      "retention_policy": {
+        "reset": "Retention rule reset to default",
+        "updated": "Retention rule changed"
+      },
+      "service": {
+        "created": "Service created",
+        "updated": "Service updated"
+      },
+      "simulation_run": {
+        "canceled": "Test run canceled",
+        "requested": "Test run started"
+      },
+      "simulation_scenario": {
+        "created": "Test scenario created",
+        "updated": "Test scenario updated"
+      },
+      "simulation_suite": {
+        "created": "Test suite created",
+        "updated": "Test suite updated"
+      },
+      "tenant": {
+        "created": "Workspace created",
+        "updated": "Workspace details changed"
+      },
+      "waitlist_entry": {
+        "created": "Guest added to the waitlist",
+        "updated": "Waitlist entry updated"
+      }
+    },
+    "objectTypes": {
+      "agent": "Agent",
+      "agent_version": "Agent settings",
+      "api_key": "API key",
+      "availability_exception": "Special opening hours",
+      "billing_profile": "Billing details",
+      "booking": "Booking",
+      "call": "Call",
+      "caller_profile": "Contact",
+      "checkout_order": "Order",
+      "dsar_request": "Privacy request",
+      "integration": "Integration",
+      "knowledge_source": "Knowledge source",
+      "legal_hold": "Legal hold",
+      "location": "Location",
+      "membership": "Team member",
+      "outbound_webhook": "Webhook",
+      "phone_number": "Phone number",
+      "phone_order": "Phone number order",
+      "provisioning_workflow": "Account setup",
+      "resource": "Table or staff member",
+      "retention_policy": "Retention rule",
+      "service": "Service",
+      "simulation_run": "Test run",
+      "simulation_scenario": "Test scenario",
+      "simulation_suite": "Test suite",
+      "tenant": "Workspace",
+      "tool_definition": "Custom API tool",
+      "waitlist_entry": "Waitlist entry",
+      "webhook_delivery": "Webhook delivery"
+    },
+    "categories": {
+      "agents": "Agent and calls",
+      "bookings": "Bookings and locations",
+      "knowledge": "Knowledge",
+      "integrations": "Integrations",
+      "messaging": "Notifications and emails",
+      "team": "Team and API keys",
+      "privacy": "Contacts and privacy",
+      "billing": "Subscription and phone numbers",
+      "webhooks": "Webhooks",
+      "simulations": "Testing",
+      "workspace": "Workspace"
+    },
+    "category": "Event type",
+    "anyCategory": "All events",
+    "objectId": "Item ID",
+    "technical": "Technical details",
+    "eventCode": "Event code",
+    "unknownPerson": "Unknown team member",
+    "automatic": "Velyric (automatic)"
+  },
+  "roles": {
+    "description": "Roles are fixed bundles of permissions. Operators and viewers can additionally be limited to specific locations.",
+    "caption": "Permissions granted to each role",
+    "permission": "Permission",
+    "granted": "Granted",
+    "notGranted": "Not granted"
+  },
+  "permissions": {
+    "resources": {
+      "workspace": "Workspace",
+      "members": "Members",
+      "roles": "Roles",
+      "locations": "Locations",
+      "agents": "Agents",
+      "agent_versions": "Agent versions",
+      "calls": "Calls",
+      "contacts": "Contacts",
+      "knowledge": "Knowledge",
+      "bookings": "Bookings",
+      "waitlist": "Waitlist",
+      "integrations": "Integrations",
+      "custom_tools": "Custom tools",
+      "webhooks": "Webhooks",
+      "api_keys": "API keys",
+      "analytics": "Analytics",
+      "quality": "Quality",
+      "simulations": "Simulations",
+      "phone_numbers": "Phone numbers",
+      "billing": "Billing",
+      "invoices": "Invoices",
+      "provisioning": "Provisioning",
+      "settings": "Settings",
+      "retention": "Data retention",
+      "privacy_requests": "Privacy requests",
+      "notifications": "Notifications",
+      "security": "Security",
+      "audit_logs": "Audit log",
+      "support_access": "Support access"
+    },
+    "actions": {
+      "read": "view",
+      "update": "edit",
+      "cancel": "cancel",
+      "manage": "manage",
+      "write": "edit",
+      "publish": "publish",
+      "rollback": "roll back",
+      "read_transcript": "view transcripts",
+      "read_recording": "play recordings",
+      "monitor_live": "monitor live",
+      "transfer": "transfer",
+      "terminate": "end calls",
+      "export": "export",
+      "delete": "delete",
+      "run": "run",
+      "order": "order",
+      "grant": "grant"
+    }
+  }
+}

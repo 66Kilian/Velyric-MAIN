@@ -1,0 +1,765 @@
+{
+  "hub": {
+    "meta": {
+      "title": "Voice AI and telephony glossary",
+      "description": "Plain, accurate definitions of the terms you meet when you put an AI voice agent on a business phone line: SIP, PSTN, DID, DTMF, E.164, barge-in, concurrent calls and RAG."
+    },
+    "eyebrow": "Glossary",
+    "title": "Voice AI and telephony glossary",
+    "body": "Twelve terms you will meet when you put an AI agent on a business phone line, defined the way the standards define them, each with a note on how it actually works in Velyric.",
+    "breadcrumb": "Glossary",
+    "breadcrumbLabel": "Breadcrumb",
+    "intro": {
+      "heading": "What is this glossary for?",
+      "answer": "This glossary defines the vocabulary that sits between two worlds: telephony, which has been standardised for decades, and voice AI, which has not. Terms such as SIP, PSTN, DID, DTMF, E.164 and RAG have precise meanings set by standards bodies or by the paper that introduced them, and they are used here with those meanings. Terms such as AI voice agent and barge-in are newer and looser, so each entry separates what is generally agreed from what is one vendor's implementation choice.",
+      "p1": "The reason to be careful about this is procurement. Most of the misunderstandings in a voice AI evaluation come from a single word meaning different things to the buyer and to the vendor: how many phone numbers you get is not how many calls you can take at once, a transfer that passes no context is not a warm transfer, and retrieval does not by itself stop a model from inventing an answer.",
+      "p2": "Every entry follows the same shape. A definition you can quote on its own, a technical explanation of what is actually happening, a concrete example, a section on what the term means specifically inside Velyric, and the mistake people usually make with it. Where Velyric's behaviour is a product decision rather than a standard, such as the keypad codes, the per-plan concurrency limits or what happens when the knowledge base has no answer, the entry says so."
+    },
+    "groups": {
+      "voiceAi": {
+        "title": "Voice AI concepts",
+        "body": "What an AI voice agent is, the front-desk role it is usually hired for, and the menu system it is usually compared against."
+      },
+      "telephony": {
+        "title": "Telephony fundamentals",
+        "body": "The protocols, networks and number formats a phone call runs on. These are industry standards that long predate voice AI, and nothing here is specific to Velyric."
+      },
+      "conversation": {
+        "title": "Conversation mechanics",
+        "body": "What happens second by second on a live call: keypad input, interrupting the agent, handing the caller to a colleague, and how many callers can be on the line at once."
+      },
+      "knowledge": {
+        "title": "Knowledge and data",
+        "body": "How an agent gets the facts it is allowed to state out loud, and what stops it from filling the gaps with something plausible."
+      }
+    },
+    "faq": {
+      "heading": "Frequently asked questions",
+      "q1": {
+        "question": "Which of these terms matter most before buying?",
+        "answer": "Three carry most of the surprises. Concurrent calls, because it is capacity rather than volume and it decides whether callers get through at all. Warm transfer, because the label is routinely used for handovers that pass no context. And retrieval-augmented generation, because grounding is what decides whether the agent invents answers about your business."
+      },
+      "q2": {
+        "question": "Are these definitions specific to Velyric?",
+        "answer": "No. SIP, PSTN, DID, DTMF, E.164 and RAG are industry-standard terms and are defined here as the standards define them. Each entry keeps Velyric-specific behaviour in a separate, clearly marked section so the two are never blurred together."
+      },
+      "q3": {
+        "question": "Is the glossary available in more than one language?",
+        "answer": "Yes. Every entry is published in English, Hungarian and German, which are also the three languages Velyric's voice agent speaks. The caller's language can switch in the middle of a call."
+      },
+      "q4": {
+        "question": "Where do I find prices?",
+        "answer": "On the pricing page. Plans are published for the Hungarian market in HUF, net of VAT, and each plan states its included voice minutes, its per-minute overage rate and its concurrent call limit."
+      },
+      "q5": {
+        "question": "What if the term I need is not here?",
+        "answer": "This list covers the twelve terms that come up most often in an evaluation, not everything in telephony. The documentation goes considerably deeper into configuration, and anything specific to your own setup is better answered there than by a definition."
+      }
+    },
+    "related": {
+      "heading": "Where to go next",
+      "product": {
+        "label": "The Velyric product",
+        "description": "How the agent, the knowledge base, booking and handoff fit together."
+      },
+      "pricing": {
+        "label": "Plans and pricing",
+        "description": "Included minutes, per-minute overage and the concurrency limit on each plan."
+      },
+      "integrations": {
+        "label": "Integrations",
+        "description": "Calendars, custom API tools, webhooks and the phone numbers Velyric provisions."
+      },
+      "security": {
+        "label": "Security and privacy",
+        "description": "Retention defaults, tenant isolation and how call data is actually handled."
+      }
+    }
+  },
+  "labels": {
+    "exampleHeading": "A concrete example",
+    "velyricHeading": "How this works in Velyric",
+    "relatedHeading": "Related terms and pages",
+    "faqHeading": "Frequently asked questions"
+  },
+  "terms": {
+    "ai-voice-agent": {
+      "term": "AI voice agent",
+      "short": "Software that holds a real spoken conversation on a phone call, works out what the caller wants and performs actions such as booking.",
+      "meta": {
+        "title": "AI voice agent: definition and how it works",
+        "description": "An AI voice agent holds a spoken phone conversation, understands free-form speech and performs real actions. What runs during the call, and how Velyric implements it."
+      },
+      "title": "What is an AI voice agent?",
+      "definition": "An AI voice agent is software that conducts a spoken, two-way conversation over a voice channel such as a telephone line. It turns the caller's speech into intent, decides what to do next including calling external systems to look something up or write a record, and answers with synthesised speech in real time. Unlike a recorded menu it is not limited to a fixed set of options: the caller can speak in their own words and change direction mid-sentence.",
+      "explanation": {
+        "heading": "What actually runs during the call?",
+        "p1": "A voice agent is a real-time loop, not a single model call. Audio arrives continuously from the telephony leg, speech is interpreted as it streams, the system decides whether the caller has finished a thought, and a reply is synthesised and played back. The budget is a few hundred milliseconds, because anything slower is heard as an awkward silence rather than as thinking.",
+        "p2": "The decision layer is where implementations differ most. A naive agent hands the whole conversation to a language model and hopes it behaves. A production agent keeps an explicit conversation state, a defined catalogue of actions it is allowed to perform, and a validation step that checks whether a proposed action is permitted at this point in the call before anything is executed.",
+        "p3": "Actions are the reason voice agents exist commercially. Answering a question needs only knowledge. Booking an appointment needs the agent to read a real calendar, to write a record without creating a double booking, and to tell the caller the truth about what was saved."
+      },
+      "example": {
+        "p1": "A caller phones a clinic at 21:40. She says: 'Hello, I would like to move my Thursday appointment to some time next week, preferably in the morning.' A menu system cannot parse that sentence. A voice agent finds the existing booking, calls the availability tool, offers two real morning slots next week, repeats the chosen one back for confirmation, and only then writes the change.",
+        "p2": "Halfway through she adds: 'Actually, could I also ask what a check-up costs?' The agent answers from the practice's own knowledge base and then returns to the reschedule it had not finished. Neither the question nor the order it arrived in was scripted."
+      },
+      "velyric": {
+        "p1": "Velyric runs the conversation through an explicit coded state machine rather than a single prompt: GREETING, DISCOVERY, IDENTITY, ACTION_PREVIEW, CONFIRMATION_GATE, TOOL_EXECUTION, RESULT_CONFIRMATION, FOLLOW_UP, HANDOFF, SAFE_FAILURE, CLOSING, END. The model may propose the next tool; the backend decides whether that tool is allowed in the current state.",
+        "p2": "The built-in action catalogue is deliberately small and fixed: list_services, check_availability, create_booking, find_booking, cancel_booking and search_knowledge, plus any custom HTTPS API tool the tenant defines. Every call opens with an explicit statement that the caller is speaking with an AI assistant, every call is capped at 1,800 seconds, and Hungarian, German and English are supported."
+      },
+      "mistake": {
+        "heading": "Is an AI voice agent just a chatbot with a voice?",
+        "body": "No, and the difference is mostly timing and failure handling. A chat interface can take two seconds to answer and can display 'sorry, I did not understand that' at little cost. On a phone call those two seconds read as a dropped line, and a misunderstanding has to be recovered inside the conversation itself. Voice adds turn-taking, interruption handling, background noise, and the fact that the caller cannot see or re-read anything."
+      },
+      "facts": {
+        "f1": {
+          "term": "Channel",
+          "value": "Inbound telephone calls on the business's own number"
+        },
+        "f2": {
+          "term": "Languages",
+          "value": "Hungarian, German and English, switchable mid-call"
+        },
+        "f3": { "term": "Maximum call length", "value": "1,800 seconds on every plan" }
+      },
+      "capability": {
+        "label": "The Velyric product",
+        "description": "How the agent, the knowledge base, booking and handoff fit together."
+      },
+      "faq": {
+        "q1": {
+          "question": "Does the caller have to be told they are talking to a machine?",
+          "answer": "In Velyric they always are. The agent states at the start of the call that the caller is speaking with an AI assistant, as part of the standard opening rather than as an option. EU AI Act Article 50 transparency obligations apply from 2 August 2026."
+        },
+        "q2": {
+          "question": "What happens when the agent does not know the answer?",
+          "answer": "It does not guess. If no supporting source is found in the tenant's knowledge base, the agent asks a clarifying question or hands the call to a human. Answering from outside the tenant's own material is not a supported behaviour."
+        },
+        "q3": {
+          "question": "Can an AI voice agent make outbound calls?",
+          "answer": "Voice agents as a category can, but Velyric's implemented call handling is inbound: calls answered 24/7 on the tenant's own number. The per-plan concurrency limit describes how many of those inbound calls can run at the same time."
+        }
+      }
+    },
+    "ai-receptionist": {
+      "term": "AI receptionist",
+      "short": "An AI voice agent placed on a business's main line to greet callers, answer routine questions, take bookings and route to a person.",
+      "meta": {
+        "title": "AI receptionist: definition and how it works",
+        "description": "An AI receptionist answers the business line, handles routine questions and bookings, and transfers to a person when that is the right outcome. Definition, real behaviour and limits."
+      },
+      "title": "What is an AI receptionist?",
+      "definition": "An AI receptionist is an AI voice agent deployed on a company's main phone line to do front-desk work: greet the caller, answer the questions a receptionist would answer, take or change bookings, and pass the call to a colleague when that is the right outcome. It is a role rather than a separate technology, which is to say the same voice agent machinery configured for reception duties. Its value is measured in calls that would otherwise have gone unanswered or to voicemail.",
+      "explanation": {
+        "heading": "What does the receptionist role actually require?",
+        "p1": "Reception is mostly triage. Inbound calls to a small business fall into a handful of repeating shapes: opening hours, prices, directions, 'do you have anything free on Friday', 'I need to cancel', and 'can I speak to someone'. An AI receptionist earns its place by resolving the repeating shapes end to end, not by attempting everything.",
+        "p2": "The second requirement is knowing when to stop. A front desk that cannot say 'let me put you through' is worse than no front desk, because the caller is trapped. Handoff therefore has to be a first-class path with explicit triggers, not an error branch that fires when everything else has already failed.",
+        "p3": "The third is coverage. Reception matters most exactly when nobody is there: evenings, weekends, the lunch hour, and the minutes when the phone is already busy with another caller. Behaviour outside business hours is a design decision in its own right, because taking a message, recording a callback request and transferring to an on-call number are three quite different promises to the caller."
+      },
+      "example": {
+        "p1": "A salon's line rings at 19:30, after closing. The caller asks whether there is anything free on Saturday morning and how long a colour treatment takes. The agent answers the duration from the salon's own service list, checks the real calendar, offers 09:30 and 11:00, confirms the chosen time back to the caller, and writes the booking.",
+        "p2": "A second caller, twenty seconds later, wants to argue about an invoice. That is not a reception task and no configuration would make it one. The caller says 'I want to speak to someone' and the call is transferred immediately."
+      },
+      "velyric": {
+        "p1": "Velyric answers inbound calls 24/7 on the tenant's own number, and every plan includes one phone number and one location. Outside business hours the configured behaviour takes over: message taking, a callback request, or transfer to an on-call number. Availability is always checked against the real calendar, so the agent never offers a slot that does not exist.",
+        "p2": "Handoff to a person triggers on an explicit request, on the ### keypad code, after two or three failed comprehension attempts, on a tool timeout or 5xx error after one retry, and on sensitive or disallowed requests. The dashboard reports calls, resolution rate, average call length, transfer rate, bookings and cost, so the share the agent actually resolves is a number rather than an impression."
+      },
+      "mistake": {
+        "heading": "Does an AI receptionist replace the person at the desk?",
+        "body": "Usually not, and framing it that way sets the wrong expectation for everyone. It absorbs the repetitive, after-hours and overflow portion of the call volume, and it hands over the rest. Complaints, negotiations, anything needing judgement and anything touching sensitive data still belong with a colleague, not least because a caller's phone number is a convenience identifier rather than authentication."
+      },
+      "facts": {
+        "f1": {
+          "term": "Availability",
+          "value": "Inbound calls answered 24/7 on the tenant's number"
+        },
+        "f2": {
+          "term": "Included per plan",
+          "value": "1 phone number and 1 location on every plan"
+        },
+        "f3": {
+          "term": "Escalation",
+          "value": "Immediate transfer on request or on the ### keypad code"
+        }
+      },
+      "capability": {
+        "label": "AI receptionist",
+        "description": "The full capability page: call flow, after-hours behaviour and honest limits."
+      },
+      "faq": {
+        "q1": {
+          "question": "What happens when a call comes in after closing time?",
+          "answer": "The behaviour configured for outside business hours applies: taking a message, recording a callback request, or transferring to an on-call number. It is set per tenant rather than being a fixed fallback, and it is a different path from the in-hours conversation."
+        },
+        "q2": {
+          "question": "How many callers can it handle at the same time?",
+          "answer": "That depends on the plan's concurrency limit: 2 simultaneous calls on Start, 10 on Business, 50 on Pro, and 100 or more on Enterprise under contract. Bursts above the limit follow the policy the tenant has chosen, such as a short queue, an overflow number, a callback or voicemail."
+        },
+        "q3": {
+          "question": "Are the calls recorded?",
+          "answer": "Raw call audio is not stored by default; its retention is zero days. Call recording is a paid add-on rather than a default. Transcripts are retained for 90 days by default, which is tenant-configurable down to a minimum of one day."
+        }
+      }
+    },
+    "ivr": {
+      "term": "IVR (Interactive Voice Response)",
+      "short": "An automated phone system that plays prompts and collects keypad or limited voice input to route a caller through a fixed menu tree.",
+      "meta": {
+        "title": "IVR: what Interactive Voice Response means",
+        "description": "IVR plays prompts and collects keypad input to route calls through a predefined menu tree. What it does well, where it fails, and what replaces it on a conversational line."
+      },
+      "title": "What is an IVR?",
+      "definition": "IVR stands for Interactive Voice Response: an automated telephony system that plays recorded or synthesised prompts and collects input from the caller, usually DTMF keypresses and sometimes a small set of spoken words, in order to route the call through a menu tree defined in advance. Every path through an IVR is designed before the call, so the caller has to translate their problem into the options on offer. It is a mature, standard technology and remains the right tool when the routing choices are genuinely few and stable.",
+      "explanation": {
+        "heading": "Why do menu trees frustrate callers?",
+        "p1": "An IVR is a decision tree the caller has to walk. It works when the tree is shallow and the labels match the words callers use for their own problem. It degrades fast with depth, because each extra level multiplies the options the caller must hold in memory while listening, and a spoken menu cannot be skimmed the way a web page can.",
+        "p2": "The classic failure is a mismatch between the organisation chart and the caller's intent. Menus are usually built around departments; callers arrive with problems. 'Press 3 for accounts' is only useful to someone who already knows that their question belongs to accounts.",
+        "p3": "None of which makes IVR obsolete. Keypad input is unambiguous, works from any handset, survives bad audio and a noisy background, and is the accessible fallback when speech recognition struggles. That is exactly why keypad shortcuts remain worth keeping even inside a fully conversational system."
+      },
+      "example": {
+        "p1": "A typical three-level menu: 'For Hungarian, press 1.' Then: 'For bookings press 1, for existing orders press 2, for anything else press 3.' Then: 'For today's bookings press 1, for another date press 2.' A caller who wants to move tomorrow's appointment and also ask about a price has no single correct path, and will press 0 or hang up.",
+        "p2": "The same request stated out loud, 'I would like to move tomorrow's appointment and ask what a check-up costs', is one sentence containing two actions. No tree can be designed with a branch for every such combination, which is the structural limit of the format."
+      },
+      "velyric": {
+        "p1": "Velyric puts no menu tree in front of the caller. The agent opens the call, discloses that it is an AI assistant, and asks what the caller needs; where the call goes is decided from what the caller says rather than from a numbered choice. There is no IVR menu builder in the product and no generic workflow builder either.",
+        "p2": "Keypad input is kept as a shortcut rather than as the interface. The configurable DTMF codes are ### to reach a human agent, 0 for an immediate transfer and * to step back. That preserves the one genuine advantage of an IVR, a deterministic escape hatch that works on any handset, without the tree."
+      },
+      "mistake": {
+        "heading": "Is an AI voice agent just a better IVR?",
+        "body": "They address the same business problem with a different interaction model, so 'better IVR' understates the change. An IVR routes: it decides where the call goes next. A voice agent can also resolve, which means answering the question, checking the calendar, writing the booking and ending the call without a human ever joining. The practical test is what share of calls finish inside the system rather than being handed somewhere else."
+      },
+      "facts": {
+        "f1": { "term": "Stands for", "value": "Interactive Voice Response" },
+        "f2": {
+          "term": "Typical input",
+          "value": "DTMF keypresses, sometimes a limited speech grammar"
+        },
+        "f3": { "term": "In Velyric", "value": "No menu tree; ###, 0 and * remain as shortcuts" }
+      },
+      "capability": {
+        "label": "AI receptionist",
+        "description": "What answers the main line once the menu is gone."
+      },
+      "faq": {
+        "q1": {
+          "question": "Is an IVR the same thing as an auto attendant?",
+          "answer": "In everyday use the two overlap. 'Auto attendant' usually means the narrow case of answering a call and routing it to an extension, while 'IVR' covers the broader category including prompts that collect data such as an account number. Both are menu-driven and scripted in advance."
+        },
+        "q2": {
+          "question": "Does Velyric include an IVR menu builder?",
+          "answer": "No. There is no menu-tree builder and no generic workflow builder in the product. The agent's behaviour comes from its knowledge base, its fixed action catalogue and its handoff rules, and keypad input exists only as the ###, 0 and * shortcuts."
+        },
+        "q3": {
+          "question": "Why do IVR systems ask for an account number and then ask for it again?",
+          "answer": "Because collecting a value in the menu and passing it to whoever eventually answers are two separate pieces of integration work, and many deployments only completed the first. It is a data-plumbing problem rather than a limitation of IVR as a technology."
+        }
+      }
+    },
+    "sip": {
+      "term": "SIP (Session Initiation Protocol)",
+      "short": "The signalling protocol that sets up, changes and ends voice calls over IP networks; the audio itself travels separately over RTP.",
+      "meta": {
+        "title": "SIP: the Session Initiation Protocol explained",
+        "description": "SIP is the signalling protocol that sets up and tears down VoIP calls, while RTP carries the audio. Methods, response codes, transfers, and how Velyric's telephony uses it."
+      },
+      "title": "What is SIP?",
+      "definition": "SIP, the Session Initiation Protocol, is an application-layer signalling protocol standardised in RFC 3261 that establishes, modifies and terminates real-time sessions such as voice calls over IP networks. SIP carries only the control messages, meaning who is calling whom, ringing, answered and hung up, while the audio flows in a separate media stream, normally RTP, whose codecs and ports are negotiated in the SDP body of the SIP messages. It is the protocol that business VoIP services and SIP trunks speak.",
+      "explanation": {
+        "heading": "How does a SIP call get set up?",
+        "p1": "SIP is text-based and modelled on HTTP: requests carry a method, responses carry a numeric status code. The core methods are INVITE to start or change a session, ACK to confirm the final response to an INVITE, BYE to end the session, CANCEL to abandon a request still in progress, REGISTER to tell the network where a user can be reached, and OPTIONS to ask a peer what it supports.",
+        "p2": "Responses fall into familiar classes: 100 Trying, 180 Ringing, 200 OK on answer, 486 Busy Here, 404 Not Found. A normal call is INVITE, 180, 200, ACK, conversation, BYE, 200. Transfers use REFER, which asks the other party to place a new call towards a third destination.",
+        "p3": "The separation of signalling from media is the part that matters in practice. SIP negotiates the session and describes the media in SDP; RTP then carries the audio packets, often over a different network path. That is why a call can look connected in the signalling layer while nobody hears anything: one-way audio is almost always an RTP or NAT problem even when the SIP trace is clean."
+      },
+      "example": {
+        "p1": "A SIP trunk connects a business's telephony to a carrier. When someone dials the business's number, the carrier sends an INVITE towards the trunk with the caller's number in the From header and the dialled number in the To header. The receiving side answers 200 OK with an SDP describing where to send audio, RTP starts flowing, and BYE ends the call.",
+        "p2": "To move that live call to a colleague, the controlling party sends a REFER naming the new destination as a tel: or sip: URI, and the call is re-established towards that destination. Nothing about the audio format changes; only the signalling redirects the leg."
+      },
+      "velyric": {
+        "p1": "Velyric's telephony runs on SIP, but none of it is tenant-configured. Telnyx is the platform-operated carrier for inbound and outbound SIP and for number provisioning, and the realtime voice model is reached over SIP as well. There is no carrier account for a tenant to connect and no trunk for a tenant to maintain.",
+        "p2": "Handoff to a person is a SIP-level operation: the call is referred to another tel: or sip: destination. Concurrent calls are isolated from each other, each with its own call_id, AI session, conversation state and trace, so a failure on one leg cannot affect another."
+      },
+      "mistake": {
+        "heading": "Does SIP carry the audio?",
+        "body": "No, and this confusion causes real troubleshooting mistakes. SIP is signalling only: it negotiates the session and describes the media in SDP. The audio travels as RTP on a separately negotiated path, frequently through different network equipment. Silence on an apparently connected call, or audio in one direction only, is therefore almost never fixed by looking harder at the SIP messages."
+      },
+      "facts": {
+        "f1": { "term": "Standard", "value": "RFC 3261, application-layer signalling" },
+        "f2": { "term": "Media", "value": "RTP, negotiated through SDP, separate from signalling" },
+        "f3": { "term": "Transfer", "value": "REFER towards a tel: or sip: destination" }
+      },
+      "capability": {
+        "label": "Integrations",
+        "description": "What a tenant connects, and what the platform operates on their behalf."
+      },
+      "faq": {
+        "q1": {
+          "question": "Do I need my own SIP trunk to use Velyric?",
+          "answer": "No. Telephony is platform-operated: numbers are provisioned through Telnyx, which is also the inbound and outbound SIP carrier. There is no tenant-side carrier account to connect, and SIP is not part of what a tenant configures."
+        },
+        "q2": {
+          "question": "Is SIP the same as VoIP?",
+          "answer": "No. VoIP is the general idea of carrying voice over IP networks, while SIP is one specific signalling protocol used to set those calls up. A VoIP deployment typically uses SIP for signalling, RTP for the media, and any of several codecs for the audio itself."
+        },
+        "q3": {
+          "question": "What is a SIP URI?",
+          "answer": "An address of the form sip:name@domain that identifies a SIP endpoint, similar in shape to an e-mail address. A call can be addressed either to a SIP URI or to a telephone number expressed as a tel: URI, and Velyric's transfers can target either."
+        }
+      }
+    },
+    "pstn": {
+      "term": "PSTN (Public Switched Telephone Network)",
+      "short": "The worldwide interconnected public telephone network that ordinary phone numbers are reachable on, whatever technology carries the last leg.",
+      "meta": {
+        "title": "PSTN: the public telephone network explained",
+        "description": "The PSTN is the interconnected public telephone network that ordinary numbers are reachable on. What it is today, how IP systems connect to it, and what that means for a business line."
+      },
+      "title": "What is the PSTN?",
+      "definition": "The PSTN, or Public Switched Telephone Network, is the global aggregate of interconnected public telephone networks operated by licensed carriers. It was historically circuit-switched and analogue and is today largely IP-based inside the carriers themselves, but its defining property has not changed: an ordinary phone number is reachable from any other phone in the world, whether the caller is on a mobile, a landline or a VoIP service. Reaching the PSTN from an IP system requires a carrier interconnect, which is what a SIP trunk or a hosted voice provider sells.",
+      "explanation": {
+        "heading": "Is the PSTN still a separate network?",
+        "p1": "Less and less, and that is the part most explanations skip. The public network was built on circuit switching, with a dedicated channel held open for the duration of each call. That architecture is being retired: carriers have migrated their cores to IP, and legacy analogue and ISDN access is being switched off market by market on published timetables.",
+        "p2": "What survives the migration is the numbering plan and the interconnect obligations. A number in the E.164 plan is reachable from any other operator's subscribers because operators interconnect and settle traffic between one another. That property, universal reachability by number, is what the phrase 'the PSTN' really names today.",
+        "p3": "For anything built on IP, the PSTN is reached through a carrier that holds the number ranges, the regulatory relationships and the interconnects, and hands traffic to its customer over SIP. The practical consequences are administrative rather than technical: numbers can require regulatory verification, porting takes carrier time, and availability differs by country and by area code."
+      },
+      "example": {
+        "p1": "A customer dials a Budapest landline number from a German mobile. The call leaves the mobile operator's core, crosses an interconnect to a Hungarian operator, and is delivered to whoever holds that number range. If the number is hosted by a VoIP carrier, the final leg arrives as a SIP INVITE rather than as a circuit.",
+        "p2": "None of this is visible to the caller, who dialled a normal number and heard it ring. That invisibility is the point: a business can move its line to an IP platform without asking a single customer to do anything differently."
+      },
+      "velyric": {
+        "p1": "Velyric reaches the PSTN through Telnyx, which provisions the numbers and acts as the inbound and outbound SIP carrier. Hungarian local numbers are available, and an existing number can be ported instead of taking a new one.",
+        "p2": "Because a licensed carrier sits in the path, ordering a number can require carrier or regulatory business verification, and that KYC step is part of the provisioning workflow. Number availability and lead time depend on the carrier and on that verification. It is the one part of onboarding that is not instant, and it is worth starting early."
+      },
+      "mistake": {
+        "heading": "Is a VoIP number a real phone number?",
+        "body": "Yes, if it is a number from the national numbering plan allocated through a carrier. It is reachable from any phone and behaves like any other number; what differs is only the delivery, since the call arrives at your system over IP instead of over a circuit. The distinction people actually care about is regulatory, meaning emergency-service routing, address registration and geographic eligibility, not whether the number counts as real."
+      },
+      "facts": {
+        "f1": {
+          "term": "What it is",
+          "value": "The interconnected public telephone network, reachable by number"
+        },
+        "f2": {
+          "term": "How IP systems reach it",
+          "value": "Through a carrier interconnect delivered over SIP"
+        },
+        "f3": {
+          "term": "In Velyric",
+          "value": "Telnyx provisions the numbers and carries the traffic"
+        }
+      },
+      "capability": {
+        "label": "Integrations",
+        "description": "Phone numbers, calendars and the systems Velyric talks to."
+      },
+      "faq": {
+        "q1": {
+          "question": "Can I keep my current business number?",
+          "answer": "Yes. Porting an existing number is part of the product, and numbers are provisioned through Telnyx. How long a port takes is determined by the carriers involved and by regulatory verification, not by Velyric."
+        },
+        "q2": {
+          "question": "Does the caller pay more to reach an AI agent?",
+          "answer": "No. The caller dials a normal number from the national numbering plan and pays their own operator's usual rate. Velyric's cost sits on the receiving side, as the included voice minutes and the per-minute overage rate of the plan."
+        },
+        "q3": {
+          "question": "Is the PSTN being switched off?",
+          "answer": "The legacy circuit-switched and ISDN access technologies are being retired market by market, and carriers have moved their cores to IP. The numbering plan and universal reachability by number are not going away with them."
+        }
+      }
+    },
+    "did": {
+      "term": "DID (Direct Inward Dialling)",
+      "short": "A public phone number routed straight to a specific destination inside an organisation, so callers reach it without going through an operator.",
+      "meta": {
+        "title": "DID number: Direct Inward Dialling explained",
+        "description": "A DID, called DDI in much of Europe, is a public number routed directly to a destination inside an organisation. What it means in VoIP, and how Velyric assigns numbers."
+      },
+      "title": "What is a DID number?",
+      "definition": "DID stands for Direct Inward Dialling, known as DDI or Direct Dialling In across much of Europe. It is the arrangement by which a carrier routes public telephone numbers to an organisation's phone system so that each number reaches a specific destination directly, instead of every caller landing on a single switchboard. In modern VoIP usage the phrase 'a DID' is used more loosely to mean a purchasable public number that terminates on your SIP trunk or voice platform.",
+      "explanation": {
+        "heading": "Why does the term exist at all?",
+        "p1": "Historically an organisation had a handful of physical lines and one published number, and callers reached a switchboard operator who connected them onwards. DID was the carrier feature that changed this: the carrier delivers the dialled digits to the phone system along with the call, and the system routes to the matching destination. A block of a hundred numbers no longer required a hundred lines.",
+        "p2": "That is the insight the modern usage preserves. The count of numbers and the count of simultaneous calls are separate quantities that happen to have been coupled by old hardware. A business can hold fifty numbers and still only be able to take two calls at once, or hold one number and take fifty.",
+        "p3": "In an IP deployment a number is provisioned by the carrier, associated with the customer's account and pointed at a SIP destination. What then happens to a call arriving on it, meaning which agent, which greeting, which language and which opening hours, is configured on the receiving platform and not by the carrier."
+      },
+      "example": {
+        "p1": "A clinic with two locations publishes two separate numbers. Calls to the first are greeted in the name of the first location, with its own opening hours and its own calendar; calls to the second land on the second location's configuration. To the caller there is no configuration at all, only 'the number I dialled'.",
+        "p2": "A second common use is measurement. A distinct number printed on one advertisement makes the calls that advertisement generated countable, without asking a single caller where they saw it."
+      },
+      "velyric": {
+        "p1": "Every Velyric plan includes one phone number and one location. Numbers are provisioned through Telnyx, Hungarian local numbers are available, and an existing number can be ported instead. Because a carrier is in the path, ordering can require business verification as part of the provisioning workflow.",
+        "p2": "Additional phone numbers are a paid add-on, and multi-location support means each location can be modelled separately with its own explicit timezone. Roles can be scoped to a location, so the people who see one location's calls are not automatically the people who see another's."
+      },
+      "mistake": {
+        "heading": "Does buying more numbers let me take more calls at once?",
+        "body": "No, and this is the single most common misunderstanding of the term. Numbers are addresses; simultaneous capacity is a separate limit that has to be bought separately. In Velyric, concurrency is set by the plan at 2, 10 or 50 calls at once, with 100 or more on Enterprise, and extra phone numbers and a concurrency boost are two different add-ons that solve two different problems."
+      },
+      "facts": {
+        "f1": { "term": "Also called", "value": "DDI, Direct Dialling In, in European usage" },
+        "f2": { "term": "Included per plan", "value": "1 phone number and 1 location" },
+        "f3": {
+          "term": "Not the same as",
+          "value": "Concurrent call capacity, which is a separate plan limit"
+        }
+      },
+      "capability": {
+        "label": "Integrations",
+        "description": "How numbers are provisioned, ported and attached to a location."
+      },
+      "faq": {
+        "q1": {
+          "question": "Can I have a separate number for each location?",
+          "answer": "Yes, through the extra phone numbers add-on. Every plan includes one number and one location as standard, and Velyric supports multiple locations, each with its own explicit timezone and its own location-scoped access."
+        },
+        "q2": {
+          "question": "Is a DID the same as an extension?",
+          "answer": "No. An extension is an internal short number inside the phone system, while a DID is a public number the outside world can dial. DID exists precisely so that an external caller can reach an internal destination without being connected by hand."
+        },
+        "q3": {
+          "question": "Can I port my existing number instead of taking a new one?",
+          "answer": "Yes, porting an existing number is part of the product. Availability and lead time depend on the carrier and on regulatory business verification, which is part of the provisioning workflow rather than something Velyric can shorten."
+        }
+      }
+    },
+    "dtmf": {
+      "term": "DTMF (Dual-Tone Multi-Frequency)",
+      "short": "Touch-tone signalling: each keypad press sends a unique pair of audio tones that a phone system can recognise unambiguously.",
+      "meta": {
+        "title": "DTMF: touch-tone keypad signalling explained",
+        "description": "DTMF turns each keypad press into a unique pair of tones. The frequency table, in-band versus RFC 2833 signalling, and the keypad codes Velyric supports on a call."
+      },
+      "title": "What is DTMF?",
+      "definition": "DTMF, Dual-Tone Multi-Frequency signalling and commonly called touch-tone, is the method by which a telephone keypad sends digits to the network. Pressing a key transmits two sine tones at once: one from a low-frequency group of 697, 770, 852 and 941 Hz identifying the row, and one from a high-frequency group of 1209, 1336, 1477 and 1633 Hz identifying the column, so each of the sixteen possible keys has a unique pair. Using two tones from separate bands makes an accidental match by speech or background noise very unlikely.",
+      "explanation": {
+        "heading": "How is DTMF carried over a VoIP call?",
+        "p1": "On an analogue line the tones are literally part of the audio. Over IP that becomes a problem, because low-bitrate speech codecs are optimised for the human voice and can distort pure tones enough that the far end mis-detects or misses a digit entirely, while packet loss can clip a keypress in half.",
+        "p2": "The standard fix is to take the digits out of the audio. RFC 2833, updated by RFC 4733, defines named telephone events carried as a distinct RTP payload type: the digit, its volume and its duration travel as events rather than as sound. SIP INFO messages are an alternative used by some deployments. Interoperability trouble between two systems is most often a disagreement about which of these methods is in use.",
+        "p3": "Whichever transport is chosen, DTMF has one property that nothing else on a call has: it is unambiguous. It does not depend on recognising speech, it survives a noisy line, a quiet caller and a loud room, and it means exactly the same thing in every language."
+      },
+      "example": {
+        "p1": "Pressing 5 sends 770 Hz and 1336 Hz together. Pressing * sends 941 Hz and 1209 Hz. A system listening for input matches the received pair against the table and reads off a digit, with no language model and no acoustic training involved.",
+        "p2": "The table also explains a piece of trivia with a practical edge: the 1633 Hz column encodes the A, B, C and D keys, which exist in the standard but not on a subscriber handset because they were reserved for network signalling."
+      },
+      "velyric": {
+        "p1": "Velyric keeps DTMF as a deterministic shortcut rather than as the interface. The codes are configurable, with ### reaching a human agent, 0 performing an immediate transfer, and * stepping back in the conversation. There is no menu to navigate with them.",
+        "p2": "That matters as an accessibility and escape path. Pressing ### does not depend on the agent having understood anything, and it sits alongside the other explicit handoff triggers: an asked-for transfer, two or three failed comprehension attempts, a tool timeout or 5xx after one retry, and sensitive or disallowed requests."
+      },
+      "mistake": {
+        "heading": "Does using keypad codes mean the system is really a menu?",
+        "body": "No, and conflating the two loses something useful. A menu uses DTMF as the only way in, so you must press a number to proceed at all. A conversational system uses it as an override that always works: a way out when speech recognition is struggling, when the line is bad, or when the caller simply does not want to talk. Keeping the codes is not a step backwards, and removing them would remove the only input on a call that never fails."
+      },
+      "facts": {
+        "f1": {
+          "term": "Low tone group",
+          "value": "697, 770, 852 and 941 Hz, identifying the row"
+        },
+        "f2": {
+          "term": "High tone group",
+          "value": "1209, 1336, 1477 and 1633 Hz, identifying the column"
+        },
+        "f3": {
+          "term": "Velyric codes",
+          "value": "### human agent, 0 immediate transfer, * step back, all configurable"
+        }
+      },
+      "capability": {
+        "label": "Call transfer to a person",
+        "description": "Every route from the agent to a colleague, and what triggers each one."
+      },
+      "faq": {
+        "q1": {
+          "question": "Which keys reach a person in Velyric?",
+          "answer": "### reaches a human agent and 0 performs an immediate transfer, while * steps back in the conversation. All three codes are configurable, so a tenant can change them to fit what its callers are already used to."
+        },
+        "q2": {
+          "question": "Why does a keypress sometimes not register on a VoIP call?",
+          "answer": "Usually because the two ends disagree about how DTMF is carried. In-band tones can be damaged by low-bitrate speech codecs and packet loss, while RFC 2833 and RFC 4733 send the digits as separate RTP events. If one side expects events and the other sends audio, digits are silently lost."
+        },
+        "q3": {
+          "question": "Can the caller interrupt by speaking instead of pressing a key?",
+          "answer": "Yes. Velyric's conversation is full duplex, so the caller can interrupt, hesitate or give a short acknowledgement without breaking the flow. The keypad codes exist for the cases where speaking is not getting through."
+        }
+      }
+    },
+    "barge-in": {
+      "term": "Barge-in",
+      "short": "The caller's ability to speak over a prompt and have the system stop talking and listen, instead of finishing its sentence first.",
+      "meta": {
+        "title": "Barge-in: interrupting a voice system",
+        "description": "Barge-in lets a caller speak over a prompt and be heard. What it requires technically, why false triggers happen, and how Velyric handles interruptions on a live call."
+      },
+      "title": "What is barge-in?",
+      "definition": "Barge-in is the ability of a caller to start speaking while the system is still talking and have the system stop its own output and process what was said. It requires full-duplex audio, meaning both directions are open at once, and echo cancellation, so that the system does not mistake its own synthesised voice for the caller's speech. Without barge-in the caller must wait for every prompt to finish, which is the single most-cited complaint about automated phone systems.",
+      "explanation": {
+        "heading": "What makes barge-in hard to get right?",
+        "p1": "The system has to listen while it speaks, which means its own output comes back down the microphone path. Echo cancellation removes most of that but never all of it, and whatever is left can look like speech. Set the threshold too low and the agent cuts itself off because a door closed; set it too high and the caller has to raise their voice to be heard at all.",
+        "p2": "The second problem is deciding what an interruption means. People interrupt for at least three different reasons: to take the turn, as in 'no, wait'; to acknowledge without taking the turn, as in 'mhm' or 'right'; and to fill a hesitation. Treating a backchannel as a turn-grab makes the agent stop dead every few seconds, while treating a genuine correction as a backchannel makes it talk over the caller.",
+        "p3": "The third is recovering cleanly. When output is cut off mid-sentence, the system's record of what the caller has been told is now wrong. An agent that offered 'Tuesday at ten, Wednesday at two' and was interrupted after the first option must not later behave as though the second was heard."
+      },
+      "example": {
+        "p1": "The agent begins: 'I have Thursday at nine thirty, Thursday at eleven, and Friday at...' and the caller says 'the nine thirty one'. The agent stops immediately, takes the choice and confirms it back. The whole exchange is shorter than the prompt would have been on its own.",
+        "p2": "Compare the same call without barge-in. The caller says the same thing, is not heard, waits for the full list, then repeats themselves. The call is longer, and the caller has learned not to speak until spoken to, which is the habit that makes automated lines feel slow even when they are fast."
+      },
+      "velyric": {
+        "p1": "Velyric runs the conversation full duplex. The caller can interrupt, hesitate and give short acknowledgements without breaking the flow, so a 'mhm' and a 'no, the other one' are not treated as the same event. Interruption handling is part of how every call is run rather than a setting to switch on.",
+        "p2": "Barge-in success is one of the signals Velyric measures, alongside answer latency, tool success rate, first-call resolution, transfer rate, unsupported-answer rate and language switch accuracy. Treating it as a measured quality metric rather than as a feature flag is what makes it possible to tune."
+      },
+      "mistake": {
+        "heading": "Is barge-in the same as just using shorter prompts?",
+        "body": "They attack the same frustration from opposite directions, and one does not substitute for the other. Shortening prompts reduces how long the caller waits. Barge-in removes waiting as a category, because the caller is never forced to wait in the first place. A system with short prompts and no barge-in still teaches callers to stay silent until addressed, and that habit is what makes an automated call feel slower than it is."
+      },
+      "facts": {
+        "f1": { "term": "Requires", "value": "Full-duplex audio and echo cancellation" },
+        "f2": {
+          "term": "Must distinguish",
+          "value": "Turn-taking interruptions from backchannels and hesitation"
+        },
+        "f3": {
+          "term": "Measured as",
+          "value": "Barge-in success, one of Velyric's call quality signals"
+        }
+      },
+      "capability": {
+        "label": "The Velyric product",
+        "description": "How the conversation layer, tools and handoff work together on a live call."
+      },
+      "faq": {
+        "q1": {
+          "question": "Can I interrupt the Velyric agent?",
+          "answer": "Yes. The conversation is full duplex, so you can speak over the agent and it stops and listens. Hesitation sounds and short acknowledgements are handled without stopping the agent unnecessarily."
+        },
+        "q2": {
+          "question": "Does background noise cut the agent off?",
+          "answer": "Barge-in detection has to separate caller speech from the agent's own output and from ambient noise, which is why barge-in success is a measured signal rather than an assumption. If speech is not getting through on a bad line, the keypad codes still work: ### reaches a human agent and 0 performs an immediate transfer."
+        },
+        "q3": {
+          "question": "Does barge-in work in all three languages?",
+          "answer": "Velyric supports Hungarian, German and English, and the caller's language can switch in the middle of a call. Full-duplex interruption handling is part of how every call is run, not something enabled per language."
+        }
+      }
+    },
+    "warm-transfer": {
+      "term": "Warm transfer",
+      "short": "Handing a call to a colleague after first reaching them and passing on context, rather than connecting the caller and dropping out.",
+      "meta": {
+        "title": "Warm transfer: attended call transfer explained",
+        "description": "A warm transfer passes context to the colleague before connecting the caller; a blind transfer does not. How each works in SIP, and how Velyric hands a call to a person."
+      },
+      "title": "What is a warm transfer?",
+      "definition": "A warm transfer, also called an attended or consultative transfer, is one in which the transferring party first reaches the destination, explains who is calling and why, and only then connects the two parties. It contrasts with a blind or cold transfer, in which the call is pushed to the destination with no announcement and the transferring party drops out immediately. The difference the caller actually notices is whether they have to explain their problem a second time.",
+      "explanation": {
+        "heading": "How do warm and blind transfers differ technically?",
+        "p1": "In SIP both are built on REFER, the method that asks one party to place a call towards a third destination. A blind transfer is a REFER sent straight away: the transferee is asked to call the target, and the transferring party is finished. Nothing is passed along except the number.",
+        "p2": "An attended transfer adds a consultation leg first. The transferring party holds the caller, calls the target, speaks to them, and only then issues a REFER carrying a Replaces header that tells the target's endpoint to take over the existing dialogue. The caller and the target end up in one call and the consultation leg disappears.",
+        "p3": "The cost of the warm version is time, because someone is on hold while the consultation happens, and the transfer can fail if the target does not pick up, which is exactly why the transferring party is still present to come back and say so. The cost of the blind version is the caller repeating themselves, or landing in a voicemail box nobody warned them about."
+      },
+      "example": {
+        "p1": "Blind: 'I will put you through to accounts.' A click, then a different person answers with 'Accounts, how can I help?' and the caller starts from the beginning, including their name and their invoice number.",
+        "p2": "Warm: the same caller hears twenty seconds of hold, and the colleague picks up already knowing the invoice number and the question. The caller says one sentence instead of five. The total time is similar; the experience is not."
+      },
+      "velyric": {
+        "p1": "Velyric treats handoff to a person as a first-class path with explicit triggers rather than as an error branch: an asked-for transfer, the ### keypad code, two or three failed comprehension attempts, a tool timeout or 5xx error after one retry, and sensitive or disallowed requests. At the protocol level the SIP call is referred to another tel: or sip: destination.",
+        "p2": "Context is preserved on the platform rather than announced down the line. Call transcripts and summaries are available where enabled, and each call keeps its own call_id, conversation state and trace. Outside business hours the configured alternative applies instead of a transfer: message taking, a callback request, or an on-call number."
+      },
+      "mistake": {
+        "heading": "Is 'warm transfer' just a nicer word for any transfer?",
+        "body": "It is a specific, checkable thing, and the test is simple: did the receiving person know who was calling and why before they said hello? If the caller has to repeat their name or their problem, it was a blind transfer regardless of the label on the brochure. When evaluating any vendor, ask what exactly reaches the colleague and by what mechanism, whether that is a verbal announcement, a screen pop or a summary in a dashboard, rather than accepting the word."
+      },
+      "facts": {
+        "f1": { "term": "Also called", "value": "Attended transfer, consultative transfer" },
+        "f2": { "term": "Opposite of", "value": "Blind or cold transfer, with no announcement" },
+        "f3": { "term": "In SIP", "value": "REFER, with a Replaces header for the attended case" }
+      },
+      "capability": {
+        "label": "Call transfer to a person",
+        "description": "The triggers, the destinations and what happens outside business hours."
+      },
+      "faq": {
+        "q1": {
+          "question": "When does Velyric hand a call to a person?",
+          "answer": "On an explicit request to speak to someone, on the ### keypad code, after two or three failed comprehension attempts, on a tool timeout or 5xx error after one retry, and on sensitive or disallowed requests. Outside business hours the configured out-of-hours behaviour applies instead."
+        },
+        "q2": {
+          "question": "What happens to a call that arrives outside business hours?",
+          "answer": "The behaviour configured for out-of-hours applies: taking a message, recording a callback request, or transferring to an on-call number. It is a per-tenant choice rather than a fixed fallback, so the same trigger can produce different outcomes at different businesses."
+        },
+        "q3": {
+          "question": "Can the caller reach a person without explaining themselves first?",
+          "answer": "Yes. Asking to speak to a person triggers an immediate transfer, and so does the 0 keypad code, while ### reaches a human agent. None of these require the agent to have understood the caller's actual request."
+        }
+      }
+    },
+    "e164": {
+      "term": "E.164",
+      "short": "The ITU-T standard for writing phone numbers internationally: a plus sign, a country code and a national number, fifteen digits at most.",
+      "meta": {
+        "title": "E.164: the international phone number format",
+        "description": "E.164 defines how phone numbers are written internationally: plus, country code, national number, up to 15 digits. Why systems normalise to it, and why it is not proof of identity."
+      },
+      "title": "What is the E.164 phone number format?",
+      "definition": "E.164 is the ITU-T recommendation that defines the international public telecommunication numbering plan: a number consists of a country code of one to three digits followed by a national significant number, with a maximum of fifteen digits in total. In its canonical written form the number is prefixed with a plus sign and contains no spaces, brackets or dashes, for example +3612345678. It is the only unambiguous way to write a number so that it can be dialled, stored and matched from anywhere in the world.",
+      "explanation": {
+        "heading": "Why do systems insist on E.164?",
+        "p1": "Because every other way of writing a number is ambiguous. '06 1 234 5678', '(1) 234-5678' and '+36 1 234 5678' can all be the same subscriber, but only the last is interpretable without knowing where the writer was standing at the time. Trunk prefixes such as the Hungarian 06 or the German 0 are national dialling conventions and are not part of the number itself.",
+        "p2": "Storing numbers in E.164 makes them comparable. Deduplicating contacts, matching an incoming caller ID against an existing record, and routing all depend on two different representations of the same subscriber producing the same string. Formatting a number nicely for display is a presentation concern that happens afterwards, on the way out.",
+        "p3": "The plus sign is a notation meaning 'an international prefix goes here', not a digit. When the number is actually dialled, the device or the network substitutes the local international access code, which is 00 across most of Europe and 011 in North America. The fifteen-digit maximum excludes that prefix."
+      },
+      "example": {
+        "p1": "The same Budapest landline, written nationally as 06 1 234 5678, is +3612345678 in E.164: country code 36, national significant number 12345678, and no trunk prefix anywhere.",
+        "p2": "A German mobile written as 0151 23456789 becomes +4915123456789. The leading 0 disappears because it is a national trunk prefix and not part of the subscriber number. Keeping it, or dropping a digit that was not a prefix, is the most common data-entry error when normalising a list of numbers."
+      },
+      "velyric": {
+        "p1": "Velyric uses the caller's E.164 country code as an initial hint about which language to greet in, and as nothing more than that. An explicit request such as 'magyarul kérem', the language actually detected in the caller's speech, and a stored preferred_language all override the hint, and the language can change in the middle of a call.",
+        "p2": "The number is explicitly not authentication. A caller's phone number is a convenience identifier for finding a record; sensitive data or actions require step-up verification or a transfer to a person. Caller memory is stored per tenant and is never shared across tenants, so a number known to one business is not known to another."
+      },
+      "mistake": {
+        "heading": "Does the country code tell you who is calling?",
+        "body": "It tells you which country's numbering plan allocated the number, and that is the whole of it. It does not tell you where the person is standing, what language they speak, or that they are who the number suggests: a Hungarian living in Vienna keeps a +36 number, and caller ID can be spoofed. Treating a country code as an opening guess about language is reasonable. Treating a phone number as proof of identity is a security mistake."
+      },
+      "facts": {
+        "f1": { "term": "Standard", "value": "ITU-T Recommendation E.164" },
+        "f2": {
+          "term": "Maximum length",
+          "value": "15 digits, country code plus national significant number"
+        },
+        "f3": {
+          "term": "In Velyric",
+          "value": "An initial language hint only, and never authentication"
+        }
+      },
+      "capability": {
+        "label": "Multilingual voice",
+        "description": "How the agent picks a language, and how it switches mid-call."
+      },
+      "faq": {
+        "q1": {
+          "question": "How does Velyric decide which language to greet in?",
+          "answer": "The caller's E.164 country code provides the initial hint. An explicit request, the language actually detected in the caller's speech, and a stored preferred_language all override it, and the language can switch in the middle of the call."
+        },
+        "q2": {
+          "question": "Is a phone number enough to identify a returning caller?",
+          "answer": "It is enough to look a record up, not enough to trust it. Velyric treats the number as a convenience identifier, and sensitive data or actions require step-up verification or a transfer to a person."
+        },
+        "q3": {
+          "question": "Do I have to enter numbers in E.164 format myself?",
+          "answer": "Systems normalise to E.164 internally because it is the only unambiguous representation. The pitfall to watch is the national trunk prefix: the 06 in Hungary and the leading 0 in Germany are dialling conventions and are removed once the country code is added."
+        }
+      }
+    },
+    "concurrent-calls": {
+      "term": "Concurrent calls",
+      "short": "How many calls can be connected at the same instant, which is a capacity limit and has nothing to do with how many calls you receive in a day.",
+      "meta": {
+        "title": "Concurrent calls: what the limit actually means",
+        "description": "Concurrent calls measure how many calls run at the same instant, not how many you receive. How to size the limit, and the 2, 10 and 50 call limits on Velyric plans."
+      },
+      "title": "What are concurrent calls?",
+      "definition": "Concurrent calls are the number of telephone calls connected at the same instant on an account, a trunk or a phone system. It is a capacity measure rather than a volume measure: a business taking a thousand calls a month may never need more than two at once, while a business taking two hundred can need ten if they all arrive in the same hour. Capacity determines whether a caller gets through at all; volume only determines what you are billed.",
+      "explanation": {
+        "heading": "How many concurrent calls does a business actually need?",
+        "p1": "The honest answer depends on arrival pattern and call length, not on monthly totals. Traffic intensity is the product of the two: a hundred calls in the busiest hour averaging three minutes each is five Erlangs of load, and sizing to exactly five channels would still turn callers away, because arrivals cluster rather than spacing themselves politely. Erlang B is the standard formula for turning a target blocking probability into a channel count.",
+        "p2": "Real telephone traffic is peaky in ways that averages hide. Calls follow opening times, advertising, weather and, for anyone taking appointments, the first hour after opening on a Monday. The busy-hour figure is the number that matters, and it is usually several times the daily average.",
+        "p3": "What happens on overflow is a separate design decision, and it is the one the caller experiences. The options are a busy signal, a queue, redirection to another number, a callback promise or voicemail. Each trades caller patience against a lost call, and choosing none of them means choosing the busy signal by default."
+      },
+      "example": {
+        "p1": "A dental practice takes around sixty calls on a Monday. Fifteen of them arrive between 08:00 and 09:00 and average four minutes each. That hour alone carries one Erlang of average load, but the arrivals are bunched, so two simultaneous channels will occasionally be full while ten would sit idle all afternoon.",
+        "p2": "The same practice taking six hundred calls a month spread evenly would need far less capacity for the same total volume. Volume and capacity really are independent quantities, and only one of them decides whether the phone rings out."
+      },
+      "velyric": {
+        "p1": "Velyric's concurrency limit is set by the plan: 2 simultaneous calls on Start, 10 on Business, 50 on Pro, and 100 or more on Enterprise under contract. It is a commercial limit rather than a technical ceiling, and a concurrency boost is available as a paid add-on.",
+        "p2": "Bursts above the limit follow the policy the tenant has chosen, which may be a short queue, an overflow number, a callback or voicemail, rather than one fixed behaviour. Parallel calls are fully isolated: each has its own call_id, AI session, conversation state and trace, so one call failing cannot affect another. Every call is capped at 1,800 seconds on every plan."
+      },
+      "mistake": {
+        "heading": "Is the concurrency limit the same thing as included minutes?",
+        "body": "No, and mixing them up is the most common sizing error. Included minutes are volume: how much talking the plan covers before the per-minute overage rate applies. Concurrency is capacity: how many of those minutes can be spoken at the same moment. A plan can have plenty of minutes left and still turn a caller away because every simultaneous slot is busy, and the fix for that is a higher plan or the concurrency boost add-on, not more minutes."
+      },
+      "facts": {
+        "f1": {
+          "term": "Plan limits",
+          "value": "Start 2, Business 10, Pro 50, Enterprise 100 or more"
+        },
+        "f2": {
+          "term": "Above the limit",
+          "value": "Tenant policy: short queue, overflow number, callback or voicemail"
+        },
+        "f3": {
+          "term": "Not the same as",
+          "value": "Included voice minutes, which measure volume rather than capacity"
+        }
+      },
+      "capability": {
+        "label": "Plans and pricing",
+        "description": "Included minutes, overage rates and the concurrency limit on each plan."
+      },
+      "faq": {
+        "q1": {
+          "question": "How many calls can Velyric handle at once?",
+          "answer": "It depends on the plan: 2 concurrent calls on Start, 10 on Business, 50 on Pro, and 100 or more on Enterprise under contract. A concurrency boost is available as a paid add-on if the plan limit is the constraint rather than the minutes."
+        },
+        "q2": {
+          "question": "What happens when more callers arrive than the limit allows?",
+          "answer": "Bursts above the limit follow the policy the tenant has chosen: a short queue, an overflow number, a callback or voicemail. Concurrency is a commercial limit on the plan rather than a technical ceiling of the platform."
+        },
+        "q3": {
+          "question": "Do parallel calls interfere with one another?",
+          "answer": "No. Each call has its own call_id, AI session, conversation state and trace, so one call's failure cannot affect another. Every call is also capped at 1,800 seconds, which bounds how long a single call can hold a concurrency slot."
+        }
+      }
+    },
+    "rag": {
+      "term": "RAG (retrieval-augmented generation)",
+      "short": "Retrieving the relevant passages from your own documents and handing them to the model at answer time, so the answer is grounded in your material.",
+      "meta": {
+        "title": "RAG: retrieval-augmented generation explained",
+        "description": "RAG retrieves passages from your own documents and gives them to the model at answer time. The ingestion pipeline, chunking, tenant filtering and Velyric's no-answer policy."
+      },
+      "title": "What is retrieval-augmented generation (RAG)?",
+      "definition": "Retrieval-augmented generation, or RAG, is a technique in which a system searches an external body of documents for passages relevant to the question and supplies those passages to a language model as context before it answers. The model then generates from material it was handed rather than only from what it absorbed during training. The practical benefits are that the answer can be traced to something specific, that the corpus can be updated without retraining anything, and that access to the corpus can be restricted per user or per tenant.",
+      "explanation": {
+        "heading": "What happens between the question and the answer?",
+        "p1": "Ingestion comes first and determines almost everything downstream. Documents are parsed into text, split into chunks small enough to be precise but large enough to stand alone, enriched with metadata, converted into embedding vectors and written to an index. Chunking is where most of the quality is won or lost: a chunk that separates a price from the service it belongs to will retrieve confidently and answer wrongly.",
+        "p2": "At answer time the question is embedded the same way, the index returns the closest chunks, and those chunks are placed in the model's context. Retrieval is a search problem with the usual failure modes: a question phrased differently from the document, a term the corpus never uses, or a document that was simply never uploaded.",
+        "p3": "The policy for the empty case is what separates a usable system from a dangerous one. If retrieval returns nothing relevant, a model given no grounding will still produce a fluent answer, because fluency is not the same as knowledge. Deciding in advance to ask a clarifying question or escalate instead is a design decision, not a model capability."
+      },
+      "example": {
+        "p1": "A restaurant uploads its menu as a PDF and lets its website be crawled. A caller asks whether there is anything gluten-free. The question is matched against the chunks of the menu, the two relevant passages are retrieved, and the answer names the actual dishes rather than saying 'we have several options'.",
+        "p2": "The next caller asks whether the terrace is heated. Nothing in the menu or on the website mentions it. A grounded system says so and offers to put the caller through; an ungrounded one produces a plausible answer, and the caller arrives to a cold terrace."
+      },
+      "velyric": {
+        "p1": "Velyric ingests PDF, DOCX, TXT and Markdown, CSV, manually written FAQ entries and website URLs. Websites are crawled sitemap-first, falling back to a same-site link crawl of subpages, and schema.org JSON-LD found on the page, such as address, opening hours and menu, is extracted as structured facts. The pipeline is malware scan, parsing, PII and security scan, chunking, metadata, embedding and index.",
+        "p2": "Sources are versioned: a new document version atomically replaces the old chunks in the active index, so there is no window in which both are live. Every retrieval is tenant-filtered. If no supporting source is found, the agent asks a clarifying question or hands over to a human rather than guessing. Documents and caller text are treated as untrusted input, so instructions hidden inside a document cannot change the agent's policy, and tool permissions live in code rather than in the prompt."
+      },
+      "mistake": {
+        "heading": "Does RAG stop a model from making things up?",
+        "body": "It reduces the opportunity; it does not remove it on its own. RAG changes what the model has in front of it, but the model can still misread a retrieved passage, blend two chunks that should not have been combined, or answer confidently when retrieval returned nothing useful. What actually prevents invention is the policy for the empty case, which in Velyric is a clarifying question or a handover to a human, together with chunking that keeps facts intact and retrieval that is filtered to the right tenant."
+      },
+      "facts": {
+        "f1": {
+          "term": "Pipeline",
+          "value": "Malware scan, parsing, PII scan, chunking, metadata, embedding, index"
+        },
+        "f2": { "term": "Isolation", "value": "Every retrieval is filtered to the tenant" },
+        "f3": {
+          "term": "No-answer policy",
+          "value": "Clarifying question or handover to a human, never a guess"
+        }
+      },
+      "capability": {
+        "label": "The Velyric product",
+        "description": "The knowledge base, the action catalogue and how an answer is grounded."
+      },
+      "faq": {
+        "q1": {
+          "question": "What can I upload as knowledge?",
+          "answer": "PDF, DOCX, TXT and Markdown, CSV, manually written FAQ entries, and website URLs. Website sources are crawled sitemap-first, otherwise as a same-site link crawl of subpages, and every page is malware-scanned, parsed and chunked before it is indexed."
+        },
+        "q2": {
+          "question": "What happens when I update a document?",
+          "answer": "The new version atomically replaces the old chunks in the active index, so the agent never answers from a mixture of the old and the new. Documents are versioned rather than overwritten in place, which also means a change is a discrete event rather than a gradual drift."
+        },
+        "q3": {
+          "question": "Can someone hide instructions in a document to change how the agent behaves?",
+          "answer": "No. Documents and caller text are treated as untrusted input: instructions inside a document cannot change the agent's policy, and which tools the agent may call is enforced in code rather than in the prompt."
+        }
+      }
+    }
+  }
+}

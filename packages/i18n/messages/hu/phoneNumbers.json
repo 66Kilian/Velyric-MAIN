@@ -1,0 +1,30 @@
+{
+  "title": "Telefonszámok",
+  "description": "A hívók által tárcsázott számok, az azokat fogadó ügynök és az egyszerre kezelhető hívások száma.",
+  "empty": "Még nincs telefonszám",
+  "emptyDescription": "Az első számot a fizetés és a cégellenőrzés után automatikusan igényeljük.",
+  "saved": "{number} frissítve",
+  "save": "Mentés",
+  "unassigned": "Nincs ügynök",
+  "allLocations": "Minden telephely",
+  "types": {
+    "LOCAL": "Helyi",
+    "MOBILE": "Mobil",
+    "NATIONAL": "Országos",
+    "TOLL_FREE": "Zöld szám"
+  },
+  "columns": {
+    "number": "Szám",
+    "status": "Állapot",
+    "agent": "Fogadó ügynök",
+    "location": "Telephely",
+    "maxCalls": "Max. párhuzamos hívás"
+  },
+  "orders": {
+    "title": "Folyamatban lévő számigénylések",
+    "kycNeeded": "A szolgáltatónak céges adatokra van szüksége, mielőtt a szám élesedhet.",
+    "inProgress": "A szolgáltató feldolgozza az igénylést.",
+    "completeKyc": "Adatok megadása",
+    "numberPending": "Szám kiosztása folyamatban"
+  }
+}

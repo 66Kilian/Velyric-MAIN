@@ -1,0 +1,70 @@
+{
+  "title": "Locations",
+  "description": "Sites with their own address, opening hours, holidays and time zone.",
+  "create": "New location",
+  "empty": "No locations yet",
+  "emptyDescription": "Add your first location to configure opening hours and bookable services.",
+  "back": "All locations",
+  "primary": "Primary",
+  "hoursCount": "{count, plural, =0 {No opening hours} one {# time window} other {# time windows}}",
+  "columns": {
+    "name": "Name",
+    "address": "Address",
+    "timezone": "Time zone",
+    "hours": "Opening hours",
+    "status": "Status"
+  },
+  "status": {
+    "ACTIVE": "Active",
+    "INACTIVE": "Inactive"
+  },
+  "form": {
+    "name": "Name",
+    "timezone": "Time zone",
+    "country": "Country",
+    "countries": {
+      "HU": "Hungary",
+      "AT": "Austria",
+      "DE": "Germany",
+      "CH": "Switzerland",
+      "SK": "Slovakia",
+      "RO": "Romania",
+      "SI": "Slovenia",
+      "HR": "Croatia",
+      "CZ": "Czechia",
+      "PL": "Poland"
+    },
+    "line1": "Street address",
+    "line2": "Address line 2",
+    "postalCode": "Postal code",
+    "city": "City",
+    "hours": "Opening hours",
+    "day": "Day",
+    "opens": "Opens",
+    "closes": "Closes",
+    "removeHours": "Remove opening hours",
+    "hoursInvalid": "Opening hours must close after they open and must not overlap on the same day.",
+    "addHours": "Add opening hours",
+    "holidays": "Holidays and special days",
+    "noHolidays": "No holidays configured.",
+    "date": "Date",
+    "holidayName": "Name",
+    "closed": "Closed",
+    "removeHoliday": "Remove holiday",
+    "addHoliday": "Add holiday",
+    "create": "Create location",
+    "save": "Save changes",
+    "created": "Location created",
+    "saved": "Location updated"
+  },
+  "actions": {
+    "makePrimary": "Make primary",
+    "primarySet": "Primary location changed",
+    "deactivate": "Deactivate",
+    "deactivateTitle": "Deactivate this location?",
+    "deactivateDescription": "Agents stop offering bookings at this location.",
+    "deactivated": "Location deactivated",
+    "activate": "Activate",
+    "activated": "Location activated"
+  }
+}

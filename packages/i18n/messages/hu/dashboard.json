@@ -1,0 +1,103 @@
+{
+  "welcome": "Üdv újra: {workspace}",
+  "subtitle": "Így teljesítenek ma a hangalapú ügynökeid.",
+  "rangeLabel": "Időszak",
+  "kpi": {
+    "label": "Fő mutatók",
+    "totalCalls": "Összes hívás",
+    "avgDuration": "Átlagos hossz",
+    "resolutionRate": "AI által megoldva",
+    "qualityScore": "Minőségi pontszám",
+    "vsPrevious": "Változás az előző időszakhoz képest"
+  },
+  "live": {
+    "title": "Élő hívások",
+    "viewAll": "Összes",
+    "empty": "Jelenleg nincs folyamatban lévő hívás.",
+    "unknownCaller": "Ismeretlen hívó",
+    "webVisitor": "Weboldal-látogató"
+  },
+  "summary": {
+    "title": "Legutóbbi hívás összefoglalója",
+    "viewFull": "Teljes hívás",
+    "empty": "A lezárt hívások itt jelennek meg.",
+    "duration": "Időtartam",
+    "timestamp": "Időpont",
+    "outcome": "Eredmény",
+    "noSummary": "Ehhez a híváshoz nem készült összefoglaló.",
+    "restricted": "A szerepköröd nem láthatja a hívás-összefoglalókat."
+  },
+  "volume": {
+    "title": "Hívások naponta",
+    "total": "Összes hívás",
+    "resolved": "AI által megoldva",
+    "empty": "Ebben az időszakban nincs lezárt hívás.",
+    "transferRate": "Átadási arány",
+    "abandonmentRate": "Megszakítási arány",
+    "bookings": "Létrehozott foglalások",
+    "minutes": "Kapcsolt percek"
+  },
+  "intents": {
+    "title": "Leggyakoribb szándékok",
+    "empty": "Még nincs felismert szándék.",
+    "unknown": "Nincs besorolva"
+  },
+  "gaps": {
+    "title": "Tudáshiányok",
+    "manage": "Tudásbázis kezelése",
+    "empty": "Nincs megválaszolatlan kérdés.",
+    "occurrences": "{count, plural, one {# alkalom} other {# alkalom}}"
+  },
+  "statusBanner": {
+    "PROVISIONING": {
+      "title": "A munkaterület beállítása folyamatban.",
+      "body": "A telefonszámok és ügynökök a beállítás végén élesednek.",
+      "action": "Beállítás folytatása"
+    },
+    "PAYMENT_AT_RISK": {
+      "title": "A legutóbbi fizetés sikertelen volt.",
+      "body": "Frissítsd a fizetési módot, hogy elkerüld a szolgáltatás megszakadását.",
+      "action": "Számlázás megnyitása"
+    },
+    "GRACE_PERIOD": {
+      "title": "Lejárt fizetés.",
+      "body": "A türelmi idő alatt a hívások működnek, de a konfiguráció módosítása korlátozott lehet.",
+      "action": "Fizetés rendezése"
+    },
+    "RESTRICTED": {
+      "title": "A munkaterület korlátozva van.",
+      "body": "A bejövő hívások korlátozottak, amíg a tartozás nincs rendezve.",
+      "action": "Fizetés rendezése"
+    },
+    "SUSPENDED_BILLING": {
+      "title": "A szolgáltatás nemfizetés miatt felfüggesztve.",
+      "body": "Az ügynökök nem fogadnak hívást, amíg a számlázás nincs rendezve.",
+      "action": "Számlázás megnyitása"
+    },
+    "SUSPENDED_DISPUTE": {
+      "title": "A szolgáltatás fizetési vita miatt felfüggesztve.",
+      "body": "A visszaállításhoz vedd fel a kapcsolatot az ügyfélszolgálattal.",
+      "action": "Számlázás megnyitása"
+    },
+    "SUSPENDED_RISK": {
+      "title": "A szolgáltatás biztonsági felülvizsgálat miatt felfüggesztve.",
+      "body": "Csapatunk felveszi a kapcsolatot a munkaterület tulajdonosával.",
+      "action": "Számlázás megnyitása"
+    },
+    "SUSPENDED_ADMIN": {
+      "title": "A Velyric felfüggesztette a szolgáltatást.",
+      "body": "A részletekért vedd fel a kapcsolatot az ügyfélszolgálattal.",
+      "action": "Számlázás megnyitása"
+    },
+    "CANCELED_GRACE": {
+      "title": "Az előfizetés lemondva.",
+      "body": "Újraaktiválhatod, mielőtt a számok és adatok felszabadulnak.",
+      "action": "Újraaktiválás"
+    },
+    "DATA_RETENTION": {
+      "title": "A munkaterület csak olvasható.",
+      "body": "Exportáld az adataidat a megőrzési idő vége előtt.",
+      "action": "Számlázás megnyitása"
+    }
+  }
+}

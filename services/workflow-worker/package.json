@@ -1,0 +1,58 @@
+{
+  "name": "@velyric/workflow-worker",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json",
+    "dev": "tsx watch --conditions=@velyric/source src/main.ts",
+    "start": "node dist/main.js",
+    "test": "vitest run --project unit",
+    "test:db": "vitest run --project db",
+    "test:workflows": "vitest run --project workflows"
+  },
+  "dependencies": {
+    "@aws-sdk/client-secrets-manager": "catalog:",
+    "@nats-io/jetstream": "catalog:",
+    "@nats-io/transport-node": "catalog:",
+    "@temporalio/activity": "catalog:",
+    "@temporalio/client": "catalog:",
+    "@temporalio/common": "catalog:",
+    "@temporalio/worker": "catalog:",
+    "@temporalio/workflow": "catalog:",
+    "@velyric/contracts": "workspace:*",
+    "@velyric/db": "workspace:*",
+    "@velyric/domain": "workspace:*",
+    "@velyric/notifications": "workspace:*",
+    "@velyric/security": "workspace:*",
+    "@velyric/tenant-secrets": "workspace:*",
+    "ioredis": "catalog:",
+    "kysely": "catalog:",
+    "nodemailer": "catalog:",
+    "openai": "catalog:",
+    "pg": "catalog:",
+    "pino": "catalog:",
+    "stripe": "catalog:",
+    "telnyx": "catalog:",
+    "typebox": "catalog:",
+    "uuid": "catalog:"
+  },
+  "devDependencies": {
+    "@temporalio/testing": "catalog:",
+    "@types/node": "catalog:",
+    "@types/nodemailer": "catalog:",
+    "@types/pg": "catalog:",
+    "@velyric/testkit": "workspace:*",
+    "@vitest/coverage-v8": "catalog:",
+    "embedded-postgres": "catalog:",
+    "get-port": "catalog:",
+    "tsx": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vitest": "catalog:"
+  }
+}

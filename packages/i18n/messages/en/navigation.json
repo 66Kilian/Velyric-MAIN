@@ -1,0 +1,72 @@
+{
+  "marketing": {
+    "product": "Product",
+    "solutions": "Solutions",
+    "pricing": "Pricing",
+    "integrations": "Integrations",
+    "docs": "Docs",
+    "security": "Security",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "dpa": "DPA",
+    "status": "Status",
+    "contact": "Contact",
+    "home": "Home",
+    "aiReceptionist": "AI receptionist",
+    "appointmentBooking": "Appointment booking",
+    "multilingual": "Multilingual voice",
+    "callTransfer": "Call transfer",
+    "glossary": "Glossary",
+    "footer": {
+      "description": "Voice AI agents that answer the phone, book appointments, and reply to your customers - around the clock, in your business's name.",
+      "servicesHeading": "Our services",
+      "infoHeading": "Information",
+      "contactHeading": "Contact",
+      "registration": "Registration number:",
+      "rights": "All rights reserved."
+    }
+  },
+  "app": {
+    "dashboard": "Dashboard",
+    "calls": "Calls",
+    "agents": "Agents",
+    "contacts": "Contacts",
+    "knowledge": "Knowledge",
+    "bookings": "Bookings",
+    "integrations": "Integrations",
+    "analytics": "Analytics",
+    "phoneNumbers": "Phone numbers",
+    "locations": "Locations",
+    "simulation": "Simulation",
+    "billing": "Billing",
+    "settings": "Settings",
+    "security": "Security",
+    "onboarding": "Setup",
+    "workspaceSwitcher": "Switch workspace",
+    "pendingInvitations": "Invitations",
+    "joinWorkspace": "Join",
+    "joining": "Joining…",
+    "createWorkspace": "New workspace",
+    "account": "Account",
+    "sidebarQuote": "Good things happen when businesses listen.",
+    "groups": {
+      "operate": "Operate",
+      "configure": "Configure",
+      "admin": "Administration",
+      "main": "Menu",
+      "assistant": "Assistant",
+      "channels": "Channels",
+      "account": "Account"
+    },
+    "support": "Help",
+    "adminConsole": "Admin console",
+    "settingsGeneral": "General",
+    "settingsDescription": "Assistants, channels and account settings in one place.",
+    "settingsNav": "Settings sections"
+  },
+  "support": {
+    "console": "Support console",
+    "tenants": "Workspaces",
+    "queue": "Review queue"
+  }
+}

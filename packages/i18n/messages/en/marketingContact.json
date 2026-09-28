@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Contact Velyric",
+    "description": "Reach the Velyric team by e-mail for sales questions, privacy and GDPR requests, or security reports, and see the company details behind the service."
+  },
+  "eyebrow": "Contact",
+  "title": "Talk to the team behind Velyric",
+  "body": "Velyric is run by a small product team. Support and sales both run over e-mail today, which keeps answers written down and traceable. Pick the address that matches your question and you will reach the right person directly.",
+  "breadcrumbLabel": "Breadcrumb",
+  "answer": {
+    "question": "How do I contact Velyric?",
+    "body": "Velyric is contacted by e-mail. Sales and product questions go to the sales address, privacy and GDPR data subject requests go to the privacy address, and suspected vulnerabilities are reported through the process on the security page. You do not need to speak to anyone to get started: accounts are created self-serve from the sign-up page."
+  },
+  "channels": {
+    "heading": "Where to write",
+    "body": "Each channel has a defined purpose, so routing your message correctly gets you a faster and more specific answer.",
+    "sales": {
+      "title": "Sales and product questions",
+      "body": "Pricing, plan fit, number availability in your country, onboarding questions, enterprise terms and anything you want to check before you sign up."
+    },
+    "privacy": {
+      "title": "Privacy and data protection",
+      "body": "GDPR data subject requests, questions about the Data Processing Agreement, retention periods, sub-processors and where call data is processed."
+    },
+    "security": {
+      "title": "Security reports",
+      "body": "If you believe you have found a vulnerability, follow the coordinated disclosure process described on the security page rather than opening a public issue."
+    },
+    "selfServe": {
+      "title": "Start without talking to sales",
+      "body": "Creating an account, choosing a plan and connecting a calendar are all self-serve. Sales involvement is optional and only needed for enterprise terms."
+    }
+  },
+  "prepare": {
+    "heading": "What to include in a first e-mail",
+    "body": "These five details let us answer concretely in one reply instead of asking a round of clarifying questions.",
+    "items": {
+      "business": "What your business does and which calls you want handled first.",
+      "volume": "Roughly how many calls you receive and how many can arrive at the same time.",
+      "languages": "Which of Hungarian, German and English your callers use.",
+      "calendar": "Whether you use Google Calendar, Microsoft 365, or another booking system.",
+      "numbers": "Whether you need a new phone number or want to port an existing one, and in which country."
+    }
+  },
+  "details": {
+    "heading": "Company details",
+    "body": "Velyric is operated by the legal entity below. The same details appear on invoices and in the legal documents.",
+    "labels": {
+      "entity": "Service provider",
+      "address": "Registered address",
+      "registration": "Company registration number",
+      "taxNumber": "Tax number",
+      "sales": "Sales e-mail",
+      "privacy": "Privacy e-mail"
+    }
+  },
+  "faq": {
+    "heading": "Frequently asked questions",
+    "start": {
+      "question": "Do I have to talk to sales before I can start?",
+      "answer": "No. Plans are self-serve: you can sign up, choose a plan and set up an agent without a sales call. Contacting sales is only necessary for enterprise terms or if you want help deciding before you subscribe."
+    },
+    "languages": {
+      "question": "Which languages can I write to you in?",
+      "answer": "Hungarian, German and English. These are also the three languages the voice agent itself supports on calls."
+    },
+    "gdpr": {
+      "question": "Where do I send a GDPR data subject request?",
+      "answer": "Send it to the privacy e-mail address listed above. For call data processed on behalf of a customer Velyric acts as processor, so requests about a specific caller are usually handled through the customer who operates the phone number."
+    },
+    "security": {
+      "question": "How do I report a security vulnerability?",
+      "answer": "Use the coordinated disclosure process described on the security page. Please do not post details publicly before we have had a chance to respond and fix the issue."
+    },
+    "phone": {
+      "question": "Is there a phone number I can call?",
+      "answer": "Not today. Support and sales run over e-mail, which keeps a written record of what was agreed. This is deliberate for a small team: it means answers are researched properly rather than improvised on a call."
+    }
+  },
+  "related": {
+    "heading": "Before you write",
+    "pricing": {
+      "label": "Pricing",
+      "description": "Plan prices, included minutes, concurrency limits and overage rates."
+    },
+    "security": {
+      "label": "Security and compliance",
+      "description": "Data handling, retention defaults, GDPR roles and the disclosure process."
+    },
+    "docs": {
+      "label": "Documentation",
+      "description": "API conventions, authentication and integration details for developers."
+    },
+    "product": {
+      "label": "How Velyric works",
+      "description": "What the voice agent does on a call, and which actions it can take."
+    }
+  }
+}

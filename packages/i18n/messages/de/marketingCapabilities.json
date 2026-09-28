@@ -1,0 +1,799 @@
+{
+  "common": {
+    "breadcrumbLabel": "Breadcrumb-Navigation",
+    "ctaPrimary": "Mit Velyric starten",
+    "ctaSecondary": "Preise ansehen"
+  },
+  "receptionist": {
+    "meta": {
+      "title": "KI-Rezeptionist, der rund um die Uhr ans Geschäftstelefon geht",
+      "description": "Der KI-Rezeptionist von Velyric nimmt Anrufe rund um die Uhr auf Ungarisch, Deutsch und Englisch an, weist sich als KI aus, bucht Termine und leitet bei ### weiter."
+    },
+    "breadcrumb": "KI-Rezeptionist",
+    "eyebrow": "KI-Rezeptionist",
+    "title": "Ein KI-Rezeptionist, der rund um die Uhr an dein Geschäftstelefon geht",
+    "body": "Velyric nimmt auf deiner eigenen Rufnummer ab, sagt, dass es ein KI-Assistent ist, antwortet aus deiner Wissensdatenbank, bucht in deinen Kalender und übergibt an einen Menschen, sobald der Anrufer darum bittet.",
+    "answer": {
+      "question": "Was ist ein KI-Rezeptionist?",
+      "body": "Ein KI-Rezeptionist ist ein Voice-Agent, der das Telefon eines Unternehmens annimmt, ein gesprochenes Gespräch mit dem Anrufer führt und die Arbeit am Empfang erledigt: Fragen beantworten, Termine buchen, verschieben und stornieren, Nachrichten aufnehmen und das Gespräch an einen Menschen übergeben. Velyric nimmt den Anruf auf der eigenen Rufnummer des Unternehmens über den SIP-Carrier Telnyx an, weist zu Beginn jedes Gesprächs darauf hin, dass der Anrufer mit einem KI-Assistenten spricht, und antwortet ausschließlich aus der Wissensdatenbank und den verbundenen Tools dieses Unternehmens. Anrufer dürfen mitten im Satz unterbrechen, Ungarisch, Deutsch oder Englisch sprechen oder jederzeit ### drücken, um einen Menschen zu erreichen. Jeder Anruf läuft über einen im Code hinterlegten Zustandsautomaten: Das Modell darf die nächste Aktion vorschlagen, aber das Backend entscheidet, ob sie in diesem Zustand erlaubt ist."
+    },
+    "context": {
+      "heading": "Für wen sich ein KI-Rezeptionist lohnt",
+      "body": "Für jedes Unternehmen, bei dem das Telefon ein echter Kanal ist und ein verpasster Anruf eine verlorene Buchung bedeutet.",
+      "p1": "Ein verpasster Anruf ist keine Aufgabe, die geduldig in einer Warteschlange liegt. Es ist ein Mensch, der die nächste Nummer in der Trefferliste wählt. Praxen, Werkstätten, Salons, Restaurants und B2B-Servicelines verlieren auf dieselbe Weise: Das Telefon klingelt, während dein Team am Kunden ist, nach Feierabend oder dreimal gleichzeitig. Ein KI-Rezeptionist nimmt dir die Wahl zwischen Telefon und Arbeit ab.",
+      "p2": "Velyric ist eine mandantenfähige Plattform und kein Gesprächsskript. Du verbindest einen Kalender, lädst die Dokumente hoch, aus denen dein Team ohnehin antwortet, legst fest, welche deiner eigenen APIs der Agent aufrufen darf, und entscheidest, was außerhalb der Geschäftszeiten passiert. Der Agent ist an diese Quellen gebunden: Stützt keine Quelle eine Antwort, fragt er nach oder übergibt, statt zu raten."
+    },
+    "how": {
+      "heading": "Was auf einem Anruf wirklich passiert",
+      "body": "Sechs Phasen, in der Reihenfolge, in der der Zustandsautomat des Gesprächs sie durchläuft.",
+      "s1": {
+        "title": "Der Anruf kommt auf deiner Nummer an",
+        "body": "Der Anrufer wählt die Nummer, die du über Telnyx bestellt oder portiert hast. Der eingehende Anruf wird über SIP angenommen, und nur für diesen Anruf entstehen eine neue call_id, eine KI-Session, ein Gesprächszustand und ein Trace. Parallele Anrufe teilen sich nichts, ein Fehler im einen kann den anderen nicht berühren."
+      },
+      "s2": {
+        "title": "Begrüßung und KI-Hinweis",
+        "body": "Der Agent startet mit der für diese Sprache konfigurierten Begrüßung und sagt, was er ist: „Guten Tag, Nord Dental, Sie sprechen mit einem KI-Assistenten. Wie kann ich Ihnen helfen?“ Der Hinweis gehört bei jedem Anruf zur Begrüßung, in der Sprache des Anrufers, und ist keine Fußnote irgendwo später im Gespräch."
+      },
+      "s3": {
+        "title": "Anliegen klären, im Tempo des Anrufers",
+        "body": "Das Gespräch läuft im Vollduplex. Geht der Anrufer mitten in der Begrüßung dazwischen – „Ich möchte eigentlich meinen Termin am Donnerstag verschieben“ –, hört der Agent auf zu sprechen und folgt. Zögern, Füllwörter und Zwischenlaute brechen den Sprecherwechsel nicht. Der Zustandsautomat wechselt von GREETING zu DISCOVERY und hält die Absicht fest."
+      },
+      "s4": {
+        "title": "Antworten aus deinen eigenen Quellen",
+        "body": "Für „Machen Sie samstags Implantatberatungen?“ ruft der Agent search_knowledge auf deinem mandantengefilterten Index auf: die PDFs, DOCX-Dateien, CSVs, FAQ-Einträge und gecrawlten Webseiten, die du hochgeladen hast. Stützt nichts im Index eine Antwort, sagt der Agent das und fragt nach oder bietet eine Kollegin an, statt einen plausibel klingenden Satz zu erzeugen."
+      },
+      "s5": {
+        "title": "Die Aktion erst nach dem Vorlesen",
+        "body": "Für eine Buchung führt der Agent list_services und check_availability auf dem echten Kalender aus und liest den geplanten Schreibvorgang vor: „Das wäre eine 30-minütige Implantatberatung am Donnerstag, 14. Mai um 10:20 Uhr bei Dr. Kovács. Soll ich den Termin buchen?“ create_booking läuft erst nach einem ausdrücklichen Ja, abgesichert durch einen Idempotenzschlüssel und Datenbank-Constraints."
+      },
+      "s6": {
+        "title": "Ein Mensch oder ein sauberer Abschluss",
+        "body": "Sagt der Anrufer „Kann ich bitte jemanden sprechen?“ oder drückt ###, wird der Anruf sofort an das von dir konfigurierte tel:- oder sip:-Ziel weitergeleitet. Zwei bis drei fehlgeschlagene Verständnisversuche, ein Tool-Fehler, der auch den Wiederholungsversuch übersteht, oder ein sensibles Anliegen führen ebenfalls zu einem Menschen. Außerhalb der Geschäftszeiten nimmt der Agent stattdessen eine Nachricht auf, notiert einen Rückrufwunsch oder wählt deine Bereitschaftsnummer."
+      }
+    },
+    "capabilities": {
+      "heading": "Was der Empfangsagent kann",
+      "body": "Alles Folgende wird pro Mandant konfiguriert und im Code erzwungen, nicht im Prompt erbeten.",
+      "c1": {
+        "title": "Rund um die Uhr auf deiner eigenen Nummer",
+        "body": "Eingehende Anrufe werden Tag und Nacht auf der Nummer angenommen, die du über Telnyx bestellt oder portiert hast. Jeder Tarif enthält eine Rufnummer und einen Standort; weitere Nummern sind ein kostenpflichtiges Add-on."
+      },
+      "c2": {
+        "title": "Ausdrücklicher KI-Hinweis",
+        "body": "Der Agent sagt zu Beginn des Anrufs, dass der Anrufer mit einem KI-Assistenten spricht. Der Wortlaut wird je Sprache konfiguriert, und so erfüllst du die Transparenzpflicht aus Artikel 50 der EU-KI-Verordnung, die ab dem 2. August 2026 gilt."
+      },
+      "c3": {
+        "title": "Konfigurierbare Tastenkürzel",
+        "body": "DTMF gehört dir. Eine typische Konfiguration ist ### für einen Menschen, 0 für die sofortige Weiterleitung und * für einen Schritt zurück. Wer nicht mit einer KI sprechen möchte, muss also nicht mit ihr diskutieren."
+      },
+      "c4": {
+        "title": "Antworten aus deiner Wissensdatenbank",
+        "body": "PDF, DOCX, TXT und Markdown, CSV, manuelle Fragen und Antworten sowie Website-URLs werden auf Schadsoftware geprüft, geparst, in Chunks zerlegt, eingebettet und pro Mandant indexiert. Websites werden sitemap-first gecrawlt, und schema.org-JSON-LD wie Adresse und Öffnungszeiten wird als strukturierte Fakten übernommen."
+      },
+      "c5": {
+        "title": "Nicht nur Antworten, sondern Aktionen",
+        "body": "Der eingebaute Werkzeugsatz besteht aus list_services, check_availability, create_booking, find_booking, cancel_booking und search_knowledge, dazu jede eigene HTTPS-API, die du definierst. Jeder Tool-Aufruf wird vor der Ausführung gegen den aktuellen Gesprächszustand geprüft."
+      },
+      "c6": {
+        "title": "Du bestimmst, was nach Feierabend passiert",
+        "body": "Außerhalb der Geschäftszeiten folgt der Agent einer anderen Regel: Nachricht aufnehmen, Rückrufwunsch notieren oder an eine Bereitschaftsnummer weiterleiten. Dieselbe Regel greift bei Spitzen oberhalb des Gleichzeitigkeitslimits deines Tarifs."
+      }
+    },
+    "facts": {
+      "heading": "Nachprüfbare Fakten zum Empfang",
+      "body": "Zahlen, an denen du uns messen kannst, keine Adjektive.",
+      "f1": {
+        "term": "Erreichbarkeit",
+        "value": "Eingehende Anrufe rund um die Uhr auf der eigenen Nummer des Mandanten"
+      },
+      "f2": {
+        "term": "KI-Hinweis",
+        "value": "Zu Beginn jedes Anrufs, je Sprache konfiguriert"
+      },
+      "f3": {
+        "term": "Tastenkürzel",
+        "value": "### für einen Menschen, 0 für die sofortige Weiterleitung, * für einen Schritt zurück – konfigurierbar"
+      },
+      "f4": {
+        "term": "Maximale Gesprächsdauer",
+        "value": "1.800 Sekunden (30 Minuten) in jedem Tarif"
+      },
+      "f5": {
+        "term": "Gleichzeitige Anrufe",
+        "value": "Start 2, Business 10, Pro 50, Enterprise 100+"
+      },
+      "f6": {
+        "term": "Sprachen",
+        "value": "Ungarisch, Deutsch und Englisch, auch mitten im Gespräch wechselbar"
+      },
+      "f7": {
+        "term": "Gesprächsaudio",
+        "value": "Standardmäßig nicht gespeichert (0 Tage Aufbewahrung); die Aufzeichnung ist ein kostenpflichtiges Add-on"
+      },
+      "f8": {
+        "term": "Aufbewahrung der Transkripte",
+        "value": "Standardmäßig 90 Tage, pro Mandant bis auf 1 Tag reduzierbar"
+      }
+    },
+    "limits": {
+      "heading": "Was ein KI-Rezeptionist nicht tut",
+      "body": "Die ehrliche Liste. Das vor dem Kauf zu wissen ist mehr wert als ein weiterer Funktionspunkt.",
+      "l1": {
+        "title": "Er weiß nichts, was du ihm nicht gegeben hast",
+        "body": "Der Agent antwortet nur aus deiner Wissensdatenbank und den verbundenen Tools. Während des Gesprächs gibt es keine Websuche. Ohne stützende Quelle fragt er nach oder übergibt an einen Menschen und füllt die Lücke nicht mit etwas, das richtig klingt."
+      },
+      "l2": {
+        "title": "Die Rufnummer des Anrufers ist kein Login",
+        "body": "Die Rufnummernanzeige ist eine Komfortkennung, um wiederkehrende Kontakte zu erkennen, und keine Authentifizierung. Alles Sensible braucht eine zusätzliche Verifizierung oder einen Menschen, denn Nummern lassen sich fälschen und Telefone werden geteilt."
+      },
+      "l3": {
+        "title": "Standardmäßig gibt es nichts zum Nachhören",
+        "body": "Rohes Gesprächsaudio wird nicht gespeichert: Die Standardaufbewahrung liegt bei 0 Tagen. Transkripte und Anrufereignisse bleiben erhalten, aber wer das Audio selbst braucht, muss das Add-on Gesprächsaufzeichnung vor dem Anruf aktivieren."
+      },
+      "l4": {
+        "title": "Nach 30 Minuten ist Schluss",
+        "body": "Jeder Tarif begrenzt einen einzelnen Anruf auf 1.800 Sekunden. Ein Gespräch, das wirklich länger braucht, gehört zu einem Menschen, und der Agent sollte deutlich vor dem Limit übergeben, statt davon abgeschnitten zu werden."
+      },
+      "l5": {
+        "title": "Drei Sprachen, nicht dreißig",
+        "body": "Unterstützt werden Ungarisch, Deutsch und Englisch. Ein Anruf in einer anderen Sprache ist ein Fall für die Übergabe und keine Übersetzungsaufgabe."
+      },
+      "l6": {
+        "title": "Gleichzeitigkeit ist ein kommerzielles Limit",
+        "body": "Dein Tarif entscheidet, wie viele Anrufe parallel laufen: 2 bei Start, 10 bei Business, 50 bei Pro. Was darüber hinausgeht, folgt der Regel, die du gewählt hast – kurze Warteschleife, Überlaufnummer, Rückruf oder Mailbox."
+      }
+    },
+    "faq": {
+      "heading": "Häufige Fragen zum KI-Rezeptionisten",
+      "q1": {
+        "question": "Worin unterscheidet sich ein KI-Rezeptionist von einem IVR-Menü?",
+        "answer": "Ein IVR verlangt vom Anrufer, sein Anliegen auf ein nummeriertes Menü abzubilden, und scheitert, sobald es dort nicht hineinpasst. Der Agent von Velyric hört einen frei formulierten Satz, fragt nach, wenn etwas fehlt, und erledigt das Anliegen per Tool-Aufruf. Die Tastatur bleibt – ### für einen Menschen, 0 für die Weiterleitung –, aber als Abkürzung und nicht als einzige Oberfläche."
+      },
+      "q2": {
+        "question": "Weiß der Anrufer, dass er mit einer KI spricht?",
+        "answer": "Ja. Der Agent sagt zu Beginn des Anrufs in der Sprache des Gesprächs, dass der Anrufer mit einem KI-Assistenten spricht. Das ist Produktstandard und kein Schalter, an den du denken musst, und es entspricht der Transparenzpflicht aus Artikel 50 der EU-KI-Verordnung, die ab dem 2. August 2026 gilt."
+      },
+      "q3": {
+        "question": "Was passiert, wenn der Agent die Antwort nicht kennt?",
+        "answer": "Er rät nicht. Liefert die mandantengefilterte Suche keine stützende Quelle, fragt der Agent nach oder übergibt das Gespräch an einen Menschen. Auch zwei bis drei fehlgeschlagene Verständnisversuche hintereinander lösen das Angebot einer Weiterleitung aus."
+      },
+      "q4": {
+        "question": "Kann er mehrere Anrufe gleichzeitig annehmen?",
+        "answer": "Ja, bis zum Gleichzeitigkeitslimit deines Tarifs: 2 bei Start, 10 bei Business, 50 bei Pro und 100+ bei Enterprise. Jeder Anruf bekommt eine eigene call_id, eine eigene KI-Session, einen eigenen Gesprächszustand und einen eigenen Trace, sodass ein Anruf einen anderen weder stören noch verlangsamen kann."
+      },
+      "q5": {
+        "question": "Brauche ich eine neue Rufnummer?",
+        "answer": "Nicht unbedingt. Jeder Tarif enthält eine Rufnummer, die du über Telnyx bestellen oder von deinem bisherigen Anbieter portieren kannst. Ungarische Ortsnummern sind verfügbar, und eine Nummernbestellung kann eine Unternehmensprüfung durch Netzbetreiber oder Regulierung erfordern, die Teil des Bereitstellungsprozesses ist."
+      },
+      "q6": {
+        "question": "Werden unsere Anrufdaten zum Training von KI-Modellen genutzt?",
+        "answer": "Nein. Anrufdaten von Kunden werden nicht zum Training universeller Modelle verwendet. Anwendungs- und Anrufdaten werden in einer EU-Cloud-Region verarbeitet, standardmäßig Frankfurt, und Velyric ist Auftragsverarbeiter für Anrufe, Transkripte, Kontakte und Buchungen gemäß dem auf der Website veröffentlichten Auftragsverarbeitungsvertrag nach Artikel 28 DSGVO."
+      },
+      "q7": {
+        "question": "Was kostet das?",
+        "answer": "Die veröffentlichten Preise gelten für den ungarischen Markt und verstehen sich netto: Start kostet 39.900 HUF pro Monat mit 150 inklusiven Gesprächsminuten, Business 69.900 HUF mit 400 Minuten, Pro 129.900 HUF mit 1.000 Minuten, und Enterprise läuft nach Vertrag. Zusätzliche Minuten laufen zum Minutenpreis des Tarifs weiter, also 149, 129 oder 109 HUF, mit Ausgabenlimits."
+      }
+    },
+    "related": {
+      "heading": "Weiterlesen",
+      "r1": {
+        "label": "KI-Terminbuchung am Telefon",
+        "description": "Wie der Agent echte Verfügbarkeiten liest und ohne Doppelbuchung schreibt."
+      },
+      "r2": {
+        "label": "Mehrsprachige KI-Telefonassistenten",
+        "description": "Wie Ungarisch, Deutsch oder Englisch gewählt wird und mitten im Gespräch wechselt."
+      },
+      "r3": {
+        "label": "KI-Anrufweiterleitung an einen Menschen",
+        "description": "Jeder Auslöser, der einen Anruf zu einem Menschen schickt, und was deine Kollegin bekommt."
+      },
+      "r4": {
+        "label": "Preise",
+        "description": "Tarife, inklusive Minuten, Minutenpreise und Gleichzeitigkeitslimits."
+      },
+      "r5": {
+        "label": "KI-Rezeptionist für Zahnarztpraxen",
+        "description": "Wie Empfangsautomatisierung in einer Praxis mit vollem Behandlungsstuhl aussieht."
+      },
+      "r6": {
+        "label": "Produktübersicht",
+        "description": "Die ganze Plattform: Orchestrierung, Wissen, Integrationen und Leitplanken."
+      }
+    }
+  },
+  "booking": {
+    "meta": {
+      "title": "KI-Terminbuchung am Telefon",
+      "description": "Velyric liest echte Kalenderverfügbarkeiten, erfindet nie einen Termin, bestätigt vor dem Schreiben und bucht konfliktfrei in Google Kalender oder Microsoft 365."
+    },
+    "breadcrumb": "Terminbuchung",
+    "eyebrow": "KI-Buchungsassistent",
+    "title": "Telefontermine, die in deinem echten Kalender landen",
+    "body": "Der Agent liest Verfügbarkeiten live, bietet nur existierende Zeiten an, liest den Termin zur Bestätigung vor und schreibt ihn mit einem Idempotenzschlüssel, sodass ein Wiederholungsversuch nie eine zweite Buchung erzeugt.",
+    "answer": {
+      "question": "Wie funktioniert KI-Terminbuchung am Telefon?",
+      "body": "Ein KI-Buchungsassistent macht aus einem am Telefon ausgesprochenen Terminwunsch einen echten Kalendereintrag. Velyric tut das in fester Reihenfolge: list_services klärt, was der Anrufer möchte, check_availability fragt den verbundenen Kalender oder die Buchungs-Engine ab, der Agent liest den vorgeschlagenen Termin vor und wartet auf ein ausdrückliches Ja, und erst dann schreibt create_booking. Verfügbarkeiten kommen immer aus dem Kalender, der Agent erfindet also nie einen freien Termin; ist nichts frei, bietet er die Alternativen an, die das Tool zurückgegeben hat. Schreibvorgänge sind durch Datenbank-Constraints, Transaktionen und Idempotenzschlüssel geschützt, sodass zwei Anrufer, die um denselben Termin konkurrieren, ihn nicht beide bekommen können."
+    },
+    "context": {
+      "heading": "Die Buchung ist der Teil des Gesprächs, der stimmen muss",
+      "body": "Eine falsche Auskunft über freie Zeiten kostet dich zweimal: einmal am Telefon und einmal im Wartezimmer.",
+      "p1": "Ein Buchungsbot, der einen Donnerstagstermin um 10:00 Uhr halluziniert, richtet mehr Schaden an als eine Mailbox. Der Kunde kommt, der Platz ist belegt, und jemand aus deinem Team verbringt den Vormittag mit Entschuldigungen. Der schwierige Teil ist nicht das Gespräch, sondern der Schreibvorgang: Er muss unter Gleichzeitigkeit korrekt sein, bei Wiederholungen idempotent und ehrlich, wenn der Kalender voll ist.",
+      "p2": "Bei Velyric darf ausschließlich der Kalender die Frage nach freien Zeiten beantworten. Das Modell schlägt das nächste Tool vor, das Backend prüft, ob es im aktuellen Gesprächszustand erlaubt ist, führt es aus und liefert ein strukturiertes Ergebnis zurück. Ein optimistisches Anlegen, das das Rennen verliert, gibt einen Konflikt zurück und keinen Erfolg, und der Agent bietet sofort die nächste echte Alternative an."
+    },
+    "how": {
+      "heading": "Ein Buchungsanruf, Schritt für Schritt",
+      "body": "Dieselben sechs Schritte laufen, ob der Anrufer einen Haarschnitt, einen Werkstatttermin oder eine Beratung möchte.",
+      "s1": {
+        "title": "Die Leistung bestimmen",
+        "body": "list_services übersetzt den Wunsch des Anrufers in eine echte Leistung mit echter Dauer. Aus „Waschen und Schneiden“ wird eine 45-Minuten-Leistung bei einer namentlich genannten Stylistin, wenn Ressourcen und Mitarbeitende modelliert sind. Aus „das Günstigere“ wird eine Rückfrage und keine Annahme."
+      },
+      "s2": {
+        "title": "Echte Verfügbarkeiten lesen",
+        "body": "check_availability fragt den verbundenen Kalender ab. Google Kalender über /freeBusy mit den Scopes calendar.freebusy und calendar.events, Microsoft 365 über Microsoft Graph getSchedule mit Calendars.ReadWrite. Nur dieses Ergebnis darf der Agent als freie Zeit anbieten."
+      },
+      "s3": {
+        "title": "Nur anbieten, was es gibt, in der Zeitzone des Standorts",
+        "body": "„Donnerstag ist leider voll. Ich kann Ihnen Freitag um 9:40 Uhr oder Montag um 16:10 Uhr anbieten.“ Uhrzeiten werden in der Zeitzone gesprochen, die für diesen Standort konfiguriert ist, was spätestens beim zweiten Standort oder bei Anrufen aus dem Ausland zählt."
+      },
+      "s4": {
+        "title": "Aufnehmen, was die Buchung braucht",
+        "body": "Der Agent fragt nach dem Namen und allem, was die Leistung erfordert, und liest zurück, was er nicht sauber verstanden hat. Die Rufnummernanzeige gilt ihm nicht als Identitätsnachweis: Sie ist ein Hinweis darauf, dass es ein wiederkehrender Kontakt sein könnte, mehr nicht."
+      },
+      "s5": {
+        "title": "Vorlesen und bestätigen, vor jedem Schreibvorgang",
+        "body": "„Hanna Nagy, Waschen und Schneiden, Freitag, 15. Mai um 9:40 Uhr, 45 Minuten, bei Eszter. Soll ich das so buchen?“ Das Gespräch steht in einem Bestätigungs-Gate. Auf ein Vielleicht wird nichts geschrieben, und der Anrufer kann die Zeit hier noch ändern."
+      },
+      "s6": {
+        "title": "Schreiben, prüfen, bestätigen",
+        "body": "create_booking läuft in einer Transaktion mit Idempotenzschlüssel. Gewinnt es, bestätigt der Agent die Buchung laut, und eine Bestätigungs-E-Mail kann herausgehen. Verliert das optimistische Anlegen das Rennen, gibt das Tool einen strukturierten Konflikt zurück: Der Agent sagt das und bietet die nächste freie Zeit an, statt so zu tun, als sei alles gut gegangen."
+      }
+    },
+    "capabilities": {
+      "heading": "Was der Buchungsagent übernimmt",
+      "body": "Buchen, verschieben und stornieren, mit dem Kalender als einziger Quelle der Wahrheit.",
+      "c1": {
+        "title": "Verfügbarkeit aus dem Kalender, nie aus dem Modell",
+        "body": "Der Agent hat keine Möglichkeit, eine Zeit anzubieten, die check_availability nicht zurückgegeben hat. Ist nichts frei, sagt er das und bietet die Alternativen an, die das Tool geliefert hat."
+      },
+      "c2": {
+        "title": "Konfliktfreie, idempotente Schreibvorgänge",
+        "body": "Datenbank-Constraints, Transaktionen und Idempotenzschlüssel verhindern Doppelbuchungen und doppelte Wiederholungen. Ein Anlegen, das verliert, gibt einen strukturierten Konflikt zurück, den der Agent im Gespräch auffängt."
+      },
+      "c3": {
+        "title": "Ein Bestätigungs-Gate vor jedem Schreibvorgang",
+        "body": "Der Agent fasst den Termin zusammen und bittet um Bestätigung, bevor create_booking läuft. Dasselbe Gate schützt cancel_booking, damit auch nichts versehentlich freigegeben wird."
+      },
+      "c4": {
+        "title": "Verschieben und stornieren am Telefon",
+        "body": "find_booking findet einen bestehenden Termin, cancel_booking gibt ihn frei. Warteliste- und Stornoprozesse existieren, ein frei gewordener Platz geht also nicht einfach verloren."
+      },
+      "c5": {
+        "title": "Leistungen, Ressourcen, Mitarbeitende und Standorte",
+        "body": "Leistungen, Ressourcen und Mitarbeitende sind modelliert, und die Zeitzone ist je Standort explizit, sodass ein Unternehmen mit zwei Standorten jeden Standort auf seiner eigenen Uhr bucht."
+      },
+      "c6": {
+        "title": "Google Kalender und Microsoft 365",
+        "body": "Beide verbinden sich über OAuth2 mit PKCE und Offline-Zugriff. Google fragt openid, email, calendar.events und calendar.freebusy an, Microsoft openid, email, offline_access und Calendars.ReadWrite. Der ausgehende Verkehr ist auf die Domains des jeweiligen Anbieters beschränkt."
+      }
+    },
+    "facts": {
+      "heading": "Nachprüfbare Fakten zur Buchung",
+      "body": "Die Details, die entscheiden, ob Telefonbuchung sicher eingeschaltet werden kann.",
+      "f1": {
+        "term": "Quelle der Verfügbarkeit",
+        "value": "Immer der verbundene Kalender oder die Buchungs-Engine – der Agent erfindet keine Zeit"
+      },
+      "f2": {
+        "term": "Schreibsicherheit",
+        "value": "Datenbank-Constraints, Transaktionen und Idempotenzschlüssel; ein verlierendes Anlegen gibt einen strukturierten Konflikt zurück"
+      },
+      "f3": {
+        "term": "Bestätigung",
+        "value": "Der Agent fasst zusammen und holt vor jedem Schreibvorgang eine ausdrückliche Bestätigung ein"
+      },
+      "f4": {
+        "term": "Zeitzone",
+        "value": "Je Mandantenstandort explizit"
+      },
+      "f5": {
+        "term": "Bestätigungs-E-Mail",
+        "value": "Nach einer erfolgreichen Buchung versendbar; ein eigenes SMTP-Relay wird unterstützt"
+      },
+      "f6": {
+        "term": "Buchungs-Tools",
+        "value": "list_services, check_availability, create_booking, find_booking, cancel_booking"
+      },
+      "f7": {
+        "term": "Kalender",
+        "value": "Google Kalender (/freeBusy, anlegen, absagen) und Microsoft 365 (getSchedule, anlegen, löschen)"
+      },
+      "f8": {
+        "term": "Buchungs-Webhooks",
+        "value": "booking.created, booking.changed, booking.canceled, waitlist.slot_released"
+      }
+    },
+    "limits": {
+      "heading": "Was Telefonbuchung nicht leistet",
+      "body": "Wo die Grenze liegt und was auf der anderen Seite steht.",
+      "l1": {
+        "title": "Er erfindet keine Zeit, um dem Anrufer zu gefallen",
+        "body": "Hat der Kalender nichts, sagt der Agent, dass der Kalender nichts hat. Genau dafür läuft die Verfügbarkeit über ein Tool statt über einen Prompt, und genau deshalb enden manche Anrufe ohne Buchung."
+      },
+      "l2": {
+        "title": "Er bucht, er führt nicht dein CRM",
+        "body": "Der Werkzeugkatalog besteht aus den Buchungs- und Wissens-Tools plus den eigenen HTTPS-APIs, die du definierst. Es gibt keinen allgemeinen Workflow-Builder und keinen Schreibpfad in ein CRM. Muss eine Buchung woanders landen, geht das über dein eigenes API-Tool oder einen signierten ausgehenden Webhook."
+      },
+      "l3": {
+        "title": "Die Rufnummer beweist nicht, wer anruft",
+        "body": "Den Termin einer anderen Person von einer erkannten Nummer aus zu finden oder zu stornieren, ist genau der Fall, der eine zusätzliche Verifizierung oder einen Menschen braucht. Die Rufnummer ist eine Komfortkennung und keine Authentifizierung."
+      },
+      "l4": {
+        "title": "Zwei Kalenderanbieter, nicht jeder Kalender",
+        "body": "Verbindbar sind Google Kalender und Microsoft 365. Alles andere muss über ein eigenes API-Tool erreicht werden, mit eigenem JSON Schema, Timeout, Wiederholungsregel und Egress-Allowlist."
+      },
+      "l5": {
+        "title": "E-Mail ist der einzige Benachrichtigungskanal",
+        "body": "Nach einer erfolgreichen Buchung kann eine Bestätigungs-E-Mail verschickt werden. Es gibt keine SMS, keinen Messenger und keine Push-Benachrichtigung: Andere Kanäle existieren im Datenmodell, versenden aber nichts."
+      },
+      "l6": {
+        "title": "Auch hier endet der Anruf nach 30 Minuten",
+        "body": "Ein Buchungsgespräch läuft in derselben Grenze von 1.800 Sekunden wie jeder andere Anruf. Wer elf Termine verschieben möchte, gehört zu einem Menschen."
+      }
+    },
+    "faq": {
+      "heading": "Häufige Fragen zur Terminbuchung",
+      "q1": {
+        "question": "Kann der Agent eine Zeit doppelt vergeben?",
+        "answer": "Nein. Die Verfügbarkeit wird aus dem Kalender gelesen, und der Schreibvorgang ist durch Datenbank-Constraints, Transaktionen und Idempotenzschlüssel geschützt. Konkurrieren zwei Anrufe um dieselbe Zeit, gibt das verlierende Anlegen einen strukturierten Konflikt zurück, und dieser Agent bietet die nächste echte Alternative an."
+      },
+      "q2": {
+        "question": "Was passiert, wenn die Leitung mitten in der Buchung abbricht?",
+        "answer": "Bis zur Bestätigung wird nichts geschrieben, ein Abbruch vor dem Bestätigungs-Gate hinterlässt also keinen Termin. Nach der Bestätigung sorgt der Idempotenzschlüssel dafür, dass ein wiederholter Schreibvorgang keine zweite identische Buchung erzeugt."
+      },
+      "q3": {
+        "question": "Welche Kalender kann ich verbinden?",
+        "answer": "Google Kalender und Microsoft 365, also den Outlook-Kalender über Microsoft Graph. Beide nutzen OAuth2 mit PKCE und Offline-Zugriff, und der ausgehende Verkehr ist auf www.googleapis.com und oauth2.googleapis.com beziehungsweise graph.microsoft.com und login.microsoftonline.com beschränkt."
+      },
+      "q4": {
+        "question": "Bekommt der Anrufer eine Bestätigung?",
+        "answer": "Der Agent liest den Termin noch vor dem Schreiben am Telefon vor und bestätigt laut, sobald der Schreibvorgang erfolgreich war. Danach kann eine Bestätigungs-E-Mail folgen, auf Wunsch über deinen eigenen SMTP-Server."
+      },
+      "q5": {
+        "question": "Können Anrufer Termine telefonisch stornieren oder verschieben?",
+        "answer": "Ja. find_booking findet den Termin und cancel_booking gibt ihn frei, und Warteliste- sowie Stornoprozesse existieren, sodass ein frei gewordener Platz weitergegeben werden kann. Alles Sensible rund um die Buchung einer anderen Person braucht eine zusätzliche Verifizierung oder einen Menschen."
+      },
+      "q6": {
+        "question": "Wie erfahren unsere eigenen Systeme von einer neuen Buchung?",
+        "answer": "Über ausgehende Webhooks. booking.created, booking.changed, booking.canceled und waitlist.slot_released gehören zu den 17 Ereignistypen, ausgeliefert über HTTPS mit einer HMAC-SHA256-Signatur im Header velyric-signature und mit bis zu 8 Zustellversuchen mit Wartezeiten von 30 Sekunden bis 24 Stunden."
+      },
+      "q7": {
+        "question": "Wie viele Buchungsanrufe laufen gleichzeitig?",
+        "answer": "So viele, wie dein Tarif erlaubt: 2 gleichzeitige Anrufe bei Start, 10 bei Business, 50 bei Pro und 100+ bei Enterprise. Inklusive sind 150, 400 und 1.000 Gesprächsminuten, zusätzliche Minuten kosten netto 149, 129 und 109 HUF."
+      }
+    },
+    "related": {
+      "heading": "Weiterlesen",
+      "r1": {
+        "label": "KI-Rezeptionist",
+        "description": "Der ganze Empfang: Anrufe annehmen, Wissen, Tastenkürzel und Regeln nach Feierabend."
+      },
+      "r2": {
+        "label": "Mehrsprachige KI-Telefonassistenten",
+        "description": "Auf Ungarisch buchen und auf Englisch bestätigen, im selben Gespräch."
+      },
+      "r3": {
+        "label": "KI-Anrufweiterleitung an einen Menschen",
+        "description": "Was passiert, wenn eine Buchung doch einen Menschen braucht."
+      },
+      "r4": {
+        "label": "Preise",
+        "description": "Tarife, inklusive Minuten, Minutenpreise und Gleichzeitigkeitslimits."
+      },
+      "r5": {
+        "label": "Terminbuchung für Friseur- und Kosmetiksalons",
+        "description": "Leistungen, Mitarbeitende und ein Platz, der nie doppelt vergeben wird."
+      },
+      "r6": {
+        "label": "Produktübersicht",
+        "description": "Die ganze Plattform: Orchestrierung, Wissen, Integrationen und Leitplanken."
+      }
+    }
+  },
+  "multilingual": {
+    "meta": {
+      "title": "Mehrsprachiger KI-Telefonassistent: Ungarisch, Deutsch, Englisch",
+      "description": "Ein Agent, eine Nummer, drei Sprachen. Die Ländervorwahl ist nur ein Hinweis, ein ausdrücklicher Wunsch oder eine gespeicherte Präferenz gewinnt, und die Sprache wechselt auch mitten im Gespräch."
+    },
+    "breadcrumb": "Mehrsprachige Anrufe",
+    "eyebrow": "Mehrsprachiger Voice-Agent",
+    "title": "Eine Nummer, drei Sprachen, kein Menü zum Durchhören",
+    "body": "Der Agent wählt die Sprache anhand der Rufnummer, anhand dessen, was tatsächlich gesagt wird, und anhand dessen, was du über den Anrufer schon weißt – und folgt ihm, wenn er mitten im Gespräch wechselt.",
+    "answer": {
+      "question": "Wie wählt ein mehrsprachiger KI-Telefonassistent seine Sprache?",
+      "body": "Ein mehrsprachiger Voice-Agent entscheidet ohne Tastendruck, welche Sprache er spricht. Bei Velyric ist die E.164-Ländervorwahl des Anrufers nur ein erster Hinweis: Ein ausdrücklicher Wunsch wie „Können wir auf Englisch weitermachen?“, die erkannte gesprochene Sprache und eine gespeicherte preferred_language im Anruferprofil setzen ihn außer Kraft. Die Sprache kann mitten im Gespräch wechseln, wer also auf Deutsch beginnt und auf Englisch weitermacht, wird begleitet und nicht korrigiert. Begrüßung, KI-Hinweis und Rückfallsätze werden je Sprache konfiguriert, und unterstützt werden Ungarisch, Deutsch und Englisch."
+    },
+    "context": {
+      "heading": "Warum ein Sprachmenü die falsche Antwort ist",
+      "body": "„Für Deutsch drücken Sie die 1“ kostet jeden Anrufer Zeit und liegt bei den häufigen Fällen trotzdem falsch.",
+      "p1": "Ein Sprachmenü verlangt ausgerechnet von der Person Navigation, die am wenigsten damit zurechtkommt. Und es versagt genau dort, wo es zählt: bei der Ungarin, die vom deutschen Mobiltelefon anruft, beim österreichischen Gast, dessen Englisch besser ist als sein Deutsch, oder bei der Stammkundin, deren Sprache du aus dem letzten Anruf längst kennst.",
+      "p2": "Velyric schichtet die Signale stattdessen. Die Ländervorwahl liefert eine erste Vermutung, damit der erste Satz meistens passt. Was der Anrufer tatsächlich sagt, überschreibt diese Vermutung sofort. Bei einem wiederkehrenden Kontakt schlägt die gespeicherte Präferenz im Anruferprofil beides, und das Anrufergedächtnis liegt pro Mandant und wird nie mandantenübergreifend geteilt."
+    },
+    "how": {
+      "heading": "Wie die Sprache entschieden wird, der Reihe nach",
+      "body": "Vier Signale, ein Gespräch, nirgendwo ein Menü.",
+      "s1": {
+        "title": "Die Ländervorwahl liefert die erste Vermutung",
+        "body": "Ein eingehender Anruf von +49 oder +43 startet auf Deutsch, einer von +36 auf Ungarisch. Die E.164-Ländervorwahl ist ein Hinweis und nicht mehr: Sie entscheidet, welche Begrüßung zuerst gesprochen wird, und danach nichts."
+      },
+      "s2": {
+        "title": "Begrüßung und Hinweis stehen je Sprache",
+        "body": "Jede Sprache hat ihre eigene konfigurierte Begrüßung und ihren eigenen KI-Hinweis: „Guten Tag, Sie sprechen mit einem KI-Assistenten.“ oder „Jó napot kívánok, Ön egy AI asszisztenssel beszél.“ Der Hinweis entfällt auch beim Sprachwechsel nicht."
+      },
+      "s3": {
+        "title": "Was der Anrufer sagt, gewinnt",
+        "body": "Antwortet der Anrufer „Könnten wir auf Englisch weitermachen?“ oder beginnt er einfach, Englisch zu sprechen, wechselt der Agent. Ein ausdrücklicher Wunsch und die erkannte gesprochene Sprache setzen die Vermutung aus der Ländervorwahl außer Kraft, ohne Menü und ohne zweite Begrüßung."
+      },
+      "s4": {
+        "title": "Eine gespeicherte Präferenz schlägt die Vermutung",
+        "body": "Bei wiederkehrenden Anrufern hat preferred_language in deinem eigenen Anruferprofil Vorrang vor der Ländervorwahl. Wer mit deutscher Nummer immer auf Ungarisch anruft, wird ab dem ersten Wort auf Ungarisch begrüßt."
+      },
+      "s5": {
+        "title": "Der Wechsel mitten im Gespräch ist normal",
+        "body": "Wer auf Deutsch beginnt und für ein technisches Detail auf Englisch wechselt, wird mitten im Gespräch begleitet. Gesprächszustand, die bisher aufgenommenen Angaben und die Tool-Ergebnisse überstehen den Wechsel: Die Stimme wechselt die Sprache, der Anruf beginnt nicht von vorn."
+      },
+      "s6": {
+        "title": "Der Rest des Gesprächs folgt",
+        "body": "Wissenssuche, das Vorlesen der Buchung, die Bestätigungsfrage und der Übergabesatz laufen in der Sprache weiter, die gerade gesprochen wird. Die Treffsicherheit des Sprachwechsels ist eines der im Dashboard gemessenen Qualitätssignale, du kannst das also prüfen statt hoffen."
+      }
+    },
+    "capabilities": {
+      "heading": "Was Mehrsprachigkeit hier bedeutet",
+      "body": "Ein Agent für drei Märkte, je Sprache konfiguriert statt zur Laufzeit übersetzt.",
+      "c1": {
+        "title": "Ungarisch, Deutsch und Englisch",
+        "body": "Drei Sprachen auf einem Agenten und einer Nummer. Es gibt keine getrennte Nummer, keinen getrennten Agenten und kein Sprachmenü pro Markt."
+      },
+      "c2": {
+        "title": "Geschichtete Sprachwahl",
+        "body": "Der Hinweis aus der E.164-Ländervorwahl, der ausdrückliche Wunsch des Anrufers, die erkannte gesprochene Sprache und eine gespeicherte preferred_language, in dieser Rangfolge."
+      },
+      "c3": {
+        "title": "Wechsel mitten im Gespräch",
+        "body": "Die Sprache kann an jeder Stelle des Gesprächs wechseln, ohne dass der Zustand verloren geht, und der Agent schiebt den Anrufer nicht dorthin zurück, wo er angefangen hat."
+      },
+      "c4": {
+        "title": "Begrüßung, Hinweis und Rückfallsätze je Sprache",
+        "body": "Begrüßung, KI-Hinweis und Rückfallsätze werden je Sprache konfiguriert, damit ein deutscher Anruf klingt, als wäre er für diesen Markt geschrieben, und nicht, als würde er mitten im Satz aus dem Ungarischen übersetzt."
+      },
+      "c5": {
+        "title": "Anrufergedächtnis pro Mandant",
+        "body": "Die Sprachpräferenz eines Anrufers bleibt in deinem eigenen Anruferprofil, unter strikter Mandantentrennung mit tenant_id auf jeder mandantenbezogenen Tabelle und Postgres Row Level Security. Nichts wird mandantenübergreifend geteilt."
+      },
+      "c6": {
+        "title": "Gemessen, nicht vermutet",
+        "body": "Die Treffsicherheit des Sprachwechsels steht neben Antwortlatenz, Barge-in-Erfolg, Tool-Erfolgsquote und Erstlösungsquote, und die Simulationsoberfläche fährt skriptgesteuerte Testanrufe und Regressionsläufe in jeder Sprache, bevor eine Version live geht."
+      }
+    },
+    "facts": {
+      "heading": "Nachprüfbare Fakten zur Sprache",
+      "body": "Was die Sprache entscheidet und was nicht.",
+      "f1": {
+        "term": "Unterstützte Sprachen",
+        "value": "Ungarisch, Deutsch und Englisch"
+      },
+      "f2": {
+        "term": "Erster Hinweis",
+        "value": "Die E.164-Ländervorwahl des Anrufers"
+      },
+      "f3": {
+        "term": "Setzt den Hinweis außer Kraft",
+        "value": "Ein ausdrücklicher Wunsch, die erkannte gesprochene Sprache und eine gespeicherte preferred_language"
+      },
+      "f4": {
+        "term": "Wechsel mitten im Gespräch",
+        "value": "Unterstützt; Gesprächszustand und aufgenommene Angaben bleiben erhalten"
+      },
+      "f5": {
+        "term": "Begrüßung und KI-Hinweis",
+        "value": "Je Sprache konfiguriert, beim Wechsel nie weggelassen"
+      },
+      "f6": {
+        "term": "Anrufergedächtnis",
+        "value": "Pro Mandant gespeichert, nie mandantenübergreifend geteilt"
+      },
+      "f7": {
+        "term": "Benötigte Rufnummern",
+        "value": "Eine – jeder Tarif enthält 1 Rufnummer und 1 Standort"
+      },
+      "f8": {
+        "term": "Qualitätssignal",
+        "value": "Die Treffsicherheit des Sprachwechsels wird gemessen und berichtet"
+      }
+    },
+    "limits": {
+      "heading": "Was Mehrsprachigkeit nicht bedeutet",
+      "body": "Drei Sprachen richtig statt vierzig halbherzig.",
+      "l1": {
+        "title": "Drei Sprachen, und das ist die Liste",
+        "body": "Unterstützt werden Ungarisch, Deutsch und Englisch. Es gibt keinen slowakischen, rumänischen, polnischen oder ukrainischen Agenten; ein Anruf in einer anderen Sprache ist ein Fall für die Weiterleitung, und du solltest konfigurieren, wohin sie geht."
+      },
+      "l2": {
+        "title": "Erkennung ist ein Signal, keine Gewissheit",
+        "body": "Eine sehr kurze Äußerung, starke Hintergrundgeräusche oder zwei Sprachen in einem Satz können zu einer falschen Vermutung führen. Ein ausdrücklicher Wunsch gewinnt immer, und das Tastenkürzel zum Menschen bleibt in jeder Sprache erreichbar."
+      },
+      "l3": {
+        "title": "Deine Quellen müssen in der Sprache existieren",
+        "body": "Der Agent antwortet aus deiner Wissensdatenbank. Gibt es die Preisliste nur auf Ungarisch, lässt sich ein englischsprachiger Anrufer daraus nur so gut bedienen, wie es die Suche zulässt. Die wichtigen Dokumente in jeder Sprache zu pflegen, in der du verkaufst, ist deine Aufgabe und nicht die des Modells."
+      },
+      "l4": {
+        "title": "Ein Voice-Agent, kein Dolmetscher",
+        "body": "Der Agent spricht die Sprache des Anrufers. Er dolmetscht nicht zwischen zwei anderen Personen und ist kein Untertitel- oder Synchronisationswerkzeug."
+      },
+      "l5": {
+        "title": "Eine Nummer, nicht eine pro Markt",
+        "body": "Jeder Tarif enthält eine Rufnummer und einen Standort. Eigene lokale Nummern für getrennte Märkte sind ein kostenpflichtiges Add-on und keine Sprachfunktion."
+      },
+      "l6": {
+        "title": "Es gilt dieselbe Grenze von 30 Minuten",
+        "body": "Ein Sprachwechsel startet die Uhr nicht neu. Jeder Anruf endet nach 1.800 Sekunden, egal wie viele Sprachen darin vorkamen."
+      }
+    },
+    "faq": {
+      "heading": "Häufige Fragen zum mehrsprachigen Voice-Agenten",
+      "q1": {
+        "question": "Muss der Anrufer eine Sprache auswählen?",
+        "answer": "Nein. Es gibt kein „Für Deutsch drücken Sie die 1“. Die Ländervorwahl entscheidet über den ersten Satz, und alles, was der Anrufer sagt, also ein ausdrücklicher Wunsch oder schlicht eine andere Sprache, setzt sie sofort außer Kraft."
+      },
+      "q2": {
+        "question": "Welche Sprachen werden unterstützt?",
+        "answer": "Ungarisch, Deutsch und Englisch. Diese drei spricht der Agent; ein Anruf in einer anderen Sprache wird als Übergabe an einen Menschen behandelt und nicht als Übersetzungsproblem."
+      },
+      "q3": {
+        "question": "Was passiert, wenn der Anrufer mitten im Satz die Sprache wechselt?",
+        "answer": "Der Agent folgt. Die Sprache kann mitten im Gespräch wechseln, und Gesprächszustand, aufgenommene Angaben und Tool-Ergebnisse bleiben erhalten. Eine auf Deutsch begonnene Buchung lässt sich also auf Englisch bestätigen, ohne von vorn zu beginnen."
+      },
+      "q4": {
+        "question": "Kann ich den Wortlaut je Sprache steuern?",
+        "answer": "Ja. Begrüßung, KI-Hinweis und Rückfallsätze werden je Sprache konfiguriert. So bleibt ein deutscher Anruf deutsch, statt wie ein übersetztes ungarisches Skript zu klingen."
+      },
+      "q5": {
+        "question": "Bedeutet eine deutsche Nummer einen deutschen Anruf?",
+        "answer": "Nur als erste Vermutung. Die E.164-Ländervorwahl ist ein anfänglicher Hinweis, den ein ausdrücklicher Wunsch, die erkannte gesprochene Sprache oder eine gespeicherte preferred_language im Anruferprofil außer Kraft setzt."
+      },
+      "q6": {
+        "question": "Woran erkenne ich, dass die Sprachwahl wirklich funktioniert?",
+        "answer": "Die Treffsicherheit des Sprachwechsels wird als Qualitätssignal gemessen, neben Antwortlatenz, Barge-in-Erfolg und Erstlösungsquote. In der Simulationsoberfläche kannst du skriptgesteuerte Testanrufe und Regressionsläufe je Sprache fahren, bevor eine neue Agentenversion echte Anrufer erreicht."
+      },
+      "q7": {
+        "question": "Brauche ich pro Sprache eine eigene Rufnummer?",
+        "answer": "Nein. Ein Agent auf einer Nummer deckt alle drei Sprachen ab, und jeder Tarif enthält eine Rufnummer und einen Standort. Weitere Nummern gibt es als kostenpflichtiges Add-on, wenn du in einem anderen Markt eine eigene lokale Präsenz möchtest."
+      }
+    },
+    "related": {
+      "heading": "Weiterlesen",
+      "r1": {
+        "label": "KI-Rezeptionist",
+        "description": "Anrufe annehmen, Wissen, Tastenkürzel und Regeln nach Feierabend auf deiner eigenen Nummer."
+      },
+      "r2": {
+        "label": "KI-Terminbuchung am Telefon",
+        "description": "Echte Verfügbarkeiten, ein Bestätigungs-Gate und konfliktfreie Schreibvorgänge."
+      },
+      "r3": {
+        "label": "KI-Anrufweiterleitung an einen Menschen",
+        "description": "Wohin ein Anruf in einer nicht unterstützten Sprache gehört und wie du es einstellst."
+      },
+      "r4": {
+        "label": "Preise",
+        "description": "Tarife, inklusive Minuten, Minutenpreise und Gleichzeitigkeitslimits."
+      },
+      "r5": {
+        "label": "Voice-Agenten für Hotels und Unterkünfte",
+        "description": "Gäste aus drei Ländern auf einer einzigen Rezeptionsnummer."
+      },
+      "r6": {
+        "label": "Produktübersicht",
+        "description": "Die ganze Plattform: Orchestrierung, Wissen, Integrationen und Leitplanken."
+      }
+    }
+  },
+  "transfer": {
+    "meta": {
+      "title": "KI-Anrufweiterleitung an einen Menschen",
+      "description": "Velyric übergibt bei sechs festgelegten Auslösern an einen Menschen, darunter die gesprochene Bitte und ### auf der Tastatur, und leitet den SIP-Anruf an dein eigenes Ziel weiter."
+    },
+    "breadcrumb": "Anrufweiterleitung",
+    "eyebrow": "Übergabe an Menschen",
+    "title": "Die KI weiß, wann sie aufhören und einen Menschen holen muss",
+    "body": "Die Übergabe ist hier eine vollwertige Funktion und kein Fehlerpfad. Sechs festgelegte Auslöser schicken einen Anruf zu einem Menschen, und der Anruf wird an das von dir konfigurierte tel:- oder sip:-Ziel weitergeleitet.",
+    "answer": {
+      "question": "Wann leitet ein KI-Telefonassistent einen Anruf an einen Menschen weiter?",
+      "body": "Eine Übergabe an einen Menschen ist der Moment, in dem ein Voice-Agent einen Anruf nicht mehr selbst bearbeitet, sondern an eine Person weitergibt. Velyric übergibt bei sechs festgelegten Auslösern: Der Anrufer bittet um einen Menschen, der Anrufer drückt ### auf der Tastatur, zwei bis drei Verständnisversuche scheitern hintereinander, ein Tool läuft nach einem Wiederholungsversuch erneut in einen Timeout oder einen 5xx-Fehler, das Anliegen ist sensibel oder liegt außerhalb dessen, was der Agent darf, oder der Anruf kommt außerhalb der Geschäftszeiten an. Der SIP-Anruf wird dann an ein anderes tel:- oder sip:-Ziel weitergeleitet, das du konfigurierst. Kein Anrufer muss sich einen Menschen erkämpfen: Einmal fragen oder ### drücken genügt."
+    },
+    "context": {
+      "heading": "Die Übergabe ist eine Produktentscheidung, kein Fehler",
+      "body": "Die interessante Frage ist nicht, ob die KI alles kann. Sie lautet, was in dem Moment passiert, in dem sie es nicht tun sollte.",
+      "p1": "Die meisten schlechten Erfahrungen mit Telefonautomatisierung stammen aus einer einzigen Designentscheidung: einen Menschen zu erreichen als Fehler zu behandeln, den man minimieren muss. Anrufer lernen, die 0 zu hämmern, „Mitarbeiter“ zu rufen oder aufzulegen und es bei der Vertriebsnummer zu versuchen. Das ist für dich ein schlechteres Ergebnis als eine Weiterleitung, und genau dieses Ergebnis bekommst du, wenn die Übergabe nachträglich angeflanscht wird.",
+      "p2": "Velyric geht den anderen Weg. Die Auslöser für eine Weiterleitung sind explizit, das Tastenkürzel wird dem Anrufer genannt, und der Agent bietet einen Menschen an, sobald das Gespräch nicht mehr gut läuft: nach zwei bis drei fehlgeschlagenen Verständnisversuchen oder sobald ein Tool auch den Wiederholungsversuch verliert. Die Weiterleitungsquote ist eine Dashboard-Kennzahl neben Lösungsquote und durchschnittlicher Gesprächsdauer und keine Zahl zum Verstecken."
+    },
+    "how": {
+      "heading": "Wie eine Übergabe tatsächlich abläuft",
+      "body": "Vom Auslöser bis zu dem Moment, in dem deine Kollegin in der Leitung ist.",
+      "s1": {
+        "title": "Der Anrufer fragt oder drückt ###",
+        "body": "„Könnte ich bitte eine Kollegin sprechen?“ beendet den Redebeitrag des Agenten sofort: kein Halteversuch, keine Zusatzfrage, kein Mitzählen, zum wievielten Mal gefragt wurde. ### ist das Tastenkürzel für einen Menschen und 0 ist für die sofortige Weiterleitung konfiguriert, das Kürzel greift also auch, während der Agent spricht."
+      },
+      "s2": {
+        "title": "Oder der Agent merkt, dass es nicht läuft",
+        "body": "Nach zwei bis drei fehlgeschlagenen Verständnisversuchen hört der Agent auf und bietet einen Menschen an: „Ich verstehe Sie gerade nicht richtig. Soll ich Sie zu einer Kollegin durchstellen?“ Genauso läuft es bei einem sensiblen oder nicht erlaubten Anliegen und bei allem, was eine zusätzliche Verifizierung braucht, die das Telefon nicht leisten kann."
+      },
+      "s3": {
+        "title": "Oder ein Tool fällt aus",
+        "body": "Antwortet ein verbundenes Tool mit einem Timeout oder einem 5xx-Fehler, wiederholt das Backend den Aufruf einmal. Scheitert auch der Wiederholungsversuch, geht der Anruf auf einen Rückfallweg oder zu einem Menschen, statt den Anrufer mit einem Agenten zurückzulassen, der die gerade zugesagte Aktion nicht abschließen kann."
+      },
+      "s4": {
+        "title": "Das Gespräch geht in den Zustand HANDOFF",
+        "body": "HANDOFF ist ein expliziter Zustand im codierten Gesprächsautomaten, neben CONFIRMATION_GATE, TOOL_EXECUTION und SAFE_FAILURE. Der Agent schlägt keine Tools mehr vor und sagt dem Anrufer, was als Nächstes passiert, statt still zu werden."
+      },
+      "s5": {
+        "title": "Der SIP-Anruf geht an dein Ziel",
+        "body": "Der Anruf wird an das von dir konfigurierte tel:- oder sip:-Ziel weitergeleitet: ein Mobiltelefon, ein Tischtelefon, eine Nebenstelle der Telefonanlage oder eine Bereitschaftsnummer. Außerhalb der Geschäftszeiten erreicht derselbe Mechanismus deine Bereitschaftsnummer, oder der Agent nimmt stattdessen eine Nachricht oder einen Rückrufwunsch auf."
+      },
+      "s6": {
+        "title": "Was die Person am anderen Ende bekommt",
+        "body": "Deine Kollegin bekommt den laufenden Anruf auf dem konfigurierten Ziel. Velyric flüstert ihr vor dem Durchstellen keine gesprochene Zusammenfassung zu: Der Kontext liegt auf dem Anrufdatensatz, als Transkript und Zusammenfassung im Dashboard, wo aktiviert, dazu als Webhook-Ereignisse call.started und call.ended, die deine eigenen Systeme verarbeiten können."
+      }
+    },
+    "capabilities": {
+      "heading": "Wie die Übergabe gebaut ist",
+      "body": "Sechs Auslöser, ein Mechanismus und eine Kennzahl, die zeigt, ob es zu oft passiert.",
+      "c1": {
+        "title": "Einmal fragen genügt",
+        "body": "„Kann ich einen Menschen sprechen?“ löst eine sofortige Weiterleitung aus. Es gibt kein Halteskript, kein Lassen Sie mich noch eines versuchen und keine Schwelle, die der Anrufer erst überschreiten müsste."
+      },
+      "c2": {
+        "title": "Tastenkürzel, die immer funktionieren",
+        "body": "### erreicht einen Menschen, 0 ist für die sofortige Weiterleitung konfiguriert und * geht eine Frage zurück. DTMF ist pro Mandant konfigurierbar und greift auch, während der Agent spricht."
+      },
+      "c3": {
+        "title": "Übergabe, die durch Fehler ausgelöst wird",
+        "body": "Zwei bis drei fehlgeschlagene Verständnisversuche oder ein Timeout beziehungsweise ein 5xx-Fehler, der den einen Wiederholungsversuch übersteht, geben den Anruf an einen Menschen, statt den Anrufer erneut durch dieselbe Frage zu schicken."
+      },
+      "c4": {
+        "title": "Sensible Anliegen gehen zu einem Menschen",
+        "body": "Die Rufnummer eines Anrufers ist keine Authentifizierung. Alles, was eine zusätzliche Verifizierung braucht, und alles, was außerhalb der Berechtigung des Agenten liegt, wird per Regel an einen Menschen geleitet statt versucht."
+      },
+      "c5": {
+        "title": "Routing außerhalb der Geschäftszeiten",
+        "body": "Außerhalb der Geschäftszeiten erreicht der Anruf deine Bereitschaftsnummer, oder der Agent nimmt eine Nachricht auf beziehungsweise notiert einen Rückrufwunsch, je nachdem, was du für dieses Zeitfenster eingestellt hast."
+      },
+      "c6": {
+        "title": "Die Weiterleitungsquote als Kennzahl",
+        "body": "Die Weiterleitungsquote steht im Dashboard neben Anrufen, Lösungsquote, durchschnittlicher Gesprächsdauer, Buchungen und Kosten, ein Anstieg der Übergaben ist also sichtbar, bevor dein Team ihn spürt."
+      }
+    },
+    "facts": {
+      "heading": "Jeder Auslöser für eine Weiterleitung und was dann passiert",
+      "body": "Die vollständige Liste mit dem jeweiligen Standardverhalten.",
+      "f1": {
+        "term": "Anrufer bittet um einen Menschen",
+        "value": "Sofortige Weiterleitung"
+      },
+      "f2": {
+        "term": "### auf der Tastatur",
+        "value": "Sofortige Weiterleitung an einen Menschen"
+      },
+      "f3": {
+        "term": "0 und * auf der Tastatur",
+        "value": "0 für die sofortige Weiterleitung, * für einen Schritt zurück – DTMF ist konfigurierbar"
+      },
+      "f4": {
+        "term": "Wiederholtes Missverstehen",
+        "value": "Nach 2-3 fehlgeschlagenen Verständnisversuchen bietet der Agent eine Weiterleitung an"
+      },
+      "f5": {
+        "term": "Tool-Timeout oder 5xx",
+        "value": "Ein Wiederholungsversuch, dann Weiterleitung oder Rückfallweg"
+      },
+      "f6": {
+        "term": "Sensibles oder unzulässiges Anliegen",
+        "value": "Übergabe an einen Menschen per Regel, einschließlich aller Fälle mit zusätzlicher Verifizierung"
+      },
+      "f7": {
+        "term": "Außerhalb der Geschäftszeiten",
+        "value": "Nachricht aufnehmen, Rückrufwunsch oder die Bereitschaftsnummer"
+      },
+      "f8": {
+        "term": "Mechanismus der Weiterleitung",
+        "value": "Der SIP-Anruf wird an ein konfiguriertes tel:- oder sip:-Ziel weitergeleitet"
+      }
+    },
+    "limits": {
+      "heading": "Was die Übergabe nicht leistet",
+      "body": "Worauf dein Team auf der Empfangsseite planen sollte.",
+      "l1": {
+        "title": "Es gibt keine geflüsterte Einweisung",
+        "body": "Deine Kollegin bekommt den weitergeleiteten Anruf und keine gesprochene Zusammenfassung dessen, was vorher passiert ist. Der Kontext liegt auf dem Anrufdatensatz, als Transkript und Zusammenfassung im Dashboard, wo aktiviert. Plane also damit, dass die Person den Anruf öffnet oder eine kurze Frage stellt."
+      },
+      "l2": {
+        "title": "Eine Weiterleitung braucht ein Ziel",
+        "body": "Das Ziel ist eine tel:- oder sip:-Adresse, die du konfigurierst. Nimmt dort niemand ab, rettet der Agent den Anruf nicht; es passiert stattdessen das, was du für dieses Zeitfenster eingestellt hast: Mailbox, Rückrufwunsch oder eine Überlaufnummer."
+      },
+      "l3": {
+        "title": "Standardmäßig keine Aufzeichnung des KI-Teils",
+        "body": "Rohes Audio wird nicht gespeichert: Die Standardaufbewahrung liegt bei 0 Tagen. Wer genau nachhören will, wie ein Anruf vor der Weiterleitung klang, braucht das vorher aktivierte Add-on Gesprächsaufzeichnung. Sonst bleibt das Transkript, das standardmäßig 90 Tage aufbewahrt wird."
+      },
+      "l4": {
+        "title": "Der Agent identifiziert niemanden für dich",
+        "body": "Die Rufnummernanzeige ist eine Komfortkennung und keine Authentifizierung. Verlangt dein Prozess vor einer sensiblen Aktion einen Identitätsnachweis, übergibt der Agent, statt sich eine eigene Prüfung auszudenken."
+      },
+      "l5": {
+        "title": "Die Grenze von 30 Minuten gilt für den ganzen Anruf",
+        "body": "Ein Anruf endet nach 1.800 Sekunden. Die Zeit mit dem Agenten vor der Weiterleitung zählt mit, ein langes KI-Gespräch gefolgt von einem langen menschlichen Gespräch ist also nicht das, wofür die Grenze gedacht ist."
+      },
+      "l6": {
+        "title": "Kein Rückfall auf SMS oder Chat",
+        "body": "Kann niemand den Anruf annehmen, bleiben Nachricht aufnehmen, Rückrufwunsch, Überlaufnummer oder E-Mail. Einen Weg über SMS, Messenger oder Push-Benachrichtigung gibt es nicht."
+      }
+    },
+    "faq": {
+      "heading": "Häufige Fragen zur Anrufweiterleitung",
+      "q1": {
+        "question": "Wie erreicht ein Anrufer einen Menschen?",
+        "answer": "Indem er fragt oder ### drückt. Die Bitte um einen Menschen löst eine sofortige Weiterleitung aus, ### ist das Tastenkürzel für einen Menschen, und 0 ist für die sofortige Weiterleitung konfiguriert. DTMF-Kürzel sind pro Mandant konfigurierbar, du kannst sie also an das anpassen, was deine Anrufer ohnehin erwarten."
+      },
+      "q2": {
+        "question": "Was genau ist hier eine warme Weiterleitung?",
+        "answer": "Der laufende SIP-Anruf wird an ein anderes tel:- oder sip:-Ziel weitergeleitet, das du konfiguriert hast, der Anrufer bleibt also in der Leitung und wird mit einem Menschen verbunden. Velyric spielt der empfangenden Kollegin keine gesprochene Einweisung vor; der Kontext des Gesprächs liegt als Transkript und Zusammenfassung auf dem Anrufdatensatz, wo aktiviert."
+      },
+      "q3": {
+        "question": "Was passiert, wenn eine unserer eigenen APIs ausfällt?",
+        "answer": "Das Backend wiederholt den Tool-Aufruf einmal. Läuft auch der Wiederholungsversuch in einen Timeout oder einen 5xx-Fehler, geht der Anruf auf einen Rückfallweg oder zu einem Menschen, statt den Anrufer mit einem Agenten zurückzulassen, der nicht zu Ende bringen kann, was er begonnen hat."
+      },
+      "q4": {
+        "question": "Was passiert mit Anrufen außerhalb der Geschäftszeiten?",
+        "answer": "Du entscheidest: Der Agent kann eine Nachricht aufnehmen, einen Rückrufwunsch notieren oder an eine Bereitschaftsnummer weiterleiten. Dieselbe Art von Konfiguration bestimmt, was passiert, wenn das Gleichzeitigkeitslimit deines Tarifs bereits vollständig belegt ist."
+      },
+      "q5": {
+        "question": "Kann ich sehen, wie oft Anrufe weitergeleitet werden?",
+        "answer": "Ja. Die Weiterleitungsquote ist eine der Dashboard-Kennzahlen neben Anrufen, Lösungsquote, durchschnittlicher Gesprächsdauer, Buchungen und Kosten. Sie steht neben gemessenen Signalen wie Tool-Erfolgsquote, Erstlösungsquote und dem Anteil unbeantworteter Fragen."
+      },
+      "q6": {
+        "question": "Gibt es eine Grenze, wie lange ein weitergeleiteter Anruf laufen darf?",
+        "answer": "Ein einzelner Anruf endet in jedem Tarif nach 1.800 Sekunden, also 30 Minuten, und diese Grenze gilt für den ganzen Anruf einschließlich der Zeit, die vorher mit dem Agenten verbracht wurde. Inklusive sind 150 Gesprächsminuten bei Start, 400 bei Business und 1.000 bei Pro, zusätzliche Minuten kosten netto 149, 129 und 109 HUF."
+      },
+      "q7": {
+        "question": "Können verschiedene Anliegen zu verschiedenen Personen gehen?",
+        "answer": "Das Weiterleitungsziel ist eine tel:- oder sip:-Adresse, die du konfigurierst, Routing heißt hier also, auf die richtige Nummer zu zeigen: ein Tischtelefon, eine Nebenstelle, ein Mobiltelefon oder eine Bereitschaftsleitung. Durch die Unterstützung mehrerer Standorte und den rollenbasierten, standortbezogenen Zugriff hält ein Unternehmen mit mehreren Standorten die Ziele je Standort getrennt."
+      }
+    },
+    "related": {
+      "heading": "Weiterlesen",
+      "r1": {
+        "label": "KI-Rezeptionist",
+        "description": "Alles, was der Agent erledigt, bevor eine Übergabe nötig wird."
+      },
+      "r2": {
+        "label": "KI-Terminbuchung am Telefon",
+        "description": "Echte Verfügbarkeiten, ein Bestätigungs-Gate und konfliktfreie Schreibvorgänge."
+      },
+      "r3": {
+        "label": "Mehrsprachige KI-Telefonassistenten",
+        "description": "Sprachwahl, Wechsel mitten im Gespräch und wann eine Sprache ein Fall für die Übergabe ist."
+      },
+      "r4": {
+        "label": "Preise",
+        "description": "Tarife, inklusive Minuten, Minutenpreise und Gleichzeitigkeitslimits."
+      },
+      "r5": {
+        "label": "Voice-Agenten für Autowerkstätten",
+        "description": "Einfache Fragen beantwortet, die Diagnose beim Mechaniker."
+      },
+      "r6": {
+        "label": "Produktübersicht",
+        "description": "Die ganze Plattform: Orchestrierung, Wissen, Integrationen und Leitplanken."
+      }
+    }
+  }
+}

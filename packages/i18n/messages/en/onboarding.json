@@ -1,0 +1,520 @@
+{
+  "title": "Set up Velyric",
+  "progress": "Setup progress",
+  "profileRequired": "Complete the billing details first.",
+  "steps": {
+    "workspace": "Workspace",
+    "billing": "Billing details",
+    "plan": "Plan",
+    "provisioning": "Go live"
+  },
+  "headings": {
+    "workspace": {
+      "title": "Create your workspace",
+      "description": "A workspace holds your agents, phone numbers, team and billing."
+    },
+    "billing": {
+      "title": "Billing details",
+      "description": "Used for invoices issued in line with Hungarian and EU tax rules."
+    },
+    "plan": {
+      "title": "Choose your plan",
+      "description": "Prices are monthly net amounts. You can change plans later."
+    },
+    "provisioning": {
+      "title": "Getting you live",
+      "description": "We are setting up your AI project, phone number and first agent. This usually takes a few minutes."
+    }
+  },
+  "invitations": {
+    "title": "You have been invited",
+    "accept": "Join workspace",
+    "notFoundTitle": "Invitation not available",
+    "notFoundBody": "This invitation has expired, was revoked or was sent to a different address than {email}."
+  },
+  "workspace": {
+    "displayName": "Business name",
+    "displayNameHint": "Shown to your team in the dashboard.",
+    "legalName": "Legal entity name",
+    "legalNameHint": "As registered, used on contracts and invoices.",
+    "slug": "Workspace address",
+    "slugHint": "Lowercase letters, numbers and hyphens.",
+    "country": "Country",
+    "language": "Default language",
+    "timezone": "Time zone",
+    "locationName": "First location name",
+    "locationNameHint": "For example your shop, clinic or office.",
+    "internationalNotice": "Self-service checkout is currently available for Hungarian businesses. Other markets are onboarded by our sales team after you create the workspace.",
+    "submit": "Create workspace",
+    "errors": {
+      "invalid": "Check this value.",
+      "required": "This field is required.",
+      "too_long": "This value is too long.",
+      "slug": "Use 3–63 lowercase letters, numbers or hyphens, not starting or ending with a hyphen.",
+      "slug_taken": "This address is already taken."
+    }
+  },
+  "billing": {
+    "customerType": "Customer type",
+    "customerTypes": {
+      "BUSINESS": "Business",
+      "INDIVIDUAL": "Individual"
+    },
+    "companyName": "Company name",
+    "fullName": "Full name",
+    "country": "Country",
+    "billingEmail": "Billing email",
+    "billingEmailHint": "Invoices and payment notices are sent here.",
+    "postalCode": "Postal code",
+    "city": "City",
+    "address": "Street address",
+    "address2": "Address line 2",
+    "huTaxNumber": "Hungarian tax number",
+    "euVatId": "EU VAT ID",
+    "euVatIdHint": "Optional. Starts with the country code.",
+    "submit": "Save and continue",
+    "saved": "Billing details saved",
+    "errors": {
+      "invalid": "Check this value.",
+      "required": "This field is required.",
+      "too_long": "This value is too long.",
+      "email": "Enter a valid email address.",
+      "hu_tax_number": "Use the format 12345678-1-12.",
+      "eu_vat_id": "Enter a valid EU VAT ID.",
+      "hu_tax_required": "Hungarian businesses must provide their tax number.",
+      "vat_prefix": "The VAT ID must start with the selected country code."
+    }
+  },
+  "plan": {
+    "canceled": "Checkout was canceled. No payment was taken.",
+    "marketUnavailable": "Online checkout is not available for this billing country yet. Contact sales to get started.",
+    "choose": "Plans",
+    "popular": "Most popular",
+    "perMonth": "/ month + VAT",
+    "includedMinutes": "{minutes} voice minutes included",
+    "concurrentCalls": "{count, plural, one {# call at a time} other {# calls at a time}}",
+    "phoneNumbers": "{count, plural, one {# phone number} other {# phone numbers}}",
+    "overage": "Extra minutes at {price} / minute",
+    "enterprise": "Need SSO, custom limits or dedicated redundancy?",
+    "contactSales": "Talk to sales",
+    "terms": "I accept the <terms>Terms of Service</terms> and have read the <privacy>Privacy Notice</privacy>.",
+    "checkout": "Continue to secure payment",
+    "plans": {
+      "START": {
+        "name": "Start",
+        "tagline": "One location answering every call, day and night."
+      },
+      "BUSINESS": {
+        "name": "Business",
+        "tagline": "Calendar booking, integrations and warm transfers."
+      },
+      "PRO": {
+        "name": "Pro",
+        "tagline": "Multiple locations, advanced routing and the Simulation Lab."
+      }
+    }
+  },
+  "kyc": {
+    "declined": "Declined",
+    "document": "Document",
+    "documentHint": "PDF, PNG or JPG up to 4 MB.",
+    "documentTooLarge": "The document must be 4 MB or smaller.",
+    "address": {
+      "business_name": "Business name",
+      "first_name": "Contact first name",
+      "last_name": "Contact last name",
+      "street_address": "Street address",
+      "postal_code": "Postal code",
+      "locality": "City"
+    },
+    "action": "The carrier will contact you to complete this step.",
+    "submit": "Submit details",
+    "submitted": "Details submitted to the carrier"
+  },
+  "provisioning": {
+    "waitingForPayment": "Waiting for payment confirmation",
+    "openDashboard": "Open dashboard",
+    "setupTitle": "Set up your assistant",
+    "setupBody": "While your phone number is being activated, you can decide in a few minutes how calls should be answered.",
+    "setupAction": "Start setup",
+    "phoneOrder": "Phone number {number} ({country})",
+    "numberPending": "being assigned",
+    "steps": {
+      "PAYMENT": "Payment",
+      "BILLING_DOCUMENT": "Invoice",
+      "TENANT": "Workspace",
+      "OPENAI_PROJECT": "AI project",
+      "OPENAI_SERVICE_ACCOUNT": "AI service account",
+      "OPENAI_API_KEY": "AI credentials",
+      "PHONE_RESERVATION": "Number reservation",
+      "PHONE_ORDER": "Number order",
+      "PHONE_REGULATORY": "Carrier verification",
+      "SIP_ROUTING": "Call routing",
+      "DEFAULT_AGENT": "First agent",
+      "KNOWLEDGE_IMPORT": "Knowledge import",
+      "TEST_CALL": "Test call",
+      "GO_LIVE": "Go live",
+      "NOTIFICATION": "Confirmation email"
+    }
+  },
+  "setup": {
+    "metaTitle": "Assistant setup",
+    "changeSummary": "Configured with the setup wizard",
+    "steps": {
+      "business": "Your business",
+      "voice": "Voice and personality",
+      "knowledge": "Know-how",
+      "bookings": "Bookings",
+      "calls": "Call handling",
+      "launch": "Test and launch"
+    },
+    "headings": {
+      "business": {
+        "title": "Let's start with what you already know.",
+        "description": "Add the basics. We'll help you fill in the rest."
+      },
+      "voice": {
+        "title": "Give your assistant a voice.",
+        "description": "Browse the voices and listen to find the one that suits you."
+      },
+      "knowledge": {
+        "title": "Show it what's worth knowing.",
+        "description": "We gather the basics from your website. Check that everything is correct."
+      },
+      "bookings": {
+        "title": "Let it take bookings for you.",
+        "description": "Connect your calendar and tell us what can be booked."
+      },
+      "calls": {
+        "title": "What should happen with calls?",
+        "description": "Decide when to transfer calls to your team and what to do after hours."
+      },
+      "launch": {
+        "title": "Meet your new team member.",
+        "description": "Try it out, review the settings and go live whenever you're happy."
+      }
+    },
+    "actions": {
+      "back": "Back",
+      "business": "Continue",
+      "voice": "I like this voice",
+      "knowledge": "Looks good, continue",
+      "bookings": "Continue",
+      "calls": "Continue to test",
+      "launch": "Launch assistant"
+    },
+    "shell": {
+      "eyebrow": "First steps",
+      "title": "Let's set it up together.",
+      "subtitle": "Just a few simple decisions.",
+      "progress": "Setup steps",
+      "helpTitle": "We're here if you get stuck.",
+      "helpBody": "No technical knowledge needed.",
+      "helpAction": "Ask for help",
+      "autosave": "Autosave",
+      "saved": "Saved automatically",
+      "saveExit": "Save and exit",
+      "hint": "You can change these settings later.",
+      "launchHint": "Call answering starts when you launch."
+    },
+    "errors": {
+      "businessName": "Enter your business name.",
+      "website": "This doesn't look like a valid web address.",
+      "goals": "Choose at least one task.",
+      "address": "Write it like this: 10115 Berlin, Invalidenstraße 1",
+      "qa": "Add an answer to every question; questions need at least 3 characters.",
+      "serviceName": "Enter what can be booked.",
+      "party": "The minimum party size can't be larger than the maximum.",
+      "locationMissing": "Save your business details first.",
+      "transferNumber": "This doesn't look like a valid phone number."
+    },
+    "activation": {
+      "payment": {
+        "title": "Your plan payment isn't finished yet",
+        "body": "We keep saving your settings, but website processing and the test call can only start after payment.",
+        "action": "Finish payment"
+      },
+      "provisioning": {
+        "title": "Your account is being activated",
+        "body": "This usually takes a few minutes. Website processing then starts automatically and you can test your assistant.",
+        "action": "View status"
+      }
+    },
+    "languages": {
+      "hu": "Hungarian",
+      "en": "English",
+      "de": "German"
+    },
+    "business": {
+      "name": "Business name",
+      "website": "Your website",
+      "websiteHint": "We'll use it to gather the most important information.",
+      "goals": "How should it help your customers?",
+      "reception": "Welcoming callers",
+      "receptionHint": "Questions, opening hours, directions",
+      "bookings": "Handling bookings",
+      "bookingsHint": "Appointments and table reservations",
+      "address": "Business address",
+      "addressHint": "Postal code, city, street and number.",
+      "addressPlaceholder": "10115 Berlin, Invalidenstraße 1",
+      "asideTitle": "One step closer.",
+      "asideBody": "We'll prepare your assistant's default settings from these details.",
+      "timezone": "Time zone: {zone}",
+      "editableLater": "Editable at any time"
+    },
+    "voice": {
+      "recommended": "Recommended for you",
+      "previous": "Previous voice",
+      "next": "Next voice",
+      "allVoices": "All voices",
+      "previewUnavailable": "The voice sample isn't available right now. Please try again shortly.",
+      "listen": "Play voice",
+      "stop": "Stop",
+      "personas": {
+        "mark": {
+          "tag": "Calm and confident",
+          "description": "Calm, assured and straightforward."
+        },
+        "anna": {
+          "tag": "Warm and attentive",
+          "description": "Warm, natural and attentive."
+        },
+        "lili": {
+          "tag": "Fresh and upbeat",
+          "description": "Cheerful, light and energetic."
+        },
+        "bence": {
+          "tag": "Friendly and relaxed",
+          "description": "Approachable, friendly and helpful."
+        },
+        "zsofi": {
+          "tag": "Bright and kind",
+          "description": "Clear, kind and precise."
+        },
+        "david": {
+          "tag": "Deep and reassuring",
+          "description": "Deep-voiced, composed and reliable."
+        },
+        "eszter": {
+          "tag": "Elegant and composed",
+          "description": "Balanced, elegant and patient."
+        },
+        "gergo": {
+          "tag": "Energetic and cheerful",
+          "description": "Lively, cheerful and quick-witted."
+        }
+      },
+      "styleTitle": "What should the conversation feel like?",
+      "styles": {
+        "friendly": "Friendly",
+        "professional": "Professional",
+        "energetic": "Upbeat"
+      },
+      "fineTune": "Greeting and fine-tuning",
+      "greeting": "Greeting at the start of the call",
+      "listenGreeting": "Play greeting",
+      "resetGreeting": "Restore suggested greeting",
+      "addressing": "Form of address",
+      "addressingOptions": {
+        "formal": "Formal",
+        "informal": "Informal"
+      },
+      "pace": "Speaking pace",
+      "paces": {
+        "calm": "Calm",
+        "natural": "Natural",
+        "dynamic": "Dynamic"
+      },
+      "transparencyTitle": "Transparent, natural conversation",
+      "transparencyBody": "The greeting lets callers know they are speaking with an AI assistant.",
+      "anyLanguage": "Speaks any language: it picks the starting language from the caller’s phone number and always answers in the language the caller speaks. When unsure it starts in {language}.",
+      "anyLanguageShort": "any language"
+    },
+    "knowledge": {
+      "website": "Your website",
+      "websiteStatus": {
+        "none": "Not added",
+        "ready": "Processed",
+        "processing": "Processing",
+        "failed": "Failed",
+        "waiting": "Awaiting activation"
+      },
+      "websiteWaiting": "We'll process it automatically once your account is activated. Feel free to continue meanwhile.",
+      "websiteFailed": "We couldn't read the page. Check the address and try again.",
+      "noWebsite": "You haven't added a website yet.",
+      "addWebsite": "Add website",
+      "websiteProcessing": "We're reading your site, which can take a few minutes. Feel free to continue meanwhile.",
+      "websiteMeta": "{chunks, plural, one {# text snippet processed} other {# text snippets processed}} · Updated {when}",
+      "resync": "Refresh",
+      "reviewTitle": "Take a quick look at the essentials!",
+      "hours": "Opening hours",
+      "noHours": "No opening hours yet",
+      "opens": "{day} opens",
+      "closes": "{day} closes",
+      "closed": "Closed",
+      "copyMonday": "Copy Monday's hours to every weekday",
+      "location": "Location and directions",
+      "noAddress": "No address yet",
+      "edit": "Edit",
+      "done": "Done",
+      "qaTitle": "Questions and answers",
+      "qaBody": "What people often ask you. It will answer exactly like this.",
+      "question": "Question",
+      "questionPlaceholder": "E.g. Is there parking?",
+      "answer": "Answer",
+      "answerPlaceholder": "E.g. Yes, we offer free parking for guests next to the building.",
+      "removeQa": "Remove question",
+      "uploadFile": "Upload file",
+      "addQa": "Question and answer",
+      "uploadState": {
+        "uploading": "Uploading…",
+        "done": "Processing",
+        "failed": "Failed"
+      },
+      "fileInvalid": "Upload a PDF, DOCX, TXT, Markdown or CSV file up to 50 MB.",
+      "qaSourceTitle": "Questions and answers",
+      "previewTitle": "How it will answer",
+      "sampleQuestion": "When are you open?",
+      "sampleAnswer": "Happy to help! Our opening hours: {hours}.",
+      "sampleAnswerUnknown": "I'm not sure about that right now, but I can take your details and a colleague will call you back.",
+      "previewNote": "It only answers from verified information. When unsure, it asks your team for help.",
+      "previewIllustrative": "Illustrative sample answer"
+    },
+    "bookings": {
+      "disabledTitle": "Bookings off",
+      "disabledBody": "The assistant only answers questions for now. You can turn on bookings at any time.",
+      "enable": "Turn on bookings",
+      "calendarTitle": "Connect your calendar",
+      "calendarBody": "That way it only offers times that are really free.",
+      "calendarOptional": "It also works without a calendar: it then offers times based on your opening hours and existing bookings.",
+      "providers": {
+        "GOOGLE_CALENDAR": {
+          "name": "Google Calendar",
+          "hint": "Gmail or Google Workspace account"
+        },
+        "MICROSOFT_365": {
+          "name": "Microsoft 365",
+          "hint": "Use your Outlook calendar"
+        }
+      },
+      "connected": "Connected",
+      "connect": "Connect",
+      "calendarConnected": "Your calendar is connected.",
+      "calendarFailed": "We couldn't connect your calendar. Please try again.",
+      "calendarLinkFailed": "Your calendar isn't reachable right now, so bookings work without it for the moment. Reconnect the calendar later.",
+      "service": "Bookable service",
+      "servicePlaceholder": "E.g. Table reservation",
+      "duration": "Booking length",
+      "minutes": "{count, plural, one {# minute} other {# minutes}}",
+      "partySize": "Party size",
+      "partyMax": "Maximum party size",
+      "capacity": "Bookings at the same time",
+      "capacityHint": "How many bookings it accepts for the same time slot.",
+      "confirmTitle": "Always confirms the details",
+      "confirmBody": "The assistant repeats the name, time and party size before confirming.",
+      "more": "More booking rules",
+      "buffer": "Break between bookings",
+      "noBuffer": "No break",
+      "cancellation": "Cancel no later than",
+      "anytime": "Any time",
+      "hoursBefore": "{count, plural, one {# hour before} other {# hours before}}"
+    },
+    "calls": {
+      "humanTitle": "When a person is needed",
+      "humanBody": "If the caller asks for staff or the assistant gets stuck.",
+      "transferNumber": "Transfer calls to",
+      "transferHint": "Leave empty if you don't want transfers.",
+      "noAnswer": "If nobody picks up",
+      "noAnswerOptions": {
+        "CALLBACK_REQUEST": "Takes a callback request and sends you the details",
+        "RETURN_TO_AI": "Takes the call back and keeps helping"
+      },
+      "afterHoursTitle": "Outside opening hours",
+      "afterHoursBody": "It answers every call, even after closing.",
+      "afterHours": "What should it do then?",
+      "afterHoursOptions": {
+        "TAKE_MESSAGE": "Take a message",
+        "CALLBACK_REQUEST": "Take a callback request",
+        "TRANSFER_ON_CALL": "Transfer to the number above"
+      },
+      "openHours": "Opening hours: {hours}",
+      "noHours": "No opening hours set",
+      "editHours": "Change",
+      "more": "Call length and other limits",
+      "maxCall": "Maximum call length",
+      "maxCallHint": "After this time it politely wraps up the conversation.",
+      "minutes": "{count, plural, one {# minute} other {# minutes}}",
+      "recording": "Record calls",
+      "recordingHint": "Callers are told about the recording at the start of the call."
+    },
+    "launch": {
+      "hello": "Hello, this is {name}!",
+      "activationRequired": "You can run the test once your account is activated.",
+      "failedActivation": "The test couldn't start because your account activation isn't finished. Try again once it's active.",
+      "testBody": "It talks through a few typical calls while we check that everything works.",
+      "startTest": "Start test call",
+      "retest": "Run test again",
+      "testing": "Test calls in progress…",
+      "testHint": "The test doesn't start live call answering yet. It usually takes 1–2 minutes.",
+      "webCallTitle": "Talk to it live",
+      "webCallBody": "Turn on your microphone and talk to {name} the way a guest would.",
+      "webCallStart": "Talk with microphone",
+      "webCallConnecting": "Connecting…",
+      "webCallStop": "End conversation",
+      "webCallLive": "Live conversation",
+      "webCallHint": "The voice, style, language and greeting are exactly what callers will hear. It knows your opening hours, services and saved questions and answers, it can check availability and record a real booking, and the conversation shows up among your calls with its transcript.",
+      "webCallFailed": "We couldn't start the conversation. Please try again shortly.",
+      "webCallMicDenied": "The browser blocked microphone access. Allow it and try again.",
+      "scenarios": {
+        "opening_hours": "Question about opening hours",
+        "booking": "Booking request",
+        "human_handoff": "Transfer to a colleague"
+      },
+      "scenarioFallback": "Other test call",
+      "passed": "All good! {name} is ready to launch.",
+      "failed": "Something didn't work. Review the settings, then run the test again.",
+      "retestNeeded": "You changed settings in the meantime. Run the test again before launching.",
+      "readyTitle": "Is everything ready?",
+      "check": {
+        "business": "Business and location",
+        "voice": "Voice and languages",
+        "knowledge": "Verified know-how",
+        "calls": "Bookings and calls",
+        "noWebsite": "No website",
+        "qaCount": "{count, plural, one {# Q&A} other {# Q&As}}",
+        "noCalendar": "No calendar",
+        "transfer": "with transfer",
+        "noTransfer": "without transfer"
+      },
+      "controlTitle": "You're still in control.",
+      "controlBody": "Once launched, {name} answers calls on {number}. You can pause at any time.",
+      "controlBodyNoNumber": "Once launched, {name} answers calls as soon as your phone number is active. You can pause at any time.",
+      "suiteName": "Basic check",
+      "suiteDescription": "Automatic test calls from the setup wizard."
+    },
+    "done": {
+      "badge": "Setup complete",
+      "title": "{name} is ready for calls.",
+      "body": "Nice work! From now on your assistant takes a load off your shoulders.",
+      "activeNumber": "Active · {number}",
+      "activePending": "Active · phone number activation in progress",
+      "cards": {
+        "calls": {
+          "title": "Dashboard",
+          "body": "See live calls and the latest call summary at a glance."
+        },
+        "bookings": {
+          "title": "Bookings",
+          "body": "New bookings automatically show up in your calendar too."
+        },
+        "assistant": {
+          "title": "Your assistant",
+          "body": "Fine-tune its voice and settings at any time."
+        }
+      },
+      "open": "View",
+      "cta": "Continue to dashboard",
+      "tagline": "Good things happen when a business pays attention."
+    }
+  }
+}

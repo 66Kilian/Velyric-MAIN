@@ -1,0 +1,30 @@
+{
+  "title": "Rufnummern",
+  "description": "Die Nummern, die Anrufer wählen, welcher Agent sie annimmt und wie viele Anrufe gleichzeitig möglich sind.",
+  "empty": "Noch keine Rufnummern",
+  "emptyDescription": "Deine erste Nummer wird nach dem Checkout und der Unternehmensprüfung automatisch bereitgestellt.",
+  "saved": "{number} aktualisiert",
+  "save": "Speichern",
+  "unassigned": "Kein Agent",
+  "allLocations": "Alle Standorte",
+  "types": {
+    "LOCAL": "Ortsnetz",
+    "MOBILE": "Mobil",
+    "NATIONAL": "National",
+    "TOLL_FREE": "Gebührenfrei"
+  },
+  "columns": {
+    "number": "Nummer",
+    "status": "Status",
+    "agent": "Annehmender Agent",
+    "location": "Standort",
+    "maxCalls": "Max. parallele Anrufe"
+  },
+  "orders": {
+    "title": "Laufende Nummernbestellungen",
+    "kycNeeded": "Der Netzbetreiber benötigt Unternehmensangaben, bevor die Nummer live gehen kann.",
+    "inProgress": "Der Netzbetreiber bearbeitet deine Bestellung.",
+    "completeKyc": "Angaben machen",
+    "numberPending": "Nummer wird zugewiesen"
+  }
+}

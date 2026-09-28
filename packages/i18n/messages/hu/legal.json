@@ -1,0 +1,128 @@
+{
+  "navLabel": "Jogi dokumentumok",
+  "updated": "Utolsó frissítés: {date}",
+  "operator": "Szolgáltató: {entity}, {address}. Cégjegyzékszám: {registration}. Adószám: {taxNumber}. Adatvédelmi kapcsolat: {email}.",
+  "status": {
+    "title": "Szolgáltatás állapota",
+    "body": "Ebben a környezetben nincs beállítva nyilvános állapotoldal. Szolgáltatáskiesés esetén fordulj az ügyfélszolgálathoz.",
+    "overallOperational": "Minden rendszer üzemel",
+    "overallIssues": "Egyes rendszereknél fennakadás tapasztalható",
+    "monitorUp": "Üzemel",
+    "monitorDown": "Nem elérhető",
+    "uptime": "Rendelkezésre állás"
+  },
+  "privacy": {
+    "short": "Adatvédelem",
+    "title": "Adatkezelési tájékoztató",
+    "updated": "2026-09-01",
+    "intro": "Ez a tájékoztató bemutatja, hogyan kezeli a(z) {entity} a személyes adatokat a weboldal látogatásakor, fiók létrehozásakor és a Velyric platform használatakor, valamint hogyan dolgozzuk fel a hívásadatokat ügyfeleink megbízásából.",
+    "s1": {
+      "heading": "1. Szerepköreink",
+      "body": "A weboldal látogatói, a fióktulajdonosok és a számlázási kapcsolattartók tekintetében adatkezelők vagyunk. Az ügyfelek hangalapú ügynökei által kezelt hívások, átiratok, kapcsolatok és foglalások tekintetében adatfeldolgozóként járunk el az ügyfél megbízásából, aki a hívók vonatkozásában az adatkezelő."
+    },
+    "s2": {
+      "heading": "2. A kezelt adatok",
+      "body": "Fiókadatok (név, e-mail, szerepkör, hitelesítési események), számlázási adatok (cégadatok, adószámok, számlák, fizetési állapot), használati és biztonsági naplók (IP-cím, eszközadatok, auditesemények), valamint adatfeldolgozóként hívásadatok (telefonszám, hangfolyam, átiratok, összefoglalók, eszközeredmények, foglalások)."
+    },
+    "s3": {
+      "heading": "3. Célok és jogalapok",
+      "body": "A fiók- és számlázási adatokat az ügyfelekkel kötött szerződés teljesítéséhez (GDPR 6. cikk (1) b)), számviteli és adózási kötelezettségeink teljesítéséhez (6. cikk (1) c)), valamint jogos érdek alapján a szolgáltatás biztonsága és fejlesztése érdekében (6. cikk (1) f)) kezeljük. Marketingüzenetet csak hozzájárulással küldünk."
+    },
+    "s4": {
+      "heading": "4. MI-alapú feldolgozás",
+      "body": "A hívásokat MI-modellek fogadják. A hívókat minden hívás elején tájékoztatjuk, hogy MI-asszisztenssel beszélnek. Az ügyfelek hívásadatait nem használjuk általános célú modellek tanítására."
+    },
+    "s5": {
+      "heading": "5. Címzettek és alvállalkozó adatfeldolgozók",
+      "body": "Gondosan kiválasztott szolgáltatókat veszünk igénybe felhőtárhelyhez, beszéd- és nyelvi MI-hez, telefóniához, fizetésfeldolgozáshoz, számlázáshoz, hitelesítéshez és e-mail-kézbesítéshez. Az alvállalkozók aktuális listája az adatfeldolgozási megállapodás része. A harmadik országba történő továbbítás megfelelőségi határozaton vagy általános szerződési feltételeken alapul."
+    },
+    "s6": {
+      "heading": "6. Megőrzés",
+      "body": "A fiókadatokat az ügyfélkapcsolat fennállásáig őrizzük. A számlákat a magyar számviteli jogszabályokban előírt ideig tároljuk. A hívásfelvételeket, átiratokat és összefoglalókat a munkaterület megőrzési beállításai szerint tároljuk, majd töröljük, kivéve, ha jogi visszatartás van érvényben."
+    },
+    "s7": {
+      "heading": "7. Jogaid",
+      "body": "Kérheted az adatokhoz való hozzáférést, helyesbítést, törlést, korlátozást és hordozhatóságot, valamint tiltakozhatsz az adatkezelés ellen. Ügyfeleink hívói az általuk hívott vállalkozáshoz forduljanak; mi támogatjuk ügyfeleinket az ilyen kérelmek teljesítésében. Panaszt tehetsz a Nemzeti Adatvédelmi és Információszabadság Hatóságnál (NAIH)."
+    },
+    "s8": {
+      "heading": "8. Kapcsolat",
+      "body": "Adatvédelmi kérdésekkel vagy jogaid gyakorlásához írj a(z) {email} címre."
+    }
+  },
+  "terms": {
+    "short": "ÁSZF",
+    "title": "Általános Szerződési Feltételek",
+    "updated": "2026-09-01",
+    "intro": "Ezek a feltételek szabályozzák a(z) {entity} által üzleti ügyfelek számára nyújtott Velyric platform használatát.",
+    "s1": {
+      "heading": "1. A szolgáltatás",
+      "body": "A Velyric MI hangalapú ügynököket, telefonszámokat, foglalási, tudásbázis-, integrációs, elemzési és kapcsolódó funkciókat nyújt a választott csomag leírása szerint. A funkciók fejlődhetnek; a fizetős funkciók lényeges szűkítését előre jelezzük."
+    },
+    "s2": {
+      "heading": "2. Fiókok és hozzáférés",
+      "body": "A szolgáltatás vállalkozások számára készült. Felelős vagy a meghívott tagokért, a kiosztott szerepkörökért és az API-kulcsok titkosságáért. Jogosulatlan hozzáférésről haladéktalanul értesítened kell minket."
+    },
+    "s3": {
+      "heading": "3. Díjak és számlázás",
+      "body": "A csomagok díja havonta előre esedékes; a benne foglalt perceken felüli használatot és a kiegészítőket a hatályos árlista szerint számlázzuk. A számlák elektronikusan készülnek. Sikertelen fizetés esetén a szolgáltatás előzetes értesítés után korlátozható, majd felfüggeszthető."
+    },
+    "s4": {
+      "heading": "4. Az ügyfél kötelezettségei",
+      "body": "Be kell állítanod az MI-tájékoztatást, be kell szerezned a felvételhez vagy a hívók adatainak kezeléséhez szükséges hozzájárulásokat, pontosan kell tartanod a tudásbázist és az üzleti adatokat, és jogszabályi előírás esetén biztosítanod kell az emberi kapcsolatot."
+    },
+    "s5": {
+      "heading": "5. Elfogadható használat",
+      "body": "Tilos a szolgáltatást jogellenes, megtévesztő vagy zaklató hívásokra, jogalap nélküli kéretlen marketingre, segélyhívó szolgáltatásként, illetve bankkártyaadatok erre szolgáló funkciókon kívüli kezelésére használni. Felfüggeszthetjük azt a forgalmat, amely a hívókat, a szolgáltatókat vagy a platformot veszélyezteti."
+    },
+    "s6": {
+      "heading": "6. Rendelkezésre állás és támogatás",
+      "body": "A szolgáltatást redundanciával és folyamatos felügyelettel üzemeltetjük, a karbantartást minimális kieséssel végezzük. Szerződéses szolgáltatási szint csak Enterprise megállapodás esetén érvényes."
+    },
+    "s7": {
+      "heading": "7. Felelősség",
+      "body": "Az MI-ügynökök hibázhatnak. A hívások és foglalások alapján hozott döntésekért te felelsz. A jogszabályok által megengedett mértékben teljes felelősségünk a kárt okozó eseményt megelőző tizenkét hónapban megfizetett díjak összegére korlátozódik; a szándékos és súlyosan gondatlan károkozásért való felelősség nem korlátozott."
+    },
+    "s8": {
+      "heading": "8. Időtartam, megszűnés és irányadó jog",
+      "body": "Az előfizetés lemondásig havonta megújul. Megszűnéskor a telefonszámokat megőrzési ideig fenntartjuk, az ügyféladatokat pedig az adatfeldolgozási megállapodás szerint töröljük. A feltételekre a magyar jog irányadó; a jogviták elbírálására a budapesti bíróságok illetékesek."
+    }
+  },
+  "dpa": {
+    "short": "Adatfeldolgozás",
+    "title": "Adatfeldolgozási megállapodás",
+    "updated": "2026-09-01",
+    "intro": "Ez a megállapodás az ügyfél mint adatkezelő és a(z) {entity} mint adatfeldolgozó közötti szerződés része a GDPR 28. cikke alapján.",
+    "s1": {
+      "heading": "1. Tárgy és időtartam",
+      "body": "Az adatfeldolgozó a Velyric szolgáltatás nyújtása érdekében dolgoz fel személyes adatokat a szerződés időtartama alatt és az azt követő, megállapodott megőrzési ideig."
+    },
+    "s2": {
+      "heading": "2. Az adatok és érintettek köre",
+      "body": "Érintettek a hívók, a webes hanghívást használó látogatók, a kapcsolattartók, az ügyfél munkatársai és a foglalások résztvevői. Az adatok körébe tartoznak a telefonszámok, a hanganyag, az átiratok, az összefoglalók, az elérhetőségek, a foglalási adatok és a hívás során megadott információk."
+    },
+    "s3": {
+      "heading": "3. Utasítások és titoktartás",
+      "body": "Az adatfeldolgozó kizárólag az adatkezelő dokumentált utasításai – ideértve a vezérlőpulton végzett beállításokat – alapján dolgoz fel adatot. A hozzáféréssel rendelkező munkatársakat titoktartási kötelezettség terheli."
+    },
+    "s4": {
+      "heading": "4. Biztonsági intézkedések",
+      "body": "Az intézkedések közé tartozik az adatbázis-szintű ügyfélelkülönítés, az átvitel és tárolás közbeni titkosítás, a felügyelt titoktár, a szerepkör-alapú hozzáférés-kezelés, az auditnaplózás, az érzékeny adatok kitakarása, a felügyelet és az incidenskezelési eljárások."
+    },
+    "s5": {
+      "heading": "5. Alvállalkozó adatfeldolgozók",
+      "body": "Az adatkezelő engedélyezi alvállalkozók igénybevételét felhőinfrastruktúrához, beszéd- és nyelvi MI-hez, telefóniához, fizetéshez, számlázáshoz, hitelesítéshez és e-mailhez. Az adatfeldolgozó előre tájékoztatja az adatkezelőt a tervezett változásokról, és lehetőséget ad a tiltakozásra."
+    },
+    "s6": {
+      "heading": "6. Közreműködés és érintetti kérelmek",
+      "body": "Az adatfeldolgozó export-, törlési és megőrzési funkciókat biztosít, és segíti az adatkezelőt az érintetti kérelmek megválaszolásában, a hatásvizsgálatokban és a felügyeleti hatósággal folytatott konzultációkban."
+    },
+    "s7": {
+      "heading": "7. Adatvédelmi incidensek",
+      "body": "Az adatfeldolgozó az adatvédelmi incidensről való tudomásszerzést követően indokolatlan késedelem nélkül értesíti az adatkezelőt, és átadja az adatkezelő bejelentési kötelezettségéhez szükséges információkat."
+    },
+    "s8": {
+      "heading": "8. Törlés, ellenőrzés és kapcsolat",
+      "body": "A szolgáltatás végén az adatfeldolgozó a beállítások szerint törli vagy visszaadja a személyes adatokat, kivéve, ha jogszabály megőrzést ír elő. Az adatkezelő kérheti a megfelelés igazolásához szükséges információkat. Kapcsolat: {email}."
+    }
+  }
+}

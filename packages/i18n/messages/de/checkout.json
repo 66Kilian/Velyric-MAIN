@@ -1,0 +1,15 @@
+{
+  "return": {
+    "waiting": "Zahlung wird bestätigt",
+    "waitingTitle": "Deine Zahlung wird bestätigt",
+    "waitingBody": "Diese Seite aktualisiert sich automatisch, sobald der Zahlungsanbieter die Zahlung bestätigt.",
+    "slowBody": "Die Bestätigung dauert länger als üblich. Du erhältst eine E-Mail, sobald sie abgeschlossen ist, und kannst diese Seite verlassen.",
+    "paidTitle": "Zahlung erhalten",
+    "paidBody": "Vielen Dank! Deine Rechnung ist unterwegs und wir richten deinen Workspace ein.",
+    "failedTitle": "Zahlung nicht abgeschlossen",
+    "failedBody": "Die Zahlung ist fehlgeschlagen oder abgelaufen. Es wurde nichts belastet. Du kannst es erneut versuchen.",
+    "total": "Tarif {plan} · insgesamt {amount}",
+    "continue": "Einrichtung fortsetzen",
+    "retry": "Erneut versuchen"
+  }
+}

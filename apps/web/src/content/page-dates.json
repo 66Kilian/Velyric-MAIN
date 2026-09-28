@@ -1,0 +1,182 @@
+{
+  "/": {
+    "hash": "73bed3431c54efd7",
+    "updated": "2026-09-16"
+  },
+  "/ai-receptionist": {
+    "hash": "63b28435771083c5",
+    "updated": "2026-09-16"
+  },
+  "/appointment-booking": {
+    "hash": "348c5201b9a0224b",
+    "updated": "2026-09-16"
+  },
+  "/call-transfer": {
+    "hash": "7606d3974f93d39d",
+    "updated": "2026-09-16"
+  },
+  "/contact": {
+    "hash": "58f8902210e95dd2",
+    "updated": "2026-09-16"
+  },
+  "/docs": {
+    "hash": "aab4cfc108d54b00",
+    "updated": "2026-09-16"
+  },
+  "/glossary": {
+    "hash": "d7f2dbead2f9e4a4",
+    "updated": "2026-09-16"
+  },
+  "/integrations": {
+    "hash": "ba0c9341754ec628",
+    "updated": "2026-09-16"
+  },
+  "/multilingual": {
+    "hash": "575a610767eb8952",
+    "updated": "2026-09-16"
+  },
+  "/pricing": {
+    "hash": "3c8ede8fdc3b8904",
+    "updated": "2026-09-16"
+  },
+  "/product": {
+    "hash": "73acbe2bc5e9c92a",
+    "updated": "2026-09-16"
+  },
+  "/security": {
+    "hash": "182a6282d1b53584",
+    "updated": "2026-09-16"
+  },
+  "compare/vs-call-center": {
+    "hash": "59097dbaba7a9573",
+    "updated": "2026-09-16"
+  },
+  "compare/vs-ivr": {
+    "hash": "7f62e65406405a8a",
+    "updated": "2026-09-16"
+  },
+  "compare/vs-voicemail": {
+    "hash": "72259609228df278",
+    "updated": "2026-09-16"
+  },
+  "glossary/ai-receptionist": {
+    "hash": "d0098b5255e10a95",
+    "updated": "2026-09-16"
+  },
+  "glossary/ai-voice-agent": {
+    "hash": "296730d5dc21186c",
+    "updated": "2026-09-16"
+  },
+  "glossary/barge-in": {
+    "hash": "98fd3e0b8d1b605c",
+    "updated": "2026-09-16"
+  },
+  "glossary/concurrent-calls": {
+    "hash": "a634a841f01f314b",
+    "updated": "2026-09-16"
+  },
+  "glossary/did": {
+    "hash": "e62f206d092a6003",
+    "updated": "2026-09-16"
+  },
+  "glossary/dtmf": {
+    "hash": "7a6c8ccf7aef0675",
+    "updated": "2026-09-16"
+  },
+  "glossary/e164": {
+    "hash": "bde789500fb2bdc0",
+    "updated": "2026-09-16"
+  },
+  "glossary/ivr": {
+    "hash": "f80e8505e223c9ba",
+    "updated": "2026-09-16"
+  },
+  "glossary/pstn": {
+    "hash": "eb4555a34e235794",
+    "updated": "2026-09-16"
+  },
+  "glossary/rag": {
+    "hash": "34871241311774f8",
+    "updated": "2026-09-16"
+  },
+  "glossary/sip": {
+    "hash": "13f19335ba70a878",
+    "updated": "2026-09-16"
+  },
+  "glossary/warm-transfer": {
+    "hash": "4d9aecc7e85cf17a",
+    "updated": "2026-09-16"
+  },
+  "integrations/custom-api-tools": {
+    "hash": "7018b53aed5e5743",
+    "updated": "2026-09-16"
+  },
+  "integrations/email-notifications": {
+    "hash": "024ed5a653ea14b3",
+    "updated": "2026-09-16"
+  },
+  "integrations/google-calendar": {
+    "hash": "bd89d350c213e35d",
+    "updated": "2026-09-16"
+  },
+  "integrations/microsoft-365": {
+    "hash": "df7b80e21c248c1d",
+    "updated": "2026-09-16"
+  },
+  "integrations/phone-numbers": {
+    "hash": "04a238d5195233da",
+    "updated": "2026-09-16"
+  },
+  "integrations/webhooks": {
+    "hash": "f34e22154294d3d4",
+    "updated": "2026-09-16"
+  },
+  "legal/dpa": {
+    "hash": "441ebca8e6c59286",
+    "updated": "2026-09-01"
+  },
+  "legal/privacy": {
+    "hash": "e4fce056dce0e5ae",
+    "updated": "2026-09-01"
+  },
+  "legal/terms": {
+    "hash": "a051f239680ea4e2",
+    "updated": "2026-09-01"
+  },
+  "solutions/auto-service": {
+    "hash": "e3e45d2830cb9f3e",
+    "updated": "2026-09-16"
+  },
+  "solutions/b2b-support": {
+    "hash": "a863611fc5ff9d48",
+    "updated": "2026-09-16"
+  },
+  "solutions/car-detailing": {
+    "hash": "883223be015d1cdd",
+    "updated": "2026-09-16"
+  },
+  "solutions/dental-clinic": {
+    "hash": "c578abb5d756705d",
+    "updated": "2026-09-16"
+  },
+  "solutions/hotel": {
+    "hash": "a179551faf21ec7f",
+    "updated": "2026-09-16"
+  },
+  "solutions/real-estate": {
+    "hash": "c5fa1839d5c3e6c9",
+    "updated": "2026-09-16"
+  },
+  "solutions/restaurant": {
+    "hash": "5c66eabaf6c3aac0",
+    "updated": "2026-09-16"
+  },
+  "solutions/salon": {
+    "hash": "a43fca9cf24b5db6",
+    "updated": "2026-09-16"
+  },
+  "solutions/webshop": {
+    "hash": "ed0a98baf077eecc",
+    "updated": "2026-09-16"
+  }
+}

@@ -1,0 +1,254 @@
+{
+  "title": "Agents",
+  "description": "Voice agents answering your phone numbers and website.",
+  "empty": "No agents yet",
+  "emptyDescription": "Create an agent to configure its voice, languages, tools and handoff rules.",
+  "notPublished": "Not published",
+  "production": "Production",
+  "canaryRunning": "Canary rollout",
+  "allLocations": "All locations",
+  "columns": {
+    "name": "Name",
+    "status": "Status",
+    "release": "Release",
+    "numbers": "Phone numbers",
+    "location": "Location",
+    "updated": "Updated"
+  },
+  "create": {
+    "button": "New agent",
+    "title": "Create an agent",
+    "description": "You can configure and publish it on the next screen.",
+    "name": "Agent name",
+    "nameInvalid": "Enter a name between 1 and 120 characters.",
+    "location": "Location",
+    "allLocations": "All locations"
+  },
+  "status": {
+    "pause": "Pause",
+    "pauseTitle": "Pause this agent?",
+    "pauseDescription": "Incoming calls are no longer answered by this agent until you resume it.",
+    "resume": "Resume",
+    "archive": "Archive",
+    "archiveTitle": "Archive this agent?",
+    "archiveDescription": "Archived agents stop answering calls and can no longer be edited.",
+    "changed": {
+      "ACTIVE": "Agent resumed",
+      "PAUSED": "Agent paused",
+      "ARCHIVED": "Agent archived"
+    }
+  },
+  "detail": {
+    "back": "All agents",
+    "description": "Configure how this agent talks, which tools it may use and when it hands over to your team.",
+    "versions": "Versions",
+    "release": "Release",
+    "publishedAt": "Published",
+    "canary": "Canary",
+    "canaryLabel": "Version {version} for {percent}% of calls",
+    "latestDraft": "Latest version",
+    "noVersions": "No versions yet",
+    "versionLabel": "Version {version}"
+  },
+  "phones": {
+    "title": "Phone numbers",
+    "restricted": "Your role cannot view phone numbers.",
+    "none": "This workspace has no phone numbers yet.",
+    "unassigned": "Not assigned",
+    "thisAgent": "Answered by this agent",
+    "otherAgent": "Answered by {name}",
+    "bind": "Assign",
+    "unbind": "Unassign",
+    "bound": "{number} is now answered by this agent",
+    "unbound": "{number} is no longer assigned"
+  },
+  "versions": {
+    "title": "Agent versions",
+    "description": "Every saved configuration is an immutable version. Publish, roll out gradually or restore an earlier release.",
+    "empty": "No versions yet",
+    "emptyDescription": "Save the configuration to create the first version.",
+    "version": "Version",
+    "summary": "Change summary",
+    "created": "Created",
+    "published": "Published",
+    "actions": "Actions",
+    "compare": "Changes",
+    "publish": "Publish",
+    "publishTitle": "Publish version {version}",
+    "publishDescription": "Publishing requires a passed release-gate simulation. A rollout below 100% runs as a canary next to the current production version.",
+    "publishProduction": "Publish to all calls",
+    "publishCanary": "Start canary at {percent}%",
+    "published": "Version {version} published",
+    "rollout": "Rollout percentage",
+    "rolloutHint": "Use 100 for a full release or 1–99 for a canary.",
+    "rollback": "Restore",
+    "rollbackTitle": "Restore version {version}?",
+    "rollbackDescription": "The current production and canary versions are rolled back and this version serves all calls again.",
+    "rolledBack": "Version {version} restored",
+    "reason": "Reason",
+    "diffTitle": "Changes from version {base} to {target}",
+    "noChanges": "The configurations are identical.",
+    "diffKinds": {
+      "added": "Added",
+      "removed": "Removed",
+      "changed": "Changed"
+    }
+  },
+  "editor": {
+    "title": "Configuration",
+    "startingPoint": "A recommended starting configuration. Saving creates version 1.",
+    "basedOn": "Editing a copy of version {version}. Saving creates a new draft version.",
+    "saved": "Version {version} saved",
+    "serverIssues": "The configuration could not be saved:",
+    "tabs": {
+      "voice": "Voice and languages",
+      "behavior": "Behavior and tools",
+      "handoff": "Handoff",
+      "hours": "Hours and limits"
+    },
+    "voice": "Voice",
+    "defaultLanguage": "Default language",
+    "languages": "Languages",
+    "locales": {
+      "hu": "Hungarian",
+      "de": "German",
+      "en": "English"
+    },
+    "greeting": "Greeting",
+    "fallback": "When the caller is not understood",
+    "closing": "Closing",
+    "disclosure": "AI disclosure",
+    "disclosureHint": "Spoken at the start of every call. Changing it creates a new disclosure version.",
+    "persona": {
+      "warmth": "Warmth",
+      "formality": "Formality",
+      "energy": "Energy",
+      "pace": "Speaking pace",
+      "brevity": "Brevity",
+      "empathy": "Empathy",
+      "humor": "Humor",
+      "assertiveness": "Assertiveness"
+    },
+    "specialists": {
+      "RECEPTION_ROUTER": {
+        "title": "Reception",
+        "description": "Greets callers, answers general questions and routes to the right specialist. Read-only tools."
+      },
+      "BOOKING": {
+        "title": "Booking",
+        "description": "Checks availability and creates, finds or cancels bookings."
+      },
+      "SUPPORT": {
+        "title": "Support",
+        "description": "Answers product and service questions from your knowledge base. Read-only tools."
+      },
+      "SALES": {
+        "title": "Sales",
+        "description": "Qualifies leads and captures contact details."
+      },
+      "BILLING": {
+        "title": "Billing",
+        "description": "Handles questions about invoices and payments."
+      },
+      "HANDOFF_COMPLIANCE": {
+        "title": "Handoff and compliance",
+        "description": "Transfers to your team and handles sensitive requests. Uses no tools."
+      }
+    },
+    "modelTier": "Reasoning level",
+    "tiers": {
+      "ROUTINE": "Routine",
+      "COMPLEX": "Complex",
+      "ESCALATION": "Escalation",
+      "FRONTIER": "Frontier"
+    },
+    "maxToolExecutions": "Maximum tool calls",
+    "tools": "Allowed tools",
+    "unknownTool": "The tool {name} no longer exists and will be rejected.",
+    "complexEscalation": "Allow complex reasoning escalation",
+    "premiumReasoning": "Allow premium reasoning models",
+    "recording": "Record calls",
+    "destinations": "Transfer destinations",
+    "addDestination": "Add destination",
+    "noDestinations": "Without destinations the agent cannot transfer calls to your team.",
+    "destinationLabel": "Label",
+    "destinationPhone": "Phone number",
+    "destinationDescription": "Description",
+    "removeDestination": "Remove destination",
+    "defaultDestination": "Default destination",
+    "none": "None",
+    "failedUnderstandings": "Offer a human after this many misunderstandings",
+    "noAnswer": "If nobody answers the transfer",
+    "noAnswerOptions": {
+      "RETURN_TO_AI": "Return to the assistant",
+      "CALLBACK_REQUEST": "Take a callback request",
+      "ALTERNATE_QUEUE": "Try the alternate queue"
+    },
+    "warmTransfer": "Warm transfer with handover summary",
+    "overloadPolicy": "When all lines are busy",
+    "overloadOptions": {
+      "SHORT_QUEUE": "Short queue",
+      "HUMAN_OVERFLOW": "Overflow to a human",
+      "CALLBACK_REQUEST": "Offer a callback",
+      "VOICEMAIL": "Voicemail",
+      "PAID_BURST": "Use paid burst capacity",
+      "DEGRADED_MESSAGE": "Play a busy message"
+    },
+    "maxWait": "Maximum wait (seconds)",
+    "overflowDestination": "Overflow destination",
+    "timezone": "Time zone",
+    "businessHours": "Business hours",
+    "addHours": "Add opening hours",
+    "alwaysClosed": "No opening hours: after-hours behavior always applies.",
+    "weekday": "Day",
+    "weekdays": {
+      "1": "Monday",
+      "2": "Tuesday",
+      "3": "Wednesday",
+      "4": "Thursday",
+      "5": "Friday",
+      "6": "Saturday",
+      "7": "Sunday"
+    },
+    "opens": "Opens",
+    "closes": "Closes",
+    "removeHours": "Remove opening hours",
+    "afterHours": "Outside business hours",
+    "afterHoursOptions": {
+      "TAKE_MESSAGE": "Take a message",
+      "CALLBACK_REQUEST": "Offer a callback",
+      "TRANSFER_ON_CALL": "Transfer to the on-call contact"
+    },
+    "onCallDestination": "On-call destination",
+    "maxDuration": "Maximum call length (seconds)",
+    "silenceTimeout": "Silence timeout (seconds)",
+    "maxToolsPerCall": "Maximum tool calls per call",
+    "maxSpend": "Maximum provider cost per call (USD)",
+    "maxSpendHint": "The call ends politely when this cost is reached.",
+    "changeSummary": "Change summary",
+    "saveDraft": "Save as new version",
+    "rules": {
+      "invalid": "Check this value.",
+      "schema": "The configuration does not match the expected format.",
+      "unique_locale": "Each language can only be added once.",
+      "unique_kind": "Each specialist can only be added once.",
+      "must_be_configured_language": "The default language must be one of the configured languages.",
+      "required_for_configured_language": "An AI disclosure is required for every configured language.",
+      "reception_router_required": "The reception specialist is required.",
+      "unique_label": "Destination labels must be unique.",
+      "unknown_destination": "Choose an existing destination.",
+      "queue_requires_wait": "A short queue needs a maximum wait above zero.",
+      "exceeds_call_limit": "This exceeds the maximum tool calls per call.",
+      "closes_after_opens": "Closing time must be after opening time.",
+      "unknown_tool": "This tool does not exist.",
+      "tool_not_active": "This tool is not active.",
+      "router_read_only": "Reception may only use read-only tools.",
+      "support_read_only": "Support may only use read-only tools.",
+      "handoff_specialist_is_transfer_only": "The handoff specialist cannot use tools.",
+      "complex_escalation_disabled": "Enable complex reasoning escalation first.",
+      "premium_reasoning_disabled": "Enable premium reasoning models first.",
+      "iana_time_zone": "Choose a valid time zone.",
+      "unique_sequence": "Keypad sequences must be unique."
+    }
+  }
+}

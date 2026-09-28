@@ -1,0 +1,22 @@
+[package]
+name = "velyric-service-kit"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+aws-config.workspace = true
+aws-sdk-secretsmanager.workspace = true
+aws-smithy-http-client.workspace = true
+dashmap.workspace = true
+secrecy.workspace = true
+thiserror.workspace = true
+time.workspace = true
+tokio.workspace = true
+url.workspace = true
+uuid.workspace = true

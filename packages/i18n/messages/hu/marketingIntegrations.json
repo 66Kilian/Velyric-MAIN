@@ -1,0 +1,682 @@
+{
+  "common": {
+    "breadcrumbLabel": "Morzsamenü",
+    "factsHeading": "Röviden",
+    "setupHeading": "Beállítás",
+    "actionsHeading": "Mit tud az asszisztens",
+    "securityHeading": "Hogyan van védve",
+    "limitsHeading": "Amit érdemes tudni a korlátokról",
+    "faqHeading": "Gyakori kérdések",
+    "relatedHeading": "Kapcsolódó",
+    "labels": {
+      "auth": "Hitelesítés",
+      "direction": "Adatáramlás",
+      "operations": "Műveletek",
+      "surface": "Hol állítod be"
+    }
+  },
+  "hub": {
+    "heading": "Minden integráció, amit a Velyric ma támogat",
+    "body": "Ez a teljes lista. Ami itt nem szerepel, az nem érhető el beépített connectorként, de a legtöbb rendszer így is elérhető saját API-eszközökkel vagy kimenő webhookokkal.",
+    "readMore": "Integrációs útmutató megnyitása",
+    "scope": {
+      "heading": "Mi számít integrációnak",
+      "body": "A Velyric külön kezeli az ügyfél által engedélyezett connectorokat és azokat a platformszolgáltatásokat, amelyeket a Velyric üzemeltet helyetted.",
+      "detail": "A Google Naptárat, a Microsoft 365-öt, a saját API-eszközöket, a kimenő webhookokat és a saját SMTP-továbbítót az ügyfél köti be. A telefonszámokat, a valós idejű hangmotort, a fizetést és a számlázást a Velyric üzemelteti a szolgáltatás részeként, így ezekkel neked nincs teendőd. Nincs CRM-connector, nincs webshop- vagy futárplatform-connector, és nincs chat- vagy SMS-csatorna: ezek a rendszerek kizárólag saját API-eszközökön vagy webhookokon keresztül érhetők el."
+    }
+  },
+  "google-calendar": {
+    "meta": {
+      "title": "Google Naptár integráció telefonos AI foglaláshoz",
+      "description": "Kösd be a Google Naptárat, hogy a Velyric hangasszisztense hívás közben lássa a valós szabad időpontokat, és eseményt hozzon létre vagy mondjon le, minimális jogosultságú OAuth-hatókörökkel."
+    },
+    "eyebrow": "Integráció",
+    "title": "Google Naptár",
+    "body": "Az asszisztens a valós szabad időpontokat látja, és abba a naptárba ír, amit a csapatod amúgy is használ.",
+    "answer": {
+      "question": "Mit csinál a Google Naptár integráció?",
+      "body": "Lehetővé teszi, hogy a Velyric hangasszisztense élő hívás közben kiolvassa a foglalt idősávokat a bekötött Google Naptárból, és eseményt hozzon létre vagy mondjon le. A kapcsolat munkaterületenként, OAuth 2.0 és PKCE használatával engedélyezett, és a Velyric csak a refresh tokent tárolja, AES-256-GCM titkosítással lezárva. A szabad időpontokat mindig a hívás pillanatában olvassuk ki a Google-től, így az asszisztens soha nem ajánl olyan idősávot, amit már elvettek."
+    },
+    "facts": {
+      "auth": "OAuth 2.0 authorization code PKCE-vel (S256) és offline hozzáféréssel",
+      "direction": "Kétirányú: foglaltság olvasása, esemény írása és lemondása",
+      "operations": "freeBusy olvasás, esemény létrehozása, esemény lemondása",
+      "surface": "Irányítópult, Integrációk képernyő"
+    },
+    "setup": {
+      "heading": "Beállítás",
+      "body": "A bekötés pár perc, és csak egy olyan Google-fiók kell hozzá, amelyik látja a kiválasztott naptárat.",
+      "steps": {
+        "s1": {
+          "title": "Indítsd el a kapcsolatot",
+          "body": "Nyisd meg az Integrációk menüpontot az irányítópulton, és indítsd el a Google Naptár kapcsolatot. A Velyric generál egy PKCE challenge-et, és átirányít a Google hozzájárulási képernyőjére."
+        },
+        "s2": {
+          "title": "Engedélyezd a hatóköröket",
+          "body": "A Google az openid, email, calendar.events és calendar.freebusy hatóköröket kéri. Az offline hozzáférés azért kell, hogy az asszisztens akkor is dolgozni tudjon, amikor te nem vagy bejelentkezve; ha a Google nem ad vissza refresh tokent, a kapcsolat elutasításra kerül ahelyett, hogy félkészen maradna."
+        },
+        "s3": {
+          "title": "Válaszd ki a naptárat és az időzónát",
+          "body": "Add meg, melyik naptárat használja az asszisztens az adott telephelyen, és erősítsd meg a telephely időzónáját, hogy a kimondott időpontok azt jelentsék, amit a hívó ért alatta."
+        },
+        "s4": {
+          "title": "Teszteld egy hívással",
+          "body": "Indíts egy teszthívást és kérj időpontot. Ellenőrizd, hogy az esemény a megfelelő időponttal, címmel és hosszal jelenik meg a naptárban, mielőtt valódi forgalmat engedsz a számra."
+        }
+      }
+    },
+    "actions": {
+      "heading": "Mit tud az asszisztens",
+      "body": "Az asszisztensnek három naptárművelete van, és ezen kívül semmi más.",
+      "items": {
+        "a1": {
+          "title": "Szabad időpont ellenőrzése",
+          "body": "A Google freeBusy végpontján keresztül kiolvassa a foglalt idősávokat, és csak olyan időpontot ajánl, amely az adott pillanatban tényleg szabad."
+        },
+        "a2": {
+          "title": "Foglalás létrehozása",
+          "body": "Az eseményt csak azután írja be, hogy a hívó megerősítette az összefoglalót, és idempotencia-kulcsot használ, így egy újrapróbálkozás nem hoz létre duplikátumot."
+        },
+        "a3": {
+          "title": "Foglalás lemondása",
+          "body": "Megkeresi a meglévő foglalást, lemondja, majd visszaigazolja a hívónak a lemondást."
+        }
+      }
+    },
+    "security": {
+      "heading": "Hogyan van védve",
+      "body": "A naptár-hozzáférés szándékosan szűk és hosztra korlátozott.",
+      "items": {
+        "i1": "Csak a calendar.events és a calendar.freebusy hatókört kérjük. A Velyric nem fér hozzá a leveleidhez, fájljaidhoz vagy névjegyeidhez.",
+        "i2": "A refresh tokeneket AES-256-GCM titkosítással, secret storeban tároljuk, és soha nem kerülnek logba.",
+        "i3": "A kimenő hívásokat egress allowlist korlátozza a www.googleapis.com és az oauth2.googleapis.com címekre, kizárólag HTTPS-en.",
+        "i4": "Ha az engedély lejár vagy visszavonják, integration.auth_expired webhook esemény keletkezik, így még azelőtt újra tudod kötni, hogy a foglalások elkezdenének hibázni."
+      }
+    },
+    "limits": {
+      "heading": "Amit érdemes tudni a korlátokról",
+      "items": {
+        "l1": "Telephelyenként egy naptárat használunk. Bonyolult több naptáras útvonalazás nem állítható be magából a hangasszisztensből.",
+        "l2": "Az asszisztens létrehoz, lemond és megkeres eseményeket. Tetszőleges eseménymezőket nem szerkeszt, megosztásokat és jogosultságokat nem kezel.",
+        "l3": "Ha a Google nem érhető el, az asszisztens nem találgat: visszahívást ajánl vagy embernek adja át a hívást ahelyett, hogy kitalálna egy időpontot."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Elő tud fordulni dupla foglalás?",
+        "answer": "Nem szabadna. A szabad időpontot közvetlenül az írás előtt újra ellenőrizzük, a foglalás idempotencia-kulccsal jön létre, és a foglalási motor adatbázis-szinten érvényesíti az ütközéseket. Ha egy párhuzamos foglalás nyeri a versenyt, az asszisztens strukturált ütközési választ kap, és a következő valódi alternatívát ajánlja."
+      },
+      "q2": {
+        "question": "Pontosan milyen Google-jogosultságokat kértek?",
+        "answer": "openid, email, https://www.googleapis.com/auth/calendar.events és https://www.googleapis.com/auth/calendar.freebusy, offline hozzáféréssel. Ezen kívül semmit nem kérünk, és semmilyen más Google-terméket nem érünk el."
+      },
+      "q3": {
+        "question": "Mi történik, ha valaki visszavonja a hozzáférést a Google-ben?",
+        "answer": "A naptár-műveletek elkezdenek hibázni, és a Velyric integration.auth_expired webhook eseményt küld. Az asszisztens nem ajánl olyan foglalást, amit nem tud végrehajtani, hanem visszahívást vesz fel vagy embernek adja át a hívást."
+      },
+      "q4": {
+        "question": "Használhatok közös csapatnaptárat?",
+        "answer": "Igen, amennyiben az a Google-fiók, amellyel engedélyezed, látja és írhatja az adott naptárat. A naptárat a kapcsolat létrehozása után telephelyenként választod ki."
+      },
+      "q5": {
+        "question": "Milyen időzónában jön létre az időpont?",
+        "answer": "A Velyric telephelyen beállított időzónában, amit kifejezetten megadsz, nem a hívóból következtetünk rá. Ez tartja szinkronban a kimondott időpontot és a naptárbejegyzést."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Telefonos időpontfoglalás",
+        "description": "Hogyan zajlik egy foglalási beszélgetés a szándéktól a visszaigazolásig."
+      },
+      "r2": {
+        "label": "Microsoft 365",
+        "description": "Ugyanez a foglalási folyamat Outlook-naptárral, Microsoft Graphen keresztül."
+      }
+    }
+  },
+  "microsoft-365": {
+    "meta": {
+      "title": "Microsoft 365 és Outlook naptár integráció",
+      "description": "Kösd be a Microsoft 365-öt, hogy a Velyric hangasszisztense hívás közben lássa az Outlook szabad időpontjait, és eseményt hozzon létre vagy töröljön a Calendars.ReadWrite jogosultsággal, Microsoft Graphen át."
+    },
+    "eyebrow": "Integráció",
+    "title": "Microsoft 365",
+    "body": "Foglalj Outlook-naptárba Microsoft Graphen keresztül, ugyanazzal az ütközésbiztos folyamattal, mint a Google Naptárnál.",
+    "answer": {
+      "question": "Mit csinál a Microsoft 365 integráció?",
+      "body": "Microsoft Graphen keresztül köt be egy Outlook-naptárat, így a hangasszisztens a getSchedule hívással kiolvassa a szabad időpontokat, és hívás közben eseményt hoz létre vagy töröl. Az engedélyezés OAuth 2.0-val, PKCE-vel és offline_access hatókörrel történik, és csak a refresh token marad meg, AES-256-GCM titkosítással lezárva. A foglalási logika megegyezik a Google Naptárnál használttal, így a szolgáltatóváltás nem változtatja meg azt, ahogy a hívás hangzik."
+    },
+    "facts": {
+      "auth": "OAuth 2.0 authorization code PKCE-vel (S256) és offline_access hatókörrel",
+      "direction": "Kétirányú: naptár olvasása, esemény írása és törlése",
+      "operations": "getSchedule, esemény létrehozása, esemény törlése",
+      "surface": "Irányítópult, Integrációk képernyő"
+    },
+    "setup": {
+      "heading": "Beállítás",
+      "body": "Olyan Microsoft 365 fiók kell hozzá, amely hozzáfér ahhoz a naptárhoz, amelyet az asszisztens kezeljen.",
+      "steps": {
+        "s1": {
+          "title": "Indítsd el a kapcsolatot",
+          "body": "Nyisd meg az Integrációk menüpontot, és indítsd el a Microsoft 365 kapcsolatot. A Velyric fiókválasztást kér, hogy tudatosan a megfelelő szervezeti fiókot válaszd."
+        },
+        "s2": {
+          "title": "Engedélyezd a Calendars.ReadWrite jogosultságot",
+          "body": "A Microsoft az openid, email, offline_access és Calendars.ReadWrite hatóköröket kéri jóváhagyásra. Az offline hozzáférés ahhoz kell, hogy az asszisztens két bejelentkezés között is tudjon dolgozni."
+        },
+        "s3": {
+          "title": "Válaszd ki a naptárat és az időzónát",
+          "body": "Add meg a telephelyhez tartozó naptárat, és erősítsd meg azt az időzónát, amelyben az asszisztens kimondja az időpontokat és beírja az eseményeket."
+        },
+        "s4": {
+          "title": "Ellenőrizd teszthívással",
+          "body": "Indíts teszthívást, foglalj egy időpontot, majd nézd meg az eseményt az Outlookban, és mondd le az asszisztensen keresztül, hogy mindkét irányt ellenőrizd."
+        }
+      }
+    },
+    "actions": {
+      "heading": "Mit tud az asszisztens",
+      "body": "A Microsoft Graphot pontosan három műveletre használjuk.",
+      "items": {
+        "a1": {
+          "title": "Szabad időpont olvasása",
+          "body": "A getSchedule hívással megkeresi a foglalt idősávokat, mielőtt bármilyen időpontot ajánlana a hívónak."
+        },
+        "a2": {
+          "title": "Esemény létrehozása",
+          "body": "A hívó kifejezett megerősítése után írja be az időpontot, idempotencia-kulccsal védve az újrapróbálkozás ellen."
+        },
+        "a3": {
+          "title": "Esemény törlése",
+          "body": "Lemondáskor eltávolítja a korábban létrehozott foglalást, és hangosan visszaigazolja az eredményt."
+        }
+      }
+    },
+    "security": {
+      "heading": "Hogyan van védve",
+      "body": "A Graph-hozzáférés naptárra korlátozott és Microsoft-hosztokra van zárva.",
+      "items": {
+        "i1": "Csak a Calendars.ReadWrite hatókört kérjük. A levelezés, a Teams, a fájlok és a címtáradatok kívül esnek a hatókörön.",
+        "i2": "A refresh tokeneket AES-256-GCM titkosítással tároljuk, és soha nem logoljuk.",
+        "i3": "A kimenő forgalom allowlisttel a graph.microsoft.com és a login.microsoftonline.com címekre korlátozott, kizárólag HTTPS-en.",
+        "i4": "A lejárt vagy visszavont hozzájárulás integration.auth_expired webhook eseményt vált ki, így tudatosan tudod újrakötni."
+      }
+    },
+    "limits": {
+      "heading": "Amit érdemes tudni a korlátokról",
+      "items": {
+        "l1": "Telephelyenként egy naptár, ugyanúgy, mint a Google Naptárnál.",
+        "l2": "A kiválasztott naptáron túli terem- és eszközfoglalást nem a hangasszisztens vezérli.",
+        "l3": "Ha a Graph nem érhető el, az asszisztens visszahívást vagy emberi átadást ajánl ahelyett, hogy olyan időpontot ígérne, amit nem tud beírni."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Működik személyes Microsoft-fiókkal?",
+        "answer": "Az integráció Microsoft 365 munkahelyi fiókokra készült, Microsoft Graphon keresztül. A hozzájárulásnál kötelező a fiókválasztás, hogy biztosan a megfelelő szervezeti fiókot add meg."
+      },
+      "q2": {
+        "question": "Milyen jogosultságokat kértek?",
+        "answer": "openid, email, offline_access és https://graph.microsoft.com/Calendars.ReadWrite. Levelezési vagy címtár-jogosultságot nem kérünk."
+      },
+      "q3": {
+        "question": "Beköthetem egyszerre a Google Naptárat és a Microsoft 365-öt is?",
+        "answer": "Mindkét connector létezik, és egy telephely egy naptárat használ a foglaláshoz. Telephelyenként állítsd be őket, ne arra számíts, hogy az asszisztens két naptárat egyetlen szabad időpont-nézetbe olvaszt össze."
+      },
+      "q4": {
+        "question": "Mi lesz a foglalásokkal, ha lekötöm az integrációt?",
+        "answer": "A már beírt események az Outlookban maradnak, mert azok valódi naptárbejegyzések. Az asszisztens egyszerűen nem tud többé szabad időpontot olvasni vagy új foglalást írni."
+      },
+      "q5": {
+        "question": "A hívó adatai bekerülnek az eseménybe?",
+        "answer": "Csak annyi, amennyi a foglaláshoz kell, például a név és az időpont. A Velyric adatminimalizálást alkalmaz, és nem tol felesleges személyes adatot a naptárbejegyzésekbe."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Google Naptár",
+        "description": "Ugyanez a foglalási folyamat Google Naptárral, freeBusy lekérdezéssel."
+      },
+      "r2": {
+        "label": "Telefonos időpontfoglalás",
+        "description": "Mit hall a hívó, amíg a szabad időpontot ellenőrizzük és visszaigazoljuk."
+      }
+    }
+  },
+  "custom-api-tools": {
+    "meta": {
+      "title": "Saját API-eszközök AI hangasszisztenshez",
+      "description": "Tedd elérhetővé a saját HTTPS-végpontjaidat eszközként, amelyeket a Velyric hangasszisztense hívás közben meghívhat, JSON Schema validációval, HMAC vagy bearer hitelesítéssel és SSRF-védelemmel."
+    },
+    "eyebrow": "Integráció",
+    "title": "Saját API-eszközök",
+    "body": "Adj az asszisztensnek biztonságos, típusos bejáratot azokba a rendszerekbe, amelyekhez a Velyricnek nincs beépített connectora.",
+    "answer": {
+      "question": "Mi az a saját API-eszköz?",
+      "body": "A saját API-eszköz egy HTTPS-végpont, amelyet az irányítópulton definiálsz, és amelyet a hangasszisztens beszélgetés közben meghívhat, például rendelés lekérdezésére vagy tagság ellenőrzésére. Te adod meg a metódust, az URL-t, a hitelesítést és a kérés és a válasz JSON Schemáját, így a modell soha nem küldhet tetszőleges kérést. Így érhetők el azok a rendszerek, amelyekhez nincs beépített connector, beleértve a CRM-eket és a belső háttérrendszereket is."
+    },
+    "facts": {
+      "auth": "Nincs, bearer token, vagy HMAC-SHA256 az időbélyeg és a törzs felett",
+      "direction": "Kimenő a Velyrictől a te végpontodra, validált válasszal",
+      "operations": "GET, POST, PUT, PATCH, DELETE sablonozott útvonalakkal",
+      "surface": "Irányítópult, Integrációk, saját eszközök"
+    },
+    "setup": {
+      "heading": "Beállítás",
+      "body": "Egy eszköz definiálása konfigurációs feladat, nem kódmódosítás a Velyric oldalán.",
+      "steps": {
+        "s1": {
+          "title": "Írd le a végpontot",
+          "body": "Add meg a HTTP-metódust, a base URL-t és az útvonalsablont. Csak HTTPS fogadható el, és a path traversal el van utasítva."
+        },
+        "s2": {
+          "title": "Válassz hitelesítést",
+          "body": "Válaszd a nincs, a bearer token vagy a HMAC-SHA256 lehetőséget. A hitelesítő adatok munkaterület-szintű titokként tárolódnak, és az eszköz szerkesztése nélkül cserélhetők."
+        },
+        "s3": {
+          "title": "Definiáld a sémákat",
+          "body": "Adj meg JSON Schema 2020-12 leírást arra, amit az asszisztens küldhet, és arra, amit visszaadsz. Ami nem validál, azt még azelőtt elutasítjuk, hogy elérné a rendszeredet vagy a hívót."
+        },
+        "s4": {
+          "title": "Állítsd be a biztonsági szabályt",
+          "body": "Add meg a mellékhatás-osztályt és azt, hogy a hívónak meg kell-e erősítenie a műveletet, majd állítsd be az időkorlátot, az újrapróbálkozások számát és a válaszméret-korlátot."
+        }
+      }
+    },
+    "actions": {
+      "heading": "Mit tud az asszisztens",
+      "body": "Az asszisztens kiválasztja az eszközt, a backend ellenőrzi, hogy a hívás engedélyezett-e, majd a strukturált eredményt mondja vissza.",
+      "items": {
+        "a1": {
+          "title": "Lekérdezés",
+          "body": "Csak olvasó eszközökkel az asszisztens élő rendszerekből válaszol kérdésekre, például egy rendelés állapotára, anélkül hogy az adatbázisod kikerülne."
+        },
+        "a2": {
+          "title": "Művelet végrehajtása",
+          "body": "Az író eszközök rekordot hozhatnak létre vagy módosíthatnak. Bármi, aminek mellékhatása van, kérhet előzetes kimondott megerősítést."
+        },
+        "a3": {
+          "title": "Biztonságos hibakezelés",
+          "body": "Időtúllépés vagy szerverhiba esetén az asszisztens a szabály szerint egyszer újrapróbálja, majd embernek adja át a hívást ahelyett, hogy kitalálná az eredményt."
+        }
+      }
+    },
+    "security": {
+      "heading": "Hogyan van védve",
+      "body": "A modell soha nem kap általános célú HTTP-klienst.",
+      "items": {
+        "i1": "Minden kérést és választ a te JSON Schemád ellen validálunk, így hibás modellkimenet nem érheti el az API-dat.",
+        "i2": "A kimenő forgalmat allowlist korlátozza, a localhost, a link-local, a privát tartományok és a felhő metadata végpontok tiltottak az SSRF megelőzésére.",
+        "i3": "A hitelesítő adatok secret storeban élnek, soha nem kerülnek logba, és cserélhetők.",
+        "i4": "Az író műveletek idempotencia-kulcsot kapnak, a magas kockázatúak pedig megerősítési szabály mögé tehetők."
+      }
+    },
+    "limits": {
+      "heading": "Amit érdemes tudni a korlátokról",
+      "items": {
+        "l1": "A végpontnak publikus HTTPS-en elérhetőnek kell lennie. VPN vagy privát hálózati alagút nincs.",
+        "l2": "Minden eszköznek kemény időkorlátja és válaszméret-korlátja van, így a hosszan futó feladatokhoz aszinkron tervezés kell.",
+        "l3": "Az eszközök típusos, egyszeri műveletek, nem folyamatmotor. A többlépéses folyamatokat több eszközből rakod össze."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Így be tudom kötni a CRM-emet?",
+        "answer": "Igen, ha a CRM-ednek van HTTPS API-ja. A Velyricnek nincs beépített CRM-connectora, ezért a saját API-eszköz a támogatott út a CRM-lekérdezésekhez és -írásokhoz."
+      },
+      "q2": {
+        "question": "Hogyan ellenőrzöm, hogy a kérés tényleg a Velyrictől jött?",
+        "answer": "Használd a HMAC-SHA256 opciót. A Velyric a közös titokkal aláírja az időbélyeget és a törzset, így a végpontod ellenőrizni tudja a hitelességet és elutasíthatja az újrajátszást."
+      },
+      "q3": {
+        "question": "Mi akadályozza meg, hogy az AI rossz végpontot hívjon?",
+        "answer": "Az eszközjogosultságok kódban élnek, nem a promptban. A backend még a küldés előtt ellenőrzi, hogy a kiválasztott eszköz engedélyezett-e az adott munkaterületen és beszélgetési állapotban."
+      },
+      "q4": {
+        "question": "Mit hall a hívó, amíg az eszköz fut?",
+        "answer": "Az asszisztens természetesen viszi tovább a beszélgetést, amíg a hívás folyamatban van, majd visszaigazolja a strukturált eredményt. Ha az eszköz hibázik, ezt kimondja, és embert ajánl ahelyett, hogy választ találna ki."
+      },
+      "q5": {
+        "question": "Tud egy eszköz kártyát terhelni vagy fizetést felvenni?",
+        "answer": "Ne tervezz olyan eszközt, amely kártyaadatot olvas be telefonon. A fizetésfelvétel nem része a hangfolyamatnak, a magas kockázatú műveleteket pedig meg kell erősíteni és auditálni, nem vakon automatizálni."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Kimenő webhookok",
+        "description": "Fogadj eseményeket a Velyrictől ahelyett, hogy ő hívna téged."
+      },
+      "r2": {
+        "label": "Fejlesztői dokumentáció",
+        "description": "API-konvenciók, hitelesítés és hibakezelés."
+      }
+    }
+  },
+  "webhooks": {
+    "meta": {
+      "title": "Kimenő webhookok hívás- és foglalási eseményekhez",
+      "description": "Iratkozz fel Velyric eseményekre, például a call.ended és booking.created eseményre HMAC-aláírt kimenő webhookokkal, amelyeket 24 órán át újrapróbálva kézbesítünk a HTTPS-végpontodra."
+    },
+    "eyebrow": "Integráció",
+    "title": "Kimenő webhookok",
+    "body": "Told át a hívás-, foglalási és munkaterületi eseményeket a saját rendszereidbe, amint megtörténnek.",
+    "answer": {
+      "question": "Mit csinálnak a Velyric webhookjai?",
+      "body": "A kimenő webhookok a munkaterület eseményeit kézbesítik egy általad üzemeltetett HTTPS-végpontra, így a rendszereid lekérdezés nélkül értesülnek a hívásokról, foglalásokról és konfigurációs változásokról. Minden kézbesítés HMAC-SHA256 aláírással érkezik, így ellenőrizhető, hogy valóban a Velyrictől jött, a sikertelen kézbesítéseket pedig nagyjából 24 órán át, növekvő várakozással újrapróbáljuk. Munkaterületenként legfeljebb tíz végpontot regisztrálhatsz, és mindegyiknél kiválaszthatod, melyiket kapja meg a tizenhét eseménytípus közül."
+    },
+    "facts": {
+      "auth": "HMAC-SHA256 aláírás a velyric-signature fejlécben",
+      "direction": "Kimenő a Velyrictől a te végpontodra",
+      "operations": "17 eseménytípus, munkaterületenként legfeljebb 10 végpont",
+      "surface": "Irányítópult, Beállítások, Webhookok"
+    },
+    "setup": {
+      "heading": "Beállítás",
+      "body": "A webhook-végpontnak publikusan elérhetőnek kell lennie HTTPS-en, és gyorsan kell válaszolnia.",
+      "steps": {
+        "s1": {
+          "title": "Regisztráld a végpontot",
+          "body": "Add hozzá a HTTPS URL-t a Beállításokban, és válaszd ki, mely eseménytípusokat kapja meg. Csak a 443-as port használatos, és átirányítást nem követünk."
+        },
+        "s2": {
+          "title": "Tárold az aláíró titkot",
+          "body": "Tedd el a generált titkot oda, ahonnan a szervered olvasni tudja. Minden kézbesítés ellenőrzéséhez szükséged lesz rá."
+        },
+        "s3": {
+          "title": "Ellenőrizd az aláírást",
+          "body": "Olvasd ki a velyric-signature fejlécet t=időbélyeg,v1=hex formában, számold újra a HMAC-ot az időbélyeg és a nyers törzs felett, és konstans idejű függvénnyel hasonlítsd össze."
+        },
+        "s4": {
+          "title": "Küldj tesztadatot",
+          "body": "Indíts egy webhook.test kézbesítést, és ellenőrizd, hogy a végpontod gyorsan, 2xx státusszal válaszol, mielőtt élesben is engedélyeznéd az eseményeket."
+        }
+      }
+    },
+    "actions": {
+      "heading": "Milyen eseményeket kaphatsz",
+      "body": "Tizenhét eseménytípus fedi le a hívás életciklusát, a foglalásokat, a tudásbázist és a munkaterületi változásokat.",
+      "items": {
+        "a1": {
+          "title": "Hívások és foglalások",
+          "body": "call.started, call.ended, booking.created, booking.changed, booking.canceled és waitlist.slot_released."
+        },
+        "a2": {
+          "title": "Tudásbázis és asszisztensek",
+          "body": "knowledge.ingestion_completed, knowledge.ingestion_failed, agent_version.published, agent_version.rolled_back, quality.scored és simulation.run_completed."
+        },
+        "a3": {
+          "title": "Munkaterület és megfelelés",
+          "body": "contact.merged, privacy.request_created, integration.auth_expired, phone_number.status_changed és a webhook.test esemény."
+        }
+      }
+    },
+    "security": {
+      "heading": "Hogyan van védve",
+      "body": "A kézbesítés aláírt, korlátozott, és szándékosan szigorú az átirányításokkal.",
+      "items": {
+        "i1": "Minden kérés HMAC-SHA256 aláírást visz az időbélyeg és a törzs felett, így elutasíthatod a hamisított vagy újrajátszott kézbesítéseket.",
+        "i2": "Kizárólag HTTPS-t használunk a 443-as porton, és átirányítást soha nem követünk, így egy átirányítás nem viheti máshová az adataidat.",
+        "i3": "A kézbesítés tíz másodperc után időtúllépéssel zárul, és csak kis válasz-törzset olvasunk be, így egy lassú végpont nem tart nyitva erőforrásokat.",
+        "i4": "A sikertelen kézbesítést nyolcszor próbáljuk újra, 30 másodperc, 2, 10 és 30 perc, majd 2, 6, 12 és 24 óra után."
+      }
+    },
+    "limits": {
+      "heading": "Amit érdemes tudni a korlátokról",
+      "items": {
+        "l1": "Munkaterületenként legfeljebb tíz végpont.",
+        "l2": "A kézbesítés legalább egyszeri, ezért a feldolgozónak idempotensnek kell lennie, és tűrnie kell ugyanannak az eseménynek az ismétlődését.",
+        "l3": "Az utolsó újrapróbálkozás után a kézbesítést feladjuk; a webhookokat gyors útvonalként kezeld, és API-n keresztül egyeztess, ha garancia kell."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "A webhookok tényleg elérhetők, vagy csak tervben vannak?",
+        "answer": "Teljesen elérhetők, és van hozzájuk irányítópult-képernyő a végpontok, az eseményválasztás és a kézbesítési előzmények kezelésére."
+      },
+      "q2": {
+        "question": "Hogyan ellenőrzöm a kézbesítést?",
+        "answer": "Bontsd fel a velyric-signature fejlécet t=időbélyeg,v1=hex formában, számold újra a HMAC-SHA256-ot az időbélyeg és a nyers kérés-törzs felett a végpont titkával, és hasonlítsd össze konstans időben. A régi időbélyegű kézbesítéseket utasítsd el."
+      },
+      "q3": {
+        "question": "Mit adjon vissza a végpontom?",
+        "answer": "Adj vissza gyorsan 2xx státuszt, és a tényleges munkát végezd aszinkron módon. Bármi, ami lassabb a tíz másodperces időkorlátnál, sikertelen kézbesítésnek számít, és újrapróbáljuk."
+      },
+      "q4": {
+        "question": "Megérkezhet ugyanaz az esemény kétszer?",
+        "answer": "Igen. Az újrapróbálkozás miatt a kézbesítés legalább egyszeri, ezért deduplikálj az esemény azonosítója alapján, és tedd idempotenssé a feldolgozást."
+      },
+      "q5": {
+        "question": "Használhatok sima HTTP-t egy gyors teszthez?",
+        "answer": "Nem. Kizárólag HTTPS-t fogadunk el a 443-as porton, teszteléskor is. Ha helyi gépen szeretnél eseményeket fogadni, használj olyan alagút-szolgáltatást, amely TLS-t terminál."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Saját API-eszközök",
+        "description": "Engedd, hogy az asszisztens beszélgetés közben hívja a rendszereidet."
+      },
+      "r2": {
+        "label": "Fejlesztői dokumentáció",
+        "description": "Hitelesítés, konvenciók és hibakezelés."
+      }
+    }
+  },
+  "phone-numbers": {
+    "meta": {
+      "title": "Telefonszámok AI hangasszisztenshez",
+      "description": "Hogyan biztosít a Velyric telefonszámot a Telnyxen keresztül, milyen cégazonosítás szükséges hozzá, és hogyan hozható át meglévő szám AI hangasszisztensre."
+    },
+    "eyebrow": "Platform",
+    "title": "Telefonszámok",
+    "body": "Minden munkaterület valódi telefonszámot kap, amely közvetlenül a hangasszisztensbe fut be.",
+    "answer": {
+      "question": "Hogyan működnek a telefonszámok a Velyricben?",
+      "body": "A Velyric a Telnyxen keresztül biztosítja a számokat a szolgáltatás részeként, így neked nem kell saját szolgáltatói fiókot bekötnöd. Minden csomag tartalmaz egy telefonszámot, és az arra érkező hívásokat a beállított asszisztensed fogadja. Meglévő céges szám áthozható is, a számigénylés pedig országtól függően hatósági vagy szolgáltatói cégazonosítást igényelhet."
+    },
+    "facts": {
+      "auth": "A Velyric üzemelteti, nem kell saját szolgáltatói fiók",
+      "direction": "Bejövő hívások a nyilvános telefonhálózatról",
+      "operations": "Új szám igénylése vagy meglévő áthozatala",
+      "surface": "Bevezetés és a Telefonszámok képernyő"
+    },
+    "setup": {
+      "heading": "Hogyan lesz élő a szám",
+      "body": "A kiépítés a bevezetés része, és követhető munkafolyamatként fut.",
+      "steps": {
+        "s1": {
+          "title": "Válassz számot",
+          "body": "A bevezetés során válassz elérhető számot abban az országban, ahol dolgozol, vagy indítsd el a már használt számod áthozatalát."
+        },
+        "s2": {
+          "title": "Végezd el a cégazonosítást",
+          "body": "Egyes országokban hatósági dokumentáció szükséges a helyi szám aktiválásához. Add meg a kért cégadatokat, hogy a szolgáltató jóváhagyhassa az igénylést."
+        },
+        "s3": {
+          "title": "Rendelj hozzá asszisztenst",
+          "body": "Kösd a számot ahhoz az asszisztenshez, amelyik fogadja: állítsd be a köszöntést, a tájékoztató szöveget és a nyitvatartáson kívüli viselkedést."
+        },
+        "s4": {
+          "title": "Indíts teszthívást",
+          "body": "Hívd fel a számot, ellenőrizd, hogy az asszisztens felveszi, közli, hogy AI-asszisztens, és legalább egy valódi feladatot végig tud vinni, mielőtt közzéteszed."
+        }
+      }
+    },
+    "actions": {
+      "heading": "Mi történik egy bejövő hívásnál",
+      "body": "A szám a belépési pont mindenhez, amit az asszisztens csinál.",
+      "items": {
+        "a1": {
+          "title": "Az asszisztens azonnal felveszi",
+          "body": "A hívásokat a nap 24 órájában fogadjuk, és a hívó a beszélgetés elején megtudja, hogy AI-asszisztenssel beszél."
+        },
+        "a2": {
+          "title": "Nyelvfelismerés",
+          "body": "A hívó számának országhívója csak kezdeti jelzés. Az kifejezett kérés vagy a felismert beszélt nyelv azonnal felülírja."
+        },
+        "a3": {
+          "title": "Az átadás mindig elérhető",
+          "body": "A hívó bármikor kérhet embert, vagy megnyomhatja a beállított DTMF-kombinációt, és a hívás átadásra kerül."
+        }
+      }
+    },
+    "security": {
+      "heading": "Hogyan kezeljük",
+      "body": "A telefóniát szabályozott infrastruktúraként kezeljük, nem kényelmi funkcióként.",
+      "items": {
+        "i1": "A számokat auditálható állapotgéppel működő szolgáltatói folyamaton át igényeljük, nem eseti szkriptekkel.",
+        "i2": "A hatósági és KYC-követelményeket kifejezetten bekérjük ott, ahol a célország megköveteli.",
+        "i3": "A hívó telefonszámát kényelmi azonosítóként kezeljük, és soha nem hitelesítésként érzékeny adatokhoz.",
+        "i4": "Nyers hanganyagot alapértelmezetten nem tárolunk, így egy telefonszámból nem lesz rejtett hangarchívum."
+      }
+    },
+    "limits": {
+      "heading": "Amit érdemes tudni a korlátokról",
+      "items": {
+        "l1": "Minden csomag egy telefonszámot és egy telephelyet tartalmaz; a további számok fizetős kiegészítők.",
+        "l2": "Az elérhetőség, az ár és az átfutási idő országtól és szolgáltatótól függ, az azonosítás pedig napokat adhat hozzá.",
+        "l3": "Az egyidejű hívások száma csomagonként 2, 10 vagy 50; vállalati kapacitás szerződésben rögzíthető."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Megtarthatom a meglévő céges számomat?",
+        "answer": "Igen, a meglévő szám áthozatala támogatott. Amíg az áthozatal lezajlik, ideiglenes számon futtathatod az asszisztenst, így semmi nem áll meg."
+      },
+      "q2": {
+        "question": "Kell saját Telnyx- vagy Twilio-fiók?",
+        "answer": "Nem. A telefóniát a Velyric üzemelteti a szolgáltatás részeként, így nincs olyan szolgáltatói fiók, amit neked kellene létrehoznod vagy bekötnöd."
+      },
+      "q3": {
+        "question": "Miért kell cégdokumentum a számigényléshez?",
+        "answer": "Sok ország szabályozza a helyi számokat, és az aktiválás előtt céges azonosítást vagy címigazolást kér. Ez szolgáltatói és hatósági követelmény, nem Velyric-szabály."
+      },
+      "q4": {
+        "question": "Mi történik, ha többen hívnak, mint amennyit a csomagom enged?",
+        "answer": "A viselkedés a választott szabályod szerint alakul: rövid várakozó sor, túlcsordulási szám, visszahívás-kérés vagy üzenetrögzítés. A hívásokat soha nem ejtjük el szó nélkül."
+      },
+      "q5": {
+        "question": "Meddig tarthat egy hívás?",
+        "answer": "A hívások minden csomagban 30 percnél elvágásra kerülnek. A hosszabb beszélgetéseket érdemesebb emberre bízni."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "AI recepciós",
+        "description": "Mit csinál az asszisztens a számra érkező hívásokkal."
+      },
+      "r2": {
+        "label": "Árak",
+        "description": "Benne foglalt percek, egyidejű hívások és túlhasználati díjak csomagonként."
+      }
+    }
+  },
+  "email-notifications": {
+    "meta": {
+      "title": "E-mailes visszaigazolások és értesítések",
+      "description": "Hogyan küld a Velyric foglalási visszaigazolásokat és munkaterületi értesítéseket e-mailben, és hogyan állítható be saját SMTP-továbbító a saját domainedről való küldéshez."
+    },
+    "eyebrow": "Platform",
+    "title": "E-mailes értesítések",
+    "body": "A visszaigazolások és a működési értesítések a hívás után is eljutnak az érintettekhez.",
+    "answer": {
+      "question": "Mit küld a Velyric e-mailben?",
+      "body": "A Velyric tranzakciós e-maileket küld, például foglalási visszaigazolást azoknak a hívóknak, akik megadtak címet, valamint működési értesítéseket a csapatodnak. Ma az e-mail az egyetlen értesítési csatorna, amely ténylegesen küld. Ha azt szeretnéd, hogy a levelek a saját továbbítódon menjenek ki, a saját SMTP-beállítás a control API-n keresztül támogatott, bár ehhez még nincs önkiszolgáló felület az irányítópulton."
+    },
+    "facts": {
+      "auth": "Alapértelmezetten platformküldés, opcionálisan saját SMTP-továbbító",
+      "direction": "Kimenő a Velyrictől a címzettnek",
+      "operations": "Foglalási visszaigazolások és munkaterületi értesítések",
+      "surface": "Platform alapértelmezés; saját továbbító a control API-n át"
+    },
+    "setup": {
+      "heading": "Beállítás",
+      "body": "Az alapértelmezett működéshez nincs teendőd; a saját továbbító külön választás.",
+      "steps": {
+        "s1": {
+          "title": "Döntsd el, mikor menjen visszaigazolás",
+          "body": "Kapcsold be a foglalási visszaigazoló e-mailt, és döntsd el, kérjen-e az asszisztens címet akkor, ha még nincs ellenőrzött cím a profilon."
+        },
+        "s2": {
+          "title": "Ellenőrizd a visszaolvasást",
+          "body": "Amikor az asszisztens telefonon veszi fel a címet, visszaolvassa megerősítésre. Élesítés előtt teszteld ezt egy valósághű címmel."
+        },
+        "s3": {
+          "title": "Válaszd ki a küldési útvonalat",
+          "body": "Maradhatsz a platformküldésnél, vagy kérheted saját SMTP-továbbító beállítását, hogy a levelek a saját domainedről és reputációddal menjenek ki."
+        },
+        "s4": {
+          "title": "Ellenőrizd a kézbesíthetőséget",
+          "body": "Ha saját továbbítót használsz, győződj meg róla, hogy az SPF-, DKIM- és DMARC-rekordjai rendben vannak, különben a visszaigazolások szűrésre kerülhetnek."
+        }
+      }
+    },
+    "actions": {
+      "heading": "Mit küldünk ki",
+      "body": "A levelek tranzakciósak, és mindig valós eseményhez kötődnek.",
+      "items": {
+        "a1": {
+          "title": "Foglalási visszaigazolás",
+          "body": "Sikeres foglalás után a hívó írásos visszaigazolást kaphat a megbeszélt időpontról és részletekről."
+        },
+        "a2": {
+          "title": "Működési értesítések",
+          "body": "A csapatod értesítést kap azokról az eseményekről, amelyek figyelmet igényelnek, például ha egy folyamat nem tudott befejeződni."
+        },
+        "a3": {
+          "title": "Semmi feltételezett",
+          "body": "Nincs marketingküldés, nincs hírlevél és nincs tömeges kampányfunkció. A levél mindig valós tranzakciót követ."
+        }
+      }
+    },
+    "security": {
+      "heading": "Hogyan kezeljük",
+      "body": "A levél személyes adatot hordoz, ezért ugyanazok a minimalizálási szabályok vonatkoznak rá, mint a platform többi részére.",
+      "items": {
+        "i1": "Csak az kerül bele, amire az üzenetnek szüksége van; hívásleiratokat alapértelmezetten nem küldünk körbe.",
+        "i2": "A saját továbbító SMTP-hitelesítő adatai lezárt titokként tárolódnak, és soha nem kerülnek logba.",
+        "i3": "A hozzájárulási jelzéseket a hívói profilon tároljuk, így visszaigazolás csak ott megy ki, ahol ez helyénvaló.",
+        "i4": "A megőrzési szabályok a mögöttes rekordokra is vonatkoznak, nem csak a levélre, így az adat nem él korlátlan ideig."
+      }
+    },
+    "limits": {
+      "heading": "Amit érdemes tudni a korlátokról",
+      "items": {
+        "l1": "Csak az e-mail küld. SMS, alkalmazáson belüli és chat-értesítés nem érhető el.",
+        "l2": "A saját SMTP-továbbító a control API-n keresztül állítható be, és még nincs hozzá irányítópult-képernyő.",
+        "l3": "A telefonon felvett cím addig nem ellenőrzött, amíg a címzett nem lép valamit a levéllel, ezért ennek megfelelően kezeld."
+      }
+    },
+    "faq": {
+      "q1": {
+        "question": "Tud a Velyric SMS-visszaigazolást küldeni?",
+        "answer": "Nem. Ma az e-mail az egyetlen értesítési csatorna, amely küld. A többi csatorna szerepel az adatmodellben, de nincs megvalósítva, és más állítás félrevezető lenne."
+      },
+      "q2": {
+        "question": "Mehet a levél a saját domainünkről?",
+        "answer": "Igen, saját SMTP-továbbítón keresztül. Ez a control API-n át állítható be, nem irányítópult-képernyőn, ezért kérd az ügyfélszolgálattól a beállítást."
+      },
+      "q3": {
+        "question": "Honnan tudja az asszisztens pontosan az e-mail címet telefonon?",
+        "answer": "Elkéri a címet, és használat előtt visszaolvassa megerősítésre. Ha a hívói profilon már van ellenőrzött cím, azt használja ahelyett, hogy újra kérdezne."
+      },
+      "q4": {
+        "question": "Kiküldik nekünk e-mailben a hívásleiratokat?",
+        "answer": "Nem. A leiratok a platformon belül maradnak a megőrzési szabály szerint, az értesítések pedig csak azt tartalmazzák, amire az üzenetnek szüksége van."
+      },
+      "q5": {
+        "question": "Mi történik, ha a levél visszapattan?",
+        "answer": "A foglalást ez nem érinti, mert a naptárbejegyzés a mérvadó. Egy sikertelen visszaigazolás nem mond le csendben semmit."
+      }
+    },
+    "related": {
+      "r1": {
+        "label": "Telefonos időpontfoglalás",
+        "description": "Hol illeszkedik a visszaigazolás a foglalási beszélgetésbe."
+      },
+      "r2": {
+        "label": "Biztonság és megfelelés",
+        "description": "Megőrzési alapértékek, GDPR-szerepek és adatminimalizálás."
+      }
+    }
+  }
+}

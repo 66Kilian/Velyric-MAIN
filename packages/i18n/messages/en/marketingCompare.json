@@ -1,0 +1,560 @@
+{
+  "common": {
+    "breadcrumbLabel": "Breadcrumb",
+    "criterion": "Criterion",
+    "faqHeading": "Frequently asked questions",
+    "relatedHeading": "Keep reading",
+    "ctaPrimary": "Start with Velyric",
+    "ctaSecondary": "See pricing",
+    "pricing": {
+      "label": "Velyric pricing",
+      "description": "Plans, included minutes, overage rates and concurrency limits, published for the Hungarian market."
+    }
+  },
+  "vs-call-center": {
+    "meta": {
+      "title": "AI receptionist vs. call center: an honest comparison",
+      "description": "How an AI voice agent and an outsourced call center differ on availability, languages, escalation, reporting and cost structure, and when a staffed call center is still the better answer."
+    },
+    "breadcrumb": "AI receptionist vs. call center",
+    "eyebrow": "Comparison",
+    "title": "AI receptionist vs. call center",
+    "body": "Both put a capable voice on the other end of your business line. They differ in how fast that voice can change, what it can reach inside your systems, what happens when it gets stuck, and what you are left holding after the caller hangs up.",
+    "card": {
+      "label": "AI receptionist vs. call center",
+      "description": "Availability, languages, escalation and reporting compared with an outsourced answering service."
+    },
+    "summary": {
+      "question": "Should you use an AI receptionist or a call center?",
+      "answer": "Use an AI voice agent when the calls repeat and the answers already exist in writing: opening hours, services, prices, availability, the state of an order. Velyric answers on your own number around the clock in Hungarian, German and English, checks real calendar availability before it offers a slot, and transfers to a person the moment the caller asks. Use a staffed call center when calls are long, emotionally loaded, regulated, or need judgement that no knowledge base contains. Plenty of businesses run both: the agent takes the first line and people take what it hands over."
+    },
+    "table": {
+      "heading": "Side by side",
+      "intro": "Structural differences only. There are no industry averages and no cost savings in this table, because we have not measured them.",
+      "caption": "An AI voice agent and an outsourced call center compared across ten operational criteria.",
+      "columns": {
+        "velyric": "Velyric AI voice agent",
+        "other": "Outsourced call center"
+      },
+      "rows": {
+        "availability": {
+          "criterion": "Availability",
+          "velyric": "Answers 24/7 on your own number, including nights, weekends and holidays. Out-of-hours behaviour is configured separately: message taking, a callback request, or a transfer to an on-call number.",
+          "other": "Covered for the hours you contract and staff. Extending into nights and weekends is a commercial and a staffing decision."
+        },
+        "pickup": {
+          "criterion": "What happens at pickup",
+          "velyric": "Picks up immediately and states at the start of the call that the caller is speaking with an AI assistant. The conversation is full duplex, so the caller can interrupt mid-sentence and the agent stops talking.",
+          "other": "A person answers when an agent is free. Because capacity is headcount, peaks are absorbed by queueing or by calling people back."
+        },
+        "language": {
+          "criterion": "Languages",
+          "velyric": "Hungarian, German and English, switchable mid-call. The caller’s country code is only an initial hint; an explicit request, the detected spoken language or a stored preference override it.",
+          "other": "Whatever the agents on shift speak. A third language is a hiring or a scheduling problem before it is a product one."
+        },
+        "questions": {
+          "criterion": "Answering questions",
+          "velyric": "Answers from your own knowledge base: PDF, DOCX, TXT, Markdown, CSV, a manual Q&A list and crawled website pages, with every retrieval filtered to your tenant. With no supporting source it asks a clarifying question or hands over instead of guessing.",
+          "other": "Answers from a briefing, a script and the agent’s memory. Accuracy tracks how recently the team was briefed on the change."
+        },
+        "booking": {
+          "criterion": "Booking an appointment",
+          "velyric": "Checks real availability through Google Calendar or Microsoft 365 before offering a slot, reads the booking back and asks for confirmation, then writes it with database constraints, transactions and idempotency keys so a double booking cannot slip through.",
+          "other": "Depends on the tooling the center is given. Without access to your calendar you get a request to book, and someone on your side books it later."
+        },
+        "escalation": {
+          "criterion": "Reaching a person",
+          "velyric": "Asking for a person transfers the call immediately. DTMF is configurable, for example ### for a human agent, 0 for an immediate transfer and * to step back. After two or three failed comprehension attempts the agent offers a transfer itself.",
+          "other": "The first line is already a person. Escalation means an internal transfer to you or to a supervisor."
+        },
+        "concurrency": {
+          "criterion": "Peak load",
+          "velyric": "Concurrent calls are a plan limit: 2 on Start, 10 on Business, 50 on Pro, 100 or more on Enterprise. Each call runs in its own isolated session with its own call_id, state and trace, so one failing call cannot affect another.",
+          "other": "Capacity is the headcount on shift. Peaks are absorbed by queueing, overtime or a larger retainer."
+        },
+        "changes": {
+          "criterion": "Changing what is said",
+          "velyric": "Upload a new document version and it atomically replaces the old chunks in the active index. Agent versions are published and can be rolled back, and a simulation surface runs test calls and regression suites first.",
+          "other": "Update the briefing and re-brief the agents on shift. The rollout is as fast as your next briefing cycle."
+        },
+        "data": {
+          "criterion": "What you get afterwards",
+          "velyric": "Calls, resolution rate, average call length, transfer rate, bookings and cost in your dashboard, plus transcripts and summaries where you enable them. Raw audio is not stored by default; recording is a paid add-on.",
+          "other": "Whatever the contract includes: call logs, agent notes, and recordings if the center records and shares them."
+        },
+        "cost": {
+          "criterion": "How it is billed",
+          "velyric": "A monthly subscription with included voice minutes and a published per-minute overage rate. Concurrency and the number of agents are plan limits. Prices are published for the Hungarian market in HUF, net of VAT.",
+          "other": "Priced by the provider, against agent time or handled volume. Ask which unit is billed and what the minimum commitment is."
+        }
+      }
+    },
+    "caller": {
+      "question": "What does the caller actually experience?",
+      "answer": "The call is answered straight away by a voice that says up front it is an AI assistant. The caller can interrupt it, hesitate, change their mind and switch language mid-sentence without the conversation breaking. If they want a human they say so, or press the configured key, and the call is referred to your number.",
+      "first": "The conversation is not one long prompt. It runs through an explicit state machine in code — greeting, discovery, identity, action preview, confirmation gate, tool execution, result confirmation, follow-up, handoff, safe failure, closing — and the backend decides whether a tool the model proposes is even allowed in the current state. That is why the agent reads back what it is about to do before it writes anything, and why it cannot quietly invent a booking.",
+      "second": "In a call center the first line is a person, which is an advantage the moment a caller is upset or the request is unusual. The trade-off is that the person works from a briefing about your business rather than from your live calendar and your documents, unless you have given the center access to both. When you do, part of what you are paying for is keeping a second team in sync with your systems."
+    },
+    "fallback": {
+      "question": "What happens when the system cannot help?",
+      "answer": "Velyric does not guess. With no supporting source in your knowledge base the agent asks a clarifying question or hands over to a person. A tool timeout or a 5xx from one of your APIs is retried once, then the call is transferred or falls back to the configured out-of-hours behaviour. Sensitive or disallowed requests go to a human by design.",
+      "first": "The handover is a real SIP referral to another tel: or sip: destination, so the caller ends up on a phone with one of your people rather than in a second menu. Outside business hours the fallback is whatever you configured: taking a message, recording a callback request, or dialling an on-call number.",
+      "second": "One limitation is worth stating plainly. A caller’s phone number is a convenience identifier, not authentication, so anything sensitive requires step-up verification or a human. A staffed center has exactly the same problem and solves it with whatever identity check you specify in the script."
+    },
+    "setup": {
+      "question": "How much work is it to set up and to change?",
+      "answer": "Setting up Velyric is configuration you do yourself: get or port a number, load your knowledge, connect a calendar, decide what the agent may do. Changing it later is a document upload and a published agent version. Onboarding a call center is a people process — briefing, script, training, ramp — and every later change repeats a smaller version of it.",
+      "steps": {
+        "s1": {
+          "title": "Get a number",
+          "body": "Provision a Hungarian local number through Telnyx, or port the number you already publish. Ordering can require carrier and regulatory business verification, which is part of the provisioning workflow."
+        },
+        "s2": {
+          "title": "Load what you know",
+          "body": "Upload PDF, DOCX, TXT, Markdown or CSV files, add a manual Q&A list, or point the crawler at your website. It follows the sitemap first, otherwise crawls subpages on the same site, and reads schema.org data such as address and opening hours as structured facts."
+        },
+        "s3": {
+          "title": "Connect calendar and tools",
+          "body": "Google Calendar or Microsoft 365 over OAuth2 with PKCE, plus your own HTTPS endpoints as custom API tools with JSON Schema input and output, per-tool timeouts, retries, an idempotency key and a confirmation policy."
+        },
+        "s4": {
+          "title": "Test before you publish",
+          "body": "Run test calls and regression suites on the simulation surface, publish the agent version, and roll it back if something is wrong."
+        }
+      }
+    },
+    "reporting": {
+      "question": "What data do you get after the call?",
+      "answer": "Velyric writes every call into your own dashboard: call volume, resolution rate, average length, transfer rate, bookings and cost, with transcripts and summaries where you enable them. Measured signals include answer latency, barge-in success, tool success rate, first-call resolution, booking conversion, unsupported-answer rate and language switch accuracy. Raw audio has a retention of zero days and is not stored unless you buy the recording add-on.",
+      "first": "Retention is explicit and configurable: transcripts 90 days by default with a minimum of one, call events 180 days with a minimum of 30, tool payloads 30 days, caller profiles 730 days. Up to ten outbound webhook endpoints can push 17 event types into your own systems, among them call.started, call.ended, booking.created, booking.changed and booking.canceled, each signed with HMAC-SHA256.",
+      "second": "With an outsourced center, reporting is a contract term. Ask what you get, in what format, how often, and whether you can still read it after the contract ends. Velyric acts as processor for call data on your behalf under a published Article 28 data processing agreement, and application and call data are processed in an EU cloud region."
+    },
+    "cost": {
+      "question": "How do the two cost models differ?",
+      "answer": "Velyric is a subscription with included voice minutes and a published per-minute overage rate, so the bill follows minutes spoken. A call center is priced against people’s time or handled volume, so the bill follows how busy you are and how long your contract commits you. We have not measured a saving between the two and will not quote one.",
+      "first": "What is worth comparing is where the money goes when nothing happens. A subscription is paid whether the phone rings or not, and so are staffed hours. The difference shows at the edges: a quiet night adds nothing to a minute-based bill, and a sudden peak costs concurrency rather than overtime.",
+      "second": "Velyric publishes prices only for the Hungarian market and only in HUF, net of VAT. Upgrades take effect immediately and downgrades at the end of the billing period; overage continues at the plan per-minute rate with spending limits. Call recording, extra phone numbers and a concurrency boost are paid add-ons.",
+      "facts": {
+        "plans": {
+          "term": "Monthly plans",
+          "value": "Start 39,900 HUF, Business 69,900 HUF, Pro 129,900 HUF, net of VAT. Enterprise is contractual."
+        },
+        "minutes": {
+          "term": "Included voice minutes",
+          "value": "150, 400 or 1,000 per month, with overage at 149, 129 or 109 HUF per minute."
+        },
+        "concurrency": {
+          "term": "Concurrent calls",
+          "value": "2 on Start, 10 on Business, 50 on Pro, 100 or more on Enterprise."
+        },
+        "included": {
+          "term": "Included on every plan",
+          "value": "One phone number, one location, and a maximum call length of 1,800 seconds."
+        }
+      }
+    },
+    "alternative": {
+      "question": "When is a call center the better choice?",
+      "answer": "When the conversation is the product. Long consultative sales calls, regulated advice, complaints that need somebody to take responsibility, collections, and anything where the caller needs to feel a human being is accountable belong to trained people. If most of your calls look like that, an AI voice agent is at best a front door.",
+      "first": "Three more cases favour people. When the script changes constantly in ways no document captures, a briefed team adapts faster than a knowledge base. When calls routinely turn on judgement about exceptions — a discount, a goodwill decision, a deviation from policy — because Velyric’s tool permissions live in code and it will not improvise one. And when what you need is outbound calling at scale: Velyric answers inbound calls on your own number.",
+      "second": "There is a hybrid worth considering before you choose either. Put the agent on the first line, let it finish the repetitive calls, and let it hand the rest to your team or to your center with the caller’s intent already gathered. That is what the handoff path exists for, and it is why the transfer targets are ordinary tel: and sip: destinations.",
+      "third": "Velyric’s own limits belong in this section too: Hungarian, German and English only; calls capped at 30 minutes; concurrency capped by plan; no stored audio unless you add recording; and number availability that depends on the carrier and on regulatory verification."
+    },
+    "faq": {
+      "q1": {
+        "question": "Does the caller know they are talking to an AI?",
+        "answer": "Yes. The agent states at the start of the call that the caller is speaking with an AI assistant. It is a product default rather than something you have to remember to switch on, and it lines up with the EU AI Act Article 50 transparency duty that applies from 2 August 2026."
+      },
+      "q2": {
+        "question": "Can I keep my call center and use Velyric at the same time?",
+        "answer": "Yes. Velyric answers on the number you point at it and refers calls to any tel: or sip: destination, which can be your center’s queue. A common split is the agent handling first-line calls and referring anything it cannot finish, with the caller able to ask for a person or press the configured key at any moment."
+      },
+      "q3": {
+        "question": "What happens to calls that arrive at the same time?",
+        "answer": "Each call gets its own call_id, AI session, conversation state and trace, so calls are isolated and one failure cannot affect another. How many run at once is a plan limit: 2 on Start, 10 on Business, 50 on Pro, 100 or more on Enterprise. Bursts above your limit follow the policy you pick: a short queue, an overflow number, a callback or voicemail."
+      },
+      "q4": {
+        "question": "Will the AI make something up if it does not know the answer?",
+        "answer": "It is built not to. Retrieval is filtered to your own tenant, and when no supporting source is found the agent asks a clarifying question or hands the call to a person instead of answering. Documents and caller speech are treated as untrusted input, so an instruction hidden inside an uploaded file cannot change what the agent is allowed to do."
+      },
+      "q5": {
+        "question": "Do you store recordings of my calls?",
+        "answer": "Not by default. Raw call audio has a retention of zero days and is not stored; recording is a paid add-on. Transcripts are kept 90 days by default and you can configure that down to a single day, and customer call data is not used to train general-purpose models."
+      },
+      "q6": {
+        "question": "What does it cost compared with a call center?",
+        "answer": "We will not quote a comparison, because we have not measured one. The structures differ: Velyric is a monthly subscription with 150, 400 or 1,000 included minutes and a published per-minute overage rate, while a center bills against staffed time or handled volume. Velyric prices are published for the Hungarian market in HUF, net of VAT."
+      }
+    },
+    "related": {
+      "capability": {
+        "label": "Call transfer to your team",
+        "description": "When a call is handed to a person, how it is referred, and what the agent does first."
+      }
+    }
+  },
+  "vs-ivr": {
+    "meta": {
+      "title": "AI voice agent vs. IVR: what changes when callers speak",
+      "description": "An AI voice agent and a classic press-one IVR menu compared on caller experience, escalation, change effort, reporting and cost structure, including when a menu is still the better design."
+    },
+    "breadcrumb": "AI voice agent vs. IVR",
+    "eyebrow": "Comparison",
+    "title": "AI voice agent vs. IVR phone menu",
+    "body": "An IVR asks the caller to translate their problem into a number. A voice agent lets them say it. That single difference changes what the caller does first, what you can measure afterwards, and what it takes to change the greeting.",
+    "card": {
+      "label": "AI voice agent vs. IVR menu",
+      "description": "What changes when callers speak instead of pressing keys, and when a menu still wins."
+    },
+    "summary": {
+      "question": "Should you replace your IVR with an AI voice agent?",
+      "answer": "Replace it when the menu exists to route questions that could simply have been answered: opening hours, prices, availability, where to park, whether a part is in stock. Velyric picks up, listens to the caller’s own words in Hungarian, German or English, answers from your documents, books into your real calendar, and transfers when asked. Keep an IVR when every caller genuinely needs one of two fixed destinations and nothing else, because a menu is then the fastest and most predictable thing you can build. The two also combine: a DTMF key can still jump straight to a person."
+    },
+    "table": {
+      "heading": "Side by side",
+      "intro": "Structural differences only. No industry statistics and no invented abandonment rates.",
+      "caption": "An AI voice agent and a classic IVR phone menu compared across ten operational criteria.",
+      "columns": {
+        "velyric": "Velyric AI voice agent",
+        "other": "Classic IVR menu"
+      },
+      "rows": {
+        "availability": {
+          "criterion": "Availability",
+          "velyric": "Answers 24/7 on your own number and behaves differently outside business hours: message taking, a callback request, or a transfer to an on-call number.",
+          "other": "Always available, because it is a recording and a decision tree. What sits behind the options is only available when somebody is there."
+        },
+        "pickup": {
+          "criterion": "What the caller does first",
+          "velyric": "Says what they want in their own words. The agent discloses that it is an AI assistant, and the caller can interrupt it mid-sentence because the conversation is full duplex.",
+          "other": "Listens to the options and maps their problem onto one of them. Interrupting means pressing a key early, not speaking."
+        },
+        "language": {
+          "criterion": "Languages",
+          "velyric": "Hungarian, German and English on one number, and the language can change mid-call. The E.164 country code is only an initial hint; an explicit request or the detected spoken language overrides it.",
+          "other": "Each language is a separate recorded branch, usually selected by a key press first. Adding one means re-recording the tree."
+        },
+        "questions": {
+          "criterion": "Answering a question",
+          "velyric": "Answers directly from your knowledge base — documents, a manual Q&A list and crawled website pages — and asks a clarifying question or hands over when nothing supports an answer.",
+          "other": "Can play a recorded announcement such as opening hours, but cannot answer an unanticipated question. Anything off the menu becomes a wait for a person."
+        },
+        "booking": {
+          "criterion": "Booking an appointment",
+          "velyric": "Checks real availability in Google Calendar or Microsoft 365, offers only free slots, confirms out loud, then writes the booking with constraints, transactions and idempotency keys against double booking.",
+          "other": "Routes to whoever books. The menu itself does not hold a calendar."
+        },
+        "escalation": {
+          "criterion": "Reaching a person",
+          "velyric": "Asking for a person transfers the call immediately. DTMF stays available and configurable, for example ### for a human agent, 0 for an immediate transfer and * to step back one step.",
+          "other": "A menu option, if you built one. Otherwise the caller works through the tree again."
+        },
+        "concurrency": {
+          "criterion": "Peak load",
+          "velyric": "Concurrent calls are a plan limit of 2, 10, 50 or 100 and more, and every call runs in an isolated session. Above the limit you choose the policy: a short queue, an overflow number, a callback or voicemail.",
+          "other": "The menu scales freely; the queue behind it does not. The bottleneck simply moves to the people on the other side of the option."
+        },
+        "changes": {
+          "criterion": "Changing what is said",
+          "velyric": "Upload a new document version and it atomically replaces the old chunks. Behaviour is versioned, testable on a simulation surface, and can be rolled back.",
+          "other": "Re-record the prompts and republish the tree, in every language you support."
+        },
+        "data": {
+          "criterion": "What you learn from the call",
+          "velyric": "Intent, resolution rate, transfer rate, average length, bookings and cost, plus transcripts and summaries where enabled. The unsupported-answer rate shows which questions your knowledge base cannot answer yet.",
+          "other": "Key presses. You know which option was chosen, not what the caller wanted."
+        },
+        "cost": {
+          "criterion": "How it is billed",
+          "velyric": "A monthly subscription with included voice minutes and a published per-minute overage rate. Prices are published for the Hungarian market in HUF, net of VAT.",
+          "other": "Usually part of your phone system or PBX licence. The cost of a change is the work of re-recording and republishing it."
+        }
+      }
+    },
+    "caller": {
+      "question": "What does the caller actually experience?",
+      "answer": "With a menu the caller listens first and acts second: hear the options, map the problem onto one, press a key, wait. With a voice agent they speak first — “I’d like to move my Tuesday appointment” — and the agent works from that sentence. They can interrupt, hesitate, backchannel and switch language mid-call without restarting anything.",
+      "first": "There is no press-one tree to memorise and nothing to repeat if the caller picked the wrong branch. The conversation runs through an explicit state machine in code — greeting, discovery, identity, action preview, confirmation gate, tool execution, result confirmation, follow-up, handoff, safe failure, closing — so the agent always knows where it is, and the backend validates whether a tool the model proposes is allowed in that state.",
+      "second": "Keys do not disappear. DTMF stays configurable alongside speech, so a caller who knows exactly what they want can still press one: for example ### for a human agent, 0 for an immediate transfer, * to step back. Callers who learned your shortcuts lose nothing when the menu in front of them becomes a conversation."
+    },
+    "fallback": {
+      "question": "What happens when the system cannot help?",
+      "answer": "An IVR’s failure mode is a dead end: the caller is in a branch that does not fit, and the options are to start over or hang up. Velyric’s failure mode is a handover. After two or three failed comprehension attempts the agent offers to transfer, a request for a person transfers immediately, and a tool timeout or 5xx is retried once before the call is transferred or handled by the out-of-hours fallback.",
+      "first": "The agent does not fill a gap with a plausible sentence. Every answer is retrieved from your tenant’s own indexed sources, and when nothing supports an answer the policy is to ask a clarifying question or hand over. Sensitive or disallowed requests go to a human by design, and a caller’s phone number is treated as a convenience identifier rather than as authentication.",
+      "second": "Outside business hours the behaviour is configured separately: take a message, record a callback request, or refer the call to an on-call number. That is closer to what people expect at 22:00 than a tree whose every branch ends in an empty office."
+    },
+    "setup": {
+      "question": "How much work is it to set up and to change?",
+      "answer": "An IVR is built once and edited by re-recording prompts and republishing the tree, in every language. Velyric is configured once and edited by uploading a document. Both are quick the first time. They diverge on the twentieth change, and on the day you add a third language.",
+      "steps": {
+        "s1": {
+          "title": "Point the number at Velyric",
+          "body": "Provision a Hungarian local number through Telnyx, or port the number your menu answers on today. Number ordering can require carrier and regulatory business verification, which is part of the provisioning workflow."
+        },
+        "s2": {
+          "title": "Turn menu text into knowledge",
+          "body": "The sentences your menu reads out are usually already written down. Upload the PDF, DOCX, TXT, Markdown or CSV files, add a manual Q&A list, or point the crawler at your website: it follows the sitemap first and reads schema.org data such as address and opening hours as structured facts."
+        },
+        "s3": {
+          "title": "Keep the routes that genuinely exist",
+          "body": "Map the two or three real destinations to DTMF keys and transfer targets, so the callers who already know what they want lose nothing when the menu becomes a conversation."
+        },
+        "s4": {
+          "title": "Test the calls you fear",
+          "body": "Build a regression suite on the simulation surface from your hardest calls, publish the agent version, and roll it back if it misbehaves."
+        }
+      }
+    },
+    "reporting": {
+      "question": "What data do you get after the call?",
+      "answer": "An IVR tells you which key was pressed. Velyric tells you what the caller asked for. The dashboard shows call volume, resolution rate, average length, transfer rate, bookings and cost, plus transcripts and summaries where you enable them. The unsupported-answer rate is the useful one, because it is effectively a list of questions your business cannot answer yet.",
+      "first": "Measured signals include answer latency, barge-in success, tool success rate, first-call resolution, transfer rate, booking conversion, cost per connected minute, cost per resolved call and language switch accuracy. Up to ten outbound webhook endpoints can push 17 event types into your own systems, signed with HMAC-SHA256 and retried over eight attempts with backoff.",
+      "second": "Raw audio is not stored by default. Transcripts are kept 90 days by default with a configurable minimum of one day, and call events 180 days with a minimum of 30. Velyric acts as processor for call data under a published Article 28 data processing agreement, with processing in an EU cloud region."
+    },
+    "cost": {
+      "question": "How do the two cost models differ?",
+      "answer": "An IVR usually rides along with your telephony contract, so its marginal cost looks like zero and its real cost is the work of every change. Velyric is a monthly subscription with included voice minutes and a published overage rate, so it has a visible line on the invoice and no change cost. We have not measured which is cheaper for your call mix and will not invent a figure.",
+      "first": "The thing neither invoice shows is what happens to callers who leave without getting what they came for. A menu produces no record of them beyond a key press, so the number is not knowable from your own data; the agent produces a transcript and an unsupported-answer rate, which at least makes it measurable.",
+      "second": "Velyric publishes prices only for the Hungarian market and only in HUF, net of VAT. Upgrades take effect immediately, downgrades at the end of the billing period, and overage continues at the plan per-minute rate with spending limits. Call recording, extra phone numbers and a concurrency boost are paid add-ons.",
+      "facts": {
+        "plans": {
+          "term": "Monthly plans",
+          "value": "Start 39,900 HUF, Business 69,900 HUF, Pro 129,900 HUF, net of VAT. Enterprise is contractual."
+        },
+        "minutes": {
+          "term": "Included voice minutes",
+          "value": "150, 400 or 1,000 per month, with overage at 149, 129 or 109 HUF per minute."
+        },
+        "concurrency": {
+          "term": "Concurrent calls",
+          "value": "2 on Start, 10 on Business, 50 on Pro, 100 or more on Enterprise."
+        },
+        "included": {
+          "term": "Included on every plan",
+          "value": "One phone number, one location, and a maximum call length of 1,800 seconds."
+        }
+      }
+    },
+    "alternative": {
+      "question": "When is an IVR the better choice?",
+      "answer": "When the tree is genuinely two options deep and both are destinations rather than questions. “Press 1 for the workshop, press 2 for parts” is faster than any conversation, works for callers who know the number by heart, and costs nothing extra to keep. If that describes your menu, keep it.",
+      "first": "An IVR is also the safer choice where routing is legally or operationally fixed — an emergency line, a regulated hotline, a queue that has to be entered in a specific order — and where a deterministic tree is simply easier to audit than a conversation.",
+      "second": "It wins again where call volume is small. Maintaining a knowledge base pays off when there are enough calls to justify keeping it current; with a handful of calls a week, a recorded message and a key press are proportionate to the problem.",
+      "third": "Velyric has limits of its own to weigh: Hungarian, German and English only, a 30-minute cap on call length, concurrency capped by plan, no stored audio unless you add recording, and number availability that depends on the carrier and on regulatory verification."
+    },
+    "faq": {
+      "q1": {
+        "question": "Can I keep the key presses my regular callers already know?",
+        "answer": "Yes. DTMF is configurable and works alongside speech, so the shortcuts people have learned can stay exactly where they are. The defaults used in examples are ### for a human agent, 0 for an immediate transfer and * to step back one step."
+      },
+      "q2": {
+        "question": "Does the caller have to wait through a list of options?",
+        "answer": "No. The agent greets the caller, states that it is an AI assistant, and then listens. Because the conversation is full duplex, the caller can start talking over the greeting and the agent stops, which is the closest equivalent to pressing a key early."
+      },
+      "q3": {
+        "question": "Is a voice agent slower than pressing a key?",
+        "answer": "For a caller who already knows the right key, pressing it is faster, which is exactly why DTMF stays available. For everyone else the comparison is not a key press versus a sentence, it is one sentence versus listening to a menu, choosing a branch and often hearing a second menu after it."
+      },
+      "q4": {
+        "question": "What happens when a caller asks something the menu never covered?",
+        "answer": "The agent searches your own indexed sources and answers if something supports the answer. If nothing does, it asks a clarifying question or hands the call to a person rather than guessing. Each of those cases also shows up in the unsupported-answer rate, so you can add the missing document."
+      },
+      "q5": {
+        "question": "How many languages can one number handle?",
+        "answer": "One number handles Hungarian, German and English, and the language can change in the middle of a call. The caller’s E.164 country code is only an initial hint: an explicit request such as “magyarul kérem”, the detected spoken language, or a stored preferred language all override it."
+      },
+      "q6": {
+        "question": "Can the agent actually do things, or only talk?",
+        "answer": "It acts within a fixed catalog: list services, check availability, create a booking, find a booking, cancel a booking and search your knowledge base, plus any custom API tool you define against your own HTTPS endpoints. Before any write it summarises what it is about to do and asks the caller to confirm."
+      }
+    },
+    "related": {
+      "capability": {
+        "label": "Multilingual calls on one number",
+        "description": "How Hungarian, German and English are detected, chosen and switched mid-call."
+      }
+    }
+  },
+  "vs-voicemail": {
+    "meta": {
+      "title": "AI receptionist vs. voicemail: what the caller leaves with",
+      "description": "An AI receptionist and voicemail compared on what the caller can finish during the call, what reaches you afterwards, how each is billed, and when a mailbox is still the right answer."
+    },
+    "breadcrumb": "AI receptionist vs. voicemail",
+    "eyebrow": "Comparison",
+    "title": "AI receptionist vs. voicemail and missed calls",
+    "body": "Voicemail moves the work to later, and to you. An AI receptionist finishes what it can during the call and leaves you only what genuinely needs a person. The real comparison is what state the caller is in when they hang up.",
+    "card": {
+      "label": "AI receptionist vs. voicemail",
+      "description": "What a caller can finish during the call, and when a mailbox is still enough."
+    },
+    "summary": {
+      "question": "Should you use an AI receptionist instead of voicemail?",
+      "answer": "Use an AI receptionist when the calls you miss contain things that could have been finished on the spot: a booking, a cancellation, a question whose answer is already in your documents. Velyric answers on your own number 24/7 in Hungarian, German and English, checks the real calendar before it offers a slot, and reads the booking back before it writes anything. Keep voicemail when call volume is negligible and the cost has to be zero, because a mailbox that takes two messages a month is proportionate. Velyric can also be the thing that takes the message, returning a transcript and a summary instead of an audio file."
+    },
+    "table": {
+      "heading": "Side by side",
+      "intro": "Structural differences only. We have no measured figure for what a missed call costs your business, so there is none in this table.",
+      "caption": "An AI receptionist and voicemail compared across ten operational criteria.",
+      "columns": {
+        "velyric": "Velyric AI receptionist",
+        "other": "Voicemail and missed calls"
+      },
+      "rows": {
+        "availability": {
+          "criterion": "Availability",
+          "velyric": "Answers 24/7 on your own number, with out-of-hours behaviour configured separately: take a message, record a callback request, or refer to an on-call number.",
+          "other": "Available whenever the line is not answered, which is the whole point. Nothing moves forward until somebody listens to the message."
+        },
+        "pickup": {
+          "criterion": "What happens to the caller",
+          "velyric": "Has a conversation. The agent discloses that it is an AI assistant, the caller can interrupt, hesitate and switch language, and most routine requests end inside the call.",
+          "other": "Hears a prompt and leaves a message, or hangs up without leaving one. Either way nothing is answered, booked or cancelled during the call."
+        },
+        "language": {
+          "criterion": "Languages",
+          "velyric": "Hungarian, German and English on one number, switchable mid-call, with the spoken language overriding the country code.",
+          "other": "Whichever languages the outgoing greeting was recorded in. The message comes back in whatever language the caller spoke."
+        },
+        "questions": {
+          "criterion": "Answering a question",
+          "velyric": "Answers from your own knowledge base, filtered to your tenant, and asks a clarifying question or transfers when nothing supports an answer.",
+          "other": "Not answered during the call. The question is answered when somebody calls back, if they do."
+        },
+        "booking": {
+          "criterion": "Booking an appointment",
+          "velyric": "Checks real availability in Google Calendar or Microsoft 365, offers only free slots, confirms out loud, then writes the booking with constraints, transactions and idempotency keys so a duplicate cannot slip through.",
+          "other": "A request for a booking, not a booking. Two callers can ask for the same slot and neither of them knows."
+        },
+        "escalation": {
+          "criterion": "Reaching a person",
+          "velyric": "Asking for a person transfers the call there and then, and DTMF is configurable, for example ### for a human agent or 0 for an immediate transfer. Outside hours the configured fallback applies.",
+          "other": "Not possible during the call. Reaching a person becomes a callback."
+        },
+        "concurrency": {
+          "criterion": "Peak load",
+          "velyric": "Concurrent calls are a plan limit of 2, 10, 50 or 100 and more, and each call is isolated. Above the limit you choose a short queue, an overflow number, a callback or voicemail.",
+          "other": "Effectively unlimited, because every caller can leave a message. The backlog of messages is the real bottleneck."
+        },
+        "changes": {
+          "criterion": "Changing what is said",
+          "velyric": "Upload a new document version and it atomically replaces the old chunks in the active index. Agent versions are published and can be rolled back.",
+          "other": "Re-record the greeting."
+        },
+        "data": {
+          "criterion": "What you get afterwards",
+          "velyric": "A dashboard with calls, resolution rate, average length, transfer rate, bookings and cost, plus transcripts and summaries where enabled. Raw audio is not stored by default.",
+          "other": "An audio file and a timestamp. Everything else has to be listened to and typed in by hand."
+        },
+        "cost": {
+          "criterion": "How it is billed",
+          "velyric": "A monthly subscription with included voice minutes and a published per-minute overage rate, priced for the Hungarian market in HUF, net of VAT.",
+          "other": "Usually included with the line at no extra charge. The cost sits in the callbacks rather than on the invoice."
+        }
+      }
+    },
+    "caller": {
+      "question": "What does the caller actually experience?",
+      "answer": "Instead of a beep, the caller gets a conversation that can finish the job. They say what they want, the agent answers from your own material or checks your real calendar, reads back what it is about to do, and books it. If they would rather speak to a person they say so, and the call is referred to your number.",
+      "first": "For a caller, voicemail is a promise that somebody will call back. It works when you always do, and it fails quietly when you do not. An agent removes the promise for everything it can complete inside the call, and turns the rest into a structured handover rather than a two-minute recording somebody has to transcribe by ear.",
+      "second": "The out-of-hours path is still there when you want it. Velyric can take the message itself, record a callback request, or refer the call to an on-call number. The difference is what reaches you: a transcript and a summary with the caller’s intent, not an audio file and a timestamp."
+    },
+    "fallback": {
+      "question": "What happens when the system cannot help?",
+      "answer": "It hands over rather than guessing. With no supporting source in your knowledge base the agent asks a clarifying question or transfers; after two or three failed comprehension attempts it offers a transfer itself; a tool timeout or 5xx is retried once and then transferred. Outside business hours the configured fallback applies, and that can be exactly the message taking voicemail does today.",
+      "first": "That is the honest version of this comparison. An AI receptionist does not remove voicemail from your setup, it makes voicemail the last resort instead of the first response. Anything sensitive still needs a person, because a caller’s phone number is a convenience identifier and not authentication.",
+      "second": "The handover itself is a SIP referral to another tel: or sip: destination, so the caller lands on a real phone. If nobody answers there you are back to your existing fallback, which is a good reason to configure the out-of-hours path deliberately rather than leaving it at defaults."
+    },
+    "setup": {
+      "question": "How much work is it to set up and to change?",
+      "answer": "Voicemail costs one recorded greeting and no maintenance. Velyric costs an afternoon of configuration and then a document upload whenever something changes. If the mailbox is genuinely handling your volume, that setup is not worth doing. If you spend your mornings returning calls, it is.",
+      "steps": {
+        "s1": {
+          "title": "Get or port the number",
+          "body": "Provision a Hungarian local number through Telnyx, or port the number people already call. Ordering can require carrier and regulatory business verification, which is part of the provisioning workflow."
+        },
+        "s2": {
+          "title": "Load the answers you repeat on callbacks",
+          "body": "The things you say when you return calls are the knowledge base: opening hours, prices, services, what to bring. Upload PDF, DOCX, TXT, Markdown or CSV files, add a manual Q&A list, or let the crawler read your website."
+        },
+        "s3": {
+          "title": "Connect the calendar",
+          "body": "Google Calendar or Microsoft 365 over OAuth2 with PKCE. Velyric reads busy time, creates events and cancels them, so a call can end with a booking instead of a request for one."
+        },
+        "s4": {
+          "title": "Decide what still becomes a message",
+          "body": "Set the out-of-hours behaviour and the transfer targets. Message taking stays available; it simply becomes the exception rather than the default."
+        }
+      }
+    },
+    "reporting": {
+      "question": "What data do you get after the call?",
+      "answer": "Voicemail gives you an audio file, a number and a timestamp. Velyric gives you a transcript, a summary, a detected intent, and whether the call was resolved, transferred or ended in a booking, inside a dashboard that also shows call volume, average length, transfer rate and cost. Raw audio has a retention of zero days and is not stored unless you buy the recording add-on.",
+      "first": "Retention is explicit: transcripts 90 days by default with a configurable minimum of one, call events 180 days with a minimum of 30, tool payloads 30 days, caller profiles 730 days. Caller memory is stored per tenant and is never shared across tenants.",
+      "second": "If you want the events in your own systems, up to ten outbound webhook endpoints can receive 17 event types, among them call.started, call.ended, booking.created, booking.changed and booking.canceled, each signed with HMAC-SHA256 and retried over eight attempts with backoff."
+    },
+    "cost": {
+      "question": "How do the two cost models differ?",
+      "answer": "Voicemail is normally included with the line, so its invoice cost is effectively zero and its real cost is the time spent returning calls. Velyric is a monthly subscription with included voice minutes and a published per-minute overage rate. We have no measured figure for what missed calls cost your business, and we are not going to invent one.",
+      "first": "The honest way to decide is to count. How many calls go to voicemail in a week, how many of those you return, how long returning one takes, and how many of them were a question you have already answered in writing somewhere. If that arithmetic comes out small, keep the mailbox.",
+      "second": "Velyric publishes prices only for the Hungarian market and only in HUF, net of VAT: Start at 39,900 HUF with 150 included minutes, Business at 69,900 HUF with 400, Pro at 129,900 HUF with 1,000, and Enterprise by contract. Overage continues at the plan rate with spending limits, upgrades take effect immediately, and downgrades at the end of the billing period.",
+      "facts": {
+        "plans": {
+          "term": "Monthly plans",
+          "value": "Start 39,900 HUF, Business 69,900 HUF, Pro 129,900 HUF, net of VAT. Enterprise is contractual."
+        },
+        "minutes": {
+          "term": "Included voice minutes",
+          "value": "150, 400 or 1,000 per month, with overage at 149, 129 or 109 HUF per minute."
+        },
+        "concurrency": {
+          "term": "Concurrent calls",
+          "value": "2 on Start, 10 on Business, 50 on Pro, 100 or more on Enterprise."
+        },
+        "included": {
+          "term": "Included on every plan",
+          "value": "One phone number, one location, and a maximum call length of 1,800 seconds."
+        }
+      }
+    },
+    "alternative": {
+      "question": "When is voicemail the better choice?",
+      "answer": "When the volume is negligible and the cost has to be zero. A line that takes two or three messages a month does not need a subscription, and a mailbox that is genuinely emptied every morning is a working system. Voicemail is also the right answer for a line that exists as a formality: a registered address, an old number kept alive, a backup route.",
+      "first": "It is the better choice, too, where every call needs one specific person and nobody else will do: a personal line, a single practitioner with no delegated authority, a number that reaches one named contact. An agent can take a message there, but it will not do more than a mailbox already does.",
+      "second": "Where confidentiality is the entire point, a mailbox only one person opens can be simpler to reason about than a platform. It is worth noting, though, that Velyric does not store raw audio by default, filters every retrieval to your tenant, and processes application and call data in an EU cloud region as a processor under a published Article 28 agreement.",
+      "third": "Velyric’s own limits belong here as well: Hungarian, German and English only, calls capped at 30 minutes, concurrency capped by plan, and number availability that depends on the carrier and on regulatory verification."
+    },
+    "faq": {
+      "q1": {
+        "question": "Can Velyric still just take a message?",
+        "answer": "Yes. Message taking is one of the configured out-of-hours behaviours, alongside recording a callback request and transferring to an on-call number. The difference from voicemail is what reaches you: a transcript and a summary with the caller’s intent, rather than an audio file somebody has to listen to."
+      },
+      "q2": {
+        "question": "Will callers mind that it is not a person?",
+        "answer": "They will know from the first sentence, because the agent states that the caller is speaking with an AI assistant. What follows is a conversation they can interrupt, in their own language, that can actually complete the booking. Whether any individual caller prefers that to a beep is not something we can measure for you."
+      },
+      "q3": {
+        "question": "Can it book an appointment without me confirming it afterwards?",
+        "answer": "Yes. Availability is checked against your real calendar through Google Calendar or Microsoft 365, the agent summarises the booking and asks the caller to confirm, and the write is protected by database constraints, transactions and idempotency keys. If two calls race for the same slot, the losing one is told and offered the next real alternative."
+      },
+      "q4": {
+        "question": "What happens if more calls arrive than my plan allows?",
+        "answer": "Concurrency is a commercial limit: 2 calls at once on Start, 10 on Business, 50 on Pro, 100 or more on Enterprise. Above your limit the behaviour is the policy you choose, whether that is a short queue, an overflow number, a callback or voicemail. A concurrency boost is available as a paid add-on."
+      },
+      "q5": {
+        "question": "Do I have to give up my existing number?",
+        "answer": "No. Existing numbers can be ported, and every plan includes one phone number and one location. New Hungarian local numbers are provisioned through Telnyx, and ordering can require carrier and regulatory business verification as part of the provisioning workflow."
+      },
+      "q6": {
+        "question": "Are my callers’ messages recorded?",
+        "answer": "Raw call audio is not stored by default: retention is zero days and recording is a paid add-on. Transcripts are kept 90 days by default and you can configure that down to one day, and call events 180 days. Customer call data is not used to train general-purpose models."
+      }
+    },
+    "related": {
+      "capability": {
+        "label": "Phone appointment booking",
+        "description": "How a call turns into a confirmed slot in your real calendar, without double bookings."
+      }
+    }
+  }
+}

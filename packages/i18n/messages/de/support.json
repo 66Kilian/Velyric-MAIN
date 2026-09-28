@@ -1,0 +1,42 @@
+{
+  "title": "Hilfe anfordern",
+  "description": "Schreiben Sie uns und führen Sie das Gespräch hier fort. Geschlossene Tickets bleiben als Verlauf erhalten.",
+  "new": "Neues Ticket",
+  "newTitle": "Neues Ticket eröffnen",
+  "newBody": "Beschreiben Sie, was passiert ist. Je konkreter, desto schneller können wir helfen.",
+  "subject": "Betreff",
+  "category": "Bereich",
+  "priority": "Dringlichkeit",
+  "describe": "Worum geht es?",
+  "describeHint": "Nennen Sie nach Möglichkeit die genaue Uhrzeit und die betroffene Rufnummer.",
+  "send": "Senden",
+  "empty": "Sie haben noch keine Tickets.",
+  "pickTitle": "Ticket auswählen",
+  "pickBody": "Wechseln Sie über die Liste links zwischen Ihren Gesprächen.",
+  "replyPlaceholder": "Ihre Antwort…",
+  "close": "Schließen",
+  "reopen": "Wieder öffnen",
+  "closedNotice": "Dieses Ticket ist geschlossen. Das Gespräch bleibt erhalten; öffnen Sie es erneut, wenn das Problem wiederkehrt.",
+  "velyric": "Velyric",
+  "you": "Sie",
+  "status": {
+    "OPEN": "Offen",
+    "PENDING_STAFF": "Bei uns",
+    "PENDING_CUSTOMER": "Wir haben geantwortet",
+    "RESOLVED": "Gelöst",
+    "CLOSED": "Geschlossen"
+  },
+  "categories": {
+    "TECHNICAL": "Technik",
+    "BILLING": "Abrechnung",
+    "PHONE_NUMBERS": "Rufnummer",
+    "ACCOUNT": "Konto",
+    "OTHER": "Sonstiges"
+  },
+  "priorities": {
+    "LOW": "Niedrig",
+    "NORMAL": "Normal",
+    "HIGH": "Hoch",
+    "URGENT": "Kritisch"
+  }
+}

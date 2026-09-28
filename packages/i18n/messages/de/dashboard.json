@@ -1,0 +1,103 @@
+{
+  "welcome": "Willkommen zurück bei {workspace}",
+  "subtitle": "So laufen deine Voice-Agenten heute.",
+  "rangeLabel": "Zeitraum",
+  "kpi": {
+    "label": "Kennzahlen",
+    "totalCalls": "Anrufe gesamt",
+    "avgDuration": "Durchschnittliche Dauer",
+    "resolutionRate": "Von der KI gelöst",
+    "qualityScore": "Qualitätswert",
+    "vsPrevious": "Veränderung gegenüber dem Vorzeitraum"
+  },
+  "live": {
+    "title": "Live-Anrufe",
+    "viewAll": "Alle anzeigen",
+    "empty": "Derzeit laufen keine Anrufe.",
+    "unknownCaller": "Unbekannter Anrufer",
+    "webVisitor": "Website-Besucher"
+  },
+  "summary": {
+    "title": "Zusammenfassung des letzten Anrufs",
+    "viewFull": "Ganzen Anruf ansehen",
+    "empty": "Abgeschlossene Anrufe erscheinen hier.",
+    "duration": "Dauer",
+    "timestamp": "Zeitpunkt",
+    "outcome": "Ergebnis",
+    "noSummary": "Für diesen Anruf wurde keine Zusammenfassung erstellt.",
+    "restricted": "Deine Rolle darf keine Anrufzusammenfassungen sehen."
+  },
+  "volume": {
+    "title": "Anrufe pro Tag",
+    "total": "Alle Anrufe",
+    "resolved": "Von der KI gelöst",
+    "empty": "Keine abgeschlossenen Anrufe in diesem Zeitraum.",
+    "transferRate": "Weiterleitungsquote",
+    "abandonmentRate": "Abbruchquote",
+    "bookings": "Erstellte Buchungen",
+    "minutes": "Verbundene Minuten"
+  },
+  "intents": {
+    "title": "Häufigste Anliegen",
+    "empty": "Noch keine Anliegen erkannt.",
+    "unknown": "Nicht klassifiziert"
+  },
+  "gaps": {
+    "title": "Wissenslücken",
+    "manage": "Wissen verwalten",
+    "empty": "Keine unbeantworteten Fragen erkannt.",
+    "occurrences": "{count, plural, one {# Mal} other {# Mal}}"
+  },
+  "statusBanner": {
+    "PROVISIONING": {
+      "title": "Dein Workspace wird eingerichtet.",
+      "body": "Rufnummern und Agenten gehen nach Abschluss der Einrichtung live.",
+      "action": "Einrichtung fortsetzen"
+    },
+    "PAYMENT_AT_RISK": {
+      "title": "Deine letzte Zahlung ist fehlgeschlagen.",
+      "body": "Aktualisiere deine Zahlungsmethode, um eine Unterbrechung zu vermeiden.",
+      "action": "Abrechnung öffnen"
+    },
+    "GRACE_PERIOD": {
+      "title": "Zahlung überfällig.",
+      "body": "Anrufe laufen während der Kulanzfrist weiter, Konfigurationsänderungen können eingeschränkt sein.",
+      "action": "Zahlung klären"
+    },
+    "RESTRICTED": {
+      "title": "Dein Workspace ist eingeschränkt.",
+      "body": "Eingehende Anrufe sind begrenzt, bis der offene Betrag bezahlt ist.",
+      "action": "Zahlung klären"
+    },
+    "SUSPENDED_BILLING": {
+      "title": "Dienst wegen Zahlungsverzug gesperrt.",
+      "body": "Deine Agenten nehmen keine Anrufe an, bis die Abrechnung geklärt ist.",
+      "action": "Abrechnung öffnen"
+    },
+    "SUSPENDED_DISPUTE": {
+      "title": "Dienst wegen einer Zahlungsanfechtung gesperrt.",
+      "body": "Kontaktiere den Support, um den Dienst wiederherzustellen.",
+      "action": "Abrechnung öffnen"
+    },
+    "SUSPENDED_RISK": {
+      "title": "Dienst wegen einer Sicherheitsprüfung gesperrt.",
+      "body": "Unser Team meldet sich beim Workspace-Inhaber.",
+      "action": "Abrechnung öffnen"
+    },
+    "SUSPENDED_ADMIN": {
+      "title": "Dienst von Velyric gesperrt.",
+      "body": "Kontaktiere den Support für Details.",
+      "action": "Abrechnung öffnen"
+    },
+    "CANCELED_GRACE": {
+      "title": "Dein Abonnement wurde gekündigt.",
+      "body": "Du kannst es reaktivieren, bevor Rufnummern und Daten freigegeben werden.",
+      "action": "Reaktivieren"
+    },
+    "DATA_RETENTION": {
+      "title": "Dieser Workspace ist schreibgeschützt.",
+      "body": "Exportiere deine Daten vor Ende der Aufbewahrungsfrist.",
+      "action": "Abrechnung öffnen"
+    }
+  }
+}

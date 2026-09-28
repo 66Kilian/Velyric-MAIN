@@ -1,0 +1,1414 @@
+import type { EnumValue } from './enum-utils.js';
+
+export const VelyricEnvironment = {
+  LOCAL: 'local',
+  CI: 'ci',
+  STAGING: 'staging',
+  PRODUCTION: 'production',
+} as const;
+export type VelyricEnvironment = EnumValue<typeof VelyricEnvironment>;
+
+export const ProviderMode = {
+  SIMULATOR: 'simulator',
+  SANDBOX: 'sandbox',
+  LIVE: 'live',
+} as const;
+export type ProviderMode = EnumValue<typeof ProviderMode>;
+
+export const Locale = {
+  HU: 'hu',
+  DE: 'de',
+  EN: 'en',
+} as const;
+export type Locale = EnumValue<typeof Locale>;
+
+export const ThemePreference = {
+  LIGHT: 'light',
+  DARK: 'dark',
+  SYSTEM: 'system',
+} as const;
+export type ThemePreference = EnumValue<typeof ThemePreference>;
+
+export const Currency = {
+  HUF: 'HUF',
+  EUR: 'EUR',
+  USD: 'USD',
+} as const;
+export type Currency = EnumValue<typeof Currency>;
+
+export const BillingMarket = {
+  HU: 'HU',
+  INTERNATIONAL: 'INTERNATIONAL',
+} as const;
+export type BillingMarket = EnumValue<typeof BillingMarket>;
+
+export const ServiceName = {
+  WEB: 'web',
+  CONTROL_API: 'control-api',
+  VOICE_RUNTIME: 'voice-runtime',
+  WORKFLOW_WORKER: 'workflow-worker',
+  CONNECTOR_WORKER: 'connector-worker',
+  METERING_WORKER: 'metering-worker',
+  DOCUMENT_WORKER: 'document-worker',
+  EVAL_RUNNER: 'eval-runner',
+  PROVIDER_SIMULATOR: 'provider-simulator',
+} as const;
+export type ServiceName = EnumValue<typeof ServiceName>;
+
+export const TenantStatus = {
+  PROVISIONING: 'PROVISIONING',
+  ACTIVE: 'ACTIVE',
+  PAYMENT_AT_RISK: 'PAYMENT_AT_RISK',
+  GRACE_PERIOD: 'GRACE_PERIOD',
+  RESTRICTED: 'RESTRICTED',
+  SUSPENDED_BILLING: 'SUSPENDED_BILLING',
+  SUSPENDED_DISPUTE: 'SUSPENDED_DISPUTE',
+  SUSPENDED_RISK: 'SUSPENDED_RISK',
+  SUSPENDED_ADMIN: 'SUSPENDED_ADMIN',
+  CANCELED_GRACE: 'CANCELED_GRACE',
+  DATA_RETENTION: 'DATA_RETENTION',
+  DELETION: 'DELETION',
+  DELETED: 'DELETED',
+} as const;
+export type TenantStatus = EnumValue<typeof TenantStatus>;
+
+export const SubscriptionStatus = {
+  INCOMPLETE: 'INCOMPLETE',
+  INCOMPLETE_EXPIRED: 'INCOMPLETE_EXPIRED',
+  TRIALING: 'TRIALING',
+  ACTIVE: 'ACTIVE',
+  PAST_DUE: 'PAST_DUE',
+  UNPAID: 'UNPAID',
+  PAUSED: 'PAUSED',
+  CANCELED: 'CANCELED',
+} as const;
+export type SubscriptionStatus = EnumValue<typeof SubscriptionStatus>;
+
+export const CheckoutOrderStatus = {
+  DRAFT: 'DRAFT',
+  AWAITING_PAYMENT: 'AWAITING_PAYMENT',
+  PAID: 'PAID',
+  PAYMENT_FAILED: 'PAYMENT_FAILED',
+  EXPIRED: 'EXPIRED',
+  CANCELED: 'CANCELED',
+  PARTIALLY_REFUNDED: 'PARTIALLY_REFUNDED',
+  REFUNDED: 'REFUNDED',
+} as const;
+export type CheckoutOrderStatus = EnumValue<typeof CheckoutOrderStatus>;
+
+export const BillingDocumentType = {
+  INVOICE: 'INVOICE',
+  MODIFICATION_INVOICE: 'MODIFICATION_INVOICE',
+  CANCELLATION_INVOICE: 'CANCELLATION_INVOICE',
+} as const;
+export type BillingDocumentType = EnumValue<typeof BillingDocumentType>;
+
+export const BillingDocumentStatus = {
+  PENDING: 'PENDING',
+  CREATED: 'CREATED',
+  SENT: 'SENT',
+  SEND_FAILED: 'SEND_FAILED',
+  FAILED: 'FAILED',
+  CORRECTED: 'CORRECTED',
+  CANCELED: 'CANCELED',
+} as const;
+export type BillingDocumentStatus = EnumValue<typeof BillingDocumentStatus>;
+
+export const FeatureRetentionState = {
+  ENABLED: 'ENABLED',
+  DISABLED_RETAINED: 'DISABLED_RETAINED',
+  PURGE_SCHEDULED: 'PURGE_SCHEDULED',
+  PURGED: 'PURGED',
+} as const;
+export type FeatureRetentionState = EnumValue<typeof FeatureRetentionState>;
+
+export const PlanCode = {
+  START: 'START',
+  BUSINESS: 'BUSINESS',
+  PRO: 'PRO',
+  ENTERPRISE: 'ENTERPRISE',
+} as const;
+export type PlanCode = EnumValue<typeof PlanCode>;
+
+export const BurstPolicy = {
+  NONE: 'NONE',
+  PAID_BURST: 'PAID_BURST',
+  CONFIGURABLE: 'CONFIGURABLE',
+  CONTRACTUAL: 'CONTRACTUAL',
+} as const;
+export type BurstPolicy = EnumValue<typeof BurstPolicy>;
+
+export const AddOnCode = {
+  EXTRA_PHONE_NUMBER: 'EXTRA_PHONE_NUMBER',
+  EXTRA_LOCATION: 'EXTRA_LOCATION',
+  OUTBOUND_CALLING: 'OUTBOUND_CALLING',
+  PREMIUM_REASONING: 'PREMIUM_REASONING',
+  CUSTOM_INTEGRATION_SETUP: 'CUSTOM_INTEGRATION_SETUP',
+  PRIVATE_CONNECTOR: 'PRIVATE_CONNECTOR',
+  LARGE_KNOWLEDGE_STORAGE: 'LARGE_KNOWLEDGE_STORAGE',
+  CALL_RECORDING: 'CALL_RECORDING',
+  EXTENDED_RETENTION: 'EXTENDED_RETENTION',
+  PHONE_NUMBER_RETENTION: 'PHONE_NUMBER_RETENTION',
+  DEDICATED_SLA_SUPPORT: 'DEDICATED_SLA_SUPPORT',
+  WHITE_LABEL_DOMAIN: 'WHITE_LABEL_DOMAIN',
+  SIMULATION_CREDITS: 'SIMULATION_CREDITS',
+  PCI_PAYMENTS: 'PCI_PAYMENTS',
+  SSO_SCIM: 'SSO_SCIM',
+  SIEM_EXPORT: 'SIEM_EXPORT',
+  BYOK: 'BYOK',
+  DEDICATED_REDUNDANCY: 'DEDICATED_REDUNDANCY',
+  CONCURRENCY_BOOST: 'CONCURRENCY_BOOST',
+} as const;
+export type AddOnCode = EnumValue<typeof AddOnCode>;
+
+export const AddOnBillingType = {
+  RECURRING_MONTHLY: 'RECURRING_MONTHLY',
+  ONE_TIME: 'ONE_TIME',
+  USAGE_BASED: 'USAGE_BASED',
+} as const;
+export type AddOnBillingType = EnumValue<typeof AddOnBillingType>;
+
+export const FeatureKey = {
+  KNOWLEDGE_BASE: 'knowledge_base',
+  HUMAN_HANDOFF: 'human_handoff',
+  DTMF_ROUTING: 'dtmf_routing',
+  BUSINESS_HOURS_ROUTING: 'business_hours_routing',
+  CALLER_MEMORY: 'caller_memory',
+  TRANSACTIONAL_EMAIL: 'transactional_email',
+  QUALITY_MONITORING: 'quality_monitoring',
+  WEB_VOICE_TEST_CALL: 'web_voice_test_call',
+  GOOGLE_CALENDAR: 'google_calendar',
+  MICROSOFT_365: 'microsoft_365',
+  CUSTOM_SMTP: 'custom_smtp',
+  CUSTOM_API_TOOLS: 'custom_api_tools',
+  OUTBOUND_WEBHOOKS: 'outbound_webhooks',
+  PUBLIC_API: 'public_api',
+  BOOKING_ENGINE: 'booking_engine',
+  WAITLIST: 'waitlist',
+  WARM_TRANSFER: 'warm_transfer',
+  KNOWLEDGE_INTELLIGENCE: 'knowledge_intelligence',
+  WEB_VOICE_WIDGET: 'web_voice_widget',
+  ROI_ANALYTICS: 'roi_analytics',
+  MULTI_WORKFLOW: 'multi_workflow',
+  ADVANCED_CALL_ROUTING: 'advanced_call_routing',
+  MULTI_LOCATION: 'multi_location',
+  SIMULATION_LAB: 'simulation_lab',
+  PRIORITY_SUPPORT: 'priority_support',
+  PREMIUM_REASONING: 'premium_reasoning',
+  OUTBOUND_CALLING: 'outbound_calling',
+  CALL_RECORDING: 'call_recording',
+  SSO_SCIM: 'sso_scim',
+  SIEM_EXPORT: 'siem_export',
+  BYOK: 'byok',
+  PCI_PAYMENTS: 'pci_payments',
+  DEDICATED_REDUNDANCY: 'dedicated_redundancy',
+  CONTRACTUAL_SLA: 'contractual_sla',
+  WHITE_LABEL: 'white_label',
+} as const;
+export type FeatureKey = EnumValue<typeof FeatureKey>;
+
+export const Role = {
+  OWNER: 'OWNER',
+  ADMIN: 'ADMIN',
+  OPERATOR: 'OPERATOR',
+  ANALYST: 'ANALYST',
+  DEVELOPER: 'DEVELOPER',
+  BILLING: 'BILLING',
+  VIEWER: 'VIEWER',
+} as const;
+export type Role = EnumValue<typeof Role>;
+
+export const PlatformRole = {
+  SUPPORT_AGENT: 'SUPPORT_AGENT',
+  SUPPORT_LEAD: 'SUPPORT_LEAD',
+  PLATFORM_OPS: 'PLATFORM_OPS',
+  FINANCE_OPS: 'FINANCE_OPS',
+  PLATFORM_ADMIN: 'PLATFORM_ADMIN',
+} as const;
+export type PlatformRole = EnumValue<typeof PlatformRole>;
+
+export const Permission = {
+  WORKSPACE_READ: 'workspace:read',
+  WORKSPACE_UPDATE: 'workspace:update',
+  WORKSPACE_CANCEL: 'workspace:cancel',
+  MEMBERS_READ: 'members:read',
+  MEMBERS_MANAGE: 'members:manage',
+  ROLES_MANAGE: 'roles:manage',
+  LOCATIONS_READ: 'locations:read',
+  LOCATIONS_MANAGE: 'locations:manage',
+  AGENTS_READ: 'agents:read',
+  AGENTS_WRITE: 'agents:write',
+  AGENT_VERSIONS_PUBLISH: 'agent_versions:publish',
+  AGENT_VERSIONS_ROLLBACK: 'agent_versions:rollback',
+  CALLS_READ: 'calls:read',
+  CALLS_READ_TRANSCRIPT: 'calls:read_transcript',
+  CALLS_READ_RECORDING: 'calls:read_recording',
+  CALLS_MONITOR_LIVE: 'calls:monitor_live',
+  CALLS_TRANSFER: 'calls:transfer',
+  CALLS_TERMINATE: 'calls:terminate',
+  CONTACTS_READ: 'contacts:read',
+  CONTACTS_WRITE: 'contacts:write',
+  CONTACTS_EXPORT: 'contacts:export',
+  CONTACTS_DELETE: 'contacts:delete',
+  KNOWLEDGE_READ: 'knowledge:read',
+  KNOWLEDGE_WRITE: 'knowledge:write',
+  BOOKINGS_READ: 'bookings:read',
+  BOOKINGS_WRITE: 'bookings:write',
+  WAITLIST_READ: 'waitlist:read',
+  WAITLIST_WRITE: 'waitlist:write',
+  INTEGRATIONS_READ: 'integrations:read',
+  INTEGRATIONS_MANAGE: 'integrations:manage',
+  CUSTOM_TOOLS_MANAGE: 'custom_tools:manage',
+  WEBHOOKS_MANAGE: 'webhooks:manage',
+  API_KEYS_MANAGE: 'api_keys:manage',
+  ANALYTICS_READ: 'analytics:read',
+  QUALITY_READ: 'quality:read',
+  SIMULATIONS_READ: 'simulations:read',
+  SIMULATIONS_RUN: 'simulations:run',
+  PHONE_NUMBERS_READ: 'phone_numbers:read',
+  PHONE_NUMBERS_ORDER: 'phone_numbers:order',
+  PHONE_NUMBERS_MANAGE: 'phone_numbers:manage',
+  BILLING_READ: 'billing:read',
+  BILLING_MANAGE: 'billing:manage',
+  INVOICES_READ: 'invoices:read',
+  PROVISIONING_READ: 'provisioning:read',
+  SETTINGS_READ: 'settings:read',
+  SETTINGS_MANAGE: 'settings:manage',
+  RETENTION_MANAGE: 'retention:manage',
+  PRIVACY_REQUESTS_MANAGE: 'privacy_requests:manage',
+  NOTIFICATIONS_MANAGE: 'notifications:manage',
+  SECURITY_READ: 'security:read',
+  SECURITY_MANAGE: 'security:manage',
+  AUDIT_LOGS_READ: 'audit_logs:read',
+  SUPPORT_ACCESS_GRANT: 'support_access:grant',
+  SUPPORT_TICKETS_READ: 'support_tickets:read',
+  SUPPORT_TICKETS_WRITE: 'support_tickets:write',
+} as const;
+export type Permission = EnumValue<typeof Permission>;
+
+export const PlatformPermission = {
+  TENANTS_SEARCH: 'platform.tenants:search',
+  TENANTS_READ: 'platform.tenants:read',
+  TENANTS_SUSPEND: 'platform.tenants:suspend',
+  SUPPORT_SESSIONS_START: 'platform.support_sessions:start',
+  SENSITIVE_CONTENT_READ: 'platform.sensitive_content:read',
+  CALLS_TERMINATE: 'platform.calls:terminate',
+  WEBHOOKS_REPLAY: 'platform.webhooks:replay',
+  SYNC_RETRY: 'platform.sync:retry',
+  EMAIL_RESEND: 'platform.email:resend',
+  KNOWLEDGE_REINDEX: 'platform.knowledge:reindex',
+  PROVISIONING_MANAGE: 'platform.provisioning:manage',
+  REFUNDS_APPROVE: 'platform.refunds:approve',
+  FEATURE_FLAGS_MANAGE: 'platform.feature_flags:manage',
+  KILL_SWITCHES_MANAGE: 'platform.kill_switches:manage',
+  PROVIDER_ROUTING_MANAGE: 'platform.provider_routing:manage',
+  CONFIG_ROLLBACK: 'platform.config:rollback',
+  AUDIT_READ: 'platform.audit:read',
+  STAFF_MANAGE: 'platform.staff:manage',
+  TENANTS_WRITE: 'platform.tenants:write',
+  BILLING_MANAGE: 'platform.billing:manage',
+  BALANCE_MANAGE: 'platform.balance:manage',
+  USAGE_MANAGE: 'platform.usage:manage',
+  PHONE_NUMBERS_MANAGE: 'platform.phone_numbers:manage',
+  SECRETS_MANAGE: 'platform.secrets:manage',
+  TICKETS_READ: 'platform.tickets:read',
+  TICKETS_MANAGE: 'platform.tickets:manage',
+  STATS_READ: 'platform.stats:read',
+} as const;
+export type PlatformPermission = EnumValue<typeof PlatformPermission>;
+
+export const SupportGrantStatus = {
+  REQUESTED: 'REQUESTED',
+  ACTIVE: 'ACTIVE',
+  DENIED: 'DENIED',
+  EXPIRED: 'EXPIRED',
+  REVOKED: 'REVOKED',
+} as const;
+export type SupportGrantStatus = EnumValue<typeof SupportGrantStatus>;
+
+export const BalanceEntryKind = {
+  CREDIT: 'CREDIT',
+  DEBIT: 'DEBIT',
+  ADJUSTMENT: 'ADJUSTMENT',
+  REFUND: 'REFUND',
+  GOODWILL: 'GOODWILL',
+} as const;
+export type BalanceEntryKind = EnumValue<typeof BalanceEntryKind>;
+
+export const SupportTicketStatus = {
+  OPEN: 'OPEN',
+  PENDING_CUSTOMER: 'PENDING_CUSTOMER',
+  PENDING_STAFF: 'PENDING_STAFF',
+  RESOLVED: 'RESOLVED',
+  CLOSED: 'CLOSED',
+} as const;
+export type SupportTicketStatus = EnumValue<typeof SupportTicketStatus>;
+
+export const SupportTicketPriority = {
+  LOW: 'LOW',
+  NORMAL: 'NORMAL',
+  HIGH: 'HIGH',
+  URGENT: 'URGENT',
+} as const;
+export type SupportTicketPriority = EnumValue<typeof SupportTicketPriority>;
+
+export const SupportTicketCategory = {
+  BILLING: 'BILLING',
+  TECHNICAL: 'TECHNICAL',
+  PHONE_NUMBERS: 'PHONE_NUMBERS',
+  ACCOUNT: 'ACCOUNT',
+  OTHER: 'OTHER',
+} as const;
+export type SupportTicketCategory = EnumValue<typeof SupportTicketCategory>;
+
+export const SupportTicketAuthorKind = {
+  TENANT_USER: 'TENANT_USER',
+  STAFF: 'STAFF',
+  SYSTEM: 'SYSTEM',
+} as const;
+export type SupportTicketAuthorKind = EnumValue<typeof SupportTicketAuthorKind>;
+
+export const SupportTicketVisibility = {
+  PUBLIC: 'PUBLIC',
+  INTERNAL_NOTE: 'INTERNAL_NOTE',
+} as const;
+export type SupportTicketVisibility = EnumValue<typeof SupportTicketVisibility>;
+
+export const SupportAccessLevel = {
+  REDACTED: 'REDACTED',
+  SENSITIVE: 'SENSITIVE',
+} as const;
+export type SupportAccessLevel = EnumValue<typeof SupportAccessLevel>;
+
+export const AuthMode = {
+  SESSION_COOKIE: 'SESSION_COOKIE',
+  API_KEY: 'API_KEY',
+  SERVICE_JWT: 'SERVICE_JWT',
+  WEBHOOK_SIGNATURE: 'WEBHOOK_SIGNATURE',
+  WIDGET_TOKEN: 'WIDGET_TOKEN',
+} as const;
+export type AuthMode = EnumValue<typeof AuthMode>;
+
+export const ActorType = {
+  USER: 'USER',
+  API_KEY: 'API_KEY',
+  SERVICE: 'SERVICE',
+  SUPPORT_STAFF: 'SUPPORT_STAFF',
+  PROVIDER_WEBHOOK: 'PROVIDER_WEBHOOK',
+  SYSTEM: 'SYSTEM',
+} as const;
+export type ActorType = EnumValue<typeof ActorType>;
+
+export const MembershipStatus = {
+  INVITED: 'INVITED',
+  ACTIVE: 'ACTIVE',
+  SUSPENDED: 'SUSPENDED',
+  REMOVED: 'REMOVED',
+} as const;
+export type MembershipStatus = EnumValue<typeof MembershipStatus>;
+
+export const LocationStatus = {
+  ACTIVE: 'ACTIVE',
+  INACTIVE: 'INACTIVE',
+  ARCHIVED: 'ARCHIVED',
+} as const;
+export type LocationStatus = EnumValue<typeof LocationStatus>;
+
+export const ProvisioningState = {
+  ORDER_CREATED: 'ORDER_CREATED',
+  PAYMENT_PENDING: 'PAYMENT_PENDING',
+  PAYMENT_CONFIRMED: 'PAYMENT_CONFIRMED',
+  BILLING_PENDING: 'BILLING_PENDING',
+  BILLING_DOCUMENT_CREATED: 'BILLING_DOCUMENT_CREATED',
+  TENANT_PROVISIONING: 'TENANT_PROVISIONING',
+  TENANT_CREATED: 'TENANT_CREATED',
+  OPENAI_PROJECT_PROVISIONING: 'OPENAI_PROJECT_PROVISIONING',
+  OPENAI_SERVICE_ACCOUNT_PROVISIONING: 'OPENAI_SERVICE_ACCOUNT_PROVISIONING',
+  OPENAI_READY: 'OPENAI_READY',
+  PHONE_RESERVING: 'PHONE_RESERVING',
+  PHONE_ORDERING: 'PHONE_ORDERING',
+  PHONE_KYC_REQUIRED: 'PHONE_KYC_REQUIRED',
+  WAITING_FOR_CUSTOMER: 'WAITING_FOR_CUSTOMER',
+  PHONE_UNDER_REVIEW: 'PHONE_UNDER_REVIEW',
+  WAITING_FOR_PROVIDER: 'WAITING_FOR_PROVIDER',
+  PHONE_READY: 'PHONE_READY',
+  SIP_AGENT_BINDING: 'SIP_AGENT_BINDING',
+  AGENT_READY: 'AGENT_READY',
+  TEST_CALL_READY: 'TEST_CALL_READY',
+  GO_LIVE_ELIGIBLE: 'GO_LIVE_ELIGIBLE',
+  ACTIVE: 'ACTIVE',
+  MANUAL_REVIEW_REQUIRED: 'MANUAL_REVIEW_REQUIRED',
+  COMPENSATING: 'COMPENSATING',
+  COMPENSATED: 'COMPENSATED',
+  CANCELED: 'CANCELED',
+} as const;
+export type ProvisioningState = EnumValue<typeof ProvisioningState>;
+
+export const ProvisioningStep = {
+  PAYMENT: 'PAYMENT',
+  BILLING_DOCUMENT: 'BILLING_DOCUMENT',
+  TENANT: 'TENANT',
+  OPENAI_PROJECT: 'OPENAI_PROJECT',
+  OPENAI_SERVICE_ACCOUNT: 'OPENAI_SERVICE_ACCOUNT',
+  OPENAI_API_KEY: 'OPENAI_API_KEY',
+  PHONE_RESERVATION: 'PHONE_RESERVATION',
+  PHONE_ORDER: 'PHONE_ORDER',
+  PHONE_REGULATORY: 'PHONE_REGULATORY',
+  SIP_ROUTING: 'SIP_ROUTING',
+  DEFAULT_AGENT: 'DEFAULT_AGENT',
+  KNOWLEDGE_IMPORT: 'KNOWLEDGE_IMPORT',
+  TEST_CALL: 'TEST_CALL',
+  GO_LIVE: 'GO_LIVE',
+  NOTIFICATION: 'NOTIFICATION',
+} as const;
+export type ProvisioningStep = EnumValue<typeof ProvisioningStep>;
+
+export const ProvisioningStepStatus = {
+  PENDING: 'PENDING',
+  RUNNING: 'RUNNING',
+  WAITING: 'WAITING',
+  SUCCEEDED: 'SUCCEEDED',
+  RETRYING: 'RETRYING',
+  FAILED: 'FAILED',
+  SKIPPED: 'SKIPPED',
+  COMPENSATED: 'COMPENSATED',
+} as const;
+export type ProvisioningStepStatus = EnumValue<typeof ProvisioningStepStatus>;
+
+export const PhoneOrderStatus = {
+  NUMBER_SELECTED: 'NUMBER_SELECTED',
+  RESERVED: 'RESERVED',
+  ORDER_SUBMITTED: 'ORDER_SUBMITTED',
+  KYC_REQUIRED: 'KYC_REQUIRED',
+  UNDER_REVIEW: 'UNDER_REVIEW',
+  APPROVED: 'APPROVED',
+  DECLINED: 'DECLINED',
+  NO_INVENTORY: 'NO_INVENTORY',
+  FAILED: 'FAILED',
+  CANCELED: 'CANCELED',
+} as const;
+export type PhoneOrderStatus = EnumValue<typeof PhoneOrderStatus>;
+
+export const PhoneNumberStatus = {
+  PROVISIONING: 'PROVISIONING',
+  PORTING_IN: 'PORTING_IN',
+  ACTIVE: 'ACTIVE',
+  SUSPENDED: 'SUSPENDED',
+  RETENTION_HOLD: 'RETENTION_HOLD',
+  RELEASE_PENDING: 'RELEASE_PENDING',
+  RELEASED: 'RELEASED',
+} as const;
+export type PhoneNumberStatus = EnumValue<typeof PhoneNumberStatus>;
+
+export const KycRequirementStatus = {
+  NOT_REQUIRED: 'NOT_REQUIRED',
+  REQUIRED: 'REQUIRED',
+  SUBMITTED: 'SUBMITTED',
+  UNDER_REVIEW: 'UNDER_REVIEW',
+  APPROVED: 'APPROVED',
+  DECLINED: 'DECLINED',
+  EXPIRED: 'EXPIRED',
+} as const;
+export type KycRequirementStatus = EnumValue<typeof KycRequirementStatus>;
+
+export const PhoneNumberType = {
+  LOCAL: 'LOCAL',
+  MOBILE: 'MOBILE',
+  NATIONAL: 'NATIONAL',
+  TOLL_FREE: 'TOLL_FREE',
+} as const;
+export type PhoneNumberType = EnumValue<typeof PhoneNumberType>;
+
+export const ProviderId = {
+  OPENAI: 'openai',
+  TELNYX: 'telnyx',
+  TWILIO: 'twilio',
+  STRIPE: 'stripe',
+  BILLINGO: 'billingo',
+  GOOGLE: 'google',
+  MICROSOFT: 'microsoft',
+  AWS_SES: 'aws_ses',
+  SMTP: 'smtp',
+  WORKOS: 'workos',
+  CUSTOM_API: 'custom_api',
+} as const;
+export type ProviderId = EnumValue<typeof ProviderId>;
+
+export const TelephonyProvider = {
+  TELNYX: 'telnyx',
+  TWILIO: 'twilio',
+} as const;
+export type TelephonyProvider = EnumValue<typeof TelephonyProvider>;
+
+export const ProviderCapability = {
+  REALTIME_VOICE: 'realtime_voice',
+  BACKEND_REASONING: 'backend_reasoning',
+  EMBEDDINGS: 'embeddings',
+  TRANSCRIPTION: 'transcription',
+  SIP_INBOUND: 'sip_inbound',
+  SIP_OUTBOUND: 'sip_outbound',
+  CALL_TRANSFER: 'call_transfer',
+  NUMBER_INVENTORY: 'number_inventory',
+  PAYMENTS: 'payments',
+  INVOICING: 'invoicing',
+  EMAIL: 'email',
+  CALENDAR: 'calendar',
+  IDENTITY: 'identity',
+} as const;
+export type ProviderCapability = EnumValue<typeof ProviderCapability>;
+
+export const ProviderHealthStatus = {
+  HEALTHY: 'HEALTHY',
+  DEGRADED: 'DEGRADED',
+  UNAVAILABLE: 'UNAVAILABLE',
+  UNKNOWN: 'UNKNOWN',
+} as const;
+export type ProviderHealthStatus = EnumValue<typeof ProviderHealthStatus>;
+
+export const CircuitState = {
+  CLOSED: 'CLOSED',
+  OPEN: 'OPEN',
+  HALF_OPEN: 'HALF_OPEN',
+} as const;
+export type CircuitState = EnumValue<typeof CircuitState>;
+
+export const ModelTier = {
+  VOICE_FRONTEND: 'VOICE_FRONTEND',
+  ROUTINE: 'ROUTINE',
+  COMPLEX: 'COMPLEX',
+  ESCALATION: 'ESCALATION',
+  FRONTIER: 'FRONTIER',
+  TRANSCRIPTION: 'TRANSCRIPTION',
+  SPEECH_SYNTHESIS: 'SPEECH_SYNTHESIS',
+} as const;
+export type ModelTier = EnumValue<typeof ModelTier>;
+
+export const ModelId = {
+  GPT_LIVE_1: 'gpt-live-1',
+  GPT_REALTIME_2_1_MINI: 'gpt-realtime-2.1-mini',
+  GPT_REALTIME_2_1: 'gpt-realtime-2.1',
+  GPT_REALTIME_2: 'gpt-realtime-2',
+  GPT_REALTIME_1_5: 'gpt-realtime-1.5',
+  GPT_5_6_LUNA: 'gpt-5.6-luna',
+  GPT_5_6_TERRA: 'gpt-5.6-terra',
+  GPT_5_6_SOL: 'gpt-5.6-sol',
+  GPT_6_ASTRA: 'gpt-6-astra',
+  GPT_LIVE_TRANSCRIBE: 'gpt-live-transcribe',
+  GPT_4O_MINI_TTS: 'gpt-4o-mini-tts',
+} as const;
+export type ModelId = EnumValue<typeof ModelId>;
+
+export const SpecialistAgentKind = {
+  RECEPTION_ROUTER: 'RECEPTION_ROUTER',
+  BOOKING: 'BOOKING',
+  SUPPORT: 'SUPPORT',
+  SALES: 'SALES',
+  BILLING: 'BILLING',
+  HANDOFF_COMPLIANCE: 'HANDOFF_COMPLIANCE',
+} as const;
+export type SpecialistAgentKind = EnumValue<typeof SpecialistAgentKind>;
+
+export const AgentStatus = {
+  DRAFT: 'DRAFT',
+  ACTIVE: 'ACTIVE',
+  PAUSED: 'PAUSED',
+  ARCHIVED: 'ARCHIVED',
+} as const;
+export type AgentStatus = EnumValue<typeof AgentStatus>;
+
+export const AgentVersionStatus = {
+  DRAFT: 'DRAFT',
+  VALIDATING: 'VALIDATING',
+  VALIDATION_FAILED: 'VALIDATION_FAILED',
+  STAGING: 'STAGING',
+  CANARY: 'CANARY',
+  PRODUCTION: 'PRODUCTION',
+  SUPERSEDED: 'SUPERSEDED',
+  ROLLED_BACK: 'ROLLED_BACK',
+  ARCHIVED: 'ARCHIVED',
+} as const;
+export type AgentVersionStatus = EnumValue<typeof AgentVersionStatus>;
+
+export const VerticalPack = {
+  RESTAURANT: 'RESTAURANT',
+  DENTAL_CLINIC: 'DENTAL_CLINIC',
+  AUTO_SERVICE: 'AUTO_SERVICE',
+  CAR_DETAILING: 'CAR_DETAILING',
+  SALON: 'SALON',
+  HOTEL: 'HOTEL',
+  REAL_ESTATE: 'REAL_ESTATE',
+  WEBSHOP: 'WEBSHOP',
+  B2B_SUPPORT: 'B2B_SUPPORT',
+  GENERAL: 'GENERAL',
+} as const;
+export type VerticalPack = EnumValue<typeof VerticalPack>;
+
+export const VerticalSlug = {
+  RESTAURANT: 'restaurant',
+  DENTAL_CLINIC: 'dental-clinic',
+  AUTO_SERVICE: 'auto-service',
+  CAR_DETAILING: 'car-detailing',
+  SALON: 'salon',
+  HOTEL: 'hotel',
+  REAL_ESTATE: 'real-estate',
+  WEBSHOP: 'webshop',
+  B2B_SUPPORT: 'b2b-support',
+} as const;
+export type VerticalSlug = EnumValue<typeof VerticalSlug>;
+
+export const ConversationState = {
+  GREETING: 'GREETING',
+  DISCOVERY: 'DISCOVERY',
+  IDENTITY: 'IDENTITY',
+  ACTION_PREVIEW: 'ACTION_PREVIEW',
+  CONFIRMATION_GATE: 'CONFIRMATION_GATE',
+  TOOL_EXECUTION: 'TOOL_EXECUTION',
+  RESULT_CONFIRMATION: 'RESULT_CONFIRMATION',
+  FOLLOW_UP: 'FOLLOW_UP',
+  HANDOFF: 'HANDOFF',
+  SAFE_FAILURE: 'SAFE_FAILURE',
+  CLOSING: 'CLOSING',
+  END: 'END',
+} as const;
+export type ConversationState = EnumValue<typeof ConversationState>;
+
+export const CallDirection = {
+  INBOUND: 'INBOUND',
+  OUTBOUND: 'OUTBOUND',
+} as const;
+export type CallDirection = EnumValue<typeof CallDirection>;
+
+export const CallChannel = {
+  PSTN: 'PSTN',
+  WEB_VOICE: 'WEB_VOICE',
+  SIMULATION: 'SIMULATION',
+} as const;
+export type CallChannel = EnumValue<typeof CallChannel>;
+
+export const CallStatus = {
+  INITIATED: 'INITIATED',
+  QUEUED: 'QUEUED',
+  IN_PROGRESS: 'IN_PROGRESS',
+  TRANSFERRING: 'TRANSFERRING',
+  TRANSFERRED: 'TRANSFERRED',
+  COMPLETED: 'COMPLETED',
+  FAILED: 'FAILED',
+  REJECTED: 'REJECTED',
+  ABANDONED: 'ABANDONED',
+} as const;
+export type CallStatus = EnumValue<typeof CallStatus>;
+
+export const CallEndReason = {
+  CALLER_HANGUP: 'CALLER_HANGUP',
+  AGENT_HANGUP: 'AGENT_HANGUP',
+  TRANSFER_COMPLETED: 'TRANSFER_COMPLETED',
+  MAX_DURATION_REACHED: 'MAX_DURATION_REACHED',
+  SILENCE_TIMEOUT: 'SILENCE_TIMEOUT',
+  SPEND_CAP_REACHED: 'SPEND_CAP_REACHED',
+  TOOL_BUDGET_EXHAUSTED: 'TOOL_BUDGET_EXHAUSTED',
+  KILL_SWITCH: 'KILL_SWITCH',
+  OPERATOR_TERMINATED: 'OPERATOR_TERMINATED',
+  POLICY_VIOLATION: 'POLICY_VIOLATION',
+  ADMISSION_REJECTED: 'ADMISSION_REJECTED',
+  QUEUE_TIMEOUT: 'QUEUE_TIMEOUT',
+  PROVIDER_FAILURE: 'PROVIDER_FAILURE',
+  RUNTIME_FAILURE: 'RUNTIME_FAILURE',
+  ORPHAN_RECONCILED: 'ORPHAN_RECONCILED',
+} as const;
+export type CallEndReason = EnumValue<typeof CallEndReason>;
+
+export const CallOutcome = {
+  RESOLVED: 'RESOLVED',
+  INFORMATION_PROVIDED: 'INFORMATION_PROVIDED',
+  BOOKING_CREATED: 'BOOKING_CREATED',
+  BOOKING_CHANGED: 'BOOKING_CHANGED',
+  BOOKING_CANCELED: 'BOOKING_CANCELED',
+  WAITLISTED: 'WAITLISTED',
+  LEAD_CAPTURED: 'LEAD_CAPTURED',
+  CALLBACK_REQUESTED: 'CALLBACK_REQUESTED',
+  MESSAGE_TAKEN: 'MESSAGE_TAKEN',
+  TRANSFERRED_TO_HUMAN: 'TRANSFERRED_TO_HUMAN',
+  UNRESOLVED: 'UNRESOLVED',
+  ABANDONED: 'ABANDONED',
+  SPAM: 'SPAM',
+  POLICY_BLOCKED: 'POLICY_BLOCKED',
+  FAILED: 'FAILED',
+} as const;
+export type CallOutcome = EnumValue<typeof CallOutcome>;
+
+export const CallIntentCategory = {
+  BOOKING: 'BOOKING',
+  SUPPORT: 'SUPPORT',
+  SALES: 'SALES',
+  LEAD: 'LEAD',
+  BILLING: 'BILLING',
+  GENERAL_INQUIRY: 'GENERAL_INQUIRY',
+  HUMAN_REQUEST: 'HUMAN_REQUEST',
+  SPAM: 'SPAM',
+  OTHER: 'OTHER',
+} as const;
+export type CallIntentCategory = EnumValue<typeof CallIntentCategory>;
+
+export const AdmissionDecision = {
+  ADMITTED: 'ADMITTED',
+  QUEUED: 'QUEUED',
+  OVERFLOWED: 'OVERFLOWED',
+  REJECTED: 'REJECTED',
+} as const;
+export type AdmissionDecision = EnumValue<typeof AdmissionDecision>;
+
+export const AdmissionRejectReason = {
+  TENANT_CONCURRENCY_LIMIT: 'TENANT_CONCURRENCY_LIMIT',
+  LOCATION_CONCURRENCY_LIMIT: 'LOCATION_CONCURRENCY_LIMIT',
+  NUMBER_CONCURRENCY_LIMIT: 'NUMBER_CONCURRENCY_LIMIT',
+  GLOBAL_CAPACITY: 'GLOBAL_CAPACITY',
+  PROVIDER_CAPACITY: 'PROVIDER_CAPACITY',
+  CPS_LIMIT: 'CPS_LIMIT',
+  ENTITLEMENT_INACTIVE: 'ENTITLEMENT_INACTIVE',
+  TENANT_SUSPENDED: 'TENANT_SUSPENDED',
+  SPEND_CAP_REACHED: 'SPEND_CAP_REACHED',
+  FRAUD_BLOCK: 'FRAUD_BLOCK',
+  KILL_SWITCH: 'KILL_SWITCH',
+  NO_PRODUCTION_AGENT: 'NO_PRODUCTION_AGENT',
+  RUNTIME_DRAINING: 'RUNTIME_DRAINING',
+  SNAPSHOT_UNAVAILABLE: 'SNAPSHOT_UNAVAILABLE',
+} as const;
+export type AdmissionRejectReason = EnumValue<typeof AdmissionRejectReason>;
+
+export const OverloadPolicy = {
+  SHORT_QUEUE: 'SHORT_QUEUE',
+  HUMAN_OVERFLOW: 'HUMAN_OVERFLOW',
+  CALLBACK_REQUEST: 'CALLBACK_REQUEST',
+  VOICEMAIL: 'VOICEMAIL',
+  PAID_BURST: 'PAID_BURST',
+  DEGRADED_MESSAGE: 'DEGRADED_MESSAGE',
+} as const;
+export type OverloadPolicy = EnumValue<typeof OverloadPolicy>;
+
+export const RuntimeInstanceState = {
+  STARTING: 'STARTING',
+  READY: 'READY',
+  DRAINING: 'DRAINING',
+  STOPPED: 'STOPPED',
+} as const;
+export type RuntimeInstanceState = EnumValue<typeof RuntimeInstanceState>;
+
+export const TransferType = {
+  COLD: 'COLD',
+  WARM: 'WARM',
+} as const;
+export type TransferType = EnumValue<typeof TransferType>;
+
+export const TransferState = {
+  PREPARING: 'PREPARING',
+  DIALING_AGENT: 'DIALING_AGENT',
+  AGENT_ANSWERED: 'AGENT_ANSWERED',
+  WHISPER: 'WHISPER',
+  BRIDGING: 'BRIDGING',
+  COMPLETED: 'COMPLETED',
+  FAILED: 'FAILED',
+  RETURNED_TO_AI: 'RETURNED_TO_AI',
+  CANCELED: 'CANCELED',
+} as const;
+export type TransferState = EnumValue<typeof TransferState>;
+
+export const TransferTrigger = {
+  CALLER_REQUEST: 'CALLER_REQUEST',
+  DTMF: 'DTMF',
+  REPEATED_MISUNDERSTANDING: 'REPEATED_MISUNDERSTANDING',
+  TOOL_FAILURE: 'TOOL_FAILURE',
+  POLICY: 'POLICY',
+  SENSITIVE_TOPIC: 'SENSITIVE_TOPIC',
+  EMERGENCY: 'EMERGENCY',
+  OUTSIDE_BUSINESS_HOURS: 'OUTSIDE_BUSINESS_HOURS',
+  AGENT_LOOP: 'AGENT_LOOP',
+  OPERATOR: 'OPERATOR',
+} as const;
+export type TransferTrigger = EnumValue<typeof TransferTrigger>;
+
+export const TransferFailureReason = {
+  NO_ANSWER: 'NO_ANSWER',
+  BUSY: 'BUSY',
+  DECLINED_BY_AGENT: 'DECLINED_BY_AGENT',
+  DESTINATION_NOT_ALLOWED: 'DESTINATION_NOT_ALLOWED',
+  CALLER_HANGUP: 'CALLER_HANGUP',
+  PROVIDER_ERROR: 'PROVIDER_ERROR',
+  TIMEOUT: 'TIMEOUT',
+  KILL_SWITCH: 'KILL_SWITCH',
+} as const;
+export type TransferFailureReason = EnumValue<typeof TransferFailureReason>;
+
+export const ToolKind = {
+  BUILT_IN: 'BUILT_IN',
+  CONNECTOR: 'CONNECTOR',
+  CUSTOM_API: 'CUSTOM_API',
+} as const;
+export type ToolKind = EnumValue<typeof ToolKind>;
+
+export const ToolSideEffectClass = {
+  READ: 'READ',
+  WRITE: 'WRITE',
+  HIGH_RISK_WRITE: 'HIGH_RISK_WRITE',
+  EXTERNAL_COMMUNICATION: 'EXTERNAL_COMMUNICATION',
+} as const;
+export type ToolSideEffectClass = EnumValue<typeof ToolSideEffectClass>;
+
+export const ToolConfirmationPolicy = {
+  NONE: 'NONE',
+  CALLER_CONFIRMATION: 'CALLER_CONFIRMATION',
+  CALLER_CONFIRMATION_WITH_VERIFICATION: 'CALLER_CONFIRMATION_WITH_VERIFICATION',
+  HUMAN_APPROVAL: 'HUMAN_APPROVAL',
+} as const;
+export type ToolConfirmationPolicy = EnumValue<typeof ToolConfirmationPolicy>;
+
+export const ToolRunStatus = {
+  PENDING: 'PENDING',
+  AWAITING_CONFIRMATION: 'AWAITING_CONFIRMATION',
+  RUNNING: 'RUNNING',
+  SUCCEEDED: 'SUCCEEDED',
+  FAILED: 'FAILED',
+  TIMED_OUT: 'TIMED_OUT',
+  CANCELED: 'CANCELED',
+  REJECTED_BY_POLICY: 'REJECTED_BY_POLICY',
+  DEDUPLICATED: 'DEDUPLICATED',
+} as const;
+export type ToolRunStatus = EnumValue<typeof ToolRunStatus>;
+
+export const ToolAuthType = {
+  NONE: 'NONE',
+  BEARER: 'BEARER',
+  OAUTH2: 'OAUTH2',
+  HMAC: 'HMAC',
+} as const;
+export type ToolAuthType = EnumValue<typeof ToolAuthType>;
+
+export const IntegrationType = {
+  GOOGLE_CALENDAR: 'GOOGLE_CALENDAR',
+  MICROSOFT_365: 'MICROSOFT_365',
+  CUSTOM_SMTP: 'CUSTOM_SMTP',
+  CUSTOM_API: 'CUSTOM_API',
+  OUTBOUND_WEBHOOK: 'OUTBOUND_WEBHOOK',
+} as const;
+export type IntegrationType = EnumValue<typeof IntegrationType>;
+
+export const IntegrationStatus = {
+  PENDING_AUTHORIZATION: 'PENDING_AUTHORIZATION',
+  CONNECTED: 'CONNECTED',
+  DEGRADED: 'DEGRADED',
+  AUTH_EXPIRED: 'AUTH_EXPIRED',
+  REVOKED: 'REVOKED',
+  DISCONNECTED: 'DISCONNECTED',
+  ERROR: 'ERROR',
+} as const;
+export type IntegrationStatus = EnumValue<typeof IntegrationStatus>;
+
+export const ResourceType = {
+  EMPLOYEE: 'EMPLOYEE',
+  DOCTOR: 'DOCTOR',
+  ROOM: 'ROOM',
+  TABLE: 'TABLE',
+  BAY: 'BAY',
+  VEHICLE: 'VEHICLE',
+  EQUIPMENT: 'EQUIPMENT',
+  SERVICE_POINT: 'SERVICE_POINT',
+} as const;
+export type ResourceType = EnumValue<typeof ResourceType>;
+
+export const BookingStatus = {
+  PENDING_DEPOSIT: 'PENDING_DEPOSIT',
+  CONFIRMED: 'CONFIRMED',
+  CANCELED: 'CANCELED',
+  NO_SHOW: 'NO_SHOW',
+  COMPLETED: 'COMPLETED',
+} as const;
+export type BookingStatus = EnumValue<typeof BookingStatus>;
+
+export const BookingHoldStatus = {
+  ACTIVE: 'ACTIVE',
+  CONVERTED: 'CONVERTED',
+  EXPIRED: 'EXPIRED',
+  RELEASED: 'RELEASED',
+} as const;
+export type BookingHoldStatus = EnumValue<typeof BookingHoldStatus>;
+
+export const BookingSource = {
+  VOICE_AGENT: 'VOICE_AGENT',
+  DASHBOARD: 'DASHBOARD',
+  PUBLIC_API: 'PUBLIC_API',
+  WAITLIST: 'WAITLIST',
+  EXTERNAL_CALENDAR: 'EXTERNAL_CALENDAR',
+} as const;
+export type BookingSource = EnumValue<typeof BookingSource>;
+
+export const ExternalSyncStatus = {
+  NOT_REQUIRED: 'NOT_REQUIRED',
+  PENDING: 'PENDING',
+  SYNCED: 'SYNCED',
+  FAILED: 'FAILED',
+  CONFLICT: 'CONFLICT',
+} as const;
+export type ExternalSyncStatus = EnumValue<typeof ExternalSyncStatus>;
+
+export const WaitlistStatus = {
+  ACTIVE: 'ACTIVE',
+  OFFERED: 'OFFERED',
+  ACCEPTED: 'ACCEPTED',
+  DECLINED: 'DECLINED',
+  EXPIRED: 'EXPIRED',
+  FULFILLED: 'FULFILLED',
+  CANCELED: 'CANCELED',
+} as const;
+export type WaitlistStatus = EnumValue<typeof WaitlistStatus>;
+
+export const KnowledgeSourceType = {
+  FILE_PDF: 'FILE_PDF',
+  FILE_DOCX: 'FILE_DOCX',
+  FILE_TXT: 'FILE_TXT',
+  FILE_MARKDOWN: 'FILE_MARKDOWN',
+  FILE_CSV: 'FILE_CSV',
+  URL: 'URL',
+  WEBSITE: 'WEBSITE',
+  FAQ: 'FAQ',
+  MANUAL_QA: 'MANUAL_QA',
+} as const;
+export type KnowledgeSourceType = EnumValue<typeof KnowledgeSourceType>;
+
+export const KnowledgeSourceStatus = {
+  PENDING_UPLOAD: 'PENDING_UPLOAD',
+  QUEUED: 'QUEUED',
+  SCANNING: 'SCANNING',
+  PARSING: 'PARSING',
+  CHUNKING: 'CHUNKING',
+  EMBEDDING: 'EMBEDDING',
+  READY: 'READY',
+  ACTIVE: 'ACTIVE',
+  FAILED: 'FAILED',
+  QUARANTINED: 'QUARANTINED',
+  SUPERSEDED: 'SUPERSEDED',
+  ARCHIVED: 'ARCHIVED',
+  DELETING: 'DELETING',
+} as const;
+export type KnowledgeSourceStatus = EnumValue<typeof KnowledgeSourceStatus>;
+
+export const KnowledgeFreshness = {
+  FRESH: 'FRESH',
+  STALE: 'STALE',
+  EXPIRED: 'EXPIRED',
+  UNKNOWN: 'UNKNOWN',
+} as const;
+export type KnowledgeFreshness = EnumValue<typeof KnowledgeFreshness>;
+
+export const IdentityType = {
+  PHONE: 'PHONE',
+  EMAIL: 'EMAIL',
+  NAME: 'NAME',
+  EXTERNAL_ID: 'EXTERNAL_ID',
+} as const;
+export type IdentityType = EnumValue<typeof IdentityType>;
+
+export const VerificationState = {
+  OBSERVED: 'OBSERVED',
+  CALLER_PROVIDED: 'CALLER_PROVIDED',
+  INFERRED: 'INFERRED',
+  OTP_VERIFIED: 'OTP_VERIFIED',
+  EMAIL_VERIFIED: 'EMAIL_VERIFIED',
+  CRM_VERIFIED: 'CRM_VERIFIED',
+  CONNECTOR_VERIFIED: 'CONNECTOR_VERIFIED',
+  HUMAN_VERIFIED: 'HUMAN_VERIFIED',
+} as const;
+export type VerificationState = EnumValue<typeof VerificationState>;
+
+export const RecordingConsent = {
+  NOT_REQUESTED: 'NOT_REQUESTED',
+  GRANTED: 'GRANTED',
+  DENIED: 'DENIED',
+  NOT_APPLICABLE: 'NOT_APPLICABLE',
+} as const;
+export type RecordingConsent = EnumValue<typeof RecordingConsent>;
+
+export const TenantSecretKind = {
+  OPENAI_SERVICE_ACCOUNT_KEY: 'OPENAI_SERVICE_ACCOUNT_KEY',
+  OPENAI_WEBHOOK_SECRET: 'OPENAI_WEBHOOK_SECRET',
+  OAUTH_REFRESH_TOKEN: 'OAUTH_REFRESH_TOKEN',
+  OAUTH_ACCESS_TOKEN: 'OAUTH_ACCESS_TOKEN',
+  SMTP_PASSWORD: 'SMTP_PASSWORD',
+  CUSTOM_API_CREDENTIAL: 'CUSTOM_API_CREDENTIAL',
+  OUTBOUND_WEBHOOK_SIGNING_SECRET: 'OUTBOUND_WEBHOOK_SIGNING_SECRET',
+  WIDGET_SIGNING_KEY: 'WIDGET_SIGNING_KEY',
+} as const;
+export type TenantSecretKind = EnumValue<typeof TenantSecretKind>;
+
+export const IdempotencyRecordState = {
+  IN_PROGRESS: 'IN_PROGRESS',
+  COMPLETED: 'COMPLETED',
+} as const;
+export type IdempotencyRecordState = EnumValue<typeof IdempotencyRecordState>;
+
+export const NotificationType = {
+  RENEWAL_REMINDER_5D: 'RENEWAL_REMINDER_5D',
+  RENEWAL_REMINDER_3D: 'RENEWAL_REMINDER_3D',
+  RENEWAL_REMINDER_1D: 'RENEWAL_REMINDER_1D',
+  PAYMENT_SUCCEEDED: 'PAYMENT_SUCCEEDED',
+  PAYMENT_FAILED_GRACE_STARTED: 'PAYMENT_FAILED_GRACE_STARTED',
+  GRACE_PERIOD_REMINDER: 'GRACE_PERIOD_REMINDER',
+  GRACE_PERIOD_FINAL_DAY: 'GRACE_PERIOD_FINAL_DAY',
+  SERVICE_RESTRICTED: 'SERVICE_RESTRICTED',
+  SERVICE_SUSPENDED_BILLING: 'SERVICE_SUSPENDED_BILLING',
+  SERVICE_REACTIVATED: 'SERVICE_REACTIVATED',
+  PLAN_CHANGED: 'PLAN_CHANGED',
+  ADD_ON_CHANGED: 'ADD_ON_CHANGED',
+  SUBSCRIPTION_CANCELED: 'SUBSCRIPTION_CANCELED',
+  CANCELED_GRACE_ENDING: 'CANCELED_GRACE_ENDING',
+  DATA_RETENTION_STARTED: 'DATA_RETENTION_STARTED',
+  DATA_DELETION_COMPLETED: 'DATA_DELETION_COMPLETED',
+  PHONE_NUMBER_RETENTION_ENDING: 'PHONE_NUMBER_RETENTION_ENDING',
+  PHONE_NUMBER_RELEASED: 'PHONE_NUMBER_RELEASED',
+  REFUND_ISSUED: 'REFUND_ISSUED',
+  DISPUTE_OPENED: 'DISPUTE_OPENED',
+  INVOICE_DELIVERY_FAILED: 'INVOICE_DELIVERY_FAILED',
+  PROVISIONING_STARTED: 'PROVISIONING_STARTED',
+  PROVISIONING_KYC_REQUIRED: 'PROVISIONING_KYC_REQUIRED',
+  PROVISIONING_KYC_DECLINED: 'PROVISIONING_KYC_DECLINED',
+  PROVISIONING_DELAYED: 'PROVISIONING_DELAYED',
+  PHONE_NUMBER_ACTIVE: 'PHONE_NUMBER_ACTIVE',
+  TEST_CALL_READY: 'TEST_CALL_READY',
+  GO_LIVE_COMPLETED: 'GO_LIVE_COMPLETED',
+  SPEND_CAP_WARNING: 'SPEND_CAP_WARNING',
+  SPEND_CAP_REACHED: 'SPEND_CAP_REACHED',
+  CONCURRENCY_LIMIT_REACHED: 'CONCURRENCY_LIMIT_REACHED',
+  INTEGRATION_AUTH_EXPIRED: 'INTEGRATION_AUTH_EXPIRED',
+  KNOWLEDGE_SYNC_FAILED: 'KNOWLEDGE_SYNC_FAILED',
+  QUALITY_ALERT: 'QUALITY_ALERT',
+  SECURITY_MEMBER_INVITED: 'SECURITY_MEMBER_INVITED',
+  SECURITY_MEMBER_ROLE_CHANGED: 'SECURITY_MEMBER_ROLE_CHANGED',
+  SECURITY_API_KEY_CREATED: 'SECURITY_API_KEY_CREATED',
+  SECURITY_SSO_CONFIGURATION_CHANGED: 'SECURITY_SSO_CONFIGURATION_CHANGED',
+  SECURITY_SUPPORT_ACCESS_GRANTED: 'SECURITY_SUPPORT_ACCESS_GRANTED',
+  SUPPORT_REQUEST_RECEIVED: 'SUPPORT_REQUEST_RECEIVED',
+  SUPPORT_REQUEST_UPDATED: 'SUPPORT_REQUEST_UPDATED',
+  DSAR_EXPORT_READY: 'DSAR_EXPORT_READY',
+  CALLER_BOOKING_CONFIRMATION: 'CALLER_BOOKING_CONFIRMATION',
+  CALLER_BOOKING_CHANGED: 'CALLER_BOOKING_CHANGED',
+  CALLER_BOOKING_CANCELED: 'CALLER_BOOKING_CANCELED',
+  CALLER_WAITLIST_OFFER: 'CALLER_WAITLIST_OFFER',
+  TENANT_CALLBACK_REQUESTED: 'TENANT_CALLBACK_REQUESTED',
+  TENANT_MESSAGE_TAKEN: 'TENANT_MESSAGE_TAKEN',
+} as const;
+export type NotificationType = EnumValue<typeof NotificationType>;
+
+export const NotificationChannel = {
+  EMAIL: 'EMAIL',
+  SMS: 'SMS',
+  IN_APP: 'IN_APP',
+  WEBHOOK: 'WEBHOOK',
+} as const;
+export type NotificationChannel = EnumValue<typeof NotificationChannel>;
+
+export const NotificationStatus = {
+  PENDING: 'PENDING',
+  SCHEDULED: 'SCHEDULED',
+  SENDING: 'SENDING',
+  SENT: 'SENT',
+  DELIVERED: 'DELIVERED',
+  BOUNCED: 'BOUNCED',
+  COMPLAINED: 'COMPLAINED',
+  FAILED: 'FAILED',
+  SUPPRESSED: 'SUPPRESSED',
+  CANCELED: 'CANCELED',
+} as const;
+export type NotificationStatus = EnumValue<typeof NotificationStatus>;
+
+export const RetentionClass = {
+  RAW_AUDIO: 'RAW_AUDIO',
+  TRANSCRIPT: 'TRANSCRIPT',
+  CALL_EVENTS: 'CALL_EVENTS',
+  TOOL_PAYLOAD: 'TOOL_PAYLOAD',
+  CALLER_PROFILE: 'CALLER_PROFILE',
+  ANALYTICS: 'ANALYTICS',
+  RAW_PROVIDER_PAYLOAD: 'RAW_PROVIDER_PAYLOAD',
+  KNOWLEDGE_DOCUMENT: 'KNOWLEDGE_DOCUMENT',
+  KYC_REFERENCE: 'KYC_REFERENCE',
+  CONSENT: 'CONSENT',
+  AUDIT: 'AUDIT',
+  BILLING: 'BILLING',
+  DISPUTE_EVIDENCE: 'DISPUTE_EVIDENCE',
+  OPERATIONAL_LOG: 'OPERATIONAL_LOG',
+  EXPORT_ARTIFACT: 'EXPORT_ARTIFACT',
+} as const;
+export type RetentionClass = EnumValue<typeof RetentionClass>;
+
+export const DsarRequestType = {
+  EXPORT: 'EXPORT',
+  DELETE: 'DELETE',
+  RECTIFY: 'RECTIFY',
+  RESTRICT: 'RESTRICT',
+} as const;
+export type DsarRequestType = EnumValue<typeof DsarRequestType>;
+
+export const DsarRequestStatus = {
+  RECEIVED: 'RECEIVED',
+  VERIFYING: 'VERIFYING',
+  IN_PROGRESS: 'IN_PROGRESS',
+  ON_LEGAL_HOLD: 'ON_LEGAL_HOLD',
+  COMPLETED: 'COMPLETED',
+  REJECTED: 'REJECTED',
+} as const;
+export type DsarRequestStatus = EnumValue<typeof DsarRequestStatus>;
+
+export const FeatureFlagScope = {
+  GLOBAL: 'GLOBAL',
+  REGION: 'REGION',
+  TENANT: 'TENANT',
+  LOCATION: 'LOCATION',
+  AGENT: 'AGENT',
+  TOOL: 'TOOL',
+} as const;
+export type FeatureFlagScope = EnumValue<typeof FeatureFlagScope>;
+
+export const FeatureFlagKey = {
+  AGENT_CANARY_ROLLOUT: 'feature.agent.canary_rollout',
+  ROUTING_COMPLEX_ESCALATION: 'feature.routing.complex_escalation',
+  ROUTING_PREMIUM_REASONING: 'feature.routing.premium_reasoning',
+  ROUTING_FRONTIER_REASONING: 'feature.routing.frontier_reasoning',
+  CALLER_MEMORY: 'feature.caller_memory',
+  WEB_VOICE_WIDGET: 'feature.web_voice_widget',
+  WAITLIST: 'feature.waitlist',
+  WARM_TRANSFER: 'feature.warm_transfer',
+  OUTBOUND_CALLS: 'feature.outbound_calls',
+  CALL_RECORDING: 'feature.call_recording',
+  KNOWLEDGE_WEBSITE_SYNC: 'feature.knowledge.website_sync',
+  ONBOARDING_WEBSITE_IMPORT: 'feature.onboarding.website_import',
+  SIMULATION_LAB: 'feature.simulation_lab',
+  QUALITY_AUTO_ROLLBACK_RECOMMENDATION: 'feature.quality.auto_rollback_recommendation',
+  PCI_PAYMENT_MODE: 'feature.pci_payment_mode',
+  ANALYST_TRANSCRIPT_ACCESS: 'feature.analyst_transcript_access',
+} as const;
+export type FeatureFlagKey = EnumValue<typeof FeatureFlagKey>;
+
+export const KillSwitchKey = {
+  GLOBAL_NEW_CALLS: 'kill.global_new_calls',
+  TENANT_TRAFFIC: 'kill.tenant_traffic',
+  OUTBOUND_CALLS: 'kill.outbound_calls',
+  CALL_TRANSFER: 'kill.call_transfer',
+  PROVIDER: 'kill.provider',
+  MODEL: 'kill.model',
+  TOOL: 'kill.tool',
+  RECORDING: 'kill.recording',
+  PAYMENT: 'kill.payment',
+  AGENT_PUBLISH: 'kill.agent_publish',
+} as const;
+export type KillSwitchKey = EnumValue<typeof KillSwitchKey>;
+
+export const UsageMetric = {
+  CONNECTED_VOICE_SECONDS: 'connected_voice_seconds',
+  BILLABLE_VOICE_SECONDS: 'billable_voice_seconds',
+  LIVE_VOICE_COST: 'live_voice_cost',
+  BACKEND_INPUT_TOKENS: 'backend_input_tokens',
+  BACKEND_OUTPUT_TOKENS: 'backend_output_tokens',
+  CARRIER_SECONDS: 'carrier_seconds',
+  RECORDING_SECONDS: 'recording_seconds',
+  EMAIL_COUNT: 'email_count',
+  TOOL_EXTERNAL_COST: 'tool_external_cost',
+  SIMULATION_SECONDS: 'simulation_seconds',
+} as const;
+export type UsageMetric = EnumValue<typeof UsageMetric>;
+
+export const UsageUnit = {
+  SECONDS: 'SECONDS',
+  TOKENS: 'TOKENS',
+  COUNT: 'COUNT',
+  USD_MICROS: 'USD_MICROS',
+} as const;
+export type UsageUnit = EnumValue<typeof UsageUnit>;
+
+export const TrustTier = {
+  NEW: 'NEW',
+  ESTABLISHED: 'ESTABLISHED',
+  TRUSTED: 'TRUSTED',
+  RESTRICTED: 'RESTRICTED',
+} as const;
+export type TrustTier = EnumValue<typeof TrustTier>;
+
+export const FraudSignalType = {
+  VELOCITY_IP: 'VELOCITY_IP',
+  VELOCITY_ACCOUNT: 'VELOCITY_ACCOUNT',
+  VELOCITY_CARD: 'VELOCITY_CARD',
+  VELOCITY_DEVICE: 'VELOCITY_DEVICE',
+  VELOCITY_PHONE: 'VELOCITY_PHONE',
+  RADAR_ELEVATED_RISK: 'RADAR_ELEVATED_RISK',
+  THREE_DS_FAILED: 'THREE_DS_FAILED',
+  BUSINESS_VERIFICATION_FAILED: 'BUSINESS_VERIFICATION_FAILED',
+  PREMIUM_DESTINATION: 'PREMIUM_DESTINATION',
+  TRANSFER_LOOP: 'TRANSFER_LOOP',
+  COST_ANOMALY: 'COST_ANOMALY',
+} as const;
+export type FraudSignalType = EnumValue<typeof FraudSignalType>;
+
+export const FraudReviewStatus = {
+  CLEAR: 'CLEAR',
+  REVIEW_REQUIRED: 'REVIEW_REQUIRED',
+  BLOCKED: 'BLOCKED',
+} as const;
+export type FraudReviewStatus = EnumValue<typeof FraudReviewStatus>;
+
+export const DisputeStatus = {
+  WARNING_NEEDS_RESPONSE: 'WARNING_NEEDS_RESPONSE',
+  WARNING_UNDER_REVIEW: 'WARNING_UNDER_REVIEW',
+  WARNING_CLOSED: 'WARNING_CLOSED',
+  NEEDS_RESPONSE: 'NEEDS_RESPONSE',
+  UNDER_REVIEW: 'UNDER_REVIEW',
+  WON: 'WON',
+  LOST: 'LOST',
+  PREVENTED: 'PREVENTED',
+} as const;
+export type DisputeStatus = EnumValue<typeof DisputeStatus>;
+
+export const SimulationScenarioClass = {
+  HAPPY_PATH: 'HAPPY_PATH',
+  CONVERSATION_STRESS: 'CONVERSATION_STRESS',
+  AUDIO_STRESS: 'AUDIO_STRESS',
+  TOOL_FAILURE: 'TOOL_FAILURE',
+  SECURITY: 'SECURITY',
+  CONCURRENCY: 'CONCURRENCY',
+} as const;
+export type SimulationScenarioClass = EnumValue<typeof SimulationScenarioClass>;
+
+export const SimulationRunStatus = {
+  QUEUED: 'QUEUED',
+  RUNNING: 'RUNNING',
+  PASSED: 'PASSED',
+  FAILED: 'FAILED',
+  ERRORED: 'ERRORED',
+  CANCELED: 'CANCELED',
+} as const;
+export type SimulationRunStatus = EnumValue<typeof SimulationRunStatus>;
+
+export const QualityFlag = {
+  LOOP_DETECTED: 'LOOP_DETECTED',
+  REPEATED_QUESTION: 'REPEATED_QUESTION',
+  WRONG_LANGUAGE: 'WRONG_LANGUAGE',
+  UNSUPPORTED_ANSWER: 'UNSUPPORTED_ANSWER',
+  KNOWLEDGE_GAP: 'KNOWLEDGE_GAP',
+  LONG_RESPONSE: 'LONG_RESPONSE',
+  EXCESSIVE_FILLER: 'EXCESSIVE_FILLER',
+  EXCESSIVE_CLARIFICATION: 'EXCESSIVE_CLARIFICATION',
+  DEAD_AIR: 'DEAD_AIR',
+  INTERRUPTION_MISHANDLED: 'INTERRUPTION_MISHANDLED',
+  TOOL_FAILURE: 'TOOL_FAILURE',
+  LATENCY_SPIKE: 'LATENCY_SPIKE',
+  ABANDONMENT: 'ABANDONMENT',
+  POLICY_BREACH: 'POLICY_BREACH',
+} as const;
+export type QualityFlag = EnumValue<typeof QualityFlag>;
+
+export const EventType = {
+  TENANT_CREATED: 'tenant.created',
+  TENANT_STATUS_CHANGED: 'tenant.status_changed',
+  CHECKOUT_ORDER_PAID: 'checkout.order_paid',
+  SUBSCRIPTION_UPDATED: 'subscription.updated',
+  ENTITLEMENT_SNAPSHOT_CREATED: 'entitlement.snapshot_created',
+  BILLING_DOCUMENT_CREATED: 'billing.document_created',
+  PROVISIONING_STATE_CHANGED: 'provisioning.state_changed',
+  PHONE_NUMBER_STATUS_CHANGED: 'phone_number.status_changed',
+  AGENT_VERSION_PUBLISHED: 'agent_version.published',
+  AGENT_VERSION_ROLLED_BACK: 'agent_version.rolled_back',
+  FEATURE_FLAG_CHANGED: 'feature_flag.changed',
+  KILL_SWITCH_CHANGED: 'kill_switch.changed',
+  CALL_STARTED: 'call.started',
+  CALL_ADMISSION_DECIDED: 'call.admission_decided',
+  CALL_CONVERSATION_STATE_CHANGED: 'call.conversation_state_changed',
+  CALL_LANGUAGE_CHANGED: 'call.language_changed',
+  CALL_DISCLOSURE_DELIVERED: 'call.disclosure_delivered',
+  CALL_TOOL_REQUESTED: 'call.tool_requested',
+  CALL_TOOL_COMPLETED: 'call.tool_completed',
+  CALL_TRANSFER_STATE_CHANGED: 'call.transfer_state_changed',
+  CALL_ENDED: 'call.ended',
+  USAGE_RECORDED: 'usage.recorded',
+  PROVIDER_COST_RECORDED: 'provider_cost.recorded',
+  KNOWLEDGE_INGESTION_REQUESTED: 'knowledge.ingestion_requested',
+  KNOWLEDGE_INGESTION_COMPLETED: 'knowledge.ingestion_completed',
+  KNOWLEDGE_INGESTION_FAILED: 'knowledge.ingestion_failed',
+  KNOWLEDGE_SOURCE_ACTIVATED: 'knowledge.source_activated',
+  BOOKING_CREATED: 'booking.created',
+  BOOKING_CHANGED: 'booking.changed',
+  BOOKING_CANCELED: 'booking.canceled',
+  WAITLIST_SLOT_RELEASED: 'waitlist.slot_released',
+  INTEGRATION_AUTH_EXPIRED: 'integration.auth_expired',
+  QUALITY_SCORE_REQUESTED: 'quality.score_requested',
+  QUALITY_SCORED: 'quality.scored',
+  SIMULATION_RUN_REQUESTED: 'simulation.run_requested',
+  SIMULATION_RUN_COMPLETED: 'simulation.run_completed',
+  NOTIFICATION_REQUESTED: 'notification.requested',
+  PRIVACY_REQUEST_CREATED: 'privacy.request_created',
+  CONTACT_MERGED: 'contact.merged',
+  PROVIDER_HEALTH_CHANGED: 'provider_health.changed',
+  RUNTIME_INSTANCE_STATE_CHANGED: 'runtime.instance_state_changed',
+} as const;
+export type EventType = EnumValue<typeof EventType>;
+
+export const ApiErrorCode = {
+  VALIDATION_FAILED: 'VALIDATION_FAILED',
+  MALFORMED_REQUEST: 'MALFORMED_REQUEST',
+  IDEMPOTENCY_KEY_REQUIRED: 'IDEMPOTENCY_KEY_REQUIRED',
+  OAUTH_STATE_INVALID: 'OAUTH_STATE_INVALID',
+  UNAUTHENTICATED: 'UNAUTHENTICATED',
+  SESSION_EXPIRED: 'SESSION_EXPIRED',
+  INVALID_CREDENTIALS: 'INVALID_CREDENTIALS',
+  ACCOUNT_LOCKED: 'ACCOUNT_LOCKED',
+  API_KEY_INVALID: 'API_KEY_INVALID',
+  SERVICE_TOKEN_INVALID: 'SERVICE_TOKEN_INVALID',
+  WEBHOOK_SIGNATURE_INVALID: 'WEBHOOK_SIGNATURE_INVALID',
+  WEBHOOK_TIMESTAMP_OUT_OF_TOLERANCE: 'WEBHOOK_TIMESTAMP_OUT_OF_TOLERANCE',
+  PAYMENT_REQUIRED: 'PAYMENT_REQUIRED',
+  FORBIDDEN: 'FORBIDDEN',
+  CSRF_TOKEN_INVALID: 'CSRF_TOKEN_INVALID',
+  SERVICE_SCOPE_MISSING: 'SERVICE_SCOPE_MISSING',
+  SUPPORT_GRANT_REQUIRED: 'SUPPORT_GRANT_REQUIRED',
+  STEP_UP_REQUIRED: 'STEP_UP_REQUIRED',
+  TENANT_SUSPENDED: 'TENANT_SUSPENDED',
+  ENTITLEMENT_REQUIRED: 'ENTITLEMENT_REQUIRED',
+  PLAN_LIMIT_EXCEEDED: 'PLAN_LIMIT_EXCEEDED',
+  SPEND_CAP_REACHED: 'SPEND_CAP_REACHED',
+  APPROVAL_REQUIRED: 'APPROVAL_REQUIRED',
+  FRAUD_REVIEW_REQUIRED: 'FRAUD_REVIEW_REQUIRED',
+  TOOL_NOT_ALLOWED: 'TOOL_NOT_ALLOWED',
+  TRANSFER_DESTINATION_NOT_ALLOWED: 'TRANSFER_DESTINATION_NOT_ALLOWED',
+  NOT_FOUND: 'NOT_FOUND',
+  METHOD_NOT_ALLOWED: 'METHOD_NOT_ALLOWED',
+  CONFLICT: 'CONFLICT',
+  IDEMPOTENCY_KEY_IN_PROGRESS: 'IDEMPOTENCY_KEY_IN_PROGRESS',
+  INVALID_STATE_TRANSITION: 'INVALID_STATE_TRANSITION',
+  BOOKING_SLOT_UNAVAILABLE: 'BOOKING_SLOT_UNAVAILABLE',
+  BOOKING_HOLD_EXPIRED: 'BOOKING_HOLD_EXPIRED',
+  PHONE_NUMBER_UNAVAILABLE: 'PHONE_NUMBER_UNAVAILABLE',
+  KYC_REQUIRED: 'KYC_REQUIRED',
+  SIMULATION_GATE_FAILED: 'SIMULATION_GATE_FAILED',
+  CONFIRMATION_REQUIRED: 'CONFIRMATION_REQUIRED',
+  INTEGRATION_AUTH_EXPIRED: 'INTEGRATION_AUTH_EXPIRED',
+  RETENTION_LEGAL_HOLD: 'RETENTION_LEGAL_HOLD',
+  VERSION_CONFLICT: 'VERSION_CONFLICT',
+  PAYLOAD_TOO_LARGE: 'PAYLOAD_TOO_LARGE',
+  UNSUPPORTED_MEDIA_TYPE: 'UNSUPPORTED_MEDIA_TYPE',
+  IDEMPOTENCY_KEY_REUSED: 'IDEMPOTENCY_KEY_REUSED',
+  EMAIL_ALREADY_REGISTERED: 'EMAIL_ALREADY_REGISTERED',
+  WEAK_PASSWORD: 'WEAK_PASSWORD',
+  TURNSTILE_VERIFICATION_FAILED: 'TURNSTILE_VERIFICATION_FAILED',
+  BILLING_PROFILE_INCOMPLETE: 'BILLING_PROFILE_INCOMPLETE',
+  VAT_ID_INVALID: 'VAT_ID_INVALID',
+  PRICE_BOOK_UNAVAILABLE: 'PRICE_BOOK_UNAVAILABLE',
+  SSRF_BLOCKED: 'SSRF_BLOCKED',
+  TOOL_SCHEMA_INVALID: 'TOOL_SCHEMA_INVALID',
+  SMTP_VERIFICATION_FAILED: 'SMTP_VERIFICATION_FAILED',
+  GOOGLE_ACCOUNT_HAS_PASSWORD: 'GOOGLE_ACCOUNT_HAS_PASSWORD',
+  PRECONDITION_REQUIRED: 'PRECONDITION_REQUIRED',
+  RATE_LIMITED: 'RATE_LIMITED',
+  CONCURRENCY_LIMIT_REACHED: 'CONCURRENCY_LIMIT_REACHED',
+  TOOL_BUDGET_EXCEEDED: 'TOOL_BUDGET_EXCEEDED',
+  INTERNAL_ERROR: 'INTERNAL_ERROR',
+  PROVIDER_ERROR: 'PROVIDER_ERROR',
+  PROVIDER_UNAVAILABLE: 'PROVIDER_UNAVAILABLE',
+  SERVICE_UNAVAILABLE: 'SERVICE_UNAVAILABLE',
+  KILL_SWITCH_ACTIVE: 'KILL_SWITCH_ACTIVE',
+  UPSTREAM_TIMEOUT: 'UPSTREAM_TIMEOUT',
+} as const;
+export type ApiErrorCode = EnumValue<typeof ApiErrorCode>;

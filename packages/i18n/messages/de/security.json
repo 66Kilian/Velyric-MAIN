@@ -1,0 +1,376 @@
+{
+  "title": "Sicherheit",
+  "description": "Teamzugriff, Rollen, API-Schlüssel und das manipulationssichere Audit-Log.",
+  "tabs": {
+    "label": "Sicherheitsbereiche",
+    "members": "Mitglieder",
+    "roles": "Rollen",
+    "apiKeys": "API-Schlüssel",
+    "auditLog": "Audit-Log"
+  },
+  "members": {
+    "invite": "Mitglied einladen",
+    "inviteTitle": "Teammitglied einladen",
+    "inviteDescription": "Die Person erhält eine E-Mail-Einladung, die nach 7 Tagen abläuft.",
+    "invited": "Einladung an {email} gesendet",
+    "email": "E-Mail-Adresse",
+    "role": "Rolle",
+    "roleHints": {
+      "OWNER": "Volle Kontrolle inklusive Abrechnung, Mitgliedern und Löschung des Workspace.",
+      "ADMIN": "Verwaltet Agenten, Integrationen, Einstellungen und Sicherheit, aber nicht die Inhaberschaft.",
+      "OPERATOR": "Überwacht und steuert Anrufe, Kontakte und Buchungen.",
+      "ANALYST": "Lesezugriff auf Anrufe, Analysen und Qualitätsberichte.",
+      "DEVELOPER": "Verwaltet Integrationen, eigene Tools, Webhooks und API-Schlüssel.",
+      "BILLING": "Verwaltet Abonnement, Rechnungen und Zahlungsdaten.",
+      "VIEWER": "Lesezugriff auf das Dashboard."
+    },
+    "sendInvite": "Einladung senden",
+    "locationScope": "Standortzugriff",
+    "locationScopeHint": "Leer lassen, um Zugriff auf alle Standorte zu gewähren.",
+    "changeRole": "Rolle ändern",
+    "changeRoleTitle": "Zugriff für {name} ändern",
+    "saveRole": "Zugriff speichern",
+    "roleChanged": "Zugriff aktualisiert",
+    "suspend": "Sperren",
+    "suspended": "Mitglied gesperrt",
+    "reactivate": "Reaktivieren",
+    "reactivated": "Mitglied reaktiviert",
+    "revokeInvite": "Einladung widerrufen",
+    "revokeInviteTitle": "Einladung für {name} widerrufen?",
+    "remove": "Entfernen",
+    "removeTitle": "{name} aus dem Workspace entfernen?",
+    "removeDescription": "Sitzungen und Zugriff enden sofort. Dies wird im Audit-Log gespeichert.",
+    "removed": "Mitglied entfernt",
+    "member": "Mitglied",
+    "status": "Status",
+    "joined": "Hinzugefügt",
+    "actions": "Aktionen",
+    "you": "Du",
+    "statuses": {
+      "INVITED": "Eingeladen",
+      "ACTIVE": "Aktiv",
+      "SUSPENDED": "Gesperrt",
+      "REMOVED": "Entfernt"
+    },
+    "expires": "Läuft ab am {date}",
+    "allLocations": "Alle Standorte"
+  },
+  "apiKeys": {
+    "description": "API-Schlüssel authentifizieren Server-zu-Server-Anfragen. Vergib nur die Berechtigungen, die eine Integration braucht.",
+    "create": "Neuer API-Schlüssel",
+    "createTitle": "API-Schlüssel erstellen",
+    "createDescription": "Schlüssel können keine Mitglieder, Abrechnung, Sicherheit oder andere API-Schlüssel verwalten.",
+    "secretTitle": "API-Schlüssel kopieren",
+    "name": "Name",
+    "expiry": "Gültig für",
+    "days": "{days} Tage",
+    "scopes": "Berechtigungen",
+    "createKey": "Schlüssel erstellen",
+    "secretWarning": "Der Schlüssel wird nur jetzt angezeigt. Speichere ihn sofort in einem Secret-Manager.",
+    "copySecret": "API-Schlüssel kopieren",
+    "done": "Ich habe den Schlüssel gespeichert",
+    "revoke": "Widerrufen",
+    "revokeTitle": "{name} widerrufen?",
+    "revokeDescription": "Anfragen mit diesem Schlüssel werden sofort abgelehnt.",
+    "revoked": "API-Schlüssel widerrufen",
+    "empty": "Noch keine API-Schlüssel",
+    "prefix": "Schlüsselpräfix",
+    "status": "Status",
+    "lastUsed": "Zuletzt verwendet",
+    "expires": "Läuft ab",
+    "scopeCount": "{count, plural, one {# Berechtigung} other {# Berechtigungen}}",
+    "statuses": {
+      "ACTIVE": "Aktiv",
+      "EXPIRED": "Abgelaufen",
+      "REVOKED": "Widerrufen"
+    }
+  },
+  "audit": {
+    "filters": "Audit-Log-Filter",
+    "action": "Aktion",
+    "actor": "Ausgeführt von",
+    "anyActor": "Alle",
+    "actorTypes": {
+      "USER": "Teammitglied",
+      "API_KEY": "API-Schlüssel",
+      "SERVICE": "Velyric-Dienst",
+      "SUPPORT_STAFF": "Velyric-Support",
+      "PROVIDER_WEBHOOK": "Anbieter-Webhook",
+      "SYSTEM": "System"
+    },
+    "from": "Von",
+    "to": "Bis",
+    "empty": "Keine Audit-Ereignisse entsprechen diesen Filtern.",
+    "object": "Betroffenes Element",
+    "ip": "IP-Adresse",
+    "userAgent": "User-Agent",
+    "trace": "Trace-ID",
+    "supportGrant": "Support-Zugriffsfreigabe",
+    "metadata": "Details",
+    "actions": {
+      "agent": {
+        "created": "Agent erstellt",
+        "updated": "Agent geändert",
+        "web_test_session_started": "Browser-Testanruf gestartet"
+      },
+      "agent_version": {
+        "created": "Neue Agent-Einstellungen gespeichert",
+        "published": "Agent-Einstellungen veröffentlicht",
+        "rolled_back": "Auf frühere Agent-Einstellungen zurückgesetzt"
+      },
+      "api_key": {
+        "created": "API-Schlüssel erstellt",
+        "revoked": "API-Schlüssel widerrufen"
+      },
+      "availability_exception": {
+        "created": "Sonderöffnungszeit oder freier Tag hinzugefügt",
+        "deleted": "Sonderöffnungszeit oder freier Tag entfernt"
+      },
+      "billing_profile": {
+        "created": "Rechnungsdaten angegeben",
+        "updated": "Rechnungsdaten geändert"
+      },
+      "booking": {
+        "canceled": "Buchung storniert"
+      },
+      "call": {
+        "terminate_requested": "Beenden des Anrufs angefordert",
+        "transfer_requested": "Weiterleitung des Anrufs angefordert"
+      },
+      "checkout": {
+        "started": "Abo-Kauf gestartet"
+      },
+      "contact": {
+        "erasure_requested": "Löschung der Kontaktdaten angefordert",
+        "exported": "Kontaktdaten exportiert",
+        "identity_added": "Kontaktangabe hinzugefügt",
+        "identity_removed": "Kontaktangabe entfernt",
+        "merged": "Kontakte zusammengeführt",
+        "updated": "Kontakt geändert"
+      },
+      "custom_tool": {
+        "created": "Eigenes API-Werkzeug erstellt",
+        "credential_rotated": "Schlüssel des API-Werkzeugs ersetzt",
+        "disabled": "Eigenes API-Werkzeug deaktiviert",
+        "updated": "Eigenes API-Werkzeug geändert"
+      },
+      "integration": {
+        "authorization_failed": "Verbindung der Integration fehlgeschlagen",
+        "authorization_started": "Verbindung der Integration gestartet",
+        "connected": "Integration verbunden",
+        "disconnected": "Integration getrennt"
+      },
+      "integrations": {
+        "smtp": {
+          "disconnect": "E-Mail-System getrennt",
+          "test_sent": "Test-E-Mail über das E-Mail-System gesendet",
+          "upsert": "E-Mail-System eingerichtet"
+        }
+      },
+      "knowledge_source": {
+        "archived": "Wissensquelle archiviert",
+        "created": "Wissensquelle hinzugefügt",
+        "entries_replaced": "Fragen und Antworten aktualisiert",
+        "sync_requested": "Aktualisierung der Wissensquelle angefordert",
+        "updated": "Wissensquelle geändert",
+        "upload_requested": "Dokument-Upload gestartet"
+      },
+      "legal_hold": {
+        "created": "Rechtliche Sperre erstellt",
+        "released": "Rechtliche Sperre aufgehoben"
+      },
+      "location": {
+        "auto_updated_from_source": "Standortdaten anhand der Website aktualisiert",
+        "created": "Standort erstellt",
+        "made_primary": "Standort als Hauptstandort festgelegt",
+        "updated": "Standort geändert"
+      },
+      "member": {
+        "invitation_accepted": "Einladung angenommen",
+        "invited": "Teammitglied eingeladen",
+        "removed": "Teammitglied entfernt",
+        "updated": "Rolle des Teammitglieds geändert"
+      },
+      "messaging": {
+        "logo_removed": "E-Mail-Logo entfernt",
+        "logo_updated": "E-Mail-Logo hochgeladen",
+        "settings_updated": "SMS- oder E-Mail-Darstellung geändert",
+        "template_reset": "Gast-E-Mail auf Standardtext zurückgesetzt",
+        "template_updated": "Text der Gast-E-Mail geändert"
+      },
+      "notification_preferences": {
+        "updated": "Benachrichtigungseinstellungen geändert"
+      },
+      "outbound_webhook": {
+        "created": "Webhook erstellt",
+        "deleted": "Webhook gelöscht",
+        "delivery_retried": "Webhook-Zustellung wiederholt",
+        "secret_rotated": "Signaturschlüssel des Webhooks ersetzt",
+        "test_sent": "Test-Webhook gesendet",
+        "updated": "Webhook geändert"
+      },
+      "phone_number": {
+        "agent_bound": "Telefonnummer einem Agenten zugewiesen",
+        "agent_unbound": "Telefonnummer vom Agenten getrennt",
+        "updated": "Telefonnummer geändert"
+      },
+      "phone_order": {
+        "kyc_submitted": "Angaben für die Rufnummernbestellung eingereicht"
+      },
+      "privacy_request": {
+        "completed": "Datenschutzanfrage abgeschlossen",
+        "created": "Datenschutzanfrage erfasst",
+        "erasure_completed": "Datenschutzlöschung durchgeführt",
+        "rejected": "Datenschutzanfrage abgelehnt",
+        "verified": "Identität der Datenschutzanfrage bestätigt"
+      },
+      "provisioning": {
+        "cancel_requested": "Abbruch der Kontoeinrichtung angefordert",
+        "retry_requested": "Wiederholung der Kontoeinrichtung angefordert"
+      },
+      "resource": {
+        "availability_rules_replaced": "Zeitplan eines Tisches oder Mitarbeiters geändert",
+        "created": "Tisch oder Mitarbeiter hinzugefügt",
+        "updated": "Tisch oder Mitarbeiter geändert"
+      },
+      "retention_policy": {
+        "reset": "Aufbewahrungsregel auf Standard zurückgesetzt",
+        "updated": "Aufbewahrungsregel geändert"
+      },
+      "service": {
+        "created": "Leistung erstellt",
+        "updated": "Leistung geändert"
+      },
+      "simulation_run": {
+        "canceled": "Testlauf abgebrochen",
+        "requested": "Testlauf gestartet"
+      },
+      "simulation_scenario": {
+        "created": "Testszenario erstellt",
+        "updated": "Testszenario geändert"
+      },
+      "simulation_suite": {
+        "created": "Testpaket erstellt",
+        "updated": "Testpaket geändert"
+      },
+      "tenant": {
+        "created": "Arbeitsbereich erstellt",
+        "updated": "Arbeitsbereichsdaten geändert"
+      },
+      "waitlist_entry": {
+        "created": "Gast auf die Warteliste gesetzt",
+        "updated": "Wartelisteneintrag geändert"
+      }
+    },
+    "objectTypes": {
+      "agent": "Agent",
+      "agent_version": "Agent-Einstellungen",
+      "api_key": "API-Schlüssel",
+      "availability_exception": "Sonderöffnungszeit",
+      "billing_profile": "Rechnungsdaten",
+      "booking": "Buchung",
+      "call": "Anruf",
+      "caller_profile": "Kontakt",
+      "checkout_order": "Bestellung",
+      "dsar_request": "Datenschutzanfrage",
+      "integration": "Integration",
+      "knowledge_source": "Wissensquelle",
+      "legal_hold": "Rechtliche Sperre",
+      "location": "Standort",
+      "membership": "Teammitglied",
+      "outbound_webhook": "Webhook",
+      "phone_number": "Telefonnummer",
+      "phone_order": "Rufnummernbestellung",
+      "provisioning_workflow": "Kontoeinrichtung",
+      "resource": "Tisch oder Mitarbeiter",
+      "retention_policy": "Aufbewahrungsregel",
+      "service": "Leistung",
+      "simulation_run": "Testlauf",
+      "simulation_scenario": "Testszenario",
+      "simulation_suite": "Testpaket",
+      "tenant": "Arbeitsbereich",
+      "tool_definition": "Eigenes API-Werkzeug",
+      "waitlist_entry": "Wartelisteneintrag",
+      "webhook_delivery": "Webhook-Zustellung"
+    },
+    "categories": {
+      "agents": "Agent und Anrufe",
+      "bookings": "Buchungen und Standorte",
+      "knowledge": "Wissen",
+      "integrations": "Integrationen",
+      "messaging": "Benachrichtigungen und E-Mails",
+      "team": "Team und API-Schlüssel",
+      "privacy": "Kontakte und Datenschutz",
+      "billing": "Abo und Telefonnummern",
+      "webhooks": "Webhooks",
+      "simulations": "Tests",
+      "workspace": "Arbeitsbereich"
+    },
+    "category": "Ereignistyp",
+    "anyCategory": "Alle Ereignisse",
+    "objectId": "Element-ID",
+    "technical": "Technische Details",
+    "eventCode": "Ereigniscode",
+    "unknownPerson": "Unbekanntes Teammitglied",
+    "automatic": "Velyric (automatisch)"
+  },
+  "roles": {
+    "description": "Rollen sind feste Berechtigungspakete. Operatoren und Betrachter können zusätzlich auf bestimmte Standorte beschränkt werden.",
+    "caption": "Berechtigungen je Rolle",
+    "permission": "Berechtigung",
+    "granted": "Erteilt",
+    "notGranted": "Nicht erteilt"
+  },
+  "permissions": {
+    "resources": {
+      "workspace": "Workspace",
+      "members": "Mitglieder",
+      "roles": "Rollen",
+      "locations": "Standorte",
+      "agents": "Agenten",
+      "agent_versions": "Agentenversionen",
+      "calls": "Anrufe",
+      "contacts": "Kontakte",
+      "knowledge": "Wissen",
+      "bookings": "Buchungen",
+      "waitlist": "Warteliste",
+      "integrations": "Integrationen",
+      "custom_tools": "Eigene Tools",
+      "webhooks": "Webhooks",
+      "api_keys": "API-Schlüssel",
+      "analytics": "Analysen",
+      "quality": "Qualität",
+      "simulations": "Simulationen",
+      "phone_numbers": "Rufnummern",
+      "billing": "Abrechnung",
+      "invoices": "Rechnungen",
+      "provisioning": "Bereitstellung",
+      "settings": "Einstellungen",
+      "retention": "Datenaufbewahrung",
+      "privacy_requests": "Datenschutzanfragen",
+      "notifications": "Benachrichtigungen",
+      "security": "Sicherheit",
+      "audit_logs": "Audit-Log",
+      "support_access": "Support-Zugriff"
+    },
+    "actions": {
+      "read": "ansehen",
+      "update": "bearbeiten",
+      "cancel": "kündigen",
+      "manage": "verwalten",
+      "write": "bearbeiten",
+      "publish": "veröffentlichen",
+      "rollback": "zurückrollen",
+      "read_transcript": "Transkripte ansehen",
+      "read_recording": "Aufnahmen abspielen",
+      "monitor_live": "live überwachen",
+      "transfer": "weiterleiten",
+      "terminate": "Anrufe beenden",
+      "export": "exportieren",
+      "delete": "löschen",
+      "run": "ausführen",
+      "order": "bestellen",
+      "grant": "freigeben"
+    }
+  }
+}

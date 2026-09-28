@@ -1,0 +1,42 @@
+{
+  "name": "@velyric/contracts",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "@velyric/source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./generated/enums.json": "./generated/enums.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "generated",
+    "state-machines"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "generate:enums": "tsx scripts/generate-enums-json.ts",
+    "generated:check": "tsx scripts/generate-enums-json.ts --check",
+    "generate:python-enums": "tsx scripts/generate-python-enums.ts",
+    "generated:python-check": "tsx scripts/generate-python-enums.ts --check"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "@vitest/coverage-v8": "catalog:",
+    "tsx": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vitest": "catalog:"
+  },
+  "dependencies": {
+    "typebox": "catalog:"
+  }
+}

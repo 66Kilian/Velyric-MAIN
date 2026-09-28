@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "types": ["node"],
+    "lib": ["ES2024", "ESNext.Intl"],
+    "noEmit": true
+  },
+  "include": ["src", "test", "messages/**/*.json", "vitest.config.ts"]
+}

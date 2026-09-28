@@ -1,0 +1,263 @@
+{
+  "callOutcome": {
+    "RESOLVED": "Megoldva",
+    "INFORMATION_PROVIDED": "Tájékoztatás megadva",
+    "BOOKING_CREATED": "Időpont lefoglalva",
+    "BOOKING_CHANGED": "Időpont módosítva",
+    "BOOKING_CANCELED": "Időpont lemondva",
+    "WAITLISTED": "Várólistára került",
+    "LEAD_CAPTURED": "Érdeklődő rögzítve",
+    "CALLBACK_REQUESTED": "Visszahívást kért",
+    "MESSAGE_TAKEN": "Üzenet rögzítve",
+    "TRANSFERRED_TO_HUMAN": "Munkatárshoz kapcsolva",
+    "UNRESOLVED": "Megoldatlan",
+    "ABANDONED": "Megszakadt",
+    "SPAM": "Spam",
+    "POLICY_BLOCKED": "Szabály által blokkolva",
+    "FAILED": "Sikertelen"
+  },
+  "callIntent": {
+    "BOOKING": "Foglalás",
+    "SUPPORT": "Ügyfélszolgálat",
+    "SALES": "Értékesítés",
+    "LEAD": "Érdeklődő",
+    "BILLING": "Számlázás",
+    "GENERAL_INQUIRY": "Általános kérdés",
+    "HUMAN_REQUEST": "Munkatársat kért",
+    "SPAM": "Spam",
+    "OTHER": "Egyéb"
+  },
+  "callStatus": {
+    "INITIATED": "Indul",
+    "QUEUED": "Sorban áll",
+    "IN_PROGRESS": "Folyamatban",
+    "TRANSFERRING": "Átkapcsolás",
+    "TRANSFERRED": "Átkapcsolva",
+    "COMPLETED": "Befejezve",
+    "FAILED": "Sikertelen",
+    "REJECTED": "Elutasítva",
+    "ABANDONED": "Megszakadt"
+  },
+  "callChannel": {
+    "PSTN": "Telefon",
+    "WEB_VOICE": "Webes hang",
+    "SIMULATION": "Szimuláció"
+  },
+  "callEndReason": {
+    "CALLER_HANGUP": "A hívó bontott",
+    "AGENT_HANGUP": "Az asszisztens bontott",
+    "TRANSFER_COMPLETED": "Átkapcsolás megtörtént",
+    "MAX_DURATION_REACHED": "Elérte a maximális hosszt",
+    "SILENCE_TIMEOUT": "Csend miatti bontás",
+    "SPEND_CAP_REACHED": "Költési limit elérve",
+    "TOOL_BUDGET_EXHAUSTED": "Eszközkorlát elérve",
+    "KILL_SWITCH": "Biztonsági kikapcsolás",
+    "OPERATOR_TERMINATED": "Operátor bontotta",
+    "POLICY_VIOLATION": "Szabálysértés",
+    "ADMISSION_REJECTED": "Nem fogadva",
+    "QUEUE_TIMEOUT": "Várakozási időtúllépés",
+    "PROVIDER_FAILURE": "Szolgáltatói hiba",
+    "RUNTIME_FAILURE": "Rendszerhiba",
+    "ORPHAN_RECONCILED": "Egyeztetés zárta le"
+  },
+  "tenantStatus": {
+    "PROVISIONING": "Beállítás alatt",
+    "ACTIVE": "Aktív",
+    "PAYMENT_AT_RISK": "Fizetési kockázat",
+    "GRACE_PERIOD": "Türelmi idő",
+    "RESTRICTED": "Korlátozva",
+    "SUSPENDED_BILLING": "Számlázás miatt felfüggesztve",
+    "SUSPENDED_DISPUTE": "Vitatott fizetés miatt felfüggesztve",
+    "SUSPENDED_RISK": "Ellenőrzés miatt felfüggesztve",
+    "SUSPENDED_ADMIN": "Felfüggesztve",
+    "CANCELED_GRACE": "Lemondva",
+    "DATA_RETENTION": "Adatmegőrzés",
+    "DELETION": "Törlés alatt",
+    "DELETED": "Törölve"
+  },
+  "role": {
+    "OWNER": "Tulajdonos",
+    "ADMIN": "Adminisztrátor",
+    "OPERATOR": "Operátor",
+    "ANALYST": "Elemző",
+    "DEVELOPER": "Fejlesztő",
+    "BILLING": "Számlázás",
+    "VIEWER": "Megtekintő"
+  },
+  "planCode": {
+    "START": "Start",
+    "BUSINESS": "Business",
+    "PRO": "Pro",
+    "ENTERPRISE": "Enterprise"
+  },
+  "agentStatus": {
+    "DRAFT": "Vázlat",
+    "ACTIVE": "Aktív",
+    "PAUSED": "Szüneteltetve",
+    "ARCHIVED": "Archivált"
+  },
+  "agentVersionStatus": {
+    "DRAFT": "Vázlat",
+    "VALIDATING": "Ellenőrzés",
+    "VALIDATION_FAILED": "Ellenőrzés sikertelen",
+    "STAGING": "Tesztkörnyezet",
+    "CANARY": "Fokozatos bevezetés",
+    "PRODUCTION": "Éles",
+    "SUPERSEDED": "Lecserélve",
+    "ROLLED_BACK": "Visszaállítva",
+    "ARCHIVED": "Archivált"
+  },
+  "knowledgeSourceStatus": {
+    "PENDING_UPLOAD": "Feltöltésre vár",
+    "QUEUED": "Sorban áll",
+    "SCANNING": "Biztonsági ellenőrzés",
+    "PARSING": "Feldolgozás",
+    "CHUNKING": "Darabolás",
+    "EMBEDDING": "Indexelés",
+    "READY": "Kész",
+    "ACTIVE": "Aktív",
+    "FAILED": "Sikertelen",
+    "QUARANTINED": "Karanténban",
+    "SUPERSEDED": "Lecserélve",
+    "ARCHIVED": "Archivált",
+    "DELETING": "Törlés alatt"
+  },
+  "knowledgeSourceType": {
+    "FILE_PDF": "PDF dokumentum",
+    "FILE_DOCX": "Word dokumentum",
+    "FILE_TXT": "Szövegfájl",
+    "FILE_MARKDOWN": "Markdown fájl",
+    "FILE_CSV": "Táblázat (CSV)",
+    "URL": "Weboldal",
+    "WEBSITE": "Webhely",
+    "FAQ": "GYIK",
+    "MANUAL_QA": "Kérdések és válaszok"
+  },
+  "knowledgeFreshness": {
+    "FRESH": "Friss",
+    "STALE": "Elavult",
+    "EXPIRED": "Lejárt",
+    "UNKNOWN": "Ismeretlen"
+  },
+  "phoneNumberStatus": {
+    "PROVISIONING": "Beállítás alatt",
+    "PORTING_IN": "Hordozás alatt",
+    "ACTIVE": "Aktív",
+    "SUSPENDED": "Felfüggesztve",
+    "RETENTION_HOLD": "Megtartva",
+    "RELEASE_PENDING": "Felszabadítás alatt",
+    "RELEASED": "Felszabadítva"
+  },
+  "phoneOrderStatus": {
+    "NUMBER_SELECTED": "Szám kiválasztva",
+    "RESERVED": "Lefoglalva",
+    "ORDER_SUBMITTED": "Megrendelve",
+    "KYC_REQUIRED": "Adatok szükségesek",
+    "UNDER_REVIEW": "Ellenőrzés alatt",
+    "APPROVED": "Jóváhagyva",
+    "DECLINED": "Elutasítva",
+    "NO_INVENTORY": "Nem elérhető",
+    "FAILED": "Sikertelen",
+    "CANCELED": "Visszavonva"
+  },
+  "kycRequirementStatus": {
+    "NOT_REQUIRED": "Nem szükséges",
+    "REQUIRED": "Szükséges",
+    "SUBMITTED": "Beküldve",
+    "UNDER_REVIEW": "Ellenőrzés alatt",
+    "APPROVED": "Jóváhagyva",
+    "DECLINED": "Elutasítva",
+    "EXPIRED": "Lejárt"
+  },
+  "provisioningState": {
+    "ORDER_CREATED": "Rendelés létrehozva",
+    "PAYMENT_PENDING": "Fizetésre vár",
+    "PAYMENT_CONFIRMED": "Fizetés megerősítve",
+    "BILLING_PENDING": "Számla előkészítése",
+    "BILLING_DOCUMENT_CREATED": "Számla kiállítva",
+    "TENANT_PROVISIONING": "Munkaterület előkészítése",
+    "TENANT_CREATED": "Munkaterület kész",
+    "OPENAI_PROJECT_PROVISIONING": "AI projekt előkészítése",
+    "OPENAI_SERVICE_ACCOUNT_PROVISIONING": "AI hozzáférés beállítása",
+    "OPENAI_READY": "AI kész",
+    "PHONE_RESERVING": "Telefonszám foglalása",
+    "PHONE_ORDERING": "Telefonszám megrendelése",
+    "PHONE_KYC_REQUIRED": "Adatok szükségesek a számhoz",
+    "WAITING_FOR_CUSTOMER": "Rád várunk",
+    "PHONE_UNDER_REVIEW": "A szám ellenőrzés alatt",
+    "WAITING_FOR_PROVIDER": "Szolgáltatóra vár",
+    "PHONE_READY": "Telefonszám aktív",
+    "SIP_AGENT_BINDING": "Asszisztens bekötése",
+    "AGENT_READY": "Asszisztens kész",
+    "TEST_CALL_READY": "Tesztelhető",
+    "GO_LIVE_ELIGIBLE": "Élesíthető",
+    "ACTIVE": "Élő",
+    "MANUAL_REVIEW_REQUIRED": "Csapatunk ellenőrzi",
+    "COMPENSATING": "Visszagörgetés",
+    "COMPENSATED": "Visszagörgetve",
+    "CANCELED": "Visszavonva"
+  },
+  "subscriptionStatus": {
+    "INCOMPLETE": "Befejezetlen",
+    "INCOMPLETE_EXPIRED": "Lejárt",
+    "TRIALING": "Próbaidőszak",
+    "ACTIVE": "Aktív",
+    "PAST_DUE": "Lejárt fizetés",
+    "UNPAID": "Kifizetetlen",
+    "PAUSED": "Szüneteltetve",
+    "CANCELED": "Lemondva"
+  },
+  "bookingStatus": {
+    "PENDING_DEPOSIT": "Előlegre vár",
+    "CONFIRMED": "Megerősítve",
+    "CANCELED": "Lemondva",
+    "NO_SHOW": "Nem jelent meg",
+    "COMPLETED": "Teljesítve"
+  },
+  "integrationStatus": {
+    "PENDING_AUTHORIZATION": "Engedélyezésre vár",
+    "CONNECTED": "Csatlakoztatva",
+    "DEGRADED": "Korlátozottan működik",
+    "AUTH_EXPIRED": "Újracsatlakoztatás szükséges",
+    "REVOKED": "Visszavonva",
+    "DISCONNECTED": "Leválasztva",
+    "ERROR": "Hiba"
+  },
+  "toolSideEffectClass": {
+    "READ": "Csak olvasás",
+    "WRITE": "Adatot módosít",
+    "HIGH_RISK_WRITE": "Magas kockázatú módosítás",
+    "EXTERNAL_COMMUNICATION": "Üzenetet küld"
+  },
+  "toolConfirmationPolicy": {
+    "NONE": "Nincs megerősítés",
+    "CALLER_CONFIRMATION": "A hívó megerősíti",
+    "CALLER_CONFIRMATION_WITH_VERIFICATION": "A hívó azonosítás után megerősíti",
+    "HUMAN_APPROVAL": "Munkatársi jóváhagyás"
+  },
+  "conversationState": {
+    "GREETING": "Köszöntés",
+    "DISCOVERY": "Igény feltárása",
+    "IDENTITY": "Azonosítás",
+    "ACTION_PREVIEW": "Művelet előkészítése",
+    "CONFIRMATION_GATE": "Megerősítésre vár",
+    "TOOL_EXECUTION": "Végrehajtás",
+    "RESULT_CONFIRMATION": "Eredmény megerősítése",
+    "FOLLOW_UP": "További kérdések",
+    "HANDOFF": "Átadás",
+    "SAFE_FAILURE": "Hibakezelés",
+    "CLOSING": "Lezárás",
+    "END": "Befejezve"
+  },
+  "vertical": {
+    "restaurant": "Éttermek",
+    "dental-clinic": "Fogorvosi rendelők",
+    "auto-service": "Autószervizek",
+    "car-detailing": "Autókozmetika",
+    "salon": "Szépségszalonok",
+    "hotel": "Szállodák",
+    "real-estate": "Ingatlaniroda",
+    "webshop": "Webáruházak",
+    "b2b-support": "B2B ügyfélszolgálat"
+  }
+}

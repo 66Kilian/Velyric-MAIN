@@ -1,0 +1,116 @@
+[workspace]
+resolver = "3"
+members = [
+    "crates/call-protocol",
+    "crates/runtime-policy",
+    "crates/common-observability",
+    "crates/service-kit",
+    "services/voice-runtime",
+    "services/metering-worker",
+    "tools/loadgen",
+    "fuzz",
+]
+
+[workspace.package]
+version = "0.0.0"
+edition = "2024"
+rust-version = "1.98.1"
+license = "LicenseRef-Velyric-Proprietary"
+publish = false
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+unused_must_use = "deny"
+rust_2018_idioms = { level = "deny", priority = -1 }
+
+[workspace.lints.clippy]
+all = { level = "deny", priority = -1 }
+todo = "deny"
+unimplemented = "deny"
+dbg_macro = "deny"
+unwrap_used = "deny"
+expect_used = "deny"
+mem_forget = "deny"
+
+[workspace.dependencies]
+velyric-call-protocol = { path = "crates/call-protocol" }
+velyric-runtime-policy = { path = "crates/runtime-policy" }
+velyric-common-observability = { path = "crates/common-observability" }
+velyric-service-kit = { path = "crates/service-kit" }
+
+tokio = { version = "1.53.1", features = ["rt-multi-thread", "macros", "net", "time", "sync", "signal", "io-util"] }
+tokio-util = { version = "0.7.19", features = ["rt"] }
+tokio-stream = "0.1.19"
+futures-util = "0.3.34"
+bytes = "1.12.1"
+dashmap = "6.2.1"
+
+axum = { version = "0.8.9", default-features = false, features = ["http1", "http2", "json", "matched-path", "original-uri", "query", "tokio", "tracing"] }
+tower = { version = "0.5.3", features = ["limit", "load-shed", "timeout", "util"] }
+tower-http = { version = "0.7.1", features = ["trace", "request-id", "timeout", "limit", "sensitive-headers", "catch-panic", "propagate-header"] }
+http = "1.5.0"
+url = "2.5.8"
+
+rustls = { version = "0.23.44", default-features = false, features = ["ring", "std", "tls12", "logging"] }
+reqwest = { version = "0.13.5", default-features = false, features = ["rustls-no-provider", "http2", "json", "charset", "stream"] }
+tokio-tungstenite = { version = "0.30.0", default-features = false, features = ["connect", "handshake", "rustls-tls-webpki-roots"] }
+async-nats = { version = "0.50.0", default-features = false, features = ["ring", "jetstream", "nkeys", "nuid", "server_2_10", "server_2_11", "server_2_12", "server_2_14"] }
+redis = { version = "1.7.0", default-features = false, features = ["aio", "tokio-rustls-comp", "tls-rustls-webpki-roots", "connection-manager", "script", "acl"] }
+sqlx = { version = "0.9.0", default-features = false, features = ["runtime-tokio", "tls-rustls-ring-webpki", "postgres", "macros", "uuid", "time", "json", "derive"] }
+
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.151"
+prost = "0.14.4"
+prost-types = "0.14.4"
+prost-build = "0.14.4"
+protox = "0.9.1"
+uuid = { version = "1.26.1", features = ["v4", "v7", "serde"] }
+time = { version = "0.3.55", features = ["serde", "formatting", "parsing", "macros"] }
+thiserror = "2.0.20"
+anyhow = "1.0.104"
+secrecy = { version = "0.10.3", features = ["serde"] }
+jsonwebtoken = { version = "11.0.0", default-features = false, features = ["rust_crypto", "use_pem"] }
+ed25519-dalek = { version = "2.2.0", features = ["pkcs8", "pem", "rand_core"] }
+sha2 = "0.11.0"
+hex = "0.4.3"
+hmac = "0.13.0"
+jiff = { version = "0.2.37", default-features = false, features = ["std", "tzdb-bundle-always"] }
+aws-config = { version = "1.12.0", default-features = false, features = ["rt-tokio"] }
+aws-sdk-secretsmanager = { version = "1.115.0", default-features = false, features = ["rt-tokio"] }
+aws-smithy-http-client = { version = "1.4.0", features = ["rustls-ring", "default-client"] }
+base64 = "0.23.1"
+rand = "0.10.2"
+zeroize = "1.9.0"
+clap = { version = "4.6.6", features = ["derive", "env"] }
+hdrhistogram = "7.6.0"
+
+tracing = "0.1.44"
+tracing-subscriber = { version = "0.3.23", features = ["env-filter", "json", "registry", "fmt"] }
+tracing-opentelemetry = "0.33.0"
+opentelemetry = "0.32.0"
+opentelemetry_sdk = { version = "0.32.1", features = ["rt-tokio"] }
+opentelemetry-otlp = { version = "0.32.0", default-features = false, features = ["http-proto", "reqwest-client", "trace", "metrics", "logs"] }
+opentelemetry-semantic-conventions = "0.32.1"
+
+proptest = "1.11.0"
+arbitrary = { version = "1.4.2", features = ["derive"] }
+libfuzzer-sys = "0.4.13"
+pretty_assertions = "1.4.1"
+wiremock = "0.6.5"
+tokio-test = "0.4.5"
+insta = { version = "1.48.0", features = ["json"] }
+
+[profile.dev]
+debug = "line-tables-only"
+
+[profile.dev.package."*"]
+debug = false
+
+[profile.test]
+debug = "line-tables-only"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+panic = "unwind"
+debug = "line-tables-only"

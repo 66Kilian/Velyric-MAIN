@@ -1,0 +1,70 @@
+{
+  "title": "Telephelyek",
+  "description": "Saját címmel, nyitvatartással, ünnepnapokkal és időzónával rendelkező helyszínek.",
+  "create": "Új telephely",
+  "empty": "Még nincs telephely",
+  "emptyDescription": "Add hozzá az első telephelyet a nyitvatartás és a foglalható szolgáltatások beállításához.",
+  "back": "Összes telephely",
+  "primary": "Elsődleges",
+  "hoursCount": "{count, plural, =0 {Nincs nyitvatartás} one {# idősáv} other {# idősáv}}",
+  "columns": {
+    "name": "Név",
+    "address": "Cím",
+    "timezone": "Időzóna",
+    "hours": "Nyitvatartás",
+    "status": "Állapot"
+  },
+  "status": {
+    "ACTIVE": "Aktív",
+    "INACTIVE": "Inaktív"
+  },
+  "form": {
+    "name": "Név",
+    "timezone": "Időzóna",
+    "country": "Ország",
+    "countries": {
+      "HU": "Magyarország",
+      "AT": "Ausztria",
+      "DE": "Németország",
+      "CH": "Svájc",
+      "SK": "Szlovákia",
+      "RO": "Románia",
+      "SI": "Szlovénia",
+      "HR": "Horvátország",
+      "CZ": "Csehország",
+      "PL": "Lengyelország"
+    },
+    "line1": "Utca, házszám",
+    "line2": "Cím második sora",
+    "postalCode": "Irányítószám",
+    "city": "Település",
+    "hours": "Nyitvatartás",
+    "day": "Nap",
+    "opens": "Nyit",
+    "closes": "Zár",
+    "removeHours": "Nyitvatartás eltávolítása",
+    "hoursInvalid": "A zárásnak a nyitás után kell lennie, és egy napon belül az idősávok nem fedhetik egymást.",
+    "addHours": "Nyitvatartás hozzáadása",
+    "holidays": "Ünnepnapok és különleges napok",
+    "noHolidays": "Nincs beállított ünnepnap.",
+    "date": "Dátum",
+    "holidayName": "Megnevezés",
+    "closed": "Zárva",
+    "removeHoliday": "Ünnepnap eltávolítása",
+    "addHoliday": "Ünnepnap hozzáadása",
+    "create": "Telephely létrehozása",
+    "save": "Módosítások mentése",
+    "created": "Telephely létrehozva",
+    "saved": "Telephely frissítve"
+  },
+  "actions": {
+    "makePrimary": "Legyen elsődleges",
+    "primarySet": "Az elsődleges telephely megváltozott",
+    "deactivate": "Inaktiválás",
+    "deactivateTitle": "Inaktiválod ezt a telephelyet?",
+    "deactivateDescription": "Az ügynökök nem kínálnak több foglalást ezen a telephelyen.",
+    "deactivated": "Telephely inaktiválva",
+    "activate": "Aktiválás",
+    "activated": "Telephely aktiválva"
+  }
+}

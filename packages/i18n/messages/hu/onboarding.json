@@ -1,0 +1,520 @@
+{
+  "title": "Velyric beállítása",
+  "progress": "Beállítás állapota",
+  "profileRequired": "Előbb add meg a számlázási adatokat.",
+  "steps": {
+    "workspace": "Munkaterület",
+    "billing": "Számlázási adatok",
+    "plan": "Csomag",
+    "provisioning": "Élesítés"
+  },
+  "headings": {
+    "workspace": {
+      "title": "Hozd létre a munkaterületed",
+      "description": "A munkaterület tartalmazza az ügynököket, telefonszámokat, a csapatot és a számlázást."
+    },
+    "billing": {
+      "title": "Számlázási adatok",
+      "description": "A magyar és uniós adószabályoknak megfelelő számlák kiállításához használjuk."
+    },
+    "plan": {
+      "title": "Válassz csomagot",
+      "description": "Az árak havi nettó összegek. A csomag később módosítható."
+    },
+    "provisioning": {
+      "title": "Élesítés folyamatban",
+      "description": "Beállítjuk az MI-projektet, a telefonszámot és az első ügynököt. Ez általában néhány percet vesz igénybe."
+    }
+  },
+  "invitations": {
+    "title": "Meghívást kaptál",
+    "accept": "Csatlakozás",
+    "notFoundTitle": "A meghívó nem érhető el",
+    "notFoundBody": "A meghívó lejárt, visszavonták, vagy nem a(z) {email} címre küldték."
+  },
+  "workspace": {
+    "displayName": "Vállalkozás neve",
+    "displayNameHint": "Így jelenik meg a csapatod számára a vezérlőpulton.",
+    "legalName": "Cégnév",
+    "legalNameHint": "A cégjegyzék szerinti név, szerződésekhez és számlákhoz.",
+    "slug": "Munkaterület címe",
+    "slugHint": "Kisbetűk, számok és kötőjelek.",
+    "country": "Ország",
+    "language": "Alapértelmezett nyelv",
+    "timezone": "Időzóna",
+    "locationName": "Első telephely neve",
+    "locationNameHint": "Például az üzlet, rendelő vagy iroda neve.",
+    "internationalNotice": "Az önkiszolgáló fizetés jelenleg magyar vállalkozások számára érhető el. Más piacokon értékesítési csapatunk segít a munkaterület létrehozása után.",
+    "submit": "Munkaterület létrehozása",
+    "errors": {
+      "invalid": "Ellenőrizd ezt az értéket.",
+      "required": "Kötelező mező.",
+      "too_long": "Az érték túl hosszú.",
+      "slug": "3–63 kisbetű, szám vagy kötőjel, nem kezdődhet és nem végződhet kötőjellel.",
+      "slug_taken": "Ez a cím már foglalt."
+    }
+  },
+  "billing": {
+    "customerType": "Ügyféltípus",
+    "customerTypes": {
+      "BUSINESS": "Vállalkozás",
+      "INDIVIDUAL": "Magánszemély"
+    },
+    "companyName": "Cégnév",
+    "fullName": "Teljes név",
+    "country": "Ország",
+    "billingEmail": "Számlázási e-mail",
+    "billingEmailHint": "Ide küldjük a számlákat és fizetési értesítéseket.",
+    "postalCode": "Irányítószám",
+    "city": "Település",
+    "address": "Utca, házszám",
+    "address2": "Cím második sora",
+    "huTaxNumber": "Adószám",
+    "euVatId": "Közösségi adószám",
+    "euVatIdHint": "Nem kötelező. Az országkóddal kezdődik.",
+    "submit": "Mentés és tovább",
+    "saved": "Számlázási adatok elmentve",
+    "errors": {
+      "invalid": "Ellenőrizd ezt az értéket.",
+      "required": "Kötelező mező.",
+      "too_long": "Az érték túl hosszú.",
+      "email": "Adj meg érvényes e-mail-címet.",
+      "hu_tax_number": "Formátum: 12345678-1-12.",
+      "eu_vat_id": "Adj meg érvényes közösségi adószámot.",
+      "hu_tax_required": "Magyar vállalkozásnak kötelező megadnia az adószámát.",
+      "vat_prefix": "A közösségi adószámnak a kiválasztott ország kódjával kell kezdődnie."
+    }
+  },
+  "plan": {
+    "canceled": "A fizetést megszakítottad. Nem történt terhelés.",
+    "marketUnavailable": "Ehhez a számlázási országhoz még nem érhető el online fizetés. Vedd fel a kapcsolatot értékesítési csapatunkkal.",
+    "choose": "Csomagok",
+    "popular": "Legnépszerűbb",
+    "perMonth": "/ hó + ÁFA",
+    "includedMinutes": "{minutes} beszédperc benne",
+    "concurrentCalls": "{count, plural, one {# egyidejű hívás} other {# egyidejű hívás}}",
+    "phoneNumbers": "{count, plural, one {# telefonszám} other {# telefonszám}}",
+    "overage": "További percek: {price} / perc",
+    "enterprise": "SSO-ra, egyedi korlátokra vagy dedikált redundanciára van szükséged?",
+    "contactSales": "Beszélj értékesítőnkkel",
+    "terms": "Elfogadom az <terms>Általános Szerződési Feltételeket</terms>, és elolvastam az <privacy>Adatkezelési tájékoztatót</privacy>.",
+    "checkout": "Tovább a biztonságos fizetéshez",
+    "plans": {
+      "START": {
+        "name": "Start",
+        "tagline": "Egy telephely, minden hívás fogadása éjjel-nappal."
+      },
+      "BUSINESS": {
+        "name": "Business",
+        "tagline": "Naptáras foglalás, integrációk és kísért átadás."
+      },
+      "PRO": {
+        "name": "Pro",
+        "tagline": "Több telephely, fejlett hívásirányítás és Szimulációs Labor."
+      }
+    }
+  },
+  "kyc": {
+    "declined": "Elutasítva",
+    "document": "Dokumentum",
+    "documentHint": "PDF, PNG vagy JPG, legfeljebb 4 MB.",
+    "documentTooLarge": "A dokumentum legfeljebb 4 MB lehet.",
+    "address": {
+      "business_name": "Vállalkozás neve",
+      "first_name": "Kapcsolattartó keresztneve",
+      "last_name": "Kapcsolattartó vezetékneve",
+      "street_address": "Utca, házszám",
+      "postal_code": "Irányítószám",
+      "locality": "Település"
+    },
+    "action": "A szolgáltató felveszi veled a kapcsolatot a lépés befejezéséhez.",
+    "submit": "Adatok beküldése",
+    "submitted": "Az adatokat elküldtük a szolgáltatónak"
+  },
+  "provisioning": {
+    "waitingForPayment": "Várakozás a fizetés visszaigazolására",
+    "openDashboard": "Vezérlőpult megnyitása",
+    "setupTitle": "Állítsd be az asszisztensedet",
+    "setupBody": "Amíg a telefonszámod aktiválódik, néhány perc alatt beállíthatod, hogyan fogadja a hívásokat.",
+    "setupAction": "Beállítás indítása",
+    "phoneOrder": "Telefonszám: {number} ({country})",
+    "numberPending": "kiosztás alatt",
+    "steps": {
+      "PAYMENT": "Fizetés",
+      "BILLING_DOCUMENT": "Számla",
+      "TENANT": "Munkaterület",
+      "OPENAI_PROJECT": "MI-projekt",
+      "OPENAI_SERVICE_ACCOUNT": "MI szolgáltatásfiók",
+      "OPENAI_API_KEY": "MI-hozzáférés",
+      "PHONE_RESERVATION": "Számfoglalás",
+      "PHONE_ORDER": "Számigénylés",
+      "PHONE_REGULATORY": "Szolgáltatói ellenőrzés",
+      "SIP_ROUTING": "Hívásirányítás",
+      "DEFAULT_AGENT": "Első ügynök",
+      "KNOWLEDGE_IMPORT": "Tudásimport",
+      "TEST_CALL": "Teszthívás",
+      "GO_LIVE": "Élesítés",
+      "NOTIFICATION": "Visszaigazoló e-mail"
+    }
+  },
+  "setup": {
+    "metaTitle": "Asszisztens beállítása",
+    "changeSummary": "Beállítás a varázslóval",
+    "steps": {
+      "business": "Vállalkozásod",
+      "voice": "Hang és személyiség",
+      "knowledge": "Tudnivalók",
+      "bookings": "Foglalások",
+      "calls": "Híváskezelés",
+      "launch": "Próba és indulás"
+    },
+    "headings": {
+      "business": {
+        "title": "Kezdjük azzal, amit már tudsz.",
+        "description": "Add meg az alapokat. A többit segítünk kitölteni."
+      },
+      "voice": {
+        "title": "Adj hangot az asszisztensednek.",
+        "description": "Lapozz a hangok között, és hallgasd meg, melyik illik hozzátok."
+      },
+      "knowledge": {
+        "title": "Mutasd meg, mit érdemes tudnia.",
+        "description": "A weboldaladból összegyűjtjük az alapokat. Ellenőrizd, hogy minden pontos-e."
+      },
+      "bookings": {
+        "title": "Foglaljon helyetted is.",
+        "description": "Kapcsold össze a naptáraddal, és add meg, mit lehet foglalni."
+      },
+      "calls": {
+        "title": "Mi történjen a hívásokkal?",
+        "description": "Döntsd el, mikor kapcsoljon át hozzátok, és mit tegyen zárás után."
+      },
+      "launch": {
+        "title": "Ismerd meg az új csapattagodat.",
+        "description": "Próbáld ki, nézd át a beállításokat, és akkor indulj el, amikor elégedett vagy."
+      }
+    },
+    "actions": {
+      "back": "Vissza",
+      "business": "Tovább",
+      "voice": "Ez a hang tetszik",
+      "knowledge": "Rendben, tovább",
+      "bookings": "Tovább",
+      "calls": "Tovább a próbához",
+      "launch": "Indulhat az asszisztens"
+    },
+    "shell": {
+      "eyebrow": "Az első lépések",
+      "title": "Együtt beállítjuk.",
+      "subtitle": "Csak néhány egyszerű döntés.",
+      "progress": "A beállítás lépései",
+      "helpTitle": "Segítünk, ha elakadsz.",
+      "helpBody": "Nem kell műszaki tudás.",
+      "helpAction": "Kérj segítséget",
+      "autosave": "Automatikus mentés",
+      "saved": "Automatikusan elmentve",
+      "saveExit": "Mentés és kilépés",
+      "hint": "A beállításokat később is módosíthatod.",
+      "launchHint": "A hívásfogadás az indítással aktiválódik."
+    },
+    "errors": {
+      "businessName": "Add meg a vállalkozásod nevét.",
+      "website": "Ez nem tűnik érvényes webcímnek.",
+      "goals": "Válassz legalább egy feladatot.",
+      "address": "Írd így: 9400 Sopron, Hubertusz út 1",
+      "qa": "Minden kérdéshez írj választ, a kérdés legyen legalább 3 karakter.",
+      "serviceName": "Add meg, mit lehet foglalni.",
+      "party": "A legkisebb létszám nem lehet nagyobb a legnagyobbnál.",
+      "locationMissing": "Előbb mentsd el a vállalkozásod adatait.",
+      "transferNumber": "Ez nem tűnik érvényes telefonszámnak."
+    },
+    "activation": {
+      "payment": {
+        "title": "A csomagod fizetése még nincs befejezve",
+        "body": "A beállításokat addig is elmentjük, de a weboldal feldolgozása és a próbahívás csak a fizetés után indulhat el.",
+        "action": "Fizetés befejezése"
+      },
+      "provisioning": {
+        "title": "A fiókod aktiválása folyamatban",
+        "body": "Ez általában néhány perc. Utána a weboldalad feldolgozása automatikusan elindul, és kipróbálhatod az asszisztenst.",
+        "action": "Állapot megtekintése"
+      }
+    },
+    "languages": {
+      "hu": "Magyar",
+      "en": "Angol",
+      "de": "Német"
+    },
+    "business": {
+      "name": "Vállalkozás neve",
+      "website": "Weboldalad címe",
+      "websiteHint": "Innen segítünk összegyűjteni a legfontosabb tudnivalókat.",
+      "goals": "Miben segítse az ügyfeleidet?",
+      "reception": "Vendégek fogadása",
+      "receptionHint": "Kérdések, nyitvatartás, útbaigazítás",
+      "bookings": "Foglalások kezelése",
+      "bookingsHint": "Időpontok és asztalfoglalások",
+      "address": "A telephely címe",
+      "addressHint": "Irányítószám, település, utca és házszám.",
+      "addressPlaceholder": "9400 Sopron, Hubertusz út 1",
+      "asideTitle": "Már egy lépéssel közelebb.",
+      "asideBody": "A megadott adatokból elkészítjük az asszisztensed alapbeállításait.",
+      "timezone": "Időzóna: {zone}",
+      "editableLater": "Bármikor szerkeszthető"
+    },
+    "voice": {
+      "recommended": "Neked ajánljuk",
+      "previous": "Előző hang",
+      "next": "Következő hang",
+      "allVoices": "Összes hang",
+      "previewUnavailable": "A hangminta most nem érhető el. Próbáld újra kicsit később.",
+      "listen": "Hang meghallgatása",
+      "stop": "Leállítás",
+      "personas": {
+        "mark": {
+          "tag": "Nyugodt és határozott",
+          "description": "Nyugodt, magabiztos és közvetlen."
+        },
+        "anna": {
+          "tag": "Meleg és figyelmes",
+          "description": "Meleg, természetes és figyelmes."
+        },
+        "lili": {
+          "tag": "Friss és lendületes",
+          "description": "Derűs, könnyed és energikus."
+        },
+        "bence": {
+          "tag": "Barátságos és laza",
+          "description": "Közvetlen, barátságos és segítőkész."
+        },
+        "zsofi": {
+          "tag": "Világos és kedves",
+          "description": "Tiszta hangú, kedves és pontos."
+        },
+        "david": {
+          "tag": "Mély és megnyugtató",
+          "description": "Mély hangú, higgadt és megbízható."
+        },
+        "eszter": {
+          "tag": "Elegáns és higgadt",
+          "description": "Kiegyensúlyozott, elegáns és türelmes."
+        },
+        "gergo": {
+          "tag": "Energikus és vidám",
+          "description": "Lendületes, vidám és gyors észjárású."
+        }
+      },
+      "styleTitle": "Milyen legyen a beszélgetés?",
+      "styles": {
+        "friendly": "Barátságos",
+        "professional": "Professzionális",
+        "energetic": "Lendületes"
+      },
+      "fineTune": "Köszöntés és további finomhangolás",
+      "greeting": "Köszöntés a hívás elején",
+      "listenGreeting": "Köszöntés meghallgatása",
+      "resetGreeting": "Javasolt köszöntés visszaállítása",
+      "addressing": "Megszólítás",
+      "addressingOptions": {
+        "formal": "Magázódó",
+        "informal": "Tegeződő"
+      },
+      "pace": "Beszédtempó",
+      "paces": {
+        "calm": "Nyugodt",
+        "natural": "Természetes",
+        "dynamic": "Dinamikus"
+      },
+      "transparencyTitle": "Átlátható, természetes beszélgetés",
+      "transparencyBody": "A köszöntésből a hívó megtudja, hogy AI-asszisztenssel beszél.",
+      "anyLanguage": "Bármilyen nyelven beszél: a hívó telefonszáma alapján választ kezdő nyelvet, és mindig azon a nyelven válaszol, amelyen a hívó beszél. Ha nem egyértelmű, {language} nyelven kezd.",
+      "anyLanguageShort": "bármilyen nyelven"
+    },
+    "knowledge": {
+      "website": "Weboldalad",
+      "websiteStatus": {
+        "none": "Nincs megadva",
+        "ready": "Feldolgozva",
+        "processing": "Feldolgozás alatt",
+        "failed": "Nem sikerült",
+        "waiting": "Aktiválásra vár"
+      },
+      "websiteWaiting": "A fiókod aktiválása után automatikusan feldolgozzuk. Addig nyugodtan haladj tovább.",
+      "websiteFailed": "Nem sikerült beolvasni az oldalt. Ellenőrizd a címet, majd próbáld újra.",
+      "noWebsite": "Még nem adtál meg weboldalt.",
+      "addWebsite": "Weboldal megadása",
+      "websiteProcessing": "Átnézzük az oldalt, ez néhány percig tarthat. Közben nyugodtan haladj tovább.",
+      "websiteMeta": "{chunks, plural, other {# szövegrészlet feldolgozva}} · Frissítve: {when}",
+      "resync": "Frissítés",
+      "reviewTitle": "Nézd át gyorsan a legfontosabbakat!",
+      "hours": "Nyitvatartás",
+      "noHours": "Még nincs megadva nyitvatartás",
+      "opens": "{day} nyitás",
+      "closes": "{day} zárás",
+      "closed": "Zárva",
+      "copyMonday": "Hétfői nyitvatartás másolása minden hétköznapra",
+      "location": "Helyszín és megközelítés",
+      "noAddress": "Még nincs megadva cím",
+      "edit": "Szerkesztés",
+      "done": "Kész",
+      "qaTitle": "Kérdések és válaszok",
+      "qaBody": "Amit gyakran kérdeznek tőletek. Pontosan így fogja elmondani.",
+      "question": "Kérdés",
+      "questionPlaceholder": "Pl. Van lehetőség parkolni?",
+      "answer": "Válasz",
+      "answerPlaceholder": "Pl. Igen, vendégeink számára ingyenes parkolót biztosítunk az épület mellett.",
+      "removeQa": "Kérdés törlése",
+      "uploadFile": "Fájl feltöltése",
+      "addQa": "Kérdés és válasz",
+      "uploadState": {
+        "uploading": "Feltöltés…",
+        "done": "Feldolgozás alatt",
+        "failed": "Sikertelen"
+      },
+      "fileInvalid": "PDF, DOCX, TXT, Markdown vagy CSV fájlt tölts fel, legfeljebb 50 MB méretben.",
+      "qaSourceTitle": "Kérdések és válaszok",
+      "previewTitle": "Így fog válaszolni",
+      "sampleQuestion": "Mikor vannak nyitva?",
+      "sampleAnswer": "Szívesen! Nyitvatartásunk: {hours}.",
+      "sampleAnswerUnknown": "Ezt most nem tudom biztosan, de felveszem az elérhetőségét, és munkatársunk visszahívja.",
+      "previewNote": "Csak az ellenőrzött tudnivalókból válaszol. Ha valamiben bizonytalan, segítséget kér a csapatodtól.",
+      "previewIllustrative": "Illusztratív válaszminta"
+    },
+    "bookings": {
+      "disabledTitle": "Foglalás kikapcsolva",
+      "disabledBody": "Az asszisztens most csak kérdésekre válaszol. A foglalásokat bármikor bekapcsolhatod.",
+      "enable": "Foglalások bekapcsolása",
+      "calendarTitle": "Kapcsold össze a naptáraddal",
+      "calendarBody": "Így mindig csak valóban szabad időpontot ajánl.",
+      "calendarOptional": "Naptár nélkül is működik: ilyenkor a nyitvatartás és a meglévő foglalások alapján ajánl időpontot.",
+      "providers": {
+        "GOOGLE_CALENDAR": {
+          "name": "Google Naptár",
+          "hint": "Gmail- vagy Google Workspace-fiók"
+        },
+        "MICROSOFT_365": {
+          "name": "Microsoft 365",
+          "hint": "Outlook-naptár használata"
+        }
+      },
+      "connected": "Csatlakoztatva",
+      "connect": "Kapcsolódás",
+      "calendarConnected": "A naptár sikeresen csatlakozott.",
+      "calendarFailed": "Nem sikerült csatlakozni a naptárhoz. Próbáld újra.",
+      "calendarLinkFailed": "A naptár most nem érhető el, ezért a foglalások egyelőre naptár nélkül működnek. Csatlakoztasd újra a naptárat később.",
+      "service": "Foglalható szolgáltatás",
+      "servicePlaceholder": "Pl. Asztalfoglalás",
+      "duration": "Egy foglalás hossza",
+      "minutes": "{count, plural, other {# perc}}",
+      "partySize": "Vendégek száma",
+      "partyMax": "Legfeljebb ennyi fő",
+      "capacity": "Egyszerre hány foglalás?",
+      "capacityHint": "Ennyi foglalást fogad el ugyanarra az időpontra.",
+      "confirmTitle": "Mindig visszaigazolja a részleteket",
+      "confirmBody": "Az asszisztens elismétli a nevet, az időpontot és a létszámot, mielőtt véglegesít.",
+      "more": "További foglalási szabályok",
+      "buffer": "Szünet két foglalás között",
+      "noBuffer": "Nincs szünet",
+      "cancellation": "Lemondás legkésőbb",
+      "anytime": "Bármikor",
+      "hoursBefore": "{count, plural, other {# órával előtte}}"
+    },
+    "calls": {
+      "humanTitle": "Ha élő ember kell",
+      "humanBody": "Ha a hívó munkatársat kér, vagy az asszisztens elakad.",
+      "transferNumber": "Kapcsolja ide a hívást",
+      "transferHint": "Hagyd üresen, ha nem szeretnél átkapcsolást.",
+      "noAnswer": "Ha senki nem veszi fel",
+      "noAnswerOptions": {
+        "CALLBACK_REQUEST": "Visszahívást kér, a részleteket elküldi",
+        "RETURN_TO_AI": "Visszaveszi a hívást, és tovább segít"
+      },
+      "afterHoursTitle": "Nyitvatartáson kívül",
+      "afterHoursBody": "Zárás után is minden hívást fogad.",
+      "afterHours": "Mit tegyen ilyenkor?",
+      "afterHoursOptions": {
+        "TAKE_MESSAGE": "Vegyen fel üzenetet",
+        "CALLBACK_REQUEST": "Vegyen fel visszahívási kérést",
+        "TRANSFER_ON_CALL": "Kapcsolja a megadott számra"
+      },
+      "openHours": "Nyitvatartás: {hours}",
+      "noHours": "Nincs megadva nyitvatartás",
+      "editHours": "Módosítás",
+      "more": "Híváshossz és további korlátok",
+      "maxCall": "Egy hívás legfeljebb",
+      "maxCallHint": "Ennyi idő után udvariasan lezárja a beszélgetést.",
+      "minutes": "{count, plural, other {# perc}}",
+      "recording": "Hívások rögzítése",
+      "recordingHint": "A hívó a beszélgetés elején tájékoztatást kap a rögzítésről."
+    },
+    "launch": {
+      "hello": "Halló, itt {name}!",
+      "activationRequired": "A próbát a fiókod aktiválása után indíthatod el.",
+      "failedActivation": "A próba nem indult el, mert a fiókod aktiválása még nem fejeződött be. Aktiválás után próbáld újra.",
+      "testBody": "Néhány jellemző hívást végigbeszél, mi pedig ellenőrizzük, hogy minden rendben van-e.",
+      "startTest": "Próbahívás indítása",
+      "retest": "Próba újraindítása",
+      "testing": "Próbahívások folyamatban…",
+      "testHint": "A próba még nem indítja el az éles hívásfogadást. Általában 1–2 percig tart.",
+      "webCallTitle": "Beszélgess vele élőben",
+      "webCallBody": "Kapcsold be a mikrofonod, és beszélgess {name}-val úgy, ahogy egy vendég tenné.",
+      "webCallStart": "Mikrofonos beszélgetés",
+      "webCallConnecting": "Kapcsolódás…",
+      "webCallStop": "Beszélgetés befejezése",
+      "webCallLive": "Élő beszélgetés",
+      "webCallHint": "A hangja, a stílusa, a nyelve és a köszöntése pontosan az, ami az éles hívásokban lesz. Ismeri a nyitvatartást, a szolgáltatásokat és a felvett kérdés-válasz párokat, tud szabad időpontot keresni és valódi foglalást rögzíteni, a beszélgetés pedig leirattal együtt megjelenik a hívások között.",
+      "webCallFailed": "Nem sikerült elindítani a beszélgetést. Próbáld újra kicsit később.",
+      "webCallMicDenied": "A böngésző nem engedte a mikrofon használatát. Engedélyezd, majd próbáld újra.",
+      "scenarios": {
+        "opening_hours": "Kérdés a nyitvatartásról",
+        "booking": "Foglalási kérés",
+        "human_handoff": "Átkapcsolás munkatárshoz"
+      },
+      "scenarioFallback": "Egyéb próbahívás",
+      "passed": "Minden rendben! {name} készen áll az indulásra.",
+      "failed": "Valami nem sikerült. Nézd át a beállításokat, majd indítsd újra a próbát.",
+      "retestNeeded": "Időközben módosítottál a beállításokon. Indítsd újra a próbát az induláshoz.",
+      "readyTitle": "Minden készen áll?",
+      "check": {
+        "business": "Vállalkozás és telephely",
+        "voice": "Hang és nyelvek",
+        "knowledge": "Ellenőrzött tudnivalók",
+        "calls": "Foglalások és hívások",
+        "noWebsite": "Nincs weboldal",
+        "qaCount": "{count, plural, other {# kérdés-válasz}}",
+        "noCalendar": "Naptár nélkül",
+        "transfer": "átkapcsolással",
+        "noTransfer": "átkapcsolás nélkül"
+      },
+      "controlTitle": "Még te vagy az irányító.",
+      "controlBody": "Induláskor {name} a {number} számon fogadja a hívásokat. Bármikor szüneteltetheted.",
+      "controlBodyNoNumber": "Induláskor {name} a telefonszámod aktiválása után azonnal fogadja a hívásokat. Bármikor szüneteltetheted.",
+      "suiteName": "Alapellenőrzés",
+      "suiteDescription": "A beállítási varázsló automatikus próbahívásai."
+    },
+    "done": {
+      "badge": "Beállítás kész",
+      "title": "{name} készen áll a hívásokra.",
+      "body": "Szép munka! Az asszisztensed mostantól levesz egy terhet a válladról.",
+      "activeNumber": "Aktív · {number}",
+      "activePending": "Aktív · a telefonszám aktiválása folyamatban",
+      "cards": {
+        "calls": {
+          "title": "Irányítópult",
+          "body": "Itt látod az élő hívásokat és a legfrissebb összefoglalót."
+        },
+        "bookings": {
+          "title": "Foglalások",
+          "body": "Az új foglalásokat a naptárban is automatikusan látod."
+        },
+        "assistant": {
+          "title": "Asszisztensed",
+          "body": "A hangját és a beállításait bármikor finomíthatod."
+        }
+      },
+      "open": "Megnézem",
+      "cta": "Tovább az irányítópultra",
+      "tagline": "Jó dolgok történnek, ha egy vállalkozás odafigyel."
+    }
+  }
+}

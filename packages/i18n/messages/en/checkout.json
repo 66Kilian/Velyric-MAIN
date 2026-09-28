@@ -1,0 +1,15 @@
+{
+  "return": {
+    "waiting": "Confirming payment",
+    "waitingTitle": "Confirming your payment",
+    "waitingBody": "This page updates automatically as soon as the payment provider confirms the payment.",
+    "slowBody": "Confirmation is taking longer than usual. You will receive an email once it is complete; you can safely leave this page.",
+    "paidTitle": "Payment received",
+    "paidBody": "Thank you! Your invoice is on its way and we are setting up your workspace.",
+    "failedTitle": "Payment not completed",
+    "failedBody": "The payment failed or expired. No charge was made. You can try again.",
+    "total": "{plan} plan · {amount} total",
+    "continue": "Continue setup",
+    "retry": "Try again"
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "title": "Integrációk",
+  "description": "Kapcsolj naptárakat és saját API-kat, hogy az ügynökök szabad időpontot keressenek, foglaljanak és adatokat kérdezzenek le.",
+  "callback": {
+    "connected": "A kapcsolat engedélyezése sikeres volt.",
+    "denied": "A szolgáltatónál megtagadták a hozzáférést. Nem jött létre kapcsolat.",
+    "failed": "A kapcsolat nem jött létre ({code}). Próbáld újra."
+  },
+  "connectors": {
+    "title": "Naptárak",
+    "connect": "Kapcsolás",
+    "reconnect": "Újrakapcsolás",
+    "disconnect": "Leválasztás",
+    "disconnectTitle": "Leválasztod ezt a naptárat?",
+    "disconnectDescription": "Az ügynökök nem látják többé a szabad időpontokat, és nem tudnak foglalni benne. A tárolt tokeneket visszavonjuk.",
+    "disconnected": "A naptár leválasztva",
+    "neverChecked": "Még nem ellenőriztük",
+    "checked": "Utoljára ellenőrizve: {time}",
+    "GOOGLE_CALENDAR": {
+      "name": "Google Naptár",
+      "description": "Foglaltság lekérdezése és események létrehozása Google Workspace naptárakban."
+    },
+    "MICROSOFT_365": {
+      "name": "Microsoft 365",
+      "description": "Foglaltság lekérdezése és események létrehozása Outlook naptárakban."
+    }
+  },
+  "tools": {
+    "title": "Egyedi API-eszközök",
+    "description": "Az ügynökök ellenőrzött bemenettel, szigorú kimenő szabályokkal és megerősítéssel hívhatják a HTTPS-végpontjaidat.",
+    "create": "Új eszköz",
+    "createDescription": "Add meg a végpontot, a JSON-sémáit és azt, mennyire kockázatos a hatása.",
+    "back": "Vissza az integrációkhoz",
+    "empty": "Nincs egyedi eszköz",
+    "emptyDescription": "Adj hozzá eszközt, hogy az ügynökök rendeléseket keressenek, jegyet nyissanak vagy más rendszert hívjanak.",
+    "columns": {
+      "name": "Név",
+      "endpoint": "Végpont",
+      "effect": "Hatás",
+      "confirmation": "Megerősítés",
+      "status": "Állapot"
+    },
+    "status": {
+      "ACTIVE": "Aktív",
+      "DISABLED": "Kikapcsolva",
+      "KILLED": "Vészkapcsoló tiltja"
+    },
+    "form": {
+      "serverIssues": "Az eszköz nem menthető:",
+      "name": "Eszköz neve",
+      "nameHint": "Kisbetűk, számok és aláhúzás, pl. lookup_order.",
+      "method": "HTTP-metódus",
+      "description": "Leírás az ügynök számára",
+      "descriptionHint": "Írd le, mikor használja az ügynök ezt az eszközt, és mit ad vissza.",
+      "baseUrl": "Alap URL",
+      "baseUrlHint": "Nyilvános HTTPS-cím. Privát és belső címek tiltottak.",
+      "path": "Útvonalsablon",
+      "pathHint": "A helyőrzők nevét kapcsos zárójelbe tedd; egyezniük kell a bemeneti séma mezőivel.",
+      "inputSchema": "Bemeneti JSON-séma",
+      "outputSchema": "Kimeneti JSON-séma",
+      "schemaHint": "JSON Schema 2020-12 objektum, legfeljebb 32 KB.",
+      "sideEffect": "Mellékhatás",
+      "sideEffectHint": "Az adatot módosító eszközök erősebb megerősítést igényelnek.",
+      "confirmation": "Megerősítési szabály",
+      "timeout": "Időkorlát (ms)",
+      "retries": "Újrapróbálkozások",
+      "idempotency": "A végpont támogatja az idempotencia-kulcsot",
+      "auth": "Hitelesítés",
+      "authTypes": {
+        "NONE": "Nincs",
+        "BEARER": "Bearer token",
+        "HMAC": "HMAC-aláírás"
+      },
+      "secret": "Titok",
+      "secretHint": "Titkosítva tároljuk, és többé nem jelenítjük meg.",
+      "submit": "Eszköz létrehozása",
+      "created": "A(z) {name} eszköz létrehozva",
+      "errors": {
+        "invalid": "Ellenőrizd ezt az értéket.",
+        "name": "3–64 kisbetű, szám vagy aláhúzás, betűvel kezdve.",
+        "description": "10–1000 karakter szükséges.",
+        "base_url": "Adj meg 10–300 karakteres HTTPS URL-t.",
+        "path_template": "Az útvonal /-rel kezdődjön, és csak URL-biztos karaktereket tartalmazzon.",
+        "json": "Adj meg érvényes JSON-objektumot.",
+        "timeout": "500 és 10000 közötti érték szükséges.",
+        "retries": "0 és 5 közötti érték szükséges.",
+        "bearer_secret": "A bearer token 16–4096 szóköz nélküli, nyomtatható karakter legyen.",
+        "hmac_secret": "A HMAC-titok 32–512 szóköz nélküli, nyomtatható karakter legyen."
+      }
+    },
+    "settings": {
+      "description": "Leírás",
+      "confirmation": "Megerősítési szabály",
+      "timeout": "Időkorlát (ms)",
+      "retries": "Újrapróbálkozások",
+      "save": "Módosítások mentése",
+      "saved": "Eszköz frissítve",
+      "enable": "Bekapcsolás",
+      "disable": "Kikapcsolás",
+      "enabled": "Eszköz bekapcsolva",
+      "disabled": "Eszköz kikapcsolva",
+      "rotateSecret": "Új titok",
+      "rotateHint": "Azonnal lecseréli a jelenlegi hitelesítő adatot.",
+      "rotate": "Hitelesítő adat cseréje",
+      "rotated": "Hitelesítő adat lecserélve"
+    },
+    "detail": {
+      "endpoint": "Végpont",
+      "allowedHosts": "Engedélyezett hosztok",
+      "credential": "Hitelesítő adat",
+      "configured": "Beállítva",
+      "missing": "Hiányzik",
+      "yes": "Igen",
+      "no": "Nem",
+      "responseLimit": "Válaszméret-korlát",
+      "schemas": "Sémák"
+    }
+  },
+  "messaging": {
+    "title": "Üzenetküldés",
+    "description": "A vendégeknek küldött visszaigazolások a saját e-mail címedről és a saját nevedben mennek ki.",
+    "sms": {
+      "name": "SMS értesítések",
+      "description": "Rövid visszaigazoló SMS a vendégeknek foglaláskor, módosításkor és lemondáskor.",
+      "onHint": "Bekapcsolva: a vendégek SMS-t is kapnak, ha megadták a telefonszámukat.",
+      "offHint": "Kikapcsolva: a vendégek csak e-mailt kapnak.",
+      "enabled": "SMS értesítések bekapcsolva",
+      "disabled": "SMS értesítések kikapcsolva"
+    },
+    "email": {
+      "name": "E-mail rendszer",
+      "description": "Erről a címről kapják a vendégeid a visszaigazolásokat.",
+      "connect": "Beállítás",
+      "change": "Módosítás",
+      "disconnect": "Leválasztás",
+      "disconnectTitle": "Leválasztod az e-mail rendszert?",
+      "disconnectDescription": "Amíg nincs új e-mail rendszer beállítva, a vendégek nem kapnak e-mailes visszaigazolást. A tárolt jelszót azonnal töröljük.",
+      "disconnected": "E-mail rendszer leválasztva",
+      "connected": "E-mail rendszer beállítva, a próbakapcsolat sikerült",
+      "active": "Működik",
+      "test": "Tesztlevél",
+      "testSent": "Tesztlevelet küldtünk ide: {email}",
+      "viaGoogle": "Google-fiókon keresztül",
+      "viaSmtp": "Saját levelezőszerveren keresztül ({host})",
+      "emptyHint": "Még nincs beállítva. Amíg nem kötöd be, a vendégek nem kapnak e-mailes visszaigazolást.",
+      "dialogTitle": "E-mail rendszer beállítása",
+      "dialogDescription": "A belépési adatokat titkosítva tároljuk, és csak a vendégeidnek szóló levelek küldésére használjuk.",
+      "close": "Bezárás",
+      "cancel": "Mégse",
+      "save": "Kapcsolat ellenőrzése és mentés",
+      "or": "vagy add meg kézzel",
+      "googleTitle": "Gmail vagy Google Workspace fiók",
+      "googleDescription": "A leggyorsabb: bejelentkezel a Google-fiókodba, és kész. Jelszót nem kell megadnod.",
+      "googleButton": "Összekötés Google-fiókkal",
+      "host": "Levelezőszerver",
+      "hostHint": "Gmail esetén: smtp.gmail.com",
+      "port": "Port",
+      "security": "Titkosítás",
+      "securityHint": "A 465-ös porthoz SSL/TLS, az 587-eshez STARTTLS tartozik.",
+      "securityOptions": {
+        "TLS": "SSL/TLS",
+        "STARTTLS": "STARTTLS",
+        "NONE": "Nincs (nem ajánlott)"
+      },
+      "username": "Felhasználónév",
+      "usernameHint": "Általában a teljes e-mail cím.",
+      "password": "Jelszó vagy alkalmazásjelszó",
+      "passwordHint": "Gmailnél kétlépcsős azonosítás mellett alkalmazásjelszót kell létrehozni a Google-fiók biztonsági beállításaiban.",
+      "fromName": "Feladó neve",
+      "fromNameHint": "Ezt a nevet látják a vendégek, például a vállalkozásod neve.",
+      "fromAddress": "Feladó e-mail címe",
+      "replyTo": "Válaszcím",
+      "replyToHint": "Nem kötelező. Ide érkeznek a vendégek válaszai, ha eltér a feladó címétől."
+    }
+  }
+}

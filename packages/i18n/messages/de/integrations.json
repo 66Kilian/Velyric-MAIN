@@ -1,0 +1,176 @@
+{
+  "title": "Integrationen",
+  "description": "Verbinde Kalender und eigene APIs, damit Agenten Verfügbarkeiten prüfen, buchen und Daten abfragen können.",
+  "callback": {
+    "connected": "Die Verbindung wurde erfolgreich autorisiert.",
+    "denied": "Der Zugriff wurde beim Anbieter verweigert. Es wurde nichts verbunden.",
+    "failed": "Die Verbindung konnte nicht abgeschlossen werden ({code}). Versuche es erneut."
+  },
+  "connectors": {
+    "title": "Kalender",
+    "connect": "Verbinden",
+    "reconnect": "Neu verbinden",
+    "disconnect": "Trennen",
+    "disconnectTitle": "Diesen Kalender trennen?",
+    "disconnectDescription": "Agenten können keine Verfügbarkeiten mehr lesen oder Buchungen anlegen. Gespeicherte Tokens werden widerrufen.",
+    "disconnected": "Kalender getrennt",
+    "neverChecked": "Noch nicht geprüft",
+    "checked": "Zuletzt geprüft {time}",
+    "GOOGLE_CALENDAR": {
+      "name": "Google Kalender",
+      "description": "Frei/Belegt-Zeiten lesen und Termine in Google-Workspace-Kalendern anlegen."
+    },
+    "MICROSOFT_365": {
+      "name": "Microsoft 365",
+      "description": "Frei/Belegt-Zeiten lesen und Termine in Outlook-Kalendern anlegen."
+    }
+  },
+  "tools": {
+    "title": "Eigene API-Tools",
+    "description": "Agenten rufen deine HTTPS-Endpunkte mit validierten Eingaben, strengen Egress-Regeln und Bestätigungen auf.",
+    "create": "Neues Tool",
+    "createDescription": "Beschreibe den Endpunkt, seine JSON-Schemas und wie riskant seine Auswirkungen sind.",
+    "back": "Zurück zu den Integrationen",
+    "empty": "Keine eigenen Tools",
+    "emptyDescription": "Füge ein Tool hinzu, damit Agenten Bestellungen nachschlagen, Tickets anlegen oder andere Systeme aufrufen.",
+    "columns": {
+      "name": "Name",
+      "endpoint": "Endpunkt",
+      "effect": "Auswirkung",
+      "confirmation": "Bestätigung",
+      "status": "Status"
+    },
+    "status": {
+      "ACTIVE": "Aktiv",
+      "DISABLED": "Deaktiviert",
+      "KILLED": "Durch Notschalter gesperrt"
+    },
+    "form": {
+      "serverIssues": "Das Tool konnte nicht gespeichert werden:",
+      "name": "Tool-Name",
+      "nameHint": "Kleinbuchstaben, Ziffern und Unterstriche, z. B. lookup_order.",
+      "method": "HTTP-Methode",
+      "description": "Beschreibung für den Agenten",
+      "descriptionHint": "Erkläre, wann der Agent dieses Tool nutzen soll und was es zurückgibt.",
+      "baseUrl": "Basis-URL",
+      "baseUrlHint": "Öffentliche HTTPS-Adresse. Private und interne Adressen sind gesperrt.",
+      "path": "Pfadvorlage",
+      "pathHint": "Setze Platzhalternamen in geschweifte Klammern; sie müssen Eigenschaften des Eingabeschemas entsprechen.",
+      "inputSchema": "Eingabe-JSON-Schema",
+      "outputSchema": "Ausgabe-JSON-Schema",
+      "schemaHint": "JSON-Schema-2020-12-Objekt, höchstens 32 KB.",
+      "sideEffect": "Auswirkung",
+      "sideEffectHint": "Tools, die Daten ändern, erfordern eine stärkere Bestätigung.",
+      "confirmation": "Bestätigungsregel",
+      "timeout": "Timeout (ms)",
+      "retries": "Wiederholungen",
+      "idempotency": "Der Endpunkt unterstützt Idempotenzschlüssel",
+      "auth": "Authentifizierung",
+      "authTypes": {
+        "NONE": "Keine",
+        "BEARER": "Bearer-Token",
+        "HMAC": "HMAC-Signatur"
+      },
+      "secret": "Geheimnis",
+      "secretHint": "Wird verschlüsselt gespeichert und nie wieder angezeigt.",
+      "submit": "Tool erstellen",
+      "created": "Tool {name} erstellt",
+      "errors": {
+        "invalid": "Bitte prüfe diesen Wert.",
+        "name": "3–64 Kleinbuchstaben, Ziffern oder Unterstriche, beginnend mit einem Buchstaben.",
+        "description": "Verwende 10 bis 1000 Zeichen.",
+        "base_url": "Gib eine HTTPS-URL mit 10 bis 300 Zeichen ein.",
+        "path_template": "Der Pfad muss mit / beginnen und darf nur URL-sichere Zeichen enthalten.",
+        "json": "Gib ein gültiges JSON-Objekt ein.",
+        "timeout": "Verwende einen Wert zwischen 500 und 10000.",
+        "retries": "Verwende einen Wert zwischen 0 und 5.",
+        "bearer_secret": "Bearer-Tokens brauchen 16–4096 druckbare Zeichen ohne Leerzeichen.",
+        "hmac_secret": "HMAC-Geheimnisse brauchen 32–512 druckbare Zeichen ohne Leerzeichen."
+      }
+    },
+    "settings": {
+      "description": "Beschreibung",
+      "confirmation": "Bestätigungsregel",
+      "timeout": "Timeout (ms)",
+      "retries": "Wiederholungen",
+      "save": "Änderungen speichern",
+      "saved": "Tool aktualisiert",
+      "enable": "Aktivieren",
+      "disable": "Deaktivieren",
+      "enabled": "Tool aktiviert",
+      "disabled": "Tool deaktiviert",
+      "rotateSecret": "Neues Geheimnis",
+      "rotateHint": "Ersetzt die aktuellen Zugangsdaten sofort.",
+      "rotate": "Zugangsdaten rotieren",
+      "rotated": "Zugangsdaten rotiert"
+    },
+    "detail": {
+      "endpoint": "Endpunkt",
+      "allowedHosts": "Erlaubte Hosts",
+      "credential": "Zugangsdaten",
+      "configured": "Eingerichtet",
+      "missing": "Fehlen",
+      "yes": "Ja",
+      "no": "Nein",
+      "responseLimit": "Antwortgrößenlimit",
+      "schemas": "Schemas"
+    }
+  },
+  "messaging": {
+    "title": "Nachrichten",
+    "description": "Bestätigungen an Ihre Gäste werden von Ihrer eigenen E-Mail-Adresse und in Ihrem Namen versendet.",
+    "sms": {
+      "name": "SMS-Benachrichtigungen",
+      "description": "Eine kurze Bestätigungs-SMS an Gäste bei Buchung, Änderung und Stornierung.",
+      "onHint": "Ein: Gäste erhalten zusätzlich eine SMS, wenn sie ihre Telefonnummer angegeben haben.",
+      "offHint": "Aus: Gäste erhalten nur E-Mails.",
+      "enabled": "SMS-Benachrichtigungen eingeschaltet",
+      "disabled": "SMS-Benachrichtigungen ausgeschaltet"
+    },
+    "email": {
+      "name": "E-Mail-System",
+      "description": "Von dieser Adresse erhalten Ihre Gäste ihre Bestätigungen.",
+      "connect": "Einrichten",
+      "change": "Ändern",
+      "disconnect": "Trennen",
+      "disconnectTitle": "E-Mail-System trennen?",
+      "disconnectDescription": "Solange kein neues E-Mail-System eingerichtet ist, erhalten Gäste keine Bestätigungen per E-Mail. Das gespeicherte Passwort wird sofort gelöscht.",
+      "disconnected": "E-Mail-System getrennt",
+      "connected": "E-Mail-System eingerichtet, die Testverbindung war erfolgreich",
+      "active": "Aktiv",
+      "test": "Test-E-Mail",
+      "testSent": "Wir haben eine Test-E-Mail an {email} gesendet",
+      "viaGoogle": "Über Ihr Google-Konto",
+      "viaSmtp": "Über Ihren eigenen Mailserver ({host})",
+      "emptyHint": "Noch nicht eingerichtet. Bis dahin erhalten Gäste keine Bestätigungen per E-Mail.",
+      "dialogTitle": "E-Mail-System einrichten",
+      "dialogDescription": "Ihre Zugangsdaten werden verschlüsselt gespeichert und nur für E-Mails an Ihre Gäste verwendet.",
+      "close": "Schließen",
+      "cancel": "Abbrechen",
+      "save": "Verbindung prüfen und speichern",
+      "or": "oder manuell eingeben",
+      "googleTitle": "Gmail- oder Google-Workspace-Konto",
+      "googleDescription": "Am schnellsten: Melden Sie sich bei Ihrem Google-Konto an, fertig. Kein Passwort nötig.",
+      "googleButton": "Mit Google verbinden",
+      "host": "Mailserver",
+      "hostHint": "Für Gmail: smtp.gmail.com",
+      "port": "Port",
+      "security": "Verschlüsselung",
+      "securityHint": "Port 465 nutzt SSL/TLS, Port 587 nutzt STARTTLS.",
+      "securityOptions": {
+        "TLS": "SSL/TLS",
+        "STARTTLS": "STARTTLS",
+        "NONE": "Keine (nicht empfohlen)"
+      },
+      "username": "Benutzername",
+      "usernameHint": "Meist Ihre vollständige E-Mail-Adresse.",
+      "password": "Passwort oder App-Passwort",
+      "passwordHint": "Bei Gmail mit Bestätigung in zwei Schritten erstellen Sie in den Sicherheitseinstellungen Ihres Google-Kontos ein App-Passwort.",
+      "fromName": "Absendername",
+      "fromNameHint": "Der Name, den Gäste sehen, zum Beispiel Ihr Firmenname.",
+      "fromAddress": "Absenderadresse",
+      "replyTo": "Antwortadresse",
+      "replyToHint": "Optional. Antworten der Gäste gehen hierhin, wenn sie von der Absenderadresse abweicht."
+    }
+  }
+}

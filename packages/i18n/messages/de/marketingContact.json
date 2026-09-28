@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Kontakt – Velyric",
+    "description": "Erreiche das Velyric-Team per E-Mail für Vertriebsfragen, Datenschutz- und DSGVO-Anfragen oder Sicherheitsmeldungen, und sieh die Unternehmensdaten hinter dem Dienst."
+  },
+  "eyebrow": "Kontakt",
+  "title": "Sprich mit dem Team hinter Velyric",
+  "body": "Velyric wird von einem kleinen Produktteam betrieben. Vertrieb und Support laufen heute über E-Mail, damit Antworten schriftlich und nachvollziehbar bleiben. Wähle die Adresse, die zu deiner Frage passt, und du landest direkt bei der richtigen Person.",
+  "breadcrumbLabel": "Brotkrümelnavigation",
+  "answer": {
+    "question": "Wie erreichst du Velyric?",
+    "body": "Velyric erreichst du per E-Mail. Vertriebs- und Produktfragen gehen an die Vertriebsadresse, Datenschutz- und DSGVO-Betroffenenanfragen an die Datenschutzadresse, und vermutete Schwachstellen meldest du über den Prozess auf der Sicherheitsseite. Für den Start musst du mit niemandem sprechen: Konten werden selbst über die Registrierungsseite angelegt."
+  },
+  "channels": {
+    "heading": "Wohin schreiben",
+    "body": "Jeder Kanal hat einen klaren Zweck. Wenn deine Nachricht gleich richtig landet, bekommst du schneller eine konkrete Antwort.",
+    "sales": {
+      "title": "Vertrieb und Produktfragen",
+      "body": "Preise, Tarifauswahl, Rufnummernverfügbarkeit in deinem Land, Fragen zur Einführung, Enterprise-Konditionen und alles, was du vor der Registrierung klären willst."
+    },
+    "privacy": {
+      "title": "Datenschutz",
+      "body": "DSGVO-Betroffenenanfragen, Fragen zum Auftragsverarbeitungsvertrag, Aufbewahrungsfristen, Unterauftragsverarbeiter und wo Anrufdaten verarbeitet werden."
+    },
+    "security": {
+      "title": "Sicherheitsmeldungen",
+      "body": "Wenn du glaubst, eine Schwachstelle gefunden zu haben, nutze den auf der Sicherheitsseite beschriebenen Prozess zur koordinierten Offenlegung statt einer öffentlichen Meldung."
+    },
+    "selfServe": {
+      "title": "Ohne Vertrieb starten",
+      "body": "Konto anlegen, Tarif wählen und Kalender verbinden funktionieren im Self-Service. Der Vertrieb ist optional und nur für Enterprise-Konditionen nötig."
+    }
+  },
+  "prepare": {
+    "heading": "Was in die erste E-Mail gehört",
+    "body": "Mit diesen fünf Angaben können wir in einer einzigen Antwort konkret werden, statt erst nachzufragen.",
+    "items": {
+      "business": "Was dein Unternehmen macht und welche Anrufe zuerst übernommen werden sollen.",
+      "volume": "Wie viele Anrufe ungefähr eingehen und wie viele davon gleichzeitig ankommen können.",
+      "languages": "Ob deine Anrufenden Ungarisch, Deutsch oder Englisch sprechen.",
+      "calendar": "Ob du Google Kalender, Microsoft 365 oder ein anderes Buchungssystem nutzt.",
+      "numbers": "Ob du eine neue Rufnummer brauchst oder eine bestehende portieren willst, und in welchem Land."
+    }
+  },
+  "details": {
+    "heading": "Unternehmensdaten",
+    "body": "Velyric wird von der unten genannten juristischen Person betrieben. Dieselben Angaben stehen auf Rechnungen und in den rechtlichen Dokumenten.",
+    "labels": {
+      "entity": "Anbieter",
+      "address": "Sitz",
+      "registration": "Handelsregisternummer",
+      "taxNumber": "Steuernummer",
+      "sales": "Vertriebs-E-Mail",
+      "privacy": "Datenschutz-E-Mail"
+    }
+  },
+  "faq": {
+    "heading": "Häufige Fragen",
+    "start": {
+      "question": "Muss ich vor dem Start mit dem Vertrieb sprechen?",
+      "answer": "Nein. Die Tarife sind Self-Service: Du kannst dich registrieren, einen Tarif wählen und einen Agenten einrichten, ohne ein Vertriebsgespräch. Der Vertrieb ist nur für Enterprise-Konditionen nötig oder wenn du vor dem Abschluss Beratung möchtest."
+    },
+    "languages": {
+      "question": "In welchen Sprachen kann ich euch schreiben?",
+      "answer": "Ungarisch, Deutsch und Englisch. Das sind auch die drei Sprachen, die der Voice-Agent im Anruf unterstützt."
+    },
+    "gdpr": {
+      "question": "Wohin schicke ich eine DSGVO-Anfrage?",
+      "answer": "An die oben genannte Datenschutzadresse. Bei Anrufdaten handelt Velyric als Auftragsverarbeiter im Auftrag des Kunden, deshalb werden Anfragen zu einer bestimmten anrufenden Person in der Regel über das Unternehmen bearbeitet, das die Rufnummer betreibt."
+    },
+    "security": {
+      "question": "Wie melde ich eine Sicherheitslücke?",
+      "answer": "Über den auf der Sicherheitsseite beschriebenen Prozess zur koordinierten Offenlegung. Bitte veröffentliche keine Details, bevor wir reagieren und das Problem beheben konnten."
+    },
+    "phone": {
+      "question": "Gibt es eine Telefonnummer, die ich anrufen kann?",
+      "answer": "Aktuell nicht. Support und Vertrieb laufen über E-Mail, damit Vereinbartes schriftlich festgehalten ist. Für ein kleines Team ist das eine bewusste Entscheidung: Antworten werden recherchiert statt im Gespräch improvisiert."
+    }
+  },
+  "related": {
+    "heading": "Bevor du schreibst",
+    "pricing": {
+      "label": "Preise",
+      "description": "Tarifpreise, inkludierte Minuten, gleichzeitige Anrufe und Überverbrauchsraten."
+    },
+    "security": {
+      "label": "Sicherheit und Compliance",
+      "description": "Datenverarbeitung, voreingestellte Aufbewahrungsfristen, DSGVO-Rollen und Meldeprozess."
+    },
+    "docs": {
+      "label": "Dokumentation",
+      "description": "API-Konventionen, Authentifizierung und Integrationsdetails für Entwicklerinnen und Entwickler."
+    },
+    "product": {
+      "label": "So funktioniert Velyric",
+      "description": "Was der Voice-Agent im Anruf tut und welche Aktionen er ausführen kann."
+    }
+  }
+}
